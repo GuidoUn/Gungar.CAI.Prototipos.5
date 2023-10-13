@@ -24,7 +24,6 @@ namespace Gungar.CAI.Prototipos._5
 
         public static List<string[]> productos = new List<string[]>
         {
-
         };
 
         public static List<string[]> vuelos = new List<string[]>
@@ -116,7 +115,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (esConsulta)
             {
-                titleLabel.Text = "Consulta disponibilidad productos";
+                titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";
             }
             else
@@ -159,7 +158,6 @@ namespace Gungar.CAI.Prototipos._5
             listasHotelesBox.Visible = !esVuelos;
             origenLabel.Enabled = esVuelos;
             origenText.Enabled = esVuelos;
-
 
             vuelosVueltaBox.Visible = !esSoloIda;
         }
