@@ -62,7 +62,7 @@
             nuevoItinerarioBtn.Name = "nuevoItinerarioBtn";
             nuevoItinerarioBtn.Size = new Size(112, 49);
             nuevoItinerarioBtn.TabIndex = 3;
-            nuevoItinerarioBtn.Text = "Nuevo Itinerario";
+            nuevoItinerarioBtn.Text = "Consultar Disponibilidad";
             nuevoItinerarioBtn.UseVisualStyleBackColor = true;
             nuevoItinerarioBtn.Click += nuevoItinerarioBtn_Click;
             // 

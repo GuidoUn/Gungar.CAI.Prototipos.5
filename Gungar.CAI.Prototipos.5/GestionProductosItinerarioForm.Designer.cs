@@ -28,15 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            titleLabel = new Label();
             itinerarioLabel = new Label();
-            listView1 = new ListView();
-            listView2 = new ListView();
-            aerolineaHeader = new ColumnHeader();
-            salidaDateHeader = new ColumnHeader();
-            arriboHeader = new ColumnHeader();
-            duracionVueloHeader = new ColumnHeader();
-            precioHeader = new ColumnHeader();
             button1 = new Button();
             vuelosHotelesBox = new GroupBox();
             hotelesRadio = new RadioButton();
@@ -45,7 +38,7 @@
             claseLabel = new Label();
             clasesCombo = new ComboBox();
             checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            soloIdaCheckBox = new CheckBox();
             groupBox3 = new GroupBox();
             hastaPreciosNumeric = new NumericUpDown();
             desdePreciosNumeric = new NumericUpDown();
@@ -69,18 +62,39 @@
             aplicarFiltrosBtn = new Button();
             button3 = new Button();
             listasVuelosBox = new GroupBox();
-            vueltaBox = new GroupBox();
-            groupBox7 = new GroupBox();
-            listView4 = new ListView();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
             groupBox4 = new GroupBox();
             groupBox5 = new GroupBox();
             listView3 = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
+            vuelosIdaListView = new ListView();
+            aerolineaHeader = new ColumnHeader();
+            salidaDateHeader = new ColumnHeader();
+            arriboHeader = new ColumnHeader();
+            duracionVueloHeader = new ColumnHeader();
+            precioHeader = new ColumnHeader();
+            disponibilidadHeader = new ColumnHeader();
+            vuelosVueltaBox = new GroupBox();
+            groupBox6 = new GroupBox();
+            groupBox8 = new GroupBox();
+            listView2 = new ListView();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            vuelosVueltaListView = new ListView();
+            columnHeader10 = new ColumnHeader();
+            columnHeader11 = new ColumnHeader();
+            columnHeader12 = new ColumnHeader();
+            columnHeader13 = new ColumnHeader();
+            columnHeader14 = new ColumnHeader();
+            disponibilidadHeader1 = new ColumnHeader();
+            listasHotelesBox = new GroupBox();
+            hotelesListView = new ListView();
+            nombreHotelHeader = new ColumnHeader();
+            direccionHeader = new ColumnHeader();
+            estrellasHeader = new ColumnHeader();
+            disponilidadHeader = new ColumnHeader();
             vuelosHotelesBox.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -91,20 +105,21 @@
             ((System.ComponentModel.ISupportInitialize)cantidadMenoresNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cantidadAdultosNumeric).BeginInit();
             listasVuelosBox.SuspendLayout();
-            vueltaBox.SuspendLayout();
-            groupBox7.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox5.SuspendLayout();
+            vuelosVueltaBox.SuspendLayout();
+            groupBox8.SuspendLayout();
+            listasHotelesBox.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // titleLabel
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(24, 16);
-            label1.Name = "label1";
-            label1.Size = new Size(157, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Gestión Productos Itinerario:";
+            titleLabel.AutoSize = true;
+            titleLabel.Location = new Point(24, 16);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(157, 15);
+            titleLabel.TabIndex = 0;
+            titleLabel.Text = "Gestión Productos Itinerario:";
             // 
             // itinerarioLabel
             // 
@@ -114,49 +129,6 @@
             itinerarioLabel.Size = new Size(82, 15);
             itinerarioLabel.TabIndex = 2;
             itinerarioLabel.Text = "itinerarioLabel";
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(773, 149);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(490, 403);
-            listView1.TabIndex = 3;
-            listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView2
-            // 
-            listView2.Columns.AddRange(new ColumnHeader[] { aerolineaHeader, salidaDateHeader, arriboHeader, duracionVueloHeader, precioHeader });
-            listView2.Location = new Point(6, 17);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(704, 192);
-            listView2.TabIndex = 4;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
-            // 
-            // aerolineaHeader
-            // 
-            aerolineaHeader.Text = "Aerolinea";
-            aerolineaHeader.Width = 100;
-            // 
-            // salidaDateHeader
-            // 
-            salidaDateHeader.Text = "Fecha de Salida";
-            salidaDateHeader.Width = 170;
-            // 
-            // arriboHeader
-            // 
-            arriboHeader.Text = "Fecha de Arribo";
-            arriboHeader.Width = 170;
-            // 
-            // duracionVueloHeader
-            // 
-            duracionVueloHeader.Text = "Duracion";
-            duracionVueloHeader.Width = 100;
-            // 
-            // precioHeader
-            // 
-            precioHeader.Text = "Precio";
-            precioHeader.Width = 100;
             // 
             // button1
             // 
@@ -206,7 +178,7 @@
             groupBox1.Controls.Add(claseLabel);
             groupBox1.Controls.Add(clasesCombo);
             groupBox1.Controls.Add(checkBox2);
-            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Controls.Add(soloIdaCheckBox);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(vuelosHotelesBox);
@@ -246,22 +218,23 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(284, 102);
+            checkBox2.Location = new Point(197, 102);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(141, 19);
             checkBox2.TabIndex = 23;
             checkBox2.Text = "Tengo fechas flexibles";
             checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // soloIdaCheckBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(197, 102);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(81, 19);
-            checkBox1.TabIndex = 22;
-            checkBox1.Text = "Es solo ida";
-            checkBox1.UseVisualStyleBackColor = true;
+            soloIdaCheckBox.AutoSize = true;
+            soloIdaCheckBox.Location = new Point(344, 102);
+            soloIdaCheckBox.Name = "soloIdaCheckBox";
+            soloIdaCheckBox.Size = new Size(81, 19);
+            soloIdaCheckBox.TabIndex = 22;
+            soloIdaCheckBox.Text = "Es solo ida";
+            soloIdaCheckBox.UseVisualStyleBackColor = true;
+            soloIdaCheckBox.CheckedChanged += soloIdaCheckBox_CheckedChanged;
             // 
             // groupBox3
             // 
@@ -453,71 +426,26 @@
             button3.TabIndex = 8;
             button3.Text = "Salir";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // listasVuelosBox
             // 
-            listasVuelosBox.Controls.Add(vueltaBox);
+            listasVuelosBox.Controls.Add(groupBox4);
+            listasVuelosBox.Controls.Add(vuelosVueltaBox);
             listasVuelosBox.Location = new Point(24, 234);
             listasVuelosBox.Name = "listasVuelosBox";
             listasVuelosBox.Size = new Size(716, 439);
             listasVuelosBox.TabIndex = 10;
             listasVuelosBox.TabStop = false;
             // 
-            // vueltaBox
-            // 
-            vueltaBox.Controls.Add(groupBox7);
-            vueltaBox.Location = new Point(0, 221);
-            vueltaBox.Name = "vueltaBox";
-            vueltaBox.Size = new Size(716, 215);
-            vueltaBox.TabIndex = 6;
-            vueltaBox.TabStop = false;
-            vueltaBox.Text = "Vuelta";
-            // 
-            // groupBox7
-            // 
-            groupBox7.Controls.Add(listView4);
-            groupBox7.Location = new Point(0, 215);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(716, 215);
-            groupBox7.TabIndex = 5;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "Ida";
-            // 
-            // listView4
-            // 
-            listView4.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5, columnHeader6 });
-            listView4.Location = new Point(6, 22);
-            listView4.Name = "listView4";
-            listView4.Size = new Size(704, 187);
-            listView4.TabIndex = 4;
-            listView4.UseCompatibleStateImageBehavior = false;
-            listView4.View = View.Details;
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.DisplayIndex = 1;
-            columnHeader4.Text = "Fecha de Ida";
-            columnHeader4.Width = 100;
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.DisplayIndex = 0;
-            columnHeader5.Text = "Aerolinea";
-            columnHeader5.Width = 100;
-            // 
-            // columnHeader6
-            // 
-            columnHeader6.Text = "Fecha de Vuelta";
-            columnHeader6.Width = 100;
-            // 
             // groupBox4
             // 
             groupBox4.Controls.Add(groupBox5);
-            groupBox4.Controls.Add(listView2);
-            groupBox4.Location = new Point(24, 234);
+            groupBox4.Controls.Add(vuelosIdaListView);
+            groupBox4.Location = new Point(0, 0);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(716, 215);
-            groupBox4.TabIndex = 0;
+            groupBox4.TabIndex = 7;
             groupBox4.TabStop = false;
             groupBox4.Text = "Ida";
             // 
@@ -558,20 +486,203 @@
             columnHeader3.Text = "Fecha de Vuelta";
             columnHeader3.Width = 100;
             // 
+            // vuelosIdaListView
+            // 
+            vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { aerolineaHeader, salidaDateHeader, arriboHeader, duracionVueloHeader, precioHeader, disponibilidadHeader });
+            vuelosIdaListView.FullRowSelect = true;
+            vuelosIdaListView.Location = new Point(6, 17);
+            vuelosIdaListView.MultiSelect = false;
+            vuelosIdaListView.Name = "vuelosIdaListView";
+            vuelosIdaListView.Size = new Size(704, 192);
+            vuelosIdaListView.TabIndex = 4;
+            vuelosIdaListView.UseCompatibleStateImageBehavior = false;
+            vuelosIdaListView.View = View.Details;
+            // 
+            // aerolineaHeader
+            // 
+            aerolineaHeader.Text = "Aerolinea";
+            aerolineaHeader.Width = 140;
+            // 
+            // salidaDateHeader
+            // 
+            salidaDateHeader.Text = "Fecha de Salida";
+            salidaDateHeader.Width = 130;
+            // 
+            // arriboHeader
+            // 
+            arriboHeader.Text = "Fecha de Arribo";
+            arriboHeader.Width = 130;
+            // 
+            // duracionVueloHeader
+            // 
+            duracionVueloHeader.Text = "Duracion";
+            duracionVueloHeader.Width = 100;
+            // 
+            // precioHeader
+            // 
+            precioHeader.Text = "Precio";
+            precioHeader.Width = 100;
+            // 
+            // disponibilidadHeader
+            // 
+            disponibilidadHeader.Text = "Disponibilidad";
+            disponibilidadHeader.Width = 90;
+            // 
+            // vuelosVueltaBox
+            // 
+            vuelosVueltaBox.Controls.Add(groupBox6);
+            vuelosVueltaBox.Controls.Add(groupBox8);
+            vuelosVueltaBox.Controls.Add(vuelosVueltaListView);
+            vuelosVueltaBox.Location = new Point(0, 218);
+            vuelosVueltaBox.Name = "vuelosVueltaBox";
+            vuelosVueltaBox.Size = new Size(716, 215);
+            vuelosVueltaBox.TabIndex = 6;
+            vuelosVueltaBox.TabStop = false;
+            vuelosVueltaBox.Text = "Vuelta";
+            // 
+            // groupBox6
+            // 
+            groupBox6.Location = new Point(21, 212);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(200, 100);
+            groupBox6.TabIndex = 6;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "groupBox6";
+            // 
+            // groupBox8
+            // 
+            groupBox8.Controls.Add(listView2);
+            groupBox8.Location = new Point(0, 215);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(716, 215);
+            groupBox8.TabIndex = 5;
+            groupBox8.TabStop = false;
+            groupBox8.Text = "Ida";
+            // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader8, columnHeader9 });
+            listView2.Location = new Point(6, 22);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(704, 187);
+            listView2.TabIndex = 4;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.DisplayIndex = 1;
+            columnHeader7.Text = "Fecha de Ida";
+            columnHeader7.Width = 100;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.DisplayIndex = 0;
+            columnHeader8.Text = "Aerolinea";
+            columnHeader8.Width = 100;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Fecha de Vuelta";
+            columnHeader9.Width = 100;
+            // 
+            // vuelosVueltaListView
+            // 
+            vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14, disponibilidadHeader1 });
+            vuelosVueltaListView.FullRowSelect = true;
+            vuelosVueltaListView.Location = new Point(6, 17);
+            vuelosVueltaListView.MultiSelect = false;
+            vuelosVueltaListView.Name = "vuelosVueltaListView";
+            vuelosVueltaListView.Size = new Size(704, 192);
+            vuelosVueltaListView.TabIndex = 4;
+            vuelosVueltaListView.UseCompatibleStateImageBehavior = false;
+            vuelosVueltaListView.View = View.Details;
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "Aerolinea";
+            columnHeader10.Width = 140;
+            // 
+            // columnHeader11
+            // 
+            columnHeader11.Text = "Fecha de Salida";
+            columnHeader11.Width = 130;
+            // 
+            // columnHeader12
+            // 
+            columnHeader12.Text = "Fecha de Arribo";
+            columnHeader12.Width = 130;
+            // 
+            // columnHeader13
+            // 
+            columnHeader13.Text = "Duracion";
+            columnHeader13.Width = 100;
+            // 
+            // columnHeader14
+            // 
+            columnHeader14.Text = "Precio";
+            columnHeader14.Width = 100;
+            // 
+            // disponibilidadHeader1
+            // 
+            disponibilidadHeader1.Text = "Disponibilidad";
+            disponibilidadHeader1.Width = 90;
+            // 
+            // listasHotelesBox
+            // 
+            listasHotelesBox.Controls.Add(hotelesListView);
+            listasHotelesBox.Location = new Point(24, 234);
+            listasHotelesBox.Name = "listasHotelesBox";
+            listasHotelesBox.Size = new Size(716, 439);
+            listasHotelesBox.TabIndex = 11;
+            listasHotelesBox.TabStop = false;
+            listasHotelesBox.Text = "Hoteles";
+            listasHotelesBox.Visible = false;
+            // 
+            // hotelesListView
+            // 
+            hotelesListView.Columns.AddRange(new ColumnHeader[] { nombreHotelHeader, direccionHeader, estrellasHeader, disponilidadHeader });
+            hotelesListView.FullRowSelect = true;
+            hotelesListView.Location = new Point(6, 16);
+            hotelesListView.MultiSelect = false;
+            hotelesListView.Name = "hotelesListView";
+            hotelesListView.Size = new Size(704, 411);
+            hotelesListView.TabIndex = 5;
+            hotelesListView.UseCompatibleStateImageBehavior = false;
+            hotelesListView.View = View.Details;
+            // 
+            // nombreHotelHeader
+            // 
+            nombreHotelHeader.Text = "Hotel";
+            nombreHotelHeader.Width = 150;
+            // 
+            // direccionHeader
+            // 
+            direccionHeader.Text = "Direccion";
+            direccionHeader.Width = 150;
+            // 
+            // estrellasHeader
+            // 
+            estrellasHeader.Text = "Estrellas";
+            // 
+            // disponilidadHeader
+            // 
+            disponilidadHeader.Text = "Disponibilidad";
+            disponilidadHeader.Width = 100;
+            // 
             // GestionProductosItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1430, 813);
-            Controls.Add(groupBox4);
+            Controls.Add(listasHotelesBox);
             Controls.Add(listasVuelosBox);
             Controls.Add(aplicarFiltrosBtn);
             Controls.Add(button3);
             Controls.Add(groupBox1);
             Controls.Add(button1);
-            Controls.Add(listView1);
             Controls.Add(itinerarioLabel);
-            Controls.Add(label1);
+            Controls.Add(titleLabel);
             Name = "GestionProductosItinerarioForm";
             Text = "GestionProductosItinerarioForm";
             Load += GestionProductosItinerarioForm_Load;
@@ -589,20 +700,19 @@
             ((System.ComponentModel.ISupportInitialize)cantidadMenoresNumeric).EndInit();
             ((System.ComponentModel.ISupportInitialize)cantidadAdultosNumeric).EndInit();
             listasVuelosBox.ResumeLayout(false);
-            vueltaBox.ResumeLayout(false);
-            groupBox7.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
+            vuelosVueltaBox.ResumeLayout(false);
+            groupBox8.ResumeLayout(false);
+            listasHotelesBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label titleLabel;
         private Label itinerarioLabel;
-        private ListView listView1;
-        private ListView listView2;
         private Button button1;
         private GroupBox vuelosHotelesBox;
         private RadioButton hotelesRadio;
@@ -630,27 +740,43 @@
         private NumericUpDown cantidadAdultosNumeric;
         private Button aplicarFiltrosBtn;
         private Button button3;
-        private ColumnHeader aerolineaHeader;
-        private ColumnHeader salidaDateHeader;
-        private CheckBox checkBox1;
-        private ColumnHeader arriboHeader;
+        private CheckBox soloIdaCheckBox;
         private CheckBox checkBox2;
         private GroupBox listasVuelosBox;
+        private Label claseLabel;
+        private ComboBox clasesCombo;
+        private GroupBox vuelosVueltaBox;
+        private GroupBox groupBox8;
+        private ListView listView2;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
+        private ListView vuelosVueltaListView;
+        private ColumnHeader columnHeader10;
+        private ColumnHeader columnHeader11;
+        private ColumnHeader columnHeader12;
+        private ColumnHeader columnHeader13;
+        private ColumnHeader columnHeader14;
         private GroupBox groupBox4;
         private GroupBox groupBox5;
         private ListView listView3;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
-        private GroupBox vueltaBox;
-        private GroupBox groupBox7;
-        private ListView listView4;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
-        private ColumnHeader precioHeader;
+        private ListView vuelosIdaListView;
+        private ColumnHeader aerolineaHeader;
+        private ColumnHeader salidaDateHeader;
+        private ColumnHeader arriboHeader;
         private ColumnHeader duracionVueloHeader;
-        private Label claseLabel;
-        private ComboBox clasesCombo;
+        private ColumnHeader precioHeader;
+        private GroupBox groupBox6;
+        private GroupBox listasHotelesBox;
+        private ListView hotelesListView;
+        private ColumnHeader nombreHotelHeader;
+        private ColumnHeader direccionHeader;
+        private ColumnHeader disponibilidadHeader;
+        private ColumnHeader disponibilidadHeader1;
+        private ColumnHeader estrellasHeader;
+        private ColumnHeader disponilidadHeader;
     }
 }

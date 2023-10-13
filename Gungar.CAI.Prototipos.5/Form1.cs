@@ -3,6 +3,7 @@ namespace Gungar.CAI.Prototipos._5
     public partial class Form1 : Form
     {
         Form2 form2 = new Form2();
+        GestionProductosItinerarioForm gestionProductosItinerarioForm = new GestionProductosItinerarioForm("0", true);
         //NuevoItinerarioForm nuevoItinerarioForm = new NuevoItinerarioForm();
         public Form1()
         {
@@ -11,7 +12,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            form2.ShowDialog();
+            //form2.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -21,7 +22,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
-            //nuevoItinerarioForm.ShowDialog();
+            gestionProductosItinerarioForm.ShowDialog();
         }
     }
 }
