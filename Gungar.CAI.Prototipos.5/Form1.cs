@@ -20,7 +20,7 @@ namespace Gungar.CAI.Prototipos._5
             form2.ShowDialog();
         }
 
-        private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
+        private void consultarDisponibilidadBtn_Click(object sender, EventArgs e)
         {
             gestionProductosItinerarioForm.ShowDialog();
         }

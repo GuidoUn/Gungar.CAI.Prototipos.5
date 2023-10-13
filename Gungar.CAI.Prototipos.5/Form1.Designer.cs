@@ -30,7 +30,7 @@
         {
             button1 = new Button();
             df = new Label();
-            nuevoItinerarioBtn = new Button();
+            consultarDisponibilidadBtn = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
@@ -39,9 +39,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(101, 127);
+            button1.Location = new Point(115, 169);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(112, 49);
+            button1.Size = new Size(128, 65);
             button1.TabIndex = 0;
             button1.Text = "Armado de Itinerario";
             button1.UseVisualStyleBackColor = true;
@@ -50,70 +51,76 @@
             // df
             // 
             df.AutoSize = true;
-            df.Location = new Point(198, 92);
+            df.Location = new Point(226, 123);
             df.Name = "df";
-            df.Size = new Size(87, 15);
+            df.Size = new Size(108, 20);
             df.TabIndex = 2;
             df.Text = "Menu principal";
             // 
-            // nuevoItinerarioBtn
+            // consultarDisponibilidadBtn
             // 
-            nuevoItinerarioBtn.Location = new Point(269, 127);
-            nuevoItinerarioBtn.Name = "nuevoItinerarioBtn";
-            nuevoItinerarioBtn.Size = new Size(112, 49);
-            nuevoItinerarioBtn.TabIndex = 3;
-            nuevoItinerarioBtn.Text = "Consultar Disponibilidad";
-            nuevoItinerarioBtn.UseVisualStyleBackColor = true;
-            nuevoItinerarioBtn.Click += nuevoItinerarioBtn_Click;
+            consultarDisponibilidadBtn.Location = new Point(307, 169);
+            consultarDisponibilidadBtn.Margin = new Padding(3, 4, 3, 4);
+            consultarDisponibilidadBtn.Name = "consultarDisponibilidadBtn";
+            consultarDisponibilidadBtn.Size = new Size(128, 65);
+            consultarDisponibilidadBtn.TabIndex = 3;
+            consultarDisponibilidadBtn.Text = "Consultar Disponibilidad";
+            consultarDisponibilidadBtn.UseVisualStyleBackColor = true;
+            consultarDisponibilidadBtn.Click += consultarDisponibilidadBtn_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(101, 199);
+            button3.Location = new Point(115, 265);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(112, 49);
+            button3.Size = new Size(128, 65);
             button3.TabIndex = 4;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            button4.Location = new Point(269, 199);
+            button4.Location = new Point(307, 265);
+            button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(112, 49);
+            button4.Size = new Size(128, 65);
             button4.TabIndex = 5;
             button4.Text = "button4";
             button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(101, 275);
+            button5.Location = new Point(115, 367);
+            button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
-            button5.Size = new Size(112, 49);
+            button5.Size = new Size(128, 65);
             button5.TabIndex = 6;
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            button6.Location = new Point(269, 275);
+            button6.Location = new Point(307, 367);
+            button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
-            button6.Size = new Size(112, 49);
+            button6.Size = new Size(128, 65);
             button6.TabIndex = 7;
             button6.Text = "button6";
             button6.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(nuevoItinerarioBtn);
+            Controls.Add(consultarDisponibilidadBtn);
             Controls.Add(df);
             Controls.Add(button1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -125,7 +132,7 @@
 
         private Button button1;
         private Label df;
-        private Button nuevoItinerarioBtn;
+        private Button consultarDisponibilidadBtn;
         private Button button3;
         private Button button4;
         private Button button5;
