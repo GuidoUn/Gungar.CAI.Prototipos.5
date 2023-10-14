@@ -52,6 +52,7 @@
             label2 = new Label();
             label4 = new Label();
             gestionarItinerarioBox = new GroupBox();
+            precioTotalLabel = new Label();
             groupBox1.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
@@ -177,6 +178,7 @@
             // 
             productosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
             productosAgregadosListView.Location = new Point(509, 120);
+            productosAgregadosListView.MultiSelect = false;
             productosAgregadosListView.Name = "productosAgregadosListView";
             productosAgregadosListView.Size = new Size(527, 301);
             productosAgregadosListView.TabIndex = 9;
@@ -245,11 +247,21 @@
             gestionarItinerarioBox.TabStop = false;
             gestionarItinerarioBox.Text = "Gestionar Itinerario";
             // 
+            // precioTotalLabel
+            // 
+            precioTotalLabel.AutoSize = true;
+            precioTotalLabel.Location = new Point(657, 435);
+            precioTotalLabel.Name = "precioTotalLabel";
+            precioTotalLabel.Size = new Size(104, 15);
+            precioTotalLabel.TabIndex = 14;
+            precioTotalLabel.Text = "Precio Total: $1560";
+            // 
             // MenuItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 658);
+            Controls.Add(precioTotalLabel);
             Controls.Add(gestionarItinerarioBox);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -296,5 +308,6 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
+        private Label precioTotalLabel;
     }
 }

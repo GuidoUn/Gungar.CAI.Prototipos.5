@@ -18,6 +18,14 @@ namespace Gungar.CAI.Prototipos._5
 
         GestionProductosItinerarioForm gestionProductosItinerarioForm;
 
+        public static List<string[]> productosItinerarios = new List<string[]>
+        {
+             new string[] { "Hotel", "Mendoza", "29/11/2023", "3/12/2023", "$710", "Hilton", "4 estrellas" },
+             new string[] { "Hotel", "Mendoza", "3/12/2023", "10/12/2023", "$310", "Once", "2 estrellas" },
+             new string[] { "Vuelo", "Mendoza", "29/11/2023", "29/11/2023", "$290", "Aerolineas Argentinas", "Economy" },
+             new string[] { "Vuelo", "Mendoza", "3/12/2023", "3/12/2023", "$250", "Aerolineas Argentinas", "Economy" }
+        };
+
         public MenuItinerarioForm(int idItinerario)
         {
             InitializeComponent();
@@ -33,6 +41,7 @@ namespace Gungar.CAI.Prototipos._5
 
             gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
             poblarListaPasajeros();
+            poblarItinerario();
         }
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
@@ -57,9 +66,31 @@ namespace Gungar.CAI.Prototipos._5
             }
         }
 
+        private void poblarItinerario()
+        {
+            productosAgregadosListView.Items.Clear();
+            //foreach (var producto in productosItinerarios)          
+            foreach (var producto in productosItinerarios)
+            {
+                var item = new ListViewItem();
+                item.Text = producto[0];
+                item.SubItems.Add(producto[1]);
+                item.SubItems.Add(producto[2]);
+                item.SubItems.Add(producto[3]);
+                item.SubItems.Add(producto[4]);
+                item.SubItems.Add(producto[5]);
+                item.SubItems.Add(producto[6]);
+                item.Tag = producto;
+
+                //listView1.Items.Add(item);
+                productosAgregadosListView.Items.Add(item);
+            }
+        }
+
         private void gestionarProductosBtn_Click(object sender, EventArgs e)
         {
             gestionProductosItinerarioForm.ShowDialog();
+            refrescar();
         }
 
         private void agregarPasajerosBtn_Click(object sender, EventArgs e)
