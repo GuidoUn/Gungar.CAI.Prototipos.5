@@ -16,7 +16,7 @@ namespace Gungar.CAI.Prototipos._5
 
         MenuItinerarioForm menuItinerarioForm;
 
-        List<string[]>? itinerarios;
+        List<Itinerario>? itinerarios;
 
         public CrearItinerarioForm()
         {
@@ -43,19 +43,13 @@ namespace Gungar.CAI.Prototipos._5
         {
             var item = new ListViewItem();
 
-            int nuevoId = Int32.Parse(itinerarios[itinerarios.Count - 1][0]) + 1;
+            int nuevoId = itinerarios[itinerarios.Count - 1].itinerarioId + 1;
 
-            string[] nuevoItinerario = new string[3] { nuevoId.ToString(), nombreNuevoPasajero, DateTime.Now.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") };
-
-            item.Text = nuevoItinerario[0];
-            item.SubItems.Add(nuevoItinerario[1]);
-            item.SubItems.Add(nuevoItinerario[2]);
-            item.Tag = nuevoItinerario;
-
+            Itinerario nuevoItinerario = new Itinerario(nuevoId, nombreNuevoPasajero, DateTime.Now);
             itinerarios.Add(nuevoItinerario);
-            //return nuevoItinerario;
 
-            menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario[0]);
+
+            menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario.itinerarioId);
             this.Visible = false;
             menuItinerarioForm.ShowDialog();
             this.Close();

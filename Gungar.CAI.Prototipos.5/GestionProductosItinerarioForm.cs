@@ -12,7 +12,7 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class GestionProductosItinerarioForm : Form
     {
-        string[]? itinerario;
+        Itinerario? itinerario;
 
         const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
 
@@ -21,10 +21,6 @@ namespace Gungar.CAI.Prototipos._5
         bool esVuelos = true;
 
         bool esConsulta = false;
-
-        public static List<string[]> productos = new List<string[]>
-        {
-        };
 
         public static List<string[]> vuelos = new List<string[]>
         {
@@ -96,18 +92,16 @@ namespace Gungar.CAI.Prototipos._5
             }
         }
 
-        public GestionProductosItinerarioForm(string idItinerario, bool isNuevoItinerario)
+        public GestionProductosItinerarioForm(int idItinerario, bool isNuevoItinerario)
         {
             InitializeComponent();
-            itinerario = Form1.itinerarios.FirstOrDefault(itinerario => itinerario[0] == idItinerario);
-            //itinerario[4] = isNuevoItinerario; 
+            itinerario = Form1.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
             //TODO: Despues vamos a saber si es un nuevo itinerario o la continuacion de uno con el "Estado" dentro de la Clase "Itinerario"
             //TODO: Después Orquestamos el form según el estado (UX)
 
-            if (idItinerario == "0")
+            if (idItinerario == -1)
             {
                 esConsulta = true;
-
             }
         }
 
@@ -120,7 +114,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = $"{itinerario[1]} ({itinerario[0]})";
+                itinerarioLabel.Text = $"{itinerario.nombreCliente} ({itinerario.itinerarioId})";
             }
 
 

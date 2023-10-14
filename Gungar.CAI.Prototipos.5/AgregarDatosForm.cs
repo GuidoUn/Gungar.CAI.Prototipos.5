@@ -20,14 +20,14 @@ namespace Gungar.CAI.Prototipos._5
             new string[6] { "Manuel", "Lopez",   "42756987", "mesias@outlook.com.ar", "1128759115", new DateTime(2022, 12, 3).ToString(FORMATO_FECHA) }
         };
 
-        string[]? itinerario;
+        Itinerario? itinerario;
 
         string[]? pasajeroSeleccionado;
 
-        public AgregarDatosForm(string idItinerario)
+        public AgregarDatosForm(int idItinerario)
         {
             InitializeComponent();
-            itinerario = Form1.itinerarios.FirstOrDefault(itinerario => itinerario[0] == idItinerario);
+            itinerario = Form1.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
         }
 
         private void poblarLista()
@@ -50,7 +50,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void AgregarDatosForm_Load(object sender, EventArgs e)
         {
-            itinerarioLabel.Text = $"{itinerario[1]} ({itinerario[0]})";
+            itinerarioLabel.Text = $"{itinerario.nombreCliente} ({itinerario.itinerarioId})";
 
             poblarLista();
         }

@@ -12,10 +12,19 @@ namespace Gungar.CAI.Prototipos._5
     //        new string[3] { "3", "Lionel Messi", new DateTime(2023, 06, 3).ToString(FORMATO_FECHA) }
     //    };
 
-    internal class Itinerario
+    public class Itinerario
     {
         public int itinerarioId;
         public string? nombreCliente;
         public DateTime fechaCreacion;
+
+        public Itinerario(int itinerarioId, string? nombreCliente, DateTime fechaCreacion)
+        {
+            this.itinerarioId = itinerarioId;
+            this.nombreCliente = nombreCliente;
+            this.fechaCreacion = fechaCreacion;
+        }
     }
+
+
 }

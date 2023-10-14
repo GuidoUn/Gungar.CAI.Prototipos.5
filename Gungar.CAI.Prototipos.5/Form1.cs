@@ -6,16 +6,16 @@ namespace Gungar.CAI.Prototipos._5
     }
     public partial class Form1 : Form
     {
-        GestionProductosItinerarioForm gestionProductosItinerarioForm = new GestionProductosItinerarioForm("0", true);
+        GestionProductosItinerarioForm gestionProductosItinerarioForm = new GestionProductosItinerarioForm(-1, true);
         CrearItinerarioForm crearItinerarioForm = new CrearItinerarioForm();
         SeleccionItinerarioForm seleccionItinerarioForm = new SeleccionItinerarioForm();
 
         const string FORMATO_FECHA = "yyyy-MM-dd";
 
-        public static List<string[]> itinerarios = new List<string[]> {
-            new string[3] { "1", "Pedro Martinez", new DateTime(2023, 05, 17).ToString(FORMATO_FECHA) },
-            new string[3] { "2", "Diego Maradona", new DateTime(2023, 06, 1).ToString(FORMATO_FECHA) },
-            new string[3] { "3", "Lionel Messi", new DateTime(2023, 06, 3).ToString(FORMATO_FECHA) }
+        public static List<Itinerario> itinerarios = new List<Itinerario> {
+            new Itinerario(1,"Pedro Martinez",new DateTime(2023, 05, 17)),
+            new Itinerario(2, "Diego Maradona", new DateTime(2023, 06, 1)),
+            new Itinerario(3, "Lionel Messi", new DateTime(2023, 06, 3))
         };
 
         public Form1()
