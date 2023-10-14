@@ -16,10 +16,10 @@ namespace Gungar.CAI.Prototipos._5
 
         List<Itinerario> itinerarios;
 
-        string[]? itinerarioSeleccionado;
+        //string[]? itinerarioSeleccionado;
         Itinerario? itinerarioSeleccionado2;
 
-        GestionProductosItinerarioForm gestionProductosItinerarioForm;
+        //GestionProductosItinerarioForm gestionProductosItinerarioForm;
         MenuItinerarioForm menuItinerarioForm;
 
 
@@ -29,24 +29,27 @@ namespace Gungar.CAI.Prototipos._5
             itinerarios = Form1.itinerarios;
         }
 
-
-
-        private void SeleccionItinerarioForm_Load(object sender, EventArgs e)
+        private void refrescar()
         {
             itinerariosListView.Items.Clear();
-            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
-
-
             foreach (var itinerario in itinerarios)
             {
                 var item = new ListViewItem();
                 item.Text = itinerario.itinerarioId.ToString();
                 item.SubItems.Add(itinerario.nombreCliente);
                 item.SubItems.Add(itinerario.fechaCreacion.ToString(FORMATO_FECHA));
+                item.SubItems.Add(itinerario.estado.ToString());
                 item.Tag = itinerario;
 
                 itinerariosListView.Items.Add(item);
             }
+        }
+
+        private void SeleccionItinerarioForm_Load(object sender, EventArgs e)
+        {
+            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
+
+            refrescar();
         }
         private void evaluarEstadoBtns()
         {
@@ -72,9 +75,8 @@ namespace Gungar.CAI.Prototipos._5
         private void continuarBtn_Click(object sender, EventArgs e)
         {
             menuItinerarioForm = new MenuItinerarioForm(itinerarioSeleccionado2.itinerarioId);
-            this.Visible = false;
             menuItinerarioForm.ShowDialog();
-            this.Close();
+            refrescar();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -43,7 +43,6 @@
             nombreLabel = new Label();
             apellidoTextBox = new TextBox();
             button2 = new Button();
-            continuarBtn = new Button();
             pasajerosListView = new ListView();
             nombreHeader = new ColumnHeader();
             apellidoHeader = new ColumnHeader();
@@ -197,23 +196,13 @@
             // 
             // button2
             // 
-            button2.Location = new Point(246, 468);
+            button2.Location = new Point(893, 29);
             button2.Name = "button2";
             button2.Size = new Size(140, 66);
             button2.TabIndex = 22;
-            button2.Text = "Cancelar";
+            button2.Text = "Volver al Menu";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            // 
-            // continuarBtn
-            // 
-            continuarBtn.Enabled = false;
-            continuarBtn.Location = new Point(392, 468);
-            continuarBtn.Name = "continuarBtn";
-            continuarBtn.Size = new Size(140, 66);
-            continuarBtn.TabIndex = 19;
-            continuarBtn.Text = "Continuar";
-            continuarBtn.UseVisualStyleBackColor = true;
             // 
             // pasajerosListView
             // 
@@ -311,7 +300,6 @@
             Controls.Add(titleLabel);
             Controls.Add(groupBox2);
             Controls.Add(button2);
-            Controls.Add(continuarBtn);
             Controls.Add(datosPasajerosGroupBox);
             Margin = new Padding(3, 2, 3, 2);
             Name = "AgregarDatosForm";
@@ -341,7 +329,6 @@
         private Label label1;
         private DateTimePicker fechaNacDatePicker;
         private Button button2;
-        private Button continuarBtn;
         private ListView pasajerosListView;
         private GroupBox groupBox2;
         private ColumnHeader nombreHeader;

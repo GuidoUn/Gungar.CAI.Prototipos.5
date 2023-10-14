@@ -38,6 +38,7 @@
             claseLabel = new Label();
             clasesCombo = new ComboBox();
             checkBox2 = new CheckBox();
+            aplicarFiltrosBtn = new Button();
             soloIdaCheckBox = new CheckBox();
             groupBox3 = new GroupBox();
             hastaPreciosNumeric = new NumericUpDown();
@@ -59,7 +60,6 @@
             origenLabel = new Label();
             desdeDatePickerLabel = new Label();
             desdeFechaDatePicker = new DateTimePicker();
-            aplicarFiltrosBtn = new Button();
             button3 = new Button();
             listasVuelosBox = new GroupBox();
             groupBox4 = new GroupBox();
@@ -95,6 +95,10 @@
             direccionHeader = new ColumnHeader();
             estrellasHeader = new ColumnHeader();
             disponilidadHeader = new ColumnHeader();
+            button2 = new Button();
+            button4 = new Button();
+            listView1 = new ListView();
+            label1 = new Label();
             vuelosHotelesBox.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -178,6 +182,7 @@
             groupBox1.Controls.Add(claseLabel);
             groupBox1.Controls.Add(clasesCombo);
             groupBox1.Controls.Add(checkBox2);
+            groupBox1.Controls.Add(aplicarFiltrosBtn);
             groupBox1.Controls.Add(soloIdaCheckBox);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
@@ -200,7 +205,7 @@
             // claseLabel
             // 
             claseLabel.AutoSize = true;
-            claseLabel.Location = new Point(500, 153);
+            claseLabel.Location = new Point(500, 135);
             claseLabel.Name = "claseLabel";
             claseLabel.Size = new Size(38, 15);
             claseLabel.TabIndex = 24;
@@ -210,7 +215,7 @@
             // 
             clasesCombo.FormattingEnabled = true;
             clasesCombo.Items.AddRange(new object[] { "Economy", "Premium", "Business", "First" });
-            clasesCombo.Location = new Point(541, 150);
+            clasesCombo.Location = new Point(541, 132);
             clasesCombo.Name = "clasesCombo";
             clasesCombo.Size = new Size(141, 23);
             clasesCombo.TabIndex = 24;
@@ -218,17 +223,27 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(197, 102);
+            checkBox2.Location = new Point(284, 102);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(141, 19);
             checkBox2.TabIndex = 23;
             checkBox2.Text = "Tengo fechas flexibles";
             checkBox2.UseVisualStyleBackColor = true;
             // 
+            // aplicarFiltrosBtn
+            // 
+            aplicarFiltrosBtn.Location = new Point(499, 162);
+            aplicarFiltrosBtn.Name = "aplicarFiltrosBtn";
+            aplicarFiltrosBtn.Size = new Size(190, 23);
+            aplicarFiltrosBtn.TabIndex = 21;
+            aplicarFiltrosBtn.Text = "Aplicar Filtros";
+            aplicarFiltrosBtn.UseVisualStyleBackColor = true;
+            aplicarFiltrosBtn.Click += aplicarFiltrosBtn_Click;
+            // 
             // soloIdaCheckBox
             // 
             soloIdaCheckBox.AutoSize = true;
-            soloIdaCheckBox.Location = new Point(344, 102);
+            soloIdaCheckBox.Location = new Point(197, 102);
             soloIdaCheckBox.Name = "soloIdaCheckBox";
             soloIdaCheckBox.Size = new Size(81, 19);
             soloIdaCheckBox.TabIndex = 22;
@@ -408,23 +423,13 @@
             desdeFechaDatePicker.Size = new Size(231, 23);
             desdeFechaDatePicker.TabIndex = 0;
             // 
-            // aplicarFiltrosBtn
-            // 
-            aplicarFiltrosBtn.Location = new Point(755, 70);
-            aplicarFiltrosBtn.Name = "aplicarFiltrosBtn";
-            aplicarFiltrosBtn.Size = new Size(190, 49);
-            aplicarFiltrosBtn.TabIndex = 21;
-            aplicarFiltrosBtn.Text = "Aplicar Filtros";
-            aplicarFiltrosBtn.UseVisualStyleBackColor = true;
-            aplicarFiltrosBtn.Click += aplicarFiltrosBtn_Click;
-            // 
             // button3
             // 
             button3.Location = new Point(1123, 16);
             button3.Name = "button3";
             button3.Size = new Size(146, 53);
             button3.TabIndex = 8;
-            button3.Text = "Salir";
+            button3.Text = "Volver al Menu";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -670,14 +675,52 @@
             disponilidadHeader.Text = "Disponibilidad";
             disponilidadHeader.Width = 100;
             // 
+            // button2
+            // 
+            button2.Location = new Point(760, 443);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 22;
+            button2.Text = "Quitar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(760, 409);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 23;
+            button4.Text = "Agregar";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            listView1.Location = new Point(859, 250);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(410, 411);
+            listView1.TabIndex = 24;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(1020, 213);
+            label1.Name = "label1";
+            label1.Size = new Size(89, 15);
+            label1.TabIndex = 25;
+            label1.Text = "Itinerario actual";
+            // 
             // GestionProductosItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1430, 813);
+            Controls.Add(label1);
+            Controls.Add(listView1);
+            Controls.Add(button4);
+            Controls.Add(button2);
             Controls.Add(listasHotelesBox);
             Controls.Add(listasVuelosBox);
-            Controls.Add(aplicarFiltrosBtn);
             Controls.Add(button3);
             Controls.Add(groupBox1);
             Controls.Add(button1);
@@ -741,7 +784,6 @@
         private Button aplicarFiltrosBtn;
         private Button button3;
         private CheckBox soloIdaCheckBox;
-        private CheckBox checkBox2;
         private GroupBox listasVuelosBox;
         private Label claseLabel;
         private ComboBox clasesCombo;
@@ -778,5 +820,10 @@
         private ColumnHeader disponibilidadHeader1;
         private ColumnHeader estrellasHeader;
         private ColumnHeader disponilidadHeader;
+        private CheckBox checkBox2;
+        private Button button2;
+        private Button button4;
+        private ListView listView1;
+        private Label label1;
     }
 }

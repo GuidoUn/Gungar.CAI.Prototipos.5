@@ -55,7 +55,7 @@
             label3.Name = "label3";
             label3.Size = new Size(136, 15);
             label3.TabIndex = 10;
-            label3.Text = "Nombre Nuevo Pasajero";
+            label3.Text = "Nombre Nuevo Cliente";
             // 
             // nuevoPasajeroText
             // 

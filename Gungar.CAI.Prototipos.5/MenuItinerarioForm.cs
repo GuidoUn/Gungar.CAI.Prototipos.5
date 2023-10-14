@@ -27,14 +27,17 @@ namespace Gungar.CAI.Prototipos._5
             gestionProductosItinerarioForm = new GestionProductosItinerarioForm(itinerario.itinerarioId, true);
         }
 
+        private void refrescar()
+        {
+            estadoLabel.Text = itinerario.estado.ToString();
+
+            gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
+        }
+
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
             itinerarioSeleccionadoLabel.Text = $"{itinerario.nombreCliente} ({itinerario.itinerarioId})";
-        }
-
-        private void salirBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            refrescar();
         }
 
         private void gestionarProductosBtn_Click(object sender, EventArgs e)
@@ -45,6 +48,24 @@ namespace Gungar.CAI.Prototipos._5
         private void agregarPasajerosBtn_Click(object sender, EventArgs e)
         {
             agregarDatosForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (itinerario.estado == Estado.Presupuesto)
+            {
+                itinerario.estado = Estado.Prereserva;
+            }
+            else
+            {
+                itinerario.estado = Estado.Presupuesto;
+            }
+            refrescar();
+        }
+
+        private void salirBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

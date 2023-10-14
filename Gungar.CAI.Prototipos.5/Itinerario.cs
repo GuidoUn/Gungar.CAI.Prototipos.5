@@ -6,23 +6,26 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5
 {
-    //public static List<string[]> itinerarios = new List<string[]> {
-    //        new string[3] { "1", "Pedro Martinez", new DateTime(2023, 05, 17).ToString(FORMATO_FECHA) },
-    //        new string[3] { "2", "Diego Maradona", new DateTime(2023, 06, 1).ToString(FORMATO_FECHA) },
-    //        new string[3] { "3", "Lionel Messi", new DateTime(2023, 06, 3).ToString(FORMATO_FECHA) }
-    //    };
+    public enum Estado
+    {
+        Presupuesto,
+        Prereserva,
+        Reserva
+    }
 
     public class Itinerario
     {
         public int itinerarioId;
         public string? nombreCliente;
         public DateTime fechaCreacion;
+        public Estado estado;
 
         public Itinerario(int itinerarioId, string? nombreCliente, DateTime fechaCreacion)
         {
             this.itinerarioId = itinerarioId;
             this.nombreCliente = nombreCliente;
             this.fechaCreacion = fechaCreacion;
+            this.estado = Estado.Presupuesto;
         }
     }
 

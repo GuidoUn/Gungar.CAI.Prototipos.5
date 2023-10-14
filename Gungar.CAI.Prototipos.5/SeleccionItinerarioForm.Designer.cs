@@ -35,9 +35,11 @@
             nroHeader = new ColumnHeader();
             pasajeroHeader = new ColumnHeader();
             creacionHeader = new ColumnHeader();
+            estadoHeader = new ColumnHeader();
             label2 = new Label();
             button1 = new Button();
             continuarBtn = new Button();
+            listView1 = new ListView();
             continuarItinerarioBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             // 
             // itinerariosListView
             // 
-            itinerariosListView.Columns.AddRange(new ColumnHeader[] { nroHeader, pasajeroHeader, creacionHeader });
+            itinerariosListView.Columns.AddRange(new ColumnHeader[] { nroHeader, pasajeroHeader, creacionHeader, estadoHeader });
             itinerariosListView.FullRowSelect = true;
             itinerariosListView.Location = new Point(22, 36);
             itinerariosListView.MultiSelect = false;
@@ -98,6 +100,11 @@
             // 
             creacionHeader.Text = "Fecha de Creación";
             creacionHeader.Width = 150;
+            // 
+            // estadoHeader
+            // 
+            estadoHeader.Text = "Estado";
+            estadoHeader.Width = 100;
             // 
             // label2
             // 
@@ -125,15 +132,24 @@
             continuarBtn.Name = "continuarBtn";
             continuarBtn.Size = new Size(103, 56);
             continuarBtn.TabIndex = 21;
-            continuarBtn.Text = "Continuar";
+            continuarBtn.Text = "Consultar/ Modificar";
             continuarBtn.UseVisualStyleBackColor = true;
             continuarBtn.Click += continuarBtn_Click;
+            // 
+            // listView1
+            // 
+            listView1.Location = new Point(769, 153);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(291, 467);
+            listView1.TabIndex = 22;
+            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // SeleccionItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1320, 811);
+            Controls.Add(listView1);
             Controls.Add(continuarBtn);
             Controls.Add(button1);
             Controls.Add(continuarItinerarioBox);
@@ -159,5 +175,7 @@
         private Label label2;
         private Button button1;
         private Button continuarBtn;
+        private ListView listView1;
+        private ColumnHeader estadoHeader;
     }
 }
