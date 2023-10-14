@@ -110,6 +110,7 @@
             columnHeader21 = new ColumnHeader();
             columnHeader22 = new ColumnHeader();
             modificarItinerarioBox = new GroupBox();
+            precioTotalLabel = new Label();
             vuelosHotelesBox.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -210,17 +211,16 @@
             claseLabel.AutoSize = true;
             claseLabel.Location = new Point(500, 135);
             claseLabel.Name = "claseLabel";
-            claseLabel.Size = new Size(38, 15);
+            claseLabel.Size = new Size(61, 15);
             claseLabel.TabIndex = 24;
-            claseLabel.Text = "Clase:";
+            claseLabel.Text = "claseLabel";
             // 
             // clasesCombo
             // 
             clasesCombo.FormattingEnabled = true;
-            clasesCombo.Items.AddRange(new object[] { "Economy", "Premium", "Business", "First" });
-            clasesCombo.Location = new Point(541, 132);
+            clasesCombo.Location = new Point(562, 132);
             clasesCombo.Name = "clasesCombo";
-            clasesCombo.Size = new Size(141, 23);
+            clasesCombo.Size = new Size(127, 23);
             clasesCombo.TabIndex = 24;
             // 
             // checkBox2
@@ -651,7 +651,7 @@
             listasHotelesBox.Controls.Add(hotelesListView);
             listasHotelesBox.Location = new Point(24, 234);
             listasHotelesBox.Name = "listasHotelesBox";
-            listasHotelesBox.Size = new Size(716, 439);
+            listasHotelesBox.Size = new Size(716, 461);
             listasHotelesBox.TabIndex = 11;
             listasHotelesBox.TabStop = false;
             listasHotelesBox.Text = "Hoteles";
@@ -773,20 +773,30 @@
             // 
             // modificarItinerarioBox
             // 
+            modificarItinerarioBox.Controls.Add(precioTotalLabel);
             modificarItinerarioBox.Controls.Add(agregarProductoBtn);
             modificarItinerarioBox.Controls.Add(quitarProductoBtn);
             modificarItinerarioBox.Controls.Add(itinerarioListView);
             modificarItinerarioBox.Location = new Point(740, 234);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
-            modificarItinerarioBox.Size = new Size(678, 439);
+            modificarItinerarioBox.Size = new Size(678, 461);
             modificarItinerarioBox.TabIndex = 26;
             modificarItinerarioBox.TabStop = false;
+            // 
+            // precioTotalLabel
+            // 
+            precioTotalLabel.AutoSize = true;
+            precioTotalLabel.Location = new Point(354, 433);
+            precioTotalLabel.Name = "precioTotalLabel";
+            precioTotalLabel.Size = new Size(104, 15);
+            precioTotalLabel.TabIndex = 27;
+            precioTotalLabel.Text = "Precio Total: $1560";
             // 
             // GestionProductosItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1498, 749);
             Controls.Add(modificarItinerarioBox);
             Controls.Add(listasHotelesBox);
             Controls.Add(listasVuelosBox);
@@ -817,6 +827,7 @@
             groupBox8.ResumeLayout(false);
             listasHotelesBox.ResumeLayout(false);
             modificarItinerarioBox.ResumeLayout(false);
+            modificarItinerarioBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -905,5 +916,6 @@
         private ColumnHeader columnHeader20;
         private ColumnHeader columnHeader21;
         private ColumnHeader columnHeader22;
+        private Label precioTotalLabel;
     }
 }
