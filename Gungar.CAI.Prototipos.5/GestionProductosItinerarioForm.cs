@@ -22,6 +22,8 @@ namespace Gungar.CAI.Prototipos._5
 
         bool esConsulta = false;
 
+        int nroProductoAAgregar = 0;
+
         public static List<string[]> vuelos = new List<string[]>
         {
              new string[6] { "FlyBondi", new DateTime(2023, 10, 17,6,0,0).ToString(FORMATO_FECHA),new DateTime(2023, 10, 17,7,10,0).ToString(FORMATO_FECHA),"01:10hs","$45","15" },
@@ -36,10 +38,18 @@ namespace Gungar.CAI.Prototipos._5
         {
              new string[4] { "Hilton", "Av. Cordoba 2122, Mendoza","4","104" },
              new string[4] { "Sheraton", "Cabildo 1554, Mendoza", "5","35" },
-             new string[4] { "Once", "San Martin 436, Mendoza", "3","4" },
+             new string[4] { "Once", "San Martin 436, Mendoza", "2", "4" },
              new string[4] { "Trump Tower", "San Martin 1315, Mendoza", "4", "420" },
              new string[4] { "Qué? alojamiento", "Juncal 2662, Mendoza", "5", "69" },
              new string[4] { "Jet Smart Hoteles", "Saenz Peña 751, Mendoza", "2", "14" },
+        };
+
+        public static List<string[]> productosItinerarios = new List<string[]>
+        {
+             new string[] { "Hotel", "Hilton", "2A, 1M", "Mendoza", "$710", "4 estrellas", "29/11/2023", "3/12/2023", "N/A", "N/A", "N/A" },
+             new string[] { "Hotel", "Once", "2A, 1M", "Mendoza", "$310", "2 estrellas", "3/12/2023", "10/12/2023", "N/A", "N/A", "N/A" },
+             new string[] { "Vuelo", "Aerolineas Argentinas", "2A, 1M", "AEP-MDZ", "$290", "Economy", "29/11/2023", "29/11/2023", "100", "90", "80" },
+             new string[] { "Vuelo", "Aerolineas Argentinas", "2A, 1M", "MDZ-AEP", "$250", "Economy", "10/12/2023", "10/12/2023", "90", "70", "60" },
         };
 
         private void poblarVuelos()
@@ -74,6 +84,38 @@ namespace Gungar.CAI.Prototipos._5
 
                 vuelosVueltaListView.Items.Add(item);
             }
+        }
+
+        private void poblarItinerario(string[] producto)
+        {
+            //itinerarioListView.Clear();
+            //foreach (var producto in productosItinerarios)
+            //{
+            var item = new ListViewItem();
+            item.Text = producto[0];
+            item.SubItems.Add(producto[1]);
+            item.SubItems.Add(producto[2]);
+            item.SubItems.Add(producto[3]);
+            item.SubItems.Add(producto[4]);
+            item.SubItems.Add(producto[5]);
+            item.SubItems.Add(producto[6]);
+            item.SubItems.Add(producto[7]);
+            item.SubItems.Add(producto[8]);
+            item.SubItems.Add(producto[9]);
+            item.SubItems.Add(producto[10]);
+            item.Tag = producto;
+
+            itinerarioListView.Items.Add(item);
+            //}
+            if (nroProductoAAgregar == 3)
+            {
+                nroProductoAAgregar = 0;
+            }
+            else
+            {
+                nroProductoAAgregar++;
+            }
+
         }
 
         private void poblarHoteles()
@@ -159,6 +201,20 @@ namespace Gungar.CAI.Prototipos._5
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void agregarProductoBtn_Click(object sender, EventArgs e)
+        {
+            poblarItinerario(productosItinerarios[nroProductoAAgregar]);
+        }
+
+        private void quitarProductoBtn_Click(object sender, EventArgs e)
+        {
+            if (itinerarioListView.Items.Count > 0)
+            {
+                itinerarioListView.Items.RemoveAt(itinerarioListView.Items.Count - 1);
+            }
+
         }
     }
 }

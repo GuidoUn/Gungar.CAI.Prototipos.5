@@ -38,10 +38,17 @@
             button2 = new Button();
             estadoLabel = new Label();
             label3 = new Label();
-            listView1 = new ListView();
             pasajerosListView = new ListView();
             nombreHeader = new ColumnHeader();
             fechaNacimientoHeader = new ColumnHeader();
+            productosAgregadosListView = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
             label2 = new Label();
             label4 = new Label();
             gestionarItinerarioBox = new GroupBox();
@@ -79,7 +86,7 @@
             // 
             // salirBtn
             // 
-            salirBtn.Location = new Point(871, 21);
+            salirBtn.Location = new Point(920, 22);
             salirBtn.Name = "salirBtn";
             salirBtn.Size = new Size(116, 47);
             salirBtn.TabIndex = 3;
@@ -145,21 +152,13 @@
             label3.TabIndex = 7;
             label3.Text = "Estado:";
             // 
-            // listView1
-            // 
-            listView1.Location = new Point(509, 120);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(478, 301);
-            listView1.TabIndex = 9;
-            listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // pasajerosListView
             // 
             pasajerosListView.Columns.AddRange(new ColumnHeader[] { nombreHeader, fechaNacimientoHeader });
-            pasajerosListView.Location = new Point(259, 125);
+            pasajerosListView.Location = new Point(259, 120);
             pasajerosListView.MultiSelect = false;
             pasajerosListView.Name = "pasajerosListView";
-            pasajerosListView.Size = new Size(244, 296);
+            pasajerosListView.Size = new Size(244, 301);
             pasajerosListView.TabIndex = 10;
             pasajerosListView.UseCompatibleStateImageBehavior = false;
             pasajerosListView.View = View.Details;
@@ -173,6 +172,49 @@
             // 
             fechaNacimientoHeader.Text = "Fecha de nacimiento";
             fechaNacimientoHeader.Width = 1000;
+            // 
+            // productosAgregadosListView
+            // 
+            productosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
+            productosAgregadosListView.Location = new Point(509, 120);
+            productosAgregadosListView.Name = "productosAgregadosListView";
+            productosAgregadosListView.Size = new Size(527, 301);
+            productosAgregadosListView.TabIndex = 9;
+            productosAgregadosListView.UseCompatibleStateImageBehavior = false;
+            productosAgregadosListView.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Producto";
+            columnHeader1.Width = 70;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Origen/Destino";
+            columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Desde";
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Hasta";
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Precio Total";
+            columnHeader5.Width = 80;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Prestador";
+            columnHeader6.Width = 70;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Categoria";
+            columnHeader7.Width = 80;
             // 
             // label2
             // 
@@ -212,7 +254,7 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(pasajerosListView);
-            Controls.Add(listView1);
+            Controls.Add(productosAgregadosListView);
             Controls.Add(estadoLabel);
             Controls.Add(label3);
             Controls.Add(groupBox1);
@@ -240,12 +282,19 @@
         private Button button2;
         private Label estadoLabel;
         private Label label3;
-        private ListView listView1;
         private ListView pasajerosListView;
+        private ListView productosAgregadosListView;
         private Label label2;
         private Label label4;
         private GroupBox gestionarItinerarioBox;
         private ColumnHeader nombreHeader;
         private ColumnHeader fechaNacimientoHeader;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
     }
 }

@@ -30,7 +30,6 @@
         {
             titleLabel = new Label();
             itinerarioLabel = new Label();
-            button1 = new Button();
             vuelosHotelesBox = new GroupBox();
             hotelesRadio = new RadioButton();
             vuelosRadio = new RadioButton();
@@ -41,6 +40,7 @@
             aplicarFiltrosBtn = new Button();
             soloIdaCheckBox = new CheckBox();
             groupBox3 = new GroupBox();
+            label1 = new Label();
             hastaPreciosNumeric = new NumericUpDown();
             desdePreciosNumeric = new NumericUpDown();
             label9 = new Label();
@@ -95,10 +95,21 @@
             direccionHeader = new ColumnHeader();
             estrellasHeader = new ColumnHeader();
             disponilidadHeader = new ColumnHeader();
-            button2 = new Button();
-            button4 = new Button();
-            listView1 = new ListView();
-            label1 = new Label();
+            quitarProductoBtn = new Button();
+            agregarProductoBtn = new Button();
+            itinerarioListView = new ListView();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader17 = new ColumnHeader();
+            columnHeader15 = new ColumnHeader();
+            columnHeader16 = new ColumnHeader();
+            columnHeader18 = new ColumnHeader();
+            columnHeader19 = new ColumnHeader();
+            columnHeader20 = new ColumnHeader();
+            columnHeader21 = new ColumnHeader();
+            columnHeader22 = new ColumnHeader();
+            modificarItinerarioBox = new GroupBox();
             vuelosHotelesBox.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -114,6 +125,7 @@
             vuelosVueltaBox.SuspendLayout();
             groupBox8.SuspendLayout();
             listasHotelesBox.SuspendLayout();
+            modificarItinerarioBox.SuspendLayout();
             SuspendLayout();
             // 
             // titleLabel
@@ -133,15 +145,6 @@
             itinerarioLabel.Size = new Size(82, 15);
             itinerarioLabel.TabIndex = 2;
             itinerarioLabel.Text = "itinerarioLabel";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(24, 757);
-            button1.Name = "button1";
-            button1.Size = new Size(128, 44);
-            button1.TabIndex = 5;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
             // 
             // vuelosHotelesBox
             // 
@@ -223,7 +226,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(284, 102);
+            checkBox2.Location = new Point(197, 102);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(141, 19);
             checkBox2.TabIndex = 23;
@@ -243,7 +246,7 @@
             // soloIdaCheckBox
             // 
             soloIdaCheckBox.AutoSize = true;
-            soloIdaCheckBox.Location = new Point(197, 102);
+            soloIdaCheckBox.Location = new Point(344, 102);
             soloIdaCheckBox.Name = "soloIdaCheckBox";
             soloIdaCheckBox.Size = new Size(81, 19);
             soloIdaCheckBox.TabIndex = 22;
@@ -253,6 +256,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(label1);
             groupBox3.Controls.Add(hastaPreciosNumeric);
             groupBox3.Controls.Add(desdePreciosNumeric);
             groupBox3.Controls.Add(label9);
@@ -263,6 +267,15 @@
             groupBox3.TabIndex = 20;
             groupBox3.TabStop = false;
             groupBox3.Text = "Rango de Precios";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(65, -54);
+            label1.Name = "label1";
+            label1.Size = new Size(89, 15);
+            label1.TabIndex = 25;
+            label1.Text = "Itinerario actual";
             // 
             // hastaPreciosNumeric
             // 
@@ -425,7 +438,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(1123, 16);
+            button3.Location = new Point(1272, 12);
             button3.Name = "button3";
             button3.Size = new Size(146, 53);
             button3.TabIndex = 8;
@@ -651,7 +664,7 @@
             hotelesListView.Location = new Point(6, 16);
             hotelesListView.MultiSelect = false;
             hotelesListView.Name = "hotelesListView";
-            hotelesListView.Size = new Size(704, 411);
+            hotelesListView.Size = new Size(710, 411);
             hotelesListView.TabIndex = 5;
             hotelesListView.UseCompatibleStateImageBehavior = false;
             hotelesListView.View = View.Details;
@@ -675,55 +688,109 @@
             disponilidadHeader.Text = "Disponibilidad";
             disponilidadHeader.Width = 100;
             // 
-            // button2
+            // quitarProductoBtn
             // 
-            button2.Location = new Point(760, 443);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 22;
-            button2.Text = "Quitar";
-            button2.UseVisualStyleBackColor = true;
+            quitarProductoBtn.Location = new Point(6, 211);
+            quitarProductoBtn.Name = "quitarProductoBtn";
+            quitarProductoBtn.Size = new Size(75, 23);
+            quitarProductoBtn.TabIndex = 22;
+            quitarProductoBtn.Text = "Quitar";
+            quitarProductoBtn.UseVisualStyleBackColor = true;
+            quitarProductoBtn.Click += quitarProductoBtn_Click;
             // 
-            // button4
+            // agregarProductoBtn
             // 
-            button4.Location = new Point(760, 409);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 23;
-            button4.Text = "Agregar";
-            button4.UseVisualStyleBackColor = true;
+            agregarProductoBtn.Location = new Point(6, 182);
+            agregarProductoBtn.Name = "agregarProductoBtn";
+            agregarProductoBtn.Size = new Size(75, 23);
+            agregarProductoBtn.TabIndex = 23;
+            agregarProductoBtn.Text = "Agregar";
+            agregarProductoBtn.UseVisualStyleBackColor = true;
+            agregarProductoBtn.Click += agregarProductoBtn_Click;
             // 
-            // listView1
+            // itinerarioListView
             // 
-            listView1.Location = new Point(859, 250);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(410, 411);
-            listView1.TabIndex = 24;
-            listView1.UseCompatibleStateImageBehavior = false;
+            itinerarioListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5, columnHeader6, columnHeader17, columnHeader15, columnHeader16, columnHeader18, columnHeader19, columnHeader20, columnHeader21, columnHeader22 });
+            itinerarioListView.Location = new Point(87, 16);
+            itinerarioListView.Name = "itinerarioListView";
+            itinerarioListView.Size = new Size(591, 411);
+            itinerarioListView.TabIndex = 24;
+            itinerarioListView.UseCompatibleStateImageBehavior = false;
+            itinerarioListView.View = View.Details;
             // 
-            // label1
+            // columnHeader4
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(1020, 213);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 15);
-            label1.TabIndex = 25;
-            label1.Text = "Itinerario actual";
+            columnHeader4.Text = "Producto";
+            columnHeader4.Width = 70;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Prestador";
+            columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Cant Pasajeros";
+            columnHeader6.Width = 100;
+            // 
+            // columnHeader17
+            // 
+            columnHeader17.Text = "Origen/Destino";
+            columnHeader17.Width = 100;
+            // 
+            // columnHeader15
+            // 
+            columnHeader15.Text = "Precio Total";
+            // 
+            // columnHeader16
+            // 
+            columnHeader16.Text = "Categoría";
+            columnHeader16.Width = 70;
+            // 
+            // columnHeader18
+            // 
+            columnHeader18.Text = "Desde";
+            // 
+            // columnHeader19
+            // 
+            columnHeader19.Text = "Hasta";
+            // 
+            // columnHeader20
+            // 
+            columnHeader20.Text = "Precio Adulto";
+            columnHeader20.Width = 100;
+            // 
+            // columnHeader21
+            // 
+            columnHeader21.Text = "Precio Menor";
+            columnHeader21.Width = 100;
+            // 
+            // columnHeader22
+            // 
+            columnHeader22.Text = "Precio Infante";
+            columnHeader22.Width = 100;
+            // 
+            // modificarItinerarioBox
+            // 
+            modificarItinerarioBox.Controls.Add(agregarProductoBtn);
+            modificarItinerarioBox.Controls.Add(quitarProductoBtn);
+            modificarItinerarioBox.Controls.Add(itinerarioListView);
+            modificarItinerarioBox.Location = new Point(740, 234);
+            modificarItinerarioBox.Name = "modificarItinerarioBox";
+            modificarItinerarioBox.Size = new Size(678, 439);
+            modificarItinerarioBox.TabIndex = 26;
+            modificarItinerarioBox.TabStop = false;
             // 
             // GestionProductosItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1430, 813);
-            Controls.Add(label1);
-            Controls.Add(listView1);
-            Controls.Add(button4);
-            Controls.Add(button2);
+            Controls.Add(modificarItinerarioBox);
             Controls.Add(listasHotelesBox);
             Controls.Add(listasVuelosBox);
             Controls.Add(button3);
             Controls.Add(groupBox1);
-            Controls.Add(button1);
             Controls.Add(itinerarioLabel);
             Controls.Add(titleLabel);
             Name = "GestionProductosItinerarioForm";
@@ -748,6 +815,7 @@
             vuelosVueltaBox.ResumeLayout(false);
             groupBox8.ResumeLayout(false);
             listasHotelesBox.ResumeLayout(false);
+            modificarItinerarioBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -756,7 +824,6 @@
 
         private Label titleLabel;
         private Label itinerarioLabel;
-        private Button button1;
         private GroupBox vuelosHotelesBox;
         private RadioButton hotelesRadio;
         private RadioButton vuelosRadio;
@@ -821,9 +888,21 @@
         private ColumnHeader estrellasHeader;
         private ColumnHeader disponilidadHeader;
         private CheckBox checkBox2;
-        private Button button2;
-        private Button button4;
-        private ListView listView1;
+        private Button quitarProductoBtn;
+        private Button agregarProductoBtn;
+        private ListView itinerarioListView;
         private Label label1;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private GroupBox modificarItinerarioBox;
+        private ColumnHeader columnHeader17;
+        private ColumnHeader columnHeader15;
+        private ColumnHeader columnHeader16;
+        private ColumnHeader columnHeader18;
+        private ColumnHeader columnHeader19;
+        private ColumnHeader columnHeader20;
+        private ColumnHeader columnHeader21;
+        private ColumnHeader columnHeader22;
     }
 }
