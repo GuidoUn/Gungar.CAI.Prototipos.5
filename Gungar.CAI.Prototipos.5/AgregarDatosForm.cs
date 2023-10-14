@@ -14,15 +14,15 @@ namespace Gungar.CAI.Prototipos._5
     {
         const string FORMATO_FECHA = "yyyy-MM-dd";
 
-        public List<string[]> pasajeros = new List<string[]> {
+        /*public List<string[]> pasajeros = new List<string[]> {
             new string[6] { "Jose", "Fernandez", "28669206", "pemartinez@live.com", "1193692693", new DateTime(1996, 05, 17).ToString(FORMATO_FECHA) },
             new string[6] { "Martin", "Advincula", "73848021", "eldiego@hotmail.com", "1137599627", new DateTime(1986, 02, 1).ToString(FORMATO_FECHA) },
             new string[6] { "Manuel", "Lopez",   "42756987", "mesias@outlook.com.ar", "1128759115", new DateTime(2022, 12, 3).ToString(FORMATO_FECHA) }
-        };
+        };*/
 
         Itinerario? itinerario;
 
-        string[]? pasajeroSeleccionado;
+        Pasajero? pasajeroSeleccionado;
 
         public AgregarDatosForm(int idItinerario)
         {
@@ -34,15 +34,15 @@ namespace Gungar.CAI.Prototipos._5
         {
             pasajerosListView.Items.Clear();
 
-            foreach (var pasajero in pasajeros)
+            foreach (var pasajero in itinerario.pasajeros)
             {
                 var item = new ListViewItem();
-                item.Text = pasajero[0];
-                item.SubItems.Add(pasajero[1]);
-                item.SubItems.Add(pasajero[2]);
-                item.SubItems.Add(pasajero[3]);
-                item.SubItems.Add(pasajero[4]);
-                item.SubItems.Add(pasajero[5]);
+                item.Text = pasajero.Nombre;
+                item.SubItems.Add(pasajero.Apellido);
+                item.SubItems.Add(pasajero.Documento);
+                item.SubItems.Add(pasajero.Email);
+                item.SubItems.Add(pasajero.Telefono);
+                item.SubItems.Add(pasajero.FechaNacimiento.ToString());
                 item.Tag = pasajero;
 
                 pasajerosListView.Items.Add(item);
@@ -67,14 +67,12 @@ namespace Gungar.CAI.Prototipos._5
 
         private void agregarPasajeroBtn_Click(object sender, EventArgs e)
         {
-            string[] nuevoPasajero = { nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, emailTextBox.Text, telefonoTextBox.Text, fechaNacDatePicker.Value.ToString(FORMATO_FECHA) };
+            Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, emailTextBox.Text, telefonoTextBox.Text, fechaNacDatePicker.Value.ToString(FORMATO_FECHA));
 
-            pasajeros.Add(nuevoPasajero);
+            itinerario.AgregarPasajero(nuevoPasajero);
 
             poblarLista();
             vaciarCampos();
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -95,14 +93,14 @@ namespace Gungar.CAI.Prototipos._5
 
             ListViewItem selected = pasajerosListView.SelectedItems[0];
 
-            pasajeroSeleccionado = pasajeros.FirstOrDefault((pasajero) => pasajero[0] == selected.Text);
+            pasajeroSeleccionado = itinerario.pasajeros.FirstOrDefault((pasajero) => pasajero.Nombre == selected.Text);
 
             evaluarVisibilidadBtns();
         }
 
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
-            pasajeros.Remove(pasajeroSeleccionado);
+            itinerario.EliminarPasajero(pasajeroSeleccionado);
             pasajeroSeleccionado = null;
             poblarLista();
             evaluarVisibilidadBtns();

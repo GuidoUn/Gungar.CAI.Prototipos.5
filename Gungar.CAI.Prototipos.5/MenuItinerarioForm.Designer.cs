@@ -39,7 +39,9 @@
             estadoLabel = new Label();
             label3 = new Label();
             listView1 = new ListView();
-            listView2 = new ListView();
+            pasajerosListView = new ListView();
+            nombreHeader = new ColumnHeader();
+            fechaNacimientoHeader = new ColumnHeader();
             label2 = new Label();
             label4 = new Label();
             gestionarItinerarioBox = new GroupBox();
@@ -151,13 +153,26 @@
             listView1.TabIndex = 9;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // listView2
+            // pasajerosListView
             // 
-            listView2.Location = new Point(259, 120);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(244, 301);
-            listView2.TabIndex = 10;
-            listView2.UseCompatibleStateImageBehavior = false;
+            pasajerosListView.Columns.AddRange(new ColumnHeader[] { nombreHeader, fechaNacimientoHeader });
+            pasajerosListView.Location = new Point(259, 125);
+            pasajerosListView.MultiSelect = false;
+            pasajerosListView.Name = "pasajerosListView";
+            pasajerosListView.Size = new Size(244, 296);
+            pasajerosListView.TabIndex = 10;
+            pasajerosListView.UseCompatibleStateImageBehavior = false;
+            pasajerosListView.View = View.Details;
+            // 
+            // nombreHeader
+            // 
+            nombreHeader.Text = "Nombre y apellido";
+            nombreHeader.Width = 110;
+            // 
+            // fechaNacimientoHeader
+            // 
+            fechaNacimientoHeader.Text = "Fecha de nacimiento";
+            fechaNacimientoHeader.Width = 1000;
             // 
             // label2
             // 
@@ -196,7 +211,7 @@
             Controls.Add(gestionarItinerarioBox);
             Controls.Add(label4);
             Controls.Add(label2);
-            Controls.Add(listView2);
+            Controls.Add(pasajerosListView);
             Controls.Add(listView1);
             Controls.Add(estadoLabel);
             Controls.Add(label3);
@@ -226,9 +241,11 @@
         private Label estadoLabel;
         private Label label3;
         private ListView listView1;
-        private ListView listView2;
+        private ListView pasajerosListView;
         private Label label2;
         private Label label4;
         private GroupBox gestionarItinerarioBox;
+        private ColumnHeader nombreHeader;
+        private ColumnHeader fechaNacimientoHeader;
     }
 }

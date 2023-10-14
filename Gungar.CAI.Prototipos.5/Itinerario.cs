@@ -21,6 +21,7 @@ namespace Gungar.CAI.Prototipos._5
         public DateTime fechaCreacion;
         public Estado estado;
         public Cliente cliente;
+        public List<Pasajero> pasajeros;
 
         public Itinerario(Cliente cliente)
         {
@@ -29,6 +30,7 @@ namespace Gungar.CAI.Prototipos._5
             this.cliente = cliente;
             this.fechaCreacion = DateTime.Now;
             this.estado = Estado.Presupuesto;
+            this.pasajeros = new List<Pasajero>();
         }
 
         public Itinerario(Cliente cliente, DateTime fechaCreacion)
@@ -38,6 +40,17 @@ namespace Gungar.CAI.Prototipos._5
             this.cliente = cliente;
             this.fechaCreacion = fechaCreacion;
             this.estado = Estado.Presupuesto;
+            this.pasajeros = new List<Pasajero>();
+        }
+
+        public void AgregarPasajero(Pasajero pasajero)
+        {
+            pasajeros.Add(pasajero);
+        }
+
+        public void EliminarPasajero(Pasajero pasajero)
+        {
+            pasajeros.Remove(pasajero);
         }
     }
 

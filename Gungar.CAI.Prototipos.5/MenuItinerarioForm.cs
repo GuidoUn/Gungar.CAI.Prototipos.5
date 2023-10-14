@@ -32,12 +32,29 @@ namespace Gungar.CAI.Prototipos._5
             estadoLabel.Text = itinerario.estado.ToString();
 
             gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
+            poblarListaPasajeros();
         }
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
             itinerarioSeleccionadoLabel.Text = $"{itinerario.cliente.nombre} ({itinerario.itinerarioId})";
             refrescar();
+            poblarListaPasajeros();
+        }
+
+        public void poblarListaPasajeros()
+        {
+            pasajerosListView.Items.Clear();
+
+            foreach (var pasajero in itinerario.pasajeros)
+            {
+                var item = new ListViewItem();
+                item.Text = pasajero.Nombre + " " + pasajero.Apellido;
+                item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                item.Tag = pasajero;
+
+                pasajerosListView.Items.Add(item);
+            }
         }
 
         private void gestionarProductosBtn_Click(object sender, EventArgs e)
@@ -48,6 +65,7 @@ namespace Gungar.CAI.Prototipos._5
         private void agregarPasajerosBtn_Click(object sender, EventArgs e)
         {
             agregarDatosForm.ShowDialog();
+            refrescar();
         }
 
         private void button2_Click(object sender, EventArgs e)
