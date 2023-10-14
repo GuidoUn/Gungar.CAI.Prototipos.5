@@ -15,15 +15,27 @@ namespace Gungar.CAI.Prototipos._5
 
     public class Itinerario
     {
+        private static int ultimoId = 0;
+
         public int itinerarioId;
-        public string? nombreCliente;
         public DateTime fechaCreacion;
         public Estado estado;
+        public Cliente cliente;
 
-        public Itinerario(int itinerarioId, string? nombreCliente, DateTime fechaCreacion)
+        public Itinerario(Cliente cliente)
         {
-            this.itinerarioId = itinerarioId;
-            this.nombreCliente = nombreCliente;
+            this.itinerarioId = ultimoId + 1;
+            ultimoId = this.itinerarioId;
+            this.cliente = cliente;
+            this.fechaCreacion = DateTime.Now;
+            this.estado = Estado.Presupuesto;
+        }
+
+        public Itinerario(Cliente cliente, DateTime fechaCreacion)
+        {
+            this.itinerarioId = ultimoId + 1;
+            ultimoId = this.itinerarioId;
+            this.cliente = cliente;
             this.fechaCreacion = fechaCreacion;
             this.estado = Estado.Presupuesto;
         }

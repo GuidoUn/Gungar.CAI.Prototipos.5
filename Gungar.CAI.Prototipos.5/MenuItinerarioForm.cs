@@ -36,7 +36,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
-            itinerarioSeleccionadoLabel.Text = $"{itinerario.nombreCliente} ({itinerario.itinerarioId})";
+            itinerarioSeleccionadoLabel.Text = $"{itinerario.cliente.nombre} ({itinerario.itinerarioId})";
             refrescar();
         }
 

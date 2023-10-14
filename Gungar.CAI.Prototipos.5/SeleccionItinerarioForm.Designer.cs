@@ -88,12 +88,12 @@
             // 
             // nroHeader
             // 
-            nroHeader.Text = "Numero de Itinerario";
-            nroHeader.Width = 150;
+            nroHeader.Text = "Nro";
+            nroHeader.Width = 100;
             // 
             // pasajeroHeader
             // 
-            pasajeroHeader.Text = "Pasajero";
+            pasajeroHeader.Text = "Cliente";
             pasajeroHeader.Width = 150;
             // 
             // creacionHeader

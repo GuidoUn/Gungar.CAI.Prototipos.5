@@ -13,6 +13,8 @@ namespace Gungar.CAI.Prototipos._5
     public partial class CrearItinerarioForm : Form
     {
         string nombreNuevoPasajero;
+        string apellidoNuevoPasajero;
+        string documentoNuevoPasajero;
 
         MenuItinerarioForm menuItinerarioForm;
 
@@ -30,7 +32,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void evaluarEstadoBtns()
         {
-            continuarBtn.Enabled = nombreNuevoPasajero.Length > 0;
+            continuarBtn.Enabled = nombreNuevoPasajero?.Length > 0 && apellidoNuevoPasajero?.Length > 0;
         }
 
         private void nuevoPasajeroText_TextChanged(object sender, EventArgs e)
@@ -39,13 +41,31 @@ namespace Gungar.CAI.Prototipos._5
             evaluarEstadoBtns();
         }
 
+        private void apellidoText_TextChanged(object sender, EventArgs e)
+        {
+            apellidoNuevoPasajero = apellidoText.Text;
+            evaluarEstadoBtns();
+        }
+
+
+
+        private void documentoText_TextChanged(object sender, EventArgs e)
+        {
+            documentoNuevoPasajero = documentoText.Text;
+        }
+
         private void continuarBtn_Click(object sender, EventArgs e)
         {
             var item = new ListViewItem();
 
-            int nuevoId = itinerarios[itinerarios.Count - 1].itinerarioId + 1;
+            //int nuevoId = itinerarios[itinerarios.Count - 1].itinerarioId + 1;
+            Cliente nuevoCliente = new Cliente(nombreNuevoPasajero, apellidoNuevoPasajero, documentoNuevoPasajero);
 
-            Itinerario nuevoItinerario = new Itinerario(nuevoId, nombreNuevoPasajero, DateTime.Now);
+            //TODO: Validar que el cliente esté creado ¿?
+
+            Itinerario nuevoItinerario = new Itinerario(nuevoCliente, DateTime.Now);
+
+
             itinerarios.Add(nuevoItinerario);
 
 

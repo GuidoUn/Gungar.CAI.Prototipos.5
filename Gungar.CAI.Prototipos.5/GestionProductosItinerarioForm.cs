@@ -114,7 +114,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = $"{itinerario.nombreCliente} ({itinerario.itinerarioId})";
+                itinerarioLabel.Text = $"{itinerario.cliente.nombre} ({itinerario.itinerarioId})";
             }
 
 

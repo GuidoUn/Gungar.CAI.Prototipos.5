@@ -13,9 +13,9 @@ namespace Gungar.CAI.Prototipos._5
         //const string FORMATO_FECHA = "yyyy-MM-dd";
 
         public static List<Itinerario> itinerarios = new List<Itinerario> {
-            new Itinerario(1,"Pedro Martinez",new DateTime(2023, 05, 17)),
-            new Itinerario(2, "Diego Maradona", new DateTime(2023, 06, 1)),
-            new Itinerario(3, "Lionel Messi", new DateTime(2023, 06, 3))
+            new Itinerario(new Cliente("Pedro", "Martinez", "1193692693"),new DateTime(2023, 05, 17)),
+            new Itinerario(new Cliente("Diego", "Maradona", "1245325433"),new DateTime(2023, 06, 1)),
+            new Itinerario(new Cliente("Lionel", "Messi",  "32213573"), new DateTime(2023, 06, 3))
         };
 
         public Form1()

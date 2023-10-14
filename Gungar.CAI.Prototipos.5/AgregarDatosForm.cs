@@ -50,7 +50,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void AgregarDatosForm_Load(object sender, EventArgs e)
         {
-            itinerarioLabel.Text = $"{itinerario.nombreCliente} ({itinerario.itinerarioId})";
+            itinerarioLabel.Text = $"{itinerario.cliente.nombre} ({itinerario.itinerarioId})";
 
             poblarLista();
         }
