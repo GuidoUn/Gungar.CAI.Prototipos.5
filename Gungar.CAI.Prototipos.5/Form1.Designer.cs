@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             df = new Label();
-            consultarDisponibilidadBtn = new Button();
             button4 = new Button();
             nuevoItinerarioBtn = new Button();
             continuarItinerarioBtn = new Button();
+            consultarDisponibilidadBtn = new Button();
             SuspendLayout();
             // 
             // df
@@ -44,6 +44,15 @@
             df.TabIndex = 2;
             df.Text = "Menu principal";
             // 
+            // button4
+            // 
+            button4.Location = new Point(432, 334);
+            button4.Name = "button4";
+            button4.Size = new Size(112, 49);
+            button4.TabIndex = 5;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = true;
+            // 
             // consultarDisponibilidadBtn
             // 
             consultarDisponibilidadBtn.Location = new Point(198, 237);
@@ -53,15 +62,7 @@
             consultarDisponibilidadBtn.Text = "Consultar Disponibilidad";
             consultarDisponibilidadBtn.UseVisualStyleBackColor = true;
             consultarDisponibilidadBtn.Click += consultarDisponibilidadBtn_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(432, 334);
-            button4.Name = "button4";
-            button4.Size = new Size(112, 49);
-            button4.TabIndex = 5;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+
             // 
             // nuevoItinerarioBtn
             // 
@@ -90,8 +91,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(continuarItinerarioBtn);
             Controls.Add(nuevoItinerarioBtn);
-            Controls.Add(button4);
             Controls.Add(consultarDisponibilidadBtn);
+            Controls.Add(button4);
             Controls.Add(df);
             Name = "Form1";
             Text = "Form1";
@@ -102,9 +103,9 @@
 
         #endregion
         private Label df;
-        private Button consultarDisponibilidadBtn;
         private Button button4;
         private Button nuevoItinerarioBtn;
         private Button continuarItinerarioBtn;
+        private Button consultarDisponibilidadBtn;
     }
 }
