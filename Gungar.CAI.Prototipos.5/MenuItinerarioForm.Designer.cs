@@ -34,8 +34,8 @@
             salirBtn = new Button();
             agregarPasajerosBtn = new Button();
             groupBox1 = new GroupBox();
-            button1 = new Button();
-            button2 = new Button();
+            generarReservaBtn = new Button();
+            generarPreReservaBtn = new Button();
             estadoLabel = new Label();
             label3 = new Label();
             pasajerosListView = new ListView();
@@ -53,6 +53,8 @@
             label4 = new Label();
             gestionarItinerarioBox = new GroupBox();
             precioTotalLabel = new Label();
+            nombreYApellidoLabel = new Label();
+            label6 = new Label();
             groupBox1.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
@@ -70,16 +72,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 21);
+            label1.Location = new Point(21, 38);
             label1.Name = "label1";
-            label1.Size = new Size(57, 15);
+            label1.Size = new Size(102, 15);
             label1.TabIndex = 1;
-            label1.Text = "Itinerario:";
+            label1.Text = "Itinerario número:";
             // 
             // itinerarioSeleccionadoLabel
             // 
             itinerarioSeleccionadoLabel.AutoSize = true;
-            itinerarioSeleccionadoLabel.Location = new Point(79, 22);
+            itinerarioSeleccionadoLabel.Location = new Point(129, 38);
             itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
             itinerarioSeleccionadoLabel.Size = new Size(152, 15);
             itinerarioSeleccionadoLabel.TabIndex = 2;
@@ -107,8 +109,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(generarReservaBtn);
+            groupBox1.Controls.Add(generarPreReservaBtn);
             groupBox1.Location = new Point(54, 255);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(177, 142);
@@ -116,29 +118,30 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Confirmación";
             // 
-            // button1
+            // generarReservaBtn
             // 
-            button1.Location = new Point(15, 79);
-            button1.Name = "button1";
-            button1.Size = new Size(145, 49);
-            button1.TabIndex = 8;
-            button1.Text = "Confirmar Reserva";
-            button1.UseVisualStyleBackColor = true;
+            generarReservaBtn.Location = new Point(15, 79);
+            generarReservaBtn.Name = "generarReservaBtn";
+            generarReservaBtn.Size = new Size(145, 49);
+            generarReservaBtn.TabIndex = 8;
+            generarReservaBtn.Text = "Confirmar Reserva";
+            generarReservaBtn.UseVisualStyleBackColor = true;
+            generarReservaBtn.Click += generarReservaBtn_Click;
             // 
-            // button2
+            // generarPreReservaBtn
             // 
-            button2.Location = new Point(15, 22);
-            button2.Name = "button2";
-            button2.Size = new Size(145, 51);
-            button2.TabIndex = 7;
-            button2.Text = "Generar Pre-reserva (48hs)";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            generarPreReservaBtn.Location = new Point(15, 22);
+            generarPreReservaBtn.Name = "generarPreReservaBtn";
+            generarPreReservaBtn.Size = new Size(145, 51);
+            generarPreReservaBtn.TabIndex = 7;
+            generarPreReservaBtn.Text = "Generar Pre-reserva (48hs)";
+            generarPreReservaBtn.UseVisualStyleBackColor = true;
+            generarPreReservaBtn.Click += generarPreReserva_Click;
             // 
             // estadoLabel
             // 
             estadoLabel.AutoSize = true;
-            estadoLabel.Location = new Point(79, 54);
+            estadoLabel.Location = new Point(78, 68);
             estadoLabel.Name = "estadoLabel";
             estadoLabel.Size = new Size(70, 15);
             estadoLabel.TabIndex = 8;
@@ -147,7 +150,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(21, 54);
+            label3.Location = new Point(20, 68);
             label3.Name = "label3";
             label3.Size = new Size(45, 15);
             label3.TabIndex = 7;
@@ -256,11 +259,31 @@
             precioTotalLabel.TabIndex = 14;
             precioTotalLabel.Text = "Precio Total: $1560";
             // 
+            // nombreYApellidoLabel
+            // 
+            nombreYApellidoLabel.AutoSize = true;
+            nombreYApellidoLabel.Location = new Point(128, 9);
+            nombreYApellidoLabel.Name = "nombreYApellidoLabel";
+            nombreYApellidoLabel.Size = new Size(103, 15);
+            nombreYApellidoLabel.TabIndex = 16;
+            nombreYApellidoLabel.Text = "nombre y apellido";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(20, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(110, 15);
+            label6.TabIndex = 15;
+            label6.Text = "Nombre y Apellido:";
+            // 
             // MenuItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 658);
+            Controls.Add(nombreYApellidoLabel);
+            Controls.Add(label6);
             Controls.Add(precioTotalLabel);
             Controls.Add(gestionarItinerarioBox);
             Controls.Add(label4);
@@ -309,5 +332,10 @@
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private Label precioTotalLabel;
+        private Button generarPreReservaBtn;
+        private Button generarReservaBtn;
+        private Label label5;
+        private Label label6;
+        private Label nombreYApellidoLabel;
     }
 }

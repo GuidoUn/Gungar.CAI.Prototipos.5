@@ -153,6 +153,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";
+                modificarItinerarioBox.Visible = false;
             }
             else
             {
@@ -214,6 +215,11 @@ namespace Gungar.CAI.Prototipos._5
             {
                 itinerarioListView.Items.RemoveAt(itinerarioListView.Items.Count - 1);
             }
+
+        }
+
+        private void itinerarioListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -39,7 +39,11 @@
             label2 = new Label();
             button1 = new Button();
             continuarBtn = new Button();
-            listView1 = new ListView();
+            parametroTextBox = new TextBox();
+            origenLabel = new Label();
+            filtroLabel = new Label();
+            parametrosCombo = new ComboBox();
+            filtrarBtn = new Button();
             continuarItinerarioBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,9 +115,8 @@
             label2.AutoSize = true;
             label2.Location = new Point(74, 99);
             label2.Name = "label2";
-            label2.Size = new Size(239, 15);
+            label2.Size = new Size(0, 15);
             label2.TabIndex = 19;
-            label2.Text = "TODO: Agregar filtros a Continuar itinerarios";
             // 
             // button1
             // 
@@ -136,20 +139,63 @@
             continuarBtn.UseVisualStyleBackColor = true;
             continuarBtn.Click += continuarBtn_Click;
             // 
-            // listView1
+            // parametroTextBox
             // 
-            listView1.Location = new Point(769, 153);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(291, 467);
-            listView1.TabIndex = 22;
-            listView1.UseCompatibleStateImageBehavior = false;
+            parametroTextBox.Location = new Point(336, 72);
+            parametroTextBox.Name = "parametroTextBox";
+            parametroTextBox.Size = new Size(231, 23);
+            parametroTextBox.TabIndex = 24;
+            parametroTextBox.TextChanged += origenText_TextChanged;
+            // 
+            // origenLabel
+            // 
+            origenLabel.AutoSize = true;
+            origenLabel.Location = new Point(336, 54);
+            origenLabel.Name = "origenLabel";
+            origenLabel.Size = new Size(187, 15);
+            origenLabel.TabIndex = 23;
+            origenLabel.Text = "Ingrese el parámetro seleccionado";
+            // 
+            // filtroLabel
+            // 
+            filtroLabel.AutoSize = true;
+            filtroLabel.Location = new Point(85, 54);
+            filtroLabel.Name = "filtroLabel";
+            filtroLabel.Size = new Size(204, 15);
+            filtroLabel.TabIndex = 25;
+            filtroLabel.Text = "Seleccione el parámetro de búsqueda";
+            // 
+            // parametrosCombo
+            // 
+            parametrosCombo.FormattingEnabled = true;
+            parametrosCombo.Items.AddRange(new object[] { "Sin Filtro", "Nombre", "Documento", "Numero Itininerario" });
+            parametrosCombo.Location = new Point(85, 72);
+            parametrosCombo.Name = "parametrosCombo";
+            parametrosCombo.Size = new Size(204, 23);
+            parametrosCombo.TabIndex = 26;
+            parametrosCombo.SelectedIndexChanged += parametrosCombo_SelectedIndexChanged;
+            // 
+            // filtrarBtn
+            // 
+            filtrarBtn.Enabled = false;
+            filtrarBtn.Location = new Point(602, 72);
+            filtrarBtn.Name = "filtrarBtn";
+            filtrarBtn.Size = new Size(103, 23);
+            filtrarBtn.TabIndex = 27;
+            filtrarBtn.Text = "Filtrar";
+            filtrarBtn.UseVisualStyleBackColor = true;
+            filtrarBtn.Click += filtrarBtn_Click;
             // 
             // SeleccionItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1320, 811);
-            Controls.Add(listView1);
+            ClientSize = new Size(1320, 749);
+            Controls.Add(filtrarBtn);
+            Controls.Add(filtroLabel);
+            Controls.Add(parametrosCombo);
+            Controls.Add(parametroTextBox);
+            Controls.Add(origenLabel);
             Controls.Add(continuarBtn);
             Controls.Add(button1);
             Controls.Add(continuarItinerarioBox);
@@ -175,7 +221,12 @@
         private Label label2;
         private Button button1;
         private Button continuarBtn;
-        private ListView listView1;
         private ColumnHeader estadoHeader;
+        private TextBox origenText;
+        private Label origenLabel;
+        private Label filtroLabel;
+        private ComboBox parametrosCombo;
+        private Button filtrarBtn;
+        private TextBox parametroTextBox;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             df = new Label();
-            button4 = new Button();
             nuevoItinerarioBtn = new Button();
             continuarItinerarioBtn = new Button();
             consultarDisponibilidadBtn = new Button();
@@ -38,28 +37,17 @@
             // df
             // 
             df.AutoSize = true;
-            df.Location = new Point(239, 123);
+            df.Location = new Point(209, 92);
             df.Name = "df";
-            df.Size = new Size(108, 20);
+            df.Size = new Size(87, 15);
             df.TabIndex = 2;
             df.Text = "Menu principal";
             // 
-            // button4
-            // 
-            button4.Location = new Point(494, 445);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(128, 65);
-            button4.TabIndex = 5;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
             // nuevoItinerarioBtn
             // 
-            nuevoItinerarioBtn.Location = new Point(226, 169);
-            nuevoItinerarioBtn.Margin = new Padding(3, 4, 3, 4);
+            nuevoItinerarioBtn.Location = new Point(198, 127);
             nuevoItinerarioBtn.Name = "nuevoItinerarioBtn";
-            nuevoItinerarioBtn.Size = new Size(128, 65);
+            nuevoItinerarioBtn.Size = new Size(112, 49);
             nuevoItinerarioBtn.TabIndex = 8;
             nuevoItinerarioBtn.Text = "Nuevo Itinerario";
             nuevoItinerarioBtn.UseVisualStyleBackColor = true;
@@ -67,10 +55,9 @@
             // 
             // continuarItinerarioBtn
             // 
-            continuarItinerarioBtn.Location = new Point(226, 243);
-            continuarItinerarioBtn.Margin = new Padding(3, 4, 3, 4);
+            continuarItinerarioBtn.Location = new Point(198, 182);
             continuarItinerarioBtn.Name = "continuarItinerarioBtn";
-            continuarItinerarioBtn.Size = new Size(128, 65);
+            continuarItinerarioBtn.Size = new Size(112, 49);
             continuarItinerarioBtn.TabIndex = 9;
             continuarItinerarioBtn.Text = "Continuar Itinerario";
             continuarItinerarioBtn.UseVisualStyleBackColor = true;
@@ -78,10 +65,9 @@
             // 
             // consultarDisponibilidadBtn
             // 
-            consultarDisponibilidadBtn.Location = new Point(226, 316);
-            consultarDisponibilidadBtn.Margin = new Padding(3, 4, 3, 4);
+            consultarDisponibilidadBtn.Location = new Point(198, 237);
             consultarDisponibilidadBtn.Name = "consultarDisponibilidadBtn";
-            consultarDisponibilidadBtn.Size = new Size(128, 65);
+            consultarDisponibilidadBtn.Size = new Size(112, 49);
             consultarDisponibilidadBtn.TabIndex = 3;
             consultarDisponibilidadBtn.Text = "Consultar Disponibilidad";
             consultarDisponibilidadBtn.UseVisualStyleBackColor = true;
@@ -89,15 +75,13 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(698, 598);
+            ClientSize = new Size(611, 448);
             Controls.Add(continuarItinerarioBtn);
             Controls.Add(nuevoItinerarioBtn);
             Controls.Add(consultarDisponibilidadBtn);
-            Controls.Add(button4);
             Controls.Add(df);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -107,7 +91,6 @@
 
         #endregion
         private Label df;
-        private Button button4;
         private Button nuevoItinerarioBtn;
         private Button continuarItinerarioBtn;
         private Button consultarDisponibilidadBtn;

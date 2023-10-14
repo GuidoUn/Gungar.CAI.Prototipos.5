@@ -38,7 +38,17 @@ namespace Gungar.CAI.Prototipos._5
         private void refrescar()
         {
             estadoLabel.Text = itinerario.estado.ToString();
+            if (itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Reserva)
+            {
+                generarPreReservaBtn.Enabled = false;
+                generarReservaBtn.Enabled = false;
+            }
+            else
+            {
+                generarPreReservaBtn.Enabled = true;
+                generarReservaBtn.Enabled = true;
 
+            }
             gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
             poblarListaPasajeros();
             poblarItinerario();
@@ -46,7 +56,8 @@ namespace Gungar.CAI.Prototipos._5
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
-            itinerarioSeleccionadoLabel.Text = $"{itinerario.cliente.nombre} ({itinerario.itinerarioId})";
+            itinerarioSeleccionadoLabel.Text = $"{itinerario.itinerarioId}";
+            nombreYApellidoLabel.Text = $"{itinerario.cliente.nombre} {itinerario.cliente?.apellido}";
             refrescar();
             poblarListaPasajeros();
         }
@@ -99,7 +110,7 @@ namespace Gungar.CAI.Prototipos._5
             refrescar();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void generarPreReserva_Click(object sender, EventArgs e)
         {
             if (itinerario.estado == Estado.Presupuesto)
             {
@@ -116,5 +127,20 @@ namespace Gungar.CAI.Prototipos._5
         {
             this.Close();
         }
+
+        private void generarReservaBtn_Click(object sender, EventArgs e)
+        {
+            var confirmar = MessageBox.Show("Esta seguro de que desea confirmar la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (confirmar == DialogResult.OK)
+            {
+                itinerario.estado = Estado.Reserva;
+
+                refrescar();
+
+            }
+
+        }
+
+
     }
 }

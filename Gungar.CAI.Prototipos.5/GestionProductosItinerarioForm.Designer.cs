@@ -717,6 +717,7 @@
             itinerarioListView.TabIndex = 24;
             itinerarioListView.UseCompatibleStateImageBehavior = false;
             itinerarioListView.View = View.Details;
+            itinerarioListView.SelectedIndexChanged += itinerarioListView_SelectedIndexChanged;
             // 
             // columnHeader4
             // 
@@ -785,7 +786,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1430, 813);
+            ClientSize = new Size(1370, 749);
             Controls.Add(modificarItinerarioBox);
             Controls.Add(listasHotelesBox);
             Controls.Add(listasVuelosBox);

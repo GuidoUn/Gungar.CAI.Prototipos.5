@@ -22,6 +22,8 @@ namespace Gungar.CAI.Prototipos._5
         //GestionProductosItinerarioForm gestionProductosItinerarioForm;
         MenuItinerarioForm menuItinerarioForm;
 
+        string tipoDeParametroAFiltrar;
+        string parametroIngresado;
 
         public SeleccionItinerarioForm()
         {
@@ -44,7 +46,17 @@ namespace Gungar.CAI.Prototipos._5
                 itinerariosListView.Items.Add(item);
             }
         }
-
+        private void HabilitarFiltro()
+        {
+            if (tipoDeParametroAFiltrar != null && parametroIngresado != null && parametroIngresado.Length > 0 && tipoDeParametroAFiltrar!="Sin Filtro")
+            {
+                filtrarBtn.Enabled = true;
+            }
+            else
+            {
+                filtrarBtn.Enabled = false;
+            }
+        }
         private void SeleccionItinerarioForm_Load(object sender, EventArgs e)
         {
             itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
@@ -82,6 +94,39 @@ namespace Gungar.CAI.Prototipos._5
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void parametrosCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tipoDeParametroAFiltrar = parametrosCombo.SelectedItem.ToString();
+            if(tipoDeParametroAFiltrar=="Sin Filtro")
+            {
+                refrescar();
+            }
+            HabilitarFiltro();
+
+
+        }
+
+        private void filtrarBtn_Click(object sender, EventArgs e)
+        {
+            itinerariosListView.Items.Clear();
+            var itinerariosFiltrado = itinerarios.First();
+            var item = new ListViewItem();
+            item.Text = itinerariosFiltrado.itinerarioId.ToString();
+            item.SubItems.Add(itinerariosFiltrado.cliente.nombre);
+            item.SubItems.Add(itinerariosFiltrado.fechaCreacion.ToString(FORMATO_FECHA));
+            item.SubItems.Add(itinerariosFiltrado.estado.ToString());
+            item.Tag = itinerariosFiltrado;
+
+            itinerariosListView.Items.Add(item);
+
+        }
+
+        private void origenText_TextChanged(object sender, EventArgs e)
+        {
+            parametroIngresado = parametroTextBox.Text;
+            HabilitarFiltro();
         }
     }
 }
