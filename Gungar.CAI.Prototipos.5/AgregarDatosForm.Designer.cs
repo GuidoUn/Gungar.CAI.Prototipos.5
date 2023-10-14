@@ -52,6 +52,9 @@
             telefonoHeader = new ColumnHeader();
             fechaNacHeader = new ColumnHeader();
             groupBox2 = new GroupBox();
+            itinerarioLabel = new Label();
+            titleLabel = new Label();
+            eliminarPasajeroBtn = new Button();
             datosPasajerosGroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -215,6 +218,7 @@
             // pasajerosListView
             // 
             pasajerosListView.Columns.AddRange(new ColumnHeader[] { nombreHeader, apellidoHeader, DNIHeader, emailHeader, telefonoHeader, fechaNacHeader });
+            pasajerosListView.FullRowSelect = true;
             pasajerosListView.Location = new Point(21, 28);
             pasajerosListView.Margin = new Padding(3, 2, 3, 2);
             pasajerosListView.Name = "pasajerosListView";
@@ -222,6 +226,7 @@
             pasajerosListView.TabIndex = 23;
             pasajerosListView.UseCompatibleStateImageBehavior = false;
             pasajerosListView.View = View.Details;
+            pasajerosListView.SelectedIndexChanged += pasajerosListView_SelectedIndexChanged;
             // 
             // nombreHeader
             // 
@@ -265,11 +270,45 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Pasajeros";
             // 
+            // itinerarioLabel
+            // 
+            itinerarioLabel.AutoSize = true;
+            itinerarioLabel.Location = new Point(243, 19);
+            itinerarioLabel.Name = "itinerarioLabel";
+            itinerarioLabel.Size = new Size(82, 15);
+            itinerarioLabel.TabIndex = 26;
+            itinerarioLabel.Text = "itinerarioLabel";
+            // 
+            // titleLabel
+            // 
+            titleLabel.AutoSize = true;
+            titleLabel.Location = new Point(54, 19);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(183, 15);
+            titleLabel.TabIndex = 25;
+            titleLabel.Text = "Agregando Pasajeros al Itinerario:";
+            titleLabel.Click += titleLabel_Click;
+            // 
+            // eliminarPasajeroBtn
+            // 
+            eliminarPasajeroBtn.Enabled = false;
+            eliminarPasajeroBtn.Location = new Point(893, 370);
+            eliminarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
+            eliminarPasajeroBtn.Name = "eliminarPasajeroBtn";
+            eliminarPasajeroBtn.Size = new Size(141, 31);
+            eliminarPasajeroBtn.TabIndex = 15;
+            eliminarPasajeroBtn.Text = "Eliminar Pasajero";
+            eliminarPasajeroBtn.UseVisualStyleBackColor = true;
+            eliminarPasajeroBtn.Click += eliminarPasajeroBtn_Click;
+            // 
             // AgregarDatosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1633, 981);
+            Controls.Add(eliminarPasajeroBtn);
+            Controls.Add(itinerarioLabel);
+            Controls.Add(titleLabel);
             Controls.Add(groupBox2);
             Controls.Add(button2);
             Controls.Add(continuarBtn);
@@ -282,6 +321,7 @@
             datosPasajerosGroupBox.PerformLayout();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -310,5 +350,8 @@
         private ColumnHeader emailHeader;
         private ColumnHeader telefonoHeader;
         private ColumnHeader fechaNacHeader;
+        private Label itinerarioLabel;
+        private Label titleLabel;
+        private Button eliminarPasajeroBtn;
     }
 }

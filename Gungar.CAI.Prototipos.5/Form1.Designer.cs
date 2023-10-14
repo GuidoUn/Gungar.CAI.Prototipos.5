@@ -28,25 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             df = new Label();
             consultarDisponibilidadBtn = new Button();
-            agregarPasajerosBtn = new Button();
             button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
             nuevoItinerarioBtn = new Button();
             continuarItinerarioBtn = new Button();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Location = new Point(1, 334);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 49);
-            button1.TabIndex = 0;
-            button1.Text = "Armado de Itinerario";
-            button1.UseVisualStyleBackColor = true;
             // 
             // df
             // 
@@ -67,15 +54,6 @@
             consultarDisponibilidadBtn.UseVisualStyleBackColor = true;
             consultarDisponibilidadBtn.Click += consultarDisponibilidadBtn_Click;
             // 
-            // agregarPasajerosBtn
-            // 
-            agregarPasajerosBtn.Location = new Point(590, 334);
-            agregarPasajerosBtn.Name = "agregarPasajerosBtn";
-            agregarPasajerosBtn.Size = new Size(112, 49);
-            agregarPasajerosBtn.TabIndex = 4;
-            agregarPasajerosBtn.Text = "Agregar pasajeros";
-            agregarPasajerosBtn.UseVisualStyleBackColor = true;
-            // 
             // button4
             // 
             button4.Location = new Point(432, 334);
@@ -84,24 +62,6 @@
             button4.TabIndex = 5;
             button4.Text = "button4";
             button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(145, 334);
-            button5.Name = "button5";
-            button5.Size = new Size(112, 49);
-            button5.TabIndex = 6;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(282, 334);
-            button6.Name = "button6";
-            button6.Size = new Size(112, 49);
-            button6.TabIndex = 7;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
             // 
             // nuevoItinerarioBtn
             // 
@@ -130,13 +90,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(continuarItinerarioBtn);
             Controls.Add(nuevoItinerarioBtn);
-            Controls.Add(button6);
-            Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(agregarPasajerosBtn);
             Controls.Add(consultarDisponibilidadBtn);
             Controls.Add(df);
-            Controls.Add(button1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -145,14 +101,9 @@
         }
 
         #endregion
-
-        private Button button1;
         private Label df;
         private Button consultarDisponibilidadBtn;
-        private Button agregarPasajerosBtn;
         private Button button4;
-        private Button button5;
-        private Button button6;
         private Button nuevoItinerarioBtn;
         private Button continuarItinerarioBtn;
     }

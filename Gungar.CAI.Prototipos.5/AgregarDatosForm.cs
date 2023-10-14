@@ -22,13 +22,15 @@ namespace Gungar.CAI.Prototipos._5
 
         string[]? itinerario;
 
+        string[]? pasajeroSeleccionado;
+
         public AgregarDatosForm(string idItinerario)
         {
             InitializeComponent();
             itinerario = Form1.itinerarios.FirstOrDefault(itinerario => itinerario[0] == idItinerario);
         }
 
-        private void AgregarDatosForm_Load(object sender, EventArgs e)
+        private void poblarLista()
         {
             pasajerosListView.Items.Clear();
 
@@ -45,6 +47,12 @@ namespace Gungar.CAI.Prototipos._5
 
                 pasajerosListView.Items.Add(item);
             }
+        }
+        private void AgregarDatosForm_Load(object sender, EventArgs e)
+        {
+            itinerarioLabel.Text = $"{itinerario[1]} ({itinerario[0]})";
+
+            poblarLista();
         }
 
         private void agregarPasajeroBtn_Click(object sender, EventArgs e)
@@ -72,6 +80,39 @@ namespace Gungar.CAI.Prototipos._5
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void titleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void pasajerosListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (pasajerosListView.SelectedItems.Count == 0)
+            {
+                return;
+            }
+
+            ListViewItem selected = pasajerosListView.SelectedItems[0];
+
+            pasajeroSeleccionado = pasajeros.FirstOrDefault((pasajero) => pasajero[0] == selected.Text);
+
+            evaluarVisibilidadBtns();
+        }
+
+        private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
+        {
+            pasajeros.Remove(pasajeroSeleccionado);
+            pasajeroSeleccionado = null;
+            poblarLista();
+            evaluarVisibilidadBtns();
+        }
+
+
+        private void evaluarVisibilidadBtns()
+        {
+            eliminarPasajeroBtn.Enabled = pasajeroSeleccionado != null;
+
         }
     }
 }
