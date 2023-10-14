@@ -4,7 +4,9 @@ namespace Gungar.CAI.Prototipos._5
     {
         Form2 form2 = new Form2();
         GestionProductosItinerarioForm gestionProductosItinerarioForm = new GestionProductosItinerarioForm("0", true);
-        //NuevoItinerarioForm nuevoItinerarioForm = new NuevoItinerarioForm();
+        AgregarDatosForm agregarDatosForm = new AgregarDatosForm();
+
+
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +25,11 @@ namespace Gungar.CAI.Prototipos._5
         private void consultarDisponibilidadBtn_Click(object sender, EventArgs e)
         {
             gestionProductosItinerarioForm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            agregarDatosForm.ShowDialog();
         }
     }
 }

@@ -25,8 +25,6 @@ namespace Gungar.CAI.Prototipos._5
 
         string nuevoPasajero;
 
-        string idSeleccionado;
-
         string[]? itinerarioSeleccionado;
 
         string[]? itinerarioAContinuar;

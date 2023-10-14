@@ -31,7 +31,7 @@
             button1 = new Button();
             df = new Label();
             consultarDisponibilidadBtn = new Button();
-            button3 = new Button();
+            agregarPasajerosBtn = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -68,15 +68,16 @@
             consultarDisponibilidadBtn.UseVisualStyleBackColor = true;
             consultarDisponibilidadBtn.Click += consultarDisponibilidadBtn_Click;
             // 
-            // button3
+            // agregarPasajerosBtn
             // 
-            button3.Location = new Point(115, 265);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(128, 65);
-            button3.TabIndex = 4;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            agregarPasajerosBtn.Location = new Point(115, 265);
+            agregarPasajerosBtn.Margin = new Padding(3, 4, 3, 4);
+            agregarPasajerosBtn.Name = "agregarPasajerosBtn";
+            agregarPasajerosBtn.Size = new Size(128, 65);
+            agregarPasajerosBtn.TabIndex = 4;
+            agregarPasajerosBtn.Text = "Agregar pasajeros";
+            agregarPasajerosBtn.UseVisualStyleBackColor = true;
+            agregarPasajerosBtn.Click += button3_Click;
             // 
             // button4
             // 
@@ -116,7 +117,7 @@
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(agregarPasajerosBtn);
             Controls.Add(consultarDisponibilidadBtn);
             Controls.Add(df);
             Controls.Add(button1);
@@ -133,7 +134,7 @@
         private Button button1;
         private Label df;
         private Button consultarDisponibilidadBtn;
-        private Button button3;
+        private Button agregarPasajerosBtn;
         private Button button4;
         private Button button5;
         private Button button6;
