@@ -43,14 +43,6 @@
             nombreLabel = new Label();
             apellidoTextBox = new TextBox();
             button2 = new Button();
-            label2 = new Label();
-            seleccionarItinerarioBox = new GroupBox();
-            itinerarioSeleccionadoLabel = new Label();
-            label4 = new Label();
-            itinerariosListView = new ListView();
-            nroHeader = new ColumnHeader();
-            pasajeroHeader = new ColumnHeader();
-            creacionHeader = new ColumnHeader();
             continuarBtn = new Button();
             pasajerosListView = new ListView();
             nombreHeader = new ColumnHeader();
@@ -61,7 +53,6 @@
             fechaNacHeader = new ColumnHeader();
             groupBox2 = new GroupBox();
             datosPasajerosGroupBox.SuspendLayout();
-            seleccionarItinerarioBox.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -80,25 +71,29 @@
             datosPasajerosGroupBox.Controls.Add(telefonoLabel);
             datosPasajerosGroupBox.Controls.Add(nombreLabel);
             datosPasajerosGroupBox.Controls.Add(apellidoTextBox);
-            datosPasajerosGroupBox.Location = new Point(62, 61);
+            datosPasajerosGroupBox.Location = new Point(54, 46);
+            datosPasajerosGroupBox.Margin = new Padding(3, 2, 3, 2);
             datosPasajerosGroupBox.Name = "datosPasajerosGroupBox";
-            datosPasajerosGroupBox.Size = new Size(811, 304);
+            datosPasajerosGroupBox.Padding = new Padding(3, 2, 3, 2);
+            datosPasajerosGroupBox.Size = new Size(710, 228);
             datosPasajerosGroupBox.TabIndex = 0;
             datosPasajerosGroupBox.TabStop = false;
             datosPasajerosGroupBox.Text = "Datos pasajeros";
             // 
             // DNITextBox
             // 
-            DNITextBox.Location = new Point(432, 78);
+            DNITextBox.Location = new Point(378, 58);
+            DNITextBox.Margin = new Padding(3, 2, 3, 2);
             DNITextBox.Name = "DNITextBox";
-            DNITextBox.Size = new Size(150, 27);
+            DNITextBox.Size = new Size(132, 23);
             DNITextBox.TabIndex = 5;
             // 
             // agregarPasajeroBtn
             // 
-            agregarPasajeroBtn.Location = new Point(492, 223);
+            agregarPasajeroBtn.Location = new Point(430, 167);
+            agregarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
             agregarPasajeroBtn.Name = "agregarPasajeroBtn";
-            agregarPasajeroBtn.Size = new Size(161, 41);
+            agregarPasajeroBtn.Size = new Size(141, 31);
             agregarPasajeroBtn.TabIndex = 11;
             agregarPasajeroBtn.Text = "Agregar pasajero";
             agregarPasajeroBtn.UseVisualStyleBackColor = true;
@@ -107,180 +102,112 @@
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new Point(241, 46);
+            apellidoLabel.Location = new Point(211, 34);
             apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new Size(66, 20);
+            apellidoLabel.Size = new Size(51, 15);
             apellidoLabel.TabIndex = 3;
             apellidoLabel.Text = "Apellido";
             // 
             // fechaNacDatePicker
             // 
-            fechaNacDatePicker.Location = new Point(459, 170);
-            fechaNacDatePicker.Margin = new Padding(3, 4, 3, 4);
+            fechaNacDatePicker.Location = new Point(402, 128);
             fechaNacDatePicker.Name = "fechaNacDatePicker";
-            fechaNacDatePicker.Size = new Size(263, 27);
+            fechaNacDatePicker.Size = new Size(231, 23);
             fechaNacDatePicker.TabIndex = 14;
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new Point(46, 138);
+            emailLabel.Location = new Point(40, 104);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new Size(52, 20);
+            emailLabel.Size = new Size(41, 15);
             emailLabel.TabIndex = 8;
             emailLabel.Text = "E-Mail";
             // 
             // nombreTextBox
             // 
-            nombreTextBox.Location = new Point(46, 78);
+            nombreTextBox.Location = new Point(40, 58);
+            nombreTextBox.Margin = new Padding(3, 2, 3, 2);
             nombreTextBox.Name = "nombreTextBox";
-            nombreTextBox.Size = new Size(150, 27);
+            nombreTextBox.Size = new Size(132, 23);
             nombreTextBox.TabIndex = 0;
             // 
             // DNILabel
             // 
             DNILabel.AutoSize = true;
-            DNILabel.Location = new Point(432, 46);
+            DNILabel.Location = new Point(378, 34);
             DNILabel.Name = "DNILabel";
-            DNILabel.Size = new Size(35, 20);
+            DNILabel.Size = new Size(27, 15);
             DNILabel.TabIndex = 6;
             DNILabel.Text = "DNI";
             // 
             // telefonoTextBox
             // 
-            telefonoTextBox.Location = new Point(283, 170);
+            telefonoTextBox.Location = new Point(248, 128);
+            telefonoTextBox.Margin = new Padding(3, 2, 3, 2);
             telefonoTextBox.Name = "telefonoTextBox";
-            telefonoTextBox.Size = new Size(150, 27);
+            telefonoTextBox.Size = new Size(132, 23);
             telefonoTextBox.TabIndex = 9;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(459, 138);
+            label1.Location = new Point(402, 104);
             label1.Name = "label1";
-            label1.Size = new Size(146, 20);
+            label1.Size = new Size(117, 15);
             label1.TabIndex = 13;
             label1.Text = "Fecha de nacimiento";
             // 
             // emailTextBox
             // 
-            emailTextBox.Location = new Point(46, 170);
+            emailTextBox.Location = new Point(40, 128);
+            emailTextBox.Margin = new Padding(3, 2, 3, 2);
             emailTextBox.Name = "emailTextBox";
-            emailTextBox.Size = new Size(205, 27);
+            emailTextBox.Size = new Size(180, 23);
             emailTextBox.TabIndex = 7;
             // 
             // telefonoLabel
             // 
             telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new Point(283, 138);
+            telefonoLabel.Location = new Point(248, 104);
             telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new Size(67, 20);
+            telefonoLabel.Size = new Size(52, 15);
             telefonoLabel.TabIndex = 10;
             telefonoLabel.Text = "Teléfono";
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new Point(46, 46);
+            nombreLabel.Location = new Point(40, 34);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new Size(64, 20);
+            nombreLabel.Size = new Size(51, 15);
             nombreLabel.TabIndex = 1;
             nombreLabel.Text = "Nombre";
             // 
             // apellidoTextBox
             // 
-            apellidoTextBox.Location = new Point(241, 78);
+            apellidoTextBox.Location = new Point(211, 58);
+            apellidoTextBox.Margin = new Padding(3, 2, 3, 2);
             apellidoTextBox.Name = "apellidoTextBox";
-            apellidoTextBox.Size = new Size(150, 27);
+            apellidoTextBox.Size = new Size(132, 23);
             apellidoTextBox.TabIndex = 2;
             // 
             // button2
             // 
-            button2.Location = new Point(1227, 506);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(246, 468);
             button2.Name = "button2";
-            button2.Size = new Size(160, 88);
+            button2.Size = new Size(140, 66);
             button2.TabIndex = 22;
             button2.Text = "Cancelar";
             button2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(992, 147);
-            label2.Name = "label2";
-            label2.Size = new Size(302, 20);
-            label2.TabIndex = 21;
-            label2.Text = "TODO: Agregar filtros a Continuar itinerarios";
-            // 
-            // seleccionarItinerarioBox
-            // 
-            seleccionarItinerarioBox.Controls.Add(itinerarioSeleccionadoLabel);
-            seleccionarItinerarioBox.Controls.Add(label4);
-            seleccionarItinerarioBox.Controls.Add(itinerariosListView);
-            seleccionarItinerarioBox.Location = new Point(992, 186);
-            seleccionarItinerarioBox.Margin = new Padding(3, 4, 3, 4);
-            seleccionarItinerarioBox.Name = "seleccionarItinerarioBox";
-            seleccionarItinerarioBox.Padding = new Padding(3, 4, 3, 4);
-            seleccionarItinerarioBox.Size = new Size(745, 312);
-            seleccionarItinerarioBox.TabIndex = 20;
-            seleccionarItinerarioBox.TabStop = false;
-            seleccionarItinerarioBox.Text = "Seleccione el Itinerario al cual desea agregar pasajeros";
-            // 
-            // itinerarioSeleccionadoLabel
-            // 
-            itinerarioSeleccionadoLabel.AutoSize = true;
-            itinerarioSeleccionadoLabel.Location = new Point(196, 273);
-            itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
-            itinerarioSeleccionadoLabel.Size = new Size(194, 20);
-            itinerarioSeleccionadoLabel.TabIndex = 13;
-            itinerarioSeleccionadoLabel.Text = "itinerarioSeleccionadoLabel";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(25, 273);
-            label4.Name = "label4";
-            label4.Size = new Size(165, 20);
-            label4.TabIndex = 12;
-            label4.Text = "Itinerario Seleccionado:";
-            // 
-            // itinerariosListView
-            // 
-            itinerariosListView.Columns.AddRange(new ColumnHeader[] { nroHeader, pasajeroHeader, creacionHeader });
-            itinerariosListView.FullRowSelect = true;
-            itinerariosListView.Location = new Point(25, 48);
-            itinerariosListView.Margin = new Padding(3, 4, 3, 4);
-            itinerariosListView.MultiSelect = false;
-            itinerariosListView.Name = "itinerariosListView";
-            itinerariosListView.Size = new Size(678, 219);
-            itinerariosListView.TabIndex = 10;
-            itinerariosListView.UseCompatibleStateImageBehavior = false;
-            itinerariosListView.View = View.Details;
-            itinerariosListView.SelectedIndexChanged += itinerariosListView_SelectedIndexChanged;
-            // 
-            // nroHeader
-            // 
-            nroHeader.Text = "Numero de Itinerario";
-            nroHeader.Width = 150;
-            // 
-            // pasajeroHeader
-            // 
-            pasajeroHeader.Text = "Pasajero";
-            pasajeroHeader.Width = 150;
-            // 
-            // creacionHeader
-            // 
-            creacionHeader.Text = "Fecha de Creación";
-            creacionHeader.Width = 150;
+            button2.Click += button2_Click;
             // 
             // continuarBtn
             // 
             continuarBtn.Enabled = false;
-            continuarBtn.Location = new Point(1394, 506);
-            continuarBtn.Margin = new Padding(3, 4, 3, 4);
+            continuarBtn.Location = new Point(392, 468);
             continuarBtn.Name = "continuarBtn";
-            continuarBtn.Size = new Size(160, 88);
+            continuarBtn.Size = new Size(140, 66);
             continuarBtn.TabIndex = 19;
             continuarBtn.Text = "Continuar";
             continuarBtn.UseVisualStyleBackColor = true;
@@ -288,9 +215,10 @@
             // pasajerosListView
             // 
             pasajerosListView.Columns.AddRange(new ColumnHeader[] { nombreHeader, apellidoHeader, DNIHeader, emailHeader, telefonoHeader, fechaNacHeader });
-            pasajerosListView.Location = new Point(24, 38);
+            pasajerosListView.Location = new Point(21, 28);
+            pasajerosListView.Margin = new Padding(3, 2, 3, 2);
             pasajerosListView.Name = "pasajerosListView";
-            pasajerosListView.Size = new Size(761, 127);
+            pasajerosListView.Size = new Size(791, 122);
             pasajerosListView.TabIndex = 23;
             pasajerosListView.UseCompatibleStateImageBehavior = false;
             pasajerosListView.View = View.Details;
@@ -328,34 +256,32 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(pasajerosListView);
-            groupBox2.Location = new Point(65, 398);
+            groupBox2.Location = new Point(57, 298);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(808, 220);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(830, 165);
             groupBox2.TabIndex = 24;
             groupBox2.TabStop = false;
             groupBox2.Text = "Pasajeros";
             // 
             // AgregarDatosForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1866, 1325);
+            ClientSize = new Size(1633, 981);
             Controls.Add(groupBox2);
             Controls.Add(button2);
-            Controls.Add(label2);
-            Controls.Add(seleccionarItinerarioBox);
             Controls.Add(continuarBtn);
             Controls.Add(datosPasajerosGroupBox);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AgregarDatosForm";
             Text = "AgregarDatosForm";
             Load += AgregarDatosForm_Load;
             datosPasajerosGroupBox.ResumeLayout(false);
             datosPasajerosGroupBox.PerformLayout();
-            seleccionarItinerarioBox.ResumeLayout(false);
-            seleccionarItinerarioBox.PerformLayout();
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -375,14 +301,6 @@
         private Label label1;
         private DateTimePicker fechaNacDatePicker;
         private Button button2;
-        private Label label2;
-        private GroupBox seleccionarItinerarioBox;
-        private Label itinerarioSeleccionadoLabel;
-        private Label label4;
-        private ListView itinerariosListView;
-        private ColumnHeader nroHeader;
-        private ColumnHeader pasajeroHeader;
-        private ColumnHeader creacionHeader;
         private Button continuarBtn;
         private ListView pasajerosListView;
         private GroupBox groupBox2;

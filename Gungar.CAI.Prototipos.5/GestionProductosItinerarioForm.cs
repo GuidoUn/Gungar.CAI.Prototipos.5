@@ -99,7 +99,7 @@ namespace Gungar.CAI.Prototipos._5
         public GestionProductosItinerarioForm(string idItinerario, bool isNuevoItinerario)
         {
             InitializeComponent();
-            itinerario = Form2.itinerarios.FirstOrDefault(itinerario => itinerario[0] == idItinerario);
+            itinerario = Form1.itinerarios.FirstOrDefault(itinerario => itinerario[0] == idItinerario);
             //itinerario[4] = isNuevoItinerario; 
             //TODO: Despues vamos a saber si es un nuevo itinerario o la continuacion de uno con el "Estado" dentro de la Clase "Itinerario"
             //TODO: Después Orquestamos el form según el estado (UX)
