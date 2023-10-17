@@ -664,7 +664,7 @@
             hotelesListView.Location = new Point(6, 16);
             hotelesListView.MultiSelect = false;
             hotelesListView.Name = "hotelesListView";
-            hotelesListView.Size = new Size(710, 411);
+            hotelesListView.Size = new Size(704, 411);
             hotelesListView.TabIndex = 5;
             hotelesListView.UseCompatibleStateImageBehavior = false;
             hotelesListView.View = View.Details;
