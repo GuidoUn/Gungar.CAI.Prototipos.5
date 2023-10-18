@@ -263,6 +263,7 @@
             vuelosBtn.TabIndex = 7;
             vuelosBtn.Text = "Agregar/Quitar Vuelos";
             vuelosBtn.UseVisualStyleBackColor = true;
+            vuelosBtn.Click += vuelosBtn_Click;
             // 
             // clienteBtn
             // 

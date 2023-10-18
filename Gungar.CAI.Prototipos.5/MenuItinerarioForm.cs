@@ -18,6 +18,8 @@ namespace Gungar.CAI.Prototipos._5
 
         GestionProductosItinerarioForm gestionProductosItinerarioForm;
         CrearItinerarioForm crearItinerarioForm;
+        VuelosForm vuelosForm;
+        HotelesForm hotelesForm;
 
         public static List<string[]> productosItinerarios = new List<string[]>
         {
@@ -103,7 +105,8 @@ namespace Gungar.CAI.Prototipos._5
 
         private void hotelesBtn_Click(object sender, EventArgs e)
         {
-            gestionProductosItinerarioForm.ShowDialog();
+            hotelesForm = new HotelesForm();
+            hotelesForm.ShowDialog();
             refrescar();
         }
 
@@ -154,8 +157,23 @@ namespace Gungar.CAI.Prototipos._5
 
         private void cancelarReservaBtn_Click(object sender, EventArgs e)
         {
-            itinerario.estado = Estado.Cancelado;
-            refrescar(); 
+
+            var confirmar = MessageBox.Show("Esta seguro de que desea CANCELAR la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (confirmar == DialogResult.OK)
+            {
+                itinerario.estado = Estado.Cancelado;
+                refrescar();
+
+            }
+
+           
+        }
+
+        private void vuelosBtn_Click(object sender, EventArgs e)
+        {
+            vuelosForm=new VuelosForm();
+            vuelosForm.ShowDialog();
+            refrescar();
         }
     }
 }

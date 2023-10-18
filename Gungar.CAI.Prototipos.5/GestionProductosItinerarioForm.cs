@@ -165,7 +165,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void vuelosRadio_CheckedChanged(object sender, EventArgs e)
         {
-            esVuelos = vuelosRadio.Checked;
+            //esVuelos = vuelosRadio.Checked;
             evaluarVisibilidadFiltros();
             if (!esVuelos)
             {
@@ -192,17 +192,17 @@ namespace Gungar.CAI.Prototipos._5
 
         private void soloIdaCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            esSoloIda = soloIdaCheckBox.Checked;
+           // esSoloIda = soloIdaCheckBox.Checked;
             evaluarVisibilidadFiltros();
         }
 
         private void evaluarVisibilidadFiltros()
         {
-            soloIdaCheckBox.Visible = esVuelos;
+            //soloIdaCheckBox.Visible = esVuelos;
             listasVuelosBox.Visible = esVuelos;
             listasHotelesBox.Visible = !esVuelos;
-            origenLabel.Enabled = esVuelos;
-            origenText.Enabled = esVuelos;
+            //origenLabel.Enabled = esVuelos;
+           // origenText.Enabled = esVuelos;
 
             vuelosVueltaBox.Visible = !esSoloIda;
 

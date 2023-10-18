@@ -30,15 +30,10 @@
         {
             titleLabel = new Label();
             itinerarioLabel = new Label();
-            vuelosHotelesBox = new GroupBox();
-            hotelesRadio = new RadioButton();
-            vuelosRadio = new RadioButton();
             groupBox1 = new GroupBox();
             claseLabel = new Label();
             clasesCombo = new ComboBox();
-            checkBox2 = new CheckBox();
             aplicarFiltrosBtn = new Button();
-            soloIdaCheckBox = new CheckBox();
             groupBox3 = new GroupBox();
             label1 = new Label();
             hastaPreciosNumeric = new NumericUpDown();
@@ -55,9 +50,7 @@
             label3 = new Label();
             hastaFechaDatePicker = new DateTimePicker();
             destinoText = new TextBox();
-            origenText = new TextBox();
             label4 = new Label();
-            origenLabel = new Label();
             desdeDatePickerLabel = new Label();
             desdeFechaDatePicker = new DateTimePicker();
             button3 = new Button();
@@ -111,7 +104,6 @@
             columnHeader22 = new ColumnHeader();
             modificarItinerarioBox = new GroupBox();
             precioTotalLabel = new Label();
-            vuelosHotelesBox.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -147,56 +139,17 @@
             itinerarioLabel.TabIndex = 2;
             itinerarioLabel.Text = "itinerarioLabel";
             // 
-            // vuelosHotelesBox
-            // 
-            vuelosHotelesBox.Controls.Add(hotelesRadio);
-            vuelosHotelesBox.Controls.Add(vuelosRadio);
-            vuelosHotelesBox.Location = new Point(11, 22);
-            vuelosHotelesBox.Name = "vuelosHotelesBox";
-            vuelosHotelesBox.Size = new Size(180, 45);
-            vuelosHotelesBox.TabIndex = 6;
-            vuelosHotelesBox.TabStop = false;
-            vuelosHotelesBox.Text = "Tipo de producto";
-            // 
-            // hotelesRadio
-            // 
-            hotelesRadio.AutoSize = true;
-            hotelesRadio.Location = new Point(81, 20);
-            hotelesRadio.Name = "hotelesRadio";
-            hotelesRadio.Size = new Size(65, 19);
-            hotelesRadio.TabIndex = 1;
-            hotelesRadio.Text = "Hoteles";
-            hotelesRadio.UseVisualStyleBackColor = true;
-            // 
-            // vuelosRadio
-            // 
-            vuelosRadio.AutoSize = true;
-            vuelosRadio.Checked = true;
-            vuelosRadio.Location = new Point(6, 20);
-            vuelosRadio.Name = "vuelosRadio";
-            vuelosRadio.Size = new Size(60, 19);
-            vuelosRadio.TabIndex = 0;
-            vuelosRadio.TabStop = true;
-            vuelosRadio.Text = "Vuelos";
-            vuelosRadio.UseVisualStyleBackColor = true;
-            vuelosRadio.CheckedChanged += vuelosRadio_CheckedChanged;
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(claseLabel);
             groupBox1.Controls.Add(clasesCombo);
-            groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(aplicarFiltrosBtn);
-            groupBox1.Controls.Add(soloIdaCheckBox);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
-            groupBox1.Controls.Add(vuelosHotelesBox);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(hastaFechaDatePicker);
             groupBox1.Controls.Add(destinoText);
-            groupBox1.Controls.Add(origenText);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(origenLabel);
             groupBox1.Controls.Add(desdeDatePickerLabel);
             groupBox1.Controls.Add(desdeFechaDatePicker);
             groupBox1.Location = new Point(24, 34);
@@ -218,20 +171,11 @@
             // clasesCombo
             // 
             clasesCombo.FormattingEnabled = true;
+            clasesCombo.Items.AddRange(new object[] { "Todas", "5 Estrellas", "4 Estrellas", "3 Estrellas", "2 Estrellas", "1 Estrellas" });
             clasesCombo.Location = new Point(562, 132);
             clasesCombo.Name = "clasesCombo";
             clasesCombo.Size = new Size(127, 23);
             clasesCombo.TabIndex = 24;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(197, 102);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(141, 19);
-            checkBox2.TabIndex = 23;
-            checkBox2.Text = "Tengo fechas flexibles";
-            checkBox2.UseVisualStyleBackColor = true;
             // 
             // aplicarFiltrosBtn
             // 
@@ -241,18 +185,7 @@
             aplicarFiltrosBtn.TabIndex = 21;
             aplicarFiltrosBtn.Text = "Aplicar Filtros";
             aplicarFiltrosBtn.UseVisualStyleBackColor = true;
-            aplicarFiltrosBtn.Click += aplicarFiltrosBtn_Click;
-            // 
-            // soloIdaCheckBox
-            // 
-            soloIdaCheckBox.AutoSize = true;
-            soloIdaCheckBox.Location = new Point(344, 102);
-            soloIdaCheckBox.Name = "soloIdaCheckBox";
-            soloIdaCheckBox.Size = new Size(81, 19);
-            soloIdaCheckBox.TabIndex = 22;
-            soloIdaCheckBox.Text = "Es solo ida";
-            soloIdaCheckBox.UseVisualStyleBackColor = true;
-            soloIdaCheckBox.CheckedChanged += soloIdaCheckBox_CheckedChanged;
+            
             // 
             // groupBox3
             // 
@@ -395,13 +328,6 @@
             destinoText.Size = new Size(231, 23);
             destinoText.TabIndex = 5;
             // 
-            // origenText
-            // 
-            origenText.Location = new Point(249, 39);
-            origenText.Name = "origenText";
-            origenText.Size = new Size(231, 23);
-            origenText.TabIndex = 4;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -410,15 +336,6 @@
             label4.Size = new Size(50, 15);
             label4.TabIndex = 3;
             label4.Text = "Destino:";
-            // 
-            // origenLabel
-            // 
-            origenLabel.AutoSize = true;
-            origenLabel.Location = new Point(197, 42);
-            origenLabel.Name = "origenLabel";
-            origenLabel.Size = new Size(46, 15);
-            origenLabel.TabIndex = 2;
-            origenLabel.Text = "Origen:";
             // 
             // desdeDatePickerLabel
             // 
@@ -717,7 +634,6 @@
             itinerarioListView.TabIndex = 24;
             itinerarioListView.UseCompatibleStateImageBehavior = false;
             itinerarioListView.View = View.Details;
-            itinerarioListView.SelectedIndexChanged += itinerarioListView_SelectedIndexChanged;
             // 
             // columnHeader4
             // 
@@ -796,7 +712,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1498, 749);
+            ClientSize = new Size(1370, 749);
             Controls.Add(modificarItinerarioBox);
             Controls.Add(listasHotelesBox);
             Controls.Add(listasVuelosBox);
@@ -807,8 +723,6 @@
             Name = "GestionProductosItinerarioForm";
             Text = "GestionProductosItinerarioForm";
             Load += GestionProductosItinerarioForm_Load;
-            vuelosHotelesBox.ResumeLayout(false);
-            vuelosHotelesBox.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -836,16 +750,11 @@
 
         private Label titleLabel;
         private Label itinerarioLabel;
-        private GroupBox vuelosHotelesBox;
-        private RadioButton hotelesRadio;
-        private RadioButton vuelosRadio;
         private GroupBox groupBox1;
         private DateTimePicker desdeFechaDatePicker;
         private Label desdeDatePickerLabel;
         private Label label4;
-        private Label origenLabel;
         private TextBox destinoText;
-        private TextBox origenText;
         private Label label3;
         private DateTimePicker hastaFechaDatePicker;
         private GroupBox groupBox2;
@@ -862,7 +771,6 @@
         private NumericUpDown cantidadAdultosNumeric;
         private Button aplicarFiltrosBtn;
         private Button button3;
-        private CheckBox soloIdaCheckBox;
         private GroupBox listasVuelosBox;
         private Label claseLabel;
         private ComboBox clasesCombo;
@@ -899,7 +807,6 @@
         private ColumnHeader disponibilidadHeader1;
         private ColumnHeader estrellasHeader;
         private ColumnHeader disponilidadHeader;
-        private CheckBox checkBox2;
         private Button quitarProductoBtn;
         private Button agregarProductoBtn;
         private ListView itinerarioListView;

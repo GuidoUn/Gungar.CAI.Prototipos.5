@@ -38,7 +38,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 var item = new ListViewItem();
                 item.Text = itinerario.itinerarioId.ToString();
-                item.SubItems.Add(itinerario.cliente.nombre);
+                item.SubItems.Add(itinerario?.cliente?.nombre);
                 item.SubItems.Add(itinerario.fechaCreacion.ToString(FORMATO_FECHA));
                 item.SubItems.Add(itinerario.estado.ToString());
                 item.Tag = itinerario;
