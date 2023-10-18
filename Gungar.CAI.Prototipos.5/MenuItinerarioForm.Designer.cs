@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            gestionarProductosBtn = new Button();
+            hotelesBtn = new Button();
             label1 = new Label();
             itinerarioSeleccionadoLabel = new Label();
             salirBtn = new Button();
@@ -52,22 +52,25 @@
             label2 = new Label();
             label4 = new Label();
             gestionarItinerarioBox = new GroupBox();
+            vuelosBtn = new Button();
+            clienteBtn = new Button();
             precioTotalLabel = new Label();
             nombreYApellidoLabel = new Label();
             label6 = new Label();
+            cancelarReservaBtn = new Button();
             groupBox1.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
             // 
-            // gestionarProductosBtn
+            // hotelesBtn
             // 
-            gestionarProductosBtn.Location = new Point(15, 22);
-            gestionarProductosBtn.Name = "gestionarProductosBtn";
-            gestionarProductosBtn.Size = new Size(145, 51);
-            gestionarProductosBtn.TabIndex = 0;
-            gestionarProductosBtn.Text = "Agregar/Quitar Productos";
-            gestionarProductosBtn.UseVisualStyleBackColor = true;
-            gestionarProductosBtn.Click += gestionarProductosBtn_Click;
+            hotelesBtn.Location = new Point(15, 136);
+            hotelesBtn.Name = "hotelesBtn";
+            hotelesBtn.Size = new Size(145, 51);
+            hotelesBtn.TabIndex = 0;
+            hotelesBtn.Text = "Agregar/Quitar Hoteles";
+            hotelesBtn.UseVisualStyleBackColor = true;
+            hotelesBtn.Click += hotelesBtn_Click;
             // 
             // label1
             // 
@@ -99,7 +102,7 @@
             // 
             // agregarPasajerosBtn
             // 
-            agregarPasajerosBtn.Location = new Point(15, 79);
+            agregarPasajerosBtn.Location = new Point(15, 193);
             agregarPasajerosBtn.Name = "agregarPasajerosBtn";
             agregarPasajerosBtn.Size = new Size(145, 49);
             agregarPasajerosBtn.TabIndex = 5;
@@ -111,7 +114,7 @@
             // 
             groupBox1.Controls.Add(generarReservaBtn);
             groupBox1.Controls.Add(generarPreReservaBtn);
-            groupBox1.Location = new Point(54, 255);
+            groupBox1.Location = new Point(54, 374);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(177, 142);
             groupBox1.TabIndex = 6;
@@ -241,14 +244,35 @@
             // 
             // gestionarItinerarioBox
             // 
-            gestionarItinerarioBox.Controls.Add(gestionarProductosBtn);
+            gestionarItinerarioBox.Controls.Add(vuelosBtn);
+            gestionarItinerarioBox.Controls.Add(clienteBtn);
+            gestionarItinerarioBox.Controls.Add(hotelesBtn);
             gestionarItinerarioBox.Controls.Add(agregarPasajerosBtn);
             gestionarItinerarioBox.Location = new Point(54, 103);
             gestionarItinerarioBox.Name = "gestionarItinerarioBox";
-            gestionarItinerarioBox.Size = new Size(177, 146);
+            gestionarItinerarioBox.Size = new Size(177, 254);
             gestionarItinerarioBox.TabIndex = 13;
             gestionarItinerarioBox.TabStop = false;
             gestionarItinerarioBox.Text = "Gestionar Itinerario";
+            // 
+            // vuelosBtn
+            // 
+            vuelosBtn.Location = new Point(15, 79);
+            vuelosBtn.Name = "vuelosBtn";
+            vuelosBtn.Size = new Size(145, 51);
+            vuelosBtn.TabIndex = 7;
+            vuelosBtn.Text = "Agregar/Quitar Vuelos";
+            vuelosBtn.UseVisualStyleBackColor = true;
+            // 
+            // clienteBtn
+            // 
+            clienteBtn.Location = new Point(15, 22);
+            clienteBtn.Name = "clienteBtn";
+            clienteBtn.Size = new Size(145, 51);
+            clienteBtn.TabIndex = 6;
+            clienteBtn.Text = "Agregar/Modificar Cliente";
+            clienteBtn.UseVisualStyleBackColor = true;
+            clienteBtn.Click += clienteBtn_Click;
             // 
             // precioTotalLabel
             // 
@@ -277,11 +301,22 @@
             label6.TabIndex = 15;
             label6.Text = "Nombre y Apellido:";
             // 
+            // cancelarReservaBtn
+            // 
+            cancelarReservaBtn.Location = new Point(69, 522);
+            cancelarReservaBtn.Name = "cancelarReservaBtn";
+            cancelarReservaBtn.Size = new Size(145, 49);
+            cancelarReservaBtn.TabIndex = 9;
+            cancelarReservaBtn.Text = "Cancelar Reserva";
+            cancelarReservaBtn.UseVisualStyleBackColor = true;
+            cancelarReservaBtn.Click += cancelarReservaBtn_Click;
+            // 
             // MenuItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 658);
+            Controls.Add(cancelarReservaBtn);
             Controls.Add(nombreYApellidoLabel);
             Controls.Add(label6);
             Controls.Add(precioTotalLabel);
@@ -307,7 +342,7 @@
 
         #endregion
 
-        private Button gestionarProductosBtn;
+        private Button hotelesBtn;
         private Label label1;
         private Label itinerarioSeleccionadoLabel;
         private Button salirBtn;
@@ -337,5 +372,8 @@
         private Label label5;
         private Label label6;
         private Label nombreYApellidoLabel;
+        private Button vuelosBtn;
+        private Button clienteBtn;
+        private Button cancelarReservaBtn;
     }
 }

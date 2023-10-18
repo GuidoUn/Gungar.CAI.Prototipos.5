@@ -76,7 +76,7 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             ListViewItem selected = itinerariosListView.SelectedItems[0];
-
+            Form1.itinerarioEnCurso = itinerarios.FirstOrDefault((itinerario) => itinerario == selected.Tag); ;
             itinerarioSeleccionado2 = itinerarios.FirstOrDefault((itinerario) => itinerario == selected.Tag);
 
             itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado2.cliente.nombre} ({itinerarioSeleccionado2.itinerarioId})";

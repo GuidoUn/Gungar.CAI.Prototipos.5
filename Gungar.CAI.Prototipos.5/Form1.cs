@@ -9,6 +9,8 @@ namespace Gungar.CAI.Prototipos._5
         GestionProductosItinerarioForm consultarProductosForm = new GestionProductosItinerarioForm(-1, true);
         CrearItinerarioForm crearItinerarioForm;
         SeleccionItinerarioForm seleccionItinerarioForm;
+        MenuItinerarioForm menuItinerarioForm;
+        public static Itinerario itinerarioEnCurso;
 
         //const string FORMATO_FECHA = "yyyy-MM-dd";
 
@@ -41,8 +43,13 @@ namespace Gungar.CAI.Prototipos._5
 
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
-            crearItinerarioForm = new CrearItinerarioForm();
-            crearItinerarioForm.ShowDialog();
+
+             itinerarioEnCurso = new Itinerario();
+
+
+            itinerarios.Add(itinerarioEnCurso);
+            menuItinerarioForm = new MenuItinerarioForm(itinerarioEnCurso.itinerarioId);
+            menuItinerarioForm.ShowDialog();
         }
     }
 }

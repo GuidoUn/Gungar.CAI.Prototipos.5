@@ -64,14 +64,13 @@ namespace Gungar.CAI.Prototipos._5
             //TODO: Validar que el cliente esté creado ¿?
 
             Itinerario nuevoItinerario = new Itinerario(nuevoCliente, DateTime.Now);
-
+            Form1.itinerarioEnCurso.AsignarCliente(nuevoCliente);
 
             itinerarios.Add(nuevoItinerario);
 
 
             menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario.itinerarioId);
             this.Visible = false;
-            menuItinerarioForm.ShowDialog();
             this.Close();
         }
     }

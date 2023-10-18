@@ -10,7 +10,8 @@ namespace Gungar.CAI.Prototipos._5
     {
         Presupuesto,
         Prereserva,
-        Reserva
+        Reserva,
+        Cancelado
     }
 
     public class Itinerario
@@ -32,7 +33,14 @@ namespace Gungar.CAI.Prototipos._5
             this.estado = Estado.Presupuesto;
             this.pasajeros = new List<Pasajero>();
         }
-
+        public Itinerario()
+        {
+            this.itinerarioId = ultimoId + 1;
+            ultimoId = this.itinerarioId;
+            this.fechaCreacion = DateTime.Now;
+            this.estado = Estado.Presupuesto;
+            this.pasajeros = new List<Pasajero>();
+        }
         public Itinerario(Cliente cliente, DateTime fechaCreacion)
         {
             this.itinerarioId = ultimoId + 1;
@@ -43,6 +51,10 @@ namespace Gungar.CAI.Prototipos._5
             this.pasajeros = new List<Pasajero>();
         }
 
+        public void AsignarCliente(Cliente Cliente)
+        {
+            this.cliente = Cliente;
+        }
         public void AgregarPasajero(Pasajero pasajero)
         {
             pasajeros.Add(pasajero);

@@ -17,6 +17,7 @@ namespace Gungar.CAI.Prototipos._5
         AgregarDatosForm agregarDatosForm;
 
         GestionProductosItinerarioForm gestionProductosItinerarioForm;
+        CrearItinerarioForm crearItinerarioForm;
 
         public static List<string[]> productosItinerarios = new List<string[]>
         {
@@ -38,6 +39,8 @@ namespace Gungar.CAI.Prototipos._5
         private void refrescar()
         {
             estadoLabel.Text = itinerario.estado.ToString();
+            itinerarioSeleccionadoLabel.Text = $"{itinerario.itinerarioId}";
+            nombreYApellidoLabel.Text = $"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}";
             if (itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Reserva)
             {
                 generarPreReservaBtn.Enabled = false;
@@ -57,7 +60,7 @@ namespace Gungar.CAI.Prototipos._5
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
             itinerarioSeleccionadoLabel.Text = $"{itinerario.itinerarioId}";
-            nombreYApellidoLabel.Text = $"{itinerario.cliente.nombre} {itinerario.cliente?.apellido}";
+            nombreYApellidoLabel.Text = $"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}";
             refrescar();
             poblarListaPasajeros();
         }
@@ -98,7 +101,7 @@ namespace Gungar.CAI.Prototipos._5
             }
         }
 
-        private void gestionarProductosBtn_Click(object sender, EventArgs e)
+        private void hotelesBtn_Click(object sender, EventArgs e)
         {
             gestionProductosItinerarioForm.ShowDialog();
             refrescar();
@@ -141,6 +144,18 @@ namespace Gungar.CAI.Prototipos._5
 
         }
 
+        private void clienteBtn_Click(object sender, EventArgs e)
+        {
+            crearItinerarioForm = new CrearItinerarioForm();
+            crearItinerarioForm.ShowDialog();
+            refrescar();
 
+        }
+
+        private void cancelarReservaBtn_Click(object sender, EventArgs e)
+        {
+            itinerario.estado = Estado.Cancelado;
+            refrescar(); 
+        }
     }
 }
