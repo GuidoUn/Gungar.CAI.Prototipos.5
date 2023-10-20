@@ -10,29 +10,41 @@ using System.Windows.Forms;
 
 namespace Gungar.CAI.Prototipos._5
 {
-    public partial class CrearItinerarioForm : Form
+    public partial class ClienteForm : Form
     {
-        string nombreNuevoPasajero;
-        string apellidoNuevoPasajero;
-        string documentoNuevoPasajero;
+        string? nombreNuevoPasajero;
+        string? apellidoNuevoPasajero;
+        string? documentoNuevoPasajero;
 
-        MenuItinerarioForm menuItinerarioForm;
+        //MenuItinerarioForm menuItinerarioForm;
 
-        List<Itinerario>? itinerarios;
+        Itinerario itinerario;
 
-        public CrearItinerarioForm()
+        public ClienteForm(Itinerario itinerario)
         {
             InitializeComponent();
-            itinerarios = MenuPrincipalForm.itinerarios;
+            this.itinerario = itinerario;
+            this.nombreNuevoPasajero = itinerario.cliente?.nombre;
+            this.apellidoNuevoPasajero = itinerario.cliente?.apellido;
+            this.documentoNuevoPasajero = itinerario.cliente?.documento;
+            actualizarCampos();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void evaluarEstadoBtns()
         {
             continuarBtn.Enabled = nombreNuevoPasajero?.Length > 0 && apellidoNuevoPasajero?.Length > 0;
+        }
+
+        private void actualizarCampos()
+        {
+            nuevoPasajeroText.Text = this.nombreNuevoPasajero;
+            apellidoText.Text = this.apellidoNuevoPasajero;
+            documentoText.Text = this.documentoNuevoPasajero;
         }
 
         private void nuevoPasajeroText_TextChanged(object sender, EventArgs e)
@@ -47,8 +59,6 @@ namespace Gungar.CAI.Prototipos._5
             evaluarEstadoBtns();
         }
 
-
-
         private void documentoText_TextChanged(object sender, EventArgs e)
         {
             documentoNuevoPasajero = documentoText.Text;
@@ -58,19 +68,24 @@ namespace Gungar.CAI.Prototipos._5
         {
             var item = new ListViewItem();
 
-            //int nuevoId = itinerarios[itinerarios.Count - 1].itinerarioId + 1;
+            if (string.IsNullOrEmpty(nombreNuevoPasajero) || string.IsNullOrEmpty(apellidoNuevoPasajero))
+            {
+                return;
+            }
+
             Cliente nuevoCliente = new Cliente(nombreNuevoPasajero, apellidoNuevoPasajero, documentoNuevoPasajero);
 
+            itinerario.AsignarCliente(nuevoCliente);
             //TODO: Validar que el cliente esté creado ¿?
 
-            Itinerario nuevoItinerario = new Itinerario(nuevoCliente, DateTime.Now);
-            MenuPrincipalForm.itinerarioEnCurso.AsignarCliente(nuevoCliente);
+            //Itinerario nuevoItinerario = new Itinerario(nuevoCliente, DateTime.Now);
+            //MenuPrincipalForm.itinerarioEnCurso.AsignarCliente(nuevoCliente);
 
-            itinerarios.Add(nuevoItinerario);
+            //itinerarios.Add(nuevoItinerario);
 
 
-            menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario.itinerarioId);
-            this.Visible = false;
+            //menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario.itinerarioId);
+            //this.Visible = false;
             this.Close();
         }
     }

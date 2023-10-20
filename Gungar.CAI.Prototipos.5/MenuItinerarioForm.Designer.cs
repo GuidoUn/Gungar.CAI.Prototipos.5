@@ -114,7 +114,7 @@
             // 
             groupBox1.Controls.Add(generarReservaBtn);
             groupBox1.Controls.Add(generarPreReservaBtn);
-            groupBox1.Location = new Point(54, 374);
+            groupBox1.Location = new Point(54, 422);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(177, 142);
             groupBox1.TabIndex = 6;
@@ -250,7 +250,7 @@
             gestionarItinerarioBox.Controls.Add(agregarPasajerosBtn);
             gestionarItinerarioBox.Location = new Point(54, 103);
             gestionarItinerarioBox.Name = "gestionarItinerarioBox";
-            gestionarItinerarioBox.Size = new Size(177, 254);
+            gestionarItinerarioBox.Size = new Size(177, 253);
             gestionarItinerarioBox.TabIndex = 13;
             gestionarItinerarioBox.TabStop = false;
             gestionarItinerarioBox.Text = "Gestionar Itinerario";
@@ -304,7 +304,7 @@
             // 
             // cancelarReservaBtn
             // 
-            cancelarReservaBtn.Location = new Point(69, 522);
+            cancelarReservaBtn.Location = new Point(69, 570);
             cancelarReservaBtn.Name = "cancelarReservaBtn";
             cancelarReservaBtn.Size = new Size(145, 49);
             cancelarReservaBtn.TabIndex = 9;

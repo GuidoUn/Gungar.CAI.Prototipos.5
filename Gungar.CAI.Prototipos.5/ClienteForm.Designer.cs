@@ -1,6 +1,6 @@
 ﻿namespace Gungar.CAI.Prototipos._5
 {
-    partial class CrearItinerarioForm
+    partial class ClienteForm
     {
         /// <summary>
         /// Required designer variable.
@@ -137,7 +137,7 @@
             documentoText.TabIndex = 17;
             documentoText.TextChanged += documentoText_TextChanged;
             // 
-            // CrearItinerarioForm
+            // ClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -146,8 +146,8 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(continuarBtn);
-            Name = "CrearItinerarioForm";
-            Text = "CrearItinerarioForm";
+            Name = "ClienteForm";
+            Text = "ClienteForm";
             nuevoItinerarioBox.ResumeLayout(false);
             nuevoItinerarioBox.PerformLayout();
             ResumeLayout(false);

@@ -16,9 +16,10 @@ namespace Gungar.CAI.Prototipos._5
 
         AgregarDatosForm agregarDatosForm;
 
-        CrearItinerarioForm crearItinerarioForm;
+        //CrearItinerarioForm crearItinerarioForm;
         VuelosForm vuelosForm;
         HotelesForm hotelesForm;
+        ClienteForm clienteForm;
 
         public static List<string[]> productosItinerarios = new List<string[]>
         {
@@ -33,6 +34,7 @@ namespace Gungar.CAI.Prototipos._5
             InitializeComponent();
 
             itinerario = MenuPrincipalForm.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
+            clienteForm = new ClienteForm(itinerario);
             agregarDatosForm = new AgregarDatosForm(itinerario.itinerarioId);
         }
 
@@ -147,10 +149,9 @@ namespace Gungar.CAI.Prototipos._5
 
         private void clienteBtn_Click(object sender, EventArgs e)
         {
-            crearItinerarioForm = new CrearItinerarioForm();
-            crearItinerarioForm.ShowDialog();
+            //crearItinerarioForm = new CrearItinerarioForm();
+            clienteForm.ShowDialog();
             refrescar();
-
         }
 
         private void cancelarReservaBtn_Click(object sender, EventArgs e)
