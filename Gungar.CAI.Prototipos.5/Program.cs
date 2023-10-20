@@ -11,7 +11,9 @@ namespace Gungar.CAI.Prototipos._5
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            AppModel.CargaInicial();
             Application.Run(new MenuPrincipalForm());
+            AppModel.GuardarDatos();
         }
     }
 }
