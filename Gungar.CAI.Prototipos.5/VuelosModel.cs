@@ -21,30 +21,36 @@ public class FiltrosVuelos
         this.origen = origen;
         this.destino = destino;
     }
-    //public FiltrosVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, DateTime? fechaSalida, int? precioMinimo, int? precioMaximo)
-    //{
-    //    this.cantidadAdultos = cantidadAdultos;
-    //    this.cantidadMenores = cantidadMenores;
-    //    this.cantidadInfantes = cantidadInfantes;
-    //    this.origen = origen;
-    //    this.destino = destino;
-    //    this.fechaSalida = fechaSalida;
-    //    this.precioMinimo = precioMinimo;
-    //    this.precioMaximo = precioMaximo;
-    //}
+
+    public FiltrosVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, DateTime? fechaSalida, int? precioMinimo, int? precioMaximo)
+    {
+        this.cantidadAdultos = cantidadAdultos;
+        this.cantidadMenores = cantidadMenores;
+        this.cantidadInfantes = cantidadInfantes;
+        this.origen = origen;
+        this.destino = destino;
+        this.fechaSalida = fechaSalida;
+        this.precioMinimo = precioMinimo;
+        this.precioMaximo = precioMaximo;
+    }
 }
 
 public static class VuelosModel
 {
     public static List<OfertaVuelo> ofertaVuelos { get; private set; } = new List<OfertaVuelo>();
 
-    public static List<OfertaVuelo> getVuelos(FiltrosVuelos filtros)
+    public static List<OfertaVuelo> getVuelos(FiltrosVuelos? filtros)
     {
+        if (filtros == null)
+        {
+            return ofertaVuelos;
+        }
+
         List<OfertaVuelo> vuelosFiltrados = ofertaVuelos.Where(vuelo =>
         {
-            if (OfertaVuelo.Ciudades[vuelo.Origen] != filtros.origen)
+            if (filtros.origen != "" && OfertaVuelo.Ciudades[vuelo.Origen] != filtros.origen)
                 return false;
-            if (OfertaVuelo.Ciudades[vuelo.Destino] != filtros.destino)
+            if (filtros.destino != "" && OfertaVuelo.Ciudades[vuelo.Destino] != filtros.destino)
                 return false;
             return true;
         }
