@@ -101,13 +101,13 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 
         public static Dictionary<string, string> Clases = new Dictionary<string, string>(){
             {
-                "E", "Aerolineas Argentinas"
+                "E", "Economy"
             },  {
-                "P", "Fly Bondi"
+                "P", "Premium"
             },  {
-                "B", "Jet Smart"
+                "B", "Business"
             }, {
-                "F", "Jet Smart"
+                "F", "First"
             }
         };
 
