@@ -66,6 +66,7 @@ namespace Gungar.CAI.Prototipos._5
         private void evaluarEstadoBtns()
         {
             continuarBtn.Enabled = itinerarioSeleccionado != null;
+            eliminarItinerarioBtn.Enabled = !(itinerarioSeleccionado == null);
         }
 
         private void itinerariosListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,13 +120,30 @@ namespace Gungar.CAI.Prototipos._5
             item.Tag = itinerariosFiltrado;
 
             itinerariosListView.Items.Add(item);
-
         }
 
         private void origenText_TextChanged(object sender, EventArgs e)
         {
             parametroIngresado = parametroTextBox.Text;
             HabilitarFiltro();
+        }
+
+        private void eliminarItinerarioBtn_Click(object sender, EventArgs e)
+        {
+            var confirmar = MessageBox.Show("Esta seguro de que desea ELIMINAR el itinerario", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (confirmar != DialogResult.OK)
+            {
+                return;
+            }
+            if (itinerarioSeleccionado != null)
+            {
+
+                AppModel.eliminarItinerario(itinerarioSeleccionado);
+            }
+            itinerarioSeleccionado = null;
+            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
+            refrescar();
+            evaluarEstadoBtns();
         }
     }
 }

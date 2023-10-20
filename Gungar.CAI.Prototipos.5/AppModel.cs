@@ -18,6 +18,11 @@ namespace Gungar.CAI.Prototipos._5
             itinerarios.Add(itinerario);
         }
 
+        public static void eliminarItinerario(Itinerario itinerario)
+        {
+            itinerarios.Remove(itinerario);
+        }
+
         public static void CargaInicial()
         {
             List<Itinerario>? itinerariosEnAlmacen = DataBase.LeerItinerarios();

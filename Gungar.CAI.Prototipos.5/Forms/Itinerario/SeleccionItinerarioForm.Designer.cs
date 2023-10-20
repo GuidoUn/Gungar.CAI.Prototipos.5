@@ -44,6 +44,7 @@
             estadoHeader = new ColumnHeader();
             label4 = new Label();
             itinerarioSeleccionadoLabel = new Label();
+            eliminarItinerarioBtn = new Button();
             SuspendLayout();
             // 
             // label2
@@ -56,7 +57,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(481, 577);
+            button1.Location = new Point(680, 578);
             button1.Name = "button1";
             button1.Size = new Size(103, 56);
             button1.TabIndex = 20;
@@ -67,7 +68,7 @@
             // continuarBtn
             // 
             continuarBtn.Enabled = false;
-            continuarBtn.Location = new Point(372, 577);
+            continuarBtn.Location = new Point(571, 578);
             continuarBtn.Name = "continuarBtn";
             continuarBtn.Size = new Size(103, 56);
             continuarBtn.TabIndex = 21;
@@ -129,7 +130,7 @@
             itinerariosListView.Location = new Point(85, 122);
             itinerariosListView.MultiSelect = false;
             itinerariosListView.Name = "itinerariosListView";
-            itinerariosListView.Size = new Size(1128, 399);
+            itinerariosListView.Size = new Size(862, 399);
             itinerariosListView.TabIndex = 10;
             itinerariosListView.UseCompatibleStateImageBehavior = false;
             itinerariosListView.View = View.Details;
@@ -163,7 +164,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(328, 549);
+            label4.Location = new Point(527, 550);
             label4.Name = "label4";
             label4.Size = new Size(130, 15);
             label4.TabIndex = 12;
@@ -172,17 +173,29 @@
             // itinerarioSeleccionadoLabel
             // 
             itinerarioSeleccionadoLabel.AutoSize = true;
-            itinerarioSeleccionadoLabel.Location = new Point(462, 549);
+            itinerarioSeleccionadoLabel.Location = new Point(661, 550);
             itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
             itinerarioSeleccionadoLabel.Size = new Size(152, 15);
             itinerarioSeleccionadoLabel.TabIndex = 13;
             itinerarioSeleccionadoLabel.Text = "itinerarioSeleccionadoLabel";
+            // 
+            // eliminarItinerarioBtn
+            // 
+            eliminarItinerarioBtn.Enabled = false;
+            eliminarItinerarioBtn.Location = new Point(962, 298);
+            eliminarItinerarioBtn.Name = "eliminarItinerarioBtn";
+            eliminarItinerarioBtn.Size = new Size(140, 23);
+            eliminarItinerarioBtn.TabIndex = 28;
+            eliminarItinerarioBtn.Text = "Eliminar Itinerario";
+            eliminarItinerarioBtn.UseVisualStyleBackColor = true;
+            eliminarItinerarioBtn.Click += eliminarItinerarioBtn_Click;
             // 
             // SeleccionItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1320, 749);
+            Controls.Add(eliminarItinerarioBtn);
             Controls.Add(itinerarioSeleccionadoLabel);
             Controls.Add(filtrarBtn);
             Controls.Add(label4);
@@ -219,5 +232,6 @@
         private ColumnHeader estadoHeader;
         private Label label4;
         private Label itinerarioSeleccionadoLabel;
+        private Button eliminarItinerarioBtn;
     }
 }
