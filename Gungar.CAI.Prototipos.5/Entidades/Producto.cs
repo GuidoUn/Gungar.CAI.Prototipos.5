@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5.Entidades
 {
-    internal abstract class Producto
+    internal abstract class Producto //No se usa
     {
         public string? Origen;
         public string Destino;

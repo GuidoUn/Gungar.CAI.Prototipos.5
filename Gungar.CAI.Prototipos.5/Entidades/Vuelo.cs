@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5.Entidades
 {
-    internal class Tarifa
+    internal class Tarifa  //No se usa
     {
         public string clase; // E, P, B, F
         public string tipoDePasajero; // A, M, I
