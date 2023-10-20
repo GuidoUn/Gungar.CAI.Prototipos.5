@@ -1,4 +1,5 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public static class AppModel
     {
-
         public static List<Itinerario> itinerarios { get; private set; } = new List<Itinerario>();
 
         public static void agregarItinerario(Itinerario itinerario)
@@ -32,4 +32,5 @@ namespace Gungar.CAI.Prototipos._5
             DataBase.GuardarItinerarios(itinerarios);
         }
     }
+
 }

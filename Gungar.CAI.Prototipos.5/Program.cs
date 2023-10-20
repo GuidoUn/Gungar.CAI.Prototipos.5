@@ -12,8 +12,10 @@ namespace Gungar.CAI.Prototipos._5
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             AppModel.CargaInicial();
+            VuelosModel.CargaInicial();
             Application.Run(new MenuPrincipalForm());
             AppModel.GuardarDatos();
+            VuelosModel.GuardarDatos();
         }
     }
 }

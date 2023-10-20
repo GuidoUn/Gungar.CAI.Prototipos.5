@@ -1,4 +1,5 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Gungar.CAI.Prototipos._5
     public static class DataBase
     {
         const string ITINERARIOS_FILE = @"..\..\..\Almacenes\Itinerarios.json";
+        const string VUELOS_FILE = @"..\..\..\Almacenes\Vuelos.json";
 
         public static List<Itinerario>? LeerItinerarios()
         {
@@ -35,6 +37,30 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             File.WriteAllText(ITINERARIOS_FILE, JsonConvert.SerializeObject(itinerarios));
+        }
+
+        public static List<OfertaVuelo>? LeerVuelos()
+        {
+            if (!File.Exists(VUELOS_FILE))
+            {
+                return null;
+            }
+
+            string json = File.ReadAllText(VUELOS_FILE);
+
+            List<OfertaVuelo>? ofertaVuelos = JsonConvert.DeserializeObject<List<OfertaVuelo>>(json);
+
+            return ofertaVuelos;
+        }
+
+        public static void GuardarVuelos(List<OfertaVuelo> vuelos)
+        {
+            if (File.Exists(VUELOS_FILE))
+            {
+                File.Delete(VUELOS_FILE);
+            }
+
+            File.WriteAllText(VUELOS_FILE, JsonConvert.SerializeObject(vuelos));
         }
     }
 }

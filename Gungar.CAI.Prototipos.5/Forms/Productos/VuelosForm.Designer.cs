@@ -49,18 +49,17 @@
             vuelosHotelesBox = new GroupBox();
             hotelesRadio = new RadioButton();
             vuelosRadio = new RadioButton();
-            label3 = new Label();
-            hastaFechaDatePicker = new DateTimePicker();
+            vueltaLabel = new Label();
+            vueltaDatePicker = new DateTimePicker();
             destinoText = new TextBox();
             origenText = new TextBox();
             label4 = new Label();
             origenLabel = new Label();
             desdeDatePickerLabel = new Label();
-            desdeFechaDatePicker = new DateTimePicker();
+            idaDatePicker = new DateTimePicker();
             itinerarioLabel = new Label();
             titleLabel = new Label();
             modificarItinerarioBox = new GroupBox();
-            precioTotalLabel = new Label();
             agregarProductoBtn = new Button();
             quitarProductoBtn = new Button();
             itinerarioListView = new ListView();
@@ -86,21 +85,17 @@
             columnHeader10 = new ColumnHeader();
             columnHeader11 = new ColumnHeader();
             columnHeader12 = new ColumnHeader();
+            vueltaBox = new GroupBox();
+            vuelosVueltaListView = new ListView();
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
-            groupBox4 = new GroupBox();
-            vuelosVueltaListView = new ListView();
-            columnHeader23 = new ColumnHeader();
-            columnHeader24 = new ColumnHeader();
-            columnHeader25 = new ColumnHeader();
-            columnHeader26 = new ColumnHeader();
-            columnHeader27 = new ColumnHeader();
-            columnHeader28 = new ColumnHeader();
-            columnHeader29 = new ColumnHeader();
-            columnHeader30 = new ColumnHeader();
-            columnHeader31 = new ColumnHeader();
-            columnHeader32 = new ColumnHeader();
-            columnHeader33 = new ColumnHeader();
+            columnHeader34 = new ColumnHeader();
+            columnHeader35 = new ColumnHeader();
+            columnHeader36 = new ColumnHeader();
+            columnHeader37 = new ColumnHeader();
+            columnHeader38 = new ColumnHeader();
+            columnHeader39 = new ColumnHeader();
+            columnHeader40 = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -112,7 +107,7 @@
             vuelosHotelesBox.SuspendLayout();
             modificarItinerarioBox.SuspendLayout();
             vuelosIdaBox.SuspendLayout();
-            groupBox4.SuspendLayout();
+            vueltaBox.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -124,14 +119,14 @@
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(vuelosHotelesBox);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(hastaFechaDatePicker);
+            groupBox1.Controls.Add(vueltaLabel);
+            groupBox1.Controls.Add(vueltaDatePicker);
             groupBox1.Controls.Add(destinoText);
             groupBox1.Controls.Add(origenText);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(origenLabel);
             groupBox1.Controls.Add(desdeDatePickerLabel);
-            groupBox1.Controls.Add(desdeFechaDatePicker);
+            groupBox1.Controls.Add(idaDatePicker);
             groupBox1.Location = new Point(12, 34);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(716, 194);
@@ -159,6 +154,7 @@
             // 
             // aplicarFiltrosBtn
             // 
+            aplicarFiltrosBtn.Enabled = false;
             aplicarFiltrosBtn.Location = new Point(499, 162);
             aplicarFiltrosBtn.Name = "aplicarFiltrosBtn";
             aplicarFiltrosBtn.Size = new Size(190, 23);
@@ -170,7 +166,7 @@
             // soloIdaCheckBox
             // 
             soloIdaCheckBox.AutoSize = true;
-            soloIdaCheckBox.Location = new Point(198, 99);
+            soloIdaCheckBox.Location = new Point(197, 103);
             soloIdaCheckBox.Name = "soloIdaCheckBox";
             soloIdaCheckBox.Size = new Size(81, 19);
             soloIdaCheckBox.TabIndex = 22;
@@ -270,6 +266,7 @@
             cantidadAdultosNumeric.Name = "cantidadAdultosNumeric";
             cantidadAdultosNumeric.Size = new Size(93, 23);
             cantidadAdultosNumeric.TabIndex = 24;
+            cantidadAdultosNumeric.ValueChanged += cantidadAdultosNumeric_ValueChanged;
             // 
             // label7
             // 
@@ -331,21 +328,21 @@
             vuelosRadio.Text = "Vuelos";
             vuelosRadio.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // vueltaLabel
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(197, 165);
-            label3.Name = "label3";
-            label3.Size = new Size(40, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Hasta:";
+            vueltaLabel.AutoSize = true;
+            vueltaLabel.Location = new Point(197, 165);
+            vueltaLabel.Name = "vueltaLabel";
+            vueltaLabel.Size = new Size(43, 15);
+            vueltaLabel.TabIndex = 7;
+            vueltaLabel.Text = "Vuelta:";
             // 
-            // hastaFechaDatePicker
+            // vueltaDatePicker
             // 
-            hastaFechaDatePicker.Location = new Point(249, 162);
-            hastaFechaDatePicker.Name = "hastaFechaDatePicker";
-            hastaFechaDatePicker.Size = new Size(231, 23);
-            hastaFechaDatePicker.TabIndex = 6;
+            vueltaDatePicker.Location = new Point(249, 162);
+            vueltaDatePicker.Name = "vueltaDatePicker";
+            vueltaDatePicker.Size = new Size(231, 23);
+            vueltaDatePicker.TabIndex = 6;
             // 
             // destinoText
             // 
@@ -384,21 +381,21 @@
             desdeDatePickerLabel.AutoSize = true;
             desdeDatePickerLabel.Location = new Point(197, 135);
             desdeDatePickerLabel.Name = "desdeDatePickerLabel";
-            desdeDatePickerLabel.Size = new Size(42, 15);
+            desdeDatePickerLabel.Size = new Size(26, 15);
             desdeDatePickerLabel.TabIndex = 1;
-            desdeDatePickerLabel.Text = "Desde:";
+            desdeDatePickerLabel.Text = "Ida:";
             // 
-            // desdeFechaDatePicker
+            // idaDatePicker
             // 
-            desdeFechaDatePicker.Location = new Point(249, 132);
-            desdeFechaDatePicker.Name = "desdeFechaDatePicker";
-            desdeFechaDatePicker.Size = new Size(231, 23);
-            desdeFechaDatePicker.TabIndex = 0;
+            idaDatePicker.Location = new Point(249, 132);
+            idaDatePicker.Name = "idaDatePicker";
+            idaDatePicker.Size = new Size(231, 23);
+            idaDatePicker.TabIndex = 0;
             // 
             // itinerarioLabel
             // 
             itinerarioLabel.AutoSize = true;
-            itinerarioLabel.Location = new Point(177, 16);
+            itinerarioLabel.Location = new Point(108, 16);
             itinerarioLabel.Name = "itinerarioLabel";
             itinerarioLabel.Size = new Size(82, 15);
             itinerarioLabel.TabIndex = 9;
@@ -409,30 +406,20 @@
             titleLabel.AutoSize = true;
             titleLabel.Location = new Point(12, 16);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(157, 15);
+            titleLabel.Size = new Size(90, 15);
             titleLabel.TabIndex = 8;
-            titleLabel.Text = "Gestión Productos Itinerario:";
+            titleLabel.Text = "Agregar Vuelos:";
             // 
             // modificarItinerarioBox
             // 
-            modificarItinerarioBox.Controls.Add(precioTotalLabel);
             modificarItinerarioBox.Controls.Add(agregarProductoBtn);
             modificarItinerarioBox.Controls.Add(quitarProductoBtn);
             modificarItinerarioBox.Controls.Add(itinerarioListView);
-            modificarItinerarioBox.Location = new Point(655, 234);
+            modificarItinerarioBox.Location = new Point(784, 234);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
-            modificarItinerarioBox.Size = new Size(703, 503);
+            modificarItinerarioBox.Size = new Size(736, 564);
             modificarItinerarioBox.TabIndex = 27;
             modificarItinerarioBox.TabStop = false;
-            // 
-            // precioTotalLabel
-            // 
-            precioTotalLabel.AutoSize = true;
-            precioTotalLabel.Location = new Point(354, 433);
-            precioTotalLabel.Name = "precioTotalLabel";
-            precioTotalLabel.Size = new Size(104, 15);
-            precioTotalLabel.TabIndex = 27;
-            precioTotalLabel.Text = "Precio Total: $1560";
             // 
             // agregarProductoBtn
             // 
@@ -457,7 +444,7 @@
             itinerarioListView.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7, columnHeader17, columnHeader15, columnHeader16, columnHeader18, columnHeader19, columnHeader20, columnHeader21, columnHeader22 });
             itinerarioListView.Location = new Point(87, 16);
             itinerarioListView.Name = "itinerarioListView";
-            itinerarioListView.Size = new Size(591, 411);
+            itinerarioListView.Size = new Size(591, 542);
             itinerarioListView.TabIndex = 24;
             itinerarioListView.UseCompatibleStateImageBehavior = false;
             itinerarioListView.View = View.Details;
@@ -519,153 +506,135 @@
             vuelosIdaBox.Controls.Add(vuelosIdaListView);
             vuelosIdaBox.Location = new Point(12, 234);
             vuelosIdaBox.Name = "vuelosIdaBox";
-            vuelosIdaBox.Size = new Size(637, 189);
+            vuelosIdaBox.Size = new Size(766, 274);
             vuelosIdaBox.TabIndex = 28;
             vuelosIdaBox.TabStop = false;
             vuelosIdaBox.Text = "Ida";
             // 
             // vuelosIdaListView
             // 
-            vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
+            vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12 });
             vuelosIdaListView.FullRowSelect = true;
             vuelosIdaListView.Location = new Point(11, 16);
             vuelosIdaListView.Name = "vuelosIdaListView";
-            vuelosIdaListView.Size = new Size(620, 145);
+            vuelosIdaListView.Size = new Size(744, 252);
             vuelosIdaListView.TabIndex = 24;
             vuelosIdaListView.UseCompatibleStateImageBehavior = false;
             vuelosIdaListView.View = View.Details;
             // 
             // columnHeader1
             // 
-            columnHeader1.Text = "Producto";
+            columnHeader1.Text = "Aerolinea";
             columnHeader1.Width = 70;
             // 
             // columnHeader2
             // 
-            columnHeader2.Text = "Prestador";
-            columnHeader2.Width = 100;
+            columnHeader2.Text = "Origen";
             // 
             // columnHeader3
             // 
-            columnHeader3.Text = "Cant Pasajeros";
-            columnHeader3.Width = 100;
+            columnHeader3.Text = "Destino";
             // 
             // columnHeader4
             // 
-            columnHeader4.Text = "Origen/Destino";
-            columnHeader4.Width = 100;
+            columnHeader4.Text = "Fecha Salida";
+            columnHeader4.Width = 90;
             // 
             // columnHeader8
             // 
-            columnHeader8.Text = "Precio Total";
+            columnHeader8.Text = "Fecha Arribo";
+            columnHeader8.Width = 90;
             // 
             // columnHeader9
             // 
-            columnHeader9.Text = "Categoría";
-            columnHeader9.Width = 70;
+            columnHeader9.Text = "Tiempo de vuelo";
+            columnHeader9.Width = 100;
             // 
             // columnHeader10
             // 
-            columnHeader10.Text = "Desde";
+            columnHeader10.Text = "Precio Adulto";
+            columnHeader10.Width = 90;
             // 
             // columnHeader11
             // 
-            columnHeader11.Text = "Hasta";
+            columnHeader11.Text = "Precio Menor";
+            columnHeader11.Width = 90;
             // 
             // columnHeader12
             // 
-            columnHeader12.Text = "Precio Adulto";
-            columnHeader12.Width = 100;
+            columnHeader12.Text = "Precio Infante";
+            columnHeader12.Width = 90;
             // 
-            // columnHeader13
+            // vueltaBox
             // 
-            columnHeader13.Text = "Precio Menor";
-            columnHeader13.Width = 100;
-            // 
-            // columnHeader14
-            // 
-            columnHeader14.Text = "Precio Infante";
-            columnHeader14.Width = 100;
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(vuelosVueltaListView);
-            groupBox4.Location = new Point(12, 429);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(637, 189);
-            groupBox4.TabIndex = 29;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Vuelta";
+            vueltaBox.Controls.Add(vuelosVueltaListView);
+            vueltaBox.Location = new Point(12, 514);
+            vueltaBox.Name = "vueltaBox";
+            vueltaBox.Size = new Size(766, 284);
+            vueltaBox.TabIndex = 29;
+            vueltaBox.TabStop = false;
+            vueltaBox.Text = "Vuelta";
             // 
             // vuelosVueltaListView
             // 
-            vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader23, columnHeader24, columnHeader25, columnHeader26, columnHeader27, columnHeader28, columnHeader29, columnHeader30, columnHeader31, columnHeader32, columnHeader33 });
+            vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader34, columnHeader35, columnHeader36, columnHeader37, columnHeader38, columnHeader39, columnHeader40 });
             vuelosVueltaListView.FullRowSelect = true;
-            vuelosVueltaListView.Location = new Point(11, 16);
+            vuelosVueltaListView.Location = new Point(11, 22);
             vuelosVueltaListView.Name = "vuelosVueltaListView";
-            vuelosVueltaListView.Size = new Size(620, 145);
-            vuelosVueltaListView.TabIndex = 24;
+            vuelosVueltaListView.Size = new Size(744, 256);
+            vuelosVueltaListView.TabIndex = 25;
             vuelosVueltaListView.UseCompatibleStateImageBehavior = false;
             vuelosVueltaListView.View = View.Details;
             // 
-            // columnHeader23
+            // columnHeader13
             // 
-            columnHeader23.Text = "Producto";
-            columnHeader23.Width = 70;
+            columnHeader13.Text = "Aerolinea";
+            columnHeader13.Width = 70;
             // 
-            // columnHeader24
+            // columnHeader14
             // 
-            columnHeader24.Text = "Prestador";
-            columnHeader24.Width = 100;
+            columnHeader14.Text = "Origen";
             // 
-            // columnHeader25
+            // columnHeader34
             // 
-            columnHeader25.Text = "Cant Pasajeros";
-            columnHeader25.Width = 100;
+            columnHeader34.Text = "Destino";
             // 
-            // columnHeader26
+            // columnHeader35
             // 
-            columnHeader26.Text = "Origen/Destino";
-            columnHeader26.Width = 100;
+            columnHeader35.Text = "Fecha Salida";
+            columnHeader35.Width = 90;
             // 
-            // columnHeader27
+            // columnHeader36
             // 
-            columnHeader27.Text = "Precio Total";
+            columnHeader36.Text = "Fecha Arribo";
+            columnHeader36.Width = 90;
             // 
-            // columnHeader28
+            // columnHeader37
             // 
-            columnHeader28.Text = "Categoría";
-            columnHeader28.Width = 70;
+            columnHeader37.Text = "Tiempo de vuelo";
+            columnHeader37.Width = 100;
             // 
-            // columnHeader29
+            // columnHeader38
             // 
-            columnHeader29.Text = "Desde";
+            columnHeader38.Text = "Precio Adulto";
+            columnHeader38.Width = 90;
             // 
-            // columnHeader30
+            // columnHeader39
             // 
-            columnHeader30.Text = "Hasta";
+            columnHeader39.Text = "Precio Menor";
+            columnHeader39.Width = 90;
             // 
-            // columnHeader31
+            // columnHeader40
             // 
-            columnHeader31.Text = "Precio Adulto";
-            columnHeader31.Width = 100;
-            // 
-            // columnHeader32
-            // 
-            columnHeader32.Text = "Precio Menor";
-            columnHeader32.Width = 100;
-            // 
-            // columnHeader33
-            // 
-            columnHeader33.Text = "Precio Infante";
-            columnHeader33.Width = 100;
+            columnHeader40.Text = "Precio Infante";
+            columnHeader40.Width = 90;
             // 
             // VuelosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 749);
-            Controls.Add(groupBox4);
+            ClientSize = new Size(1546, 824);
+            Controls.Add(vueltaBox);
             Controls.Add(vuelosIdaBox);
             Controls.Add(modificarItinerarioBox);
             Controls.Add(groupBox1);
@@ -688,9 +657,8 @@
             vuelosHotelesBox.ResumeLayout(false);
             vuelosHotelesBox.PerformLayout();
             modificarItinerarioBox.ResumeLayout(false);
-            modificarItinerarioBox.PerformLayout();
             vuelosIdaBox.ResumeLayout(false);
-            groupBox4.ResumeLayout(false);
+            vueltaBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -718,18 +686,17 @@
         private GroupBox vuelosHotelesBox;
         private RadioButton hotelesRadio;
         private RadioButton vuelosRadio;
-        private Label label3;
-        private DateTimePicker hastaFechaDatePicker;
+        private Label vueltaLabel;
+        private DateTimePicker vueltaDatePicker;
         private TextBox destinoText;
         private TextBox origenText;
         private Label label4;
         private Label origenLabel;
         private Label desdeDatePickerLabel;
-        private DateTimePicker desdeFechaDatePicker;
+        private DateTimePicker idaDatePicker;
         private Label itinerarioLabel;
         private Label titleLabel;
         private GroupBox modificarItinerarioBox;
-        private Label precioTotalLabel;
         private Button agregarProductoBtn;
         private Button quitarProductoBtn;
         private ListView itinerarioListView;
@@ -755,20 +722,16 @@
         private ColumnHeader columnHeader10;
         private ColumnHeader columnHeader11;
         private ColumnHeader columnHeader12;
+        private GroupBox vueltaBox;
+        private ListView vuelosVueltaListView;
         private ColumnHeader columnHeader13;
         private ColumnHeader columnHeader14;
-        private GroupBox groupBox4;
-        private ListView vuelosVueltaListView;
-        private ColumnHeader columnHeader23;
-        private ColumnHeader columnHeader24;
-        private ColumnHeader columnHeader25;
-        private ColumnHeader columnHeader26;
-        private ColumnHeader columnHeader27;
-        private ColumnHeader columnHeader28;
-        private ColumnHeader columnHeader29;
-        private ColumnHeader columnHeader30;
-        private ColumnHeader columnHeader31;
-        private ColumnHeader columnHeader32;
-        private ColumnHeader columnHeader33;
+        private ColumnHeader columnHeader34;
+        private ColumnHeader columnHeader35;
+        private ColumnHeader columnHeader36;
+        private ColumnHeader columnHeader37;
+        private ColumnHeader columnHeader38;
+        private ColumnHeader columnHeader39;
+        private ColumnHeader columnHeader40;
     }
 }

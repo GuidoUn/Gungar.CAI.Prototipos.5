@@ -1,0 +1,1929 @@
+[
+  {
+    "CodigoOferta": "6532d86812d5365",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2025-06-02T23:10:00",
+    "FechaArribo": "2025-06-03T00:44:00",
+    "TiempoDeVuelo": "01:34",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 137.24,
+        "Disponibilidad": 108
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 123.52,
+        "Disponibilidad": 108
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 109.79,
+        "Disponibilidad": 108
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 250.94,
+        "Disponibilidad": 27
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 225.85,
+        "Disponibilidad": 27
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 200.75,
+        "Disponibilidad": 27
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532d86889d9760",
+    "Origen": "USH",
+    "Destino": "COR",
+    "FechaSalida": "2025-07-06T18:40:00",
+    "FechaArribo": "2025-07-06T21:48:00",
+    "TiempoDeVuelo": "03:08",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 34.86,
+        "Disponibilidad": 96
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 31.37,
+        "Disponibilidad": 96
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 27.89,
+        "Disponibilidad": 96
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 77.18,
+        "Disponibilidad": 11
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 69.46,
+        "Disponibilidad": 11
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 61.74,
+        "Disponibilidad": 11
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532d8c3003d213",
+    "Origen": "MDQ",
+    "Destino": "SLA",
+    "FechaSalida": "2024-11-25T07:55:00",
+    "FechaArribo": "2024-11-25T09:48:00",
+    "TiempoDeVuelo": "01:53",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 133.05,
+        "Disponibilidad": 92
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 119.75,
+        "Disponibilidad": 92
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 106.44,
+        "Disponibilidad": 92
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 229.28,
+        "Disponibilidad": 10
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 206.35,
+        "Disponibilidad": 10
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 183.42,
+        "Disponibilidad": 10
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532db52c28cec3",
+    "Origen": "USH",
+    "Destino": "BRC",
+    "FechaSalida": "2023-12-31T03:02:00",
+    "FechaArribo": "2023-12-31T05:11:00",
+    "TiempoDeVuelo": "02:09",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 196.81,
+        "Disponibilidad": 78
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 177.13,
+        "Disponibilidad": 78
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 157.45,
+        "Disponibilidad": 78
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 583.29,
+        "Disponibilidad": 7
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 524.96,
+        "Disponibilidad": 7
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 466.63,
+        "Disponibilidad": 7
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532db52e379fe0",
+    "Origen": "BHI",
+    "Destino": "CRD",
+    "FechaSalida": "2023-12-16T00:34:00",
+    "FechaArribo": "2023-12-16T04:04:00",
+    "TiempoDeVuelo": "03:30",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 89.64,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 80.68,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 71.71,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 162.32,
+        "Disponibilidad": 11
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 146.09,
+        "Disponibilidad": 11
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 129.86,
+        "Disponibilidad": 11
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532db944f0d0fd",
+    "Origen": "ROS",
+    "Destino": "NQN",
+    "FechaSalida": "2023-12-17T11:23:00",
+    "FechaArribo": "2023-12-17T14:09:00",
+    "TiempoDeVuelo": "02:46",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 158.02,
+        "Disponibilidad": 121
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 142.22,
+        "Disponibilidad": 121
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 126.42,
+        "Disponibilidad": 121
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 372.46,
+        "Disponibilidad": 18
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 335.21,
+        "Disponibilidad": 18
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 297.97,
+        "Disponibilidad": 18
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532db942a3069a",
+    "Origen": "FTE",
+    "Destino": "MDQ",
+    "FechaSalida": "2023-12-27T13:11:00",
+    "FechaArribo": "2023-12-27T16:14:00",
+    "TiempoDeVuelo": "03:03",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 74.61,
+        "Disponibilidad": 70
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 67.15,
+        "Disponibilidad": 70
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 59.69,
+        "Disponibilidad": 70
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 192.19,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 172.97,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 153.75,
+        "Disponibilidad": 29
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532ded520953ac",
+    "Origen": "BRC",
+    "Destino": "COR",
+    "FechaSalida": "2023-12-18T00:07:00",
+    "FechaArribo": "2023-12-18T01:56:00",
+    "TiempoDeVuelo": "01:49",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 93.39,
+        "Disponibilidad": 80
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 84.05,
+        "Disponibilidad": 80
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 74.71,
+        "Disponibilidad": 80
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 236.43,
+        "Disponibilidad": 30
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 212.79,
+        "Disponibilidad": 30
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 189.14,
+        "Disponibilidad": 30
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532ded52e0089a",
+    "Origen": "RES",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-16T00:11:00",
+    "FechaArribo": "2023-12-16T02:02:00",
+    "TiempoDeVuelo": "01:51",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 132.07,
+        "Disponibilidad": 66
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 118.86,
+        "Disponibilidad": 66
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 105.66,
+        "Disponibilidad": 66
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 366.17,
+        "Disponibilidad": 9
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 329.55,
+        "Disponibilidad": 9
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 292.94,
+        "Disponibilidad": 9
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532df5ed025b12",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-06T23:08:00",
+    "FechaArribo": "2024-01-07T01:06:00",
+    "TiempoDeVuelo": "01:58",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 45.35,
+        "Disponibilidad": 125
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 40.82,
+        "Disponibilidad": 125
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 36.28,
+        "Disponibilidad": 125
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 94.82,
+        "Disponibilidad": 7
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 85.34,
+        "Disponibilidad": 7
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 75.86,
+        "Disponibilidad": 7
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532df5e725247d",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-08T00:48:00",
+    "FechaArribo": "2024-01-08T02:33:00",
+    "TiempoDeVuelo": "01:45",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 95.21,
+        "Disponibilidad": 122
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 85.69,
+        "Disponibilidad": 122
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 76.17,
+        "Disponibilidad": 122
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 212.94,
+        "Disponibilidad": 15
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 191.65,
+        "Disponibilidad": 15
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 170.35,
+        "Disponibilidad": 15
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532df5e1506cfe",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-09T03:39:00",
+    "FechaArribo": "2024-01-09T07:39:00",
+    "TiempoDeVuelo": "03:60",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 133.24,
+        "Disponibilidad": 149
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 119.92,
+        "Disponibilidad": 149
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 106.59,
+        "Disponibilidad": 149
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 265.19,
+        "Disponibilidad": 15
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 238.67,
+        "Disponibilidad": 15
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 212.15,
+        "Disponibilidad": 15
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532df5ec5ae481",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2023-12-29T02:38:00",
+    "FechaArribo": "2023-12-29T03:50:00",
+    "TiempoDeVuelo": "01:12",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 177.59,
+        "Disponibilidad": 133
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 159.83,
+        "Disponibilidad": 133
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 142.07,
+        "Disponibilidad": 133
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 512.42,
+        "Disponibilidad": 17
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 461.18,
+        "Disponibilidad": 17
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 409.94,
+        "Disponibilidad": 17
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532df91d8e41e9",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-04T19:33:00",
+    "FechaArribo": "2024-01-04T23:15:00",
+    "TiempoDeVuelo": "03:42",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 135.29,
+        "Disponibilidad": 131
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 121.76,
+        "Disponibilidad": 131
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 108.23,
+        "Disponibilidad": 131
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 315.48,
+        "Disponibilidad": 24
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 283.93,
+        "Disponibilidad": 24
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 252.38,
+        "Disponibilidad": 24
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532df91f2417c3",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-08T21:12:00",
+    "FechaArribo": "2024-01-09T01:10:00",
+    "TiempoDeVuelo": "03:58",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 112.77,
+        "Disponibilidad": 48
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 101.49,
+        "Disponibilidad": 48
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 90.22,
+        "Disponibilidad": 48
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 171.47,
+        "Disponibilidad": 6
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 154.32,
+        "Disponibilidad": 6
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 137.18,
+        "Disponibilidad": 6
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532df913104b87",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2023-12-31T04:05:00",
+    "FechaArribo": "2023-12-31T05:59:00",
+    "TiempoDeVuelo": "01:54",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 100.07,
+        "Disponibilidad": 74
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 90.06,
+        "Disponibilidad": 74
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 80.06,
+        "Disponibilidad": 74
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 185.85,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 167.26,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 148.68,
+        "Disponibilidad": 29
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532df91c97c3dc",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-01T16:03:00",
+    "FechaArribo": "2024-01-01T18:52:00",
+    "TiempoDeVuelo": "02:49",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 134.96,
+        "Disponibilidad": 75
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 121.46,
+        "Disponibilidad": 75
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 107.97,
+        "Disponibilidad": 75
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 204.81,
+        "Disponibilidad": 13
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 184.33,
+        "Disponibilidad": 13
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 163.85,
+        "Disponibilidad": 13
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dfa31aa415e",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2023-12-28T09:50:00",
+    "FechaArribo": "2023-12-28T12:46:00",
+    "TiempoDeVuelo": "02:56",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 165.23,
+        "Disponibilidad": 35
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 148.71,
+        "Disponibilidad": 35
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 132.18,
+        "Disponibilidad": 35
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 401.58,
+        "Disponibilidad": 11
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 361.42,
+        "Disponibilidad": 11
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 321.26,
+        "Disponibilidad": 11
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dfa38b70d77",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2023-12-20T16:08:00",
+    "FechaArribo": "2023-12-20T19:33:00",
+    "TiempoDeVuelo": "03:25",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 198.09,
+        "Disponibilidad": 36
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 178.28,
+        "Disponibilidad": 36
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 158.47,
+        "Disponibilidad": 36
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 334.94,
+        "Disponibilidad": 6
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 301.45,
+        "Disponibilidad": 6
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 267.95,
+        "Disponibilidad": 6
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dfa300b940f",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2023-12-13T19:37:00",
+    "FechaArribo": "2023-12-13T21:18:00",
+    "TiempoDeVuelo": "01:41",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 86.95,
+        "Disponibilidad": 77
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 78.26,
+        "Disponibilidad": 77
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 69.56,
+        "Disponibilidad": 77
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 212.23,
+        "Disponibilidad": 23
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 191.01,
+        "Disponibilidad": 23
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 169.78,
+        "Disponibilidad": 23
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dfa35eea2e8",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-03T22:45:00",
+    "FechaArribo": "2024-01-04T01:50:00",
+    "TiempoDeVuelo": "03:05",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 75.82,
+        "Disponibilidad": 75
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 68.24,
+        "Disponibilidad": 75
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 60.66,
+        "Disponibilidad": 75
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 164.54,
+        "Disponibilidad": 9
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 148.09,
+        "Disponibilidad": 9
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 131.63,
+        "Disponibilidad": 9
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dff43ac81c0",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2023-12-17T01:24:00",
+    "FechaArribo": "2023-12-17T02:35:00",
+    "TiempoDeVuelo": "01:11",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 79.84,
+        "Disponibilidad": 103
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 71.86,
+        "Disponibilidad": 103
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 63.87,
+        "Disponibilidad": 103
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 182.53,
+        "Disponibilidad": 11
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 164.28,
+        "Disponibilidad": 11
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 146.02,
+        "Disponibilidad": 11
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dff4c7f974b",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2023-12-30T20:55:00",
+    "FechaArribo": "2023-12-30T23:25:00",
+    "TiempoDeVuelo": "02:30",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 153.99,
+        "Disponibilidad": 15
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 138.59,
+        "Disponibilidad": 15
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 123.19,
+        "Disponibilidad": 15
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 270.65,
+        "Disponibilidad": 17
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 243.58,
+        "Disponibilidad": 17
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 216.52,
+        "Disponibilidad": 17
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dff41b5ff10",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-05T15:18:00",
+    "FechaArribo": "2024-01-05T18:16:00",
+    "TiempoDeVuelo": "02:58",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 71.02,
+        "Disponibilidad": 59
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 63.92,
+        "Disponibilidad": 59
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 56.82,
+        "Disponibilidad": 59
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 140.35,
+        "Disponibilidad": 28
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 126.31,
+        "Disponibilidad": 28
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 112.28,
+        "Disponibilidad": 28
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dff4bd7d4b8",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2024-01-01T23:28:00",
+    "FechaArribo": "2024-01-02T00:28:00",
+    "TiempoDeVuelo": "01:00",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 111.82,
+        "Disponibilidad": 65
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 100.64,
+        "Disponibilidad": 65
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 89.46,
+        "Disponibilidad": 65
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 241.94,
+        "Disponibilidad": 7
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 217.75,
+        "Disponibilidad": 7
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 193.55,
+        "Disponibilidad": 7
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532dff4c1eb9ff",
+    "Origen": "AEP",
+    "Destino": "MDZ",
+    "FechaSalida": "2023-12-28T05:23:00",
+    "FechaArribo": "2023-12-28T08:30:00",
+    "TiempoDeVuelo": "03:07",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 72.36,
+        "Disponibilidad": 42
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 65.12,
+        "Disponibilidad": 42
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 57.89,
+        "Disponibilidad": 42
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 186.96,
+        "Disponibilidad": 30
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 168.26,
+        "Disponibilidad": 30
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 149.57,
+        "Disponibilidad": 30
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e024d3979b8",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-11T06:06:00",
+    "FechaArribo": "2023-12-11T07:39:00",
+    "TiempoDeVuelo": "01:33",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 165.53,
+        "Disponibilidad": 144
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 148.98,
+        "Disponibilidad": 144
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 132.42,
+        "Disponibilidad": 144
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 391.74,
+        "Disponibilidad": 10
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 352.57,
+        "Disponibilidad": 10
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 313.39,
+        "Disponibilidad": 10
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e024231089e",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-14T05:08:00",
+    "FechaArribo": "2023-12-14T06:55:00",
+    "TiempoDeVuelo": "01:47",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 30.91,
+        "Disponibilidad": 42
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 27.82,
+        "Disponibilidad": 42
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 24.73,
+        "Disponibilidad": 42
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 56.49,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 50.84,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 45.19,
+        "Disponibilidad": 29
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e0246c1db68",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2024-01-01T20:04:00",
+    "FechaArribo": "2024-01-01T22:54:00",
+    "TiempoDeVuelo": "02:50",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 142.07,
+        "Disponibilidad": 47
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 127.86,
+        "Disponibilidad": 47
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 113.66,
+        "Disponibilidad": 47
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 321.94,
+        "Disponibilidad": 23
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 289.75,
+        "Disponibilidad": 23
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 257.55,
+        "Disponibilidad": 23
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e038a6072d4",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-24T16:24:00",
+    "FechaArribo": "2023-12-24T19:15:00",
+    "TiempoDeVuelo": "02:51",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 109.99,
+        "Disponibilidad": 13
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 98.99,
+        "Disponibilidad": 13
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 87.99,
+        "Disponibilidad": 13
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 296.48,
+        "Disponibilidad": 22
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 266.83,
+        "Disponibilidad": 22
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 237.18,
+        "Disponibilidad": 22
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e03893f0924",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-29T22:04:00",
+    "FechaArribo": "2023-12-29T23:44:00",
+    "TiempoDeVuelo": "01:40",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 84.76,
+        "Disponibilidad": 87
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 76.28,
+        "Disponibilidad": 87
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 67.81,
+        "Disponibilidad": 87
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 227.76,
+        "Disponibilidad": 21
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 204.98,
+        "Disponibilidad": 21
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 182.21,
+        "Disponibilidad": 21
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e0389db9e8f",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2024-01-02T15:59:00",
+    "FechaArribo": "2024-01-02T17:26:00",
+    "TiempoDeVuelo": "01:27",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 163.68,
+        "Disponibilidad": 110
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 147.31,
+        "Disponibilidad": 110
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 130.94,
+        "Disponibilidad": 110
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 266.85,
+        "Disponibilidad": 18
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 240.17,
+        "Disponibilidad": 18
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 213.48,
+        "Disponibilidad": 18
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e0612b998d3",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2024-01-10T15:02:00",
+    "FechaArribo": "2024-01-10T16:32:00",
+    "TiempoDeVuelo": "01:30",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 173.54,
+        "Disponibilidad": 95
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 156.19,
+        "Disponibilidad": 95
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 138.83,
+        "Disponibilidad": 95
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 511.72,
+        "Disponibilidad": 6
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 460.55,
+        "Disponibilidad": 6
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 409.38,
+        "Disponibilidad": 6
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e0619cb5f0f",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-11T00:08:00",
+    "FechaArribo": "2023-12-11T02:49:00",
+    "TiempoDeVuelo": "02:41",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 54.86,
+        "Disponibilidad": 58
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 49.37,
+        "Disponibilidad": 58
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 43.89,
+        "Disponibilidad": 58
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 149.36,
+        "Disponibilidad": 13
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 134.42,
+        "Disponibilidad": 13
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 119.49,
+        "Disponibilidad": 13
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e061331b77d",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-26T10:49:00",
+    "FechaArribo": "2023-12-26T12:16:00",
+    "TiempoDeVuelo": "01:27",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 53.66,
+        "Disponibilidad": 86
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 48.29,
+        "Disponibilidad": 86
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 42.93,
+        "Disponibilidad": 86
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 92.73,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 83.46,
+        "Disponibilidad": 29
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 74.18,
+        "Disponibilidad": 29
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e07f8bdae6d",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-26T23:14:00",
+    "FechaArribo": "2023-12-27T02:45:00",
+    "TiempoDeVuelo": "03:31",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 85.81,
+        "Disponibilidad": 86
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 77.23,
+        "Disponibilidad": 86
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 68.65,
+        "Disponibilidad": 86
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 239.35,
+        "Disponibilidad": 26
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 215.41,
+        "Disponibilidad": 26
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 191.48,
+        "Disponibilidad": 26
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e07f6c24c69",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-17T04:48:00",
+    "FechaArribo": "2023-12-17T08:35:00",
+    "TiempoDeVuelo": "03:47",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 164.14,
+        "Disponibilidad": 133
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 147.73,
+        "Disponibilidad": 133
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 131.31,
+        "Disponibilidad": 133
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 418.06,
+        "Disponibilidad": 28
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 376.25,
+        "Disponibilidad": 28
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 334.45,
+        "Disponibilidad": 28
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e07faeac86a",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2024-01-10T20:56:00",
+    "FechaArribo": "2024-01-10T23:31:00",
+    "TiempoDeVuelo": "02:35",
+    "Aerolinea": "AR",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 180.08,
+        "Disponibilidad": 129
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 162.07,
+        "Disponibilidad": 129
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 144.06,
+        "Disponibilidad": 129
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 417.31,
+        "Disponibilidad": 30
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 375.58,
+        "Disponibilidad": 30
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 333.85,
+        "Disponibilidad": 30
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e08fd760715",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-14T10:00:00",
+    "FechaArribo": "2023-12-14T12:42:00",
+    "TiempoDeVuelo": "02:42",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 99.91,
+        "Disponibilidad": 128
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 89.92,
+        "Disponibilidad": 128
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 79.93,
+        "Disponibilidad": 128
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "A",
+        "Precio": 289.84,
+        "Disponibilidad": 26
+      },
+      {
+        "Clase": "F",
+        "TipoDePasajero": "M",
+        "Precio": 260.86,
+        "Disponibilidad": 26
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 231.87,
+        "Disponibilidad": 26
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e08f0bc4b60",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2024-01-10T00:28:00",
+    "FechaArribo": "2024-01-10T03:36:00",
+    "TiempoDeVuelo": "03:08",
+    "Aerolinea": "FO",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 38.34,
+        "Disponibilidad": 111
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 34.51,
+        "Disponibilidad": 111
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 30.67,
+        "Disponibilidad": 111
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "A",
+        "Precio": 67.58,
+        "Disponibilidad": 16
+      },
+      {
+        "Clase": "B",
+        "TipoDePasajero": "M",
+        "Precio": 60.82,
+        "Disponibilidad": 16
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 54.06,
+        "Disponibilidad": 16
+      }
+    ]
+  },
+  {
+    "CodigoOferta": "6532e08f1f8d6f7",
+    "Origen": "MDZ",
+    "Destino": "AEP",
+    "FechaSalida": "2023-12-12T20:03:00",
+    "FechaArribo": "2023-12-12T21:15:00",
+    "TiempoDeVuelo": "01:12",
+    "Aerolinea": "WJ",
+    "Tarifas": [
+      {
+        "Clase": "E",
+        "TipoDePasajero": "A",
+        "Precio": 93.95,
+        "Disponibilidad": 48
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "M",
+        "Precio": 84.56,
+        "Disponibilidad": 48
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 75.16,
+        "Disponibilidad": 48
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "A",
+        "Precio": 206.99,
+        "Disponibilidad": 8
+      },
+      {
+        "Clase": "P",
+        "TipoDePasajero": "M",
+        "Precio": 186.29,
+        "Disponibilidad": 8
+      },
+      {
+        "Clase": "E",
+        "TipoDePasajero": "I",
+        "Precio": 165.59,
+        "Disponibilidad": 8
+      }
+    ]
+  }
+]
