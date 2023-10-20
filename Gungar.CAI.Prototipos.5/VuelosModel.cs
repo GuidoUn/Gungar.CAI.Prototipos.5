@@ -48,9 +48,9 @@ public static class VuelosModel
 
         List<OfertaVuelo> vuelosFiltrados = ofertaVuelos.Where(vuelo =>
         {
-            if (filtros.origen != "" && OfertaVuelo.Ciudades[vuelo.Origen] != filtros.origen)
+            if (filtros.origen != "" && OfertaVuelo.Ciudades[vuelo.Origen].ToLower() != filtros?.origen?.ToLower())
                 return false;
-            if (filtros.destino != "" && OfertaVuelo.Ciudades[vuelo.Destino] != filtros.destino)
+            if (filtros.destino != "" && OfertaVuelo.Ciudades[vuelo.Destino].ToLower() != filtros?.destino?.ToLower())
                 return false;
             return true;
         }
