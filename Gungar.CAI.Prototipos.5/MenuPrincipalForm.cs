@@ -1,9 +1,5 @@
 ﻿namespace Gungar.CAI.Prototipos._5
 {
-    public interface IMyInterface
-    {
-        string MyMethod(int param);
-    }
     public partial class MenuPrincipalForm : Form
     {
         SeleccionItinerarioForm? seleccionItinerarioForm;
@@ -23,18 +19,17 @@
             });
         }
 
-        private void continuarItinerarioBtn_Click(object sender, EventArgs e)
-        {
-            seleccionItinerarioForm = new SeleccionItinerarioForm();
-            seleccionItinerarioForm.ShowDialog();
-        }
-
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
             Itinerario nuevoItinerario = new Itinerario();
             itinerarios.Add(nuevoItinerario);
             menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario);
             menuItinerarioForm.ShowDialog();
+        }
+        private void continuarItinerarioBtn_Click(object sender, EventArgs e)
+        {
+            seleccionItinerarioForm = new SeleccionItinerarioForm();
+            seleccionItinerarioForm.ShowDialog();
         }
 
         private void consultarVuelosBtn_Click(object sender, EventArgs e)

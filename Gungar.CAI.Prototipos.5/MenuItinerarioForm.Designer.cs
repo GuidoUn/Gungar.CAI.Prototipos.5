@@ -33,7 +33,7 @@
             itinerarioSeleccionadoLabel = new Label();
             salirBtn = new Button();
             agregarPasajerosBtn = new Button();
-            groupBox1 = new GroupBox();
+            confirmacionBox = new GroupBox();
             generarReservaBtn = new Button();
             generarPreReservaBtn = new Button();
             estadoLabel = new Label();
@@ -58,7 +58,7 @@
             nombreYApellidoLabel = new Label();
             label6 = new Label();
             cancelarReservaBtn = new Button();
-            groupBox1.SuspendLayout();
+            confirmacionBox.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -110,16 +110,16 @@
             agregarPasajerosBtn.UseVisualStyleBackColor = true;
             agregarPasajerosBtn.Click += agregarPasajerosBtn_Click;
             // 
-            // groupBox1
+            // confirmacionBox
             // 
-            groupBox1.Controls.Add(generarReservaBtn);
-            groupBox1.Controls.Add(generarPreReservaBtn);
-            groupBox1.Location = new Point(54, 422);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(177, 142);
-            groupBox1.TabIndex = 6;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Confirmación";
+            confirmacionBox.Controls.Add(generarReservaBtn);
+            confirmacionBox.Controls.Add(generarPreReservaBtn);
+            confirmacionBox.Location = new Point(54, 422);
+            confirmacionBox.Name = "confirmacionBox";
+            confirmacionBox.Size = new Size(177, 142);
+            confirmacionBox.TabIndex = 6;
+            confirmacionBox.TabStop = false;
+            confirmacionBox.Text = "Confirmación";
             // 
             // generarReservaBtn
             // 
@@ -328,14 +328,14 @@
             Controls.Add(productosAgregadosListView);
             Controls.Add(estadoLabel);
             Controls.Add(label3);
-            Controls.Add(groupBox1);
+            Controls.Add(confirmacionBox);
             Controls.Add(salirBtn);
             Controls.Add(itinerarioSeleccionadoLabel);
             Controls.Add(label1);
             Name = "MenuItinerarioForm";
             Text = "MenuItinerarioForm";
             Load += MenuItinerarioForm_Load;
-            groupBox1.ResumeLayout(false);
+            confirmacionBox.ResumeLayout(false);
             gestionarItinerarioBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -348,7 +348,7 @@
         private Label itinerarioSeleccionadoLabel;
         private Button salirBtn;
         private Button agregarPasajerosBtn;
-        private GroupBox groupBox1;
+        private GroupBox confirmacionBox;
         private Button button1;
         private Button button2;
         private Label estadoLabel;

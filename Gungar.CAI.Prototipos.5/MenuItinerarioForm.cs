@@ -35,27 +35,25 @@ namespace Gungar.CAI.Prototipos._5
             this.itinerario = itinerario;
             clienteForm = new ClienteForm(itinerario);
             agregarDatosForm = new AgregarDatosForm(itinerario);
+            itinerarioSeleccionadoLabel.Text = $"{itinerario.itinerarioId}";
         }
 
         private void refrescar()
         {
-            estadoLabel.Text = itinerario.estado.ToString();
-            itinerarioSeleccionadoLabel.Text = $"{itinerario.itinerarioId}";
-            nombreYApellidoLabel.Text = $"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}";
-            if (itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Pagada)
-            {
-                generarPreReservaBtn.Enabled = false;
-                generarReservaBtn.Enabled = false;
-            }
-            else
-            {
-                generarPreReservaBtn.Enabled = true;
-                generarReservaBtn.Enabled = true;
-
-            }
-            gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
             poblarListaPasajeros();
             poblarItinerario();
+            estadoLabel.Text = itinerario.estado.ToString();
+            nombreYApellidoLabel.Text = $"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}";
+            if (itinerario.estado == Estado.Cancelada)
+            {
+                confirmacionBox.Enabled = false;
+                gestionarItinerarioBox.Enabled = false;
+                cancelarReservaBtn.Enabled = false;
+                return;
+            }
+            confirmacionBox.Enabled = !(itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Pagada);
+            gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
+
         }
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
