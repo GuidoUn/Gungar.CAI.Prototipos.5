@@ -14,12 +14,6 @@ namespace Gungar.CAI.Prototipos._5
     {
         const string FORMATO_FECHA = "yyyy-MM-dd";
 
-        /*public List<string[]> pasajeros = new List<string[]> {
-            new string[6] { "Jose", "Fernandez", "28669206", "pemartinez@live.com", "1193692693", new DateTime(1996, 05, 17).ToString(FORMATO_FECHA) },
-            new string[6] { "Martin", "Advincula", "73848021", "eldiego@hotmail.com", "1137599627", new DateTime(1986, 02, 1).ToString(FORMATO_FECHA) },
-            new string[6] { "Manuel", "Lopez",   "42756987", "mesias@outlook.com.ar", "1128759115", new DateTime(2022, 12, 3).ToString(FORMATO_FECHA) }
-        };*/
-
         Itinerario? itinerario;
 
         Pasajero? pasajeroSeleccionado;

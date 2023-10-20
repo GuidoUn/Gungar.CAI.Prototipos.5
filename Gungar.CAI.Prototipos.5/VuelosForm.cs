@@ -37,10 +37,6 @@ namespace Gungar.CAI.Prototipos._5
 
             if (itinerarioEnCurso == null)
             {
-
-
-
-
                 titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";
                 modificarItinerarioBox.Visible = false;
@@ -49,14 +45,12 @@ namespace Gungar.CAI.Prototipos._5
             {
                 itinerarioLabel.Text = $"{itinerarioEnCurso?.cliente?.nombre} ({itinerarioEnCurso?.itinerarioId})";
             }
-            //evaluarVisibilidadFiltros();
             clasesCombo.SelectedIndex = 0;
         }
 
         private void poblarVuelos()
         {
             vuelosIdaListView.Items.Clear();
-            //vuelosVueltaListView.Items.Clear();
             foreach (var vuelo in vuelos)
             {
                 var item = new ListViewItem();
@@ -95,11 +89,6 @@ namespace Gungar.CAI.Prototipos._5
         private void aplicarFiltrosBtn_Click(object sender, EventArgs e)
         {
             poblarVuelos();
-        }
-
-        private void clasesCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

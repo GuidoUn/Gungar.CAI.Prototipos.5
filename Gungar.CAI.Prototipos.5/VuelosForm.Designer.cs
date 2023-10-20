@@ -156,7 +156,6 @@
             clasesCombo.Name = "clasesCombo";
             clasesCombo.Size = new Size(127, 23);
             clasesCombo.TabIndex = 24;
-            clasesCombo.SelectedIndexChanged += clasesCombo_SelectedIndexChanged;
             // 
             // aplicarFiltrosBtn
             // 

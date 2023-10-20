@@ -6,7 +6,6 @@
     }
     public partial class MenuPrincipalForm : Form
     {
-        //CrearItinerarioForm? crearItinerarioForm;
         SeleccionItinerarioForm? seleccionItinerarioForm;
         MenuItinerarioForm? menuItinerarioForm;
         VuelosForm? vuelosForm;
@@ -33,10 +32,7 @@
 
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
-
             itinerarioEnCurso = new Itinerario();
-
-
             itinerarios.Add(itinerarioEnCurso);
             menuItinerarioForm = new MenuItinerarioForm(itinerarioEnCurso.itinerarioId);
             menuItinerarioForm.ShowDialog();

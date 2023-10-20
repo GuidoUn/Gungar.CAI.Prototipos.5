@@ -8,7 +8,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public class Pasajero
     {
-
         public string Nombre;
         public string Apellido;
         public string Documento;

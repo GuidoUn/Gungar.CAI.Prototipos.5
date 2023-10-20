@@ -16,8 +16,6 @@ namespace Gungar.CAI.Prototipos._5
         string? apellidoNuevoPasajero;
         string? documentoNuevoPasajero;
 
-        //MenuItinerarioForm menuItinerarioForm;
-
         Itinerario itinerario;
 
         public ClienteForm(Itinerario itinerario)
@@ -76,16 +74,6 @@ namespace Gungar.CAI.Prototipos._5
             Cliente nuevoCliente = new Cliente(nombreNuevoPasajero, apellidoNuevoPasajero, documentoNuevoPasajero);
 
             itinerario.AsignarCliente(nuevoCliente);
-            //TODO: Validar que el cliente esté creado ¿?
-
-            //Itinerario nuevoItinerario = new Itinerario(nuevoCliente, DateTime.Now);
-            //MenuPrincipalForm.itinerarioEnCurso.AsignarCliente(nuevoCliente);
-
-            //itinerarios.Add(nuevoItinerario);
-
-
-            //menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario.itinerarioId);
-            //this.Visible = false;
             this.Close();
         }
     }

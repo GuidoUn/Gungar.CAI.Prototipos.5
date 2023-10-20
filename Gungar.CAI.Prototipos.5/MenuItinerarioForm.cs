@@ -16,7 +16,6 @@ namespace Gungar.CAI.Prototipos._5
 
         AgregarDatosForm agregarDatosForm;
 
-        //CrearItinerarioForm crearItinerarioForm;
         VuelosForm vuelosForm;
         HotelesForm hotelesForm;
         ClienteForm clienteForm;
@@ -85,7 +84,6 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarItinerario()
         {
             productosAgregadosListView.Items.Clear();
-            //foreach (var producto in productosItinerarios)          
             foreach (var producto in productosItinerarios)
             {
                 var item = new ListViewItem();
@@ -98,7 +96,6 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(producto[6]);
                 item.Tag = producto;
 
-                //listView1.Items.Add(item);
                 productosAgregadosListView.Items.Add(item);
             }
         }
@@ -149,7 +146,6 @@ namespace Gungar.CAI.Prototipos._5
 
         private void clienteBtn_Click(object sender, EventArgs e)
         {
-            //crearItinerarioForm = new CrearItinerarioForm();
             clienteForm.ShowDialog();
             refrescar();
         }
@@ -162,10 +158,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 itinerario.estado = Estado.Cancelada;
                 refrescar();
-
             }
-
-
         }
 
         private void vuelosBtn_Click(object sender, EventArgs e)
