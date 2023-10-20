@@ -46,7 +46,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 itinerarioLabel.Text = $"{itinerario?.cliente?.nombre} ({itinerario?.itinerarioId})";
             }
-            clasesCombo.SelectedIndex = 0;
+            clasesCombo.SelectedItem = clasesCombo.Items[0];
             cantidadAdultosNumeric.Value = 1;
             refrescar();
         }
@@ -55,8 +55,9 @@ namespace Gungar.CAI.Prototipos._5
         {
             vuelosIdaListView.Items.Clear();
             vuelosVueltaListView.Items.Clear();
+            bool isEconomy = clasesCombo.SelectedIndex == 0;
 
-            foreach (var vuelo in VuelosModel.getVuelos(new FiltrosVuelos(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value))))
+            foreach (var vuelo in VuelosModel.getVuelos(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], idaDatePicker.Value, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value)))
             {
                 var item = new ListViewItem();
                 item.Text = OfertaVuelo.Aerolineas[vuelo.Aerolinea];
@@ -65,9 +66,9 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
                 item.SubItems.Add(vuelo.FechaArribo.ToString(FORMATO_FECHA));
                 item.SubItems.Add(vuelo.TiempoDeVuelo);
-                item.SubItems.Add(vuelo.Tarifas[0].Precio.ToString());
-                item.SubItems.Add(vuelo.Tarifas[1].Precio.ToString());
-                item.SubItems.Add(vuelo.Tarifas[2].Precio.ToString());
+                item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
+                item.SubItems.Add(vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
+                item.SubItems.Add(vuelo.Tarifas[isEconomy ? 2 : 5].Precio.ToString());
                 item.Tag = vuelo;
 
                 vuelosIdaListView.Items.Add(item);
@@ -75,8 +76,7 @@ namespace Gungar.CAI.Prototipos._5
 
             if (!esSoloIda)
             {
-
-                foreach (var vuelo in VuelosModel.getVuelos(new FiltrosVuelos(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value))))
+                foreach (var vuelo in VuelosModel.getVuelos(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], vueltaDatePicker.Value, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value)))
                 {
                     var item = new ListViewItem();
                     item.Text = OfertaVuelo.Aerolineas[vuelo.Aerolinea];
@@ -85,9 +85,9 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
                     item.SubItems.Add(vuelo.FechaArribo.ToString(FORMATO_FECHA));
                     item.SubItems.Add(vuelo.TiempoDeVuelo);
-                    item.SubItems.Add(vuelo.Tarifas[0].Precio.ToString());
-                    item.SubItems.Add(vuelo.Tarifas[1].Precio.ToString());
-                    item.SubItems.Add(vuelo.Tarifas[2].Precio.ToString());
+                    item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
+                    item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
+                    item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
                     item.Tag = vuelo;
 
                     vuelosVueltaListView.Items.Add(item);

@@ -10,12 +10,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 
     public class TarifaVuelo
     {
-        public string Clase; // E, P, B, F
+        public char Clase; // E, P, B, F
         public string TipoDePasajero; // A, M, I
         public float Precio;
         public int Disponibilidad; // Cantidad de asientos disponibles
 
-        public TarifaVuelo(string clase, string tipoDePasajero, float precio, int disponibilidad)
+        public TarifaVuelo(char clase, string tipoDePasajero, float precio, int disponibilidad)
         {
             Clase = clase;
             TipoDePasajero = tipoDePasajero;
@@ -96,6 +96,18 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
                 "FO", "Fly Bondi"
             },  {
                 "WJ", "Jet Smart"
+            }
+        };
+
+        public static Dictionary<string, string> Clases = new Dictionary<string, string>(){
+            {
+                "E", "Aerolineas Argentinas"
+            },  {
+                "P", "Fly Bondi"
+            },  {
+                "B", "Jet Smart"
+            }, {
+                "F", "Jet Smart"
             }
         };
 

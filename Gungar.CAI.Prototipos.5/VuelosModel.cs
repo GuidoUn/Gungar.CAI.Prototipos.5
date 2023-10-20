@@ -39,22 +39,20 @@ public static class VuelosModel
 {
     public static List<OfertaVuelo> ofertaVuelos { get; private set; } = new List<OfertaVuelo>();
 
-    public static List<OfertaVuelo> getVuelos(FiltrosVuelos? filtros)
+    public static List<OfertaVuelo> getVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaSalida = null, int? precioMinimo = null, int? precioMaximo = null)
     {
-        if (filtros == null)
-        {
-            return ofertaVuelos;
-        }
-
         List<OfertaVuelo> vuelosFiltrados = ofertaVuelos.Where(vuelo =>
-        {
-            if (filtros.origen != "" && OfertaVuelo.Ciudades[vuelo.Origen].ToLower() != filtros?.origen?.ToLower())
-                return false;
-            if (filtros.destino != "" && OfertaVuelo.Ciudades[vuelo.Destino].ToLower() != filtros?.destino?.ToLower())
-                return false;
-            return true;
-        }
-        ).ToList();
+         {
+             if (origen != "" && OfertaVuelo.Ciudades[vuelo.Origen].ToLower() != origen.ToLower())
+                 return false;
+             if (destino != "" && OfertaVuelo.Ciudades[vuelo.Destino].ToLower() != destino.ToLower())
+                 return false;
+             if (!vuelo.Tarifas.Exists(tarifa => tarifa.Clase == clase))
+                 return false;
+
+             return true;
+         }
+         ).ToList();
 
         return vuelosFiltrados;
     }
