@@ -31,7 +31,7 @@
             titleLabel = new Label();
             itinerarioLabel = new Label();
             groupBox1 = new GroupBox();
-            claseLabel = new Label();
+            categoriaLabel = new Label();
             clasesCombo = new ComboBox();
             aplicarFiltrosBtn = new Button();
             groupBox3 = new GroupBox();
@@ -141,7 +141,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(claseLabel);
+            groupBox1.Controls.Add(categoriaLabel);
             groupBox1.Controls.Add(clasesCombo);
             groupBox1.Controls.Add(aplicarFiltrosBtn);
             groupBox1.Controls.Add(groupBox3);
@@ -159,14 +159,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
             // 
-            // claseLabel
+            // categoriaLabel
             // 
-            claseLabel.AutoSize = true;
-            claseLabel.Location = new Point(500, 135);
-            claseLabel.Name = "claseLabel";
-            claseLabel.Size = new Size(61, 15);
-            claseLabel.TabIndex = 24;
-            claseLabel.Text = "claseLabel";
+            categoriaLabel.AutoSize = true;
+            categoriaLabel.Location = new Point(500, 135);
+            categoriaLabel.Name = "categoriaLabel";
+            categoriaLabel.Size = new Size(61, 15);
+            categoriaLabel.TabIndex = 24;
+            categoriaLabel.Text = "Categoría:";
             // 
             // clasesCombo
             // 
@@ -185,7 +185,6 @@
             aplicarFiltrosBtn.TabIndex = 21;
             aplicarFiltrosBtn.Text = "Aplicar Filtros";
             aplicarFiltrosBtn.UseVisualStyleBackColor = true;
-            
             // 
             // groupBox3
             // 
@@ -772,7 +771,7 @@
         private Button aplicarFiltrosBtn;
         private Button button3;
         private GroupBox listasVuelosBox;
-        private Label claseLabel;
+        private Label categoriaLabel;
         private ComboBox clasesCombo;
         private GroupBox vuelosVueltaBox;
         private GroupBox groupBox8;

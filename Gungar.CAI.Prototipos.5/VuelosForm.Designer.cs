@@ -144,9 +144,9 @@
             claseLabel.AutoSize = true;
             claseLabel.Location = new Point(500, 135);
             claseLabel.Name = "claseLabel";
-            claseLabel.Size = new Size(61, 15);
+            claseLabel.Size = new Size(38, 15);
             claseLabel.TabIndex = 24;
-            claseLabel.Text = "claseLabel";
+            claseLabel.Text = "Clase:";
             // 
             // clasesCombo
             // 
@@ -205,6 +205,7 @@
             // hastaPreciosNumeric
             // 
             hastaPreciosNumeric.Location = new Point(62, 54);
+            hastaPreciosNumeric.Maximum = new decimal(new int[] { -1593835521, 466537709, 54210, 0 });
             hastaPreciosNumeric.Name = "hastaPreciosNumeric";
             hastaPreciosNumeric.Size = new Size(120, 23);
             hastaPreciosNumeric.TabIndex = 23;
@@ -212,6 +213,7 @@
             // desdePreciosNumeric
             // 
             desdePreciosNumeric.Location = new Point(62, 23);
+            desdePreciosNumeric.Maximum = new decimal(new int[] { -1593835521, 466537709, 54210, 0 });
             desdePreciosNumeric.Name = "desdePreciosNumeric";
             desdePreciosNumeric.Size = new Size(120, 23);
             desdePreciosNumeric.TabIndex = 22;
@@ -526,6 +528,7 @@
             // vuelosIdaListView
             // 
             vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
+            vuelosIdaListView.FullRowSelect = true;
             vuelosIdaListView.Location = new Point(11, 16);
             vuelosIdaListView.Name = "vuelosIdaListView";
             vuelosIdaListView.Size = new Size(550, 145);
@@ -598,6 +601,7 @@
             // vuelosVueltaListView
             // 
             vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader23, columnHeader24, columnHeader25, columnHeader26, columnHeader27, columnHeader28, columnHeader29, columnHeader30, columnHeader31, columnHeader32, columnHeader33 });
+            vuelosVueltaListView.FullRowSelect = true;
             vuelosVueltaListView.Location = new Point(11, 16);
             vuelosVueltaListView.Name = "vuelosVueltaListView";
             vuelosVueltaListView.Size = new Size(550, 145);

@@ -159,22 +159,22 @@ namespace Gungar.CAI.Prototipos._5
             {
                 itinerarioLabel.Text = $"{itinerario.cliente.nombre} ({itinerario.itinerarioId})";
             }
-            evaluarVisibilidadFiltros();
+            //evaluarVisibilidadFiltros();
             clasesCombo.SelectedIndex = 0;
         }
 
         private void vuelosRadio_CheckedChanged(object sender, EventArgs e)
         {
             //esVuelos = vuelosRadio.Checked;
-            evaluarVisibilidadFiltros();
-            if (!esVuelos)
-            {
-                clasesCombo.SelectedIndex = 0;
-            }
-            else
-            {
-                clasesCombo.SelectedIndex = 0;
-            }
+            //evaluarVisibilidadFiltros();
+            //if (!esVuelos)
+            //{
+            //    clasesCombo.SelectedIndex = 0;
+            //}
+            //else
+            //{
+            //    clasesCombo.SelectedIndex = 0;
+            //}
         }
 
 
@@ -192,33 +192,17 @@ namespace Gungar.CAI.Prototipos._5
 
         private void soloIdaCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-           // esSoloIda = soloIdaCheckBox.Checked;
-            evaluarVisibilidadFiltros();
+            // esSoloIda = soloIdaCheckBox.Checked;
+            //evaluarVisibilidadFiltros();
         }
 
-        private void evaluarVisibilidadFiltros()
-        {
-            //soloIdaCheckBox.Visible = esVuelos;
-            listasVuelosBox.Visible = esVuelos;
-            listasHotelesBox.Visible = !esVuelos;
-            //origenLabel.Enabled = esVuelos;
-           // origenText.Enabled = esVuelos;
+        //private void evaluarVisibilidadFiltros()
+        //{
+        //    //soloIdaCheckBox.Visible = esVuelos;
+        //    listasVuelosBox.Visible = esVuelos;
+        //    listasHotelesBox.Visible = !esVuelos;
 
-            vuelosVueltaBox.Visible = !esSoloIda;
-
-            if (!esVuelos)
-            {
-                claseLabel.Text = "Categoría:";
-                clasesCombo.Items.Clear();
-                clasesCombo.Items.AddRange(new string[] { "Todas", "5 estrellas", "4 estrellas", "3 estrellas", "2 estrellas", "1 estrella" });
-            }
-            else
-            {
-                claseLabel.Text = "Clase:";
-                clasesCombo.Items.Clear();
-                clasesCombo.Items.AddRange(new string[] { "Economy", "Premium", "Business", "First" });
-            }
-        }
+        //}
 
         private void button3_Click(object sender, EventArgs e)
         {

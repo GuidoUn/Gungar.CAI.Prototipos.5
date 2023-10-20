@@ -31,9 +31,10 @@
             df = new Label();
             nuevoItinerarioBtn = new Button();
             continuarItinerarioBtn = new Button();
-            consultarDisponibilidadBtn = new Button();
             consultarVuelosBtn = new Button();
             consultarHotelesBtn = new Button();
+            consultasBox = new GroupBox();
+            consultasBox.SuspendLayout();
             SuspendLayout();
             // 
             // df
@@ -65,19 +66,9 @@
             continuarItinerarioBtn.UseVisualStyleBackColor = true;
             continuarItinerarioBtn.Click += continuarItinerarioBtn_Click;
             // 
-            // consultarDisponibilidadBtn
-            // 
-            consultarDisponibilidadBtn.Location = new Point(198, 237);
-            consultarDisponibilidadBtn.Name = "consultarDisponibilidadBtn";
-            consultarDisponibilidadBtn.Size = new Size(112, 49);
-            consultarDisponibilidadBtn.TabIndex = 3;
-            consultarDisponibilidadBtn.Text = "Consultar Disponibilidad";
-            consultarDisponibilidadBtn.UseVisualStyleBackColor = true;
-            consultarDisponibilidadBtn.Click += consultarDisponibilidadBtn_Click;
-            // 
             // consultarVuelosBtn
             // 
-            consultarVuelosBtn.Location = new Point(198, 292);
+            consultarVuelosBtn.Location = new Point(6, 22);
             consultarVuelosBtn.Name = "consultarVuelosBtn";
             consultarVuelosBtn.Size = new Size(112, 49);
             consultarVuelosBtn.TabIndex = 10;
@@ -87,7 +78,7 @@
             // 
             // consultarHotelesBtn
             // 
-            consultarHotelesBtn.Location = new Point(198, 347);
+            consultarHotelesBtn.Location = new Point(6, 77);
             consultarHotelesBtn.Name = "consultarHotelesBtn";
             consultarHotelesBtn.Size = new Size(112, 49);
             consultarHotelesBtn.TabIndex = 11;
@@ -95,20 +86,30 @@
             consultarHotelesBtn.UseVisualStyleBackColor = true;
             consultarHotelesBtn.Click += consultarHotelesBtn_Click;
             // 
+            // consultasBox
+            // 
+            consultasBox.Controls.Add(consultarVuelosBtn);
+            consultasBox.Controls.Add(consultarHotelesBtn);
+            consultasBox.Location = new Point(192, 255);
+            consultasBox.Name = "consultasBox";
+            consultasBox.Size = new Size(127, 136);
+            consultasBox.TabIndex = 12;
+            consultasBox.TabStop = false;
+            consultasBox.Text = "Consultas";
+            consultasBox.Enter += consultasBox_Enter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(611, 448);
-            Controls.Add(consultarHotelesBtn);
-            Controls.Add(consultarVuelosBtn);
+            Controls.Add(consultasBox);
             Controls.Add(continuarItinerarioBtn);
             Controls.Add(nuevoItinerarioBtn);
-            Controls.Add(consultarDisponibilidadBtn);
             Controls.Add(df);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
+            consultasBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -117,8 +118,8 @@
         private Label df;
         private Button nuevoItinerarioBtn;
         private Button continuarItinerarioBtn;
-        private Button consultarDisponibilidadBtn;
         private Button consultarVuelosBtn;
         private Button consultarHotelesBtn;
+        private GroupBox consultasBox;
     }
 }

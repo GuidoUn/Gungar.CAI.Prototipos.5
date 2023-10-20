@@ -35,12 +35,12 @@ namespace Gungar.CAI.Prototipos._5
 
             itinerarioEnCurso = Form1.itinerarioEnCurso;
 
-            if(itinerarioEnCurso == null)
+            if (itinerarioEnCurso == null)
             {
 
-            
 
-           
+
+
                 titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";
                 modificarItinerarioBox.Visible = false;

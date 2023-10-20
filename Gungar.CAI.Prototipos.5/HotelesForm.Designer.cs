@@ -114,7 +114,7 @@
             claseLabel.Name = "claseLabel";
             claseLabel.Size = new Size(61, 15);
             claseLabel.TabIndex = 24;
-            claseLabel.Text = "claseLabel";
+            claseLabel.Text = "Categoría:";
             // 
             // clasesCombo
             // 
@@ -161,6 +161,7 @@
             // hastaPreciosNumeric
             // 
             hastaPreciosNumeric.Location = new Point(62, 54);
+            hastaPreciosNumeric.Maximum = new decimal(new int[] { -1593835521, 466537709, 54210, 0 });
             hastaPreciosNumeric.Name = "hastaPreciosNumeric";
             hastaPreciosNumeric.Size = new Size(120, 23);
             hastaPreciosNumeric.TabIndex = 23;
@@ -168,6 +169,7 @@
             // desdePreciosNumeric
             // 
             desdePreciosNumeric.Location = new Point(62, 23);
+            desdePreciosNumeric.Maximum = new decimal(new int[] { -1593835521, 466537709, 54210, 0 });
             desdePreciosNumeric.Name = "desdePreciosNumeric";
             desdePreciosNumeric.Size = new Size(120, 23);
             desdePreciosNumeric.TabIndex = 22;
