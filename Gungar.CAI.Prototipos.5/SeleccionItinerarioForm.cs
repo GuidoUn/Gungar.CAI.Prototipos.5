@@ -19,7 +19,6 @@ namespace Gungar.CAI.Prototipos._5
         //string[]? itinerarioSeleccionado;
         Itinerario? itinerarioSeleccionado2;
 
-        //GestionProductosItinerarioForm gestionProductosItinerarioForm;
         MenuItinerarioForm menuItinerarioForm;
 
         string tipoDeParametroAFiltrar;
@@ -48,7 +47,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void HabilitarFiltro()
         {
-            if (tipoDeParametroAFiltrar != null && parametroIngresado != null && parametroIngresado.Length > 0 && tipoDeParametroAFiltrar!="Sin Filtro")
+            if (tipoDeParametroAFiltrar != null && parametroIngresado != null && parametroIngresado.Length > 0 && tipoDeParametroAFiltrar != "Sin Filtro")
             {
                 filtrarBtn.Enabled = true;
             }
@@ -99,7 +98,7 @@ namespace Gungar.CAI.Prototipos._5
         private void parametrosCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             tipoDeParametroAFiltrar = parametrosCombo.SelectedItem.ToString();
-            if(tipoDeParametroAFiltrar=="Sin Filtro")
+            if (tipoDeParametroAFiltrar == "Sin Filtro")
             {
                 refrescar();
             }
