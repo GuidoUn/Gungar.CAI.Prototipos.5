@@ -10,8 +10,9 @@ namespace Gungar.CAI.Prototipos._5
     {
         Presupuesto,
         Prereserva,
-        Reserva,
-        Cancelado
+        Pagada,
+        Confirmada,
+        Cancelada
     }
 
     public class Itinerario
@@ -21,40 +22,40 @@ namespace Gungar.CAI.Prototipos._5
         public int itinerarioId;
         public DateTime fechaCreacion;
         public Estado estado;
-        public Cliente cliente;
-        public List<Pasajero> pasajeros;
+        public Cliente? cliente;
+        public List<Pasajero> pasajeros = new List<Pasajero>();
+
+        private void setearValoresIniciales()
+        {
+            this.itinerarioId = ultimoId + 1;
+            ultimoId = this.itinerarioId;
+            this.fechaCreacion = DateTime.Now;
+            this.estado = Estado.Presupuesto;
+        }
+
+        public Itinerario()
+        {
+            setearValoresIniciales();
+        }
 
         public Itinerario(Cliente cliente)
         {
-            this.itinerarioId = ultimoId + 1;
-            ultimoId = this.itinerarioId;
+            setearValoresIniciales();
             this.cliente = cliente;
-            this.fechaCreacion = DateTime.Now;
-            this.estado = Estado.Presupuesto;
-            this.pasajeros = new List<Pasajero>();
         }
-        public Itinerario()
-        {
-            this.itinerarioId = ultimoId + 1;
-            ultimoId = this.itinerarioId;
-            this.fechaCreacion = DateTime.Now;
-            this.estado = Estado.Presupuesto;
-            this.pasajeros = new List<Pasajero>();
-        }
+
         public Itinerario(Cliente cliente, DateTime fechaCreacion)
         {
-            this.itinerarioId = ultimoId + 1;
-            ultimoId = this.itinerarioId;
+            setearValoresIniciales();
             this.cliente = cliente;
             this.fechaCreacion = fechaCreacion;
-            this.estado = Estado.Presupuesto;
-            this.pasajeros = new List<Pasajero>();
         }
 
         public void AsignarCliente(Cliente Cliente)
         {
             this.cliente = Cliente;
         }
+
         public void AgregarPasajero(Pasajero pasajero)
         {
             pasajeros.Add(pasajero);

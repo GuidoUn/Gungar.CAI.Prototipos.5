@@ -16,7 +16,6 @@ namespace Gungar.CAI.Prototipos._5
 
         List<Itinerario> itinerarios;
 
-        //string[]? itinerarioSeleccionado;
         Itinerario? itinerarioSeleccionado2;
 
         MenuItinerarioForm menuItinerarioForm;

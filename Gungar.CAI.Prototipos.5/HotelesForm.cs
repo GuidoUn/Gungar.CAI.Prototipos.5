@@ -20,14 +20,9 @@ namespace Gungar.CAI.Prototipos._5
 
         const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
 
-        bool esSoloIda = false;
-
-        bool esVuelos = false;
-
         bool esConsulta = false;
 
         int nroProductoAAgregar = 0;
-
 
 
         public static List<string[]> hoteles = new List<string[]>

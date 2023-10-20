@@ -41,7 +41,7 @@ namespace Gungar.CAI.Prototipos._5
             estadoLabel.Text = itinerario.estado.ToString();
             itinerarioSeleccionadoLabel.Text = $"{itinerario.itinerarioId}";
             nombreYApellidoLabel.Text = $"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}";
-            if (itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Reserva)
+            if (itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Pagada)
             {
                 generarPreReservaBtn.Enabled = false;
                 generarReservaBtn.Enabled = false;
@@ -137,7 +137,7 @@ namespace Gungar.CAI.Prototipos._5
             var confirmar = MessageBox.Show("Esta seguro de que desea confirmar la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
-                itinerario.estado = Estado.Reserva;
+                itinerario.estado = Estado.Pagada;
 
                 refrescar();
 
@@ -159,7 +159,7 @@ namespace Gungar.CAI.Prototipos._5
             var confirmar = MessageBox.Show("Esta seguro de que desea CANCELAR la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
-                itinerario.estado = Estado.Cancelado;
+                itinerario.estado = Estado.Cancelada;
                 refrescar();
 
             }
