@@ -23,7 +23,7 @@ namespace Gungar.CAI.Prototipos._5
         public CrearItinerarioForm()
         {
             InitializeComponent();
-            itinerarios = Form1.itinerarios;
+            itinerarios = MenuPrincipalForm.itinerarios;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Gungar.CAI.Prototipos._5
             //TODO: Validar que el cliente esté creado ¿?
 
             Itinerario nuevoItinerario = new Itinerario(nuevoCliente, DateTime.Now);
-            Form1.itinerarioEnCurso.AsignarCliente(nuevoCliente);
+            MenuPrincipalForm.itinerarioEnCurso.AsignarCliente(nuevoCliente);
 
             itinerarios.Add(nuevoItinerario);
 

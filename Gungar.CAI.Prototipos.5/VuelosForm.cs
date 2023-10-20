@@ -33,7 +33,7 @@ namespace Gungar.CAI.Prototipos._5
         private void VuelosForm_Load(object sender, EventArgs e)
         {
 
-            itinerarioEnCurso = Form1.itinerarioEnCurso;
+            itinerarioEnCurso = MenuPrincipalForm.itinerarioEnCurso;
 
             if (itinerarioEnCurso == null)
             {

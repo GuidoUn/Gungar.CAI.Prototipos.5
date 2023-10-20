@@ -1,23 +1,28 @@
-namespace Gungar.CAI.Prototipos._5
+﻿namespace Gungar.CAI.Prototipos._5
 {
-    public partial class Form1 : Form
+    public interface IMyInterface
     {
-        CrearItinerarioForm crearItinerarioForm;
-        SeleccionItinerarioForm seleccionItinerarioForm;
-        MenuItinerarioForm menuItinerarioForm;
-        VuelosForm vuelosForm;
-        HotelesForm hotelesForm;
-        public static Itinerario itinerarioEnCurso;
+        string MyMethod(int param);
+    }
+    public partial class MenuPrincipalForm : Form
+    {
+        //CrearItinerarioForm? crearItinerarioForm;
+        SeleccionItinerarioForm? seleccionItinerarioForm;
+        MenuItinerarioForm? menuItinerarioForm;
+        VuelosForm? vuelosForm;
+        HotelesForm? hotelesForm;
+        public static Itinerario? itinerarioEnCurso;
 
-        public static List<Itinerario> itinerarios = new List<Itinerario> {
-            new Itinerario(new Cliente("Pedro", "Martinez", "1193692693"),new DateTime(2023, 05, 17)),
-            new Itinerario(new Cliente("Diego", "Maradona", "1245325433"),new DateTime(2023, 06, 1)),
-            new Itinerario(new Cliente("Lionel", "Messi",  "32213573"), new DateTime(2023, 06, 3))
-        };
+        public static List<Itinerario> itinerarios = new List<Itinerario>();
 
-        public Form1()
+        public MenuPrincipalForm()
         {
             InitializeComponent();
+            itinerarios.AddRange(new Itinerario[]{
+                new Itinerario(new Cliente("Pedro", "Martinez", "1193692693"), new DateTime(2023, 05, 17)),
+                new Itinerario(new Cliente("Diego", "Maradona", "1245325433"), new DateTime(2023, 06, 1)),
+                new Itinerario(new Cliente("Lionel", "Messi", "32213573"), new DateTime(2023, 06, 3))
+            });
         }
 
         private void continuarItinerarioBtn_Click(object sender, EventArgs e)
@@ -48,11 +53,6 @@ namespace Gungar.CAI.Prototipos._5
         {
             hotelesForm = new HotelesForm();
             hotelesForm.ShowDialog();
-        }
-
-        private void consultasBox_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

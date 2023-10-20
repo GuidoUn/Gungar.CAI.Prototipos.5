@@ -36,7 +36,7 @@ namespace Gungar.CAI.Prototipos._5
         };
         private void HotelesForm_Load(object sender, EventArgs e)
         {
-            itinerario = Form1.itinerarioEnCurso;
+            itinerario = MenuPrincipalForm.itinerarioEnCurso;
             if (itinerario == null)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";

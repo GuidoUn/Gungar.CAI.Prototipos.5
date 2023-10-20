@@ -32,7 +32,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             InitializeComponent();
 
-            itinerario = Form1.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
+            itinerario = MenuPrincipalForm.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
             agregarDatosForm = new AgregarDatosForm(itinerario.itinerarioId);
         }
 

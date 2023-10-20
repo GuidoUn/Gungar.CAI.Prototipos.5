@@ -27,7 +27,7 @@ namespace Gungar.CAI.Prototipos._5
         public AgregarDatosForm(int idItinerario)
         {
             InitializeComponent();
-            itinerario = Form1.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
+            itinerario = MenuPrincipalForm.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
         }
 
         private void poblarLista()
