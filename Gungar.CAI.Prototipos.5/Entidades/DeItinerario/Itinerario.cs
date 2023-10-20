@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5.Entidades.Itinerario
+namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public enum Estado
     {

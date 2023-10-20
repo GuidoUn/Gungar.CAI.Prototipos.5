@@ -1,4 +1,5 @@
-﻿using Gungar.CAI.Prototipos._5.Entidades.Itinerario;
+﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+
 
 namespace Gungar.CAI.Prototipos._5
 {
