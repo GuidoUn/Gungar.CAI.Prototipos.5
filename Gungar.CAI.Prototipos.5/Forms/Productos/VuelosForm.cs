@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gungar.CAI.Prototipos._5.Entidades;
+using Gungar.CAI.Prototipos._5.Entidades.Itinerario;
 
 namespace Gungar.CAI.Prototipos._5
 {
     public partial class VuelosForm : Form
     {
-
-
         Itinerario? itinerario;
         bool esConsulta = false;
         bool esSoloIda = false;
@@ -47,7 +45,7 @@ namespace Gungar.CAI.Prototipos._5
         private void VuelosForm_Load(object sender, EventArgs e)
         {
 
-            if (itinerario == null)
+            if (esConsulta)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";

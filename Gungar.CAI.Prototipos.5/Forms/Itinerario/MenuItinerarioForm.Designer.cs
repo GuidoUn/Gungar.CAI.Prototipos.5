@@ -58,6 +58,15 @@
             nombreYApellidoLabel = new Label();
             label6 = new Label();
             cancelarReservaBtn = new Button();
+            label7 = new Label();
+            listView1 = new ListView();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            columnHeader10 = new ColumnHeader();
+            columnHeader11 = new ColumnHeader();
+            columnHeader12 = new ColumnHeader();
+            columnHeader13 = new ColumnHeader();
+            columnHeader14 = new ColumnHeader();
             confirmacionBox.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
@@ -92,7 +101,7 @@
             // 
             // salirBtn
             // 
-            salirBtn.Location = new Point(920, 22);
+            salirBtn.Location = new Point(1073, 22);
             salirBtn.Name = "salirBtn";
             salirBtn.Size = new Size(116, 47);
             salirBtn.TabIndex = 3;
@@ -162,10 +171,10 @@
             // pasajerosListView
             // 
             pasajerosListView.Columns.AddRange(new ColumnHeader[] { nombreHeader, fechaNacimientoHeader });
-            pasajerosListView.Location = new Point(259, 120);
+            pasajerosListView.Location = new Point(273, 665);
             pasajerosListView.MultiSelect = false;
             pasajerosListView.Name = "pasajerosListView";
-            pasajerosListView.Size = new Size(244, 301);
+            pasajerosListView.Size = new Size(916, 145);
             pasajerosListView.TabIndex = 10;
             pasajerosListView.UseCompatibleStateImageBehavior = false;
             pasajerosListView.View = View.Details;
@@ -183,10 +192,10 @@
             // productosAgregadosListView
             // 
             productosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
-            productosAgregadosListView.Location = new Point(509, 120);
+            productosAgregadosListView.Location = new Point(273, 121);
             productosAgregadosListView.MultiSelect = false;
             productosAgregadosListView.Name = "productosAgregadosListView";
-            productosAgregadosListView.Size = new Size(527, 301);
+            productosAgregadosListView.Size = new Size(916, 235);
             productosAgregadosListView.TabIndex = 9;
             productosAgregadosListView.UseCompatibleStateImageBehavior = false;
             productosAgregadosListView.View = View.Details;
@@ -227,7 +236,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(355, 103);
+            label2.Location = new Point(646, 644);
             label2.Name = "label2";
             label2.Size = new Size(56, 15);
             label2.TabIndex = 11;
@@ -236,11 +245,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(661, 103);
+            label4.Location = new Point(625, 103);
             label4.Name = "label4";
-            label4.Size = new Size(121, 15);
+            label4.Size = new Size(102, 15);
             label4.TabIndex = 12;
-            label4.Text = "Productos Agregados";
+            label4.Text = "Vuelos Agregados";
             // 
             // gestionarItinerarioBox
             // 
@@ -278,7 +287,7 @@
             // precioTotalLabel
             // 
             precioTotalLabel.AutoSize = true;
-            precioTotalLabel.Location = new Point(657, 435);
+            precioTotalLabel.Location = new Point(316, 38);
             precioTotalLabel.Name = "precioTotalLabel";
             precioTotalLabel.Size = new Size(104, 15);
             precioTotalLabel.TabIndex = 14;
@@ -312,11 +321,66 @@
             cancelarReservaBtn.UseVisualStyleBackColor = true;
             cancelarReservaBtn.Click += cancelarReservaBtn_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(625, 371);
+            label7.Name = "label7";
+            label7.Size = new Size(107, 15);
+            label7.TabIndex = 18;
+            label7.Text = "Hoteles Agregados";
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
+            listView1.Location = new Point(273, 389);
+            listView1.MultiSelect = false;
+            listView1.Name = "listView1";
+            listView1.Size = new Size(916, 235);
+            listView1.TabIndex = 17;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Producto";
+            columnHeader8.Width = 70;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Origen/Destino";
+            columnHeader9.Width = 100;
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "Desde";
+            // 
+            // columnHeader11
+            // 
+            columnHeader11.Text = "Hasta";
+            // 
+            // columnHeader12
+            // 
+            columnHeader12.Text = "Precio Total";
+            columnHeader12.Width = 80;
+            // 
+            // columnHeader13
+            // 
+            columnHeader13.Text = "Prestador";
+            columnHeader13.Width = 70;
+            // 
+            // columnHeader14
+            // 
+            columnHeader14.Text = "Categoria";
+            columnHeader14.Width = 80;
+            // 
             // MenuItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1088, 658);
+            ClientSize = new Size(1275, 822);
+            Controls.Add(label7);
+            Controls.Add(listView1);
             Controls.Add(cancelarReservaBtn);
             Controls.Add(nombreYApellidoLabel);
             Controls.Add(label6);
@@ -376,5 +440,14 @@
         private Button vuelosBtn;
         private Button clienteBtn;
         private Button cancelarReservaBtn;
+        private Label label7;
+        private ListView listView1;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
+        private ColumnHeader columnHeader10;
+        private ColumnHeader columnHeader11;
+        private ColumnHeader columnHeader12;
+        private ColumnHeader columnHeader13;
+        private ColumnHeader columnHeader14;
     }
 }

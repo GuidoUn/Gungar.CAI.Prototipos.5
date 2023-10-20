@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gungar.CAI.Prototipos._5.Entidades;
+using Gungar.CAI.Prototipos._5.Entidades.Itinerario;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -22,7 +22,6 @@ namespace Gungar.CAI.Prototipos._5
         public AgregarDatosForm(Itinerario itinerario)
         {
             InitializeComponent();
-            //itinerario = MenuPrincipalForm.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
             this.itinerario = itinerario;
         }
 
@@ -89,7 +88,7 @@ namespace Gungar.CAI.Prototipos._5
 
             ListViewItem selected = pasajerosListView.SelectedItems[0];
 
-            pasajeroSeleccionado = itinerario.pasajeros.FirstOrDefault((pasajero) => pasajero.Nombre == selected.Text);
+            pasajeroSeleccionado = selected.Tag as Pasajero;
 
             evaluarVisibilidadBtns();
         }

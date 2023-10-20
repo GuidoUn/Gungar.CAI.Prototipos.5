@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gungar.CAI.Prototipos._5.Entidades;
+using Gungar.CAI.Prototipos._5.Entidades.Itinerario;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -15,7 +15,7 @@ namespace Gungar.CAI.Prototipos._5
     {
         const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
 
-        List<Itinerario> itinerarios;
+        //List<Itinerario> itinerarios;
 
         Itinerario? itinerarioSeleccionado;
 
@@ -27,13 +27,13 @@ namespace Gungar.CAI.Prototipos._5
         public SeleccionItinerarioForm()
         {
             InitializeComponent();
-            itinerarios = AppModel.itinerarios;
+            //itinerarios = AppModel.itinerarios;
         }
 
         private void refrescar()
         {
             itinerariosListView.Items.Clear();
-            foreach (var itinerario in itinerarios)
+            foreach (var itinerario in AppModel.itinerarios)
             {
                 var item = new ListViewItem();
                 item.Text = itinerario.itinerarioId.ToString();
@@ -76,9 +76,9 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             ListViewItem selected = itinerariosListView.SelectedItems[0];
-            itinerarioSeleccionado = itinerarios.FirstOrDefault((itinerario) => itinerario == selected.Tag);
+            itinerarioSeleccionado = selected.Tag as Itinerario;
 
-            itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado.cliente.nombre} ({itinerarioSeleccionado.itinerarioId})";
+            itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado?.cliente?.nombre} ({itinerarioSeleccionado?.itinerarioId})";
 
             evaluarEstadoBtns();
         }
@@ -110,7 +110,7 @@ namespace Gungar.CAI.Prototipos._5
         private void filtrarBtn_Click(object sender, EventArgs e)
         {
             itinerariosListView.Items.Clear();
-            var itinerariosFiltrado = itinerarios.First();
+            var itinerariosFiltrado = AppModel.itinerarios.First();
             var item = new ListViewItem();
             item.Text = itinerariosFiltrado.itinerarioId.ToString();
             item.SubItems.Add(itinerariosFiltrado.cliente.nombre);

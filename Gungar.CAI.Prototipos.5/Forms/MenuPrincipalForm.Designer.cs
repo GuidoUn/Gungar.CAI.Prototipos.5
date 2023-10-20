@@ -34,6 +34,7 @@
             consultarVuelosBtn = new Button();
             consultarHotelesBtn = new Button();
             consultasBox = new GroupBox();
+            salirDelSistemaBtn = new Button();
             consultasBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -97,11 +98,22 @@
             consultasBox.TabStop = false;
             consultasBox.Text = "Consultas";
             // 
+            // salirDelSistemaBtn
+            // 
+            salirDelSistemaBtn.Location = new Point(448, 37);
+            salirDelSistemaBtn.Name = "salirDelSistemaBtn";
+            salirDelSistemaBtn.Size = new Size(116, 47);
+            salirDelSistemaBtn.TabIndex = 13;
+            salirDelSistemaBtn.Text = "Salir del Sistema";
+            salirDelSistemaBtn.UseVisualStyleBackColor = true;
+            salirDelSistemaBtn.Click += salirDelSistemaBtn_Click;
+            // 
             // MenuPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(611, 448);
+            Controls.Add(salirDelSistemaBtn);
             Controls.Add(consultasBox);
             Controls.Add(continuarItinerarioBtn);
             Controls.Add(nuevoItinerarioBtn);
@@ -120,5 +132,6 @@
         private Button consultarVuelosBtn;
         private Button consultarHotelesBtn;
         private GroupBox consultasBox;
+        private Button salirDelSistemaBtn;
     }
 }
