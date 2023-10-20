@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5
+namespace Gungar.CAI.Prototipos._5.Entidades
 {
     internal class Tarifa
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5
+namespace Gungar.CAI.Prototipos._5.Entidades
 {
     public enum Estado
     {
@@ -27,10 +27,10 @@ namespace Gungar.CAI.Prototipos._5
 
         private void setearValoresIniciales()
         {
-            this.itinerarioId = ultimoId + 1;
-            ultimoId = this.itinerarioId;
-            this.fechaCreacion = DateTime.Now;
-            this.estado = Estado.Presupuesto;
+            itinerarioId = ultimoId + 1;
+            ultimoId = itinerarioId;
+            fechaCreacion = DateTime.Now;
+            estado = Estado.Presupuesto;
         }
 
         public Itinerario()
@@ -53,7 +53,7 @@ namespace Gungar.CAI.Prototipos._5
 
         public void AsignarCliente(Cliente Cliente)
         {
-            this.cliente = Cliente;
+            cliente = Cliente;
         }
 
         public void AgregarPasajero(Pasajero pasajero)

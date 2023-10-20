@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gungar.CAI.Prototipos._5.Entidades;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -26,7 +27,7 @@ namespace Gungar.CAI.Prototipos._5
         public SeleccionItinerarioForm()
         {
             InitializeComponent();
-            itinerarios = MenuPrincipalForm.itinerarios;
+            itinerarios = AppModel.itinerarios;
         }
 
         private void refrescar()

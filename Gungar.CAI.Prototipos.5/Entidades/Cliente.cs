@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5
+namespace Gungar.CAI.Prototipos._5.Entidades
 {
     public class Cliente
     {
@@ -17,8 +17,8 @@ namespace Gungar.CAI.Prototipos._5
 
         public Cliente(string nombre, string apellido, string? documento)
         {
-            this.clienteId = ultimoId + 1;
-            ultimoId = this.clienteId;
+            clienteId = ultimoId + 1;
+            ultimoId = clienteId;
             this.nombre = nombre;
             this.apellido = apellido;
             this.documento = documento;

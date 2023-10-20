@@ -170,7 +170,7 @@
             // soloIdaCheckBox
             // 
             soloIdaCheckBox.AutoSize = true;
-            soloIdaCheckBox.Location = new Point(344, 102);
+            soloIdaCheckBox.Location = new Point(198, 99);
             soloIdaCheckBox.Name = "soloIdaCheckBox";
             soloIdaCheckBox.Size = new Size(81, 19);
             soloIdaCheckBox.TabIndex = 22;
@@ -519,7 +519,7 @@
             vuelosIdaBox.Controls.Add(vuelosIdaListView);
             vuelosIdaBox.Location = new Point(12, 234);
             vuelosIdaBox.Name = "vuelosIdaBox";
-            vuelosIdaBox.Size = new Size(573, 189);
+            vuelosIdaBox.Size = new Size(637, 189);
             vuelosIdaBox.TabIndex = 28;
             vuelosIdaBox.TabStop = false;
             vuelosIdaBox.Text = "Ida";
@@ -530,7 +530,7 @@
             vuelosIdaListView.FullRowSelect = true;
             vuelosIdaListView.Location = new Point(11, 16);
             vuelosIdaListView.Name = "vuelosIdaListView";
-            vuelosIdaListView.Size = new Size(550, 145);
+            vuelosIdaListView.Size = new Size(620, 145);
             vuelosIdaListView.TabIndex = 24;
             vuelosIdaListView.UseCompatibleStateImageBehavior = false;
             vuelosIdaListView.View = View.Details;
@@ -592,7 +592,7 @@
             groupBox4.Controls.Add(vuelosVueltaListView);
             groupBox4.Location = new Point(12, 429);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(573, 189);
+            groupBox4.Size = new Size(637, 189);
             groupBox4.TabIndex = 29;
             groupBox4.TabStop = false;
             groupBox4.Text = "Vuelta";
@@ -603,7 +603,7 @@
             vuelosVueltaListView.FullRowSelect = true;
             vuelosVueltaListView.Location = new Point(11, 16);
             vuelosVueltaListView.Name = "vuelosVueltaListView";
-            vuelosVueltaListView.Size = new Size(550, 145);
+            vuelosVueltaListView.Size = new Size(620, 145);
             vuelosVueltaListView.TabIndex = 24;
             vuelosVueltaListView.UseCompatibleStateImageBehavior = false;
             vuelosVueltaListView.View = View.Details;
@@ -672,7 +672,7 @@
             Controls.Add(itinerarioLabel);
             Controls.Add(titleLabel);
             Name = "VuelosForm";
-            Text = "v";
+            Text = "Vuelos";
             Load += VuelosForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

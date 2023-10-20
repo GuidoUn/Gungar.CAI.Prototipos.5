@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gungar.CAI.Prototipos._5.Entidades;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -42,6 +43,7 @@ namespace Gungar.CAI.Prototipos._5
              new string[4] { "Qué? alojamiento", "Juncal 2662, Mendoza", "5", "69" },
              new string[4] { "Jet Smart Hoteles", "Saenz Peña 751, Mendoza", "2", "14" },
         };
+
         private void HotelesForm_Load(object sender, EventArgs e)
         {
             if (esConsulta)
