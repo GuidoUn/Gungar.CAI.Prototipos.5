@@ -28,13 +28,13 @@ namespace Gungar.CAI.Prototipos._5
              new string[] { "Vuelo", "Mendoza", "3/12/2023", "3/12/2023", "$250", "Aerolineas Argentinas", "Economy" }
         };
 
-        public MenuItinerarioForm(int idItinerario)
+        public MenuItinerarioForm(Itinerario itinerario)
         {
             InitializeComponent();
 
-            itinerario = MenuPrincipalForm.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
+            this.itinerario = itinerario;
             clienteForm = new ClienteForm(itinerario);
-            agregarDatosForm = new AgregarDatosForm(itinerario.itinerarioId);
+            agregarDatosForm = new AgregarDatosForm(itinerario);
         }
 
         private void refrescar()
@@ -102,7 +102,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void hotelesBtn_Click(object sender, EventArgs e)
         {
-            hotelesForm = new HotelesForm();
+            hotelesForm = new HotelesForm(itinerario);
             hotelesForm.ShowDialog();
             refrescar();
         }
@@ -163,7 +163,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void vuelosBtn_Click(object sender, EventArgs e)
         {
-            vuelosForm = new VuelosForm();
+            vuelosForm = new VuelosForm(itinerario);
             vuelosForm.ShowDialog();
             refrescar();
         }

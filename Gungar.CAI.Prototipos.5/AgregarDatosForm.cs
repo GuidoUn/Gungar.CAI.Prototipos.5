@@ -18,10 +18,11 @@ namespace Gungar.CAI.Prototipos._5
 
         Pasajero? pasajeroSeleccionado;
 
-        public AgregarDatosForm(int idItinerario)
+        public AgregarDatosForm(Itinerario itinerario)
         {
             InitializeComponent();
-            itinerario = MenuPrincipalForm.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
+            //itinerario = MenuPrincipalForm.itinerarios.FirstOrDefault(itinerario => itinerario.itinerarioId == idItinerario);
+            this.itinerario = itinerario;
         }
 
         private void poblarLista()

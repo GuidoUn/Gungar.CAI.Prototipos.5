@@ -16,7 +16,7 @@ namespace Gungar.CAI.Prototipos._5
 
         List<Itinerario> itinerarios;
 
-        Itinerario? itinerarioSeleccionado2;
+        Itinerario? itinerarioSeleccionado;
 
         MenuItinerarioForm menuItinerarioForm;
 
@@ -36,9 +36,10 @@ namespace Gungar.CAI.Prototipos._5
             {
                 var item = new ListViewItem();
                 item.Text = itinerario.itinerarioId.ToString();
-                item.SubItems.Add(itinerario?.cliente?.nombre);
-                item.SubItems.Add(itinerario.fechaCreacion.ToString(FORMATO_FECHA));
-                item.SubItems.Add(itinerario.estado.ToString());
+                item.SubItems.Add($"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}");
+                item.SubItems.Add(itinerario?.cliente?.documento);
+                item.SubItems.Add(itinerario?.fechaCreacion.ToString(FORMATO_FECHA));
+                item.SubItems.Add(itinerario?.estado.ToString());
                 item.Tag = itinerario;
 
                 itinerariosListView.Items.Add(item);
@@ -63,7 +64,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void evaluarEstadoBtns()
         {
-            continuarBtn.Enabled = itinerarioSeleccionado2 != null;
+            continuarBtn.Enabled = itinerarioSeleccionado != null;
         }
 
         private void itinerariosListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,17 +75,16 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             ListViewItem selected = itinerariosListView.SelectedItems[0];
-            MenuPrincipalForm.itinerarioEnCurso = itinerarios.FirstOrDefault((itinerario) => itinerario == selected.Tag); ;
-            itinerarioSeleccionado2 = itinerarios.FirstOrDefault((itinerario) => itinerario == selected.Tag);
+            itinerarioSeleccionado = itinerarios.FirstOrDefault((itinerario) => itinerario == selected.Tag);
 
-            itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado2.cliente.nombre} ({itinerarioSeleccionado2.itinerarioId})";
+            itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado.cliente.nombre} ({itinerarioSeleccionado.itinerarioId})";
 
             evaluarEstadoBtns();
         }
 
         private void continuarBtn_Click(object sender, EventArgs e)
         {
-            menuItinerarioForm = new MenuItinerarioForm(itinerarioSeleccionado2.itinerarioId);
+            menuItinerarioForm = new MenuItinerarioForm(itinerarioSeleccionado);
             menuItinerarioForm.ShowDialog();
             refrescar();
         }

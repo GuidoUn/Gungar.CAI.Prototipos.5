@@ -28,14 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            continuarItinerarioBox = new GroupBox();
-            itinerarioSeleccionadoLabel = new Label();
-            label4 = new Label();
-            itinerariosListView = new ListView();
-            nroHeader = new ColumnHeader();
-            pasajeroHeader = new ColumnHeader();
-            creacionHeader = new ColumnHeader();
-            estadoHeader = new ColumnHeader();
             label2 = new Label();
             button1 = new Button();
             continuarBtn = new Button();
@@ -44,71 +36,15 @@
             filtroLabel = new Label();
             parametrosCombo = new ComboBox();
             filtrarBtn = new Button();
-            continuarItinerarioBox.SuspendLayout();
+            itinerariosListView = new ListView();
+            nroHeader = new ColumnHeader();
+            pasajeroHeader = new ColumnHeader();
+            documentoHeader = new ColumnHeader();
+            creacionHeader = new ColumnHeader();
+            estadoHeader = new ColumnHeader();
+            label4 = new Label();
+            itinerarioSeleccionadoLabel = new Label();
             SuspendLayout();
-            // 
-            // continuarItinerarioBox
-            // 
-            continuarItinerarioBox.Controls.Add(itinerarioSeleccionadoLabel);
-            continuarItinerarioBox.Controls.Add(label4);
-            continuarItinerarioBox.Controls.Add(itinerariosListView);
-            continuarItinerarioBox.Location = new Point(74, 117);
-            continuarItinerarioBox.Name = "continuarItinerarioBox";
-            continuarItinerarioBox.Size = new Size(652, 234);
-            continuarItinerarioBox.TabIndex = 18;
-            continuarItinerarioBox.TabStop = false;
-            continuarItinerarioBox.Text = "Continuar Itinerario";
-            // 
-            // itinerarioSeleccionadoLabel
-            // 
-            itinerarioSeleccionadoLabel.AutoSize = true;
-            itinerarioSeleccionadoLabel.Location = new Point(156, 204);
-            itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
-            itinerarioSeleccionadoLabel.Size = new Size(152, 15);
-            itinerarioSeleccionadoLabel.TabIndex = 13;
-            itinerarioSeleccionadoLabel.Text = "itinerarioSeleccionadoLabel";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(22, 204);
-            label4.Name = "label4";
-            label4.Size = new Size(130, 15);
-            label4.TabIndex = 12;
-            label4.Text = "Itinerario Seleccionado:";
-            // 
-            // itinerariosListView
-            // 
-            itinerariosListView.Columns.AddRange(new ColumnHeader[] { nroHeader, pasajeroHeader, creacionHeader, estadoHeader });
-            itinerariosListView.FullRowSelect = true;
-            itinerariosListView.Location = new Point(22, 36);
-            itinerariosListView.MultiSelect = false;
-            itinerariosListView.Name = "itinerariosListView";
-            itinerariosListView.Size = new Size(594, 165);
-            itinerariosListView.TabIndex = 10;
-            itinerariosListView.UseCompatibleStateImageBehavior = false;
-            itinerariosListView.View = View.Details;
-            itinerariosListView.SelectedIndexChanged += itinerariosListView_SelectedIndexChanged;
-            // 
-            // nroHeader
-            // 
-            nroHeader.Text = "Nro";
-            nroHeader.Width = 100;
-            // 
-            // pasajeroHeader
-            // 
-            pasajeroHeader.Text = "Cliente";
-            pasajeroHeader.Width = 150;
-            // 
-            // creacionHeader
-            // 
-            creacionHeader.Text = "Fecha de Creación";
-            creacionHeader.Width = 150;
-            // 
-            // estadoHeader
-            // 
-            estadoHeader.Text = "Estado";
-            estadoHeader.Width = 100;
             // 
             // label2
             // 
@@ -120,7 +56,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(279, 401);
+            button1.Location = new Point(481, 577);
             button1.Name = "button1";
             button1.Size = new Size(103, 56);
             button1.TabIndex = 20;
@@ -131,7 +67,7 @@
             // continuarBtn
             // 
             continuarBtn.Enabled = false;
-            continuarBtn.Location = new Point(388, 401);
+            continuarBtn.Location = new Point(372, 577);
             continuarBtn.Name = "continuarBtn";
             continuarBtn.Size = new Size(103, 56);
             continuarBtn.TabIndex = 21;
@@ -186,47 +122,102 @@
             filtrarBtn.UseVisualStyleBackColor = true;
             filtrarBtn.Click += filtrarBtn_Click;
             // 
+            // itinerariosListView
+            // 
+            itinerariosListView.Columns.AddRange(new ColumnHeader[] { nroHeader, pasajeroHeader, documentoHeader, creacionHeader, estadoHeader });
+            itinerariosListView.FullRowSelect = true;
+            itinerariosListView.Location = new Point(85, 122);
+            itinerariosListView.MultiSelect = false;
+            itinerariosListView.Name = "itinerariosListView";
+            itinerariosListView.Size = new Size(1128, 399);
+            itinerariosListView.TabIndex = 10;
+            itinerariosListView.UseCompatibleStateImageBehavior = false;
+            itinerariosListView.View = View.Details;
+            itinerariosListView.SelectedIndexChanged += itinerariosListView_SelectedIndexChanged;
+            // 
+            // nroHeader
+            // 
+            nroHeader.Text = "Nro";
+            nroHeader.Width = 100;
+            // 
+            // pasajeroHeader
+            // 
+            pasajeroHeader.Text = "Cliente";
+            pasajeroHeader.Width = 150;
+            // 
+            // documentoHeader
+            // 
+            documentoHeader.Text = "Documento";
+            documentoHeader.Width = 100;
+            // 
+            // creacionHeader
+            // 
+            creacionHeader.Text = "Fecha de Creación";
+            creacionHeader.Width = 150;
+            // 
+            // estadoHeader
+            // 
+            estadoHeader.Text = "Estado";
+            estadoHeader.Width = 100;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(328, 549);
+            label4.Name = "label4";
+            label4.Size = new Size(130, 15);
+            label4.TabIndex = 12;
+            label4.Text = "Itinerario Seleccionado:";
+            // 
+            // itinerarioSeleccionadoLabel
+            // 
+            itinerarioSeleccionadoLabel.AutoSize = true;
+            itinerarioSeleccionadoLabel.Location = new Point(462, 549);
+            itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
+            itinerarioSeleccionadoLabel.Size = new Size(152, 15);
+            itinerarioSeleccionadoLabel.TabIndex = 13;
+            itinerarioSeleccionadoLabel.Text = "itinerarioSeleccionadoLabel";
+            // 
             // SeleccionItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1320, 749);
+            Controls.Add(itinerarioSeleccionadoLabel);
             Controls.Add(filtrarBtn);
+            Controls.Add(label4);
             Controls.Add(filtroLabel);
+            Controls.Add(itinerariosListView);
             Controls.Add(parametrosCombo);
             Controls.Add(parametroTextBox);
             Controls.Add(origenLabel);
             Controls.Add(continuarBtn);
             Controls.Add(button1);
-            Controls.Add(continuarItinerarioBox);
             Controls.Add(label2);
             Name = "SeleccionItinerarioForm";
             Text = "SeleccionItinerarioForm";
             Load += SeleccionItinerarioForm_Load;
-            continuarItinerarioBox.ResumeLayout(false);
-            continuarItinerarioBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private GroupBox continuarItinerarioBox;
-        private Label itinerarioSeleccionadoLabel;
-        private Label label4;
-        private ListView itinerariosListView;
-        private ColumnHeader nroHeader;
-        private ColumnHeader pasajeroHeader;
-        private ColumnHeader creacionHeader;
         private Label label2;
         private Button button1;
         private Button continuarBtn;
-        private ColumnHeader estadoHeader;
         private TextBox origenText;
         private Label origenLabel;
         private Label filtroLabel;
         private ComboBox parametrosCombo;
         private Button filtrarBtn;
         private TextBox parametroTextBox;
+        private ListView itinerariosListView;
+        private ColumnHeader nroHeader;
+        private ColumnHeader pasajeroHeader;
+        private ColumnHeader documentoHeader;
+        private ColumnHeader creacionHeader;
+        private ColumnHeader estadoHeader;
+        private Label label4;
+        private Label itinerarioSeleccionadoLabel;
     }
 }

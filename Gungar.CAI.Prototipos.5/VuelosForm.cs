@@ -12,10 +12,25 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class VuelosForm : Form
     {
-        public VuelosForm()
+
+
+        Itinerario? itinerario;
+        bool esConsulta = false;
+        bool esSoloIda = false;
+
+        public VuelosForm(Itinerario? itinerario)
         {
             InitializeComponent();
+            if (itinerario == null)
+            {
+                esConsulta = true;
+            }
+            else
+            {
+                this.itinerario = itinerario;
+            }
         }
+
         const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
 
         public static List<string[]> vuelos = new List<string[]>
@@ -27,15 +42,11 @@ namespace Gungar.CAI.Prototipos._5
              new string[6] { "Jet Smart", new DateTime(2023, 10, 22,9,30,0).ToString(FORMATO_FECHA),new DateTime(2023, 10, 17,7,10,0).ToString(FORMATO_FECHA),"01:10hs","$59","15" },
              new string[6] { "Jet Smart", new DateTime(2023, 10, 22,10,50,0).ToString(FORMATO_FECHA),new DateTime(2023, 10, 22, 12, 10, 0).ToString(FORMATO_FECHA),"01:20hs","$69" ,"15"},
         };
-        bool esConsulta = false;
-        bool esSoloIda = false;
-        Itinerario itinerarioEnCurso;
+
         private void VuelosForm_Load(object sender, EventArgs e)
         {
 
-            itinerarioEnCurso = MenuPrincipalForm.itinerarioEnCurso;
-
-            if (itinerarioEnCurso == null)
+            if (itinerario == null)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";
@@ -43,7 +54,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = $"{itinerarioEnCurso?.cliente?.nombre} ({itinerarioEnCurso?.itinerarioId})";
+                itinerarioLabel.Text = $"{itinerario?.cliente?.nombre} ({itinerario?.itinerarioId})";
             }
             clasesCombo.SelectedIndex = 0;
         }

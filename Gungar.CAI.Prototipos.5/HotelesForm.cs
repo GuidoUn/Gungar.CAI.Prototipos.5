@@ -12,11 +12,21 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class HotelesForm : Form
     {
-        public HotelesForm()
+        Itinerario? itinerario;
+        bool esConsulta = false;
+
+        public HotelesForm(Itinerario? itinerario)
         {
             InitializeComponent();
+            if (itinerario == null)
+            {
+                esConsulta = true;
+            }
+            else
+            {
+                this.itinerario = itinerario;
+            }
         }
-        Itinerario? itinerario;
 
         const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
 
@@ -34,8 +44,7 @@ namespace Gungar.CAI.Prototipos._5
         };
         private void HotelesForm_Load(object sender, EventArgs e)
         {
-            itinerario = MenuPrincipalForm.itinerarioEnCurso;
-            if (itinerario == null)
+            if (esConsulta)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";

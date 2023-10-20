@@ -10,7 +10,6 @@
         MenuItinerarioForm? menuItinerarioForm;
         VuelosForm? vuelosForm;
         HotelesForm? hotelesForm;
-        public static Itinerario? itinerarioEnCurso;
 
         public static List<Itinerario> itinerarios = new List<Itinerario>();
 
@@ -32,22 +31,22 @@
 
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
-            itinerarioEnCurso = new Itinerario();
-            itinerarios.Add(itinerarioEnCurso);
-            menuItinerarioForm = new MenuItinerarioForm(itinerarioEnCurso.itinerarioId);
+            Itinerario nuevoItinerario = new Itinerario();
+            itinerarios.Add(nuevoItinerario);
+            menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario);
             menuItinerarioForm.ShowDialog();
         }
 
         private void consultarVuelosBtn_Click(object sender, EventArgs e)
         {
-            vuelosForm = new VuelosForm();
+            vuelosForm = new VuelosForm(null);
             vuelosForm.ShowDialog();
 
         }
 
         private void consultarHotelesBtn_Click(object sender, EventArgs e)
         {
-            hotelesForm = new HotelesForm();
+            hotelesForm = new HotelesForm(null);
             hotelesForm.ShowDialog();
         }
     }
