@@ -47,7 +47,7 @@ public static class VuelosModel
         {
             return true;
         }
-        return false;// return !OfertaVuelo.Ciudades[vuelo.Origen].ToLower().Contains(origen.ToLower()) && !vuelo.Origen.ToLower().Contains(origen.ToLower());
+        return false;
     }
 
     public static List<OfertaVuelo> ofertaVuelos { get; private set; } = new List<OfertaVuelo>();
@@ -56,11 +56,8 @@ public static class VuelosModel
     {
         List<OfertaVuelo> vuelosFiltrados = ofertaVuelos.Where(vuelo =>
          {
-             //if (origen != "" && !OfertaVuelo.Ciudades[vuelo.Origen].ToLower().Contains(origen.ToLower()) && !vuelo.Origen.ToLower().Contains(origen.ToLower()))
-             //if (origen != "" && !mismoOrigen(vuelo, origen))
              if (origen != "" && !mismaCiudad(vuelo.Origen, origen))
                  return false;
-             //if (destino != "" && !OfertaVuelo.Ciudades[vuelo.Destino].ToLower().Contains(destino.ToLower()))
              if (destino != "" && !mismaCiudad(vuelo.Destino, destino))
                  return false;
              if (!vuelo.Tarifas.Exists(tarifa => tarifa.Clase == clase))
