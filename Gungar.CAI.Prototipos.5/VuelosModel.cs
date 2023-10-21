@@ -37,15 +37,31 @@ public class FiltrosVuelos
 
 public static class VuelosModel
 {
+    private static bool mismaCiudad(string ciudadVuelo, string ciudadBusqueda)
+    {
+        if (OfertaVuelo.Ciudades[ciudadVuelo].ToLower().Contains(ciudadBusqueda.ToLower()))
+        {
+            return true;
+        }
+        if (ciudadVuelo.ToLower().Contains(ciudadBusqueda.ToLower()))
+        {
+            return true;
+        }
+        return false;// return !OfertaVuelo.Ciudades[vuelo.Origen].ToLower().Contains(origen.ToLower()) && !vuelo.Origen.ToLower().Contains(origen.ToLower());
+    }
+
     public static List<OfertaVuelo> ofertaVuelos { get; private set; } = new List<OfertaVuelo>();
 
     public static List<OfertaVuelo> getVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaSalida = null, int? precioMinimo = null, int? precioMaximo = null)
     {
         List<OfertaVuelo> vuelosFiltrados = ofertaVuelos.Where(vuelo =>
          {
-             if (origen != "" && OfertaVuelo.Ciudades[vuelo.Origen].ToLower() != origen.ToLower())
+             //if (origen != "" && !OfertaVuelo.Ciudades[vuelo.Origen].ToLower().Contains(origen.ToLower()) && !vuelo.Origen.ToLower().Contains(origen.ToLower()))
+             //if (origen != "" && !mismoOrigen(vuelo, origen))
+             if (origen != "" && !mismaCiudad(vuelo.Origen, origen))
                  return false;
-             if (destino != "" && OfertaVuelo.Ciudades[vuelo.Destino].ToLower() != destino.ToLower())
+             //if (destino != "" && !OfertaVuelo.Ciudades[vuelo.Destino].ToLower().Contains(destino.ToLower()))
+             if (destino != "" && !mismaCiudad(vuelo.Destino, destino))
                  return false;
              if (!vuelo.Tarifas.Exists(tarifa => tarifa.Clase == clase))
                  return false;
@@ -60,6 +76,7 @@ public static class VuelosModel
     public static void CargaInicial()
     {
         List<OfertaVuelo>? ofertaVuelosEnAlmacen = DataBase.LeerVuelos();
+
         if (ofertaVuelosEnAlmacen != null)
         {
             ofertaVuelos = ofertaVuelosEnAlmacen;

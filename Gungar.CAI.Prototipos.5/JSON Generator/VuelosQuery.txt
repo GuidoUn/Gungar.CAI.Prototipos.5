@@ -1,11 +1,13 @@
 ﻿app.json-generator.com
 
 
-JG.repeat(3, {
+JG.repeat(2, {
   CodigoOferta: JG.objectId().slice(0, 15),
-  Origen: "MDZ", //JG.random("AEP", "MDZ", "COR", "MDQ", "SLA", "BRC", "USH", "ROS"),
+  Origen: "BRC", //JG.random("AEP", "MDZ", "COR", "MDQ", "SLA", "BRC", "USH", "ROS"),
+  //Origen: "AEP",
   Destino: "AEP", //JG.random("AEP", "MDZ", "COR", "MDQ", "SLA", "BRC", "USH", "ROS"),
-  FechaSalida: moment(JG.date(new Date(2023, 11, 01), new Date(2023, 12, 31))).format('YYYY-MM-DDTHH:mm'),
+  //Destino: "BRC",
+  FechaSalida: moment(JG.date(new Date(2023, 11, 1), new Date(2023, 12, 31))).format('YYYY-MM-DDTHH:mm'),
   FechaArribo(){
     let arribo = new Date(this.FechaSalida);
     arribo.setHours(arribo.getHours() + this.HorasDeVuelo);
@@ -16,7 +18,7 @@ JG.repeat(3, {
   HorasDeVuelo: JG.integer(1,3),
   MinutosDeVuelo: JG.integer(0,60),
   TiempoDeVuelo(){
-    return this.HorasDeVuelo+":"+this.MinutosDeVuelo;
+    return this.HorasDeVuelo.toString().padStart(2, '0')+":"+this.MinutosDeVuelo.toString().padStart(2, '0')+"hs";
   },
   Aerolinea: JG.random("AR","FO","WJ"),
   TarifaBase: 
@@ -26,8 +28,6 @@ JG.repeat(3, {
     return [
       {Clase:"E",TipoDePasajero: "M", Precio: JG.floating(base*0.9, base*0.9, 2), Disponibilidad:this.TarifaBase.Disponibilidad},					{Clase:"E",TipoDePasajero: "I", Precio: JG.floating(base*0.8, base*0.8, 2), Disponibilidad:this.TarifaBase.Disponibilidad}
     ];},
-  
-  
   TarifaAlternativa(){ return {Clase:JG.random("P","B","F"),TipoDePasajero: "A", Precio: JG.floating(this.TarifaBase.Precio*1.5, this.TarifaBase.Precio * 3, 2), Disponibilidad: JG.integer(5, 30)};},
   TarifasAlternativasMenores(){
     const base =this.TarifaAlternativa.Precio;

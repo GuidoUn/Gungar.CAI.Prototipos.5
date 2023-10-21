@@ -37,17 +37,17 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         public string Aerolinea;
         public List<TarifaVuelo> Tarifas;
 
-        //public OfertaVuelo(string codigoOferta, string origen, string destino, DateTime fechaSalida, DateTime fechaArribo, TimeOnly tiempoDeVuelo, string aerolinea, List<TarifaVuelo> tarifas)
-        //{
-        //    CodigoOferta = codigoOferta;
-        //    Origen = origen;
-        //    Destino = destino;
-        //    FechaSalida = fechaSalida;
-        //    FechaArribo = fechaArribo;
-        //    TiempoDeVuelo = tiempoDeVuelo;
-        //    Aerolinea = aerolinea;
-        //    Tarifas = tarifas;
-        //}
+        public OfertaVuelo(string codigoOferta, string origen, string destino, DateTime fechaSalida, DateTime fechaArribo, string tiempoDeVuelo, string aerolinea, List<TarifaVuelo> tarifas)
+        {
+            CodigoOferta = codigoOferta;
+            Origen = origen;
+            Destino = destino;
+            FechaSalida = fechaSalida;
+            FechaArribo = fechaArribo;
+            TiempoDeVuelo = tiempoDeVuelo;
+            Aerolinea = aerolinea;
+            Tarifas = tarifas;
+        }
         //("AEP", "COR", "MDZ", "ROS", "BRC", "SLA", "TUC", "NQN", "MDQ", "RES", "SFN", "PSS", "BHI", "FTE", "USH", "IGR", "CRD", "JUJ"
         public static Dictionary<string, string> Ciudades = new Dictionary<string, string>(){
             {
@@ -110,6 +110,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
                 'F', "First"
             }
         };
+
 
     }
 }

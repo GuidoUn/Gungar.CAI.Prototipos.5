@@ -527,15 +527,17 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Aerolinea";
-            columnHeader1.Width = 70;
+            columnHeader1.Width = 80;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Origen";
+            columnHeader2.Width = 100;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Destino";
+            columnHeader3.Width = 100;
             // 
             // columnHeader4
             // 
@@ -549,8 +551,8 @@
             // 
             // columnHeader9
             // 
-            columnHeader9.Text = "Tiempo de vuelo";
-            columnHeader9.Width = 100;
+            columnHeader9.Text = "Duracion";
+            columnHeader9.Width = 70;
             // 
             // columnHeader23
             // 
@@ -596,15 +598,17 @@
             // columnHeader13
             // 
             columnHeader13.Text = "Aerolinea";
-            columnHeader13.Width = 70;
+            columnHeader13.Width = 80;
             // 
             // columnHeader14
             // 
             columnHeader14.Text = "Origen";
+            columnHeader14.Width = 100;
             // 
             // columnHeader34
             // 
             columnHeader34.Text = "Destino";
+            columnHeader34.Width = 100;
             // 
             // columnHeader35
             // 
@@ -618,8 +622,8 @@
             // 
             // columnHeader37
             // 
-            columnHeader37.Text = "Tiempo de vuelo";
-            columnHeader37.Width = 100;
+            columnHeader37.Text = "Duracion";
+            columnHeader37.Width = 70;
             // 
             // columnHeader24
             // 

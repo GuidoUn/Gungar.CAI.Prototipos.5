@@ -50,6 +50,22 @@ namespace Gungar.CAI.Prototipos._5
 
             List<OfertaVuelo>? ofertaVuelos = JsonConvert.DeserializeObject<List<OfertaVuelo>>(json);
 
+            //List<OfertaVuelo>? ofertaVueloslarga = new List<OfertaVuelo>();
+
+            //ofertaVuelos.ForEach(vuelo =>
+            //{
+            //    ofertaVueloslarga.Add(vuelo);
+            //    if (vuelo.FechaSalida.Month == 11)
+            //    {
+            //        string newCodigo = vuelo.CodigoOferta.Remove(vuelo.CodigoOferta.Length - 1, 1) + "d";
+            //        ofertaVueloslarga.Add(new OfertaVuelo(newCodigo, vuelo.Origen, vuelo.Destino, vuelo.FechaSalida.AddMonths(-1), vuelo.FechaArribo.AddMonths(-1), vuelo.TiempoDeVuelo, vuelo.Aerolinea, vuelo.Tarifas));
+            //    }
+
+            //});
+
+            //List<OfertaVuelo>? ofertaVuelosnueva = ofertaVueloslarga.OrderBy(vuelo => vuelo.FechaSalida).ToList();
+            //return ofertaVuelosnueva;
+
             return ofertaVuelos;
         }
 
