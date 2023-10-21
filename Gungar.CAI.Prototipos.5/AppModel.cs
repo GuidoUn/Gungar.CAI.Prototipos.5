@@ -1,6 +1,5 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;

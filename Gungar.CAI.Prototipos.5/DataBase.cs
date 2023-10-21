@@ -1,6 +1,5 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
-//using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +25,6 @@ namespace Gungar.CAI.Prototipos._5
 
             string json = File.ReadAllText(ITINERARIOS_FILE);
 
-            //List<Itinerario>? itinerariosEnAlmacen = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Itinerario>>(json);
-
             List<Itinerario>? itinerariosEnAlmacen = JsonSerializer.Deserialize<List<Itinerario>>(json, serializerOptions);
 
             return itinerariosEnAlmacen;
@@ -41,7 +38,6 @@ namespace Gungar.CAI.Prototipos._5
                 File.Delete(ITINERARIOS_FILE);
             }
 
-            //File.WriteAllText(ITINERARIOS_FILE, JsonConvert.SerializeObject(itinerarios));
             File.WriteAllText(ITINERARIOS_FILE, JsonSerializer.Serialize(itinerarios, serializerOptions));
         }
 
@@ -62,7 +58,7 @@ namespace Gungar.CAI.Prototipos._5
 
             //ofertaVuelos.ForEach(vuelo =>
             //{
-            //    if (vuelo.FechaSalida >= DateTime.Now.AddDays(9))
+            //    if (vuelo.FechaSalida >= DateTime.Now)
             //        ofertaVuelosAReemplazar.Add(vuelo);
 
 
@@ -83,7 +79,6 @@ namespace Gungar.CAI.Prototipos._5
                 File.Delete(VUELOS_FILE);
             }
 
-            //File.WriteAllText(VUELOS_FILE, Newtonsoft.Json.JsonConvert.SerializeObject(vuelos));
             File.WriteAllText(VUELOS_FILE, JsonSerializer.Serialize(vuelos, serializerOptions));
         }
     }
