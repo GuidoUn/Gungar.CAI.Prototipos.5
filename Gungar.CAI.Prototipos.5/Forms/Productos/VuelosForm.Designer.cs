@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            borrarFechasBtn = new Button();
             claseLabel = new Label();
             clasesCombo = new ComboBox();
             aplicarFiltrosBtn = new Button();
@@ -60,6 +61,17 @@
             itinerarioLabel = new Label();
             titleLabel = new Label();
             modificarItinerarioBox = new GroupBox();
+            listView1 = new ListView();
+            columnHeader26 = new ColumnHeader();
+            columnHeader27 = new ColumnHeader();
+            columnHeader28 = new ColumnHeader();
+            columnHeader29 = new ColumnHeader();
+            columnHeader30 = new ColumnHeader();
+            columnHeader31 = new ColumnHeader();
+            columnHeader32 = new ColumnHeader();
+            columnHeader33 = new ColumnHeader();
+            columnHeader36 = new ColumnHeader();
+            columnHeader41 = new ColumnHeader();
             agregarProductoBtn = new Button();
             quitarProductoBtn = new Button();
             vuelosIdaBox = new GroupBox();
@@ -86,17 +98,6 @@
             columnHeader38 = new ColumnHeader();
             columnHeader39 = new ColumnHeader();
             columnHeader40 = new ColumnHeader();
-            listView1 = new ListView();
-            columnHeader26 = new ColumnHeader();
-            columnHeader27 = new ColumnHeader();
-            columnHeader28 = new ColumnHeader();
-            columnHeader29 = new ColumnHeader();
-            columnHeader30 = new ColumnHeader();
-            columnHeader31 = new ColumnHeader();
-            columnHeader32 = new ColumnHeader();
-            columnHeader33 = new ColumnHeader();
-            columnHeader36 = new ColumnHeader();
-            columnHeader41 = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -113,6 +114,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(borrarFechasBtn);
             groupBox1.Controls.Add(claseLabel);
             groupBox1.Controls.Add(clasesCombo);
             groupBox1.Controls.Add(aplicarFiltrosBtn);
@@ -134,6 +136,16 @@
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
+            // 
+            // borrarFechasBtn
+            // 
+            borrarFechasBtn.Location = new Point(284, 100);
+            borrarFechasBtn.Name = "borrarFechasBtn";
+            borrarFechasBtn.Size = new Size(196, 23);
+            borrarFechasBtn.TabIndex = 25;
+            borrarFechasBtn.Text = "Borrar Fechas";
+            borrarFechasBtn.UseVisualStyleBackColor = true;
+            borrarFechasBtn.Click += borrarFechasBtn_Click;
             // 
             // claseLabel
             // 
@@ -344,6 +356,7 @@
             vueltaDatePicker.Name = "vueltaDatePicker";
             vueltaDatePicker.Size = new Size(231, 23);
             vueltaDatePicker.TabIndex = 6;
+            vueltaDatePicker.ValueChanged += vueltaDatePicker_ValueChanged;
             // 
             // destinoText
             // 
@@ -392,6 +405,7 @@
             idaDatePicker.Name = "idaDatePicker";
             idaDatePicker.Size = new Size(231, 23);
             idaDatePicker.TabIndex = 0;
+            idaDatePicker.ValueChanged += idaDatePicker_ValueChanged;
             // 
             // itinerarioLabel
             // 
@@ -421,6 +435,67 @@
             modificarItinerarioBox.Size = new Size(624, 564);
             modificarItinerarioBox.TabIndex = 27;
             modificarItinerarioBox.TabStop = false;
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader26, columnHeader27, columnHeader28, columnHeader29, columnHeader30, columnHeader31, columnHeader32, columnHeader33, columnHeader36, columnHeader41 });
+            listView1.FullRowSelect = true;
+            listView1.Location = new Point(87, 16);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(531, 542);
+            listView1.TabIndex = 25;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // columnHeader26
+            // 
+            columnHeader26.Text = "Aerolinea";
+            columnHeader26.Width = 80;
+            // 
+            // columnHeader27
+            // 
+            columnHeader27.Text = "Origen";
+            columnHeader27.Width = 100;
+            // 
+            // columnHeader28
+            // 
+            columnHeader28.Text = "Destino";
+            columnHeader28.Width = 100;
+            // 
+            // columnHeader29
+            // 
+            columnHeader29.Text = "Fecha Salida";
+            columnHeader29.Width = 90;
+            // 
+            // columnHeader30
+            // 
+            columnHeader30.Text = "Duracion";
+            columnHeader30.Width = 70;
+            // 
+            // columnHeader31
+            // 
+            columnHeader31.Text = "Clase";
+            columnHeader31.Width = 80;
+            // 
+            // columnHeader32
+            // 
+            columnHeader32.Text = "Disponibilidad";
+            columnHeader32.Width = 90;
+            // 
+            // columnHeader33
+            // 
+            columnHeader33.Text = "Precio Adulto";
+            columnHeader33.Width = 90;
+            // 
+            // columnHeader36
+            // 
+            columnHeader36.Text = "Precio Menor";
+            columnHeader36.Width = 90;
+            // 
+            // columnHeader41
+            // 
+            columnHeader41.Text = "Precio Infante";
+            columnHeader41.Width = 90;
             // 
             // agregarProductoBtn
             // 
@@ -582,67 +657,6 @@
             columnHeader40.Text = "Precio Infante";
             columnHeader40.Width = 90;
             // 
-            // listView1
-            // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader26, columnHeader27, columnHeader28, columnHeader29, columnHeader30, columnHeader31, columnHeader32, columnHeader33, columnHeader36, columnHeader41 });
-            listView1.FullRowSelect = true;
-            listView1.Location = new Point(87, 16);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(531, 542);
-            listView1.TabIndex = 25;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            // 
-            // columnHeader26
-            // 
-            columnHeader26.Text = "Aerolinea";
-            columnHeader26.Width = 80;
-            // 
-            // columnHeader27
-            // 
-            columnHeader27.Text = "Origen";
-            columnHeader27.Width = 100;
-            // 
-            // columnHeader28
-            // 
-            columnHeader28.Text = "Destino";
-            columnHeader28.Width = 100;
-            // 
-            // columnHeader29
-            // 
-            columnHeader29.Text = "Fecha Salida";
-            columnHeader29.Width = 90;
-            // 
-            // columnHeader30
-            // 
-            columnHeader30.Text = "Duracion";
-            columnHeader30.Width = 70;
-            // 
-            // columnHeader31
-            // 
-            columnHeader31.Text = "Clase";
-            columnHeader31.Width = 80;
-            // 
-            // columnHeader32
-            // 
-            columnHeader32.Text = "Disponibilidad";
-            columnHeader32.Width = 90;
-            // 
-            // columnHeader33
-            // 
-            columnHeader33.Text = "Precio Adulto";
-            columnHeader33.Width = 90;
-            // 
-            // columnHeader36
-            // 
-            columnHeader36.Text = "Precio Menor";
-            columnHeader36.Width = 90;
-            // 
-            // columnHeader41
-            // 
-            columnHeader41.Text = "Precio Infante";
-            columnHeader41.Width = 90;
-            // 
             // VuelosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -748,5 +762,6 @@
         private ColumnHeader columnHeader33;
         private ColumnHeader columnHeader36;
         private ColumnHeader columnHeader41;
+        private Button borrarFechasBtn;
     }
 }

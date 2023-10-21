@@ -1,6 +1,7 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5;
 using System.Linq;
+using Gungar.CAI.Prototipos._5.Entidades;
 
 public class FiltrosVuelos
 {
@@ -37,7 +38,7 @@ public class FiltrosVuelos
 
 public static class VuelosModel
 {
-    private static bool mismaCiudad(string ciudadVuelo, string ciudadBusqueda)
+    private static bool esMismaCiudad(string ciudadVuelo, string ciudadBusqueda)
     {
         if (OfertaVuelo.Ciudades[ciudadVuelo].ToLower().Contains(ciudadBusqueda.ToLower()))
         {
@@ -50,15 +51,26 @@ public static class VuelosModel
         return false;
     }
 
+    private static bool estaEntreFechas(DateTime fechaVuelo, DateTime? fechaDesde, DateTime? fechaHasta)
+    {
+        if (fechaVuelo.Date >= fechaDesde?.Date && (fechaVuelo.Date <= fechaHasta?.Date || fechaHasta == null))
+        {
+            return true;
+        }
+        return false;
+    }
+
     public static List<OfertaVuelo> ofertaVuelos { get; private set; } = new List<OfertaVuelo>();
 
-    public static List<OfertaVuelo> getVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaSalida = null, int? precioMinimo = null, int? precioMaximo = null)
+    public static List<OfertaVuelo> getVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int? precioMinimo = null, int? precioMaximo = null)
     {
         List<OfertaVuelo> vuelosFiltrados = ofertaVuelos.Where(vuelo =>
          {
-             if (origen != "" && !mismaCiudad(vuelo.Origen, origen))
+             if (origen != "" && !esMismaCiudad(vuelo.Origen, origen))
                  return false;
-             if (destino != "" && !mismaCiudad(vuelo.Destino, destino))
+             if (destino != "" && !esMismaCiudad(vuelo.Destino, destino))
+                 return false;
+             if (fechaDesde != null && !estaEntreFechas(vuelo.FechaSalida, fechaDesde, fechaHasta))
                  return false;
              if (!vuelo.Tarifas.Exists(tarifa => tarifa.Clase == clase))
                  return false;
