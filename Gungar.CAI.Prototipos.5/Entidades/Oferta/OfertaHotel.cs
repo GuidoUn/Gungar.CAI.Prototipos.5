@@ -7,14 +7,6 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 {
-    internal class TarifaHotel
-    {
-        public string clase; // E, P, B, F
-        public string tipoDePasajero; // A, M, I
-        public float precio;
-        public int disponibilidad;
-    }
-
     internal class Habitacion
     {
         public DateOnly Fecha;
