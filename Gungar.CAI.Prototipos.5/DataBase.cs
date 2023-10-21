@@ -1,16 +1,19 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5
 {
     public static class DataBase
     {
+        static JsonSerializerOptions serializerOptions = new JsonSerializerOptions { IncludeFields = true };
+
         const string ITINERARIOS_FILE = @"..\..\..\Almacenes\Itinerarios.json";
         const string VUELOS_FILE = @"..\..\..\Almacenes\Vuelos.json";
 
@@ -23,7 +26,9 @@ namespace Gungar.CAI.Prototipos._5
 
             string json = File.ReadAllText(ITINERARIOS_FILE);
 
-            List<Itinerario>? itinerariosEnAlmacen = JsonConvert.DeserializeObject<List<Itinerario>>(json);
+            //List<Itinerario>? itinerariosEnAlmacen = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Itinerario>>(json);
+
+            List<Itinerario>? itinerariosEnAlmacen = JsonSerializer.Deserialize<List<Itinerario>>(json, serializerOptions);
 
             return itinerariosEnAlmacen;
 
@@ -36,7 +41,8 @@ namespace Gungar.CAI.Prototipos._5
                 File.Delete(ITINERARIOS_FILE);
             }
 
-            File.WriteAllText(ITINERARIOS_FILE, JsonConvert.SerializeObject(itinerarios));
+            //File.WriteAllText(ITINERARIOS_FILE, JsonConvert.SerializeObject(itinerarios));
+            File.WriteAllText(ITINERARIOS_FILE, JsonSerializer.Serialize(itinerarios, serializerOptions));
         }
 
         public static List<OfertaVuelo>? LeerVuelos()
@@ -48,7 +54,7 @@ namespace Gungar.CAI.Prototipos._5
 
             string json = File.ReadAllText(VUELOS_FILE);
 
-            List<OfertaVuelo>? ofertaVuelos = JsonConvert.DeserializeObject<List<OfertaVuelo>>(json);
+            List<OfertaVuelo>? ofertaVuelos = JsonSerializer.Deserialize<List<OfertaVuelo>>(json, serializerOptions);
 
             //--------- Para eliminar o modificar rápido vuelos, por ejemplo para borrar los viejos ------------------------------------------------
 
@@ -77,7 +83,8 @@ namespace Gungar.CAI.Prototipos._5
                 File.Delete(VUELOS_FILE);
             }
 
-            File.WriteAllText(VUELOS_FILE, JsonConvert.SerializeObject(vuelos));
+            //File.WriteAllText(VUELOS_FILE, Newtonsoft.Json.JsonConvert.SerializeObject(vuelos));
+            File.WriteAllText(VUELOS_FILE, JsonSerializer.Serialize(vuelos, serializerOptions));
         }
     }
 }
