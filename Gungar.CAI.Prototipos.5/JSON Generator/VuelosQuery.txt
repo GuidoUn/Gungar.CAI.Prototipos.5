@@ -16,7 +16,7 @@ JG.repeat(2, {
     return moment(JG.date(arribo, arribo)).format('YYYY-MM-DDTHH:mm');
   },
   HorasDeVuelo: JG.integer(1,3),
-  MinutosDeVuelo: JG.integer(0,60),
+  MinutosDeVuelo: JG.integer(0,59),
   TiempoDeVuelo(){
     return this.HorasDeVuelo.toString().padStart(2, '0')+":"+this.MinutosDeVuelo.toString().padStart(2, '0')+"hs";
   },
