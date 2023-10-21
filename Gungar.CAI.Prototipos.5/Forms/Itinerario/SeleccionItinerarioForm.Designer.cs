@@ -57,18 +57,18 @@
             // 
             // button1
             // 
-            button1.Location = new Point(680, 578);
+            button1.Location = new Point(953, 33);
             button1.Name = "button1";
             button1.Size = new Size(103, 56);
             button1.TabIndex = 20;
-            button1.Text = "Cancelar";
+            button1.Text = "Salir";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // continuarBtn
             // 
             continuarBtn.Enabled = false;
-            continuarBtn.Location = new Point(571, 578);
+            continuarBtn.Location = new Point(420, 575);
             continuarBtn.Name = "continuarBtn";
             continuarBtn.Size = new Size(103, 56);
             continuarBtn.TabIndex = 21;
@@ -164,7 +164,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(527, 550);
+            label4.Location = new Point(347, 557);
             label4.Name = "label4";
             label4.Size = new Size(130, 15);
             label4.TabIndex = 12;
@@ -173,7 +173,7 @@
             // itinerarioSeleccionadoLabel
             // 
             itinerarioSeleccionadoLabel.AutoSize = true;
-            itinerarioSeleccionadoLabel.Location = new Point(661, 550);
+            itinerarioSeleccionadoLabel.Location = new Point(481, 557);
             itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
             itinerarioSeleccionadoLabel.Size = new Size(152, 15);
             itinerarioSeleccionadoLabel.TabIndex = 13;

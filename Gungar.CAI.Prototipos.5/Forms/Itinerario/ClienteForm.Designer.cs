@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             nuevoItinerarioBox = new GroupBox();
+            telefonoText = new TextBox();
+            label4 = new Label();
+            emailText = new TextBox();
+            label2 = new Label();
+            documentoText = new TextBox();
             label5 = new Label();
             label6 = new Label();
             apellidoText = new TextBox();
@@ -37,12 +42,15 @@
             label1 = new Label();
             button1 = new Button();
             continuarBtn = new Button();
-            documentoText = new TextBox();
             nuevoItinerarioBox.SuspendLayout();
             SuspendLayout();
             // 
             // nuevoItinerarioBox
             // 
+            nuevoItinerarioBox.Controls.Add(telefonoText);
+            nuevoItinerarioBox.Controls.Add(label4);
+            nuevoItinerarioBox.Controls.Add(emailText);
+            nuevoItinerarioBox.Controls.Add(label2);
             nuevoItinerarioBox.Controls.Add(documentoText);
             nuevoItinerarioBox.Controls.Add(label5);
             nuevoItinerarioBox.Controls.Add(label6);
@@ -51,15 +59,54 @@
             nuevoItinerarioBox.Controls.Add(nuevoPasajeroText);
             nuevoItinerarioBox.Location = new Point(51, 65);
             nuevoItinerarioBox.Name = "nuevoItinerarioBox";
-            nuevoItinerarioBox.Size = new Size(308, 237);
+            nuevoItinerarioBox.Size = new Size(292, 301);
             nuevoItinerarioBox.TabIndex = 21;
             nuevoItinerarioBox.TabStop = false;
             nuevoItinerarioBox.Text = "Datos de cliente";
             // 
+            // telefonoText
+            // 
+            telefonoText.Location = new Point(12, 261);
+            telefonoText.Name = "telefonoText";
+            telefonoText.Size = new Size(264, 23);
+            telefonoText.TabIndex = 21;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 243);
+            label4.Name = "label4";
+            label4.Size = new Size(52, 15);
+            label4.TabIndex = 20;
+            label4.Text = "Telefono";
+            // 
+            // emailText
+            // 
+            emailText.Location = new Point(12, 207);
+            emailText.Name = "emailText";
+            emailText.Size = new Size(264, 23);
+            emailText.TabIndex = 19;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 189);
+            label2.Name = "label2";
+            label2.Size = new Size(36, 15);
+            label2.TabIndex = 18;
+            label2.Text = "Email";
+            // 
+            // documentoText
+            // 
+            documentoText.Location = new Point(12, 154);
+            documentoText.Name = "documentoText";
+            documentoText.Size = new Size(264, 23);
+            documentoText.TabIndex = 17;
+            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(22, 153);
+            label5.Location = new Point(6, 136);
             label5.Name = "label5";
             label5.Size = new Size(70, 15);
             label5.TabIndex = 14;
@@ -68,7 +115,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(22, 99);
+            label6.Location = new Point(6, 82);
             label6.Name = "label6";
             label6.Size = new Size(51, 15);
             label6.TabIndex = 16;
@@ -76,7 +123,7 @@
             // 
             // apellidoText
             // 
-            apellidoText.Location = new Point(28, 117);
+            apellidoText.Location = new Point(12, 100);
             apellidoText.Name = "apellidoText";
             apellidoText.Size = new Size(264, 23);
             apellidoText.TabIndex = 15;
@@ -85,7 +132,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(22, 46);
+            label3.Location = new Point(6, 29);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 10;
@@ -93,7 +140,7 @@
             // 
             // nuevoPasajeroText
             // 
-            nuevoPasajeroText.Location = new Point(28, 64);
+            nuevoPasajeroText.Location = new Point(12, 47);
             nuevoPasajeroText.Name = "nuevoPasajeroText";
             nuevoPasajeroText.Size = new Size(264, 23);
             nuevoPasajeroText.TabIndex = 9;
@@ -104,13 +151,13 @@
             label1.AutoSize = true;
             label1.Location = new Point(51, 27);
             label1.Name = "label1";
-            label1.Size = new Size(116, 15);
+            label1.Size = new Size(91, 15);
             label1.TabIndex = 19;
-            label1.Text = "Armado de Itinerario";
+            label1.Text = "Datos de cliente";
             // 
             // button1
             // 
-            button1.Location = new Point(219, 335);
+            button1.Location = new Point(203, 380);
             button1.Name = "button1";
             button1.Size = new Size(140, 66);
             button1.TabIndex = 22;
@@ -121,21 +168,13 @@
             // continuarBtn
             // 
             continuarBtn.Enabled = false;
-            continuarBtn.Location = new Point(73, 335);
+            continuarBtn.Location = new Point(51, 380);
             continuarBtn.Name = "continuarBtn";
             continuarBtn.Size = new Size(140, 66);
             continuarBtn.TabIndex = 20;
             continuarBtn.Text = "Continuar";
             continuarBtn.UseVisualStyleBackColor = true;
             continuarBtn.Click += continuarBtn_Click;
-            // 
-            // documentoText
-            // 
-            documentoText.Location = new Point(28, 171);
-            documentoText.Name = "documentoText";
-            documentoText.Size = new Size(264, 23);
-            documentoText.TabIndex = 17;
-            documentoText.TextChanged += documentoText_TextChanged;
             // 
             // ClienteForm
             // 
@@ -166,5 +205,9 @@
         private Label label6;
         private TextBox apellidoText;
         private TextBox documentoText;
+        private TextBox telefonoText;
+        private Label label4;
+        private TextBox emailText;
+        private Label label2;
     }
 }

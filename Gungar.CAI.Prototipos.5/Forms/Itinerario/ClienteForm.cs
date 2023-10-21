@@ -13,9 +13,11 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class ClienteForm : Form
     {
-        string? nombreNuevoPasajero;
-        string? apellidoNuevoPasajero;
-        string? documentoNuevoPasajero;
+        string? nombreNuevoCliente;
+        string? apellidoNuevoCliente;
+        string? documentoNuevoCliente;
+        string? emailNuevoCliente;
+        string? telefonoNuevoCliente;
 
         Itinerario itinerario;
 
@@ -23,9 +25,11 @@ namespace Gungar.CAI.Prototipos._5
         {
             InitializeComponent();
             this.itinerario = itinerario;
-            this.nombreNuevoPasajero = itinerario.cliente?.nombre;
-            this.apellidoNuevoPasajero = itinerario.cliente?.apellido;
-            this.documentoNuevoPasajero = itinerario.cliente?.documento;
+            this.nombreNuevoCliente = itinerario.cliente?.nombre;
+            this.apellidoNuevoCliente = itinerario.cliente?.apellido;
+            this.documentoNuevoCliente = itinerario.cliente?.documento;
+            this.emailNuevoCliente = itinerario.cliente?.email;
+            this.telefonoNuevoCliente = itinerario.cliente?.telefono;
             actualizarCampos();
         }
 
@@ -36,43 +40,40 @@ namespace Gungar.CAI.Prototipos._5
 
         private void evaluarEstadoBtns()
         {
-            continuarBtn.Enabled = nombreNuevoPasajero?.Length > 0 && apellidoNuevoPasajero?.Length > 0;
+            continuarBtn.Enabled = nombreNuevoCliente?.Length > 0 && apellidoNuevoCliente?.Length > 0;
         }
 
         private void actualizarCampos()
         {
-            nuevoPasajeroText.Text = this.nombreNuevoPasajero;
-            apellidoText.Text = this.apellidoNuevoPasajero;
-            documentoText.Text = this.documentoNuevoPasajero;
+            nuevoPasajeroText.Text = this.nombreNuevoCliente;
+            apellidoText.Text = this.apellidoNuevoCliente;
+            documentoText.Text = this.documentoNuevoCliente;
+            emailText.Text = this.emailNuevoCliente;
+            telefonoText.Text = this.telefonoNuevoCliente;
         }
 
         private void nuevoPasajeroText_TextChanged(object sender, EventArgs e)
         {
-            nombreNuevoPasajero = nuevoPasajeroText.Text;
+            nombreNuevoCliente = nuevoPasajeroText.Text;
             evaluarEstadoBtns();
         }
 
         private void apellidoText_TextChanged(object sender, EventArgs e)
         {
-            apellidoNuevoPasajero = apellidoText.Text;
+            apellidoNuevoCliente = apellidoText.Text;
             evaluarEstadoBtns();
-        }
-
-        private void documentoText_TextChanged(object sender, EventArgs e)
-        {
-            documentoNuevoPasajero = documentoText.Text;
         }
 
         private void continuarBtn_Click(object sender, EventArgs e)
         {
             var item = new ListViewItem();
 
-            if (string.IsNullOrEmpty(nombreNuevoPasajero) || string.IsNullOrEmpty(apellidoNuevoPasajero))
+            if (string.IsNullOrEmpty(nombreNuevoCliente) || string.IsNullOrEmpty(apellidoNuevoCliente))
             {
                 return;
             }
 
-            Cliente nuevoCliente = new Cliente(nombreNuevoPasajero, apellidoNuevoPasajero, documentoNuevoPasajero);
+            Cliente nuevoCliente = new Cliente(nombreNuevoCliente, apellidoNuevoCliente, documentoText.Text, emailText.Text, telefonoText.Text);
 
             itinerario.AsignarCliente(nuevoCliente);
             this.Close();
