@@ -48,7 +48,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
             Aerolinea = aerolinea;
             Tarifas = tarifas;
         }
-        //("AEP", "COR", "MDZ", "ROS", "BRC", "SLA", "TUC", "NQN", "MDQ", "RES", "SFN", "PSS", "BHI", "FTE", "USH", "IGR", "CRD", "JUJ"
+
         public static Dictionary<string, string> Ciudades = new Dictionary<string, string>(){
             {
                 "AEP", "Buenos Aires"
@@ -110,7 +110,5 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
                 'F', "First"
             }
         };
-
-
     }
 }

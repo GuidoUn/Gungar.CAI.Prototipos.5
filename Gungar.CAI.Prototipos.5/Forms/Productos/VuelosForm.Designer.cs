@@ -62,18 +62,6 @@
             modificarItinerarioBox = new GroupBox();
             agregarProductoBtn = new Button();
             quitarProductoBtn = new Button();
-            itinerarioListView = new ListView();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            columnHeader7 = new ColumnHeader();
-            columnHeader17 = new ColumnHeader();
-            columnHeader15 = new ColumnHeader();
-            columnHeader16 = new ColumnHeader();
-            columnHeader18 = new ColumnHeader();
-            columnHeader19 = new ColumnHeader();
-            columnHeader20 = new ColumnHeader();
-            columnHeader21 = new ColumnHeader();
-            columnHeader22 = new ColumnHeader();
             vuelosIdaBox = new GroupBox();
             vuelosIdaListView = new ListView();
             columnHeader1 = new ColumnHeader();
@@ -82,6 +70,7 @@
             columnHeader4 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader23 = new ColumnHeader();
+            columnHeader25 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
             columnHeader11 = new ColumnHeader();
             columnHeader12 = new ColumnHeader();
@@ -93,11 +82,21 @@
             columnHeader35 = new ColumnHeader();
             columnHeader37 = new ColumnHeader();
             columnHeader24 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
             columnHeader38 = new ColumnHeader();
             columnHeader39 = new ColumnHeader();
             columnHeader40 = new ColumnHeader();
-            columnHeader25 = new ColumnHeader();
-            columnHeader8 = new ColumnHeader();
+            listView1 = new ListView();
+            columnHeader26 = new ColumnHeader();
+            columnHeader27 = new ColumnHeader();
+            columnHeader28 = new ColumnHeader();
+            columnHeader29 = new ColumnHeader();
+            columnHeader30 = new ColumnHeader();
+            columnHeader31 = new ColumnHeader();
+            columnHeader32 = new ColumnHeader();
+            columnHeader33 = new ColumnHeader();
+            columnHeader36 = new ColumnHeader();
+            columnHeader41 = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -414,9 +413,9 @@
             // 
             // modificarItinerarioBox
             // 
+            modificarItinerarioBox.Controls.Add(listView1);
             modificarItinerarioBox.Controls.Add(agregarProductoBtn);
             modificarItinerarioBox.Controls.Add(quitarProductoBtn);
-            modificarItinerarioBox.Controls.Add(itinerarioListView);
             modificarItinerarioBox.Location = new Point(896, 234);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
             modificarItinerarioBox.Size = new Size(624, 564);
@@ -440,68 +439,6 @@
             quitarProductoBtn.TabIndex = 22;
             quitarProductoBtn.Text = "Quitar";
             quitarProductoBtn.UseVisualStyleBackColor = true;
-            // 
-            // itinerarioListView
-            // 
-            itinerarioListView.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7, columnHeader17, columnHeader15, columnHeader16, columnHeader18, columnHeader19, columnHeader20, columnHeader21, columnHeader22 });
-            itinerarioListView.Location = new Point(87, 16);
-            itinerarioListView.Name = "itinerarioListView";
-            itinerarioListView.Size = new Size(527, 542);
-            itinerarioListView.TabIndex = 24;
-            itinerarioListView.UseCompatibleStateImageBehavior = false;
-            itinerarioListView.View = View.Details;
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Producto";
-            columnHeader5.Width = 70;
-            // 
-            // columnHeader6
-            // 
-            columnHeader6.Text = "Prestador";
-            columnHeader6.Width = 100;
-            // 
-            // columnHeader7
-            // 
-            columnHeader7.Text = "Cant Pasajeros";
-            columnHeader7.Width = 100;
-            // 
-            // columnHeader17
-            // 
-            columnHeader17.Text = "Origen/Destino";
-            columnHeader17.Width = 100;
-            // 
-            // columnHeader15
-            // 
-            columnHeader15.Text = "Precio Total";
-            // 
-            // columnHeader16
-            // 
-            columnHeader16.Text = "Categoría";
-            columnHeader16.Width = 70;
-            // 
-            // columnHeader18
-            // 
-            columnHeader18.Text = "Desde";
-            // 
-            // columnHeader19
-            // 
-            columnHeader19.Text = "Hasta";
-            // 
-            // columnHeader20
-            // 
-            columnHeader20.Text = "Precio Adulto";
-            columnHeader20.Width = 100;
-            // 
-            // columnHeader21
-            // 
-            columnHeader21.Text = "Precio Menor";
-            columnHeader21.Width = 100;
-            // 
-            // columnHeader22
-            // 
-            columnHeader22.Text = "Precio Infante";
-            columnHeader22.Width = 100;
             // 
             // vuelosIdaBox
             // 
@@ -553,6 +490,11 @@
             // 
             columnHeader23.Text = "Clase";
             columnHeader23.Width = 80;
+            // 
+            // columnHeader25
+            // 
+            columnHeader25.Text = "Disponibilidad";
+            columnHeader25.Width = 90;
             // 
             // columnHeader10
             // 
@@ -620,6 +562,11 @@
             columnHeader24.Text = "Clase";
             columnHeader24.Width = 80;
             // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Disponibilidad";
+            columnHeader8.Width = 90;
+            // 
             // columnHeader38
             // 
             columnHeader38.Text = "Precio Adulto";
@@ -635,15 +582,66 @@
             columnHeader40.Text = "Precio Infante";
             columnHeader40.Width = 90;
             // 
-            // columnHeader25
+            // listView1
             // 
-            columnHeader25.Text = "Disponibilidad";
-            columnHeader25.Width = 90;
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader26, columnHeader27, columnHeader28, columnHeader29, columnHeader30, columnHeader31, columnHeader32, columnHeader33, columnHeader36, columnHeader41 });
+            listView1.FullRowSelect = true;
+            listView1.Location = new Point(87, 16);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(531, 542);
+            listView1.TabIndex = 25;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
             // 
-            // columnHeader8
+            // columnHeader26
             // 
-            columnHeader8.Text = "Disponibilidad";
-            columnHeader8.Width = 90;
+            columnHeader26.Text = "Aerolinea";
+            columnHeader26.Width = 80;
+            // 
+            // columnHeader27
+            // 
+            columnHeader27.Text = "Origen";
+            columnHeader27.Width = 100;
+            // 
+            // columnHeader28
+            // 
+            columnHeader28.Text = "Destino";
+            columnHeader28.Width = 100;
+            // 
+            // columnHeader29
+            // 
+            columnHeader29.Text = "Fecha Salida";
+            columnHeader29.Width = 90;
+            // 
+            // columnHeader30
+            // 
+            columnHeader30.Text = "Duracion";
+            columnHeader30.Width = 70;
+            // 
+            // columnHeader31
+            // 
+            columnHeader31.Text = "Clase";
+            columnHeader31.Width = 80;
+            // 
+            // columnHeader32
+            // 
+            columnHeader32.Text = "Disponibilidad";
+            columnHeader32.Width = 90;
+            // 
+            // columnHeader33
+            // 
+            columnHeader33.Text = "Precio Adulto";
+            columnHeader33.Width = 90;
+            // 
+            // columnHeader36
+            // 
+            columnHeader36.Text = "Precio Menor";
+            columnHeader36.Width = 90;
+            // 
+            // columnHeader41
+            // 
+            columnHeader41.Text = "Precio Infante";
+            columnHeader41.Width = 90;
             // 
             // VuelosForm
             // 
@@ -715,18 +713,6 @@
         private GroupBox modificarItinerarioBox;
         private Button agregarProductoBtn;
         private Button quitarProductoBtn;
-        private ListView itinerarioListView;
-        private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
-        private ColumnHeader columnHeader7;
-        private ColumnHeader columnHeader17;
-        private ColumnHeader columnHeader15;
-        private ColumnHeader columnHeader16;
-        private ColumnHeader columnHeader18;
-        private ColumnHeader columnHeader19;
-        private ColumnHeader columnHeader20;
-        private ColumnHeader columnHeader21;
-        private ColumnHeader columnHeader22;
         private GroupBox vuelosIdaBox;
         private ListView vuelosIdaListView;
         private ColumnHeader columnHeader1;
@@ -751,5 +737,16 @@
         private ColumnHeader columnHeader24;
         private ColumnHeader columnHeader25;
         private ColumnHeader columnHeader8;
+        private ListView listView1;
+        private ColumnHeader columnHeader26;
+        private ColumnHeader columnHeader27;
+        private ColumnHeader columnHeader28;
+        private ColumnHeader columnHeader29;
+        private ColumnHeader columnHeader30;
+        private ColumnHeader columnHeader31;
+        private ColumnHeader columnHeader32;
+        private ColumnHeader columnHeader33;
+        private ColumnHeader columnHeader36;
+        private ColumnHeader columnHeader41;
     }
 }

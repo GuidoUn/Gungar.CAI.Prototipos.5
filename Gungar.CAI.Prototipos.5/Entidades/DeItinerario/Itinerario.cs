@@ -38,19 +38,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             setearValoresIniciales();
         }
 
-        public Itinerario(Cliente cliente)
-        {
-            setearValoresIniciales();
-            this.cliente = cliente;
-        }
-
-        public Itinerario(Cliente cliente, DateTime fechaCreacion)
-        {
-            setearValoresIniciales();
-            this.cliente = cliente;
-            this.fechaCreacion = fechaCreacion;
-        }
-
         public void AsignarCliente(Cliente Cliente)
         {
             cliente = Cliente;
