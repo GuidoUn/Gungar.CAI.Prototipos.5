@@ -80,7 +80,6 @@
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
-            columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader23 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
@@ -92,12 +91,13 @@
             columnHeader14 = new ColumnHeader();
             columnHeader34 = new ColumnHeader();
             columnHeader35 = new ColumnHeader();
-            columnHeader36 = new ColumnHeader();
             columnHeader37 = new ColumnHeader();
             columnHeader24 = new ColumnHeader();
             columnHeader38 = new ColumnHeader();
             columnHeader39 = new ColumnHeader();
             columnHeader40 = new ColumnHeader();
+            columnHeader25 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -515,7 +515,7 @@
             // 
             // vuelosIdaListView
             // 
-            vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader8, columnHeader9, columnHeader23, columnHeader10, columnHeader11, columnHeader12 });
+            vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader9, columnHeader23, columnHeader25, columnHeader10, columnHeader11, columnHeader12 });
             vuelosIdaListView.FullRowSelect = true;
             vuelosIdaListView.Location = new Point(11, 16);
             vuelosIdaListView.Name = "vuelosIdaListView";
@@ -543,11 +543,6 @@
             // 
             columnHeader4.Text = "Fecha Salida";
             columnHeader4.Width = 90;
-            // 
-            // columnHeader8
-            // 
-            columnHeader8.Text = "Fecha Arribo";
-            columnHeader8.Width = 90;
             // 
             // columnHeader9
             // 
@@ -586,7 +581,7 @@
             // 
             // vuelosVueltaListView
             // 
-            vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader34, columnHeader35, columnHeader36, columnHeader37, columnHeader24, columnHeader38, columnHeader39, columnHeader40 });
+            vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader34, columnHeader35, columnHeader37, columnHeader24, columnHeader8, columnHeader38, columnHeader39, columnHeader40 });
             vuelosVueltaListView.FullRowSelect = true;
             vuelosVueltaListView.Location = new Point(11, 22);
             vuelosVueltaListView.Name = "vuelosVueltaListView";
@@ -615,11 +610,6 @@
             columnHeader35.Text = "Fecha Salida";
             columnHeader35.Width = 90;
             // 
-            // columnHeader36
-            // 
-            columnHeader36.Text = "Fecha Arribo";
-            columnHeader36.Width = 90;
-            // 
             // columnHeader37
             // 
             columnHeader37.Text = "Duracion";
@@ -644,6 +634,16 @@
             // 
             columnHeader40.Text = "Precio Infante";
             columnHeader40.Width = 90;
+            // 
+            // columnHeader25
+            // 
+            columnHeader25.Text = "Disponibilidad";
+            columnHeader25.Width = 90;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Disponibilidad";
+            columnHeader8.Width = 90;
             // 
             // VuelosForm
             // 
@@ -733,7 +733,6 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader8;
         private ColumnHeader columnHeader9;
         private ColumnHeader columnHeader10;
         private ColumnHeader columnHeader11;
@@ -744,12 +743,13 @@
         private ColumnHeader columnHeader14;
         private ColumnHeader columnHeader34;
         private ColumnHeader columnHeader35;
-        private ColumnHeader columnHeader36;
         private ColumnHeader columnHeader37;
         private ColumnHeader columnHeader38;
         private ColumnHeader columnHeader39;
         private ColumnHeader columnHeader40;
         private ColumnHeader columnHeader23;
         private ColumnHeader columnHeader24;
+        private ColumnHeader columnHeader25;
+        private ColumnHeader columnHeader8;
     }
 }

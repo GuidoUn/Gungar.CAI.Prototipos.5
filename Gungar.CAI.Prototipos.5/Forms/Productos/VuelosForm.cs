@@ -66,9 +66,9 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Origen]);
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Destino]);
                 item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
-                item.SubItems.Add(vuelo.FechaArribo.ToString(FORMATO_FECHA));
                 item.SubItems.Add(vuelo.TiempoDeVuelo);
                 item.SubItems.Add(OfertaVuelo.Clases[vuelo.Tarifas[isEconomy ? 0 : 3].Clase]);
+                item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Disponibilidad.ToString());
                 item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
                 item.SubItems.Add(vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
                 item.SubItems.Add(vuelo.Tarifas[isEconomy ? 2 : 5].Precio.ToString());
@@ -81,7 +81,6 @@ namespace Gungar.CAI.Prototipos._5
             {
                 List<OfertaVuelo> vuelosVueltaDisponibles = VuelosModel.getVuelos(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], vueltaDatePicker.Value, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
 
-                //foreach (var vuelo in VuelosModel.getVuelos(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], vueltaDatePicker.Value, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value)))
                 foreach (OfertaVuelo vuelo in vuelosVueltaDisponibles)
                 {
                     ListViewItem item = new ListViewItem();
@@ -89,9 +88,9 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Origen]);
                     item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Destino]);
                     item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
-                    item.SubItems.Add(vuelo.FechaArribo.ToString(FORMATO_FECHA));
                     item.SubItems.Add(vuelo.TiempoDeVuelo);
                     item.SubItems.Add(OfertaVuelo.Clases[vuelo.Tarifas[isEconomy ? 0 : 3].Clase]);
+                    item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Disponibilidad.ToString());
                     item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
                     item.SubItems.Add(vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
                     item.SubItems.Add(vuelo.Tarifas[isEconomy ? 2 : 5].Precio.ToString());
