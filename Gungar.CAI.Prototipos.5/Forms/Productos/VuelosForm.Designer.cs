@@ -132,14 +132,14 @@
             groupBox1.Controls.Add(idaDatePicker);
             groupBox1.Location = new Point(12, 34);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(716, 194);
+            groupBox1.Size = new Size(700, 194);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
             // 
             // borrarFechasBtn
             // 
-            borrarFechasBtn.Location = new Point(284, 100);
+            borrarFechasBtn.Location = new Point(284, 94);
             borrarFechasBtn.Name = "borrarFechasBtn";
             borrarFechasBtn.Size = new Size(196, 23);
             borrarFechasBtn.TabIndex = 25;
@@ -150,7 +150,7 @@
             // claseLabel
             // 
             claseLabel.AutoSize = true;
-            claseLabel.Location = new Point(500, 135);
+            claseLabel.Location = new Point(25, 156);
             claseLabel.Name = "claseLabel";
             claseLabel.Size = new Size(38, 15);
             claseLabel.TabIndex = 24;
@@ -160,26 +160,26 @@
             // 
             clasesCombo.FormattingEnabled = true;
             clasesCombo.Items.AddRange(new object[] { "Economy", "Premium", "Business", "First" });
-            clasesCombo.Location = new Point(562, 132);
+            clasesCombo.Location = new Point(77, 153);
             clasesCombo.Name = "clasesCombo";
-            clasesCombo.Size = new Size(127, 23);
+            clasesCombo.Size = new Size(93, 23);
             clasesCombo.TabIndex = 24;
             // 
             // aplicarFiltrosBtn
             // 
             aplicarFiltrosBtn.Enabled = false;
-            aplicarFiltrosBtn.Location = new Point(499, 162);
+            aplicarFiltrosBtn.Location = new Point(499, 126);
             aplicarFiltrosBtn.Name = "aplicarFiltrosBtn";
-            aplicarFiltrosBtn.Size = new Size(190, 23);
+            aplicarFiltrosBtn.Size = new Size(190, 53);
             aplicarFiltrosBtn.TabIndex = 21;
-            aplicarFiltrosBtn.Text = "Aplicar Filtros";
+            aplicarFiltrosBtn.Text = "Buscar";
             aplicarFiltrosBtn.UseVisualStyleBackColor = true;
             aplicarFiltrosBtn.Click += aplicarFiltrosBtn_Click;
             // 
             // soloIdaCheckBox
             // 
             soloIdaCheckBox.AutoSize = true;
-            soloIdaCheckBox.Location = new Point(197, 103);
+            soloIdaCheckBox.Location = new Point(197, 97);
             soloIdaCheckBox.Name = "soloIdaCheckBox";
             soloIdaCheckBox.Size = new Size(81, 19);
             soloIdaCheckBox.TabIndex = 22;
@@ -194,7 +194,7 @@
             groupBox3.Controls.Add(desdePreciosNumeric);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label10);
-            groupBox3.Location = new Point(500, 28);
+            groupBox3.Location = new Point(500, 22);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(189, 90);
             groupBox3.TabIndex = 20;
@@ -252,7 +252,7 @@
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(12, 51);
+            groupBox2.Location = new Point(6, 22);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(180, 115);
             groupBox2.TabIndex = 14;
@@ -312,7 +312,7 @@
             // 
             vuelosHotelesBox.Controls.Add(hotelesRadio);
             vuelosHotelesBox.Controls.Add(vuelosRadio);
-            vuelosHotelesBox.Location = new Point(11, 22);
+            vuelosHotelesBox.Location = new Point(11, 16);
             vuelosHotelesBox.Name = "vuelosHotelesBox";
             vuelosHotelesBox.Size = new Size(0, 0);
             vuelosHotelesBox.TabIndex = 6;
@@ -344,7 +344,7 @@
             // vueltaLabel
             // 
             vueltaLabel.AutoSize = true;
-            vueltaLabel.Location = new Point(197, 165);
+            vueltaLabel.Location = new Point(197, 159);
             vueltaLabel.Name = "vueltaLabel";
             vueltaLabel.Size = new Size(43, 15);
             vueltaLabel.TabIndex = 7;
@@ -352,7 +352,7 @@
             // 
             // vueltaDatePicker
             // 
-            vueltaDatePicker.Location = new Point(249, 162);
+            vueltaDatePicker.Location = new Point(249, 156);
             vueltaDatePicker.Name = "vueltaDatePicker";
             vueltaDatePicker.Size = new Size(231, 23);
             vueltaDatePicker.TabIndex = 6;
@@ -360,14 +360,14 @@
             // 
             // destinoText
             // 
-            destinoText.Location = new Point(249, 69);
+            destinoText.Location = new Point(249, 63);
             destinoText.Name = "destinoText";
             destinoText.Size = new Size(231, 23);
             destinoText.TabIndex = 5;
             // 
             // origenText
             // 
-            origenText.Location = new Point(249, 39);
+            origenText.Location = new Point(249, 33);
             origenText.Name = "origenText";
             origenText.Size = new Size(231, 23);
             origenText.TabIndex = 4;
@@ -375,7 +375,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(197, 72);
+            label4.Location = new Point(197, 66);
             label4.Name = "label4";
             label4.Size = new Size(50, 15);
             label4.TabIndex = 3;
@@ -384,7 +384,7 @@
             // origenLabel
             // 
             origenLabel.AutoSize = true;
-            origenLabel.Location = new Point(197, 42);
+            origenLabel.Location = new Point(197, 36);
             origenLabel.Name = "origenLabel";
             origenLabel.Size = new Size(46, 15);
             origenLabel.TabIndex = 2;
@@ -393,7 +393,7 @@
             // desdeDatePickerLabel
             // 
             desdeDatePickerLabel.AutoSize = true;
-            desdeDatePickerLabel.Location = new Point(197, 135);
+            desdeDatePickerLabel.Location = new Point(197, 129);
             desdeDatePickerLabel.Name = "desdeDatePickerLabel";
             desdeDatePickerLabel.Size = new Size(26, 15);
             desdeDatePickerLabel.TabIndex = 1;
@@ -401,7 +401,7 @@
             // 
             // idaDatePicker
             // 
-            idaDatePicker.Location = new Point(249, 132);
+            idaDatePicker.Location = new Point(249, 126);
             idaDatePicker.Name = "idaDatePicker";
             idaDatePicker.Size = new Size(231, 23);
             idaDatePicker.TabIndex = 0;
