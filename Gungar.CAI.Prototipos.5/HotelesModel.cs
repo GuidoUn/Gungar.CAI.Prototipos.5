@@ -41,15 +41,15 @@ namespace Gungar.CAI.Prototipos._5
             return false;
         }
 
-        private static bool esEnMismoRangoDePrecio(float precioHotel, decimal? precioMaximo=999999999,decimal? precioMinimo=0)
+        private static bool esEnMismoRangoDePrecio(float precioHotel, decimal? precioMaximo=999999999, decimal? precioMinimo=0)
         {
-            decimal precioHotelEnDecimal=(decimal)precioHotel;
+            decimal precioHotelEnDecimal = (decimal)precioHotel;
             if (precioHotel <= 0)
             {
                 precioHotelEnDecimal = 999999999;
             }
-            
-                return precioHotelEnDecimal <= precioMaximo && precioHotelEnDecimal >= precioMinimo ;
+
+            return precioHotelEnDecimal <= precioMaximo && precioHotelEnDecimal >= precioMinimo;
           
         }
 
@@ -61,14 +61,14 @@ namespace Gungar.CAI.Prototipos._5
             List<OfertaHotel> hotelesFiltrados = ofertaHoteles.Where(hotel =>
             {
                 if (destino != "" && !esMismaCiudad(hotel.CodigoCiudad, destino))
-                {
                     return false;
-                }
                 if (fechaDesde != null && !estaEntreFechas(hotel.Disponibilidad.First().Fecha, fechaDesde, fechaHasta))
                     return false;
                 if (OfertaHotel.Calificaciones[calificacion]!= OfertaHotel.Calificaciones["Todas"]&& !esMismaCalificacion(hotel.Calificacion,OfertaHotel.Calificaciones[calificacion]))
                     return false;
-                if ((precioMinimo!=null || precioMaximo!=null)&&(precioMinimo != 0 || precioMaximo != 0) &&!esEnMismoRangoDePrecio(hotel.Disponibilidad.First().Tarifa,precioMaximo,precioMinimo))
+                if ((precioMinimo!=null || precioMaximo!=null) && (precioMinimo != 0 || precioMaximo != 0) && !esEnMismoRangoDePrecio(hotel.Disponibilidad.First().Tarifa, precioMaximo, precioMinimo))
+                    return false;
+                if (cantidadAdultos > hotel.Disponibilidad.First().CapacidadAdultos || cantidadMenores > hotel.Disponibilidad.First().CapacidadMenores || cantidadInfantes > hotel.Disponibilidad.First().CapacidadInfantes)
                     return false;
 
                 return true;

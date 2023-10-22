@@ -57,7 +57,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void poblarHoteles()
         {
-            listaDeHotelesDisponibles = HotelesModel.getHoteles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString(), desdeFechaSeleccionada, hastaFechaSeleccionada,desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
+            listaDeHotelesDisponibles = HotelesModel.getHoteles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString(), desdeFechaSeleccionada, hastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
 
             hotelesListView.Items.Clear();
             foreach (var hotel in listaDeHotelesDisponibles)
@@ -71,7 +71,9 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(hotel.CodigoCiudad);
                 item.SubItems.Add(hotel.Disponibilidad.First().Tarifa.ToString());
                 item.SubItems.Add(hotel.Disponibilidad.First().Fecha.ToString());
-
+                item.SubItems.Add(hotel.Disponibilidad.First().CapacidadAdultos.ToString());
+                item.SubItems.Add(hotel.Disponibilidad.First().CapacidadMenores.ToString());
+                item.SubItems.Add(hotel.Disponibilidad.First().CapacidadInfantes.ToString());
 
 
                 item.Tag = hotel;
