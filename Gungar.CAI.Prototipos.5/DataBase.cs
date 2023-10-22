@@ -15,6 +15,8 @@ namespace Gungar.CAI.Prototipos._5
 
         const string ITINERARIOS_FILE = @"..\..\..\Almacenes\Itinerarios.json";
         const string VUELOS_FILE = @"..\..\..\Almacenes\Vuelos.json";
+        const string HOTELES_FILE = @"..\..\..\Almacenes\Hoteles.json";
+
 
         public static List<Itinerario>? LeerItinerarios()
         {
@@ -81,5 +83,34 @@ namespace Gungar.CAI.Prototipos._5
 
             File.WriteAllText(VUELOS_FILE, JsonSerializer.Serialize(vuelos, serializerOptions));
         }
+
+
+
+
+        public static List<OfertaHotel>? LeerHoteles()
+        {
+            if (!File.Exists(HOTELES_FILE))
+            {
+                return null;
+            }
+
+            string json = File.ReadAllText(HOTELES_FILE);
+
+            List<OfertaHotel>? ofertaHotel = JsonSerializer.Deserialize<List<OfertaHotel>>(json, serializerOptions);
+
+           // Agregar control de fecha
+            return ofertaHotel;
+        }
+
+        public static void GuardarHoteles(List<OfertaHotel> hoteles)
+        {
+            if (File.Exists(HOTELES_FILE))
+            {
+                File.Delete(HOTELES_FILE);
+            }
+
+            File.WriteAllText(HOTELES_FILE, JsonSerializer.Serialize(hoteles, serializerOptions));
+        }
+
     }
 }

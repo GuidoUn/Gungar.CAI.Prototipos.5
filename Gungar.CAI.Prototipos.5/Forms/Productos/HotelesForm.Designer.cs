@@ -72,9 +72,13 @@
             groupBox4 = new GroupBox();
             hotelesListView = new ListView();
             hotelesHeader = new ColumnHeader();
+            NombreHeader = new ColumnHeader();
+            disponibilidadHeader = new ColumnHeader();
             direccionHeader = new ColumnHeader();
             estrellasHeader = new ColumnHeader();
-            disponibilidadHeader = new ColumnHeader();
+            codigoCiudadHeader = new ColumnHeader();
+            precioHeader = new ColumnHeader();
+            fechaHeader = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -118,8 +122,9 @@
             // 
             // clasesCombo
             // 
+            clasesCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             clasesCombo.FormattingEnabled = true;
-            clasesCombo.Items.AddRange(new object[] { "Todas", "5 Estrellas", "4 Estrellas", "3 Estrellas", "2 Estrellas", "1 Estrellas" });
+            clasesCombo.Items.AddRange(new object[] { "Todas", "5 Estrellas", "4 Estrellas", "3 Estrellas", "2 Estrellas", "1 Estrella" });
             clasesCombo.Location = new Point(562, 132);
             clasesCombo.Name = "clasesCombo";
             clasesCombo.Size = new Size(127, 23);
@@ -270,6 +275,7 @@
             hastaFechaDatePicker.Name = "hastaFechaDatePicker";
             hastaFechaDatePicker.Size = new Size(231, 23);
             hastaFechaDatePicker.TabIndex = 6;
+            hastaFechaDatePicker.ValueChanged += hastaFechaDatePicker_ValueChanged;
             // 
             // destinoText
             // 
@@ -302,6 +308,7 @@
             desdeFechaDatePicker.Name = "desdeFechaDatePicker";
             desdeFechaDatePicker.Size = new Size(231, 23);
             desdeFechaDatePicker.TabIndex = 0;
+            desdeFechaDatePicker.ValueChanged += desdeFechaDatePicker_ValueChanged;
             // 
             // itinerarioLabel
             // 
@@ -434,7 +441,7 @@
             // 
             // hotelesListView
             // 
-            hotelesListView.Columns.AddRange(new ColumnHeader[] { hotelesHeader, direccionHeader, estrellasHeader, disponibilidadHeader });
+            hotelesListView.Columns.AddRange(new ColumnHeader[] { hotelesHeader, NombreHeader, disponibilidadHeader, direccionHeader, estrellasHeader, codigoCiudadHeader, precioHeader, fechaHeader });
             hotelesListView.Location = new Point(6, 16);
             hotelesListView.Name = "hotelesListView";
             hotelesListView.Size = new Size(591, 411);
@@ -447,6 +454,17 @@
             hotelesHeader.Text = "Hotel";
             hotelesHeader.Width = 100;
             // 
+            // NombreHeader
+            // 
+            NombreHeader.Text = "Tipo de habitación";
+            NombreHeader.TextAlign = HorizontalAlignment.Right;
+            NombreHeader.Width = 120;
+            // 
+            // disponibilidadHeader
+            // 
+            disponibilidadHeader.Text = "Disponibilidad";
+            disponibilidadHeader.Width = 100;
+            // 
             // direccionHeader
             // 
             direccionHeader.Text = "Direccion";
@@ -457,10 +475,20 @@
             estrellasHeader.Text = "Estrellas";
             estrellasHeader.Width = 100;
             // 
-            // disponibilidadHeader
+            // codigoCiudadHeader
             // 
-            disponibilidadHeader.Text = "Disponibilidad";
-            disponibilidadHeader.Width = 100;
+            codigoCiudadHeader.Text = "Ciudad";
+            codigoCiudadHeader.Width = 100;
+            // 
+            // precioHeader
+            // 
+            precioHeader.Text = "Precio";
+            precioHeader.Width = 100;
+            // 
+            // fechaHeader
+            // 
+            fechaHeader.Text = "Fecha";
+            fechaHeader.Width = 100;
             // 
             // HotelesForm
             // 
@@ -542,5 +570,9 @@
         private ColumnHeader direccionHeader;
         private ColumnHeader estrellasHeader;
         private ColumnHeader disponibilidadHeader;
+        private ColumnHeader NombreHeader;
+        private ColumnHeader codigoCiudadHeader;
+        private ColumnHeader precioHeader;
+        private ColumnHeader fechaHeader;
     }
 }

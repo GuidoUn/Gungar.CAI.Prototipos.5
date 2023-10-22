@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
-
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -16,6 +16,9 @@ namespace Gungar.CAI.Prototipos._5
     {
         Itinerario? itinerario;
         bool esConsulta = false;
+        List<OfertaHotel> listaDeHotelesDisponibles;
+        DateTime? hastaFechaSeleccionada = null;
+        DateTime? desdeFechaSeleccionada = null;
 
         public HotelesForm(Itinerario? itinerario)
         {
@@ -35,15 +38,7 @@ namespace Gungar.CAI.Prototipos._5
         int nroProductoAAgregar = 0;
 
 
-        public static List<string[]> hoteles = new List<string[]>
-        {
-             new string[4] { "Hilton", "Av. Cordoba 2122, Mendoza","4","104" },
-             new string[4] { "Sheraton", "Cabildo 1554, Mendoza", "5","35" },
-             new string[4] { "Once", "San Martin 436, Mendoza", "2", "4" },
-             new string[4] { "Trump Tower", "San Martin 1315, Mendoza", "4", "420" },
-             new string[4] { "Qué? alojamiento", "Juncal 2662, Mendoza", "5", "69" },
-             new string[4] { "Jet Smart Hoteles", "Saenz Peña 751, Mendoza", "2", "14" },
-        };
+
 
         private void HotelesForm_Load(object sender, EventArgs e)
         {
@@ -62,14 +57,23 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void poblarHoteles()
         {
+            listaDeHotelesDisponibles = HotelesModel.getHoteles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString(), desdeFechaSeleccionada, hastaFechaSeleccionada,desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
+
             hotelesListView.Items.Clear();
-            foreach (var hotel in hoteles)
+            foreach (var hotel in listaDeHotelesDisponibles)
             {
                 var item = new ListViewItem();
-                item.Text = hotel[0];
-                item.SubItems.Add(hotel[1]);
-                item.SubItems.Add(hotel[2]);
-                item.SubItems.Add(hotel[3]);
+                item.Text = hotel.NombreHotel;
+                item.SubItems.Add(hotel.Disponibilidad.First().Nombre);
+                item.SubItems.Add(hotel.Disponibilidad.First().Capacidad.ToString());
+                item.SubItems.Add(hotel.Direccion.Calle);
+                item.SubItems.Add(hotel.Calificacion.ToString());
+                item.SubItems.Add(hotel.CodigoCiudad);
+                item.SubItems.Add(hotel.Disponibilidad.First().Tarifa.ToString());
+                item.SubItems.Add(hotel.Disponibilidad.First().Fecha.ToString());
+
+
+
                 item.Tag = hotel;
 
                 hotelesListView.Items.Add(item);
@@ -79,6 +83,18 @@ namespace Gungar.CAI.Prototipos._5
         private void aplicarFiltrosBtn_Click(object sender, EventArgs e)
         {
             poblarHoteles();
+        }
+
+        private void desdeFechaDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            desdeFechaDatePicker.Format = DateTimePickerFormat.Short;
+            desdeFechaSeleccionada = desdeFechaDatePicker.Value;
+        }
+
+        private void hastaFechaDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            hastaFechaDatePicker.Format = DateTimePickerFormat.Short;
+            hastaFechaSeleccionada = hastaFechaDatePicker.Value;
         }
     }
 }

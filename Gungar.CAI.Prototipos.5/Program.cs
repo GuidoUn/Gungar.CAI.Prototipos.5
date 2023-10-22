@@ -13,9 +13,11 @@ namespace Gungar.CAI.Prototipos._5
             ApplicationConfiguration.Initialize();
             AppModel.CargaInicial();
             VuelosModel.CargaInicial();
+            HotelesModel.CargaInicial();
             Application.Run(new MenuPrincipalForm());
             AppModel.GuardarDatos();
             VuelosModel.GuardarDatos();
+            HotelesModel.GuardarDatos();
         }
     }
 }
