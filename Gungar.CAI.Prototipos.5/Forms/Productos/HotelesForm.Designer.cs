@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            borrarFechasBtn = new Button();
             claseLabel = new Label();
             clasesCombo = new ComboBox();
             aplicarFiltrosBtn = new Button();
@@ -96,6 +97,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(borrarFechasBtn);
             groupBox1.Controls.Add(claseLabel);
             groupBox1.Controls.Add(clasesCombo);
             groupBox1.Controls.Add(aplicarFiltrosBtn);
@@ -115,6 +117,17 @@
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
+            // 
+            // borrarFechasBtn
+            // 
+            borrarFechasBtn.Location = new Point(285, 220);
+            borrarFechasBtn.Margin = new Padding(3, 4, 3, 4);
+            borrarFechasBtn.Name = "borrarFechasBtn";
+            borrarFechasBtn.Size = new Size(263, 31);
+            borrarFechasBtn.TabIndex = 26;
+            borrarFechasBtn.Text = "Borrar Fechas";
+            borrarFechasBtn.UseVisualStyleBackColor = true;
+            borrarFechasBtn.Click += borrarFechasBtn_Click;
             // 
             // claseLabel
             // 
@@ -279,7 +292,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(225, 216);
+            label3.Location = new Point(225, 187);
             label3.Name = "label3";
             label3.Size = new Size(50, 20);
             label3.TabIndex = 7;
@@ -287,7 +300,7 @@
             // 
             // hastaFechaDatePicker
             // 
-            hastaFechaDatePicker.Location = new Point(285, 212);
+            hastaFechaDatePicker.Location = new Point(285, 183);
             hastaFechaDatePicker.Margin = new Padding(3, 4, 3, 4);
             hastaFechaDatePicker.Name = "hastaFechaDatePicker";
             hastaFechaDatePicker.Size = new Size(263, 27);
@@ -296,7 +309,7 @@
             // 
             // destinoText
             // 
-            destinoText.Location = new Point(285, 108);
+            destinoText.Location = new Point(285, 88);
             destinoText.Margin = new Padding(3, 4, 3, 4);
             destinoText.Name = "destinoText";
             destinoText.Size = new Size(263, 27);
@@ -305,7 +318,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(225, 112);
+            label4.Location = new Point(225, 92);
             label4.Name = "label4";
             label4.Size = new Size(63, 20);
             label4.TabIndex = 3;
@@ -314,7 +327,7 @@
             // desdeDatePickerLabel
             // 
             desdeDatePickerLabel.AutoSize = true;
-            desdeDatePickerLabel.Location = new Point(225, 176);
+            desdeDatePickerLabel.Location = new Point(225, 147);
             desdeDatePickerLabel.Name = "desdeDatePickerLabel";
             desdeDatePickerLabel.Size = new Size(54, 20);
             desdeDatePickerLabel.TabIndex = 1;
@@ -322,7 +335,7 @@
             // 
             // desdeFechaDatePicker
             // 
-            desdeFechaDatePicker.Location = new Point(285, 172);
+            desdeFechaDatePicker.Location = new Point(285, 143);
             desdeFechaDatePicker.Margin = new Padding(3, 4, 3, 4);
             desdeFechaDatePicker.Name = "desdeFechaDatePicker";
             desdeFechaDatePicker.Size = new Size(263, 27);
@@ -620,5 +633,6 @@
         private ColumnHeader capacidadAdultosHeader;
         private ColumnHeader capacidadMenoresHeader;
         private ColumnHeader capacidadInfantesHeader;
+        private Button borrarFechasBtn;
     }
 }

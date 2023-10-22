@@ -98,5 +98,16 @@ namespace Gungar.CAI.Prototipos._5
             hastaFechaDatePicker.Format = DateTimePickerFormat.Short;
             hastaFechaSeleccionada = hastaFechaDatePicker.Value;
         }
+
+        private void borrarFechasBtn_Click(object sender, EventArgs e)
+        {
+            desdeFechaDatePicker.Format = DateTimePickerFormat.Custom;
+            desdeFechaDatePicker.CustomFormat = " ";
+            desdeFechaSeleccionada = DateTime.MinValue;
+
+            hastaFechaDatePicker.Format = DateTimePickerFormat.Custom;
+            hastaFechaDatePicker.CustomFormat = " ";
+            hastaFechaSeleccionada = DateTime.MaxValue;
+        }
     }
 }
