@@ -21,13 +21,18 @@ namespace Gungar.CAI.Prototipos._5
             return false;
         }
 
-        private static bool esMismaCiudad(string ciudadHotel, string ciudadBusqueda)
+        private static bool esMismaCiudad(string codigoCiudadHotel, string ciudadBusqueda)
         {
-            if (ciudadHotel==ciudadBusqueda)
+           
+
+            if (OfertaHotel.CodigoACiudad[codigoCiudadHotel].ToLower().Contains(ciudadBusqueda.ToLower()))
             {
                 return true;
             }
-            
+            if (codigoCiudadHotel.ToLower().Contains(ciudadBusqueda.ToLower()))
+            {
+                return true;
+            }
             return false;
         }
 
@@ -53,22 +58,22 @@ namespace Gungar.CAI.Prototipos._5
           
         }
 
-        public static List<OfertaHotel> ofertaHoteles { get; private set; } = new List<OfertaHotel>();
+        public static List<Hotel> ofertaHoteles { get; private set; } = new List<Hotel>();
 
-        public static List<OfertaHotel> getHoteles(string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, string calificacion, DateTime? fechaDesde = null, DateTime? fechaHasta = null, decimal? precioMinimo = null, decimal? precioMaximo = null)
+        public static List<Hotel> getHoteles(string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, string calificacion, DateTime? fechaDesde = null, DateTime? fechaHasta = null, decimal? precioMinimo = null, decimal? precioMaximo = null)
         {
 
-            List<OfertaHotel> hotelesFiltrados = ofertaHoteles.Where(hotel =>
+            List<Hotel> hotelesFiltrados = ofertaHoteles.Where(hotel =>
             {
                 if (destino != "" && !esMismaCiudad(hotel.CodigoCiudad, destino))
                     return false;
-                if (fechaDesde != null && !estaEntreFechas(hotel.Disponibilidad.First().Fecha, fechaDesde, fechaHasta))
+                if (fechaDesde != null && !estaEntreFechas(hotel.Disponibilidad.Fecha, fechaDesde, fechaHasta))
                     return false;
                 if (OfertaHotel.Calificaciones[calificacion]!= OfertaHotel.Calificaciones["Todas"]&& !esMismaCalificacion(hotel.Calificacion,OfertaHotel.Calificaciones[calificacion]))
                     return false;
-                if ((precioMinimo!=null || precioMaximo!=null) && (precioMinimo != 0 || precioMaximo != 0) && !esEnMismoRangoDePrecio(hotel.Disponibilidad.First().Tarifa, precioMaximo, precioMinimo))
+                if ((precioMinimo!=null || precioMaximo!=null) && (precioMinimo != 0 || precioMaximo != 0) && !esEnMismoRangoDePrecio(hotel.Disponibilidad.Tarifa, precioMaximo, precioMinimo))
                     return false;
-                if (cantidadAdultos > hotel.Disponibilidad.First().CapacidadAdultos || cantidadMenores > hotel.Disponibilidad.First().CapacidadMenores || cantidadInfantes > hotel.Disponibilidad.First().CapacidadInfantes)
+                if (cantidadAdultos > hotel.Disponibilidad.CapacidadAdultos || cantidadMenores > hotel.Disponibilidad.CapacidadMenores || cantidadInfantes > hotel.Disponibilidad.CapacidadInfantes)
                     return false;
 
                 return true;
@@ -77,39 +82,58 @@ namespace Gungar.CAI.Prototipos._5
 
             return hotelesFiltrados;
         }
-        /*private List<OfertaHotel> ProcesarListaDeHoteles(List<OfertaHotel> hoteles)
+        private static List<Hotel> DesagruparHotelesPorDisponibilidad(List<OfertaHotel> hotelesAgrupados)
         {
-            if (hoteles == null)
+            if (hotelesAgrupados == null)
             {
                 return null;
             }
-            List<OfertaHotel> listaDeHoteles=new List<OfertaHotel>();
+            List<Hotel> listaDeHoteles=new List<Hotel>();
 
-            hoteles.ForEach(hotel =>
+            hotelesAgrupados.ForEach(hotel =>
             {
-               
-                hotel.Disponibilidad.ForEach(h =>
-                {
-                    OfertaHotel hotelAAgregar;
-                    hotelAAgregar = new OfertaHotel(hotel.NombreHotel, hotel.CodigoOferta, hotel.Calificacion, h, );
-                    listaDeHoteles.Add(hotelAAgregar);
-                })
 
-            })
-        }*/
+                hotel.Disponibilidad.ForEach(disponibilidadHotel =>
+                {
+                    Hotel hotelAAgregar = new Hotel(hotel.NombreHotel, hotel.CodigoOferta, hotel.CodigoCiudad, hotel.Calificacion, disponibilidadHotel, hotel.Direccion);
+                    listaDeHoteles.Add(hotelAAgregar);
+                });
+
+            });
+            return listaDeHoteles;
+        }
+
+        private static List<OfertaHotel> AgruparHotelesPorDisponibilidad(List<Hotel> hotelesDesagrupados)
+        {
+            List<OfertaHotel> listaDeHoteles = new List<OfertaHotel>();
+          var codigosDeHotelesDisponibles= hotelesDesagrupados.Select(h=>h.CodigoOferta).ToList();
+            codigosDeHotelesDisponibles.ForEach(codigoHotel =>
+            {
+                Hotel hotel = hotelesDesagrupados.First(h=>h.CodigoOferta==codigoHotel);
+                List<Disponibilidad> disponiblidadDelHotel = new List<Disponibilidad>();
+                var ofertaDelHotel = hotelesDesagrupados.Where(hotel => hotel.CodigoOferta == codigoHotel).ToList();
+                ofertaDelHotel.ForEach(h =>
+                {
+                    disponiblidadDelHotel.Add(h.Disponibilidad);
+                });
+
+                listaDeHoteles.Add(new OfertaHotel(hotel.NombreHotel,codigoHotel,hotel.CodigoCiudad,hotel.Calificacion, disponiblidadDelHotel,hotel.Direccion));
+            });
+            return listaDeHoteles;
+        }
         public static void CargaInicial()
         {
            ofertaHotelesEnAlmacen = DataBase.LeerHoteles();
 
             if (ofertaHotelesEnAlmacen != null)
             {
-                ofertaHoteles = ofertaHotelesEnAlmacen;
+                ofertaHoteles = DesagruparHotelesPorDisponibilidad(ofertaHotelesEnAlmacen) ;
             }
         }
 
         public static void GuardarDatos()
         {
-            DataBase.GuardarHoteles(ofertaHoteles);
+            DataBase.GuardarHoteles(AgruparHotelesPorDisponibilidad(ofertaHoteles));
         }
     }
 }
