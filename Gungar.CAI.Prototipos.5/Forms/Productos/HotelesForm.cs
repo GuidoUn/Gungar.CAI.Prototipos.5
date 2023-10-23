@@ -57,6 +57,11 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             clasesCombo.SelectedIndex = 0;
+
+            desdeFechaDatePicker.MinDate = DateTime.Now;
+            hastaFechaDatePicker.MinDate = DateTime.Now;
+
+            borrarFechas();
         }
         private void poblarHoteles()
         {
@@ -98,7 +103,7 @@ namespace Gungar.CAI.Prototipos._5
                 var item = new ListViewItem();
                 item.Text = hotel.NombreHotel;
                 item.SubItems.Add(hotel.Disponibilidad.Nombre);
-               
+
 
 
                 item.Tag = hotel;
@@ -124,7 +129,7 @@ namespace Gungar.CAI.Prototipos._5
             hastaFechaSeleccionada = hastaFechaDatePicker.Value;
         }
 
-        private void borrarFechasBtn_Click(object sender, EventArgs e)
+        private void borrarFechas()
         {
             desdeFechaDatePicker.Format = DateTimePickerFormat.Custom;
             desdeFechaDatePicker.CustomFormat = " ";
@@ -133,6 +138,11 @@ namespace Gungar.CAI.Prototipos._5
             hastaFechaDatePicker.Format = DateTimePickerFormat.Custom;
             hastaFechaDatePicker.CustomFormat = " ";
             hastaFechaSeleccionada = DateTime.MaxValue;
+        }
+
+        private void borrarFechasBtn_Click(object sender, EventArgs e)
+        {
+            borrarFechas();
         }
 
         private void hotelesListView_SelectedIndexChanged(object sender, EventArgs e)
