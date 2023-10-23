@@ -52,6 +52,9 @@ namespace Gungar.CAI.Prototipos._5
             clasesCombo.SelectedItem = clasesCombo.Items[0];
             cantidadAdultosNumeric.Value = 1;
 
+            idaDatePicker.MinDate = DateTime.Now;
+            vueltaDatePicker.MinDate = DateTime.Now;
+
             borrarFechas();
 
             refrescar();
