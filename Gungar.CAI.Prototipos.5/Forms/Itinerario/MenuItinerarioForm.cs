@@ -165,5 +165,19 @@ namespace Gungar.CAI.Prototipos._5
             vuelosForm.ShowDialog();
             refrescar();
         }
+
+        private void anularItinerarioBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Desea anular el itinerario actual?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                // El usuario eligió anular el itinerario
+            }
+            else
+            {
+                // El usuario eligió NO anular el itinerario
+            }
+        }
     }
 }
