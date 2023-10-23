@@ -99,16 +99,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
             }
         };
 
-        public static Dictionary<char, string> Clases = new Dictionary<char, string>(){
-            {
-                'E', "Economy"
-            },  {
-                'P', "Premium"
-            },  {
-                'B', "Business"
-            }, {
-                'F', "First"
-            }
-        };
+        public enum Clases
+        {
+            Economy = 'E',
+            Premium = 'P',
+            Business = 'B',
+            First = 'F',
+        }
     }
 }

@@ -8,11 +8,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public enum Estado
     {
-        Presupuesto,
-        Prereserva,
-        Pagada,
-        Confirmada,
-        Cancelada
+        Presupuesto = 0,
+        Prereserva = 1,
+        Pagada = 2,
+        Confirmada = 3,
+        Cancelada = 4
     }
 
     public class Itinerario
@@ -53,6 +53,4 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             pasajeros.Remove(pasajero);
         }
     }
-
-
 }

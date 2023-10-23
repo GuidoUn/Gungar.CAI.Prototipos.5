@@ -15,15 +15,14 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public string Email;
         public string FechaNacimiento;
 
-        public Pasajero(string Nombre, string Apellido, string Documento, string Telefono, string Email, string FechaNacimiento)
+        public Pasajero(string nombre, string apellido, string documento, string telefono, string email, string fechaNacimiento)
         {
-            this.Nombre = Nombre;
-            this.Apellido = Apellido;
-            this.Documento = Documento;
-            this.Telefono = Telefono;
-            this.Email = Email;
-            this.FechaNacimiento = FechaNacimiento;
+            Nombre = nombre;
+            Apellido = apellido;
+            Documento = documento;
+            Telefono = telefono;
+            Email = email;
+            FechaNacimiento = fechaNacimiento;
         }
-
     }
 }

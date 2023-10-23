@@ -52,9 +52,6 @@ namespace Gungar.CAI.Prototipos._5
             clasesCombo.SelectedItem = clasesCombo.Items[0];
             cantidadAdultosNumeric.Value = 1;
 
-            idaDatePicker.MinDate = DateTime.Now;
-            vueltaDatePicker.MinDate = DateTime.Now;
-
             borrarFechas();
 
             refrescar();
@@ -85,7 +82,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Destino]);
                 item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
                 item.SubItems.Add(vuelo.TiempoDeVuelo);
-                item.SubItems.Add(OfertaVuelo.Clases[vuelo.Tarifas[isEconomy ? 0 : 3].Clase]);
+                item.SubItems.Add(((OfertaVuelo.Clases)vuelo.Tarifas[isEconomy ? 0 : 3].Clase).ToString());
                 item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Disponibilidad.ToString());
                 item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
                 item.SubItems.Add(vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
@@ -107,7 +104,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Destino]);
                     item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
                     item.SubItems.Add(vuelo.TiempoDeVuelo);
-                    item.SubItems.Add(OfertaVuelo.Clases[vuelo.Tarifas[isEconomy ? 0 : 3].Clase]);
+                    item.SubItems.Add(((OfertaVuelo.Clases)vuelo.Tarifas[isEconomy ? 0 : 3].Clase).ToString());
                     item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Disponibilidad.ToString());
                     item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
                     item.SubItems.Add(vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
