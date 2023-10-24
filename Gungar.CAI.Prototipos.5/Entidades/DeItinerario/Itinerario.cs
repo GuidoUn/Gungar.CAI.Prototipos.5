@@ -24,6 +24,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public Estado estado;
         public Cliente? cliente;
         public List<Pasajero> pasajeros = new List<Pasajero>();
+        public DateTime? fechaPrereserva;
 
         private void setearValoresIniciales()
         {
@@ -51,6 +52,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public void EliminarPasajero(Pasajero pasajero)
         {
             pasajeros.Remove(pasajero);
+        }
+
+        public void GenerarPrereserva()
+        {
+            estado = Estado.Prereserva;
+            fechaPrereserva = DateTime.Now;
         }
     }
 }

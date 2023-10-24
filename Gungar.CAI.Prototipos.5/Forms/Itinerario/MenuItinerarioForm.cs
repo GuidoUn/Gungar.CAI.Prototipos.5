@@ -116,7 +116,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (itinerario.estado == Estado.Presupuesto)
             {
-                itinerario.estado = Estado.Prereserva;
+                itinerario.GenerarPrereserva();
             }
             else
             {
