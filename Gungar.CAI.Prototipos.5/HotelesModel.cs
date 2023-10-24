@@ -119,6 +119,23 @@ namespace Gungar.CAI.Prototipos._5
             });
             return listaDeHoteles;
         }
+
+        public static void ModificarDisponibilidadHotel(Hotel hotel)
+        {
+
+           ofertaHotelesEnAlmacen.ForEach(_hotel =>
+            {
+                var disponibilidadAModificar = _hotel.Disponibilidad.Find(h => h.Fecha == hotel.Disponibilidad.Fecha);
+               if( _hotel.CodigoOferta == hotel.CodigoOferta && disponibilidadAModificar != null)
+                {
+                    disponibilidadAModificar.Cantidad -= 1;
+                }
+            }
+            );
+
+            DataBase.GuardarHoteles(ofertaHotelesEnAlmacen);
+
+        }
         public static void CargaInicial()
         {
             ofertaHotelesEnAlmacen = DataBase.LeerHoteles();

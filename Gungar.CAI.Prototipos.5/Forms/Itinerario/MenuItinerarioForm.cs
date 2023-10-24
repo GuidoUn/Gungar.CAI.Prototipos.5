@@ -54,6 +54,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             confirmacionBox.Enabled = !(itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Pagada);
             gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
+         
 
         }
 
@@ -117,6 +118,8 @@ namespace Gungar.CAI.Prototipos._5
             if (itinerario.estado == Estado.Presupuesto)
             {
                 itinerario.GenerarPrereserva();
+                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel));
+               
             }
             else
             {
@@ -136,7 +139,7 @@ namespace Gungar.CAI.Prototipos._5
             if (confirmar == DialogResult.OK)
             {
                 itinerario.estado = Estado.Pagada;
-
+                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel));
                 refrescar();
 
             }

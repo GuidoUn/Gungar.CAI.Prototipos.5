@@ -20,7 +20,7 @@ namespace Gungar.CAI.Prototipos._5
         List<Hotel> listaDeHotelesDisponibles;
         DateTime? hastaFechaSeleccionada = null;
         DateTime? desdeFechaSeleccionada = null;
-        List<Hotel> listaDeHotelesAgregados = new List<Hotel>();
+
         Hotel hotelAAgregar;
 
         public HotelesForm(Itinerario? itinerario)
@@ -70,35 +70,39 @@ namespace Gungar.CAI.Prototipos._5
             hotelesListView.Items.Clear();
             foreach (var hotel in listaDeHotelesDisponibles)
             {
-                var item = new ListViewItem();
-                item.Text = hotel.NombreHotel;
-                item.SubItems.Add(hotel.Disponibilidad.Nombre);
-                item.SubItems.Add(hotel.Disponibilidad.Capacidad.ToString());
-                item.SubItems.Add(hotel.Direccion.Calle);
-                item.SubItems.Add(hotel.Calificacion.ToString());
-                item.SubItems.Add(hotel.CodigoCiudad);
-                item.SubItems.Add(hotel.Disponibilidad.Tarifa.ToString());
-                item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
-                item.SubItems.Add(hotel.Disponibilidad.CapacidadAdultos.ToString());
-                item.SubItems.Add(hotel.Disponibilidad.CapacidadMenores.ToString());
-                item.SubItems.Add(hotel.Disponibilidad.CapacidadInfantes.ToString());
+                if (hotel.Disponibilidad.Cantidad > 0)
+                {
+                    var item = new ListViewItem();
+                    item.Text = hotel.NombreHotel;
+                    item.SubItems.Add(hotel.Disponibilidad.Nombre);
+                    item.SubItems.Add(hotel.Disponibilidad.Capacidad.ToString());
+                    item.SubItems.Add(hotel.Direccion.Calle);
+                    item.SubItems.Add(hotel.Calificacion.ToString());
+                    item.SubItems.Add(hotel.CodigoCiudad);
+                    item.SubItems.Add(hotel.Disponibilidad.Tarifa.ToString());
+                    item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
+                    item.SubItems.Add(hotel.Disponibilidad.CapacidadAdultos.ToString());
+                    item.SubItems.Add(hotel.Disponibilidad.CapacidadMenores.ToString());
+                    item.SubItems.Add(hotel.Disponibilidad.CapacidadInfantes.ToString());
 
 
-                item.Tag = hotel;
+                    item.Tag = hotel;
 
-                hotelesListView.Items.Add(item);
-            }
-            if (listaDeHotelesDisponibles.Count <= 0)
-            {
-                MessageBox.Show("No hay tenemos hoteles disponibles para los filtros seleccionados", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hotelesListView.Items.Add(item);
+                }
+                if (listaDeHotelesDisponibles.Count <= 0)
+                {
+                    MessageBox.Show("No hay tenemos hoteles disponibles para los filtros seleccionados", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
+                }
+            };
+               
         }
 
         private void poblarProductosAgregados()
         {
             itinerarioListView.Items.Clear();
-            foreach (var hotel in listaDeHotelesAgregados)
+            foreach (var hotel in itinerario.hoteles)
             {
                 var item = new ListViewItem();
                 item.Text = hotel.NombreHotel;
@@ -161,7 +165,7 @@ namespace Gungar.CAI.Prototipos._5
                 MessageBox.Show("Debe seleccionar un hotel", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            listaDeHotelesAgregados.Add(hotelAAgregar);
+            itinerario.AgregarHotel(hotelAAgregar);
             poblarProductosAgregados();
         }
     }

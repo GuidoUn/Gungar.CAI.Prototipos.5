@@ -10,6 +10,7 @@ namespace Gungar.CAI.Prototipos._5
 {
     public static class AppModel
     {
+       
         public static List<Itinerario> itinerarios { get; private set; } = new List<Itinerario>();
 
         public static void agregarItinerario(Itinerario itinerario)

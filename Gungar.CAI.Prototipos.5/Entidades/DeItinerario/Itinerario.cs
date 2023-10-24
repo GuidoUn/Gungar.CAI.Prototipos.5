@@ -25,6 +25,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public Cliente? cliente;
         public List<Pasajero> pasajeros = new List<Pasajero>();
         public DateTime? fechaPrereserva;
+        public List<Hotel> hoteles=new List<Hotel>();
 
         private void setearValoresIniciales()
         {
@@ -59,5 +60,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             estado = Estado.Prereserva;
             fechaPrereserva = DateTime.Now;
         }
+
+        public void AgregarHotel(Hotel hotel)
+        {
+            hoteles.Add(hotel);
+        }
+
+       
     }
 }
