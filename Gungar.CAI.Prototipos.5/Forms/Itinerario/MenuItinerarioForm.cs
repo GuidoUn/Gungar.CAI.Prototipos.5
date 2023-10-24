@@ -183,7 +183,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(OfertaHotel.CodigoACiudad[hotel.CodigoCiudad]);
                 item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
-                item.SubItems.Add("$ "+HotelesModel.ObtenerPrecioTotal(itinerario.hoteles).ToString());
+                item.SubItems.Add("$ " + HotelesModel.ObtenerPrecioTotal(itinerario.hoteles).ToString());
                 item.SubItems.Add(hotel.NombreHotel);
                 item.SubItems.Add(hotel.Calificacion.ToString());
                 item.Tag = hotel;
@@ -191,6 +191,14 @@ namespace Gungar.CAI.Prototipos._5
                 hotelesAgregadosListView.Items.Add(item);
             }
         }
-        
+
+        private void anularItinerarioBtn_Click(object sender, EventArgs e)
+        {
+            var confirmar = MessageBox.Show("¿Está seguro de que desea anular el itinerario?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (confirmar == DialogResult.OK)
+            {
+                // Anular itinerario...
+            }
+        }
     }
 }
