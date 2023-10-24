@@ -20,6 +20,14 @@ namespace Gungar.CAI.Prototipos._5
             }
             return false;
         }
+        public static double ObtenerPrecioTotal(List<Hotel> hoteles) {
+            double precioTotal = 0.0;
+            hoteles.ForEach(hotel =>
+            {
+                precioTotal += hotel.Disponibilidad.Tarifa;
+            });
+            return precioTotal;
+        }
 
         private static bool esMismaCiudad(string codigoCiudadHotel, string ciudadBusqueda)
         {
@@ -120,7 +128,7 @@ namespace Gungar.CAI.Prototipos._5
             return listaDeHoteles;
         }
 
-        public static void ModificarDisponibilidadHotel(Hotel hotel)
+        public static void ModificarDisponibilidadHotel(Hotel hotel,bool rollback)
         {
 
            ofertaHotelesEnAlmacen.ForEach(_hotel =>
@@ -128,7 +136,17 @@ namespace Gungar.CAI.Prototipos._5
                 var disponibilidadAModificar = _hotel.Disponibilidad.Find(h => h.Fecha == hotel.Disponibilidad.Fecha);
                if( _hotel.CodigoOferta == hotel.CodigoOferta && disponibilidadAModificar != null)
                 {
-                    disponibilidadAModificar.Cantidad -= 1;
+                    if (rollback)
+                    {
+                        disponibilidadAModificar.Cantidad ++;
+
+                    }
+                    else
+                    {
+                        disponibilidadAModificar.Cantidad--;
+
+                    }
+
                 }
             }
             );

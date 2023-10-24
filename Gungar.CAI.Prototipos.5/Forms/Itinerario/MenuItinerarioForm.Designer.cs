@@ -59,7 +59,7 @@
             label6 = new Label();
             cancelarReservaBtn = new Button();
             label7 = new Label();
-            listView1 = new ListView();
+            hotelesAgregadosListView = new ListView();
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
@@ -330,16 +330,16 @@
             label7.TabIndex = 18;
             label7.Text = "Hoteles Agregados";
             // 
-            // listView1
+            // hotelesAgregadosListView
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
-            listView1.Location = new Point(273, 389);
-            listView1.MultiSelect = false;
-            listView1.Name = "listView1";
-            listView1.Size = new Size(916, 235);
-            listView1.TabIndex = 17;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
+            hotelesAgregadosListView.Location = new Point(273, 389);
+            hotelesAgregadosListView.MultiSelect = false;
+            hotelesAgregadosListView.Name = "hotelesAgregadosListView";
+            hotelesAgregadosListView.Size = new Size(916, 235);
+            hotelesAgregadosListView.TabIndex = 17;
+            hotelesAgregadosListView.UseCompatibleStateImageBehavior = false;
+            hotelesAgregadosListView.View = View.Details;
             // 
             // columnHeader8
             // 
@@ -380,7 +380,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1275, 822);
             Controls.Add(label7);
-            Controls.Add(listView1);
+            Controls.Add(hotelesAgregadosListView);
             Controls.Add(cancelarReservaBtn);
             Controls.Add(nombreYApellidoLabel);
             Controls.Add(label6);
@@ -449,5 +449,6 @@
         private ColumnHeader columnHeader12;
         private ColumnHeader columnHeader13;
         private ColumnHeader columnHeader14;
+        private ListView hotelesAgregadosListView;
     }
 }

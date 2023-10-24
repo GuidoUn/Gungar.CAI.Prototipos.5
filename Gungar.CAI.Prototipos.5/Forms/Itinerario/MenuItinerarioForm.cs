@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -43,6 +44,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             poblarListaPasajeros();
             poblarItinerario();
+            poblarHotelesAgregados();
             estadoLabel.Text = itinerario.estado.ToString();
             nombreYApellidoLabel.Text = $"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}";
             if (itinerario.estado == Estado.Cancelada)
@@ -54,7 +56,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             confirmacionBox.Enabled = !(itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Pagada);
             gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
-         
+
 
         }
 
@@ -118,12 +120,14 @@ namespace Gungar.CAI.Prototipos._5
             if (itinerario.estado == Estado.Presupuesto)
             {
                 itinerario.GenerarPrereserva();
-                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel));
-               
+                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false));
+
             }
             else
             {
                 itinerario.estado = Estado.Presupuesto;
+                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
+
             }
             refrescar();
         }
@@ -139,7 +143,7 @@ namespace Gungar.CAI.Prototipos._5
             if (confirmar == DialogResult.OK)
             {
                 itinerario.estado = Estado.Pagada;
-                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel));
+                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false));
                 refrescar();
 
             }
@@ -158,6 +162,7 @@ namespace Gungar.CAI.Prototipos._5
             if (confirmar == DialogResult.OK)
             {
                 itinerario.estado = Estado.Cancelada;
+                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
                 refrescar();
             }
         }
@@ -168,5 +173,24 @@ namespace Gungar.CAI.Prototipos._5
             vuelosForm.ShowDialog();
             refrescar();
         }
+        private void poblarHotelesAgregados()
+        {
+            hotelesAgregadosListView.Items.Clear();
+            foreach (var hotel in itinerario.hoteles)
+            {
+                var item = new ListViewItem();
+                item.Text = hotel.Disponibilidad.Nombre;
+                item.SubItems.Add(OfertaHotel.CodigoACiudad[hotel.CodigoCiudad]);
+                item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
+                item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
+                item.SubItems.Add("$ "+HotelesModel.ObtenerPrecioTotal(itinerario.hoteles).ToString());
+                item.SubItems.Add(hotel.NombreHotel);
+                item.SubItems.Add(hotel.Calificacion.ToString());
+                item.Tag = hotel;
+
+                hotelesAgregadosListView.Items.Add(item);
+            }
+        }
+        
     }
 }

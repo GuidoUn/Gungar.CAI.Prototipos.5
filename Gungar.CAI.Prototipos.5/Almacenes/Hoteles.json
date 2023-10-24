@@ -1,8 +1,8 @@
 [
   {
-    "CodigoOferta": "FSS",
-    "NombreHotel": "Four Seasons",
+    "Calificacion": 5,
     "CodigoCiudad": "COR",
+    "CodigoOferta": "FSS",
     "Direccion": {
       "Calle": "Lima",
       "Numero": "4020",
@@ -10,7 +10,6 @@
       "Latitud": "20.58",
       "Longitud": "-60.90"
     },
-    "Calificacion": 5,
     "Disponibilidad": [
       {
         "Nombre": "Doble Especial",
@@ -20,7 +19,7 @@
         "CapacidadMenores": 1,
         "CapacidadInfantes": 1,
         "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 2
+        "Cantidad": 4
       },
       {
         "Nombre": "Triple Exclusivo Especial",
@@ -32,7 +31,8 @@
         "Fecha": "2023-10-30T00:00:00",
         "Cantidad": 2
       }
-    ]
+    ],
+    "NombreHotel": "Four Seasons"
   },
   {
     "CodigoOferta": "MMM",
@@ -203,14 +203,14 @@
     "Calificacion": 2,
     "Disponibilidad": [
       {
-        "Cantidad": 4,
+        "Nombre": "Penthouse Especial",
+        "Tarifa": 20,
         "Capacidad": 10,
         "CapacidadAdultos": 8,
-        "CapacidadInfantes": 1,
         "CapacidadMenores": 1,
+        "CapacidadInfantes": 1,
         "Fecha": "2023-10-24T00:00:00",
-        "Nombre": "Penthouse Especial",
-        "Tarifa": 20
+        "Cantidad": 4
       }
     ]
   }
