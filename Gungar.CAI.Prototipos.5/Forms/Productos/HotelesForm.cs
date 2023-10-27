@@ -18,8 +18,8 @@ namespace Gungar.CAI.Prototipos._5
         Itinerario? itinerario;
         bool esConsulta = false;
         List<Hotel> listaDeHotelesDisponibles;
-        DateTime? hastaFechaSeleccionada = null;
-        DateTime? desdeFechaSeleccionada = null;
+        DateTime hastaFechaSeleccionada;
+        DateTime desdeFechaSeleccionada;
 
         Hotel hotelAAgregar;
 
@@ -60,7 +60,6 @@ namespace Gungar.CAI.Prototipos._5
 
             desdeFechaDatePicker.MinDate = DateTime.Now;
             hastaFechaDatePicker.MinDate = DateTime.Now;
-
             borrarFechas();
         }
         private void poblarHoteles()
@@ -135,13 +134,15 @@ namespace Gungar.CAI.Prototipos._5
 
         private void borrarFechas()
         {
-            desdeFechaDatePicker.Format = DateTimePickerFormat.Custom;
+            /*desdeFechaDatePicker.Format = DateTimePickerFormat.Custom;
             desdeFechaDatePicker.CustomFormat = " ";
             desdeFechaSeleccionada = DateTime.MinValue;
 
             hastaFechaDatePicker.Format = DateTimePickerFormat.Custom;
             hastaFechaDatePicker.CustomFormat = " ";
-            hastaFechaSeleccionada = DateTime.MaxValue;
+            hastaFechaSeleccionada = DateTime.MaxValue;*/
+            desdeFechaDatePicker.Value = DateTime.Now;
+            hastaFechaDatePicker.Value = DateTime.Now;
         }
 
         private void borrarFechasBtn_Click(object sender, EventArgs e)
@@ -165,6 +166,8 @@ namespace Gungar.CAI.Prototipos._5
                 MessageBox.Show("Debe seleccionar un hotel", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            hotelAAgregar.FechaDesde = desdeFechaSeleccionada;
+            hotelAAgregar.FechaHasta = hastaFechaSeleccionada;
             itinerario.AgregarHotel(hotelAAgregar);
             poblarProductosAgregados();
         }

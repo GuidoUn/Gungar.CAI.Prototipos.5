@@ -52,8 +52,9 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         public int CapacidadMenores; // Cantidad máxima de menores. 
         public int CapacidadInfantes; // Cantidad máxima de infantes.
         public DateTime Fecha;
+        public List<DateTime> FechasOcupadas;
         public int Cantidad;
-        public Disponibilidad(string nombre, float tarifa, int capacidad, int capacidadAdultos, int capacidadMenores, int capacidadInfantes, DateTime fecha ,int cantidad)
+        public Disponibilidad(string nombre, float tarifa, int capacidad, int capacidadAdultos, int capacidadMenores, int capacidadInfantes, DateTime fecha , List<DateTime> fechasOcupadas,int cantidad)
         {
             Nombre = nombre;
             Tarifa = tarifa;
@@ -63,6 +64,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
             CapacidadInfantes = capacidadInfantes;
             this.Fecha = fecha;
             this.Cantidad = cantidad;
+            FechasOcupadas = fechasOcupadas;
         }
     }
     

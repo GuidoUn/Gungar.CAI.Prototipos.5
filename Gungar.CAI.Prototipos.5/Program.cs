@@ -17,7 +17,7 @@ namespace Gungar.CAI.Prototipos._5
             Application.Run(new MenuPrincipalForm());
             AppModel.GuardarDatos();
             VuelosModel.GuardarDatos();
-            HotelesModel.GuardarDatos();
+            //HotelesModel.GuardarDatos();
         }
     }
 }

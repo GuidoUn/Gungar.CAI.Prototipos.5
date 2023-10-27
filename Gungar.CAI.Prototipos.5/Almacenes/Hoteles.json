@@ -1,77 +1,7 @@
 [
   {
-    "Calificacion": 5,
-    "CodigoCiudad": "COR",
     "CodigoOferta": "FSS",
-    "Direccion": {
-      "Calle": "Lima",
-      "Numero": "4020",
-      "CP": "1400",
-      "Latitud": "20.58",
-      "Longitud": "-60.90"
-    },
-    "Disponibilidad": [
-      {
-        "Nombre": "Doble Especial",
-        "Tarifa": 50.5,
-        "Capacidad": 4,
-        "CapacidadAdultos": 2,
-        "CapacidadMenores": 1,
-        "CapacidadInfantes": 1,
-        "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 4
-      },
-      {
-        "Nombre": "Triple Exclusivo Especial",
-        "Tarifa": 70.5,
-        "Capacidad": 4,
-        "CapacidadAdultos": 2,
-        "CapacidadMenores": 1,
-        "CapacidadInfantes": 1,
-        "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 2
-      }
-    ],
-    "NombreHotel": "Four Seasons"
-  },
-  {
-    "CodigoOferta": "MMM",
-    "NombreHotel": "Milei Resort",
-    "CodigoCiudad": "BUE",
-    "Direccion": {
-      "Calle": "Lima",
-      "Numero": "4020",
-      "CP": "1400",
-      "Latitud": "20.58",
-      "Longitud": "-60.90"
-    },
-    "Calificacion": 5,
-    "Disponibilidad": [
-      {
-        "Nombre": "Doble Especial",
-        "Tarifa": 50.5,
-        "Capacidad": 4,
-        "CapacidadAdultos": 2,
-        "CapacidadMenores": 1,
-        "CapacidadInfantes": 1,
-        "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 3
-      },
-      {
-        "Nombre": "Triple Exclusivo Especial",
-        "Tarifa": 70.5,
-        "Capacidad": 4,
-        "CapacidadAdultos": 2,
-        "CapacidadMenores": 1,
-        "CapacidadInfantes": 1,
-        "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 2
-      }
-    ]
-  },
-  {
-    "CodigoOferta": "MZA",
-    "NombreHotel": "Manzanares",
+    "NombreHotel": "Four Seasons",
     "CodigoCiudad": "COR",
     "Direccion": {
       "Calle": "Lima",
@@ -90,127 +20,41 @@
         "CapacidadMenores": 1,
         "CapacidadInfantes": 1,
         "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 0
-      },
-      {
-        "Nombre": "Doble Exclusivo Especial",
-        "Tarifa": 70.5,
-        "Capacidad": 4,
-        "CapacidadAdultos": 2,
-        "CapacidadMenores": 1,
-        "CapacidadInfantes": 1,
-        "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 2
-      }
-    ]
-  },
-  {
-    "CodigoOferta": "MZA",
-    "NombreHotel": "Manzanares",
-    "CodigoCiudad": "COR",
-    "Direccion": {
-      "Calle": "Lima",
-      "Numero": "4020",
-      "CP": "1400",
-      "Latitud": "20.58",
-      "Longitud": "-60.90"
-    },
-    "Calificacion": 5,
-    "Disponibilidad": [
-      {
-        "Nombre": "Doble Especial",
-        "Tarifa": 50.5,
-        "Capacidad": 4,
-        "CapacidadAdultos": 2,
-        "CapacidadMenores": 1,
-        "CapacidadInfantes": 1,
-        "Fecha": "2023-10-30T00:00:00",
+        "FechasOcupadas": [ "2023-11-05T00:00:00", "2023-11-08T00:00:00", "2023-10-26T00:00:00-03:00", "2023-10-27T00:00:00-03:00", "2023-10-28T00:00:00-03:00" ],
         "Cantidad": 2
       },
       {
-        "Nombre": "Doble Exclusivo Especial",
-        "Tarifa": 70.5,
+        "Cantidad": 2,
         "Capacidad": 4,
         "CapacidadAdultos": 2,
-        "CapacidadMenores": 1,
         "CapacidadInfantes": 1,
-        "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 2
-      }
-    ]
-  },
-  {
-    "CodigoOferta": "AAA",
-    "NombreHotel": "Double Tree",
-    "CodigoCiudad": "BUE",
-    "Direccion": {
-      "Calle": "Lima",
-      "Numero": "4020",
-      "CP": "1400",
-      "Latitud": "20.58",
-      "Longitud": "-60.90"
-    },
-    "Calificacion": 3,
-    "Disponibilidad": [
-      {
-        "Nombre": "Triple Especial",
-        "Tarifa": 100.5,
-        "Capacidad": 6,
-        "CapacidadAdultos": 4,
         "CapacidadMenores": 1,
-        "CapacidadInfantes": 1,
         "Fecha": "2023-10-30T00:00:00",
-        "Cantidad": 4
-      }
-    ]
-  },
-  {
-    "CodigoOferta": "FAP",
-    "NombreHotel": "Alberto Hostel",
-    "CodigoCiudad": "MDZ",
-    "Direccion": {
-      "Calle": "Lima",
-      "Numero": "4020",
-      "CP": "1400",
-      "Latitud": "20.58",
-      "Longitud": "-60.90"
-    },
-    "Calificacion": 2,
-    "Disponibilidad": [
+        "FechasOcupadas": [ "2023-10-30T00:00:00" ],
+        "Nombre": "Triple Exclusivo Especial",
+        "Tarifa": 70.5
+      },
       {
         "Nombre": "Cuadruple Especial",
-        "Tarifa": 200,
-        "Capacidad": 8,
-        "CapacidadAdultos": 6,
+        "Tarifa": 50.5,
+        "Capacidad": 4,
+        "CapacidadAdultos": 2,
         "CapacidadMenores": 1,
         "CapacidadInfantes": 1,
-        "Fecha": "2023-12-24T00:00:00",
-        "Cantidad": 2
-      }
-    ]
-  },
-  {
-    "CodigoOferta": "BBB",
-    "NombreHotel": "Massa Tree",
-    "CodigoCiudad": "BUE",
-    "Direccion": {
-      "Calle": "Lima",
-      "Numero": "4020",
-      "CP": "1400",
-      "Latitud": "20.58",
-      "Longitud": "-60.90"
-    },
-    "Calificacion": 2,
-    "Disponibilidad": [
-      {
-        "Nombre": "Penthouse Especial",
-        "Tarifa": 20,
-        "Capacidad": 10,
-        "CapacidadAdultos": 8,
-        "CapacidadMenores": 1,
-        "CapacidadInfantes": 1,
-        "Fecha": "2023-10-24T00:00:00",
+        "Fecha": "2023-10-30T00:00:00",
+        "FechasOcupadas": [ "2023-10-30T00:00:00" ],
         "Cantidad": 4
+      },
+      {
+        "Nombre": "Quintuple Exclusivo Especial",
+        "Tarifa": 70.5,
+        "Capacidad": 4,
+        "CapacidadAdultos": 2,
+        "CapacidadMenores": 1,
+        "CapacidadInfantes": 1,
+        "Fecha": "2023-10-30T00:00:00",
+        "FechasOcupadas": [ "2023-10-30T00:00:00" ],
+        "Cantidad": 2
       }
     ]
   }

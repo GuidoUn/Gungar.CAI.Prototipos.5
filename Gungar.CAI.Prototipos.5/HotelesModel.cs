@@ -12,13 +12,32 @@ namespace Gungar.CAI.Prototipos._5
     {
 
         private static List<OfertaHotel>? ofertaHotelesEnAlmacen;
-        private static bool estaEntreFechas(DateTime fechaHotel, DateTime? fechaDesde, DateTime? fechaHasta)
+
+        public static List<DateTime> ObtenerRangoDeFechas(DateTime FechaDesde, DateTime FechaHasta)
         {
-            if (fechaHotel.Date >= fechaDesde?.Date && (fechaHotel.Date <= fechaHasta?.Date || fechaHasta == null))
+            List<DateTime> dateList = new List<DateTime>();
+
+            DateTime currentDate = FechaDesde.Date;
+            while (currentDate <= FechaHasta.Date)
             {
-                return true;
+                dateList.Add(currentDate);
+                currentDate = currentDate.AddDays(1);
             }
-            return false;
+            Console.WriteLine(dateList.ToString());
+            return dateList;
+        }
+        private static bool estaEntreFechas(List<DateTime> fechaOcupadasHotel, DateTime? fechaDesde, DateTime? fechaHasta)
+        {
+            bool resultado=true;
+            foreach (var fechaOcupada in fechaOcupadasHotel)
+            {
+                if (fechaOcupada.Date >= fechaDesde?.Date && (fechaOcupada.Date <= fechaHasta?.Date || fechaHasta == null))
+                {
+                    return false;
+                }
+            }
+           
+            return resultado;
         }
         public static double ObtenerPrecioTotal(List<Hotel> hoteles) {
             double precioTotal = 0.0;
@@ -73,7 +92,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 if (destino != "" && !esMismaCiudad(hotel.CodigoCiudad, destino))
                     return false;
-                if (fechaDesde != null && !estaEntreFechas(hotel.Disponibilidad.Fecha, fechaDesde, fechaHasta))
+                if (!estaEntreFechas(hotel.Disponibilidad.FechasOcupadas, fechaDesde, fechaHasta))
                     return false;
                 if (OfertaHotel.Calificaciones[calificacion] != OfertaHotel.Calificaciones["Todas"] && !esMismaCalificacion(hotel.Calificacion, OfertaHotel.Calificaciones[calificacion]))
                     return false;
@@ -130,20 +149,25 @@ namespace Gungar.CAI.Prototipos._5
 
         public static void ModificarDisponibilidadHotel(Hotel hotel,bool rollback)
         {
-
+            if (ofertaHotelesEnAlmacen == null) return;
            ofertaHotelesEnAlmacen.ForEach(_hotel =>
             {
-                var disponibilidadAModificar = _hotel.Disponibilidad.Find(h => h.Fecha == hotel.Disponibilidad.Fecha);
+                var disponibilidadAModificar = _hotel.Disponibilidad.Find(h => h.Nombre == hotel.Disponibilidad.Nombre);
                if( _hotel.CodigoOferta == hotel.CodigoOferta && disponibilidadAModificar != null)
                 {
                     if (rollback)
                     {
                         disponibilidadAModificar.Cantidad ++;
+                       
+                        
 
                     }
                     else
                     {
                         disponibilidadAModificar.Cantidad--;
+                        List<DateTime> fechasOcupadasAAgregar = ObtenerRangoDeFechas(hotel.FechaDesde, hotel.FechaHasta);
+                        disponibilidadAModificar.FechasOcupadas.AddRange(fechasOcupadasAAgregar);
+
 
                     }
 
@@ -154,6 +178,7 @@ namespace Gungar.CAI.Prototipos._5
             DataBase.GuardarHoteles(ofertaHotelesEnAlmacen);
 
         }
+
         public static void CargaInicial()
         {
             ofertaHotelesEnAlmacen = DataBase.LeerHoteles();

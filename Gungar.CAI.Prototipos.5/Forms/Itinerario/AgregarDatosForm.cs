@@ -20,10 +20,13 @@ namespace Gungar.CAI.Prototipos._5
 
         Pasajero? pasajeroSeleccionado;
 
-        public AgregarDatosForm(Itinerario itinerario)
+        bool esPreReserva;
+
+        public AgregarDatosForm(Itinerario itinerario,bool esPreReserva)
         {
             InitializeComponent();
             this.itinerario = itinerario;
+            this.esPreReserva = esPreReserva;
         }
 
         private void poblarLista()
@@ -107,6 +110,14 @@ namespace Gungar.CAI.Prototipos._5
         {
             eliminarPasajeroBtn.Enabled = pasajeroSeleccionado != null;
 
+        }
+
+        private void confirmarBtn_Click(object sender, EventArgs e)
+        {
+            
+            itinerario.GenerarPrereserva();
+            itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false));
+            this.Close();
         }
     }
 }

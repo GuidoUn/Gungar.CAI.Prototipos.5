@@ -36,7 +36,6 @@ namespace Gungar.CAI.Prototipos._5
 
             this.itinerario = itinerario;
             clienteForm = new ClienteForm(itinerario);
-            agregarDatosForm = new AgregarDatosForm(itinerario);
             itinerarioSeleccionadoLabel.Text = $"{itinerario.itinerarioId}";
         }
 
@@ -47,14 +46,14 @@ namespace Gungar.CAI.Prototipos._5
             poblarHotelesAgregados();
             estadoLabel.Text = itinerario.estado.ToString();
             nombreYApellidoLabel.Text = $"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}";
-            if (itinerario.estado == Estado.Cancelada)
+            /*if (itinerario.estado == Estado.Cancelada)
             {
                 confirmacionBox.Enabled = false;
                 gestionarItinerarioBox.Enabled = false;
                 cancelarReservaBtn.Enabled = false;
                 return;
-            }
-            confirmacionBox.Enabled = !(itinerario.pasajeros.Count == 0 || productosItinerarios.Count == 0 || itinerario.estado == Estado.Pagada);
+            }*/
+            confirmacionBox.Enabled = !(itinerario.hoteles.Count == 0 || itinerario.estado == Estado.Pagada);
             gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
 
 
@@ -109,14 +108,15 @@ namespace Gungar.CAI.Prototipos._5
             refrescar();
         }
 
-        private void agregarPasajerosBtn_Click(object sender, EventArgs e)
-        {
-            agregarDatosForm.ShowDialog();
-            refrescar();
-        }
+      
 
         private void generarPreReserva_Click(object sender, EventArgs e)
         {
+            agregarDatosForm = new AgregarDatosForm(itinerario, true);
+
+            agregarDatosForm.ShowDialog();
+            refrescar();
+
             if (itinerario.estado == Estado.Presupuesto)
             {
                 itinerario.GenerarPrereserva();
@@ -125,11 +125,8 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerario.estado = Estado.Presupuesto;
-                itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
 
             }
-            refrescar();
         }
 
         private void salirBtn_Click(object sender, EventArgs e)
@@ -139,6 +136,10 @@ namespace Gungar.CAI.Prototipos._5
 
         private void generarReservaBtn_Click(object sender, EventArgs e)
         {
+            agregarDatosForm = new AgregarDatosForm(itinerario, false);
+            agregarDatosForm.ShowDialog();
+            refrescar();
+
             var confirmar = MessageBox.Show("Esta seguro de que desea confirmar la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {

@@ -54,6 +54,7 @@
             itinerarioLabel = new Label();
             titleLabel = new Label();
             eliminarPasajeroBtn = new Button();
+            confirmarBtn = new Button();
             datosPasajerosGroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -290,11 +291,22 @@
             eliminarPasajeroBtn.UseVisualStyleBackColor = true;
             eliminarPasajeroBtn.Click += eliminarPasajeroBtn_Click;
             // 
+            // confirmarBtn
+            // 
+            confirmarBtn.Location = new Point(747, 497);
+            confirmarBtn.Name = "confirmarBtn";
+            confirmarBtn.Size = new Size(140, 66);
+            confirmarBtn.TabIndex = 27;
+            confirmarBtn.Text = "Confirmar";
+            confirmarBtn.UseVisualStyleBackColor = true;
+            confirmarBtn.Click += confirmarBtn_Click;
+            // 
             // AgregarDatosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1633, 981);
+            ClientSize = new Size(1370, 749);
+            Controls.Add(confirmarBtn);
             Controls.Add(eliminarPasajeroBtn);
             Controls.Add(itinerarioLabel);
             Controls.Add(titleLabel);
@@ -340,5 +352,6 @@
         private Label itinerarioLabel;
         private Label titleLabel;
         private Button eliminarPasajeroBtn;
+        private Button confirmarBtn;
     }
 }
