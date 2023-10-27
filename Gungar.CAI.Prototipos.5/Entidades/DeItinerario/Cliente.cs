@@ -8,9 +8,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public class Cliente
     {
-        private static int ultimoId = 0;
-
-        public int clienteId;
         public string nombre;
         public string apellido;
         public string? documento;
@@ -19,8 +16,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         public Cliente(string nombre, string apellido, string? documento, string? email, string? telefono)
         {
-            clienteId = ultimoId + 1;
-            ultimoId = clienteId;
             this.nombre = nombre;
             this.apellido = apellido;
             this.documento = documento;

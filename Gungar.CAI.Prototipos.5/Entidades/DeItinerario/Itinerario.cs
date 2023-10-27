@@ -17,20 +17,17 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
     public class Itinerario
     {
-        private static int ultimoId = 0;
-
         public int itinerarioId;
         public DateTime fechaCreacion;
         public Estado estado;
         public Cliente? cliente;
         public List<Pasajero> pasajeros = new List<Pasajero>();
         public DateTime? fechaPrereserva;
-        public List<Hotel> hoteles=new List<Hotel>();
+        public List<Hotel> hoteles = new List<Hotel>();
 
         private void setearValoresIniciales()
         {
-            itinerarioId = ultimoId + 1;
-            ultimoId = itinerarioId;
+            itinerarioId = AlmacenItinerarios.obtenerNuevoId();
             fechaCreacion = DateTime.Now;
             estado = Estado.Presupuesto;
         }
@@ -65,7 +62,5 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         {
             hoteles.Add(hotel);
         }
-
-       
     }
 }

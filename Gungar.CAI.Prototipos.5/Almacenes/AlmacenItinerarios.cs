@@ -46,46 +46,13 @@ namespace Gungar.CAI.Prototipos._5
             Itinerarios.Remove(itinerario);
         }
 
-        //public static List<OfertaVuelo> getVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int? precioMinimo = null, int? precioMaximo = null)
-        //{
-        //    List<OfertaVuelo> vuelosFiltrados = OfertaVuelos.Where(vuelo =>
-        //    {
-        //        if (origen != "" && !esMismaCiudad(vuelo.Origen, origen))
-        //            return false;
-        //        if (destino != "" && !esMismaCiudad(vuelo.Destino, destino))
-        //            return false;
-        //        if (fechaDesde != null && !estaEntreFechas(vuelo.FechaSalida, fechaDesde, fechaHasta))
-        //            return false;
-        //        if (!vuelo.Tarifas.Exists(tarifa => tarifa.Clase == clase))
-        //            return false;
-
-        //        return true;
-        //    }
-        //     ).ToList();
-
-        //    return vuelosFiltrados;
-        //}
-
-        //private static bool esMismaCiudad(string ciudadVuelo, string ciudadBusqueda)
-        //{
-        //    if (OfertaVuelo.Ciudades[ciudadVuelo].ToLower().Contains(ciudadBusqueda.ToLower()))
-        //    {
-        //        return true;
-        //    }
-        //    if (ciudadVuelo.ToLower().Contains(ciudadBusqueda.ToLower()))
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
-
-        //private static bool estaEntreFechas(DateTime fechaVuelo, DateTime? fechaDesde, DateTime? fechaHasta)
-        //{
-        //    if (fechaVuelo.Date >= fechaDesde?.Date && (fechaVuelo.Date <= fechaHasta?.Date || fechaHasta == null))
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
+        public static int obtenerNuevoId()
+        {
+            if (Itinerarios.Count == 0)
+            {
+                return 0;
+            }
+            return Itinerarios.Last().itinerarioId + 1;
+        }
     }
 }
