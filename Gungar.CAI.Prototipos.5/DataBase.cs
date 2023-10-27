@@ -18,6 +18,12 @@ namespace Gungar.CAI.Prototipos._5
         const string HOTELES_FILE = @"..\..\..\Almacenes\Hoteles.json";
 
 
+
+        static DataBase()
+        {
+            // hacer la lectura aca para el archivo almacen correspondiente a CADA archivo
+        }
+
         public static List<Itinerario>? LeerItinerarios()
         {
             if (!File.Exists(ITINERARIOS_FILE))
@@ -98,7 +104,7 @@ namespace Gungar.CAI.Prototipos._5
 
             List<OfertaHotel>? ofertaHotel = JsonSerializer.Deserialize<List<OfertaHotel>>(json, serializerOptions);
 
-           // Agregar control de fecha
+            // Agregar control de fecha
             return ofertaHotel;
         }
 

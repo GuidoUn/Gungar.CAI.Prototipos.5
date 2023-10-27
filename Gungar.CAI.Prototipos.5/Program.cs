@@ -8,16 +8,23 @@ namespace Gungar.CAI.Prototipos._5
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            AppModel.CargaInicial();
-            VuelosModel.CargaInicial();
-            HotelesModel.CargaInicial();
-            Application.Run(new MenuPrincipalForm());
-            AppModel.GuardarDatos();
-            VuelosModel.GuardarDatos();
-            HotelesModel.GuardarDatos();
+            try
+            {
+                // To customize application configuration such as set high DPI settings or default font,
+                // see https://aka.ms/applicationconfiguration.
+                ApplicationConfiguration.Initialize();
+                AppModel.CargaInicial(); //reemplazar por constructor estatico en clase de almacen
+                VuelosModel.CargaInicial(); //reemplazar por constructor estatico en clase de almacen
+                HotelesModel.CargaInicial(); //reemplazar por constructor estatico en clase de almacen
+                Application.Run(new MenuPrincipalForm());
+
+            }
+            finally
+            {
+                AppModel.GuardarDatos();
+                VuelosModel.GuardarDatos();
+                HotelesModel.GuardarDatos();
+            }
         }
     }
 }
