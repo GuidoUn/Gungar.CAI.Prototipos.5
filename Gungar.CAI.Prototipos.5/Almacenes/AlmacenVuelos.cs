@@ -25,10 +25,6 @@ namespace Gungar.CAI.Prototipos._5
 
                 OfertaVuelos = JsonSerializer.Deserialize<List<OfertaVuelo>>(json, serializerOptions) ?? new List<OfertaVuelo>();
             }
-            else
-            {
-                OfertaVuelos = new List<OfertaVuelo>();
-            }
         }
 
         public static void GuardarVuelos()
@@ -43,7 +39,7 @@ namespace Gungar.CAI.Prototipos._5
 
         public static List<OfertaVuelo> getVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int? precioMinimo = null, int? precioMaximo = null)
         {
-            List<OfertaVuelo> vuelosFiltrados = AlmacenVuelos.OfertaVuelos.Where(vuelo =>
+            List<OfertaVuelo> vuelosFiltrados = OfertaVuelos.Where(vuelo =>
             {
                 if (origen != "" && !esMismaCiudad(vuelo.Origen, origen))
                     return false;

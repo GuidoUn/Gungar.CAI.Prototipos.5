@@ -15,8 +15,6 @@ namespace Gungar.CAI.Prototipos._5
     {
         const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
 
-        //List<Itinerario> itinerarios;
-
         Itinerario? itinerarioSeleccionado;
 
         MenuItinerarioForm menuItinerarioForm;
@@ -27,13 +25,12 @@ namespace Gungar.CAI.Prototipos._5
         public SeleccionItinerarioForm()
         {
             InitializeComponent();
-            //itinerarios = AppModel.itinerarios;
         }
 
         private void refrescar()
         {
             itinerariosListView.Items.Clear();
-            foreach (var itinerario in AppModel.itinerarios)
+            foreach (var itinerario in AlmacenItinerarios.Itinerarios)
             {
                 var item = new ListViewItem();
                 item.Text = itinerario.itinerarioId.ToString();
@@ -111,7 +108,7 @@ namespace Gungar.CAI.Prototipos._5
         private void filtrarBtn_Click(object sender, EventArgs e)
         {
             itinerariosListView.Items.Clear();
-            var itinerariosFiltrado = AppModel.itinerarios.First();
+            var itinerariosFiltrado = AlmacenItinerarios.Itinerarios.First();
             var item = new ListViewItem();
             item.Text = itinerariosFiltrado.itinerarioId.ToString();
             item.SubItems.Add(itinerariosFiltrado.cliente.nombre);
@@ -137,8 +134,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             if (itinerarioSeleccionado != null)
             {
-
-                AppModel.eliminarItinerario(itinerarioSeleccionado);
+                AlmacenItinerarios.eliminarItinerario(itinerarioSeleccionado);
             }
             itinerarioSeleccionado = null;
             itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";

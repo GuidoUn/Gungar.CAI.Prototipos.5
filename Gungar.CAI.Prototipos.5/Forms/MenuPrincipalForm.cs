@@ -18,7 +18,7 @@ namespace Gungar.CAI.Prototipos._5
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
             Itinerario nuevoItinerario = new Itinerario();
-            AppModel.agregarItinerario(nuevoItinerario);
+            AlmacenItinerarios.agregarItinerario(nuevoItinerario);
             menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario);
             menuItinerarioForm.ShowDialog();
         }
