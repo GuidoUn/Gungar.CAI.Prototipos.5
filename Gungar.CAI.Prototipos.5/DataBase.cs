@@ -13,9 +13,9 @@ namespace Gungar.CAI.Prototipos._5
     {
         static JsonSerializerOptions serializerOptions = new JsonSerializerOptions { IncludeFields = true };
 
-        const string ITINERARIOS_FILE = @"..\..\..\Almacenes\Itinerarios.json";
-        const string VUELOS_FILE = @"..\..\..\Almacenes\Vuelos.json";
-        const string HOTELES_FILE = @"..\..\..\Almacenes\Hoteles.json";
+        const string ITINERARIOS_FILE = @"..\..\..\Archivos\Itinerarios.json";
+        //const string FILE_LOCATION = @"..\..\..\Archivos\Vuelos.json";
+        const string HOTELES_FILE = @"..\..\..\Archivos\Hoteles.json";
 
 
 
@@ -49,46 +49,46 @@ namespace Gungar.CAI.Prototipos._5
             File.WriteAllText(ITINERARIOS_FILE, JsonSerializer.Serialize(itinerarios, serializerOptions));
         }
 
-        public static List<OfertaVuelo>? LeerVuelos()
-        {
-            if (!File.Exists(VUELOS_FILE))
-            {
-                return null;
-            }
+        //public static List<OfertaVuelo>? LeerVuelos()
+        //{
+        //    if (!File.Exists(FILE_LOCATION))
+        //    {
+        //        return null;
+        //    }
 
-            string json = File.ReadAllText(VUELOS_FILE);
+        //    string json = File.ReadAllText(FILE_LOCATION);
 
-            List<OfertaVuelo>? ofertaVuelos = JsonSerializer.Deserialize<List<OfertaVuelo>>(json, serializerOptions);
+        //    List<OfertaVuelo>? ofertaVuelos = JsonSerializer.Deserialize<List<OfertaVuelo>>(json, serializerOptions);
 
-            //--------- Para eliminar o modificar rápido vuelos, por ejemplo para borrar los viejos ------------------------------------------------
+        //    //--------- Para eliminar o modificar rápido vuelos, por ejemplo para borrar los viejos ------------------------------------------------
 
-            //List<OfertaVuelo>? ofertaVuelosAReemplazar = new List<OfertaVuelo>();
+        //    //List<OfertaVuelo>? ofertaVuelosAReemplazar = new List<OfertaVuelo>();
 
-            //ofertaVuelos.ForEach(vuelo =>
-            //{
-            //    if (vuelo.FechaSalida >= DateTime.Now)
-            //        ofertaVuelosAReemplazar.Add(vuelo);
+        //    //ofertaVuelos.ForEach(vuelo =>
+        //    //{
+        //    //    if (vuelo.FechaSalida >= DateTime.Now)
+        //    //        ofertaVuelosAReemplazar.Add(vuelo);
 
 
-            //});
+        //    //});
 
-            //List<OfertaVuelo>? ofertaVuelosAReemplazarOrdenada = ofertaVueloslarga.OrderBy(vuelo => vuelo.FechaSalida).ToList();
-            //return ofertaVuelosAReemplazarOrdenada;
+        //    //List<OfertaVuelo>? ofertaVuelosAReemplazarOrdenada = ofertaVueloslarga.OrderBy(vuelo => vuelo.FechaSalida).ToList();
+        //    //return ofertaVuelosAReemplazarOrdenada;
 
-            //--------------------------------------------------------------------------------------------------------------------------------------
+        //    //--------------------------------------------------------------------------------------------------------------------------------------
 
-            return ofertaVuelos;
-        }
+        //    return ofertaVuelos;
+        //}
 
-        public static void GuardarVuelos(List<OfertaVuelo> vuelos)
-        {
-            if (File.Exists(VUELOS_FILE))
-            {
-                File.Delete(VUELOS_FILE);
-            }
+        //public static void GuardarVuelos(List<OfertaVuelo> vuelos)
+        //{
+        //    if (File.Exists(FILE_LOCATION))
+        //    {
+        //        File.Delete(FILE_LOCATION);
+        //    }
 
-            File.WriteAllText(VUELOS_FILE, JsonSerializer.Serialize(vuelos, serializerOptions));
-        }
+        //    File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(vuelos, serializerOptions));
+        //}
 
 
 

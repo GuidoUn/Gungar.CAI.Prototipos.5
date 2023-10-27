@@ -64,9 +64,11 @@ namespace Gungar.CAI.Prototipos._5
         {
             idaDatePicker.Format = DateTimePickerFormat.Custom;
             idaDatePicker.CustomFormat = " ";
+            fechaIdaSeleccionada = null;
 
             vueltaDatePicker.Format = DateTimePickerFormat.Custom;
             vueltaDatePicker.CustomFormat = " ";
+            fechaVueltaSeleccionada = null;
         }
 
         private void poblarVuelos()
@@ -75,7 +77,7 @@ namespace Gungar.CAI.Prototipos._5
             vuelosVueltaListView.Items.Clear();
             bool isEconomy = clasesCombo.SelectedIndex == 0;
 
-            List<OfertaVuelo> vuelosIdaDisponibles = VuelosModel.getVuelos(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaIdaSeleccionada, fechaIdaSeleccionada, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
+            List<OfertaVuelo> vuelosIdaDisponibles = AlmacenVuelos.getVuelos(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaIdaSeleccionada, fechaIdaSeleccionada, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
 
             foreach (OfertaVuelo vuelo in vuelosIdaDisponibles)
             {
@@ -97,7 +99,7 @@ namespace Gungar.CAI.Prototipos._5
 
             if (!esSoloIda && vuelosIdaDisponibles.Count > 0)
             {
-                List<OfertaVuelo> vuelosVueltaDisponibles = VuelosModel.getVuelos(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaVueltaSeleccionada ?? fechaIdaSeleccionada, fechaVueltaSeleccionada ?? null, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
+                List<OfertaVuelo> vuelosVueltaDisponibles = AlmacenVuelos.getVuelos(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaVueltaSeleccionada ?? fechaIdaSeleccionada, fechaVueltaSeleccionada ?? null, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
 
                 foreach (OfertaVuelo vuelo in vuelosVueltaDisponibles)
                 {
@@ -157,8 +159,8 @@ namespace Gungar.CAI.Prototipos._5
         private void borrarFechasBtn_Click(object sender, EventArgs e)
         {
             borrarFechas();
-            fechaIdaSeleccionada = null;
-            fechaVueltaSeleccionada = null;
+            //fechaIdaSeleccionada = null;
+            //fechaVueltaSeleccionada = null;
         }
     }
 }
