@@ -377,7 +377,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 562);
+            ClientSize = new Size(1343, 864);
             Controls.Add(anularItinerarioBtn);
             Controls.Add(label7);
             Controls.Add(hotelesAgregadosListView);

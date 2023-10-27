@@ -108,7 +108,7 @@ namespace Gungar.CAI.Prototipos._5
             refrescar();
         }
 
-      
+
 
         private void generarPreReserva_Click(object sender, EventArgs e)
         {

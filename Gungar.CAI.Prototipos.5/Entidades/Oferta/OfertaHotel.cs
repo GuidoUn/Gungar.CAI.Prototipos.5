@@ -45,6 +45,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 
     public class Disponibilidad
     {
+        public int Id = 0;
         public string Nombre; // Nombre de la habitación (Ej.: Doble especial, Penthouse, etc.). Es puramente descriptivo.
         public float Tarifa; // precio en US$
         public int Capacidad; // Capacidad total de la habitación.
@@ -54,20 +55,8 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         public DateTime Fecha;
         public List<DateTime> FechasOcupadas;
         public int Cantidad;
-        public Disponibilidad(string nombre, float tarifa, int capacidad, int capacidadAdultos, int capacidadMenores, int capacidadInfantes, DateTime fecha , List<DateTime> fechasOcupadas,int cantidad)
-        {
-            Nombre = nombre;
-            Tarifa = tarifa;
-            Capacidad = capacidad;
-            CapacidadAdultos = capacidadAdultos;
-            CapacidadMenores = capacidadMenores;
-            CapacidadInfantes = capacidadInfantes;
-            this.Fecha = fecha;
-            this.Cantidad = cantidad;
-            FechasOcupadas = fechasOcupadas;
-        }
     }
-    
+
 
     public class OfertaHotel
     {
@@ -81,7 +70,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         {
             // Constructor sin parámetros
         }
-        public OfertaHotel(string nombreHotel,string codigoOferta, string codigoCiudad, int calificacion, List<Disponibilidad> disponibilidad,Direccion direccion )
+        public OfertaHotel(string nombreHotel, string codigoOferta, string codigoCiudad, int calificacion, List<Disponibilidad> disponibilidad, Direccion direccion)
         {
             CodigoOferta = codigoOferta;
             NombreHotel = nombreHotel;
@@ -89,16 +78,16 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
             Direccion = direccion;
             Calificacion = calificacion;
             Disponibilidad = disponibilidad;
-            
+
         }
-        public OfertaHotel(string nombreHotel, string codigoOferta, string codigoCiudad, int calificacion,  Direccion direccion)
+        public OfertaHotel(string nombreHotel, string codigoOferta, string codigoCiudad, int calificacion, Direccion direccion)
         {
             CodigoOferta = codigoOferta;
             NombreHotel = nombreHotel;
             CodigoCiudad = codigoCiudad;
             Direccion = direccion;
             Calificacion = calificacion;
-           
+
 
         }
         public static Dictionary<string, int> Calificaciones = new Dictionary<string, int>()

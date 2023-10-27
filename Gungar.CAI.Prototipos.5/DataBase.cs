@@ -105,6 +105,23 @@ namespace Gungar.CAI.Prototipos._5
             List<OfertaHotel>? ofertaHotel = JsonSerializer.Deserialize<List<OfertaHotel>>(json, serializerOptions);
 
             // Agregar control de fecha
+
+            //List<OfertaVuelo>? ofertaVuelosAReemplazar = new List<OfertaVuelo>();
+
+            //ofertaHotel.ForEach(vuelo =>
+            //{
+            //    int id = 0;
+            //    vuelo.Disponibilidad.ForEach(disp =>
+            //    {
+            //        disp.Id = id; id++;
+            //    });
+
+
+            //});
+
+            //List<OfertaVuelo>? ofertaVuelosAReemplazarOrdenada = ofertaVueloslarga.OrderBy(vuelo => vuelo.FechaSalida).ToList();
+            //return ofertaVuelosAReemplazarOrdenada;
+
             return ofertaHotel;
         }
 
