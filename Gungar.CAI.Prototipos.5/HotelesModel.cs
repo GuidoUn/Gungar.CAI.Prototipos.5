@@ -129,25 +129,6 @@ namespace Gungar.CAI.Prototipos._5
             return listaDeHoteles;
         }
 
-        private static List<OfertaHotel> AgruparHotelesPorDisponibilidad(List<Hotel> hotelesDesagrupados)
-        {
-            List<OfertaHotel> listaDeHoteles = new List<OfertaHotel>();
-            var codigosDeHotelesDisponibles = hotelesDesagrupados.Select(h => h.CodigoOferta).ToList();
-            codigosDeHotelesDisponibles.ForEach(codigoHotel =>
-            {
-                Hotel hotel = hotelesDesagrupados.First(h => h.CodigoOferta == codigoHotel);
-                List<Disponibilidad> disponiblidadDelHotel = new List<Disponibilidad>();
-                var ofertaDelHotel = hotelesDesagrupados.Where(hotel => hotel.CodigoOferta == codigoHotel).ToList();
-                ofertaDelHotel.ForEach(h =>
-                {
-                    disponiblidadDelHotel.Add(h.Disponibilidad);
-                });
-
-                listaDeHoteles.Add(new OfertaHotel(hotel.NombreHotel, codigoHotel, hotel.CodigoCiudad, hotel.Calificacion, disponiblidadDelHotel, hotel.Direccion));
-            });
-            return listaDeHoteles;
-        }
-
         public static void ModificarDisponibilidadHotel(Hotel hotel, bool rollback)
         {
             if (ofertaHotelesEnAlmacen == null) return;
@@ -192,7 +173,7 @@ namespace Gungar.CAI.Prototipos._5
 
         public static void GuardarDatos()
         {
-            DataBase.GuardarHoteles(AgruparHotelesPorDisponibilidad(ofertaHoteles));
+            DataBase.GuardarHoteles(ofertaHotelesEnAlmacen);
         }
     }
 }
