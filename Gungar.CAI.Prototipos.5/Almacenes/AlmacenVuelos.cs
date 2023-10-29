@@ -35,7 +35,7 @@ namespace Gungar.CAI.Prototipos._5
             File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(OfertaVuelos));
         }
 
-        public static List<OfertaVuelo> GetVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int? precioMinimo = null, int? precioMaximo = null)
+        public static List<OfertaVuelo> GetVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int precioMinimo = 0, int precioMaximo = 0)
         {
             List<OfertaVuelo> vuelosFiltrados = OfertaVuelos.Where(vuelo =>
             {
@@ -46,6 +46,8 @@ namespace Gungar.CAI.Prototipos._5
                 if (fechaDesde != null && !estaEntreFechas(vuelo.FechaSalida, fechaDesde, fechaHasta))
                     return false;
                 if (!vuelo.Tarifas.Exists(tarifa => tarifa.Clase == clase))
+                    return false;
+                if (!estaEntrePrecios(vuelo.Tarifas.FindAll(tarifa => tarifa.Clase == clase)[0].Precio, precioMinimo, precioMaximo))
                     return false;
 
                 // Todo: Terminar filtros
@@ -77,6 +79,16 @@ namespace Gungar.CAI.Prototipos._5
                 return true;
             }
             return false;
+        }
+
+        private static bool estaEntrePrecios(float precioVuelo, int precioMinimo, int precioMaximo)
+        {
+            if (precioVuelo < precioMinimo)
+                return false;
+            if (precioMaximo != 0 && precioVuelo > precioMaximo)
+                return false;
+
+            return true;
         }
     }
 }

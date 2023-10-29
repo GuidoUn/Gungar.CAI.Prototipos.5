@@ -47,6 +47,9 @@ namespace Gungar.CAI.Prototipos._5
             idaDatePicker.MinDate = DateTime.Now;
             vueltaDatePicker.MinDate = DateTime.Now;
 
+            desdePreciosNumeric.Text = "";
+            hastaPreciosNumeric.Text = "";
+
             borrarFechas();
             refrescar();
         }
@@ -76,8 +79,10 @@ namespace Gungar.CAI.Prototipos._5
             vuelosIdaListView.Items.Clear();
             vuelosVueltaListView.Items.Clear();
             bool isEconomy = clasesCombo.SelectedIndex == 0;
+            int precioDesde = desdePreciosNumeric.Text == "" ? 0 : Decimal.ToInt32(desdePreciosNumeric.Value);
+            int precioHasta = hastaPreciosNumeric.Text == "" ? 0 : Decimal.ToInt32(hastaPreciosNumeric.Value);
 
-            List<OfertaVuelo> vuelosIdaDisponibles = Model.GetVuelosDisponibles(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaIdaSeleccionada, fechaIdaSeleccionada, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
+            List<OfertaVuelo> vuelosIdaDisponibles = Model.GetVuelosDisponibles(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaIdaSeleccionada, fechaIdaSeleccionada, precioDesde, precioHasta);
 
             foreach (OfertaVuelo vuelo in vuelosIdaDisponibles)
             {

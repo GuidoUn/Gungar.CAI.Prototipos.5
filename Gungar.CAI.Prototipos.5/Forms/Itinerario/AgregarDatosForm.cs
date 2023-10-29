@@ -92,9 +92,8 @@ namespace Gungar.CAI.Prototipos._5
 
                 pasajerosProductosListView.Items.Add(item);
             }
-
-
         }
+
         private void AgregarDatosForm_Load(object sender, EventArgs e)
         {
             itinerarioLabel.Text = $"{itinerario?.Cliente?.Nombre} ({itinerario?.ItinerarioId})";

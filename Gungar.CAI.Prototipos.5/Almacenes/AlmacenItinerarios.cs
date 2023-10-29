@@ -34,6 +34,7 @@ namespace Gungar.CAI.Prototipos._5
 
             File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(Itinerarios));
         }
+
         public static void agregarItinerario(Itinerario itinerario)
         {
             Itinerarios.Add(itinerario);
