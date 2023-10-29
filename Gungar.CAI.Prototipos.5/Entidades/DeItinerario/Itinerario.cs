@@ -17,57 +17,52 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
     public class Itinerario
     {
-        public int itinerarioId;
-        public DateTime fechaCreacion;
-        public Estado estado;
-        public Cliente? cliente;
-        public List<Pasajero> pasajeros = new List<Pasajero>();
-        public DateTime? fechaPrereserva;
-        public List<Hotel> hoteles = new List<Hotel>();
-        public List<ReservaHotel> hotelesSeleccionados = new List<ReservaHotel>();
+        public int ItinerarioId { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public Estado Estado { get; set; }
+        public Cliente? Cliente { get; set; }
+        public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>();
+        public DateTime? FechaPrereserva { get; set; }
+        public List<Hotel> Hoteles { get; set; } = new List<Hotel>();
+        public List<ReservaHotel> HotelesSeleccionados { get; set; } = new List<ReservaHotel>();
         public bool ItinerarioPagado { get; set; }
-
-        private void setearValoresIniciales()
-        {
-            itinerarioId = AlmacenItinerarios.obtenerNuevoId();
-            fechaCreacion = DateTime.Now;
-            estado = Estado.Presupuesto;
-        }
 
         public Itinerario()
         {
-            setearValoresIniciales();
+            ItinerarioId = AlmacenItinerarios.obtenerNuevoId();
+            FechaCreacion = DateTime.Now;
+            Estado = Estado.Presupuesto;
         }
 
-        public void AsignarCliente(Cliente Cliente)
+        public void AsignarCliente(Cliente cliente)
         {
-            cliente = Cliente;
+            Cliente = cliente;
         }
 
         public void AgregarPasajero(Pasajero pasajero)
         {
-            pasajeros.Add(pasajero);
+            Pasajeros.Add(pasajero);
         }
 
         public void EliminarPasajero(Pasajero pasajero)
         {
-            pasajeros.Remove(pasajero);
+            Pasajeros.Remove(pasajero);
         }
 
         public void GenerarPrereserva()
         {
-            estado = Estado.Prereserva;
-            fechaPrereserva = DateTime.Now;
+            Estado = Estado.Prereserva;
+            FechaPrereserva = DateTime.Now;
         }
 
         public void AgregarHotel(Hotel hotel)
         {
-            hoteles.Add(hotel);
+            Hoteles.Add(hotel);
         }
 
         public void AgregarReservaHotel(ReservaHotel hotel)
         {
-            hotelesSeleccionados.Add(hotel);
+            HotelesSeleccionados.Add(hotel);
         }
     }
 }

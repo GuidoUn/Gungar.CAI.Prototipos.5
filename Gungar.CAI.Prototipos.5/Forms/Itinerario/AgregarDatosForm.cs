@@ -36,7 +36,7 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarProductosAgregados()
         {
             productosAgregadosListView.Items.Clear();
-            foreach (var reservaHotel in itinerario.hotelesSeleccionados)
+            foreach (var reservaHotel in itinerario.HotelesSeleccionados)
             {
 
                 var item = new ListViewItem();
@@ -53,7 +53,7 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarListaTotalDePasajerosItinerario()
         {
             pasajerosItinerarioListView.Items.Clear();
-            foreach (var hotel in itinerario.hotelesSeleccionados)
+            foreach (var hotel in itinerario.HotelesSeleccionados)
             {
                 foreach (var pasajero in hotel.Pasajeros)
                 {
@@ -97,7 +97,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void AgregarDatosForm_Load(object sender, EventArgs e)
         {
-            itinerarioLabel.Text = $"{itinerario?.cliente?.nombre} ({itinerario.itinerarioId})";
+            itinerarioLabel.Text = $"{itinerario?.Cliente?.nombre} ({itinerario?.ItinerarioId})";
 
             poblarListaPasajeros();
 
@@ -161,7 +161,7 @@ namespace Gungar.CAI.Prototipos._5
         {
 
             itinerario.GenerarPrereserva();
-            itinerario.hotelesSeleccionados.ForEach(reservaHotel => HotelesModel.ModificarDisponibilidadHotel(reservaHotel.Hotel, false));
+            itinerario.HotelesSeleccionados.ForEach(reservaHotel => HotelesModel.ModificarDisponibilidadHotel(reservaHotel.Hotel, false));
             this.Close();
         }
 

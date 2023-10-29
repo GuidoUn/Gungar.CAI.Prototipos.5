@@ -52,7 +52,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 return 0;
             }
-            return Itinerarios.Last().itinerarioId + 1;
+            return Itinerarios.Last().ItinerarioId + 1;
         }
     }
 }

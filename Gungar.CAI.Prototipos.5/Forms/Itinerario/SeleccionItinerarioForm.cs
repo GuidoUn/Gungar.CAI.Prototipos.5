@@ -33,11 +33,11 @@ namespace Gungar.CAI.Prototipos._5
             foreach (var itinerario in AlmacenItinerarios.Itinerarios)
             {
                 var item = new ListViewItem();
-                item.Text = itinerario.itinerarioId.ToString();
-                item.SubItems.Add($"{itinerario?.cliente?.nombre} {itinerario?.cliente?.apellido}");
-                item.SubItems.Add(itinerario?.cliente?.documento);
-                item.SubItems.Add(itinerario?.fechaCreacion.ToString(FORMATO_FECHA));
-                item.SubItems.Add(itinerario?.estado.ToString());
+                item.Text = itinerario.ItinerarioId.ToString();
+                item.SubItems.Add($"{itinerario?.Cliente?.nombre} {itinerario?.Cliente?.apellido}");
+                item.SubItems.Add(itinerario?.Cliente?.documento);
+                item.SubItems.Add(itinerario?.FechaCreacion.ToString(FORMATO_FECHA));
+                item.SubItems.Add(itinerario?.Estado.ToString());
                 item.Tag = itinerario;
 
                 itinerariosListView.Items.Add(item);
@@ -76,7 +76,7 @@ namespace Gungar.CAI.Prototipos._5
             ListViewItem selected = itinerariosListView.SelectedItems[0];
             itinerarioSeleccionado = selected.Tag as Itinerario;
 
-            itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado?.cliente?.nombre} ({itinerarioSeleccionado?.itinerarioId})";
+            itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado?.Cliente?.nombre} ({itinerarioSeleccionado?.ItinerarioId})";
 
             evaluarEstadoBtns();
         }
@@ -110,10 +110,10 @@ namespace Gungar.CAI.Prototipos._5
             itinerariosListView.Items.Clear();
             var itinerariosFiltrado = AlmacenItinerarios.Itinerarios.First();
             var item = new ListViewItem();
-            item.Text = itinerariosFiltrado.itinerarioId.ToString();
-            item.SubItems.Add(itinerariosFiltrado.cliente.nombre);
-            item.SubItems.Add(itinerariosFiltrado.fechaCreacion.ToString(FORMATO_FECHA));
-            item.SubItems.Add(itinerariosFiltrado.estado.ToString());
+            item.Text = itinerariosFiltrado.ItinerarioId.ToString();
+            item.SubItems.Add(itinerariosFiltrado.Cliente?.nombre);
+            item.SubItems.Add(itinerariosFiltrado.FechaCreacion.ToString(FORMATO_FECHA));
+            item.SubItems.Add(itinerariosFiltrado.Estado.ToString());
             item.Tag = itinerariosFiltrado;
 
             itinerariosListView.Items.Add(item);

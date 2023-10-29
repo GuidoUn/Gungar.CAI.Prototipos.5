@@ -53,7 +53,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = $"{itinerario?.cliente?.nombre} ({itinerario?.itinerarioId})";
+                itinerarioLabel.Text = $"{itinerario?.Cliente?.nombre} ({itinerario?.ItinerarioId})";
             }
 
             clasesCombo.SelectedIndex = 0;
@@ -101,17 +101,17 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarProductosAgregados()
         {
             itinerarioListView.Items.Clear();
-            foreach (var reservaHotel in itinerario.hotelesSeleccionados)
+            foreach (var reservaHotel in itinerario.HotelesSeleccionados)
             {
-               
-                    var item = new ListViewItem();
-                    item.Text = reservaHotel.Hotel.NombreHotel;
-                    item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
-                    item.Tag = reservaHotel;
 
-                    itinerarioListView.Items.Add(item);
-                
-                
+                var item = new ListViewItem();
+                item.Text = reservaHotel.Hotel.NombreHotel;
+                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
+                item.Tag = reservaHotel;
+
+                itinerarioListView.Items.Add(item);
+
+
             }
         }
 
