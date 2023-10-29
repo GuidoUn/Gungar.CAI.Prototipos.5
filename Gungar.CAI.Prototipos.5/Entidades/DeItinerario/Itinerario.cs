@@ -25,8 +25,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>();
         public DateTime? FechaPrereserva { get; set; }
         public List<Hotel> Hoteles { get; set; } = new List<Hotel>();
-        public List<ReservaHotel> HotelesSeleccionados { get; set; }
-
+        public List<ReservaHotel> HotelesSeleccionados { get; set; } = new List<ReservaHotel>();
         public List<ReservaVuelo> VuelosAgregados { get; set; } = new List<ReservaVuelo>();
         public bool ItinerarioPagado { get; set; }
 

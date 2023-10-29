@@ -70,6 +70,7 @@
             telefonoText.Name = "telefonoText";
             telefonoText.Size = new Size(264, 23);
             telefonoText.TabIndex = 21;
+            telefonoText.TextChanged += telefonoText_TextChanged;
             // 
             // label4
             // 
@@ -86,6 +87,7 @@
             emailText.Name = "emailText";
             emailText.Size = new Size(264, 23);
             emailText.TabIndex = 19;
+            emailText.TextChanged += emailText_TextChanged;
             // 
             // label2
             // 
@@ -102,6 +104,7 @@
             documentoText.Name = "documentoText";
             documentoText.Size = new Size(264, 23);
             documentoText.TabIndex = 17;
+            documentoText.TextChanged += documentoText_TextChanged;
             // 
             // label5
             // 

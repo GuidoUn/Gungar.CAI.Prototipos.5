@@ -59,6 +59,10 @@ namespace Gungar.CAI.Prototipos._5
 
         private void itinerariosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (itinerariosListView.SelectedItems == null)
+            {
+                return;
+            }
             ListViewItem selected = itinerariosListView.SelectedItems[0];
             model.ItinerarioSeleccionado = selected.Tag as Itinerario;
 
