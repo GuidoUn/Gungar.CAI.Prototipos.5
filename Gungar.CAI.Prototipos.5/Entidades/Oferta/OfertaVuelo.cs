@@ -32,8 +32,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         public DateTime FechaSalida { get; set; }
         public DateTime FechaArribo { get; set; }
         public string TiempoDeVuelo { get; set; }
-        //public int HorasDeVuelo;
-        //public int MinutosDeVuelo;
         public string Aerolinea { get; set; }
         public List<TarifaVuelo> Tarifas { get; set; }
 
