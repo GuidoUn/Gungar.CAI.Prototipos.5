@@ -22,7 +22,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.SeleccionItinerario
         {
             if (ItinerarioSeleccionado != null)
             {
-                AlmacenItinerarios.eliminarItinerario(ItinerarioSeleccionado);
+                AlmacenItinerarios.EliminarItinerario(ItinerarioSeleccionado);
             }
             ItinerarioSeleccionado = null;
         }

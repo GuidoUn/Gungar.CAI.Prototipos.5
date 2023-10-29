@@ -31,7 +31,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         public Itinerario()
         {
-            ItinerarioId = AlmacenItinerarios.obtenerNuevoId();
+            ItinerarioId = AlmacenItinerarios.ObtenerNuevoId();
             FechaCreacion = DateTime.Now;
             Estado = Estado.Presupuesto;
         }

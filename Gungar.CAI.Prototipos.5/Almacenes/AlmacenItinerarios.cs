@@ -35,17 +35,17 @@ namespace Gungar.CAI.Prototipos._5
             File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(Itinerarios));
         }
 
-        public static void agregarItinerario(Itinerario itinerario)
+        public static void AgregarItinerario(Itinerario itinerario)
         {
             Itinerarios.Add(itinerario);
         }
 
-        public static void eliminarItinerario(Itinerario itinerario)
+        public static void EliminarItinerario(Itinerario itinerario)
         {
             Itinerarios.Remove(itinerario);
         }
 
-        public static int obtenerNuevoId()
+        public static int ObtenerNuevoId()
         {
             if (Itinerarios.Count == 0)
             {

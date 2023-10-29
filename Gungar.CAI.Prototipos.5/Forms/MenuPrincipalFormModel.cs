@@ -12,7 +12,7 @@ namespace Gungar.CAI.Prototipos._5.Forms
         public static Itinerario GenerarNuevoItinerario()
         {
             Itinerario nuevoItinerario = new Itinerario();
-            AlmacenItinerarios.agregarItinerario(nuevoItinerario);
+            AlmacenItinerarios.AgregarItinerario(nuevoItinerario);
             return nuevoItinerario;
         }
     }
