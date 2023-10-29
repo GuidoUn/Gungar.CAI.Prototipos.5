@@ -13,7 +13,7 @@ namespace Gungar.CAI.Prototipos._5
     {
         static JsonSerializerOptions serializerOptions = new JsonSerializerOptions { IncludeFields = true };
 
-        const string HOTELES_FILE = @"..\..\..\Archivos\Hoteles.json";
+        const string HOTELES_FILE = @"..\..\..\Almacenes\Archivos\Hoteles.json";
 
         public static List<OfertaHotel>? LeerHoteles()
         {

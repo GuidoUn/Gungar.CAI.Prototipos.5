@@ -11,7 +11,7 @@ namespace Gungar.CAI.Prototipos._5
 {
     public static class AlmacenItinerarios
     {
-        const string FILE_LOCATION = @"..\..\..\Archivos\Itinerarios.json";
+        const string FILE_LOCATION = @"..\..\..\Almacenes\Archivos\Itinerarios.json";
 
         public static List<Itinerario> Itinerarios { get; set; } = new List<Itinerario>();
 

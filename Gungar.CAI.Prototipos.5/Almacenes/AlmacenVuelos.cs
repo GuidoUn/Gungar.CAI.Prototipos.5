@@ -11,7 +11,7 @@ namespace Gungar.CAI.Prototipos._5
 {
     public static class AlmacenVuelos
     {
-        const string FILE_LOCATION = @"..\..\..\Archivos\Vuelos.json";
+        const string FILE_LOCATION = @"..\..\..\Almacenes\Archivos\Vuelos.json";
 
         public static List<OfertaVuelo> OfertaVuelos { get; set; } = new List<OfertaVuelo>();
 
