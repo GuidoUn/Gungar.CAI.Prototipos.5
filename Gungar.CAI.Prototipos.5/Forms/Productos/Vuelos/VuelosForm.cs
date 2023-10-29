@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
-using Gungar.CAI.Prototipos._5.Forms.Productos;
+using Gungar.CAI.Prototipos._5.Forms.Productos.Vuelos;
 
 namespace Gungar.CAI.Prototipos._5
 {

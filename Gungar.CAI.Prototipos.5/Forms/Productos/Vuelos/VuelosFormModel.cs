@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5.Forms.Productos
+namespace Gungar.CAI.Prototipos._5.Forms.Productos.Vuelos
 {
     public class VuelosFormModel
     {
@@ -23,7 +23,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos
             }
             else
             {
-                this.Itinerario = itinerario;
+                Itinerario = itinerario;
             }
         }
 
