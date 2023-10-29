@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
-using Gungar.CAI.Prototipos._5.Forms.SeleccionItinerario;
+using Gungar.CAI.Prototipos._5.Forms.DeItinerario.SeleccionItinerario;
 
 namespace Gungar.CAI.Prototipos._5
 {

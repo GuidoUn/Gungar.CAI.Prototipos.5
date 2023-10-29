@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5.Forms.Cliente
+namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.Cliente
 {
     public class ClienteFormModel
     {

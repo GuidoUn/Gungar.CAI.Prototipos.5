@@ -159,5 +159,10 @@ namespace Gungar.CAI.Prototipos._5
         {
             borrarFechas();
         }
+
+        private void volverBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

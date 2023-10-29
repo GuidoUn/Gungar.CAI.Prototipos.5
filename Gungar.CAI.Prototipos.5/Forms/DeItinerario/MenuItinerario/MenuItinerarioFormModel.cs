@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 
-namespace Gungar.CAI.Prototipos._5.Forms.MenuItinerario
+namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
 {
     public class MenuItinerarioFormModel
     {

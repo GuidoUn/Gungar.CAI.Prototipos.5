@@ -98,6 +98,7 @@
             columnHeader38 = new ColumnHeader();
             columnHeader39 = new ColumnHeader();
             columnHeader40 = new ColumnHeader();
+            volverBtn = new Button();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -657,11 +658,22 @@
             columnHeader40.Text = "Precio Infante";
             columnHeader40.Width = 90;
             // 
+            // volverBtn
+            // 
+            volverBtn.Location = new Point(823, 76);
+            volverBtn.Name = "volverBtn";
+            volverBtn.Size = new Size(154, 51);
+            volverBtn.TabIndex = 30;
+            volverBtn.Text = "Volver";
+            volverBtn.UseVisualStyleBackColor = true;
+            volverBtn.Click += volverBtn_Click;
+            // 
             // VuelosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1560, 826);
+            Controls.Add(volverBtn);
             Controls.Add(vueltaBox);
             Controls.Add(vuelosIdaBox);
             Controls.Add(modificarItinerarioBox);
@@ -763,5 +775,6 @@
         private ColumnHeader columnHeader36;
         private ColumnHeader columnHeader41;
         private Button borrarFechasBtn;
+        private Button volverBtn;
     }
 }
