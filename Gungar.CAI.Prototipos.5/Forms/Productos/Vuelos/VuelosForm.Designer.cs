@@ -82,7 +82,6 @@
             columnHeader4 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader23 = new ColumnHeader();
-            columnHeader25 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
             columnHeader11 = new ColumnHeader();
             columnHeader12 = new ColumnHeader();
@@ -94,7 +93,6 @@
             columnHeader35 = new ColumnHeader();
             columnHeader37 = new ColumnHeader();
             columnHeader24 = new ColumnHeader();
-            columnHeader8 = new ColumnHeader();
             columnHeader38 = new ColumnHeader();
             columnHeader39 = new ColumnHeader();
             columnHeader40 = new ColumnHeader();
@@ -528,7 +526,7 @@
             // 
             // vuelosIdaListView
             // 
-            vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader9, columnHeader23, columnHeader25, columnHeader10, columnHeader11, columnHeader12 });
+            vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader9, columnHeader23, columnHeader10, columnHeader11, columnHeader12 });
             vuelosIdaListView.FullRowSelect = true;
             vuelosIdaListView.Location = new Point(11, 16);
             vuelosIdaListView.Name = "vuelosIdaListView";
@@ -567,11 +565,6 @@
             columnHeader23.Text = "Clase";
             columnHeader23.Width = 80;
             // 
-            // columnHeader25
-            // 
-            columnHeader25.Text = "Disponibilidad";
-            columnHeader25.Width = 90;
-            // 
             // columnHeader10
             // 
             columnHeader10.Text = "Precio Adulto";
@@ -599,7 +592,7 @@
             // 
             // vuelosVueltaListView
             // 
-            vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader34, columnHeader35, columnHeader37, columnHeader24, columnHeader8, columnHeader38, columnHeader39, columnHeader40 });
+            vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader34, columnHeader35, columnHeader37, columnHeader24, columnHeader38, columnHeader39, columnHeader40 });
             vuelosVueltaListView.FullRowSelect = true;
             vuelosVueltaListView.Location = new Point(11, 22);
             vuelosVueltaListView.Name = "vuelosVueltaListView";
@@ -637,11 +630,6 @@
             // 
             columnHeader24.Text = "Clase";
             columnHeader24.Width = 80;
-            // 
-            // columnHeader8
-            // 
-            columnHeader8.Text = "Disponibilidad";
-            columnHeader8.Width = 90;
             // 
             // columnHeader38
             // 
@@ -761,8 +749,6 @@
         private ColumnHeader columnHeader40;
         private ColumnHeader columnHeader23;
         private ColumnHeader columnHeader24;
-        private ColumnHeader columnHeader25;
-        private ColumnHeader columnHeader8;
         private ListView listView1;
         private ColumnHeader columnHeader26;
         private ColumnHeader columnHeader27;

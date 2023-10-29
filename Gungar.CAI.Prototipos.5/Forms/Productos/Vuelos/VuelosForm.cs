@@ -38,7 +38,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} ({model.Itinerario?.ItinerarioId})";
+                itinerarioLabel.Text = model?.Itinerario?.Cliente?.GetNombreYApellido();
             }
 
             clasesCombo.SelectedItem = clasesCombo.Items[0];
@@ -93,10 +93,9 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
                 item.SubItems.Add(vuelo.TiempoDeVuelo);
                 item.SubItems.Add(((OfertaVuelo.Clases)vuelo.Tarifas[isEconomy ? 0 : 3].Clase).ToString());
-                item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Disponibilidad.ToString());
-                item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
-                item.SubItems.Add(vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
-                item.SubItems.Add(vuelo.Tarifas[isEconomy ? 2 : 5].Precio.ToString());
+                item.SubItems.Add(getStringPrecioDisponibilidad(vuelo.Tarifas[isEconomy ? 0 : 3]));
+                item.SubItems.Add(getStringPrecioDisponibilidad(vuelo.Tarifas[isEconomy ? 1 : 4]));
+                item.SubItems.Add(getStringPrecioDisponibilidad(vuelo.Tarifas[isEconomy ? 2 : 5]));
                 item.Tag = vuelo;
 
                 vuelosIdaListView.Items.Add(item);
@@ -115,15 +114,19 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
                     item.SubItems.Add(vuelo.TiempoDeVuelo);
                     item.SubItems.Add(((OfertaVuelo.Clases)vuelo.Tarifas[isEconomy ? 0 : 3].Clase).ToString());
-                    item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Disponibilidad.ToString());
-                    item.SubItems.Add(vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
-                    item.SubItems.Add(vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
-                    item.SubItems.Add(vuelo.Tarifas[isEconomy ? 2 : 5].Precio.ToString());
+                    item.SubItems.Add(getStringPrecioDisponibilidad(vuelo.Tarifas[isEconomy ? 0 : 3]));
+                    item.SubItems.Add(getStringPrecioDisponibilidad(vuelo.Tarifas[isEconomy ? 1 : 4]));
+                    item.SubItems.Add(getStringPrecioDisponibilidad(vuelo.Tarifas[isEconomy ? 2 : 5]));
                     item.Tag = vuelo;
 
                     vuelosVueltaListView.Items.Add(item);
                 }
             }
+        }
+
+        private string getStringPrecioDisponibilidad(TarifaVuelo tarifa)
+        {
+            return $"${tarifa.Precio} ({tarifa.Disponibilidad})";
         }
 
         private void soloIdaCheckBox_CheckedChanged(object sender, EventArgs e)
