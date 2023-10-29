@@ -1,5 +1,5 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
-
+using Gungar.CAI.Prototipos._5.Forms;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -17,9 +17,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
-            Itinerario nuevoItinerario = new Itinerario();
-            AlmacenItinerarios.agregarItinerario(nuevoItinerario);
-            menuItinerarioForm = new MenuItinerarioForm(nuevoItinerario);
+            menuItinerarioForm = new MenuItinerarioForm(MenuPrincipalFormModel.GenerarNuevoItinerario());
             menuItinerarioForm.ShowDialog();
         }
 
@@ -43,7 +41,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void salirDelSistemaBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }
