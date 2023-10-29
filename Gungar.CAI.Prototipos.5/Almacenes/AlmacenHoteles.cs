@@ -8,7 +8,6 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
 {
     public static class AlmacenHoteles
     {
-
         // TODO: Martin AlmacenHoteles
     }
 }
