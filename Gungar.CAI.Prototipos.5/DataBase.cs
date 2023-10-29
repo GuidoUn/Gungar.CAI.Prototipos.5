@@ -26,7 +26,7 @@ namespace Gungar.CAI.Prototipos._5
 
             List<OfertaHotel>? ofertaHotel = JsonSerializer.Deserialize<List<OfertaHotel>>(json, serializerOptions);
 
-         
+
             return ofertaHotel;
         }
 
@@ -39,6 +39,5 @@ namespace Gungar.CAI.Prototipos._5
 
             File.WriteAllText(HOTELES_FILE, JsonSerializer.Serialize(hoteles, serializerOptions));
         }
-
     }
 }

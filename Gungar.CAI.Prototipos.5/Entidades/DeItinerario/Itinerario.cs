@@ -24,7 +24,9 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public List<Pasajero> pasajeros = new List<Pasajero>();
         public DateTime? fechaPrereserva;
         public List<Hotel> hoteles = new List<Hotel>();
-        public List<ReservaHotel> hotelesSeleccionados= new List<ReservaHotel>();
+        public List<ReservaHotel> hotelesSeleccionados = new List<ReservaHotel>();
+        public bool ItinerarioPagado { get; set; }
+
         private void setearValoresIniciales()
         {
             itinerarioId = AlmacenItinerarios.obtenerNuevoId();

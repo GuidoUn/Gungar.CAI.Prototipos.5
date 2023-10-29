@@ -10,7 +10,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public static class HotelesModel
     {
-
         private static List<OfertaHotel>? ofertaHotelesEnAlmacen;
 
         public static List<DateTime> ObtenerRangoDeFechas(DateTime FechaDesde, DateTime FechaHasta)

@@ -8,12 +8,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public class Pasajero
     {
-        public string Nombre;
-        public string Apellido;
-        public string Documento;
-        public string Telefono;
-        public string Email;
-        public string FechaNacimiento;
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Documento { get; set; }
+        public string Telefono { get; set; }
+        public string Email { get; set; }
+        public string FechaNacimiento { get; set; }
 
         public Pasajero(string nombre, string apellido, string documento, string telefono, string email, string fechaNacimiento)
         {

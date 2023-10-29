@@ -9,37 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
+using Gungar.CAI.Prototipos._5.Forms.Productos;
 
 namespace Gungar.CAI.Prototipos._5
 {
     public partial class VuelosForm : Form
     {
-        Itinerario? itinerario;
-        bool esConsulta = false;
-        bool esSoloIda = false;
-
         DateTime? fechaIdaSeleccionada = null;
         DateTime? fechaVueltaSeleccionada = null;
+
+        VuelosModel Model { get; set; }
 
         public VuelosForm(Itinerario? itinerario)
         {
             InitializeComponent();
-            if (itinerario == null)
-            {
-                esConsulta = true;
-            }
-            else
-            {
-                this.itinerario = itinerario;
-            }
+            Model = new VuelosModel(itinerario);
         }
 
         const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
 
         private void VuelosForm_Load(object sender, EventArgs e)
         {
-
-            if (esConsulta)
+            if (Model.EsConsulta)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";
@@ -47,8 +38,9 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = $"{itinerario?.cliente?.nombre} ({itinerario?.itinerarioId})";
+                itinerarioLabel.Text = $"{Model.Itinerario?.cliente?.nombre} ({Model.Itinerario?.itinerarioId})";
             }
+
             clasesCombo.SelectedItem = clasesCombo.Items[0];
             cantidadAdultosNumeric.Value = 1;
 
@@ -56,7 +48,6 @@ namespace Gungar.CAI.Prototipos._5
             vueltaDatePicker.MinDate = DateTime.Now;
 
             borrarFechas();
-
             refrescar();
         }
 
@@ -64,11 +55,20 @@ namespace Gungar.CAI.Prototipos._5
         {
             idaDatePicker.Format = DateTimePickerFormat.Custom;
             idaDatePicker.CustomFormat = " ";
-            fechaIdaSeleccionada = null;
 
             vueltaDatePicker.Format = DateTimePickerFormat.Custom;
             vueltaDatePicker.CustomFormat = " ";
+
+            fechaIdaSeleccionada = null;
             fechaVueltaSeleccionada = null;
+        }
+
+        private void refrescar()
+        {
+            vueltaBox.Visible = !Model.EsSoloIda;
+            vueltaLabel.Visible = !Model.EsSoloIda;
+            vueltaDatePicker.Visible = !Model.EsSoloIda;
+            aplicarFiltrosBtn.Enabled = cantidadAdultosNumeric.Value > 0;
         }
 
         private void poblarVuelos()
@@ -77,7 +77,7 @@ namespace Gungar.CAI.Prototipos._5
             vuelosVueltaListView.Items.Clear();
             bool isEconomy = clasesCombo.SelectedIndex == 0;
 
-            List<OfertaVuelo> vuelosIdaDisponibles = AlmacenVuelos.getVuelos(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaIdaSeleccionada, fechaIdaSeleccionada, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
+            List<OfertaVuelo> vuelosIdaDisponibles = Model.GetVuelosDisponibles(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaIdaSeleccionada, fechaIdaSeleccionada, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
 
             foreach (OfertaVuelo vuelo in vuelosIdaDisponibles)
             {
@@ -97,9 +97,9 @@ namespace Gungar.CAI.Prototipos._5
                 vuelosIdaListView.Items.Add(item);
             }
 
-            if (!esSoloIda && vuelosIdaDisponibles.Count > 0)
+            if (!Model.EsSoloIda && vuelosIdaDisponibles.Count > 0)
             {
-                List<OfertaVuelo> vuelosVueltaDisponibles = AlmacenVuelos.getVuelos(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaVueltaSeleccionada ?? fechaIdaSeleccionada, fechaVueltaSeleccionada ?? null, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
+                List<OfertaVuelo> vuelosVueltaDisponibles = Model.GetVuelosDisponibles(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString()[0], fechaVueltaSeleccionada ?? fechaIdaSeleccionada, fechaVueltaSeleccionada ?? null, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
 
                 foreach (OfertaVuelo vuelo in vuelosVueltaDisponibles)
                 {
@@ -123,16 +123,10 @@ namespace Gungar.CAI.Prototipos._5
 
         private void soloIdaCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            esSoloIda = soloIdaCheckBox.Checked;
+            Model.EsSoloIda = soloIdaCheckBox.Checked;
             refrescar();
         }
-        private void refrescar()
-        {
-            vueltaBox.Visible = !esSoloIda;
-            vueltaLabel.Visible = !esSoloIda;
-            vueltaDatePicker.Visible = !esSoloIda;
-            aplicarFiltrosBtn.Enabled = cantidadAdultosNumeric.Value > 0;
-        }
+
 
         private void aplicarFiltrosBtn_Click(object sender, EventArgs e)
         {
@@ -159,8 +153,6 @@ namespace Gungar.CAI.Prototipos._5
         private void borrarFechasBtn_Click(object sender, EventArgs e)
         {
             borrarFechas();
-            //fechaIdaSeleccionada = null;
-            //fechaVueltaSeleccionada = null;
         }
     }
 }
