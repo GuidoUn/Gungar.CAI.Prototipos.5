@@ -45,7 +45,7 @@ namespace Gungar.CAI.Prototipos._5
             poblarItinerario();
             poblarHotelesAgregados();
             estadoLabel.Text = itinerario?.Estado.ToString();
-            nombreYApellidoLabel.Text = $"{itinerario?.Cliente?.nombre} {itinerario?.Cliente?.apellido}";
+            nombreYApellidoLabel.Text = $"{itinerario?.Cliente?.Nombre} {itinerario?.Cliente?.Apellido}";
             /*if (itinerario.estado == Estado.Cancelada)
             {
                 confirmacionBox.Enabled = false;
@@ -62,7 +62,7 @@ namespace Gungar.CAI.Prototipos._5
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
             itinerarioSeleccionadoLabel.Text = $"{itinerario.ItinerarioId}";
-            nombreYApellidoLabel.Text = $"{itinerario?.Cliente?.nombre} {itinerario?.Cliente?.apellido}";
+            nombreYApellidoLabel.Text = $"{itinerario?.Cliente?.Nombre} {itinerario?.Cliente?.Apellido}";
             refrescar();
             poblarListaPasajeros();
         }

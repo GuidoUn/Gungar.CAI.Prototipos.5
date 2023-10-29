@@ -8,19 +8,19 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public class Cliente
     {
-        public string nombre;
-        public string apellido;
-        public string? documento;
-        public string? email;
-        public string? telefono;
+        public string Nombre;
+        public string Apellido;
+        public string? Documento;
+        public string? Email;
+        public string? Telefono;
 
         public Cliente(string nombre, string apellido, string? documento, string? email, string? telefono)
         {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.documento = documento;
-            this.email = email;
-            this.telefono = telefono;
+            Nombre = nombre;
+            Apellido = apellido;
+            Documento = documento;
+            Email = email;
+            Telefono = telefono;
         }
     }
 }

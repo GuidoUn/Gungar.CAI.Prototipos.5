@@ -38,7 +38,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = $"{Model.Itinerario?.Cliente?.nombre} ({Model.Itinerario?.ItinerarioId})";
+                itinerarioLabel.Text = $"{Model.Itinerario?.Cliente?.Nombre} ({Model.Itinerario?.ItinerarioId})";
             }
 
             clasesCombo.SelectedItem = clasesCombo.Items[0];

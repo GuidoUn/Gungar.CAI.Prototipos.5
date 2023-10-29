@@ -34,8 +34,8 @@ namespace Gungar.CAI.Prototipos._5
             {
                 var item = new ListViewItem();
                 item.Text = itinerario.ItinerarioId.ToString();
-                item.SubItems.Add($"{itinerario?.Cliente?.nombre} {itinerario?.Cliente?.apellido}");
-                item.SubItems.Add(itinerario?.Cliente?.documento);
+                item.SubItems.Add($"{itinerario?.Cliente?.Nombre} {itinerario?.Cliente?.Apellido}");
+                item.SubItems.Add(itinerario?.Cliente?.Documento);
                 item.SubItems.Add(itinerario?.FechaCreacion.ToString(FORMATO_FECHA));
                 item.SubItems.Add(itinerario?.Estado.ToString());
                 item.Tag = itinerario;
@@ -76,7 +76,7 @@ namespace Gungar.CAI.Prototipos._5
             ListViewItem selected = itinerariosListView.SelectedItems[0];
             itinerarioSeleccionado = selected.Tag as Itinerario;
 
-            itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado?.Cliente?.nombre} ({itinerarioSeleccionado?.ItinerarioId})";
+            itinerarioSeleccionadoLabel.Text = $"{itinerarioSeleccionado?.Cliente?.Nombre} ({itinerarioSeleccionado?.ItinerarioId})";
 
             evaluarEstadoBtns();
         }
@@ -111,7 +111,7 @@ namespace Gungar.CAI.Prototipos._5
             var itinerariosFiltrado = AlmacenItinerarios.Itinerarios.First();
             var item = new ListViewItem();
             item.Text = itinerariosFiltrado.ItinerarioId.ToString();
-            item.SubItems.Add(itinerariosFiltrado.Cliente?.nombre);
+            item.SubItems.Add(itinerariosFiltrado.Cliente?.Nombre);
             item.SubItems.Add(itinerariosFiltrado.FechaCreacion.ToString(FORMATO_FECHA));
             item.SubItems.Add(itinerariosFiltrado.Estado.ToString());
             item.Tag = itinerariosFiltrado;

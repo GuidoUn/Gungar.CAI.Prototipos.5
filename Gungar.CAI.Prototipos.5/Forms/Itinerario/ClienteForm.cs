@@ -25,11 +25,11 @@ namespace Gungar.CAI.Prototipos._5
         {
             InitializeComponent();
             this.itinerario = itinerario;
-            this.nombreNuevoCliente = itinerario.Cliente?.nombre;
-            this.apellidoNuevoCliente = itinerario.Cliente?.apellido;
-            this.documentoNuevoCliente = itinerario.Cliente?.documento;
-            this.emailNuevoCliente = itinerario.Cliente?.email;
-            this.telefonoNuevoCliente = itinerario.Cliente?.telefono;
+            this.nombreNuevoCliente = itinerario.Cliente?.Nombre;
+            this.apellidoNuevoCliente = itinerario.Cliente?.Apellido;
+            this.documentoNuevoCliente = itinerario.Cliente?.Documento;
+            this.emailNuevoCliente = itinerario.Cliente?.Email;
+            this.telefonoNuevoCliente = itinerario.Cliente?.Telefono;
             actualizarCampos();
         }
 
