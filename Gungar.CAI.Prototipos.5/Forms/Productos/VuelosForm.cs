@@ -18,12 +18,12 @@ namespace Gungar.CAI.Prototipos._5
         DateTime? fechaIdaSeleccionada = null;
         DateTime? fechaVueltaSeleccionada = null;
 
-        VuelosModel Model { get; set; }
+        VuelosFormModel Model { get; set; }
 
         public VuelosForm(Itinerario? itinerario)
         {
             InitializeComponent();
-            Model = new VuelosModel(itinerario);
+            Model = new VuelosFormModel(itinerario);
         }
 
         const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";

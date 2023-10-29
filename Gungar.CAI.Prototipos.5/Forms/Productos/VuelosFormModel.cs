@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5.Forms.Productos
 {
-    public class VuelosModel
+    public class VuelosFormModel
     {
         public Itinerario? Itinerario { get; set; } = null;
         public bool EsConsulta { get; } = false;
         public bool EsSoloIda { get; set; } = false;
         public bool FormValido { get; set; } = true;
 
-        public VuelosModel(Itinerario? itinerario)
+        public VuelosFormModel(Itinerario? itinerario)
         {
             if (itinerario == null)
             {
@@ -29,7 +29,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos
 
         public List<OfertaVuelo> GetVuelosDisponibles(string origen, string destino, int cantAdulto, int cantMenor, int cantInfante, char clase, DateTime? fechaDesde, DateTime? fechaHasta, int precioMin, int precioMax)
         {
-            return AlmacenVuelos.getVuelos(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde, fechaHasta, precioMin, precioMax);
+            return AlmacenVuelos.GetVuelos(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde, fechaHasta, precioMin, precioMax);
         }
     }
 }
