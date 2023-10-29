@@ -107,9 +107,6 @@ namespace Gungar.CAI.Prototipos._5
 
             agregarDatosForm.ShowDialog();
             refrescar();
-
-            model.GenerarPrereserva();
-            refrescar();
         }
 
         private void salirBtn_Click(object sender, EventArgs e)

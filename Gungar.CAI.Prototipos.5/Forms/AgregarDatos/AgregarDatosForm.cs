@@ -22,7 +22,6 @@ namespace Gungar.CAI.Prototipos._5
 
         Pasajero? pasajeroProductoSeleccionado;
 
-
         ReservaHotel hotelSeleccionado;
 
         bool esPreReserva;
@@ -45,8 +44,6 @@ namespace Gungar.CAI.Prototipos._5
                 item.Tag = reservaHotel;
 
                 productosAgregadosListView.Items.Add(item);
-
-
             }
         }
 
@@ -69,8 +66,8 @@ namespace Gungar.CAI.Prototipos._5
                     pasajerosItinerarioListView.Items.Add(item);
                 }
             }
-
         }
+
         private void poblarListaPasajeros()
         {
             pasajerosProductosListView.Items.Clear();
@@ -101,7 +98,6 @@ namespace Gungar.CAI.Prototipos._5
             poblarListaPasajeros();
 
             poblarProductosAgregados();
-
         }
 
         private void vaciarCampos()
@@ -129,12 +125,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void titleLabel_Click(object sender, EventArgs e)
-        {
-
+            Close();
         }
 
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
@@ -152,13 +143,10 @@ namespace Gungar.CAI.Prototipos._5
             eliminarPasajeroBtn.Enabled = pasajeroProductoSeleccionado != null;
 
             asignarBtn.Enabled = pasajeroSeleccionado != null && hotelSeleccionado != null;
-
-
         }
 
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
-
             itinerario.GenerarPrereserva();
             itinerario.HotelesSeleccionados.ForEach(reservaHotel => HotelesModel.ModificarDisponibilidadHotel(reservaHotel.Hotel, false));
             this.Close();
@@ -193,15 +181,9 @@ namespace Gungar.CAI.Prototipos._5
                 return;
             }
 
-
             pasajeroProductoSeleccionado = (Pasajero)pasajerosProductosListView.SelectedItems[0].Tag;
 
             evaluarVisibilidadBtns();
-        }
-
-        private void editarPasajeroBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

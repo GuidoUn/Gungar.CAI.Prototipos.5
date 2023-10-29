@@ -282,7 +282,6 @@
             titleLabel.Size = new Size(232, 20);
             titleLabel.TabIndex = 25;
             titleLabel.Text = "Agregando Pasajeros al Itinerario:";
-            titleLabel.Click += titleLabel_Click;
             // 
             // eliminarPasajeroBtn
             // 
@@ -400,7 +399,6 @@
             editarPasajeroBtn.TabIndex = 30;
             editarPasajeroBtn.Text = "Editar pasajero";
             editarPasajeroBtn.UseVisualStyleBackColor = true;
-            editarPasajeroBtn.Click += editarPasajeroBtn_Click;
             // 
             // AgregarDatosForm
             // 

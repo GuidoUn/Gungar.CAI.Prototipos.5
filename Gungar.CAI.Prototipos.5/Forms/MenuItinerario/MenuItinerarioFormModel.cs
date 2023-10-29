@@ -15,14 +15,6 @@ namespace Gungar.CAI.Prototipos._5.Forms.MenuItinerario
         {
             Itinerario = itinerario;
         }
-
-        public void GenerarPrereserva()
-        {
-            if (Itinerario.Estado == Estado.Prereserva)
-            {
-                Itinerario.GenerarPrereserva();
-            }
-        }
         public void GenerarReserva()
         {
             Itinerario.GenerarReserva();
