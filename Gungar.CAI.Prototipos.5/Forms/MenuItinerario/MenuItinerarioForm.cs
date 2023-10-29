@@ -9,33 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
+using Gungar.CAI.Prototipos._5.Forms.MenuItinerario;
 
 namespace Gungar.CAI.Prototipos._5
 {
     public partial class MenuItinerarioForm : Form
     {
-        Itinerario? itinerario;
+        MenuItinerarioFormModel model;
 
-        AgregarDatosForm agregarDatosForm;
+        ClienteForm? clienteForm;
+        AgregarDatosForm? agregarDatosForm;
+        VuelosForm? vuelosForm;
+        HotelesForm? hotelesForm;
 
-        VuelosForm vuelosForm;
-        HotelesForm hotelesForm;
-        ClienteForm clienteForm;
-
-        public static List<string[]> productosItinerarios = new List<string[]>
-        {
-             new string[] { "Hotel", "Mendoza", "29/11/2023", "3/12/2023", "$710", "Hilton", "4 estrellas" },
-             new string[] { "Hotel", "Mendoza", "3/12/2023", "10/12/2023", "$310", "Once", "2 estrellas" },
-             new string[] { "Vuelo", "Mendoza", "29/11/2023", "29/11/2023", "$290", "Aerolineas Argentinas", "Economy" },
-             new string[] { "Vuelo", "Mendoza", "3/12/2023", "3/12/2023", "$250", "Aerolineas Argentinas", "Economy" }
-        };
 
         public MenuItinerarioForm(Itinerario itinerario)
         {
             InitializeComponent();
+            model = new MenuItinerarioFormModel(itinerario);
+            // model.Itinerario.EvaluarVencimientoPrereserva(); TODO: Descomentar cuando querramos que a las 48hs venzan las prereservas     
 
-            this.itinerario = itinerario;
-            clienteForm = new ClienteForm(itinerario);
+            //clienteForm = new ClienteForm(itinerario);
             itinerarioSeleccionadoLabel.Text = $"{itinerario.ItinerarioId}";
         }
 
@@ -44,8 +38,8 @@ namespace Gungar.CAI.Prototipos._5
             poblarListaPasajeros();
             poblarItinerario();
             poblarHotelesAgregados();
-            estadoLabel.Text = itinerario?.Estado.ToString();
-            nombreYApellidoLabel.Text = $"{itinerario?.Cliente?.Nombre} {itinerario?.Cliente?.Apellido}";
+            estadoLabel.Text = model.Itinerario?.Estado.ToString();
+            nombreYApellidoLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} {model.Itinerario?.Cliente?.Apellido}";
             /*if (itinerario.estado == Estado.Cancelada)
             {
                 confirmacionBox.Enabled = false;
@@ -53,16 +47,14 @@ namespace Gungar.CAI.Prototipos._5
                 cancelarReservaBtn.Enabled = false;
                 return;
             }*/
-            confirmacionBox.Enabled = !(itinerario.HotelesSeleccionados.Count == 0 || itinerario.Estado == Estado.Pagada);
-            gestionarItinerarioBox.Enabled = itinerario.Estado == Estado.Presupuesto;
-
-
+            confirmacionBox.Enabled = !(model.Itinerario?.HotelesSeleccionados.Count == 0 || model.Itinerario?.Estado == Estado.Pagada);
+            gestionarItinerarioBox.Enabled = model?.Itinerario?.Estado == Estado.Presupuesto;
         }
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
-            itinerarioSeleccionadoLabel.Text = $"{itinerario.ItinerarioId}";
-            nombreYApellidoLabel.Text = $"{itinerario?.Cliente?.Nombre} {itinerario?.Cliente?.Apellido}";
+            itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
+            nombreYApellidoLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} {model.Itinerario?.Cliente?.Apellido}";
             refrescar();
             poblarListaPasajeros();
         }
@@ -71,7 +63,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             pasajerosListView.Items.Clear();
 
-            foreach (var pasajero in itinerario.Pasajeros)
+            foreach (var pasajero in model.Itinerario.Pasajeros)
             {
                 var item = new ListViewItem();
                 item.Text = pasajero.Nombre + " " + pasajero.Apellido;
@@ -84,107 +76,99 @@ namespace Gungar.CAI.Prototipos._5
 
         private void poblarItinerario()
         {
-            productosAgregadosListView.Items.Clear();
-            foreach (var producto in productosItinerarios)
-            {
-                var item = new ListViewItem();
-                item.Text = producto[0];
-                item.SubItems.Add(producto[1]);
-                item.SubItems.Add(producto[2]);
-                item.SubItems.Add(producto[3]);
-                item.SubItems.Add(producto[4]);
-                item.SubItems.Add(producto[5]);
-                item.SubItems.Add(producto[6]);
-                item.Tag = producto;
+            // TODO: Agregar los productos
+            //productosAgregadosListView.Items.Clear();
+            //foreach (var producto in model.Itinerario.)
+            //{
+            //    var item = new ListViewItem();
+            //    item.Text = producto[0];
+            //    item.SubItems.Add(producto[1]);
+            //    item.SubItems.Add(producto[2]);
+            //    item.SubItems.Add(producto[3]);
+            //    item.SubItems.Add(producto[4]);
+            //    item.SubItems.Add(producto[5]);
+            //    item.SubItems.Add(producto[6]);
+            //    item.Tag = producto;
 
-                productosAgregadosListView.Items.Add(item);
-            }
+            //    productosAgregadosListView.Items.Add(item);
+            //}
         }
 
         private void hotelesBtn_Click(object sender, EventArgs e)
         {
-            hotelesForm = new HotelesForm(itinerario);
+            hotelesForm = new HotelesForm(model.Itinerario);
             hotelesForm.ShowDialog();
             refrescar();
         }
 
-
-
         private void generarPreReserva_Click(object sender, EventArgs e)
         {
-            agregarDatosForm = new AgregarDatosForm(itinerario, true);
+            agregarDatosForm = new AgregarDatosForm(model.Itinerario, true);
 
             agregarDatosForm.ShowDialog();
             refrescar();
 
-            if (itinerario.Estado == Estado.Presupuesto)
-            {
-                itinerario.GenerarPrereserva();
-                itinerario.Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false));
-
-            }
-            else
-            {
-
-            }
+            model.GenerarPrereserva();
+            refrescar();
         }
 
         private void salirBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void generarReservaBtn_Click(object sender, EventArgs e)
         {
-            agregarDatosForm = new AgregarDatosForm(itinerario, false);
-            agregarDatosForm.ShowDialog();
-            refrescar();
+            if (model.Itinerario.Estado == Estado.Presupuesto)
+            {
+                agregarDatosForm = new AgregarDatosForm(model.Itinerario, false);
+                agregarDatosForm.ShowDialog();
+                refrescar();
+            }
 
-            var confirmar = MessageBox.Show("Esta seguro de que desea confirmar la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult confirmar = MessageBox.Show("Esta seguro de que desea confirmar la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
-                itinerario.Estado = Estado.Pagada;
-                itinerario.Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false));
+                model.GenerarReserva();
                 refrescar();
-
             }
         }
 
         private void clienteBtn_Click(object sender, EventArgs e)
         {
+            clienteForm = new ClienteForm(model.Itinerario);
             clienteForm.ShowDialog();
             refrescar();
         }
 
         private void cancelarReservaBtn_Click(object sender, EventArgs e)
         {
-
-            var confirmar = MessageBox.Show("Esta seguro de que desea CANCELAR la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult confirmar = MessageBox.Show("Esta seguro de que desea CANCELAR la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
-                itinerario.Estado = Estado.Cancelada;
-                itinerario.Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
+                model.CancelarItinerario();
                 refrescar();
             }
         }
 
         private void vuelosBtn_Click(object sender, EventArgs e)
         {
-            vuelosForm = new VuelosForm(itinerario);
+            vuelosForm = new VuelosForm(model.Itinerario);
             vuelosForm.ShowDialog();
             refrescar();
         }
+
         private void poblarHotelesAgregados()
         {
             hotelesAgregadosListView.Items.Clear();
-            foreach (var reservaHotel in itinerario.HotelesSeleccionados)
+            foreach (var reservaHotel in model.Itinerario.HotelesSeleccionados)
             {
                 var item = new ListViewItem();
                 item.Text = reservaHotel.Hotel.Disponibilidad.Nombre;
                 item.SubItems.Add(OfertaHotel.CodigoACiudad[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
-                item.SubItems.Add("$ " + HotelesModel.ObtenerPrecioTotal(itinerario.Hoteles).ToString());
+                item.SubItems.Add("$ " + HotelesModel.ObtenerPrecioTotal(model.Itinerario.Hoteles).ToString());
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
                 item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
                 item.Tag = reservaHotel;
