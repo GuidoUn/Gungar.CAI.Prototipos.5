@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5
 {
-    public static class DataBase
+    public static class DataBase // TODO: Reemplazar por AlmacenHoteles
     {
         static JsonSerializerOptions serializerOptions = new JsonSerializerOptions { IncludeFields = true };
 

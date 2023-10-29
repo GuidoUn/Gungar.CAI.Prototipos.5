@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5
 {
-    public static class HotelesModel
+    public static class HotelesModel // TODO: Reemplazar por AlmacenHoteles y HotelesFormModel
     {
         private static List<OfertaHotel>? ofertaHotelesEnAlmacen;
 
