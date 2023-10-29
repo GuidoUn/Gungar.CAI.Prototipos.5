@@ -53,8 +53,18 @@ namespace Gungar.CAI.Prototipos._5
                 cancelarReservaBtn.Enabled = false;
                 return;
             }*/
-            confirmacionBox.Enabled = !(model.Itinerario?.HotelesSeleccionados.Count == 0 || model.Itinerario?.Estado == Estado.Pagada);
+            //confirmacionBox.Enabled = !(model.Itinerario?.HotelesSeleccionados.Count == 0 || model.Itinerario?.Estado == Estado.Reserva);
+            generarPreReservaBtn.Enabled = model.puedePrereserva();
+            generarReservaBtn.Enabled = model.PuedeReserva();
             gestionarItinerarioBox.Enabled = model?.Itinerario?.Estado == Estado.Presupuesto;
+            if (model?.Itinerario?.ItinerarioPagado == true)
+            {
+                abonadoLabel.Text = "Itinerario Abonado: Si";
+            }
+            else
+            {
+                abonadoLabel.Text = "Itinerario Abonado: No";
+            }
         }
 
         private void poblarListaPasajeros()
@@ -139,7 +149,7 @@ namespace Gungar.CAI.Prototipos._5
             foreach (ReservaHotel reservaHotel in model.Itinerario.HotelesSeleccionados)
             {
                 ListViewItem item = new ListViewItem();
-                item.Text = reservaHotel.Hotel.Disponibilidad.Nombre;
+                item.Text = reservaHotel.Hotel.Disponibilidad?.Nombre;
                 item.SubItems.Add(OfertaHotel.CodigoACiudad[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());

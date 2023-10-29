@@ -9,11 +9,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public enum Estado
     {
-        Presupuesto = 0,
-        Prereserva = 1,
-        Pagada = 2,
-        Confirmada = 3,
-        Cancelada = 4
+        Presupuesto = 0,    // Inicial
+        Prereserva = 1,     // Dura 48hs
+        Reserva = 2,        // Pagó
+        Confirmada = 3,     // Se confirmó con los proveedores
+        Cancelada = 4       // RIP
     }
 
     public class Itinerario
@@ -27,7 +27,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public List<Hotel> Hoteles { get; set; } = new List<Hotel>();
         public List<ReservaHotel> HotelesSeleccionados { get; set; } = new List<ReservaHotel>();
         public List<ReservaVuelo> VuelosAgregados { get; set; } = new List<ReservaVuelo>();
-        public bool ItinerarioPagado { get; set; }
+        public bool ItinerarioPagado { get; set; } = false;
 
         public Itinerario()
         {
@@ -50,13 +50,13 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         public void GenerarReserva()
         {
-            Estado = Estado.Pagada;
+            Estado = Estado.Reserva;
             BloquearDisponibilidadProductos();
         }
 
         public void EvaluarVencimientoPrereserva()
         {
-            if (Estado == Estado.Prereserva)
+            if (Estado == Estado.Prereserva && ItinerarioPagado == false)
             {
                 TimeSpan diferenciaDeHoras = DateTime.Now.Subtract(FechaPrereserva ?? DateTime.Now);
                 if (diferenciaDeHoras.TotalDays > 2)
@@ -70,7 +70,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         {
             Estado = Estado.Cancelada;
             LiberarDisponibilidadProductos();
-
         }
 
         private void BloquearDisponibilidadProductos()

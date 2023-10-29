@@ -24,5 +24,28 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
         {
             Itinerario.CancelarItinerario();
         }
+
+        private bool puedeConfirmar()
+        {
+            if (Itinerario.Estado != Estado.Presupuesto && Itinerario.Estado != Estado.Prereserva)
+                return false;
+
+            return (Itinerario.HotelesSeleccionados.Count > 0 || Itinerario.VuelosAgregados.Count > 0) && Itinerario.Cliente != null;
+        }
+
+        public bool puedePrereserva()
+        {
+            return Itinerario.Estado == Estado.Presupuesto && puedeConfirmar();
+        }
+
+        public bool PuedeReserva()
+        {
+            return puedeConfirmar() && Itinerario.ItinerarioPagado;
+        }
+
+        //public bool GetPagado()
+        //{
+        //    return Itinerario.ItinerarioPagado;
+        //}
     }
 }

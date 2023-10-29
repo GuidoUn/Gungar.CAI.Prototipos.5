@@ -66,6 +66,7 @@
             columnHeader12 = new ColumnHeader();
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
+            abonadoLabel = new Label();
             confirmacionBox.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
@@ -362,11 +363,21 @@
             columnHeader14.Text = "Categoria";
             columnHeader14.Width = 80;
             // 
+            // abonadoLabel
+            // 
+            abonadoLabel.AutoSize = true;
+            abonadoLabel.Location = new Point(449, 38);
+            abonadoLabel.Name = "abonadoLabel";
+            abonadoLabel.Size = new Size(82, 15);
+            abonadoLabel.TabIndex = 19;
+            abonadoLabel.Text = "abonadoLabel";
+            // 
             // MenuItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1343, 864);
+            Controls.Add(abonadoLabel);
             Controls.Add(label7);
             Controls.Add(hotelesAgregadosListView);
             Controls.Add(cancelarReservaBtn);
@@ -437,5 +448,6 @@
         private ColumnHeader columnHeader13;
         private ColumnHeader columnHeader14;
         private ListView hotelesAgregadosListView;
+        private Label abonadoLabel;
     }
 }
