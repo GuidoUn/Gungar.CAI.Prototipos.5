@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5.Forms
+namespace Gungar.CAI.Prototipos._5.Forms.MenuPrincipal
 {
     public static class MenuPrincipalFormModel
     {

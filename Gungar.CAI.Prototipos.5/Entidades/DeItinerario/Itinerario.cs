@@ -41,16 +41,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             Cliente = cliente;
         }
 
-        public void AgregarPasajero(Pasajero pasajero)
-        {
-            Pasajeros.Add(pasajero);
-        }
-
-        public void EliminarPasajero(Pasajero pasajero)
-        {
-            Pasajeros.Remove(pasajero);
-        }
-
         public void GenerarPrereserva()
         {
             Estado = Estado.Prereserva;
@@ -95,7 +85,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             // TODO: Liberar vuelos
         }
 
-        public void AgregarHotel(Hotel hotel)
+        public void AgregarHotel(Hotel hotel) // TODO: Esto se necesita?
         {
             Hoteles.Add(hotel);
         }
