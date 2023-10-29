@@ -198,5 +198,10 @@ namespace Gungar.CAI.Prototipos._5
 
             evaluarVisibilidadBtns();
         }
+
+        private void editarPasajeroBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
