@@ -11,8 +11,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public static class AlmacenItinerarios
     {
-        static JsonSerializerOptions serializerOptions = new JsonSerializerOptions { IncludeFields = true };
-
         const string FILE_LOCATION = @"..\..\..\Archivos\Itinerarios.json";
 
         public static List<Itinerario> Itinerarios { get; set; } = new List<Itinerario>();
@@ -23,7 +21,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 string json = File.ReadAllText(FILE_LOCATION);
 
-                Itinerarios = JsonSerializer.Deserialize<List<Itinerario>>(json, serializerOptions) ?? new List<Itinerario>();
+                Itinerarios = JsonSerializer.Deserialize<List<Itinerario>>(json) ?? new List<Itinerario>();
             }
         }
 
@@ -34,7 +32,7 @@ namespace Gungar.CAI.Prototipos._5
                 File.Delete(FILE_LOCATION);
             }
 
-            File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(Itinerarios, serializerOptions));
+            File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(Itinerarios));
         }
         public static void agregarItinerario(Itinerario itinerario)
         {

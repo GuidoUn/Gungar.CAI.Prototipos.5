@@ -8,11 +8,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public class Cliente
     {
-        public string Nombre;
-        public string Apellido;
-        public string? Documento;
-        public string? Email;
-        public string? Telefono;
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string? Documento { get; set; }
+        public string? Email { get; set; }
+        public string? Telefono { get; set; }
 
         public Cliente(string nombre, string apellido, string? documento, string? email, string? telefono)
         {
