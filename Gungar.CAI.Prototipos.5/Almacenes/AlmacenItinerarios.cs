@@ -53,5 +53,24 @@ namespace Gungar.CAI.Prototipos._5
             }
             return Itinerarios.Last().ItinerarioId + 1;
         }
+
+        public static List<Itinerario> GetItinerariosFiltrados(string textoBusqueda)
+        {
+            List<Itinerario> ItinerarioFiltrados = Itinerarios.Where(itinerario =>
+            {
+                if (itinerario.ItinerarioId.ToString().Contains(textoBusqueda))
+                    return true;
+                if (itinerario.Cliente == null)
+                    return false;
+                if (itinerario.Cliente.GetNombreYApellido().Contains(textoBusqueda))
+                    return true;
+                if (itinerario.Cliente.Documento != null && itinerario.Cliente.Documento.Contains(textoBusqueda))
+                    return true;
+
+                return false;
+            }).ToList();
+
+            return ItinerarioFiltrados;
+        }
     }
 }

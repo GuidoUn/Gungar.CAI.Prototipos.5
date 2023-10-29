@@ -22,5 +22,10 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             Email = email;
             Telefono = telefono;
         }
+
+        public string GetNombreYApellido()
+        {
+            return $"{Nombre} {Apellido}";
+        }
     }
 }

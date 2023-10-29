@@ -33,8 +33,6 @@
             continuarBtn = new Button();
             parametroTextBox = new TextBox();
             origenLabel = new Label();
-            filtroLabel = new Label();
-            parametrosCombo = new ComboBox();
             filtrarBtn = new Button();
             itinerariosListView = new ListView();
             nroHeader = new ColumnHeader();
@@ -78,44 +76,23 @@
             // 
             // parametroTextBox
             // 
-            parametroTextBox.Location = new Point(336, 72);
+            parametroTextBox.Location = new Point(85, 66);
             parametroTextBox.Name = "parametroTextBox";
-            parametroTextBox.Size = new Size(231, 23);
+            parametroTextBox.Size = new Size(438, 23);
             parametroTextBox.TabIndex = 24;
-            parametroTextBox.TextChanged += origenText_TextChanged;
             // 
             // origenLabel
             // 
             origenLabel.AutoSize = true;
-            origenLabel.Location = new Point(336, 54);
+            origenLabel.Location = new Point(85, 48);
             origenLabel.Name = "origenLabel";
-            origenLabel.Size = new Size(187, 15);
+            origenLabel.Size = new Size(400, 15);
             origenLabel.TabIndex = 23;
-            origenLabel.Text = "Ingrese el parámetro seleccionado";
-            // 
-            // filtroLabel
-            // 
-            filtroLabel.AutoSize = true;
-            filtroLabel.Location = new Point(85, 54);
-            filtroLabel.Name = "filtroLabel";
-            filtroLabel.Size = new Size(204, 15);
-            filtroLabel.TabIndex = 25;
-            filtroLabel.Text = "Seleccione el parámetro de búsqueda";
-            // 
-            // parametrosCombo
-            // 
-            parametrosCombo.FormattingEnabled = true;
-            parametrosCombo.Items.AddRange(new object[] { "Sin Filtro", "Nombre", "Documento", "Numero Itininerario" });
-            parametrosCombo.Location = new Point(85, 72);
-            parametrosCombo.Name = "parametrosCombo";
-            parametrosCombo.Size = new Size(204, 23);
-            parametrosCombo.TabIndex = 26;
-            parametrosCombo.SelectedIndexChanged += parametrosCombo_SelectedIndexChanged;
+            origenLabel.Text = "Dato de búsqueda (Número de Itinerario, Nombre, Apellido o Documento)";
             // 
             // filtrarBtn
             // 
-            filtrarBtn.Enabled = false;
-            filtrarBtn.Location = new Point(602, 72);
+            filtrarBtn.Location = new Point(530, 66);
             filtrarBtn.Name = "filtrarBtn";
             filtrarBtn.Size = new Size(103, 23);
             filtrarBtn.TabIndex = 27;
@@ -199,9 +176,7 @@
             Controls.Add(itinerarioSeleccionadoLabel);
             Controls.Add(filtrarBtn);
             Controls.Add(label4);
-            Controls.Add(filtroLabel);
             Controls.Add(itinerariosListView);
-            Controls.Add(parametrosCombo);
             Controls.Add(parametroTextBox);
             Controls.Add(origenLabel);
             Controls.Add(continuarBtn);
@@ -220,8 +195,6 @@
         private Button continuarBtn;
         private TextBox origenText;
         private Label origenLabel;
-        private Label filtroLabel;
-        private ComboBox parametrosCombo;
         private Button filtrarBtn;
         private TextBox parametroTextBox;
         private ListView itinerariosListView;
