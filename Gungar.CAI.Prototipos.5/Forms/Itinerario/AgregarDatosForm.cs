@@ -20,20 +20,66 @@ namespace Gungar.CAI.Prototipos._5
 
         Pasajero? pasajeroSeleccionado;
 
+        Pasajero? pasajeroProductoSeleccionado;
+
+
+        ReservaHotel hotelSeleccionado;
+
         bool esPreReserva;
 
-        public AgregarDatosForm(Itinerario itinerario,bool esPreReserva)
+        public AgregarDatosForm(Itinerario itinerario, bool esPreReserva)
         {
             InitializeComponent();
             this.itinerario = itinerario;
             this.esPreReserva = esPreReserva;
         }
-
-        private void poblarLista()
+        private void poblarProductosAgregados()
         {
-            pasajerosListView.Items.Clear();
+            productosAgregadosListView.Items.Clear();
+            foreach (var reservaHotel in itinerario.hotelesSeleccionados)
+            {
 
-            foreach (var pasajero in itinerario.pasajeros)
+                var item = new ListViewItem();
+                item.Text = reservaHotel.Hotel.NombreHotel;
+                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
+                item.Tag = reservaHotel;
+
+                productosAgregadosListView.Items.Add(item);
+
+
+            }
+        }
+
+        private void poblarListaTotalDePasajerosItinerario()
+        {
+            pasajerosItinerarioListView.Items.Clear();
+            foreach (var hotel in itinerario.hotelesSeleccionados)
+            {
+                foreach (var pasajero in hotel.Pasajeros)
+                {
+                    var item = new ListViewItem();
+                    item.Text = pasajero.Nombre;
+                    item.SubItems.Add(pasajero.Apellido);
+                    item.SubItems.Add(pasajero.Documento);
+                    item.SubItems.Add(pasajero.Email);
+                    item.SubItems.Add(pasajero.Telefono);
+                    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                    item.Tag = pasajero;
+
+                    pasajerosItinerarioListView.Items.Add(item);
+                }
+            }
+
+        }
+        private void poblarListaPasajeros()
+        {
+            pasajerosProductosListView.Items.Clear();
+            if (hotelSeleccionado == null)
+            {
+                return;
+            }
+
+            foreach (var pasajero in hotelSeleccionado.Pasajeros)
             {
                 var item = new ListViewItem();
                 item.Text = pasajero.Nombre;
@@ -44,14 +90,19 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(pasajero.FechaNacimiento.ToString());
                 item.Tag = pasajero;
 
-                pasajerosListView.Items.Add(item);
+                pasajerosProductosListView.Items.Add(item);
             }
+
+
         }
         private void AgregarDatosForm_Load(object sender, EventArgs e)
         {
             itinerarioLabel.Text = $"{itinerario?.cliente?.nombre} ({itinerario.itinerarioId})";
 
-            poblarLista();
+            poblarListaPasajeros();
+
+            poblarProductosAgregados();
+
         }
 
         private void vaciarCampos()
@@ -68,9 +119,12 @@ namespace Gungar.CAI.Prototipos._5
         {
             Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, emailTextBox.Text, telefonoTextBox.Text, fechaNacDatePicker.Value.ToString(FORMATO_FECHA));
 
-            itinerario.AgregarPasajero(nuevoPasajero);
+            if (hotelSeleccionado == null) return;
+            hotelSeleccionado.Pasajeros.Add(nuevoPasajero);
 
-            poblarLista();
+
+            poblarListaPasajeros();
+            poblarListaTotalDePasajerosItinerario();
             vaciarCampos();
         }
 
@@ -83,41 +137,67 @@ namespace Gungar.CAI.Prototipos._5
         {
 
         }
-        private void pasajerosListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (pasajerosListView.SelectedItems.Count == 0)
-            {
-                return;
-            }
-
-            ListViewItem selected = pasajerosListView.SelectedItems[0];
-
-            pasajeroSeleccionado = selected.Tag as Pasajero;
-
-            evaluarVisibilidadBtns();
-        }
 
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
-            itinerario.EliminarPasajero(pasajeroSeleccionado);
-            pasajeroSeleccionado = null;
-            poblarLista();
+            hotelSeleccionado.Pasajeros.Remove(pasajeroProductoSeleccionado);
+            pasajeroProductoSeleccionado = null;
+            poblarListaPasajeros();
+            poblarListaTotalDePasajerosItinerario();
             evaluarVisibilidadBtns();
         }
 
 
         private void evaluarVisibilidadBtns()
         {
-            eliminarPasajeroBtn.Enabled = pasajeroSeleccionado != null;
+            eliminarPasajeroBtn.Enabled = pasajeroProductoSeleccionado != null;
+
+            asignarBtn.Enabled = pasajeroSeleccionado != null && hotelSeleccionado != null;
+
 
         }
 
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
-            
+
             itinerario.GenerarPrereserva();
-            itinerario.hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false));
+            itinerario.hotelesSeleccionados.ForEach(reservaHotel => HotelesModel.ModificarDisponibilidadHotel(reservaHotel.Hotel, false));
             this.Close();
+        }
+
+        private void productosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (productosAgregadosListView.SelectedItems.Count == 0) return;
+            hotelSeleccionado = (ReservaHotel)productosAgregadosListView.SelectedItems[0].Tag;
+            poblarListaPasajeros();
+            evaluarVisibilidadBtns();
+        }
+
+        private void pasajerosItinerarioListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (pasajerosItinerarioListView.SelectedItems.Count == 0) return;
+            pasajeroSeleccionado = (Pasajero)pasajerosItinerarioListView.SelectedItems[0].Tag;
+            evaluarVisibilidadBtns();
+        }
+
+        private void asignarBtn_Click(object sender, EventArgs e)
+        {
+            if (pasajeroSeleccionado == null || hotelSeleccionado == null) return;
+            hotelSeleccionado.Pasajeros.Add(pasajeroSeleccionado);
+            poblarListaPasajeros();
+        }
+
+        private void pasajerosProductosListView_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (pasajerosProductosListView.SelectedItems.Count == 0)
+            {
+                return;
+            }
+
+
+            pasajeroProductoSeleccionado = (Pasajero)pasajerosProductosListView.SelectedItems[0].Tag;
+
+            evaluarVisibilidadBtns();
         }
     }
 }

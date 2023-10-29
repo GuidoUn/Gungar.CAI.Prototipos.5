@@ -53,7 +53,7 @@ namespace Gungar.CAI.Prototipos._5
                 cancelarReservaBtn.Enabled = false;
                 return;
             }*/
-            confirmacionBox.Enabled = !(itinerario.hoteles.Count == 0 || itinerario.estado == Estado.Pagada);
+            confirmacionBox.Enabled = !(itinerario.hotelesSeleccionados.Count == 0 || itinerario.estado == Estado.Pagada);
             gestionarItinerarioBox.Enabled = itinerario.estado == Estado.Presupuesto;
 
 
@@ -177,17 +177,17 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarHotelesAgregados()
         {
             hotelesAgregadosListView.Items.Clear();
-            foreach (var hotel in itinerario.hoteles)
+            foreach (var reservaHotel in itinerario.hotelesSeleccionados)
             {
                 var item = new ListViewItem();
-                item.Text = hotel.Disponibilidad.Nombre;
-                item.SubItems.Add(OfertaHotel.CodigoACiudad[hotel.CodigoCiudad]);
-                item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
-                item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
+                item.Text = reservaHotel.Hotel.Disponibilidad.Nombre;
+                item.SubItems.Add(OfertaHotel.CodigoACiudad[reservaHotel.Hotel.CodigoCiudad]);
+                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
+                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add("$ " + HotelesModel.ObtenerPrecioTotal(itinerario.hoteles).ToString());
-                item.SubItems.Add(hotel.NombreHotel);
-                item.SubItems.Add(hotel.Calificacion.ToString());
-                item.Tag = hotel;
+                item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
+                item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
+                item.Tag = reservaHotel;
 
                 hotelesAgregadosListView.Items.Add(item);
             }

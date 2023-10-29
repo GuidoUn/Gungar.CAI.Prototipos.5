@@ -15,16 +15,16 @@ namespace Gungar.CAI.Prototipos._5
 
         public static List<DateTime> ObtenerRangoDeFechas(DateTime FechaDesde, DateTime FechaHasta)
         {
-            List<DateTime> dateList = new List<DateTime>();
+            List<DateTime> listaDeFechas = new List<DateTime>();
 
-            DateTime currentDate = FechaDesde.Date;
-            while (currentDate <= FechaHasta.Date)
+            DateTime fechaEnUso = FechaDesde.Date;
+            while (fechaEnUso <= FechaHasta.Date)
             {
-                dateList.Add(currentDate);
-                currentDate = currentDate.AddDays(1);
+                listaDeFechas.Add(fechaEnUso);
+                fechaEnUso = fechaEnUso.AddDays(1);
             }
-            Console.WriteLine(dateList.ToString());
-            return dateList;
+            Console.WriteLine(listaDeFechas.ToString());
+            return listaDeFechas;
         }
         private static bool estaEntreFechas(List<DateTime> fechaOcupadasHotel, DateTime? fechaDesde, DateTime? fechaHasta)
         {

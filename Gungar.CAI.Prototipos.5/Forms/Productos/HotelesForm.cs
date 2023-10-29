@@ -101,17 +101,17 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarProductosAgregados()
         {
             itinerarioListView.Items.Clear();
-            foreach (var hotel in itinerario.hoteles)
+            foreach (var reservaHotel in itinerario.hotelesSeleccionados)
             {
-                var item = new ListViewItem();
-                item.Text = hotel.NombreHotel;
-                item.SubItems.Add(hotel.Disponibilidad.Nombre);
+               
+                    var item = new ListViewItem();
+                    item.Text = reservaHotel.Hotel.NombreHotel;
+                    item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
+                    item.Tag = reservaHotel;
 
-
-
-                item.Tag = hotel;
-
-                itinerarioListView.Items.Add(item);
+                    itinerarioListView.Items.Add(item);
+                
+                
             }
         }
 
@@ -134,13 +134,6 @@ namespace Gungar.CAI.Prototipos._5
 
         private void borrarFechas()
         {
-            /*desdeFechaDatePicker.Format = DateTimePickerFormat.Custom;
-            desdeFechaDatePicker.CustomFormat = " ";
-            desdeFechaSeleccionada = DateTime.MinValue;
-
-            hastaFechaDatePicker.Format = DateTimePickerFormat.Custom;
-            hastaFechaDatePicker.CustomFormat = " ";
-            hastaFechaSeleccionada = DateTime.MaxValue;*/
             desdeFechaDatePicker.Value = DateTime.Now;
             hastaFechaDatePicker.Value = DateTime.Now;
         }
@@ -168,7 +161,8 @@ namespace Gungar.CAI.Prototipos._5
             }
             hotelAAgregar.FechaDesde = desdeFechaSeleccionada;
             hotelAAgregar.FechaHasta = hastaFechaSeleccionada;
-            itinerario.AgregarHotel(hotelAAgregar);
+            ReservaHotel reservaHotel = new ReservaHotel(hotelAAgregar);
+            itinerario.AgregarReservaHotel(reservaHotel);
             poblarProductosAgregados();
         }
     }
