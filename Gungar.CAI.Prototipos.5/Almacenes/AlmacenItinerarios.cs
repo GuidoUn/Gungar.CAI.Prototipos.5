@@ -56,15 +56,16 @@ namespace Gungar.CAI.Prototipos._5
 
         public static List<Itinerario> GetItinerariosFiltrados(string textoBusqueda)
         {
+            string textoBusquedaLower = textoBusqueda.ToLower();
             List<Itinerario> ItinerarioFiltrados = Itinerarios.Where(itinerario =>
             {
-                if (itinerario.ItinerarioId.ToString().Contains(textoBusqueda))
+                if (itinerario.ItinerarioId.ToString().ToLower().Contains(textoBusquedaLower))
                     return true;
                 if (itinerario.Cliente == null)
                     return false;
-                if (itinerario.Cliente.GetNombreYApellido().Contains(textoBusqueda))
+                if (itinerario.Cliente.GetNombreYApellido().ToLower().Contains(textoBusquedaLower))
                     return true;
-                if (itinerario.Cliente.Documento != null && itinerario.Cliente.Documento.Contains(textoBusqueda))
+                if (itinerario.Cliente.Documento != null && itinerario.Cliente.Documento.ToLower().Contains(textoBusquedaLower))
                     return true;
 
                 return false;
