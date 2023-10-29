@@ -126,6 +126,9 @@ namespace Gungar.CAI.Prototipos._5
 
         private string getStringPrecioDisponibilidad(TarifaVuelo tarifa)
         {
+            if (tarifa.Disponibilidad == 0)
+                return $"-";
+
             return $"${tarifa.Precio} ({tarifa.Disponibilidad})";
         }
 
