@@ -11,8 +11,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public static class AlmacenVuelos
     {
-        static JsonSerializerOptions serializerOptions = new JsonSerializerOptions { IncludeFields = true };
-
         const string FILE_LOCATION = @"..\..\..\Archivos\Vuelos.json";
 
         public static List<OfertaVuelo> OfertaVuelos { get; set; } = new List<OfertaVuelo>();
@@ -23,7 +21,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 string json = File.ReadAllText(FILE_LOCATION);
 
-                OfertaVuelos = JsonSerializer.Deserialize<List<OfertaVuelo>>(json, serializerOptions) ?? new List<OfertaVuelo>();
+                OfertaVuelos = JsonSerializer.Deserialize<List<OfertaVuelo>>(json) ?? new List<OfertaVuelo>();
             }
         }
 
@@ -34,7 +32,7 @@ namespace Gungar.CAI.Prototipos._5
                 File.Delete(FILE_LOCATION);
             }
 
-            File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(OfertaVuelos, serializerOptions));
+            File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(OfertaVuelos));
         }
 
         public static List<OfertaVuelo> GetVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int? precioMinimo = null, int? precioMaximo = null)
@@ -49,7 +47,6 @@ namespace Gungar.CAI.Prototipos._5
                     return false;
                 if (!vuelo.Tarifas.Exists(tarifa => tarifa.Clase == clase))
                     return false;
-
 
                 // Todo: Terminar filtros
 

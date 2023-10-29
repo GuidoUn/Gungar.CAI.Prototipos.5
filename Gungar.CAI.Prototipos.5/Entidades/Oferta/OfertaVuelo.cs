@@ -10,10 +10,10 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 
     public class TarifaVuelo
     {
-        public char Clase; // E, P, B, F
-        public string TipoDePasajero; // A, M, I
-        public float Precio;
-        public int Disponibilidad; // Cantidad de asientos disponibles
+        public char Clase { get; set; } // E, P, B, F
+        public string TipoDePasajero { get; set; } // A, M, I
+        public float Precio { get; set; }
+        public int Disponibilidad { get; set; } // Cantidad de asientos disponibles
 
         public TarifaVuelo(char clase, string tipoDePasajero, float precio, int disponibilidad)
         {
@@ -26,16 +26,16 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 
     public class OfertaVuelo
     {
-        public string CodigoOferta; //hasta 15 char (depende de la aerolinea)
-        public string Origen;
-        public string Destino;
-        public DateTime FechaSalida;
-        public DateTime FechaArribo;
-        public string TiempoDeVuelo;
+        public string CodigoOferta { get; set; } //hasta 15 char (depende de la aerolinea)
+        public string Origen { get; set; }
+        public string Destino { get; set; }
+        public DateTime FechaSalida { get; set; }
+        public DateTime FechaArribo { get; set; }
+        public string TiempoDeVuelo { get; set; }
         //public int HorasDeVuelo;
         //public int MinutosDeVuelo;
-        public string Aerolinea;
-        public List<TarifaVuelo> Tarifas;
+        public string Aerolinea { get; set; }
+        public List<TarifaVuelo> Tarifas { get; set; }
 
         public OfertaVuelo(string codigoOferta, string origen, string destino, DateTime fechaSalida, DateTime fechaArribo, string tiempoDeVuelo, string aerolinea, List<TarifaVuelo> tarifas)
         {
