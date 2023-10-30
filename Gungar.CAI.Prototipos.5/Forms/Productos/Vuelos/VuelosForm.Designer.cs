@@ -129,18 +129,21 @@
             groupBox1.Controls.Add(origenLabel);
             groupBox1.Controls.Add(desdeDatePickerLabel);
             groupBox1.Controls.Add(idaDatePicker);
-            groupBox1.Location = new Point(12, 34);
+            groupBox1.Location = new Point(14, 45);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(700, 194);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(800, 259);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
             // 
             // borrarFechasBtn
             // 
-            borrarFechasBtn.Location = new Point(284, 94);
+            borrarFechasBtn.Location = new Point(325, 125);
+            borrarFechasBtn.Margin = new Padding(3, 4, 3, 4);
             borrarFechasBtn.Name = "borrarFechasBtn";
-            borrarFechasBtn.Size = new Size(196, 23);
+            borrarFechasBtn.Size = new Size(224, 31);
             borrarFechasBtn.TabIndex = 25;
             borrarFechasBtn.Text = "Borrar Fechas";
             borrarFechasBtn.UseVisualStyleBackColor = true;
@@ -149,9 +152,9 @@
             // claseLabel
             // 
             claseLabel.AutoSize = true;
-            claseLabel.Location = new Point(25, 156);
+            claseLabel.Location = new Point(29, 208);
             claseLabel.Name = "claseLabel";
-            claseLabel.Size = new Size(38, 15);
+            claseLabel.Size = new Size(47, 20);
             claseLabel.TabIndex = 24;
             claseLabel.Text = "Clase:";
             // 
@@ -159,28 +162,31 @@
             // 
             clasesCombo.FormattingEnabled = true;
             clasesCombo.Items.AddRange(new object[] { "Economy", "Premium", "Business", "First" });
-            clasesCombo.Location = new Point(77, 153);
+            clasesCombo.Location = new Point(88, 204);
+            clasesCombo.Margin = new Padding(3, 4, 3, 4);
             clasesCombo.Name = "clasesCombo";
-            clasesCombo.Size = new Size(93, 23);
+            clasesCombo.Size = new Size(106, 28);
             clasesCombo.TabIndex = 24;
             // 
             // aplicarFiltrosBtn
             // 
             aplicarFiltrosBtn.Enabled = false;
-            aplicarFiltrosBtn.Location = new Point(499, 126);
+            aplicarFiltrosBtn.Location = new Point(570, 168);
+            aplicarFiltrosBtn.Margin = new Padding(3, 4, 3, 4);
             aplicarFiltrosBtn.Name = "aplicarFiltrosBtn";
-            aplicarFiltrosBtn.Size = new Size(190, 53);
+            aplicarFiltrosBtn.Size = new Size(217, 71);
             aplicarFiltrosBtn.TabIndex = 21;
-            aplicarFiltrosBtn.Text = "Buscar";
+            aplicarFiltrosBtn.Text = "Aplicar filtros";
             aplicarFiltrosBtn.UseVisualStyleBackColor = true;
             aplicarFiltrosBtn.Click += aplicarFiltrosBtn_Click;
             // 
             // soloIdaCheckBox
             // 
             soloIdaCheckBox.AutoSize = true;
-            soloIdaCheckBox.Location = new Point(197, 97);
+            soloIdaCheckBox.Location = new Point(225, 129);
+            soloIdaCheckBox.Margin = new Padding(3, 4, 3, 4);
             soloIdaCheckBox.Name = "soloIdaCheckBox";
-            soloIdaCheckBox.Size = new Size(81, 19);
+            soloIdaCheckBox.Size = new Size(102, 24);
             soloIdaCheckBox.TabIndex = 22;
             soloIdaCheckBox.Text = "Es solo ida";
             soloIdaCheckBox.UseVisualStyleBackColor = true;
@@ -193,9 +199,11 @@
             groupBox3.Controls.Add(desdePreciosNumeric);
             groupBox3.Controls.Add(label9);
             groupBox3.Controls.Add(label10);
-            groupBox3.Location = new Point(500, 22);
+            groupBox3.Location = new Point(571, 29);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(189, 90);
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(216, 120);
             groupBox3.TabIndex = 20;
             groupBox3.TabStop = false;
             groupBox3.Text = "Rango de Precios";
@@ -203,43 +211,45 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(65, -54);
+            label1.Location = new Point(74, -72);
             label1.Name = "label1";
-            label1.Size = new Size(89, 15);
+            label1.Size = new Size(113, 20);
             label1.TabIndex = 25;
             label1.Text = "Itinerario actual";
             // 
             // hastaPreciosNumeric
             // 
-            hastaPreciosNumeric.Location = new Point(62, 54);
+            hastaPreciosNumeric.Location = new Point(71, 72);
+            hastaPreciosNumeric.Margin = new Padding(3, 4, 3, 4);
             hastaPreciosNumeric.Maximum = new decimal(new int[] { -1593835521, 466537709, 54210, 0 });
             hastaPreciosNumeric.Name = "hastaPreciosNumeric";
-            hastaPreciosNumeric.Size = new Size(120, 23);
+            hastaPreciosNumeric.Size = new Size(137, 27);
             hastaPreciosNumeric.TabIndex = 23;
             // 
             // desdePreciosNumeric
             // 
-            desdePreciosNumeric.Location = new Point(62, 23);
+            desdePreciosNumeric.Location = new Point(71, 31);
+            desdePreciosNumeric.Margin = new Padding(3, 4, 3, 4);
             desdePreciosNumeric.Maximum = new decimal(new int[] { -1593835521, 466537709, 54210, 0 });
             desdePreciosNumeric.Name = "desdePreciosNumeric";
-            desdePreciosNumeric.Size = new Size(120, 23);
+            desdePreciosNumeric.Size = new Size(137, 27);
             desdePreciosNumeric.TabIndex = 22;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(15, 56);
+            label9.Location = new Point(17, 75);
             label9.Name = "label9";
-            label9.Size = new Size(40, 15);
+            label9.Size = new Size(50, 20);
             label9.TabIndex = 15;
             label9.Text = "Hasta:";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(14, 25);
+            label10.Location = new Point(16, 33);
             label10.Name = "label10";
-            label10.Size = new Size(42, 15);
+            label10.Size = new Size(54, 20);
             label10.TabIndex = 14;
             label10.Text = "Desde:";
             // 
@@ -251,59 +261,64 @@
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(6, 22);
+            groupBox2.Location = new Point(7, 29);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(180, 115);
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(206, 153);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cantidad de Pasajeros";
             // 
             // cantidadInfantesNumeric
             // 
-            cantidadInfantesNumeric.Location = new Point(71, 83);
+            cantidadInfantesNumeric.Location = new Point(81, 111);
+            cantidadInfantesNumeric.Margin = new Padding(3, 4, 3, 4);
             cantidadInfantesNumeric.Name = "cantidadInfantesNumeric";
-            cantidadInfantesNumeric.Size = new Size(93, 23);
+            cantidadInfantesNumeric.Size = new Size(106, 27);
             cantidadInfantesNumeric.TabIndex = 26;
             // 
             // cantidadMenoresNumeric
             // 
-            cantidadMenoresNumeric.Location = new Point(71, 54);
+            cantidadMenoresNumeric.Location = new Point(81, 72);
+            cantidadMenoresNumeric.Margin = new Padding(3, 4, 3, 4);
             cantidadMenoresNumeric.Name = "cantidadMenoresNumeric";
-            cantidadMenoresNumeric.Size = new Size(93, 23);
+            cantidadMenoresNumeric.Size = new Size(106, 27);
             cantidadMenoresNumeric.TabIndex = 25;
             // 
             // cantidadAdultosNumeric
             // 
-            cantidadAdultosNumeric.Location = new Point(71, 25);
+            cantidadAdultosNumeric.Location = new Point(81, 33);
+            cantidadAdultosNumeric.Margin = new Padding(3, 4, 3, 4);
             cantidadAdultosNumeric.Name = "cantidadAdultosNumeric";
-            cantidadAdultosNumeric.Size = new Size(93, 23);
+            cantidadAdultosNumeric.Size = new Size(106, 27);
             cantidadAdultosNumeric.TabIndex = 24;
             cantidadAdultosNumeric.ValueChanged += cantidadAdultosNumeric_ValueChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(14, 85);
+            label7.Location = new Point(16, 113);
             label7.Name = "label7";
-            label7.Size = new Size(52, 15);
+            label7.Size = new Size(64, 20);
             label7.TabIndex = 18;
             label7.Text = "Infantes:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(14, 56);
+            label5.Location = new Point(16, 75);
             label5.Name = "label5";
-            label5.Size = new Size(56, 15);
+            label5.Size = new Size(69, 20);
             label5.TabIndex = 15;
             label5.Text = "Menores:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(14, 25);
+            label6.Location = new Point(16, 33);
             label6.Name = "label6";
-            label6.Size = new Size(51, 15);
+            label6.Size = new Size(63, 20);
             label6.TabIndex = 14;
             label6.Text = "Adultos:";
             // 
@@ -311,8 +326,10 @@
             // 
             vuelosHotelesBox.Controls.Add(hotelesRadio);
             vuelosHotelesBox.Controls.Add(vuelosRadio);
-            vuelosHotelesBox.Location = new Point(11, 16);
+            vuelosHotelesBox.Location = new Point(13, 21);
+            vuelosHotelesBox.Margin = new Padding(3, 4, 3, 4);
             vuelosHotelesBox.Name = "vuelosHotelesBox";
+            vuelosHotelesBox.Padding = new Padding(3, 4, 3, 4);
             vuelosHotelesBox.Size = new Size(0, 0);
             vuelosHotelesBox.TabIndex = 6;
             vuelosHotelesBox.TabStop = false;
@@ -321,9 +338,10 @@
             // hotelesRadio
             // 
             hotelesRadio.AutoSize = true;
-            hotelesRadio.Location = new Point(81, 20);
+            hotelesRadio.Location = new Point(93, 27);
+            hotelesRadio.Margin = new Padding(3, 4, 3, 4);
             hotelesRadio.Name = "hotelesRadio";
-            hotelesRadio.Size = new Size(65, 19);
+            hotelesRadio.Size = new Size(81, 24);
             hotelesRadio.TabIndex = 1;
             hotelesRadio.Text = "Hoteles";
             hotelesRadio.UseVisualStyleBackColor = true;
@@ -332,9 +350,10 @@
             // 
             vuelosRadio.AutoSize = true;
             vuelosRadio.Checked = true;
-            vuelosRadio.Location = new Point(6, 20);
+            vuelosRadio.Location = new Point(7, 27);
+            vuelosRadio.Margin = new Padding(3, 4, 3, 4);
             vuelosRadio.Name = "vuelosRadio";
-            vuelosRadio.Size = new Size(60, 19);
+            vuelosRadio.Size = new Size(74, 24);
             vuelosRadio.TabIndex = 0;
             vuelosRadio.TabStop = true;
             vuelosRadio.Text = "Vuelos";
@@ -343,84 +362,88 @@
             // vueltaLabel
             // 
             vueltaLabel.AutoSize = true;
-            vueltaLabel.Location = new Point(197, 159);
+            vueltaLabel.Location = new Point(225, 212);
             vueltaLabel.Name = "vueltaLabel";
-            vueltaLabel.Size = new Size(43, 15);
+            vueltaLabel.Size = new Size(54, 20);
             vueltaLabel.TabIndex = 7;
             vueltaLabel.Text = "Vuelta:";
             // 
             // vueltaDatePicker
             // 
-            vueltaDatePicker.Location = new Point(249, 156);
+            vueltaDatePicker.Location = new Point(285, 208);
+            vueltaDatePicker.Margin = new Padding(3, 4, 3, 4);
             vueltaDatePicker.Name = "vueltaDatePicker";
-            vueltaDatePicker.Size = new Size(231, 23);
+            vueltaDatePicker.Size = new Size(263, 27);
             vueltaDatePicker.TabIndex = 6;
             vueltaDatePicker.ValueChanged += vueltaDatePicker_ValueChanged;
             // 
             // destinoText
             // 
-            destinoText.Location = new Point(249, 63);
+            destinoText.Location = new Point(285, 84);
+            destinoText.Margin = new Padding(3, 4, 3, 4);
             destinoText.Name = "destinoText";
-            destinoText.Size = new Size(231, 23);
+            destinoText.Size = new Size(263, 27);
             destinoText.TabIndex = 5;
             // 
             // origenText
             // 
-            origenText.Location = new Point(249, 33);
+            origenText.Location = new Point(285, 44);
+            origenText.Margin = new Padding(3, 4, 3, 4);
             origenText.Name = "origenText";
-            origenText.Size = new Size(231, 23);
+            origenText.Size = new Size(263, 27);
             origenText.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(197, 66);
+            label4.Location = new Point(225, 88);
             label4.Name = "label4";
-            label4.Size = new Size(50, 15);
+            label4.Size = new Size(63, 20);
             label4.TabIndex = 3;
             label4.Text = "Destino:";
             // 
             // origenLabel
             // 
             origenLabel.AutoSize = true;
-            origenLabel.Location = new Point(197, 36);
+            origenLabel.Location = new Point(225, 48);
             origenLabel.Name = "origenLabel";
-            origenLabel.Size = new Size(46, 15);
+            origenLabel.Size = new Size(57, 20);
             origenLabel.TabIndex = 2;
             origenLabel.Text = "Origen:";
             // 
             // desdeDatePickerLabel
             // 
             desdeDatePickerLabel.AutoSize = true;
-            desdeDatePickerLabel.Location = new Point(197, 129);
+            desdeDatePickerLabel.Location = new Point(225, 172);
             desdeDatePickerLabel.Name = "desdeDatePickerLabel";
-            desdeDatePickerLabel.Size = new Size(26, 15);
+            desdeDatePickerLabel.Size = new Size(33, 20);
             desdeDatePickerLabel.TabIndex = 1;
             desdeDatePickerLabel.Text = "Ida:";
             // 
             // idaDatePicker
             // 
-            idaDatePicker.Location = new Point(249, 126);
+            idaDatePicker.Location = new Point(285, 168);
+            idaDatePicker.Margin = new Padding(3, 4, 3, 4);
             idaDatePicker.Name = "idaDatePicker";
-            idaDatePicker.Size = new Size(231, 23);
+            idaDatePicker.Size = new Size(263, 27);
             idaDatePicker.TabIndex = 0;
             idaDatePicker.ValueChanged += idaDatePicker_ValueChanged;
             // 
             // itinerarioLabel
             // 
             itinerarioLabel.AutoSize = true;
-            itinerarioLabel.Location = new Point(122, 16);
+            itinerarioLabel.Location = new Point(139, 21);
             itinerarioLabel.Name = "itinerarioLabel";
-            itinerarioLabel.Size = new Size(82, 15);
+            itinerarioLabel.Size = new Size(105, 20);
             itinerarioLabel.TabIndex = 9;
             itinerarioLabel.Text = "itinerarioLabel";
             // 
             // titleLabel
             // 
             titleLabel.AutoSize = true;
-            titleLabel.Location = new Point(12, 16);
+            titleLabel.Location = new Point(14, 21);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(98, 15);
+            titleLabel.Size = new Size(123, 20);
             titleLabel.TabIndex = 8;
             titleLabel.Text = "Gestionar Vuelos:";
             // 
@@ -429,9 +452,11 @@
             modificarItinerarioBox.Controls.Add(listView1);
             modificarItinerarioBox.Controls.Add(agregarProductoBtn);
             modificarItinerarioBox.Controls.Add(quitarProductoBtn);
-            modificarItinerarioBox.Location = new Point(896, 234);
+            modificarItinerarioBox.Location = new Point(1024, 312);
+            modificarItinerarioBox.Margin = new Padding(3, 4, 3, 4);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
-            modificarItinerarioBox.Size = new Size(624, 564);
+            modificarItinerarioBox.Padding = new Padding(3, 4, 3, 4);
+            modificarItinerarioBox.Size = new Size(713, 752);
             modificarItinerarioBox.TabIndex = 27;
             modificarItinerarioBox.TabStop = false;
             // 
@@ -439,9 +464,10 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader26, columnHeader27, columnHeader28, columnHeader29, columnHeader30, columnHeader31, columnHeader32, columnHeader33, columnHeader36, columnHeader41 });
             listView1.FullRowSelect = true;
-            listView1.Location = new Point(87, 16);
+            listView1.Location = new Point(99, 21);
+            listView1.Margin = new Padding(3, 4, 3, 4);
             listView1.Name = "listView1";
-            listView1.Size = new Size(531, 542);
+            listView1.Size = new Size(606, 721);
             listView1.TabIndex = 25;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -498,18 +524,20 @@
             // 
             // agregarProductoBtn
             // 
-            agregarProductoBtn.Location = new Point(6, 182);
+            agregarProductoBtn.Location = new Point(7, 243);
+            agregarProductoBtn.Margin = new Padding(3, 4, 3, 4);
             agregarProductoBtn.Name = "agregarProductoBtn";
-            agregarProductoBtn.Size = new Size(75, 23);
+            agregarProductoBtn.Size = new Size(86, 31);
             agregarProductoBtn.TabIndex = 23;
             agregarProductoBtn.Text = "Agregar";
             agregarProductoBtn.UseVisualStyleBackColor = true;
             // 
             // quitarProductoBtn
             // 
-            quitarProductoBtn.Location = new Point(6, 211);
+            quitarProductoBtn.Location = new Point(7, 281);
+            quitarProductoBtn.Margin = new Padding(3, 4, 3, 4);
             quitarProductoBtn.Name = "quitarProductoBtn";
-            quitarProductoBtn.Size = new Size(75, 23);
+            quitarProductoBtn.Size = new Size(86, 31);
             quitarProductoBtn.TabIndex = 22;
             quitarProductoBtn.Text = "Quitar";
             quitarProductoBtn.UseVisualStyleBackColor = true;
@@ -517,9 +545,11 @@
             // vuelosIdaBox
             // 
             vuelosIdaBox.Controls.Add(vuelosIdaListView);
-            vuelosIdaBox.Location = new Point(12, 234);
+            vuelosIdaBox.Location = new Point(14, 312);
+            vuelosIdaBox.Margin = new Padding(3, 4, 3, 4);
             vuelosIdaBox.Name = "vuelosIdaBox";
-            vuelosIdaBox.Size = new Size(878, 274);
+            vuelosIdaBox.Padding = new Padding(3, 4, 3, 4);
+            vuelosIdaBox.Size = new Size(1003, 365);
             vuelosIdaBox.TabIndex = 28;
             vuelosIdaBox.TabStop = false;
             vuelosIdaBox.Text = "Ida";
@@ -528,9 +558,10 @@
             // 
             vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader9, columnHeader23, columnHeader10, columnHeader11, columnHeader12 });
             vuelosIdaListView.FullRowSelect = true;
-            vuelosIdaListView.Location = new Point(11, 16);
+            vuelosIdaListView.Location = new Point(13, 21);
+            vuelosIdaListView.Margin = new Padding(3, 4, 3, 4);
             vuelosIdaListView.Name = "vuelosIdaListView";
-            vuelosIdaListView.Size = new Size(861, 252);
+            vuelosIdaListView.Size = new Size(983, 335);
             vuelosIdaListView.TabIndex = 24;
             vuelosIdaListView.UseCompatibleStateImageBehavior = false;
             vuelosIdaListView.View = View.Details;
@@ -583,9 +614,11 @@
             // vueltaBox
             // 
             vueltaBox.Controls.Add(vuelosVueltaListView);
-            vueltaBox.Location = new Point(12, 514);
+            vueltaBox.Location = new Point(14, 685);
+            vueltaBox.Margin = new Padding(3, 4, 3, 4);
             vueltaBox.Name = "vueltaBox";
-            vueltaBox.Size = new Size(878, 284);
+            vueltaBox.Padding = new Padding(3, 4, 3, 4);
+            vueltaBox.Size = new Size(1003, 379);
             vueltaBox.TabIndex = 29;
             vueltaBox.TabStop = false;
             vueltaBox.Text = "Vuelta";
@@ -594,9 +627,10 @@
             // 
             vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader34, columnHeader35, columnHeader37, columnHeader24, columnHeader38, columnHeader39, columnHeader40 });
             vuelosVueltaListView.FullRowSelect = true;
-            vuelosVueltaListView.Location = new Point(11, 22);
+            vuelosVueltaListView.Location = new Point(13, 29);
+            vuelosVueltaListView.Margin = new Padding(3, 4, 3, 4);
             vuelosVueltaListView.Name = "vuelosVueltaListView";
-            vuelosVueltaListView.Size = new Size(861, 256);
+            vuelosVueltaListView.Size = new Size(983, 340);
             vuelosVueltaListView.TabIndex = 25;
             vuelosVueltaListView.UseCompatibleStateImageBehavior = false;
             vuelosVueltaListView.View = View.Details;
@@ -648,9 +682,10 @@
             // 
             // volverBtn
             // 
-            volverBtn.Location = new Point(823, 76);
+            volverBtn.Location = new Point(941, 101);
+            volverBtn.Margin = new Padding(3, 4, 3, 4);
             volverBtn.Name = "volverBtn";
-            volverBtn.Size = new Size(154, 51);
+            volverBtn.Size = new Size(176, 68);
             volverBtn.TabIndex = 30;
             volverBtn.Text = "Volver";
             volverBtn.UseVisualStyleBackColor = true;
@@ -658,9 +693,9 @@
             // 
             // VuelosForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1560, 826);
+            ClientSize = new Size(1783, 1101);
             Controls.Add(volverBtn);
             Controls.Add(vueltaBox);
             Controls.Add(vuelosIdaBox);
@@ -668,6 +703,7 @@
             Controls.Add(groupBox1);
             Controls.Add(itinerarioLabel);
             Controls.Add(titleLabel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "VuelosForm";
             Text = "Vuelos";
             Load += VuelosForm_Load;
