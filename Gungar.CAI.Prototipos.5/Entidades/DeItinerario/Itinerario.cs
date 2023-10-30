@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gungar.CAI.Prototipos._5.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -85,13 +86,13 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         private void BloquearDisponibilidadProductos()
         {
-            Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false));
+            Hoteles.ForEach(hotel => AlmacenHoteles.ModificarDisponibilidadHotel(hotel, false));
             // TODO: Bloquear vuelos
         }
 
         private void LiberarDisponibilidadProductos()
         {
-            Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
+            Hoteles.ForEach(hotel => AlmacenHoteles.ModificarDisponibilidadHotel(hotel, true));
             // TODO: Liberar vuelos
         }
 

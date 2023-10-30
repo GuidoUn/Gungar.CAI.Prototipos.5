@@ -1,3 +1,5 @@
+using Gungar.CAI.Prototipos._5.Almacenes;
+
 namespace Gungar.CAI.Prototipos._5
 {
     internal static class Program
@@ -8,7 +10,7 @@ namespace Gungar.CAI.Prototipos._5
             AlmacenItinerarios.GuardarItinerarios();
 
             // TODO: Arreglar bug que cuadriplica los hoteles
-            //HotelesModel.GuardarDatos(); 
+            AlmacenHoteles.GuardarHoteles(); 
         }
 
         /// <summary>
@@ -22,7 +24,7 @@ namespace Gungar.CAI.Prototipos._5
                 // To customize application configuration such as set high DPI settings or default font,
                 // see https://aka.ms/applicationconfiguration.
                 ApplicationConfiguration.Initialize();
-                HotelesModel.CargaInicial(); //reemplazar por constructor estatico en clase de almacenHoteles (a crear)
+              
                 Application.Run(new MenuPrincipalForm());
             }
             finally

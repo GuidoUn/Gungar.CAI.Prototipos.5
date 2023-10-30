@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gungar.CAI.Prototipos._5.Almacenes;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario;
@@ -143,7 +144,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(OfertaHotel.CodigoACiudad[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
-                item.SubItems.Add("$ " + HotelesModel.ObtenerPrecioTotal(model.Itinerario.Hoteles).ToString());
+                item.SubItems.Add("$ " + AlmacenHoteles.ObtenerPrecioTotal(model.Itinerario.Hoteles).ToString());
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
                 item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
                 item.Tag = reservaHotel;

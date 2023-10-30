@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
+using Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -20,6 +21,7 @@ namespace Gungar.CAI.Prototipos._5
         List<Hotel> listaDeHotelesDisponibles;
         DateTime hastaFechaSeleccionada;
         DateTime desdeFechaSeleccionada;
+        HotelesFormModel hotelesFormModel;
 
         Hotel hotelAAgregar;
 
@@ -45,6 +47,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void HotelesForm_Load(object sender, EventArgs e)
         {
+            hotelesFormModel = new HotelesFormModel(itinerario);
             if (esConsulta)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
@@ -64,7 +67,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void poblarHoteles()
         {
-            listaDeHotelesDisponibles = HotelesModel.getHoteles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString(), desdeFechaSeleccionada, hastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
+            listaDeHotelesDisponibles = hotelesFormModel.GetHotelesDisponibles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.SelectedItem.ToString(), desdeFechaSeleccionada, hastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
 
             hotelesListView.Items.Clear();
             foreach (var hotel in listaDeHotelesDisponibles)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gungar.CAI.Prototipos._5.Almacenes;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 
 
@@ -148,7 +149,7 @@ namespace Gungar.CAI.Prototipos._5
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
             itinerario.GenerarPrereserva();
-            itinerario.HotelesSeleccionados.ForEach(reservaHotel => HotelesModel.ModificarDisponibilidadHotel(reservaHotel.Hotel, false));
+            itinerario.HotelesSeleccionados.ForEach(reservaHotel => AlmacenHoteles.ModificarDisponibilidadHotel(reservaHotel.Hotel, false));
             this.Close();
         }
 
