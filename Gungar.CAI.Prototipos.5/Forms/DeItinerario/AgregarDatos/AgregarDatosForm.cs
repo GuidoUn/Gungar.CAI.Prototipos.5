@@ -27,7 +27,7 @@ namespace Gungar.CAI.Prototipos._5
 
         IReservaProducto productoSeleccionado;
 
-        bool esPreReserva;
+        bool esPreReserva; // TODO: Borrar si no se usa
 
         public AgregarDatosForm(Itinerario itinerario, bool esPreReserva)
         {
@@ -80,6 +80,23 @@ namespace Gungar.CAI.Prototipos._5
                     pasajerosItinerarioListView.Items.Add(item);
                 }
             }
+
+            itinerario.VuelosAgregados.ForEach(vuelo =>
+            {
+                vuelo.Pasajeros.ForEach(pasajero =>
+                {
+                    var item = new ListViewItem();
+                    item.Text = pasajero.Nombre;
+                    item.SubItems.Add(pasajero.Apellido);
+                    item.SubItems.Add(pasajero.Documento);
+                    item.SubItems.Add(pasajero.Email);
+                    item.SubItems.Add(pasajero.Telefono);
+                    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                    item.Tag = pasajero;
+
+                    pasajerosItinerarioListView.Items.Add(item);
+                });
+            });
         }
 
         private void poblarListaPasajeros()

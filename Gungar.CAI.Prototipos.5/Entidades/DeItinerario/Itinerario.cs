@@ -24,7 +24,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public DateTime FechaCreacion { get; set; }
         public Estado Estado { get; set; }
         public Cliente? Cliente { get; set; }
-        public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>();
+        //public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>(); // No se está usando, habría que usarla?
         public DateTime? FechaPrereserva { get; set; }
         public List<Hotel> Hoteles { get; set; } = new List<Hotel>();
         public List<ReservaHotel> HotelesSeleccionados { get; set; } = new List<ReservaHotel>();

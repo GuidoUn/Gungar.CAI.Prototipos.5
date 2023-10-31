@@ -65,17 +65,20 @@ namespace Gungar.CAI.Prototipos._5
 
         private void poblarListaPasajeros()
         {
-            pasajerosListView.Items.Clear();
+            // TODO
 
-            model.Itinerario.Pasajeros.ForEach(pasajero =>
-            {
-                var item = new ListViewItem();
-                item.Text = pasajero.Nombre + " " + pasajero.Apellido;
-                item.SubItems.Add(pasajero.FechaNacimiento.ToString());
-                item.Tag = pasajero;
 
-                pasajerosListView.Items.Add(item);
-            });
+            //pasajerosListView.Items.Clear();
+
+            //model.Itinerario.Pasajeros.ForEach(pasajero =>
+            //{
+            //    var item = new ListViewItem();
+            //    item.Text = pasajero.Nombre + " " + pasajero.Apellido;
+            //    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+            //    item.Tag = pasajero;
+
+            //    pasajerosListView.Items.Add(item);
+            //});
         }
 
         private void hotelesBtn_Click(object sender, EventArgs e)
