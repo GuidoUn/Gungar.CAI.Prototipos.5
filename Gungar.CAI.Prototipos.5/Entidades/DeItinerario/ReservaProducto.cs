@@ -8,6 +8,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public interface ReservaProducto
     {
-        List<Pasajero> Pasajeros { get; }
+        public List<Pasajero> Pasajeros { get; set; }
     }
 }
