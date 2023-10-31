@@ -1,4 +1,5 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Modulos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,21 +16,21 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.SeleccionItinerario
 
         public SeleccionItinerarioFormModel()
         {
-            ItinerariosEnPantalla = AlmacenItinerarios.Itinerarios;
+            ItinerariosEnPantalla = VentasModulo.GetItinerariosFiltrados("");
         }
 
         public void EliminarItinerarioSeleccionado()
         {
             if (ItinerarioSeleccionado != null)
             {
-                AlmacenItinerarios.eliminarItinerario(ItinerarioSeleccionado);
+                VentasModulo.EliminarItinerario(ItinerarioSeleccionado);
             }
             ItinerarioSeleccionado = null;
         }
 
         public void FiltrarItinerarios(string textoBusqueda)
         {
-            ItinerariosEnPantalla = AlmacenItinerarios.GetItinerariosFiltrados(textoBusqueda);
+            ItinerariosEnPantalla = VentasModulo.GetItinerariosFiltrados(textoBusqueda);
         }
     }
 }

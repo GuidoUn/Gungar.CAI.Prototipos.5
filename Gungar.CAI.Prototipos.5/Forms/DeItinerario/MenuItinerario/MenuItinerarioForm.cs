@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Almacenes;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario;
 
@@ -16,6 +17,8 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class MenuItinerarioForm : Form
     {
+        const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
+
         MenuItinerarioFormModel model;
 
         ClienteForm? clienteForm;
@@ -54,23 +57,29 @@ namespace Gungar.CAI.Prototipos._5
                 cancelarReservaBtn.Enabled = false;
                 return;
             }*/
-            confirmacionBox.Enabled = !(model.Itinerario?.HotelesSeleccionados.Count == 0 || model.Itinerario?.Estado == Estado.Pagada);
+            generarPreReservaBtn.Enabled = model.puedePrereserva();
+            generarReservaBtn.Enabled = model.PuedeReserva();
             gestionarItinerarioBox.Enabled = model?.Itinerario?.Estado == Estado.Presupuesto;
+            abonadoLabel.Text = $"Itinerario Abonado: {(model?.Itinerario?.ItinerarioPagado == true ? "Si" : "No")}";
+            precioTotalLabel.Text = $"Precio Total: ${model?.Itinerario?.CalcularPrecioTotal().ToString()}";
         }
 
         private void poblarListaPasajeros()
         {
-            pasajerosListView.Items.Clear();
+            // TODO
 
-            foreach (var pasajero in model.Itinerario.Pasajeros)
-            {
-                var item = new ListViewItem();
-                item.Text = pasajero.Nombre + " " + pasajero.Apellido;
-                item.SubItems.Add(pasajero.FechaNacimiento.ToString());
-                item.Tag = pasajero;
 
-                pasajerosListView.Items.Add(item);
-            }
+            //pasajerosListView.Items.Clear();
+
+            //model.Itinerario.Pasajeros.ForEach(pasajero =>
+            //{
+            //    var item = new ListViewItem();
+            //    item.Text = pasajero.Nombre + " " + pasajero.Apellido;
+            //    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+            //    item.Tag = pasajero;
+
+            //    pasajerosListView.Items.Add(item);
+            //});
         }
 
         private void hotelesBtn_Click(object sender, EventArgs e)
@@ -137,11 +146,11 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarHotelesAgregados()
         {
             hotelesAgregadosListView.Items.Clear();
-            foreach (ReservaHotel reservaHotel in model.Itinerario.HotelesSeleccionados)
+            model.Itinerario.HotelesSeleccionados.ForEach(reservaHotel =>
             {
                 ListViewItem item = new ListViewItem();
-                item.Text = reservaHotel.Hotel.Disponibilidad.Nombre;
-                item.SubItems.Add(OfertaHotel.CodigoACiudad[reservaHotel.Hotel.CodigoCiudad]);
+                item.Text = reservaHotel.Hotel.Disponibilidad?.Nombre;
+                item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add("$ " + AlmacenHoteles.ObtenerPrecioTotal(model.Itinerario.Hoteles).ToString());
@@ -150,19 +159,33 @@ namespace Gungar.CAI.Prototipos._5
                 item.Tag = reservaHotel;
 
                 hotelesAgregadosListView.Items.Add(item);
-            }
+            });
         }
 
         private void poblarVuelosAgregados()
         {
             vuelosAgregadosListView.Items.Clear();
-            foreach (ReservaVuelo reservaVuelo in model.Itinerario.VuelosAgregados)
+
+            model.Itinerario.VuelosAgregados.ForEach(vuelo =>
             {
+                List<TarifaVuelo> tarifas = vuelo.Vuelo.Tarifas.Where(tarifa => tarifa.Clase == vuelo.Clase).ToList();
+
                 ListViewItem item = new ListViewItem();
-                // TODO: Cargar vuelos agregados
+                item.Text = vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA);
+                item.SubItems.Add(Constantes.Aerolineas[vuelo.Vuelo.Aerolinea]);
+                item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Origen]);
+                item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Destino]);
+                item.SubItems.Add(Constantes.Clases[tarifas[0].Clase]);
+                item.SubItems.Add($"A({vuelo.CantidadAdultos}), M({vuelo.CantidadMenores}), I({vuelo.CantidadInfantes})");
+                item.SubItems.Add(vuelo.PrecioTotal.ToString());
+                item.SubItems.Add(vuelo.Vuelo.TiempoDeVuelo);
+                item.SubItems.Add(tarifas[0].Precio.ToString());
+                item.SubItems.Add(tarifas[1].Precio.ToString());
+                item.SubItems.Add(tarifas[2].Precio.ToString());
+                item.Tag = vuelo;
 
                 vuelosAgregadosListView.Items.Add(item);
-            }
+            });
         }
 
         private void anularItinerarioBtn_Click(object sender, EventArgs e)

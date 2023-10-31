@@ -5,16 +5,18 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
     public enum Estado
     {
-        Presupuesto = 0,
-        Prereserva = 1,
-        Pagada = 2,
-        Confirmada = 3,
-        Cancelada = 4
+        Presupuesto = 0,    // Inicial
+        Prereserva = 1,     // Dura 48hs
+        Reserva = 2,        // Pagó
+        Confirmada = 3,     // Se confirmó con los proveedores
+        Cancelada = 4       // RIP
     }
 
     public class Itinerario
@@ -23,16 +25,16 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public DateTime FechaCreacion { get; set; }
         public Estado Estado { get; set; }
         public Cliente? Cliente { get; set; }
-        public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>();
+        //public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>(); // No se está usando, habría que usarla?
         public DateTime? FechaPrereserva { get; set; }
         public List<Hotel> Hoteles { get; set; } = new List<Hotel>();
         public List<ReservaHotel> HotelesSeleccionados { get; set; } = new List<ReservaHotel>();
         public List<ReservaVuelo> VuelosAgregados { get; set; } = new List<ReservaVuelo>();
-        public bool ItinerarioPagado { get; set; }
+        public bool ItinerarioPagado { get; set; } = false;
 
         public Itinerario()
         {
-            ItinerarioId = AlmacenItinerarios.obtenerNuevoId();
+            ItinerarioId = AlmacenItinerarios.ObtenerNuevoId();
             FechaCreacion = DateTime.Now;
             Estado = Estado.Presupuesto;
         }
@@ -40,16 +42,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public void AsignarCliente(Cliente cliente)
         {
             Cliente = cliente;
-        }
-
-        public void AgregarPasajero(Pasajero pasajero)
-        {
-            Pasajeros.Add(pasajero);
-        }
-
-        public void EliminarPasajero(Pasajero pasajero)
-        {
-            Pasajeros.Remove(pasajero);
         }
 
         public void GenerarPrereserva()
@@ -61,13 +53,13 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         public void GenerarReserva()
         {
-            Estado = Estado.Pagada;
+            Estado = Estado.Reserva;
             BloquearDisponibilidadProductos();
         }
 
         public void EvaluarVencimientoPrereserva()
         {
-            if (Estado == Estado.Prereserva)
+            if (Estado == Estado.Prereserva && ItinerarioPagado == false)
             {
                 TimeSpan diferenciaDeHoras = DateTime.Now.Subtract(FechaPrereserva ?? DateTime.Now);
                 if (diferenciaDeHoras.TotalDays > 2)
@@ -81,29 +73,55 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         {
             Estado = Estado.Cancelada;
             LiberarDisponibilidadProductos();
-
         }
 
         private void BloquearDisponibilidadProductos()
         {
-            Hoteles.ForEach(hotel => AlmacenHoteles.ModificarDisponibilidadHotel(hotel, false));
-            // TODO: Bloquear vuelos
+            Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false)); // TODO: Mover al módulo de disponibilidad?
+            DisponibilidadModulo.bloquearDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
         }
 
         private void LiberarDisponibilidadProductos()
         {
-            Hoteles.ForEach(hotel => AlmacenHoteles.ModificarDisponibilidadHotel(hotel, true));
-            // TODO: Liberar vuelos
+            Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
+            DisponibilidadModulo.liberarDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
         }
 
-        public void AgregarHotel(Hotel hotel)
-        {
-            Hoteles.Add(hotel);
-        }
+        //public void AgregarHotel(Hotel hotel) // TODO: Esto se necesita?
+        //{
+        //    Hoteles.Add(hotel);
+        //}
 
         public void AgregarReservaHotel(ReservaHotel hotel)
         {
             HotelesSeleccionados.Add(hotel);
+        }
+
+        public void AgregarReservaVuelo(ReservaVuelo reserva)
+        {
+            if (!VuelosAgregados.Exists(vuelo => vuelo.Vuelo.CodigoOferta == reserva.Vuelo.CodigoOferta))
+            {
+                VuelosAgregados.Add(reserva);
+            }
+        }
+
+        public void QuitarReservaVuelo(ReservaVuelo reserva)
+        {
+            VuelosAgregados.Remove(reserva);
+        }
+
+        public float CalcularPrecioTotal()
+        {
+            float precioTotal = 0;
+            VuelosAgregados.ForEach(reserva =>
+            {
+                precioTotal += reserva.PrecioTotal;
+            });
+            HotelesSeleccionados.ForEach(reserva =>
+            {
+                precioTotal += reserva.PrecioTotal;
+            });
+            return precioTotal;
         }
     }
 }

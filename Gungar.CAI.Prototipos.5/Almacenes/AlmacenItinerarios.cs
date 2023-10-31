@@ -13,6 +13,8 @@ namespace Gungar.CAI.Prototipos._5
     {
         const string FILE_LOCATION = @"..\..\..\Almacenes\Archivos\Itinerarios.json";
 
+        static JsonSerializerOptions serializerOptions = new JsonSerializerOptions { IncludeFields = true };
+
         public static List<Itinerario> Itinerarios { get; set; } = new List<Itinerario>();
 
         static AlmacenItinerarios()
@@ -21,7 +23,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 string json = File.ReadAllText(FILE_LOCATION);
 
-                Itinerarios = JsonSerializer.Deserialize<List<Itinerario>>(json) ?? new List<Itinerario>();
+                Itinerarios = JsonSerializer.Deserialize<List<Itinerario>>(json, serializerOptions) ?? new List<Itinerario>();
             }
         }
 
@@ -32,46 +34,27 @@ namespace Gungar.CAI.Prototipos._5
                 File.Delete(FILE_LOCATION);
             }
 
-            File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(Itinerarios));
+            File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(Itinerarios, serializerOptions));
         }
 
-        public static void agregarItinerario(Itinerario itinerario)
+        public static void AgregarItinerario(Itinerario itinerario)
         {
             Itinerarios.Add(itinerario);
         }
 
-        public static void eliminarItinerario(Itinerario itinerario)
+        public static void EliminarItinerario(Itinerario itinerario)
         {
             Itinerarios.Remove(itinerario);
         }
 
-        public static int obtenerNuevoId()
+        public static int ObtenerNuevoId()
         {
             if (Itinerarios.Count == 0)
-            {
                 return 0;
-            }
-            return Itinerarios.Last().ItinerarioId + 1;
-        }
 
-        public static List<Itinerario> GetItinerariosFiltrados(string textoBusqueda)
-        {
-            string textoBusquedaLower = textoBusqueda.ToLower();
-            List<Itinerario> ItinerarioFiltrados = Itinerarios.Where(itinerario =>
-            {
-                if (itinerario.ItinerarioId.ToString().ToLower().Contains(textoBusquedaLower))
-                    return true;
-                if (itinerario.Cliente == null)
-                    return false;
-                if (itinerario.Cliente.GetNombreYApellido().ToLower().Contains(textoBusquedaLower))
-                    return true;
-                if (itinerario.Cliente.Documento != null && itinerario.Cliente.Documento.ToLower().Contains(textoBusquedaLower))
-                    return true;
+            List<Itinerario> itinerariosOrdenados = Itinerarios.OrderBy(itinerario => itinerario.ItinerarioId).ToList();
 
-                return false;
-            }).ToList();
-
-            return ItinerarioFiltrados;
+            return itinerariosOrdenados.Last().ItinerarioId + 1;
         }
     }
 }

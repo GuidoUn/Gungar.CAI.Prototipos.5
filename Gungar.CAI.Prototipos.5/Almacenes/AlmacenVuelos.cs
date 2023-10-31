@@ -1,5 +1,4 @@
-﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
-using Gungar.CAI.Prototipos._5.Entidades.Oferta;
+﻿using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +34,8 @@ namespace Gungar.CAI.Prototipos._5
             File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(OfertaVuelos));
         }
 
+        // TODO: Lo siguiente debería moverse a algún módulo?
+
         public static List<OfertaVuelo> GetVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int precioMinimo = 0, int precioMaximo = 0)
         {
             List<OfertaVuelo> vuelosFiltrados = OfertaVuelos.Where(vuelo =>
@@ -49,8 +50,8 @@ namespace Gungar.CAI.Prototipos._5
                     return false;
                 if (!estaEntrePrecios(vuelo.Tarifas.FindAll(tarifa => tarifa.Clase == clase)[0].Precio, precioMinimo, precioMaximo))
                     return false;
-
-                // Todo: Terminar filtros
+                if (!hayDisponibilidad(vuelo.Tarifas.FindAll(tarifa => tarifa.Clase == clase), cantidadAdultos, cantidadMenores, cantidadInfantes))
+                    return false;
 
                 return true;
             }
@@ -61,24 +62,18 @@ namespace Gungar.CAI.Prototipos._5
 
         private static bool esMismaCiudad(string ciudadVuelo, string ciudadBusqueda)
         {
-            if (OfertaVuelo.Ciudades[ciudadVuelo].ToLower().Contains(ciudadBusqueda.ToLower()))
-            {
+            if (Constantes.Ciudades[ciudadVuelo].ToLower().Contains(ciudadBusqueda.ToLower()))
                 return true;
-            }
+
             if (ciudadVuelo.ToLower().Contains(ciudadBusqueda.ToLower()))
-            {
                 return true;
-            }
+
             return false;
         }
 
         private static bool estaEntreFechas(DateTime fechaVuelo, DateTime? fechaDesde, DateTime? fechaHasta)
         {
-            if (fechaVuelo.Date >= fechaDesde?.Date && (fechaVuelo.Date <= fechaHasta?.Date || fechaHasta == null))
-            {
-                return true;
-            }
-            return false;
+            return fechaVuelo.Date >= fechaDesde?.Date && (fechaVuelo.Date <= fechaHasta?.Date || fechaHasta == null);
         }
 
         private static bool estaEntrePrecios(float precioVuelo, int precioMinimo, int precioMaximo)
@@ -86,6 +81,18 @@ namespace Gungar.CAI.Prototipos._5
             if (precioVuelo < precioMinimo)
                 return false;
             if (precioMaximo != 0 && precioVuelo > precioMaximo)
+                return false;
+
+            return true;
+        }
+
+        private static bool hayDisponibilidad(List<TarifaVuelo> tarifas, int cantAdult, int cantMen, int canInf)
+        {
+            if (tarifas[0].Disponibilidad < cantAdult)
+                return false;
+            if (tarifas[1].Disponibilidad < cantMen)
+                return false;
+            if (tarifas[2].Disponibilidad < canInf)
                 return false;
 
             return true;

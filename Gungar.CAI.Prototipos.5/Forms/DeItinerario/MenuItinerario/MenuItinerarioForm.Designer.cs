@@ -40,14 +40,6 @@
             pasajerosListView = new ListView();
             nombreHeader = new ColumnHeader();
             fechaNacimientoHeader = new ColumnHeader();
-            vuelosAgregadosListView = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            columnHeader7 = new ColumnHeader();
             label2 = new Label();
             label4 = new Label();
             gestionarItinerarioBox = new GroupBox();
@@ -66,6 +58,19 @@
             columnHeader12 = new ColumnHeader();
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
+            abonadoLabel = new Label();
+            vuelosAgregadosListView = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader26 = new ColumnHeader();
+            columnHeader27 = new ColumnHeader();
+            columnHeader28 = new ColumnHeader();
+            columnHeader29 = new ColumnHeader();
             confirmacionBox.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
@@ -178,50 +183,6 @@
             fechaNacimientoHeader.Text = "Fecha de nacimiento";
             fechaNacimientoHeader.Width = 1000;
             // 
-            // vuelosAgregadosListView
-            // 
-            vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7 });
-            vuelosAgregadosListView.Location = new Point(273, 121);
-            vuelosAgregadosListView.MultiSelect = false;
-            vuelosAgregadosListView.Name = "vuelosAgregadosListView";
-            vuelosAgregadosListView.Size = new Size(916, 235);
-            vuelosAgregadosListView.TabIndex = 9;
-            vuelosAgregadosListView.UseCompatibleStateImageBehavior = false;
-            vuelosAgregadosListView.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Producto";
-            columnHeader1.Width = 70;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "Origen/Destino";
-            columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Desde";
-            // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Hasta";
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Precio Total";
-            columnHeader5.Width = 80;
-            // 
-            // columnHeader6
-            // 
-            columnHeader6.Text = "Prestador";
-            columnHeader6.Width = 70;
-            // 
-            // columnHeader7
-            // 
-            columnHeader7.Text = "Categoria";
-            columnHeader7.Width = 80;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -277,9 +238,9 @@
             precioTotalLabel.AutoSize = true;
             precioTotalLabel.Location = new Point(316, 38);
             precioTotalLabel.Name = "precioTotalLabel";
-            precioTotalLabel.Size = new Size(104, 15);
+            precioTotalLabel.Size = new Size(93, 15);
             precioTotalLabel.TabIndex = 14;
-            precioTotalLabel.Text = "Precio Total: $1560";
+            precioTotalLabel.Text = "precioTotalLabel";
             // 
             // nombreYApellidoLabel
             // 
@@ -362,11 +323,89 @@
             columnHeader14.Text = "Categoria";
             columnHeader14.Width = 80;
             // 
+            // abonadoLabel
+            // 
+            abonadoLabel.AutoSize = true;
+            abonadoLabel.Location = new Point(449, 38);
+            abonadoLabel.Name = "abonadoLabel";
+            abonadoLabel.Size = new Size(82, 15);
+            abonadoLabel.TabIndex = 19;
+            abonadoLabel.Text = "abonadoLabel";
+            // 
+            // vuelosAgregadosListView
+            // 
+            vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader5, columnHeader6, columnHeader7, columnHeader2, columnHeader3, columnHeader4, columnHeader26, columnHeader27, columnHeader28, columnHeader29 });
+            vuelosAgregadosListView.FullRowSelect = true;
+            vuelosAgregadosListView.Location = new Point(273, 121);
+            vuelosAgregadosListView.MultiSelect = false;
+            vuelosAgregadosListView.Name = "vuelosAgregadosListView";
+            vuelosAgregadosListView.Size = new Size(916, 235);
+            vuelosAgregadosListView.TabIndex = 27;
+            vuelosAgregadosListView.UseCompatibleStateImageBehavior = false;
+            vuelosAgregadosListView.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Fecha Salida";
+            columnHeader1.Width = 105;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Aerolinea";
+            columnHeader5.Width = 130;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Origen";
+            columnHeader6.Width = 85;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Destino";
+            columnHeader7.Width = 85;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Clase";
+            columnHeader2.Width = 65;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Cant. Pasajeros";
+            columnHeader3.Width = 95;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Precio Total";
+            columnHeader4.Width = 80;
+            // 
+            // columnHeader26
+            // 
+            columnHeader26.Text = "Duracion";
+            columnHeader26.Width = 70;
+            // 
+            // columnHeader27
+            // 
+            columnHeader27.Text = "Precio Adulto";
+            columnHeader27.Width = 85;
+            // 
+            // columnHeader28
+            // 
+            columnHeader28.Text = "Precio Menor";
+            columnHeader28.Width = 85;
+            // 
+            // columnHeader29
+            // 
+            columnHeader29.Text = "Precio Infante";
+            columnHeader29.Width = 85;
+            // 
             // MenuItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1343, 864);
+            ClientSize = new Size(1343, 785);
+            Controls.Add(vuelosAgregadosListView);
+            Controls.Add(abonadoLabel);
             Controls.Add(label7);
             Controls.Add(hotelesAgregadosListView);
             Controls.Add(cancelarReservaBtn);
@@ -377,7 +416,6 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(pasajerosListView);
-            Controls.Add(vuelosAgregadosListView);
             Controls.Add(estadoLabel);
             Controls.Add(label3);
             Controls.Add(confirmacionBox);
@@ -405,19 +443,11 @@
         private Label estadoLabel;
         private Label label3;
         private ListView pasajerosListView;
-        private ListView vuelosAgregadosListView;
         private Label label2;
         private Label label4;
         private GroupBox gestionarItinerarioBox;
         private ColumnHeader nombreHeader;
         private ColumnHeader fechaNacimientoHeader;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
-        private ColumnHeader columnHeader6;
-        private ColumnHeader columnHeader7;
         private Label precioTotalLabel;
         private Button generarPreReservaBtn;
         private Button generarReservaBtn;
@@ -437,5 +467,18 @@
         private ColumnHeader columnHeader13;
         private ColumnHeader columnHeader14;
         private ListView hotelesAgregadosListView;
+        private Label abonadoLabel;
+        private ListView vuelosAgregadosListView;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader26;
+        private ColumnHeader columnHeader27;
+        private ColumnHeader columnHeader28;
+        private ColumnHeader columnHeader29;
     }
 }

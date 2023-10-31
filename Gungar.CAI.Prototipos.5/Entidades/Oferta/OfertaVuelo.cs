@@ -11,11 +11,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
     public class TarifaVuelo
     {
         public char Clase { get; set; } // E, P, B, F
-        public string TipoDePasajero { get; set; } // A, M, I
+        public char TipoDePasajero { get; set; } // A, M, I
         public float Precio { get; set; }
         public int Disponibilidad { get; set; } // Cantidad de asientos disponibles
 
-        public TarifaVuelo(char clase, string tipoDePasajero, float precio, int disponibilidad)
+        public TarifaVuelo(char clase, char tipoDePasajero, float precio, int disponibilidad)
         {
             Clase = clase;
             TipoDePasajero = tipoDePasajero;
@@ -32,8 +32,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         public DateTime FechaSalida { get; set; }
         public DateTime FechaArribo { get; set; }
         public string TiempoDeVuelo { get; set; }
-        //public int HorasDeVuelo;
-        //public int MinutosDeVuelo;
         public string Aerolinea { get; set; }
         public List<TarifaVuelo> Tarifas { get; set; }
 
@@ -47,64 +45,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
             TiempoDeVuelo = tiempoDeVuelo;
             Aerolinea = aerolinea;
             Tarifas = tarifas;
-        }
-
-        public static Dictionary<string, string> Ciudades = new Dictionary<string, string>(){
-            {
-                "AEP", "Buenos Aires"
-            },  {
-                "COR", "Cordoba"
-            },  {
-                "MDZ", "Mendoza"
-            },  {
-                "ROS", "Rosario"
-            },  {
-                "BRC", "Bariloche"
-            },  {
-                "SLA", "Salta"
-            },  {
-                "TUC", "Tucuman"
-            },  {
-                "NQN", "Neuquen"
-            },  {
-                "MDQ", "Mar del Plata"
-            },  {
-                "RES", "Resistencia"
-            }, {
-                "SFN", "Santa Fe"
-            }, {
-                "PSS", "Posadas"
-            }, {
-                "BHI", "Bahia Blanca"
-            }, {
-                "FTE", "Calafate"
-            }, {
-                "USH", "Ushuaia"
-            }, {
-                "IGR", "Iguazu"
-            }, {
-                "CRD", "Comodoro Rivadavia"
-            }, {
-                "JUJ", "Jujuy"
-            },
-        };
-
-        public static Dictionary<string, string> Aerolineas = new Dictionary<string, string>(){
-            {
-                "AR", "Aerolineas Argentinas"
-            },  {
-                "FO", "Fly Bondi"
-            },  {
-                "WJ", "Jet Smart"
-            }
-        };
-
-        public enum Clases
-        {
-            Economy = 'E',
-            Premium = 'P',
-            Business = 'B',
-            First = 'F',
         }
     }
 }
