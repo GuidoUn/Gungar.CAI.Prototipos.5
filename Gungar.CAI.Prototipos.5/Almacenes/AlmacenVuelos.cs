@@ -73,11 +73,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private static bool estaEntreFechas(DateTime fechaVuelo, DateTime? fechaDesde, DateTime? fechaHasta)
         {
-            if (fechaVuelo.Date >= fechaDesde?.Date && (fechaVuelo.Date <= fechaHasta?.Date || fechaHasta == null))
-            {
-                return true;
-            }
-            return false;
+            return fechaVuelo.Date >= fechaDesde?.Date && (fechaVuelo.Date <= fechaHasta?.Date || fechaHasta == null);
         }
 
         private static bool estaEntrePrecios(float precioVuelo, int precioMinimo, int precioMaximo)

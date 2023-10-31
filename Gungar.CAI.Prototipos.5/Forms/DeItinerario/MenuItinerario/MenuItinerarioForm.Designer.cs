@@ -256,9 +256,9 @@
             precioTotalLabel.Location = new Point(451, 63);
             precioTotalLabel.Margin = new Padding(4, 0, 4, 0);
             precioTotalLabel.Name = "precioTotalLabel";
-            precioTotalLabel.Size = new Size(161, 25);
+            precioTotalLabel.Size = new Size(139, 25);
             precioTotalLabel.TabIndex = 14;
-            precioTotalLabel.Text = "Precio Total: $1560";
+            precioTotalLabel.Text = "precioTotalLabel";
             // 
             // nombreYApellidoLabel
             // 

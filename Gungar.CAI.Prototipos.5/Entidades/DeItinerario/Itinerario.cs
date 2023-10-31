@@ -94,17 +94,34 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public void AgregarReservaHotel(ReservaHotel hotel)
         {
             HotelesSeleccionados.Add(hotel);
+            // TODO: Sumar a precio total
         }
 
         public void AgregarReservaVuelo(ReservaVuelo reserva)
         {
             if (!VuelosAgregados.Exists(vuelo => vuelo.Vuelo.CodigoOferta == reserva.Vuelo.CodigoOferta))
+            {
                 VuelosAgregados.Add(reserva);
+            }
         }
 
         public void QuitarReservaVuelo(ReservaVuelo reserva)
         {
             VuelosAgregados.Remove(reserva);
+        }
+
+        public float CalcularPrecioTotal()
+        {
+            float precioTotal = 0;
+            VuelosAgregados.ForEach(reserva =>
+            {
+                precioTotal += reserva.PrecioTotal;
+            });
+            HotelesSeleccionados.ForEach(reserva =>
+            {
+                precioTotal += reserva.PrecioTotal;
+            });
+            return precioTotal;
         }
     }
 }

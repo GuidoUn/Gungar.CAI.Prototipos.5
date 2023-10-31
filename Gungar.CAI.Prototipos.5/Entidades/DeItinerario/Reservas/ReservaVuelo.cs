@@ -28,18 +28,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
             CantidadMenores = cantidadMenores;
             CantidadInfantes = cantidadInfantes;
 
-            if (clase == (char)OfertaVuelo.Clases.Economy)
-            {
-                PrecioTotal += vuelo.Tarifas[0].Precio * cantidadAdultos;
-                PrecioTotal += vuelo.Tarifas[1].Precio * cantidadMenores;
-                PrecioTotal += vuelo.Tarifas[2].Precio * cantidadInfantes;
-            }
-            else
-            {
-                PrecioTotal += vuelo.Tarifas[3].Precio * cantidadAdultos;
-                PrecioTotal += vuelo.Tarifas[4].Precio * cantidadMenores;
-                PrecioTotal += vuelo.Tarifas[5].Precio * cantidadInfantes;
-            }
+            List<TarifaVuelo> tarifas = vuelo.Tarifas.Where(tarifa => tarifa.Clase == clase).ToList();
+
+            PrecioTotal += vuelo.Tarifas[0].Precio * cantidadAdultos;
+            PrecioTotal += vuelo.Tarifas[1].Precio * cantidadMenores;
+            PrecioTotal += vuelo.Tarifas[2].Precio * cantidadInfantes;
         }
     }
 }

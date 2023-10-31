@@ -68,6 +68,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 abonadoLabel.Text = "Itinerario Abonado: No";
             }
+            precioTotalLabel.Text = $"Precio Total: ${model?.Itinerario?.CalcularPrecioTotal().ToString()}";
         }
 
         private void poblarListaPasajeros()
