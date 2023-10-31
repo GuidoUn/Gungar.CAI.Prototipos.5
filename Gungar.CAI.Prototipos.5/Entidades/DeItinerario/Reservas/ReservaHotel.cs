@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
+namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
 {
-    public class ReservaHotel : ReservaProducto
+    public class ReservaHotel : IReservaProducto
     {
         public Hotel Hotel { get; set; }
         public List<Pasajero> Pasajeros { get; set; } // Implementación de la propiedad Pasajeros

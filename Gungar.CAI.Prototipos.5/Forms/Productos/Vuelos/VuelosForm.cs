@@ -20,6 +20,10 @@ namespace Gungar.CAI.Prototipos._5
 
         VuelosFormModel model;
 
+        int adultosEnBusqueda;
+        int menoresEnBusqueda;
+        int infantesEnBusqueda;
+
         public VuelosForm(Itinerario? itinerario)
         {
             InitializeComponent();
@@ -50,6 +54,8 @@ namespace Gungar.CAI.Prototipos._5
             desdePreciosNumeric.Text = "";
             hastaPreciosNumeric.Text = "";
 
+            pasajerosEnBusquedaBox.Visible = false;
+
             borrarFechas();
             refrescar();
         }
@@ -72,6 +78,18 @@ namespace Gungar.CAI.Prototipos._5
             vueltaLabel.Visible = !model.EsSoloIda;
             vueltaDatePicker.Visible = !model.EsSoloIda;
             aplicarFiltrosBtn.Enabled = cantidadAdultosNumeric.Value > 0;
+            agregarProductoBtn.Enabled = evaluarMostrarAgregarProducto();
+            quitarProductoBtn.Enabled = vuelosAgregadosListView.SelectedItems.Count == 1;
+        }
+
+        private bool evaluarMostrarAgregarProducto()
+        {
+            if (vuelosIdaListView.SelectedItems.Count == 0)
+                return false;
+            if (soloIdaCheckBox.Checked)
+                return true;
+            return vuelosVueltaListView.SelectedItems.Count == 1;
+
         }
 
         private void poblarVuelos()
@@ -142,6 +160,22 @@ namespace Gungar.CAI.Prototipos._5
         private void aplicarFiltrosBtn_Click(object sender, EventArgs e)
         {
             poblarVuelos();
+            refrescar();
+            mostrarPasajerosEnBusqueda();
+        }
+
+        private void mostrarPasajerosEnBusqueda()
+        {
+            adultosEnBusqueda = decimal.ToInt32(cantidadAdultosNumeric.Value);
+            adultosEnBusquedaLabel.Text = adultosEnBusqueda.ToString();
+
+            menoresEnBusqueda = decimal.ToInt32(cantidadMenoresNumeric.Value);
+            menoresEnBusquedaLabel.Text = menoresEnBusqueda.ToString();
+
+            infantesEnBusqueda = decimal.ToInt32(cantidadInfantesNumeric.Value);
+            infantesEnBusquedaLabel.Text = infantesEnBusqueda.ToString();
+
+            pasajerosEnBusquedaBox.Visible = true;
         }
 
         private void cantidadAdultosNumeric_ValueChanged(object sender, EventArgs e)
@@ -169,6 +203,21 @@ namespace Gungar.CAI.Prototipos._5
         private void volverBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void vuelosIdaListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refrescar();
+        }
+
+        private void vuelosVueltaListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refrescar();
+        }
+
+        private void vuelosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refrescar();
         }
     }
 }

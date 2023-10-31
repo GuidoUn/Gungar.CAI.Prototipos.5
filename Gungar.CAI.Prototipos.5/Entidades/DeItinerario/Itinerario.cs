@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 
 namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
@@ -92,6 +93,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public void AgregarReservaHotel(ReservaHotel hotel)
         {
             HotelesSeleccionados.Add(hotel);
+        }
+
+        public void AgregarReservaVuelo(ReservaVuelo reserva)
+        {
+            VuelosAgregados.Add(reserva);
         }
     }
 }

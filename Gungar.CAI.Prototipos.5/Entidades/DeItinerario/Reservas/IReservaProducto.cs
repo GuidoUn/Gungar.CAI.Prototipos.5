@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
+namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
 {
-    public interface ReservaProducto
+    public interface IReservaProducto
     {
         public List<Pasajero> Pasajeros { get; set; }
     }
