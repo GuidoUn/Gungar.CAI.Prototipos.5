@@ -67,7 +67,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             pasajerosListView.Items.Clear();
 
-            foreach (var pasajero in model.Itinerario.Pasajeros)
+            model.Itinerario.Pasajeros.ForEach(pasajero =>
             {
                 var item = new ListViewItem();
                 item.Text = pasajero.Nombre + " " + pasajero.Apellido;
@@ -75,7 +75,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.Tag = pasajero;
 
                 pasajerosListView.Items.Add(item);
-            }
+            });
         }
 
         private void hotelesBtn_Click(object sender, EventArgs e)

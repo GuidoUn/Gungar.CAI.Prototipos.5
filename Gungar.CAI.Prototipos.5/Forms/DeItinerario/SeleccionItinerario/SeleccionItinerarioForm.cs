@@ -31,7 +31,7 @@ namespace Gungar.CAI.Prototipos._5
             itinerariosListView.Items.Clear();
             model.ItinerariosEnPantalla.ForEach(itinerario =>
             {
-                // itinerario.EvaluarVencimientoPrereserva(); TODO: Descomentar cuando querramos que a las 48hs venzan las prereservas
+                // itinerario.EvaluarVencimientoPrereserva(); TODO: Descomentar cuando querramos que a las 48hs venzan las prereservas, igualmente habría que moverlo
 
                 var item = new ListViewItem();
                 item.Text = itinerario.ItinerarioId.ToString();

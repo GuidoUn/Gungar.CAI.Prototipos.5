@@ -77,24 +77,23 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         private void BloquearDisponibilidadProductos()
         {
             Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false)); // TODO: Mover al módulo de disponibilidad?
-            DisponibilidadModulo.bloquearDisponibilidad(this); // Todo: Mover esta llamada al model capaz?
+            DisponibilidadModulo.bloquearDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
         }
 
         private void LiberarDisponibilidadProductos()
         {
             Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
-            DisponibilidadModulo.liberarDisponibilidad(this); // Todo: Mover esta llamada al model capaz?
+            DisponibilidadModulo.liberarDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
         }
 
-        public void AgregarHotel(Hotel hotel) // TODO: Esto se necesita?
-        {
-            Hoteles.Add(hotel);
-        }
+        //public void AgregarHotel(Hotel hotel) // TODO: Esto se necesita?
+        //{
+        //    Hoteles.Add(hotel);
+        //}
 
         public void AgregarReservaHotel(ReservaHotel hotel)
         {
             HotelesSeleccionados.Add(hotel);
-            // TODO: Sumar a precio total
         }
 
         public void AgregarReservaVuelo(ReservaVuelo reserva)
