@@ -36,7 +36,6 @@ namespace Gungar.CAI.Prototipos._5
 
         public static List<OfertaVuelo> GetVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int precioMinimo = 0, int precioMaximo = 0)
         {
-            bool isEconomy = clase == 'E';
             List<OfertaVuelo> vuelosFiltrados = OfertaVuelos.Where(vuelo =>
             {
                 if (origen != "" && !esMismaCiudad(vuelo.Origen, origen))

@@ -168,28 +168,28 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarVuelosAgregados()
         {
             vuelosAgregadosListView.Items.Clear();
-            foreach (ReservaVuelo vuelo in model.Itinerario.VuelosAgregados)
+
+
+            model.Itinerario.VuelosAgregados.ForEach(vuelo =>
             {
-                List<ReservaVuelo> vuelosAgregados = model.GetVuelosAgregados();
+                List<TarifaVuelo> tarifas = vuelo.Vuelo.Tarifas.Where(tarifa => tarifa.Clase == vuelo.Clase).ToList();
 
-
-                bool isEconomy = vuelo.Clase == (char)OfertaVuelo.Clases.Economy;
                 ListViewItem item = new ListViewItem();
                 item.Text = OfertaVuelo.Aerolineas[vuelo.Vuelo.Aerolinea];
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Origen]);
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Destino]);
                 item.SubItems.Add(vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA));
                 item.SubItems.Add(vuelo.Vuelo.TiempoDeVuelo);
-                item.SubItems.Add(((OfertaVuelo.Clases)vuelo.Vuelo.Tarifas[isEconomy ? 0 : 3].Clase).ToString());
+                item.SubItems.Add(((OfertaVuelo.Clases)tarifas[0].Clase).ToString());
                 item.SubItems.Add($"A({vuelo.CantidadAdultos}), M({vuelo.CantidadMenores}), I({vuelo.CantidadInfantes})");
                 item.SubItems.Add(vuelo.PrecioTotal.ToString());
-                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
-                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
-                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 2 : 5].Precio.ToString());
+                item.SubItems.Add(tarifas[0].Precio.ToString());
+                item.SubItems.Add(tarifas[1].Precio.ToString());
+                item.SubItems.Add(tarifas[2].Precio.ToString());
                 item.Tag = vuelo;
 
                 vuelosAgregadosListView.Items.Add(item);
-            }
+            });
         }
 
         private void anularItinerarioBtn_Click(object sender, EventArgs e)
