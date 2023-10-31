@@ -58,8 +58,6 @@ namespace Gungar.CAI.Prototipos._5
 
                 productosAgregadosListView.Items.Add(item);
             });
-
-            // TODO: Leer vuelos también?
         }
 
         private void poblarListaTotalDePasajerosItinerario()
