@@ -14,12 +14,26 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             itinerario.VuelosAgregados.ForEach(vuelo =>
             {
                 var vueloEnAlmacen = AlmacenVuelos.OfertaVuelos.Find(oferta => oferta.CodigoOferta == vuelo.Vuelo.CodigoOferta);
+                if (vueloEnAlmacen == null)
+                    throw new Exception();
 
-                int i = vuelo.Clase == 'E' ? 0 : 3;
+                vueloEnAlmacen.Tarifas.ForEach(tarifa =>
+                {
+                    if (tarifa.Clase != vuelo.Clase)
+                        return;
 
-                vueloEnAlmacen.Tarifas[i].Disponibilidad -= vuelo.CantidadAdultos;
-                vueloEnAlmacen.Tarifas[i + 1].Disponibilidad -= vuelo.CantidadMenores;
-                vueloEnAlmacen.Tarifas[i + 2].Disponibilidad -= vuelo.CantidadInfantes;
+                    if (tarifa.TipoDePasajero == 'A')
+                        tarifa.Disponibilidad -= vuelo.CantidadAdultos;
+                    if (tarifa.TipoDePasajero == 'M')
+                        tarifa.Disponibilidad -= vuelo.CantidadMenores;
+                    if (tarifa.TipoDePasajero == 'I')
+                        tarifa.Disponibilidad -= vuelo.CantidadInfantes;
+
+                    if (tarifa.Disponibilidad < 0)
+                    {
+                        throw new Exception("Disponibilidad insuficiente");
+                    }
+                });
             });
 
             // TODO: Bloquear disponibilidad hoteles acá
@@ -30,12 +44,21 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             itinerario.VuelosAgregados.ForEach(vuelo =>
             {
                 var vueloEnAlmacen = AlmacenVuelos.OfertaVuelos.Find(oferta => oferta.CodigoOferta == vuelo.Vuelo.CodigoOferta);
+                if (vueloEnAlmacen == null)
+                    throw new Exception();
 
-                int i = vuelo.Clase == 'E' ? 0 : 3;
+                vueloEnAlmacen.Tarifas.ForEach(tarifa =>
+                {
+                    if (tarifa.Clase != vuelo.Clase)
+                        return;
 
-                vueloEnAlmacen.Tarifas[i].Disponibilidad += vuelo.CantidadAdultos;
-                vueloEnAlmacen.Tarifas[i + 1].Disponibilidad += vuelo.CantidadMenores;
-                vueloEnAlmacen.Tarifas[i + 2].Disponibilidad += vuelo.CantidadInfantes;
+                    if (tarifa.TipoDePasajero == 'A')
+                        tarifa.Disponibilidad += vuelo.CantidadAdultos;
+                    if (tarifa.TipoDePasajero == 'M')
+                        tarifa.Disponibilidad += vuelo.CantidadMenores;
+                    if (tarifa.TipoDePasajero == 'I')
+                        tarifa.Disponibilidad += vuelo.CantidadInfantes;
+                });
             });
 
             // TODO: Liberar disponibilidad hoteles acá

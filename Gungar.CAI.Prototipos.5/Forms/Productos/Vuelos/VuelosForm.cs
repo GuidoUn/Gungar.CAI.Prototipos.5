@@ -107,6 +107,8 @@ namespace Gungar.CAI.Prototipos._5
             foreach (OfertaVuelo vuelo in vuelosIdaDisponibles)
             {
                 ListViewItem item = new ListViewItem();
+                var tarifas = vuelo.Tarifas.Where(tarifa => tarifa.Clase == clasesCombo.Text[0]); // TODO: usar este tarifas 
+
                 item.Text = OfertaVuelo.Aerolineas[vuelo.Aerolinea];
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Origen]);
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Destino]);
