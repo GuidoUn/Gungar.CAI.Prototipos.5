@@ -582,6 +582,7 @@
             agregarProductoBtn.TabIndex = 23;
             agregarProductoBtn.Text = "Agregar";
             agregarProductoBtn.UseVisualStyleBackColor = true;
+            agregarProductoBtn.Click += agregarProductoBtn_Click;
             // 
             // quitarProductoBtn
             // 
@@ -593,6 +594,7 @@
             quitarProductoBtn.TabIndex = 22;
             quitarProductoBtn.Text = "Quitar";
             quitarProductoBtn.UseVisualStyleBackColor = true;
+            quitarProductoBtn.Click += quitarProductoBtn_Click;
             // 
             // vuelosIdaBox
             // 

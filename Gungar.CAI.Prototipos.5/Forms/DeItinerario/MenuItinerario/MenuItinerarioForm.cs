@@ -16,6 +16,8 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class MenuItinerarioForm : Form
     {
+        const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
+
         MenuItinerarioFormModel model;
 
         ClienteForm? clienteForm;
@@ -166,10 +168,25 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarVuelosAgregados()
         {
             vuelosAgregadosListView.Items.Clear();
-            foreach (ReservaVuelo reservaVuelo in model.Itinerario.VuelosAgregados)
+            foreach (ReservaVuelo vuelo in model.Itinerario.VuelosAgregados)
             {
+                List<ReservaVuelo> vuelosAgregados = model.GetVuelosAgregados();
+
+
+                bool isEconomy = vuelo.Clase == (char)OfertaVuelo.Clases.Economy;
                 ListViewItem item = new ListViewItem();
-                // TODO: Cargar vuelos agregados
+                item.Text = OfertaVuelo.Aerolineas[vuelo.Vuelo.Aerolinea];
+                item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Origen]);
+                item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Destino]);
+                item.SubItems.Add(vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA));
+                item.SubItems.Add(vuelo.Vuelo.TiempoDeVuelo);
+                item.SubItems.Add(((OfertaVuelo.Clases)vuelo.Vuelo.Tarifas[isEconomy ? 0 : 3].Clase).ToString());
+                item.SubItems.Add($"A({vuelo.CantidadAdultos}), M({vuelo.CantidadMenores}), I({vuelo.CantidadInfantes})");
+                item.SubItems.Add(vuelo.PrecioTotal.ToString());
+                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
+                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
+                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 2 : 5].Precio.ToString());
+                item.Tag = vuelo;
 
                 vuelosAgregadosListView.Items.Add(item);
             }

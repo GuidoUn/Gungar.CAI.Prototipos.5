@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Forms.Productos.Vuelos;
 
@@ -15,6 +16,8 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class VuelosForm : Form
     {
+        const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
+
         DateTime? fechaIdaSeleccionada = null;
         DateTime? fechaVueltaSeleccionada = null;
 
@@ -29,8 +32,6 @@ namespace Gungar.CAI.Prototipos._5
             InitializeComponent();
             model = new VuelosFormModel(itinerario);
         }
-
-        const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
 
         private void VuelosForm_Load(object sender, EventArgs e)
         {
@@ -57,6 +58,7 @@ namespace Gungar.CAI.Prototipos._5
             pasajerosEnBusquedaBox.Visible = false;
 
             borrarFechas();
+            poblarVuelosAgregados();
             refrescar();
         }
 
@@ -142,6 +144,33 @@ namespace Gungar.CAI.Prototipos._5
             }
         }
 
+        private void poblarVuelosAgregados()
+        {
+            vuelosAgregadosListView.Items.Clear();
+
+            List<ReservaVuelo> vuelosAgregados = model.GetVuelosAgregados();
+
+            foreach (ReservaVuelo vuelo in vuelosAgregados)
+            {
+                bool isEconomy = vuelo.Clase == (char)OfertaVuelo.Clases.Economy;
+                ListViewItem item = new ListViewItem();
+                item.Text = OfertaVuelo.Aerolineas[vuelo.Vuelo.Aerolinea];
+                item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Origen]);
+                item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Destino]);
+                item.SubItems.Add(vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA));
+                item.SubItems.Add(vuelo.Vuelo.TiempoDeVuelo);
+                item.SubItems.Add(((OfertaVuelo.Clases)vuelo.Vuelo.Tarifas[isEconomy ? 0 : 3].Clase).ToString());
+                item.SubItems.Add($"A({vuelo.CantidadAdultos}), M({vuelo.CantidadMenores}), I({vuelo.CantidadInfantes})");
+                item.SubItems.Add(vuelo.PrecioTotal.ToString());
+                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 0 : 3].Precio.ToString());
+                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 1 : 4].Precio.ToString());
+                item.SubItems.Add(vuelo.Vuelo.Tarifas[isEconomy ? 2 : 5].Precio.ToString());
+                item.Tag = vuelo;
+
+                vuelosAgregadosListView.Items.Add(item);
+            }
+        }
+
         private string getStringPrecioDisponibilidad(TarifaVuelo tarifa)
         {
             if (tarifa.Disponibilidad <= 0)
@@ -217,6 +246,29 @@ namespace Gungar.CAI.Prototipos._5
 
         private void vuelosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Console.WriteLine(vuelosAgregadosListView);
+            refrescar();
+        }
+
+        private void agregarProductoBtn_Click(object sender, EventArgs e)
+        {
+            OfertaVuelo ofertaIda = (OfertaVuelo)vuelosIdaListView.SelectedItems[0].Tag;
+            model.agregarVuelo(ofertaIda, clasesCombo.Text[0], adultosEnBusqueda, menoresEnBusqueda, infantesEnBusqueda);
+            if (!soloIdaCheckBox.Checked)
+            {
+                OfertaVuelo ofertaVuelta = (OfertaVuelo)vuelosVueltaListView.SelectedItems[0].Tag;
+                model.agregarVuelo(ofertaVuelta, clasesCombo.Text[0], adultosEnBusqueda, menoresEnBusqueda, infantesEnBusqueda);
+            }
+            vuelosIdaListView.SelectedItems.Clear();
+            vuelosVueltaListView.SelectedItems.Clear();
+            poblarVuelosAgregados();
+            refrescar();
+        }
+
+        private void quitarProductoBtn_Click(object sender, EventArgs e)
+        {
+            model.quitarVuelo((ReservaVuelo)vuelosAgregadosListView.SelectedItems[0].Tag);
+            poblarVuelosAgregados();
             refrescar();
         }
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 
 namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
 {
@@ -41,6 +42,11 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
         public bool PuedeReserva()
         {
             return puedeConfirmar() && Itinerario.ItinerarioPagado;
+        }
+
+        public List<ReservaVuelo> GetVuelosAgregados()
+        {
+            return Itinerario?.VuelosAgregados ?? new();
         }
 
         //public bool GetPagado()

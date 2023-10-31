@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {
@@ -75,14 +76,14 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         private void BloquearDisponibilidadProductos()
         {
-            Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false));
-            // TODO: Bloquear vuelos
+            Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false)); // TODO: Mover al módulo de disponibilidad?
+            DisponibilidadModulo.bloquearDisponibilidad(this); // Todo: Mover esta llamada al model capaz?
         }
 
         private void LiberarDisponibilidadProductos()
         {
             Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
-            // TODO: Liberar vuelos
+            DisponibilidadModulo.liberarDisponibilidad(this); // Todo: Mover esta llamada al model capaz?
         }
 
         public void AgregarHotel(Hotel hotel) // TODO: Esto se necesita?
@@ -97,7 +98,13 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         public void AgregarReservaVuelo(ReservaVuelo reserva)
         {
-            VuelosAgregados.Add(reserva);
+            if (!VuelosAgregados.Exists(vuelo => vuelo.Vuelo.CodigoOferta == reserva.Vuelo.CodigoOferta))
+                VuelosAgregados.Add(reserva);
+        }
+
+        public void QuitarReservaVuelo(ReservaVuelo reserva)
+        {
+            VuelosAgregados.Remove(reserva);
         }
     }
 }
