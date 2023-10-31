@@ -68,7 +68,7 @@
             continuarBtn.Enabled = false;
             continuarBtn.Location = new Point(420, 575);
             continuarBtn.Name = "continuarBtn";
-            continuarBtn.Size = new Size(103, 56);
+            continuarBtn.Size = new Size(173, 85);
             continuarBtn.TabIndex = 21;
             continuarBtn.Text = "Consultar/ Modificar";
             continuarBtn.UseVisualStyleBackColor = true;

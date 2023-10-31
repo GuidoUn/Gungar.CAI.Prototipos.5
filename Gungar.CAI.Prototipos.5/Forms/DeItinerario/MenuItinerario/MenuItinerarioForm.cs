@@ -167,14 +167,14 @@ namespace Gungar.CAI.Prototipos._5
                 List<TarifaVuelo> tarifas = vuelo.Vuelo.Tarifas.Where(tarifa => tarifa.Clase == vuelo.Clase).ToList();
 
                 ListViewItem item = new ListViewItem();
-                item.Text = OfertaVuelo.Aerolineas[vuelo.Vuelo.Aerolinea];
+                item.Text = vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA);
+                item.SubItems.Add(OfertaVuelo.Aerolineas[vuelo.Vuelo.Aerolinea]);
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Origen]);
                 item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Destino]);
-                item.SubItems.Add(vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA));
-                item.SubItems.Add(vuelo.Vuelo.TiempoDeVuelo);
                 item.SubItems.Add(((OfertaVuelo.Clases)tarifas[0].Clase).ToString());
                 item.SubItems.Add($"A({vuelo.CantidadAdultos}), M({vuelo.CantidadMenores}), I({vuelo.CantidadInfantes})");
                 item.SubItems.Add(vuelo.PrecioTotal.ToString());
+                item.SubItems.Add(vuelo.Vuelo.TiempoDeVuelo);
                 item.SubItems.Add(tarifas[0].Precio.ToString());
                 item.SubItems.Add(tarifas[1].Precio.ToString());
                 item.SubItems.Add(tarifas[2].Precio.ToString());
