@@ -146,7 +146,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = reservaHotel.Hotel.Disponibilidad?.Nombre;
-                item.SubItems.Add(OfertaHotel.CodigoACiudad[reservaHotel.Hotel.CodigoCiudad]);
+                item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
                 item.SubItems.Add("$ " + HotelesModel.ObtenerPrecioTotal(model.Itinerario.Hoteles).ToString());
@@ -168,10 +168,10 @@ namespace Gungar.CAI.Prototipos._5
 
                 ListViewItem item = new ListViewItem();
                 item.Text = vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA);
-                item.SubItems.Add(OfertaVuelo.Aerolineas[vuelo.Vuelo.Aerolinea]);
-                item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Origen]);
-                item.SubItems.Add(OfertaVuelo.Ciudades[vuelo.Vuelo.Destino]);
-                item.SubItems.Add(((OfertaVuelo.Clases)tarifas[0].Clase).ToString());
+                item.SubItems.Add(Constantes.Aerolineas[vuelo.Vuelo.Aerolinea]);
+                item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Origen]);
+                item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Destino]);
+                item.SubItems.Add(Constantes.Clases[tarifas[0].Clase]);
                 item.SubItems.Add($"A({vuelo.CantidadAdultos}), M({vuelo.CantidadMenores}), I({vuelo.CantidadInfantes})");
                 item.SubItems.Add(vuelo.PrecioTotal.ToString());
                 item.SubItems.Add(vuelo.Vuelo.TiempoDeVuelo);

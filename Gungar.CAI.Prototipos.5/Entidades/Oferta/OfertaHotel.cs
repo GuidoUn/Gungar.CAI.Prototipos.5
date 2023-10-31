@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 {
-
     public class Direccion
     {
         public string Calle;
@@ -66,10 +65,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         public Direccion Direccion; // (Calle, número, CP, Latitud, Longitud)
         public int Calificacion; // 1, 2, 3, 4 ó 5
         public List<Disponibilidad> Disponibilidad; // 1, 2, 3, 4 ó 5
+
         public OfertaHotel()
         {
             // Constructor sin parámetros
         }
+
         public OfertaHotel(string nombreHotel, string codigoOferta, string codigoCiudad, int calificacion, List<Disponibilidad> disponibilidad, Direccion direccion)
         {
             CodigoOferta = codigoOferta;
@@ -80,6 +81,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
             Disponibilidad = disponibilidad;
 
         }
+
         public OfertaHotel(string nombreHotel, string codigoOferta, string codigoCiudad, int calificacion, Direccion direccion)
         {
             CodigoOferta = codigoOferta;
@@ -87,64 +89,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
             CodigoCiudad = codigoCiudad;
             Direccion = direccion;
             Calificacion = calificacion;
-
-
         }
-        public static Dictionary<string, int> Calificaciones = new Dictionary<string, int>()
-            {
-            {"Todas",0 },
-    { "1 Estrella", 1 },
-    { "2 Estrellas", 2 },
-    { "3 Estrellas", 3 },
-    { "4 Estrellas", 4 },
-    { "5 Estrellas", 5 }
-};
-
-        public static Dictionary<string, string> CodigoACiudad = new Dictionary<string, string>(){
-            {
-                "BUE", "Buenos Aires"
-            },
-            {
-                "AEP", "Buenos Aires"
-            },  {
-                "COR", "Cordoba"
-            },  {
-                "MDZ", "Mendoza"
-            },  {
-                "ROS", "Rosario"
-            },  {
-                "BRC", "Bariloche"
-            },  {
-                "SLA", "Salta"
-            },  {
-                "TUC", "Tucuman"
-            },  {
-                "NQN", "Neuquen"
-            },  {
-                "MDQ", "Mar del Plata"
-            },  {
-                "RES", "Resistencia"
-            }, {
-                "SFN", "Santa Fe"
-            }, {
-                "PSS", "Posadas"
-            }, {
-                "BHI", "Bahia Blanca"
-            }, {
-                "FTE", "Calafate"
-            }, {
-                "USH", "Ushuaia"
-            }, {
-                "IGR", "Iguazu"
-            }, {
-                "CRD", "Comodoro Rivadavia"
-            }, {
-                "JUJ", "Jujuy"
-            },
-        };
-
     }
-
-
-
 }

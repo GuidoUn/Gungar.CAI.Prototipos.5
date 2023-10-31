@@ -465,15 +465,16 @@
             modificarItinerarioBox.Size = new Size(740, 564);
             modificarItinerarioBox.TabIndex = 27;
             modificarItinerarioBox.TabStop = false;
+            modificarItinerarioBox.Text = "Vuelos en Itinerario";
             // 
             // vuelosAgregadosListView
             // 
             vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader5, columnHeader6, columnHeader7, columnHeader16, columnHeader17, columnHeader18, columnHeader15, columnHeader19, columnHeader20, columnHeader21 });
             vuelosAgregadosListView.FullRowSelect = true;
-            vuelosAgregadosListView.Location = new Point(88, 16);
+            vuelosAgregadosListView.Location = new Point(88, 22);
             vuelosAgregadosListView.MultiSelect = false;
             vuelosAgregadosListView.Name = "vuelosAgregadosListView";
-            vuelosAgregadosListView.Size = new Size(646, 542);
+            vuelosAgregadosListView.Size = new Size(646, 536);
             vuelosAgregadosListView.TabIndex = 25;
             vuelosAgregadosListView.UseCompatibleStateImageBehavior = false;
             vuelosAgregadosListView.View = View.Details;
@@ -570,10 +571,10 @@
             // 
             vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader9, columnHeader23, columnHeader10, columnHeader11, columnHeader12 });
             vuelosIdaListView.FullRowSelect = true;
-            vuelosIdaListView.Location = new Point(11, 16);
+            vuelosIdaListView.Location = new Point(11, 22);
             vuelosIdaListView.MultiSelect = false;
             vuelosIdaListView.Name = "vuelosIdaListView";
-            vuelosIdaListView.Size = new Size(755, 252);
+            vuelosIdaListView.Size = new Size(755, 246);
             vuelosIdaListView.TabIndex = 24;
             vuelosIdaListView.UseCompatibleStateImageBehavior = false;
             vuelosIdaListView.View = View.Details;

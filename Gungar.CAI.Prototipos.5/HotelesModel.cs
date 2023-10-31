@@ -50,7 +50,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private static bool esMismaCiudad(string codigoCiudadHotel, string ciudadBusqueda)
         {
-            if (OfertaHotel.CodigoACiudad[codigoCiudadHotel].ToLower().Contains(ciudadBusqueda.ToLower()))
+            if (Constantes.Ciudades[codigoCiudadHotel].ToLower().Contains(ciudadBusqueda.ToLower()))
             {
                 return true;
             }
@@ -87,14 +87,13 @@ namespace Gungar.CAI.Prototipos._5
 
         public static List<Hotel> getHoteles(string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, string calificacion, DateTime? fechaDesde = null, DateTime? fechaHasta = null, decimal? precioMinimo = null, decimal? precioMaximo = null)
         {
-
             List<Hotel> hotelesFiltrados = ofertaHoteles.Where(hotel =>
             {
                 if (destino != "" && !esMismaCiudad(hotel.CodigoCiudad, destino))
                     return false;
                 if (!estaEntreFechas(hotel.Disponibilidad.FechasOcupadas, fechaDesde, fechaHasta))
                     return false;
-                if (OfertaHotel.Calificaciones[calificacion] != OfertaHotel.Calificaciones["Todas"] && !esMismaCalificacion(hotel.Calificacion, OfertaHotel.Calificaciones[calificacion]))
+                if (Constantes.Calificaciones[calificacion] != Constantes.Calificaciones["Todas"] && !esMismaCalificacion(hotel.Calificacion, Constantes.Calificaciones[calificacion]))
                     return false;
                 if ((precioMinimo != null || precioMaximo != null) && (precioMinimo != 0 || precioMaximo != 0) && !esEnMismoRangoDePrecio(hotel.Disponibilidad.Tarifa, precioMaximo, precioMinimo))
                     return false;

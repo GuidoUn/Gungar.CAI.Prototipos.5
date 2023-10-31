@@ -62,7 +62,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private static bool esMismaCiudad(string ciudadVuelo, string ciudadBusqueda)
         {
-            if (OfertaVuelo.Ciudades[ciudadVuelo].ToLower().Contains(ciudadBusqueda.ToLower()))
+            if (Constantes.Ciudades[ciudadVuelo].ToLower().Contains(ciudadBusqueda.ToLower()))
                 return true;
 
             if (ciudadVuelo.ToLower().Contains(ciudadBusqueda.ToLower()))
