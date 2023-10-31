@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -64,26 +65,12 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarListaTotalDePasajerosItinerario()
         {
             pasajerosItinerarioListView.Items.Clear();
-            foreach (var hotel in itinerario.HotelesSeleccionados)
-            {
-                foreach (var pasajero in hotel.Pasajeros)
-                {
-                    var item = new ListViewItem();
-                    item.Text = pasajero.Nombre;
-                    item.SubItems.Add(pasajero.Apellido);
-                    item.SubItems.Add(pasajero.Documento);
-                    item.SubItems.Add(pasajero.Email);
-                    item.SubItems.Add(pasajero.Telefono);
-                    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
-                    item.Tag = pasajero;
 
-                    pasajerosItinerarioListView.Items.Add(item);
-                }
-            }
+            List<IReservaProducto> reservaProductos = VentasModulo.GetProductosAgregados(itinerario.ItinerarioId); // TODO: Usar model
 
-            itinerario.VuelosAgregados.ForEach(vuelo =>
+            reservaProductos.ForEach(reservaProducto =>
             {
-                vuelo.Pasajeros.ForEach(pasajero =>
+                reservaProducto.Pasajeros.ForEach(pasajero =>
                 {
                     var item = new ListViewItem();
                     item.Text = pasajero.Nombre;

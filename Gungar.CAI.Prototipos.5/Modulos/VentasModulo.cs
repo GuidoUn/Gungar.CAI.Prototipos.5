@@ -1,4 +1,5 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,20 @@ namespace Gungar.CAI.Prototipos._5.Modulos
         public static void AgregarItinerario(Itinerario itinerario)
         {
             AlmacenItinerarios.AgregarItinerario(itinerario);
+        }
+
+        public static List<IReservaProducto> GetProductosAgregados(int itinerarioId)
+        {
+            Itinerario? itinerario = AlmacenItinerarios.Itinerarios.FirstOrDefault(itinerario => itinerario.ItinerarioId == itinerarioId);
+            if (itinerario == null)
+                return new List<IReservaProducto>();
+
+            List<IReservaProducto> ReservaProductos = new List<IReservaProducto>();
+
+            ReservaProductos.AddRange(itinerario.HotelesSeleccionados);
+            ReservaProductos.AddRange(itinerario.VuelosAgregados);
+
+            return ReservaProductos;
         }
     }
 }
