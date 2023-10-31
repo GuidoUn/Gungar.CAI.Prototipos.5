@@ -34,6 +34,8 @@ namespace Gungar.CAI.Prototipos._5
             File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(OfertaVuelos));
         }
 
+        // TODO: Debería moverse a algún módulo?
+
         public static List<OfertaVuelo> GetVuelos(string origen, string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, char clase, DateTime? fechaDesde = null, DateTime? fechaHasta = null, int precioMinimo = 0, int precioMaximo = 0)
         {
             List<OfertaVuelo> vuelosFiltrados = OfertaVuelos.Where(vuelo =>
@@ -61,13 +63,11 @@ namespace Gungar.CAI.Prototipos._5
         private static bool esMismaCiudad(string ciudadVuelo, string ciudadBusqueda)
         {
             if (OfertaVuelo.Ciudades[ciudadVuelo].ToLower().Contains(ciudadBusqueda.ToLower()))
-            {
                 return true;
-            }
+
             if (ciudadVuelo.ToLower().Contains(ciudadBusqueda.ToLower()))
-            {
                 return true;
-            }
+
             return false;
         }
 

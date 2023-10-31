@@ -50,30 +50,11 @@ namespace Gungar.CAI.Prototipos._5
         public static int ObtenerNuevoId()
         {
             if (Itinerarios.Count == 0)
-            {
                 return 0;
-            }
-            return Itinerarios.Last().ItinerarioId + 1;
-        }
 
-        public static List<Itinerario> GetItinerariosFiltrados(string textoBusqueda)
-        {
-            string textoBusquedaLower = textoBusqueda.ToLower();
-            List<Itinerario> ItinerarioFiltrados = Itinerarios.Where(itinerario =>
-            {
-                if (itinerario.ItinerarioId.ToString().ToLower().Contains(textoBusquedaLower))
-                    return true;
-                if (itinerario.Cliente == null)
-                    return false;
-                if (itinerario.Cliente.GetNombreYApellido().ToLower().Contains(textoBusquedaLower))
-                    return true;
-                if (itinerario.Cliente.Documento != null && itinerario.Cliente.Documento.ToLower().Contains(textoBusquedaLower))
-                    return true;
+            List<Itinerario> itinerariosOrdenados = Itinerarios.OrderBy(itinerario => itinerario.ItinerarioId).ToList();
 
-                return false;
-            }).ToList();
-
-            return ItinerarioFiltrados;
+            return itinerariosOrdenados.Last().ItinerarioId + 1;
         }
     }
 }

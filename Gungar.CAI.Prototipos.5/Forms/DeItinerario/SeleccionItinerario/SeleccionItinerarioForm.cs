@@ -29,7 +29,7 @@ namespace Gungar.CAI.Prototipos._5
         private void refrescar()
         {
             itinerariosListView.Items.Clear();
-            foreach (var itinerario in model.ItinerariosEnPantalla)
+            model.ItinerariosEnPantalla.ForEach(itinerario =>
             {
                 // itinerario.EvaluarVencimientoPrereserva(); TODO: Descomentar cuando querramos que a las 48hs venzan las prereservas
 
@@ -42,7 +42,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.Tag = itinerario;
 
                 itinerariosListView.Items.Add(item);
-            }
+            });
         }
 
         private void SeleccionItinerarioForm_Load(object sender, EventArgs e)
@@ -51,6 +51,7 @@ namespace Gungar.CAI.Prototipos._5
 
             refrescar();
         }
+
         private void evaluarEstadoBtns()
         {
             continuarBtn.Enabled = model.ItinerarioSeleccionado != null;
@@ -59,10 +60,6 @@ namespace Gungar.CAI.Prototipos._5
 
         private void itinerariosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (itinerariosListView.SelectedItems == null || itinerariosListView.SelectedItems.Count == 0)
-            {
-                return;
-            }
             ListViewItem selected = itinerariosListView.SelectedItems[0];
             model.ItinerarioSeleccionado = selected.Tag as Itinerario;
 
