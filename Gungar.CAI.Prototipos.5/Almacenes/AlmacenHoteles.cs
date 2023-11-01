@@ -11,7 +11,6 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
 {
     public static class AlmacenHoteles
     {
-
         static JsonSerializerOptions serializerOptions = new JsonSerializerOptions { IncludeFields = true };
 
         const string FILE_LOCATION = @"..\..\..\Almacenes\Archivos\Hoteles.json";
@@ -19,7 +18,6 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
         public static List<Hotel>? OfertaHotelesDesagrupados;
 
         public static List<OfertaHotel>? OfertaHotelesEnAlmacen;
-
 
         static AlmacenHoteles()
         {
@@ -45,7 +43,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
 
             File.WriteAllText(FILE_LOCATION, JsonSerializer.Serialize(OfertaHotelesEnAlmacen, serializerOptions));
         }
-      
+
         private static List<Hotel> DesagruparHotelesPorDisponibilidad(List<OfertaHotel> hotelesAgrupados)
         {
             List<Hotel> listaDeHoteles = new List<Hotel>();
@@ -53,7 +51,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
             {
                 return listaDeHoteles;
             }
-           
+
 
             hotelesAgrupados.ForEach(hotel =>
             {
@@ -126,6 +124,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
             {
                 precioTotal += hotel.Disponibilidad.Tarifa;
             });
+
             return precioTotal;
         }
 
@@ -161,7 +160,6 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
             }
 
             return precioHotelEnDecimal <= precioMaximo && precioHotelEnDecimal >= precioMinimo;
-
         }
 
         public static void ModificarDisponibilidad(Hotel hotel, bool isRollback)
@@ -183,8 +181,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
                         disponibilidadAModificar.FechasOcupadas.AddRange(fechasOcupadasAAgregar);
                     }
                 }
-            }
-             );
+            });
         }
     }
 }
