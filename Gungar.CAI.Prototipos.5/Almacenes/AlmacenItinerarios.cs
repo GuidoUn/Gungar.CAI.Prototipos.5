@@ -52,9 +52,9 @@ namespace Gungar.CAI.Prototipos._5
             if (Itinerarios.Count == 0)
                 return 0;
 
-            List<Itinerario> itinerariosOrdenados = Itinerarios.OrderBy(itinerario => itinerario.ItinerarioId).ToList();
+            Itinerario ultimoItinerario = Itinerarios.OrderBy(itinerario => itinerario.ItinerarioId).Last();
 
-            return itinerariosOrdenados.Last().ItinerarioId + 1;
+            return ultimoItinerario.ItinerarioId + 1;
         }
     }
 }
