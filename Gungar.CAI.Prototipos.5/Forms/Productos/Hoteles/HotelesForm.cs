@@ -100,15 +100,18 @@ namespace Gungar.CAI.Prototipos._5
 
         private void poblarProductosAgregados()
         {
-            hotelesAgregadosListView.Items.Clear();
-            foreach (var reservaHotel in itinerario?.HotelesSeleccionados)
+            if (!esConsulta)
             {
-                var item = new ListViewItem();
-                item.Text = reservaHotel.Hotel.NombreHotel;
-                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
-                item.Tag = reservaHotel;
+                hotelesAgregadosListView.Items.Clear();
+                foreach (var reservaHotel in itinerario?.HotelesSeleccionados)
+                {
+                    var item = new ListViewItem();
+                    item.Text = reservaHotel.Hotel.NombreHotel;
+                    item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
+                    item.Tag = reservaHotel;
 
-                hotelesAgregadosListView.Items.Add(item);
+                    hotelesAgregadosListView.Items.Add(item);
+                }
             }
         }
 
@@ -150,7 +153,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private bool HotelYaFueAgregado(Hotel Hotel)
         {
-            return itinerario.HotelesSeleccionados.Any(reservaHotel=>reservaHotel.Hotel.Equals(Hotel));
+            return itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel));
         }
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
