@@ -79,7 +79,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
                     return false;
                 if (!EstaEntreFechas(hotel.Disponibilidad.FechasOcupadas, fechaDesde, fechaHasta))
                     return false;
-                if (OfertaHotel.Calificaciones[calificacion] != OfertaHotel.Calificaciones["Todas"] && !EsMismaCalificacion(hotel.Calificacion, OfertaHotel.Calificaciones[calificacion]))
+                if (Constantes.Calificaciones[calificacion] != Constantes.Calificaciones["Todas"] && !EsMismaCalificacion(hotel.Calificacion, Constantes.Calificaciones[calificacion]))
                     return false;
                 if ((precioMinimo != null || precioMaximo != null) && (precioMinimo != 0 || precioMaximo != 0) && !EsEnMismoRangoDePrecio(hotel.Disponibilidad.Tarifa, precioMaximo, precioMinimo))
                     return false;
@@ -131,7 +131,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
 
         private static bool EsMismaCiudad(string codigoCiudadHotel, string ciudadBusqueda)
         {
-            if (OfertaHotel.CodigoACiudad[codigoCiudadHotel].ToLower().Contains(ciudadBusqueda.ToLower()))
+            if (Constantes.Ciudades[codigoCiudadHotel].ToLower().Contains(ciudadBusqueda.ToLower()))
             {
                 return true;
             }
@@ -195,6 +195,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
 
 
         }
+       
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Gungar.CAI.Prototipos._5.Entidades;
+﻿using Gungar.CAI.Prototipos._5.Almacenes;
+using Gungar.CAI.Prototipos._5.Entidades;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using System;
 using System.Collections.Generic;
@@ -155,23 +156,12 @@ namespace Gungar.CAI.Prototipos._5
              }
              );
 
-            DataBase.GuardarHoteles(ofertaHotelesEnAlmacen);
+            AlmacenHoteles.GuardarHoteles();
 
         }
 
-        public static void CargaInicial()
-        {
-            ofertaHotelesEnAlmacen = DataBase.LeerHoteles();
+       
 
-            if (ofertaHotelesEnAlmacen != null)
-            {
-                ofertaHoteles = DesagruparHotelesPorDisponibilidad(ofertaHotelesEnAlmacen);
-            }
-        }
-
-        public static void GuardarDatos()
-        {
-            DataBase.GuardarHoteles(ofertaHotelesEnAlmacen);
-        }
+       
     }
 }
