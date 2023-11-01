@@ -77,13 +77,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         private void BloquearDisponibilidadProductos()
         {
-            Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, false)); // TODO: Mover al módulo de disponibilidad?
+            // TODO: Mover al módulo de disponibilidad?
             DisponibilidadModulo.bloquearDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
         }
 
         private void LiberarDisponibilidadProductos()
         {
-            Hoteles.ForEach(hotel => HotelesModel.ModificarDisponibilidadHotel(hotel, true));
             DisponibilidadModulo.liberarDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
         }
 
@@ -96,7 +95,10 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         {
             HotelesSeleccionados.Add(hotel);
         }
-
+        public void QuitarReservaHotel(ReservaHotel reservaHotel)
+        {
+            HotelesSeleccionados.Remove(reservaHotel);
+        }
         public void AgregarReservaVuelo(ReservaVuelo reserva)
         {
             if (!VuelosAgregados.Exists(vuelo => vuelo.Vuelo.CodigoOferta == reserva.Vuelo.CodigoOferta))

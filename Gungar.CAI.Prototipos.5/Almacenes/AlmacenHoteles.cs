@@ -164,7 +164,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
 
         }
 
-        public static void ModificarDisponibilidadHotel(Hotel hotel, bool rollback)
+        public static void ModificarDisponibilidad(Hotel hotel, bool isRollback)
         {
             if (OfertaHotelesEnAlmacen == null) return;
             OfertaHotelesEnAlmacen.ForEach(_hotel =>
@@ -172,30 +172,19 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
                 var disponibilidadAModificar = _hotel.Disponibilidad.Find(h => h.Nombre == hotel.Disponibilidad.Nombre);
                 if (_hotel.CodigoOferta == hotel.CodigoOferta && disponibilidadAModificar != null)
                 {
-                    if (rollback)
+                    if (isRollback)
                     {
                         disponibilidadAModificar.Cantidad++;
-
-
-
                     }
                     else
                     {
                         disponibilidadAModificar.Cantidad--;
                         List<DateTime> fechasOcupadasAAgregar = ObtenerRangoDeFechas(hotel.FechaDesde, hotel.FechaHasta);
                         disponibilidadAModificar.FechasOcupadas.AddRange(fechasOcupadasAAgregar);
-
-
                     }
-
                 }
             }
              );
-
-
-
         }
-       
-
     }
 }

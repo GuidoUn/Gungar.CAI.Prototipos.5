@@ -1,4 +1,6 @@
-﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+﻿using Gungar.CAI.Prototipos._5.Almacenes;
+using Gungar.CAI.Prototipos._5.Entidades;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +38,7 @@ namespace Gungar.CAI.Prototipos._5.Modulos
                 });
             });
 
-            // TODO: Bloquear disponibilidad hoteles acá
+            itinerario.HotelesSeleccionados.ForEach(reservaHotel => AlmacenHoteles.ModificarDisponibilidad(reservaHotel.Hotel, false));
         }
 
         public static void liberarDisponibilidad(Itinerario itinerario)
@@ -62,6 +64,9 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             });
 
             // TODO: Liberar disponibilidad hoteles acá
+            itinerario.HotelesSeleccionados.ForEach(reservaHotel => AlmacenHoteles.ModificarDisponibilidad(reservaHotel.Hotel, true));
+
         }
+
     }
 }

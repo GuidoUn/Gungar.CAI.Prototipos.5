@@ -17,10 +17,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
 
             Hotel = hotel;
             Pasajeros = new List<Pasajero>(); // Puedes inicializar la lista aquí o en el constructor
+            
         }
 
         public ReservaHotel() { }
-
+       
 
 
     }

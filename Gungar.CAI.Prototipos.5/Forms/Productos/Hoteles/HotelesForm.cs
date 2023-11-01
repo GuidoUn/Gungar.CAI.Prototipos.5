@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gungar.CAI.Prototipos._5.Almacenes;
 using Gungar.CAI.Prototipos._5.Entidades;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
@@ -24,7 +25,9 @@ namespace Gungar.CAI.Prototipos._5
         DateTime desdeFechaSeleccionada;
         HotelesFormModel hotelesFormModel;
 
-        Hotel hotelAAgregar;
+        Hotel hotelSeleccionado;
+
+        ReservaHotel hotelAgregadoSeleccionado;
 
         public HotelesForm(Itinerario? itinerario)
         {
@@ -68,7 +71,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void poblarHoteles()
         {
-            listaDeHotelesDisponibles = HotelesModel.getHoteles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text, desdeFechaSeleccionada, hastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
+            listaDeHotelesDisponibles = AlmacenHoteles.GetHoteles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text, desdeFechaSeleccionada, hastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
 
             hotelesListView.Items.Clear();
             foreach (var hotel in listaDeHotelesDisponibles)
@@ -100,7 +103,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void poblarProductosAgregados()
         {
-            itinerarioListView.Items.Clear();
+            hotelesAgregadosListView.Items.Clear();
             foreach (var reservaHotel in itinerario?.HotelesSeleccionados)
             {
                 var item = new ListViewItem();
@@ -108,7 +111,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
                 item.Tag = reservaHotel;
 
-                itinerarioListView.Items.Add(item);
+                hotelesAgregadosListView.Items.Add(item);
             }
         }
 
@@ -146,21 +149,45 @@ namespace Gungar.CAI.Prototipos._5
             {
                 return;
             }
-            hotelAAgregar = (Hotel)hotelesListView.SelectedItems[0].Tag;
+            hotelSeleccionado = (Hotel)hotelesListView.SelectedItems[0].Tag;
         }
 
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
-            if (hotelAAgregar == null)
+            if (hotelSeleccionado == null)
             {
                 MessageBox.Show("Debe seleccionar un hotel", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            hotelAAgregar.FechaDesde = desdeFechaSeleccionada;
-            hotelAAgregar.FechaHasta = hastaFechaSeleccionada;
-            ReservaHotel reservaHotel = new ReservaHotel(hotelAAgregar);
+            hotelSeleccionado.FechaDesde = desdeFechaSeleccionada;
+            hotelSeleccionado.FechaHasta = hastaFechaSeleccionada;
+            ReservaHotel reservaHotel = new ReservaHotel(hotelSeleccionado);
+
             itinerario?.AgregarReservaHotel(reservaHotel);
             poblarProductosAgregados();
+        }
+
+        private void volverBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void quitarHotelBtn_Click(object sender, EventArgs e)
+        {
+            if (hotelAgregadoSeleccionado == null) return;
+            itinerario?.QuitarReservaHotel(hotelAgregadoSeleccionado);
+            poblarProductosAgregados();
+
+        }
+
+        private void hotelesAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (hotelesAgregadosListView.SelectedItems.Count <= 0)
+            {
+                return;
+            }
+            hotelAgregadoSeleccionado = (ReservaHotel)hotelesAgregadosListView.SelectedItems[0].Tag;
+
         }
     }
 }

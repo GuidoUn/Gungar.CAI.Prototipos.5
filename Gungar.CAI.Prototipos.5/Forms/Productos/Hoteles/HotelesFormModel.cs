@@ -33,5 +33,13 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
         {
             return AlmacenHoteles.GetHoteles( destino,  cantidadAdultos,  cantidadMenores,  cantidadInfantes,  calificacion, fechaDesde,   fechaHasta ,   precioMinimo ,   precioMaximo );
         }
+
+        public void ModificarDisponibilidad(Hotel hotel, bool isRollback)
+        {
+            AlmacenHoteles.ModificarDisponibilidad(hotel, isRollback);
+        }
+
+   
+
     }
 }

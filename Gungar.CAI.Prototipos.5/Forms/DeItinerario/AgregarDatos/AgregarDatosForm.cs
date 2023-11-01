@@ -29,13 +29,11 @@ namespace Gungar.CAI.Prototipos._5
 
         IReservaProducto productoSeleccionado;
 
-        bool esPreReserva; // TODO: Borrar si no se usa
 
         public AgregarDatosForm(Itinerario itinerario, bool esPreReserva)
         {
             InitializeComponent();
             this.itinerario = itinerario;
-            this.esPreReserva = esPreReserva;
         }
         private void poblarProductosAgregados()
         {
@@ -185,7 +183,7 @@ namespace Gungar.CAI.Prototipos._5
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
             itinerario.GenerarPrereserva();
-            itinerario.HotelesSeleccionados.ForEach(reservaHotel => AlmacenHoteles.ModificarDisponibilidadHotel(reservaHotel.Hotel, false));
+        
             this.Close();
         }
 
