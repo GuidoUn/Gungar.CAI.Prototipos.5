@@ -14,8 +14,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class SeleccionItinerarioForm : Form
     {
-        const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
-
         SeleccionItinerarioFormModel model;
 
         MenuItinerarioForm? menuItinerarioForm;
@@ -37,7 +35,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.Text = itinerario.ItinerarioId.ToString();
                 item.SubItems.Add(itinerario?.Cliente?.GetNombreYApellido());
                 item.SubItems.Add(itinerario?.Cliente?.Documento);
-                item.SubItems.Add(itinerario?.FechaCreacion.ToString(FORMATO_FECHA));
+                item.SubItems.Add(itinerario?.FechaCreacion.ToString(Constantes.FORMATO_FECHA_LARGA));
                 item.SubItems.Add(itinerario?.Estado.ToString());
                 item.Tag = itinerario;
 

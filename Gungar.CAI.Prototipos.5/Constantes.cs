@@ -8,7 +8,11 @@ namespace Gungar.CAI.Prototipos._5
 {
     public static class Constantes
     {
-        public static Dictionary<string, string> Ciudades = new(){
+        public const string FORMATO_FECHA_CORTA = "yyyy-MM-dd";
+
+        public const string FORMATO_FECHA_LARGA = "yyyy'-'MM'-'dd'T'HH':'mm";
+
+        public static readonly Dictionary<string, string> Ciudades = new(){
             {
                 "BUE", "Buenos Aires"
             }, {
@@ -50,7 +54,7 @@ namespace Gungar.CAI.Prototipos._5
             },
         };
 
-        public static Dictionary<string, string> Aerolineas = new(){
+        public static readonly Dictionary<string, string> Aerolineas = new(){
             {
                 "AR", "Aerolineas Argentinas"
             },  {
@@ -60,7 +64,7 @@ namespace Gungar.CAI.Prototipos._5
             }
         };
 
-        public static Dictionary<char, string> Clases = new(){
+        public static readonly Dictionary<char, string> Clases = new(){
             {
                 'E', "Economy"
             },  {
@@ -72,7 +76,7 @@ namespace Gungar.CAI.Prototipos._5
             }
         };
 
-        public static Dictionary<string, int> Calificaciones = new(){
+        public static readonly Dictionary<string, int> Calificaciones = new(){
             {
                 "Todas", 0
             },  {

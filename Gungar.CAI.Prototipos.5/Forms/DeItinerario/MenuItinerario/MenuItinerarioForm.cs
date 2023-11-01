@@ -17,8 +17,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class MenuItinerarioForm : Form
     {
-        const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
-
         MenuItinerarioFormModel model;
 
         ClienteForm? clienteForm;
@@ -32,7 +30,7 @@ namespace Gungar.CAI.Prototipos._5
             model = new MenuItinerarioFormModel(itinerario);
             // model.Itinerario.EvaluarVencimientoPrereserva(); TODO: Descomentar cuando querramos que a las 48hs venzan las prereservas     
 
-            itinerarioSeleccionadoLabel.Text = $"{itinerario.ItinerarioId}";
+            itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
         }
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
@@ -171,7 +169,7 @@ namespace Gungar.CAI.Prototipos._5
                 List<TarifaVuelo> tarifas = vuelo.Vuelo.Tarifas.Where(tarifa => tarifa.Clase == vuelo.Clase).ToList();
 
                 ListViewItem item = new ListViewItem();
-                item.Text = vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA);
+                item.Text = vuelo.Vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_LARGA);
                 item.SubItems.Add(Constantes.Aerolineas[vuelo.Vuelo.Aerolinea]);
                 item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Origen]);
                 item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Destino]);

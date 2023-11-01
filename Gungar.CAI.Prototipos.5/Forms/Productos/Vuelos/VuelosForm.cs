@@ -16,8 +16,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class VuelosForm : Form
     {
-        const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
-
         DateTime? fechaIdaSeleccionada = null;
         DateTime? fechaVueltaSeleccionada = null;
 
@@ -111,7 +109,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.Text = Constantes.Aerolineas[vuelo.Aerolinea];
                 item.SubItems.Add(Constantes.Ciudades[vuelo.Origen]);
                 item.SubItems.Add(Constantes.Ciudades[vuelo.Destino]);
-                item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
+                item.SubItems.Add(vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_LARGA));
                 item.SubItems.Add(vuelo.TiempoDeVuelo);
                 item.SubItems.Add(Constantes.Clases[tarifas[0].Clase]);
                 item.SubItems.Add(getStringPrecioDisponibilidad(tarifas[0]));
@@ -134,7 +132,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.Text = Constantes.Aerolineas[vuelo.Aerolinea];
                     item.SubItems.Add(Constantes.Ciudades[vuelo.Origen]);
                     item.SubItems.Add(Constantes.Ciudades[vuelo.Destino]);
-                    item.SubItems.Add(vuelo.FechaSalida.ToString(FORMATO_FECHA));
+                    item.SubItems.Add(vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_LARGA));
                     item.SubItems.Add(vuelo.TiempoDeVuelo);
                     item.SubItems.Add(Constantes.Clases[tarifas[0].Clase]);
                     item.SubItems.Add(getStringPrecioDisponibilidad(tarifas[0]));
@@ -158,7 +156,7 @@ namespace Gungar.CAI.Prototipos._5
                 List<TarifaVuelo> tarifas = vuelo.Vuelo.Tarifas.Where(tarifa => tarifa.Clase == vuelo.Clase).ToList();
 
                 ListViewItem item = new ListViewItem();
-                item.Text = vuelo.Vuelo.FechaSalida.ToString(FORMATO_FECHA);
+                item.Text = vuelo.Vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_LARGA);
                 item.SubItems.Add(Constantes.Aerolineas[vuelo.Vuelo.Aerolinea]);
                 item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Origen]);
                 item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Destino]);

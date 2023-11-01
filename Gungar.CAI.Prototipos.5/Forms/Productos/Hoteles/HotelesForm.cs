@@ -42,12 +42,7 @@ namespace Gungar.CAI.Prototipos._5
             }
         }
 
-        const string FORMATO_FECHA = "yyyy'-'MM'-'dd'T'HH':'mm";
-
-        int nroProductoAAgregar = 0;
-
-
-
+        int nroProductoAAgregar = 0; // TODO: Borrarlo si no se usa
 
         private void HotelesForm_Load(object sender, EventArgs e)
         {

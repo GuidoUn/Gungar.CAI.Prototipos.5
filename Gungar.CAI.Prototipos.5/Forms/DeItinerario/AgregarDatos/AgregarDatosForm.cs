@@ -17,8 +17,6 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class AgregarDatosForm : Form
     {
-        const string FORMATO_FECHA = "yyyy-MM-dd";
-
         Itinerario? itinerario;
 
         Pasajero? pasajeroSeleccionado;
@@ -143,7 +141,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void agregarPasajeroBtn_Click(object sender, EventArgs e)
         {
-            Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, emailTextBox.Text, telefonoTextBox.Text, fechaNacDatePicker.Value.ToString(FORMATO_FECHA));
+            Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, emailTextBox.Text, telefonoTextBox.Text, fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA));
 
             //if (hotelSeleccionado == null) return;
             //hotelSeleccionado.Pasajeros.Add(nuevoPasajero);
@@ -183,7 +181,7 @@ namespace Gungar.CAI.Prototipos._5
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
             itinerario.GenerarPrereserva();
-        
+
             this.Close();
         }
 
