@@ -29,7 +29,7 @@ namespace Gungar.CAI.Prototipos._5
             InitializeComponent();
             model = new MenuItinerarioFormModel(itinerario);
             // model.Itinerario.EvaluarVencimientoPrereserva(); TODO: Descomentar cuando querramos que a las 48hs venzan las prereservas     
-
+            agregarDatosForm = new AgregarDatosForm(model.Itinerario, true);
             itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
         }
 
@@ -89,7 +89,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void generarPreReserva_Click(object sender, EventArgs e)
         {
-            agregarDatosForm = new AgregarDatosForm(model.Itinerario, true);
+            
 
             agregarDatosForm.ShowDialog();
             refrescar();
@@ -149,8 +149,8 @@ namespace Gungar.CAI.Prototipos._5
                 ListViewItem item = new ListViewItem();
                 item.Text = reservaHotel.Hotel.Disponibilidad?.Nombre;
                 item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
-                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
-                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Fecha.ToString());
+                item.SubItems.Add(reservaHotel.Hotel.FechaDesde.ToString(Constantes.FORMATO_FECHA_CORTA));
+                item.SubItems.Add(reservaHotel.Hotel.FechaHasta.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.SubItems.Add("$ " + AlmacenHoteles.ObtenerPrecioTotal(model.Itinerario.Hoteles).ToString());
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
                 item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());

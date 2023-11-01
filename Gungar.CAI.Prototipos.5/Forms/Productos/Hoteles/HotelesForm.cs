@@ -63,6 +63,8 @@ namespace Gungar.CAI.Prototipos._5
             desdeFechaDatePicker.MinDate = DateTime.Now;
             hastaFechaDatePicker.MinDate = DateTime.Now;
             borrarFechas();
+            poblarProductosAgregados();
+
         }
         private void poblarHoteles()
         {
@@ -80,8 +82,8 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(hotel.Direccion.Calle);
                     item.SubItems.Add(hotel.Calificacion.ToString());
                     item.SubItems.Add(Constantes.Ciudades[hotel.CodigoCiudad]);
-                    item.SubItems.Add(hotel.Disponibilidad.Tarifa.ToString());
-                    item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString());
+                    item.SubItems.Add("$" + hotel.Disponibilidad.Tarifa.ToString());
+                    item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString(Constantes.FORMATO_FECHA_CORTA));
                     item.SubItems.Add(hotel.Disponibilidad.CapacidadAdultos.ToString());
                     item.SubItems.Add(hotel.Disponibilidad.CapacidadMenores.ToString());
                     item.SubItems.Add(hotel.Disponibilidad.CapacidadInfantes.ToString());
@@ -130,7 +132,7 @@ namespace Gungar.CAI.Prototipos._5
         private void borrarFechas()
         {
             desdeFechaDatePicker.Value = DateTime.Now;
-            hastaFechaDatePicker.Value = DateTime.Now;
+            hastaFechaDatePicker.Value = DateTime.Now.AddDays(1);
         }
 
         private void borrarFechasBtn_Click(object sender, EventArgs e)
@@ -146,7 +148,10 @@ namespace Gungar.CAI.Prototipos._5
             }
             hotelSeleccionado = (Hotel)hotelesListView.SelectedItems[0].Tag;
         }
-
+        private bool HotelYaFueAgregado(Hotel Hotel)
+        {
+            return itinerario.HotelesSeleccionados.Any(reservaHotel=>reservaHotel.Hotel.Equals(Hotel));
+        }
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
             if (hotelSeleccionado == null)
@@ -156,6 +161,12 @@ namespace Gungar.CAI.Prototipos._5
             }
             hotelSeleccionado.FechaDesde = desdeFechaSeleccionada;
             hotelSeleccionado.FechaHasta = hastaFechaSeleccionada;
+            if (HotelYaFueAgregado(hotelSeleccionado))
+            {
+
+                MessageBox.Show("El Hotel seleccionado ya fue agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             ReservaHotel reservaHotel = new ReservaHotel(hotelSeleccionado);
 
             itinerario?.AgregarReservaHotel(reservaHotel);

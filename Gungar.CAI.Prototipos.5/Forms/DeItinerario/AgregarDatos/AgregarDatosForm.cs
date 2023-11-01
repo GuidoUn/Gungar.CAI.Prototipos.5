@@ -19,9 +19,15 @@ namespace Gungar.CAI.Prototipos._5
     {
         Itinerario? itinerario;
 
-        Pasajero? pasajeroSeleccionado;
+        Pasajero? pasajeroItinerarioSeleccionado;
 
         Pasajero? pasajeroProductoSeleccionado;
+
+        List<Pasajero> pasajerosItinerario;
+
+        bool editandoPasajero = false;
+
+
 
         //ReservaHotel hotelSeleccionado;
 
@@ -32,6 +38,15 @@ namespace Gungar.CAI.Prototipos._5
         {
             InitializeComponent();
             this.itinerario = itinerario;
+            HashSet<Pasajero> pasajerosUnicos = new HashSet<Pasajero>();
+
+            VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(producto =>
+            {
+                producto.Pasajeros.ForEach(pasajero => pasajerosUnicos.Add(pasajero));
+            });
+            pasajerosItinerario = new List<Pasajero>(pasajerosUnicos);
+
+
         }
         private void poblarProductosAgregados()
         {
@@ -59,7 +74,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void poblarListaTotalDePasajerosItinerario()
         {
-            pasajerosItinerarioListView.Items.Clear();
+            pasajerosProductoListView.Items.Clear();
 
             List<IReservaProducto> reservaProductos = VentasModulo.GetProductosAgregados(itinerario.ItinerarioId); // TODO: Usar model
 
@@ -68,22 +83,44 @@ namespace Gungar.CAI.Prototipos._5
                 reservaProducto.Pasajeros.ForEach(pasajero =>
                 {
                     var item = new ListViewItem();
-                    item.Text = pasajero.Nombre;
-                    item.SubItems.Add(pasajero.Apellido);
-                    item.SubItems.Add(pasajero.Documento);
-                    item.SubItems.Add(pasajero.Email);
-                    item.SubItems.Add(pasajero.Telefono);
-                    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                    item.Text = pasajero.Documento;
+
+                    //item.Text = pasajero.Nombre;
+                    //item.SubItems.Add(pasajero.Apellido);
+                    //item.SubItems.Add(pasajero.Documento);
+                    //item.SubItems.Add(pasajero.Email);
+                    //item.SubItems.Add(pasajero.Telefono);
+                    //item.SubItems.Add(pasajero.FechaNacimiento.ToString());
                     item.Tag = pasajero;
 
-                    pasajerosItinerarioListView.Items.Add(item);
+                    pasajerosProductoListView.Items.Add(item);
                 });
             });
         }
 
+        private void PoblarPasajerosItinerario()
+        {
+            pasajerosItinerarioListView.Items.Clear();
+
+            pasajerosItinerario.ForEach(pasajero =>
+            {
+                var item = new ListViewItem();
+                item.Text = pasajero.Nombre;
+                item.SubItems.Add(pasajero.Apellido);
+                item.SubItems.Add(pasajero.Documento);
+                item.SubItems.Add(pasajero.Email);
+                item.SubItems.Add(pasajero.Telefono);
+                item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                item.Tag = pasajero;
+                pasajerosItinerarioListView.Items.Add(item);
+
+            });
+
+        }
+
         private void poblarListaPasajeros()
         {
-            pasajerosProductosListView.Items.Clear();
+            pasajerosProductoListView.Items.Clear();
             //if (hotelSeleccionado == null)
             //{
             //    return;
@@ -108,24 +145,19 @@ namespace Gungar.CAI.Prototipos._5
             foreach (var pasajero in productoSeleccionado.Pasajeros)
             {
                 var item = new ListViewItem();
-                item.Text = pasajero.Nombre;
-                item.SubItems.Add(pasajero.Apellido);
-                item.SubItems.Add(pasajero.Documento);
-                item.SubItems.Add(pasajero.Email);
-                item.SubItems.Add(pasajero.Telefono);
-                item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                item.Text = pasajero.Documento;
                 item.Tag = pasajero;
 
-                pasajerosProductosListView.Items.Add(item);
+                pasajerosProductoListView.Items.Add(item);
             }
         }
 
         private void AgregarDatosForm_Load(object sender, EventArgs e)
         {
             itinerarioLabel.Text = $"{itinerario?.Cliente?.Nombre} ({itinerario?.ItinerarioId})";
-
+            evaluarTextosDeSeleccion();
             poblarListaPasajeros();
-
+            PoblarPasajerosItinerario();
             poblarProductosAgregados();
         }
 
@@ -141,17 +173,34 @@ namespace Gungar.CAI.Prototipos._5
 
         private void agregarPasajeroBtn_Click(object sender, EventArgs e)
         {
-            Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, emailTextBox.Text, telefonoTextBox.Text, fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA));
 
-            //if (hotelSeleccionado == null) return;
-            //hotelSeleccionado.Pasajeros.Add(nuevoPasajero);
-            if (productoSeleccionado == null) return;
-            productoSeleccionado.Pasajeros.Add(nuevoPasajero);
+            if (pasajerosItinerario.Any(pasajero => pasajero.Documento == pasajeroItinerarioSeleccionado?.Documento) && editandoPasajero)
+            {
+                var PasajeroAModificar = pasajerosItinerario.Find(pasajero => pasajero.Documento == pasajeroItinerarioSeleccionado?.Documento);
+                PasajeroAModificar.Email = emailTextBox.Text;
+                PasajeroAModificar.Documento = DNITextBox.Text;
+                PasajeroAModificar.Apellido = apellidoTextBox.Text;
+                PasajeroAModificar.Telefono = telefonoTextBox.Text;
+                PasajeroAModificar.Nombre = nombreTextBox.Text;
+                PasajeroAModificar.FechaNacimiento = fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA);
+                editandoPasajero = false;
+                editarPasajeroBtn.Text = "Editar";
+            }
+            else
+            {
+                Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, emailTextBox.Text, telefonoTextBox.Text, fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA));
+
+                pasajerosItinerario.Add(nuevoPasajero);
+
+            }
+
 
 
             poblarListaPasajeros();
             poblarListaTotalDePasajerosItinerario();
             vaciarCampos();
+            PoblarPasajerosItinerario();
+            evaluarTextosDeSeleccion();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -164,18 +213,31 @@ namespace Gungar.CAI.Prototipos._5
             //hotelSeleccionado.Pasajeros.Remove(pasajeroProductoSeleccionado);
             productoSeleccionado.Pasajeros.Remove(pasajeroProductoSeleccionado);
             pasajeroProductoSeleccionado = null;
+            evaluarTextosDeSeleccion();
             poblarListaPasajeros();
-            poblarListaTotalDePasajerosItinerario();
+            //poblarListaTotalDePasajerosItinerario();
             evaluarVisibilidadBtns();
         }
 
+        private void evaluarTextosDeSeleccion()
+        {
+            if (pasajeroItinerarioSeleccionado == null)
+            {
+                pasajeroLabel.Text =  "Ningun pasajero seleccionado";
 
+            }
+            if (productoSeleccionado == null)
+            {
+                productoLabel.Text = "Ningun producto seleccionado";
+
+            }
+        }
         private void evaluarVisibilidadBtns()
         {
             eliminarPasajeroBtn.Enabled = pasajeroProductoSeleccionado != null;
-
+            editarPasajeroBtn.Enabled = pasajeroItinerarioSeleccionado != null;
             //asignarBtn.Enabled = pasajeroSeleccionado != null && hotelSeleccionado != null;
-            asignarBtn.Enabled = pasajeroSeleccionado != null && productoSeleccionado != null;
+            asignarBtn.Enabled = pasajeroItinerarioSeleccionado != null && productoSeleccionado != null;
         }
 
         private void confirmarBtn_Click(object sender, EventArgs e)
@@ -190,36 +252,91 @@ namespace Gungar.CAI.Prototipos._5
             if (productosAgregadosListView.SelectedItems.Count == 0) return;
             //hotelSeleccionado = (ReservaHotel)productosAgregadosListView.SelectedItems[0].Tag;
             productoSeleccionado = (IReservaProducto)productosAgregadosListView.SelectedItems[0].Tag;
+            if(productoSeleccionado is ReservaHotel reservaHotel)
+            {
+                productoLabel.Text = reservaHotel.Hotel.Disponibilidad.Nombre;
+
+            }
+            else if(productoSeleccionado is ReservaVuelo reservaVuelo)
+            {
+                productoLabel.Text = reservaVuelo.Vuelo.CodigoOferta;
+
+            }
             poblarListaPasajeros();
             evaluarVisibilidadBtns();
+            evaluarTextosDeSeleccion();
         }
+
+
+        private bool PasajeroYaSeAgregoAlProductoSeleccionado(Pasajero pasajero)
+        {
+            return productoSeleccionado.Pasajeros.Contains(pasajero);
+        }
+        private void asignarBtn_Click(object sender, EventArgs e)
+        {
+
+            //if (pasajeroSeleccionado == null || hotelSeleccionado == null) return;
+            if (pasajeroItinerarioSeleccionado == null || productoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(pasajeroItinerarioSeleccionado)) return;
+            //hotelSeleccionado.Pasajeros.Add(pasajeroSeleccionado);
+            productoSeleccionado.Pasajeros.Add(pasajeroItinerarioSeleccionado);
+            pasajeroItinerarioSeleccionado = null;
+            poblarListaPasajeros();
+            evaluarVisibilidadBtns();
+            evaluarTextosDeSeleccion();
+        }
+
 
         private void pasajerosItinerarioListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (pasajerosItinerarioListView.SelectedItems.Count == 0) return;
-            pasajeroSeleccionado = (Pasajero)pasajerosItinerarioListView.SelectedItems[0].Tag;
-            evaluarVisibilidadBtns();
-        }
-
-        private void asignarBtn_Click(object sender, EventArgs e)
-        {
-            //if (pasajeroSeleccionado == null || hotelSeleccionado == null) return;
-            if (pasajeroSeleccionado == null || productoSeleccionado == null) return;
-            //hotelSeleccionado.Pasajeros.Add(pasajeroSeleccionado);
-            productoSeleccionado.Pasajeros.Add(pasajeroSeleccionado);
-            poblarListaPasajeros();
-        }
-
-        private void pasajerosProductosListView_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (pasajerosProductosListView.SelectedItems.Count == 0)
+            if (pasajerosItinerarioListView.SelectedItems.Count == 0)
             {
                 return;
             }
 
-            pasajeroProductoSeleccionado = (Pasajero)pasajerosProductosListView.SelectedItems[0].Tag;
+            pasajeroItinerarioSeleccionado = (Pasajero)pasajerosItinerarioListView.SelectedItems[0].Tag;
+            pasajeroLabel.Text = pasajeroItinerarioSeleccionado.Documento;
+            evaluarVisibilidadBtns();
+            evaluarTextosDeSeleccion();
+
+        }
+
+        private void pasajerosProductoListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (pasajerosProductoListView.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            pasajeroProductoSeleccionado = (Pasajero)pasajerosProductoListView.SelectedItems[0].Tag;
 
             evaluarVisibilidadBtns();
+            evaluarTextosDeSeleccion();
+
         }
+
+        private void editarPasajeroBtn_Click(object sender, EventArgs e)
+        {
+            if (pasajeroItinerarioSeleccionado == null) return;
+
+            editandoPasajero = !editandoPasajero;
+            if (editandoPasajero)
+            {
+                editarPasajeroBtn.Text = "Cancelar Edicion";
+                vaciarCampos();
+
+            }
+            else
+            {
+                editarPasajeroBtn.Text = "Editar";
+            }
+            nombreTextBox.Text = pasajeroItinerarioSeleccionado.Nombre;
+            apellidoTextBox.Text = pasajeroItinerarioSeleccionado.Apellido;
+            DNITextBox.Text = pasajeroItinerarioSeleccionado.Documento;
+            emailTextBox.Text = pasajeroItinerarioSeleccionado.Email;
+            telefonoTextBox.Text = pasajeroItinerarioSeleccionado.Telefono;
+            fechaNacDatePicker.Text = pasajeroItinerarioSeleccionado.FechaNacimiento;
+            evaluarTextosDeSeleccion();
+        }
+
+
     }
 }

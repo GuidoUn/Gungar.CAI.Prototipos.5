@@ -9,8 +9,9 @@ namespace Gungar.CAI.Prototipos._5.Entidades
 {
     public class Hotel : OfertaHotel
     {
-       
+        private static int ultimoID = 0;
 
+        public int Id;
         public Disponibilidad Disponibilidad;
         public DateTime FechaDesde { get; set; }
         public DateTime FechaHasta { get; set; }
@@ -19,6 +20,8 @@ namespace Gungar.CAI.Prototipos._5.Entidades
             : base(nombreHotel, codigoOferta, codigoCiudad, calificacion, direccion)
         {
             this.Disponibilidad = disponibilidad;
+            this.Id = ultimoID;
+            ultimoID++;
         }
 
     }
