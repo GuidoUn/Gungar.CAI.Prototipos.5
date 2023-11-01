@@ -24,6 +24,7 @@ namespace Gungar.CAI.Prototipos._5
         int adultosEnBusqueda;
         int menoresEnBusqueda;
         int infantesEnBusqueda;
+        char claseEnBusqueda;
 
         public VuelosForm(Itinerario? itinerario)
         {
@@ -192,10 +193,10 @@ namespace Gungar.CAI.Prototipos._5
         {
             poblarVuelos();
             refrescar();
-            mostrarPasajerosEnBusqueda();
+            guardarDatosBusqueda();
         }
 
-        private void mostrarPasajerosEnBusqueda()
+        private void guardarDatosBusqueda()
         {
             adultosEnBusqueda = decimal.ToInt32(cantidadAdultosNumeric.Value);
             adultosEnBusquedaLabel.Text = adultosEnBusqueda.ToString();
@@ -207,6 +208,8 @@ namespace Gungar.CAI.Prototipos._5
             infantesEnBusquedaLabel.Text = infantesEnBusqueda.ToString();
 
             pasajerosEnBusquedaBox.Visible = true;
+
+            claseEnBusqueda = clasesCombo.Text[0];
         }
 
         private void cantidadAdultosNumeric_ValueChanged(object sender, EventArgs e)
@@ -255,11 +258,11 @@ namespace Gungar.CAI.Prototipos._5
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
             OfertaVuelo ofertaIda = (OfertaVuelo)vuelosIdaListView.SelectedItems[0].Tag;
-            model.agregarVuelo(ofertaIda, clasesCombo.Text[0], adultosEnBusqueda, menoresEnBusqueda, infantesEnBusqueda);
+            model.agregarVuelo(ofertaIda, claseEnBusqueda, adultosEnBusqueda, menoresEnBusqueda, infantesEnBusqueda);
             if (!soloIdaCheckBox.Checked)
             {
                 OfertaVuelo ofertaVuelta = (OfertaVuelo)vuelosVueltaListView.SelectedItems[0].Tag;
-                model.agregarVuelo(ofertaVuelta, clasesCombo.Text[0], adultosEnBusqueda, menoresEnBusqueda, infantesEnBusqueda);
+                model.agregarVuelo(ofertaVuelta, claseEnBusqueda, adultosEnBusqueda, menoresEnBusqueda, infantesEnBusqueda);
             }
             vuelosIdaListView.SelectedItems.Clear();
             vuelosVueltaListView.SelectedItems.Clear();

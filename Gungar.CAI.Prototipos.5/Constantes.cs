@@ -10,7 +10,7 @@ namespace Gungar.CAI.Prototipos._5
     {
         public const string FORMATO_FECHA_CORTA = "yyyy-MM-dd";
 
-        public const string FORMATO_FECHA_LARGA = "yyyy'-'MM'-'dd'T'HH':'mm";
+        public const string FORMATO_FECHA_LARGA = "yyyy-MM-ddTHH:mm";
 
         public static readonly Dictionary<string, string> Ciudades = new(){
             {
