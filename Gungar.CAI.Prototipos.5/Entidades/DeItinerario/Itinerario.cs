@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Modulos;
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 
 namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 {

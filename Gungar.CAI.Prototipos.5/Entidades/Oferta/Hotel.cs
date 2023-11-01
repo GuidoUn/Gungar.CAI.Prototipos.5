@@ -1,11 +1,10 @@
-﻿using Gungar.CAI.Prototipos._5.Entidades.Oferta;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gungar.CAI.Prototipos._5.Entidades
+namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 {
     public class Hotel : OfertaHotel
     {
@@ -19,8 +18,8 @@ namespace Gungar.CAI.Prototipos._5.Entidades
         public Hotel(string nombreHotel, string codigoOferta, string codigoCiudad, int calificacion, Disponibilidad disponibilidad, Direccion direccion)
             : base(nombreHotel, codigoOferta, codigoCiudad, calificacion, direccion)
         {
-            this.Disponibilidad = disponibilidad;
-            this.Id = ultimoID;
+            Disponibilidad = disponibilidad;
+            Id = ultimoID;
             ultimoID++;
         }
 

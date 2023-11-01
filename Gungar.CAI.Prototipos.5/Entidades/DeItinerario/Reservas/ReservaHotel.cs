@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 
 namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
 {

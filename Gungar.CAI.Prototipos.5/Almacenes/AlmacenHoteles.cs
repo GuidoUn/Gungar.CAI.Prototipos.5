@@ -1,5 +1,4 @@
-﻿using Gungar.CAI.Prototipos._5.Entidades;
-using Gungar.CAI.Prototipos._5.Entidades.Oferta;
+﻿using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,4 @@
 ﻿using Gungar.CAI.Prototipos._5.Almacenes;
-using Gungar.CAI.Prototipos._5.Entidades;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using System;
@@ -31,7 +30,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
 
         public List<Hotel> GetHotelesDisponibles(string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, string calificacion, DateTime? fechaDesde = null, DateTime? fechaHasta = null, decimal? precioMinimo = null, decimal? precioMaximo = null)
         {
-            return AlmacenHoteles.GetHoteles( destino,  cantidadAdultos,  cantidadMenores,  cantidadInfantes,  calificacion, fechaDesde,   fechaHasta ,   precioMinimo ,   precioMaximo );
+            return AlmacenHoteles.GetHoteles(destino, cantidadAdultos, cantidadMenores, cantidadInfantes, calificacion, fechaDesde, fechaHasta, precioMinimo, precioMaximo);
         }
 
         public void ModificarDisponibilidad(Hotel hotel, bool isRollback)
@@ -39,7 +38,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
             AlmacenHoteles.ModificarDisponibilidad(hotel, isRollback);
         }
 
-   
+
 
     }
 }
