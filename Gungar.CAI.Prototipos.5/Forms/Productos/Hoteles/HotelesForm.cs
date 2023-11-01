@@ -91,7 +91,7 @@ namespace Gungar.CAI.Prototipos._5
                 }
                 if (listaDeHotelesDisponibles.Count <= 0)
                 {
-                    MessageBox.Show("No hay tenemos hoteles disponibles para los filtros seleccionados", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No tenemos hoteles disponibles para los filtros seleccionados", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             };
         }
