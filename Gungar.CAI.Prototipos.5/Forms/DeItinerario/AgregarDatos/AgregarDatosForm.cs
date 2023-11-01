@@ -223,7 +223,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (pasajeroItinerarioSeleccionado == null)
             {
-                pasajeroLabel.Text =  "Ningun pasajero seleccionado";
+                pasajeroLabel.Text = "Ningun pasajero seleccionado";
 
             }
             if (productoSeleccionado == null)
@@ -242,9 +242,14 @@ namespace Gungar.CAI.Prototipos._5
 
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
-            itinerario.GenerarPrereserva();
+            DialogResult confirmar = MessageBox.Show("Desea confirmar la " + itinerario.tipoDeConfirmacion + "?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (confirmar == DialogResult.OK)
+            {
+                itinerario.GenerarPrereserva();
+                this.Close();
+            }
 
-            this.Close();
+            
         }
 
         private void productosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -252,12 +257,12 @@ namespace Gungar.CAI.Prototipos._5
             if (productosAgregadosListView.SelectedItems.Count == 0) return;
             //hotelSeleccionado = (ReservaHotel)productosAgregadosListView.SelectedItems[0].Tag;
             productoSeleccionado = (IReservaProducto)productosAgregadosListView.SelectedItems[0].Tag;
-            if(productoSeleccionado is ReservaHotel reservaHotel)
+            if (productoSeleccionado is ReservaHotel reservaHotel)
             {
                 productoLabel.Text = reservaHotel.Hotel.Disponibilidad.Nombre;
 
             }
-            else if(productoSeleccionado is ReservaVuelo reservaVuelo)
+            else if (productoSeleccionado is ReservaVuelo reservaVuelo)
             {
                 productoLabel.Text = reservaVuelo.Vuelo.CodigoOferta;
 

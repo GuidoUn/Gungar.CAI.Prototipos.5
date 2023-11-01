@@ -89,8 +89,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void generarPreReserva_Click(object sender, EventArgs e)
         {
-            
-
+            model.Itinerario.tipoDeConfirmacion = "pre-reserva";
             agregarDatosForm.ShowDialog();
             refrescar();
         }
@@ -102,6 +101,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void generarReservaBtn_Click(object sender, EventArgs e)
         {
+            model.Itinerario.tipoDeConfirmacion = "reserva";
             if (model.Itinerario.Estado == Estado.Presupuesto)
             {
                 agregarDatosForm = new AgregarDatosForm(model.Itinerario, false);
