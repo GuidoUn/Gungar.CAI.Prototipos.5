@@ -17,16 +17,16 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class HotelesForm : Form
     {
-        Itinerario? itinerario;
-        bool esConsulta = false;
-        List<Hotel> listaDeHotelesDisponibles;
-        DateTime hastaFechaSeleccionada;
-        DateTime desdeFechaSeleccionada;
+        Itinerario? itinerario; // mover a model                
+        bool esConsulta = false; // mover a model
+        List<Hotel> listaDeHotelesDisponibles; // mover a model
+        DateTime hastaFechaSeleccionada; // mover a model
+        DateTime desdeFechaSeleccionada; // mover a model
         HotelesFormModel hotelesFormModel;
 
-        Hotel hotelSeleccionado;
+        Hotel hotelSeleccionado; // mover a model
 
-        ReservaHotel hotelAgregadoSeleccionado;
+        ReservaHotel hotelAgregadoSeleccionado; // mover a model
 
         public HotelesForm(Itinerario? itinerario)
         {
@@ -63,7 +63,6 @@ namespace Gungar.CAI.Prototipos._5
             hastaFechaDatePicker.MinDate = DateTime.Now;
             borrarFechas();
             poblarProductosAgregados();
-
         }
         private void poblarHoteles()
         {
@@ -155,6 +154,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             return itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel));
         }
+
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
             if (hotelSeleccionado == null)
@@ -178,7 +178,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void volverBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void quitarHotelBtn_Click(object sender, EventArgs e)
@@ -186,7 +186,6 @@ namespace Gungar.CAI.Prototipos._5
             if (hotelAgregadoSeleccionado == null) return;
             itinerario?.QuitarReservaHotel(hotelAgregadoSeleccionado);
             poblarProductosAgregados();
-
         }
 
         private void hotelesAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -196,7 +195,6 @@ namespace Gungar.CAI.Prototipos._5
                 return;
             }
             hotelAgregadoSeleccionado = (ReservaHotel)hotelesAgregadosListView.SelectedItems[0].Tag;
-
         }
     }
 }
