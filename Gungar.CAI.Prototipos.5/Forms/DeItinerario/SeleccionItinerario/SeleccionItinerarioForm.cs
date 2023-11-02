@@ -16,8 +16,6 @@ namespace Gungar.CAI.Prototipos._5
     {
         SeleccionItinerarioFormModel model;
 
-        MenuItinerarioForm? menuItinerarioForm;
-
         public SeleccionItinerarioForm()
         {
             InitializeComponent();
@@ -73,11 +71,10 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (model.ItinerarioSeleccionado != null)
             {
-                menuItinerarioForm = new MenuItinerarioForm(model.ItinerarioSeleccionado);
+                MenuItinerarioForm menuItinerarioForm = new(model.ItinerarioSeleccionado);
                 menuItinerarioForm.ShowDialog();
                 refrescar();
             }
-
         }
 
         private void filtrarBtn_Click(object sender, EventArgs e)
