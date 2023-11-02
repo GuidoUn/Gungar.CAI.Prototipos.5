@@ -108,8 +108,6 @@ namespace Gungar.CAI.Prototipos._5
                 item.Text = pasajero.Nombre;
                 item.SubItems.Add(pasajero.Apellido);
                 item.SubItems.Add(pasajero.Documento);
-                item.SubItems.Add(pasajero.Email);
-                item.SubItems.Add(pasajero.Telefono);
                 item.SubItems.Add(pasajero.FechaNacimiento.ToString());
                 item.Tag = pasajero;
                 pasajerosItinerarioListView.Items.Add(item);
@@ -166,8 +164,6 @@ namespace Gungar.CAI.Prototipos._5
             nombreTextBox.Text = "";
             apellidoTextBox.Text = "";
             DNITextBox.Text = "";
-            emailTextBox.Text = "";
-            telefonoTextBox.Text = "";
             fechaNacDatePicker.Value = new DateTime(2023, 06, 3);
         }
 
@@ -177,10 +173,8 @@ namespace Gungar.CAI.Prototipos._5
             if (pasajerosItinerario.Any(pasajero => pasajero.Documento == pasajeroItinerarioSeleccionado?.Documento) && editandoPasajero)
             {
                 var PasajeroAModificar = pasajerosItinerario.Find(pasajero => pasajero.Documento == pasajeroItinerarioSeleccionado?.Documento);
-                PasajeroAModificar.Email = emailTextBox.Text;
                 PasajeroAModificar.Documento = DNITextBox.Text;
                 PasajeroAModificar.Apellido = apellidoTextBox.Text;
-                PasajeroAModificar.Telefono = telefonoTextBox.Text;
                 PasajeroAModificar.Nombre = nombreTextBox.Text;
                 PasajeroAModificar.FechaNacimiento = fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA);
                 editandoPasajero = false;
@@ -188,7 +182,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, emailTextBox.Text, telefonoTextBox.Text, fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA));
+                Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA));
 
                 pasajerosItinerario.Add(nuevoPasajero);
 
@@ -208,7 +202,7 @@ namespace Gungar.CAI.Prototipos._5
             Close();
         }
 
-        private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
+        private void quitarAsignacionBtn_Click(object sender, EventArgs e)
         {
             //hotelSeleccionado.Pasajeros.Remove(pasajeroProductoSeleccionado);
             productoSeleccionado.Pasajeros.Remove(pasajeroProductoSeleccionado);
@@ -234,8 +228,10 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void evaluarVisibilidadBtns()
         {
-            eliminarPasajeroBtn.Enabled = pasajeroProductoSeleccionado != null;
+            quitarAsignacionBtn.Enabled = pasajeroProductoSeleccionado != null;
             editarPasajeroBtn.Enabled = pasajeroItinerarioSeleccionado != null;
+            eliminarPasajeroBtn.Enabled = pasajeroItinerarioSeleccionado != null;
+
             //asignarBtn.Enabled = pasajeroSeleccionado != null && hotelSeleccionado != null;
             asignarBtn.Enabled = pasajeroItinerarioSeleccionado != null && productoSeleccionado != null;
         }
@@ -249,7 +245,7 @@ namespace Gungar.CAI.Prototipos._5
                 this.Close();
             }
 
-            
+
         }
 
         private void productosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -336,12 +332,27 @@ namespace Gungar.CAI.Prototipos._5
             nombreTextBox.Text = pasajeroItinerarioSeleccionado.Nombre;
             apellidoTextBox.Text = pasajeroItinerarioSeleccionado.Apellido;
             DNITextBox.Text = pasajeroItinerarioSeleccionado.Documento;
-            emailTextBox.Text = pasajeroItinerarioSeleccionado.Email;
-            telefonoTextBox.Text = pasajeroItinerarioSeleccionado.Telefono;
+
             fechaNacDatePicker.Text = pasajeroItinerarioSeleccionado.FechaNacimiento;
             evaluarTextosDeSeleccion();
         }
 
-
+       
+        private void EliminarPasajeroDeTodosLosProductos(Pasajero pasajero)
+        {
+            VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(reservaProducto =>
+            {
+                reservaProducto.Pasajeros.Remove(pasajero);
+            });
+           
+        }
+        private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
+        {
+            if (pasajeroItinerarioSeleccionado == null) return;
+            pasajerosItinerario.Remove(pasajeroItinerarioSeleccionado);
+            EliminarPasajeroDeTodosLosProductos(pasajeroItinerarioSeleccionado);
+            poblarListaTotalDePasajerosItinerario();
+            PoblarPasajerosItinerario();
+        }
     }
 }
