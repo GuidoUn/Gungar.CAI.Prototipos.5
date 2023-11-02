@@ -7,56 +7,6 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 {
-    public class Direccion
-    {
-        public string Calle;
-        public string Numero;
-        public string CP;
-        public string Latitud;
-        public string Longitud;
-
-        public Direccion(
-            string Calle,
-            string Numero,
-            string CP,
-            string Latitud,
-            string Longitud
-            )
-        {
-            this.Calle = Calle;
-            this.Numero = Numero;
-            this.CP = CP;
-            this.Latitud = Latitud;
-            this.Longitud = Longitud;
-        }
-    }
-    public class Habitacion
-    {
-        public DateTime Fecha;
-        public int Cantidad; //Cantidad de habitaciones disponibles para la fecha.
-
-        public Habitacion(DateTime fecha, int cantidad)
-        {
-            Fecha = fecha;
-            Cantidad = cantidad;
-        }
-    }
-
-    public class Disponibilidad
-    {
-        public int Id = 0;
-        public string Nombre; // Nombre de la habitación (Ej.: Doble especial, Penthouse, etc.). Es puramente descriptivo.
-        public float Tarifa; // precio en US$
-        public int Capacidad; // Capacidad total de la habitación.
-        public int CapacidadAdultos; // Cantidad máxima de adultos. Debe haber al menos un adulto por habitación.
-        public int CapacidadMenores; // Cantidad máxima de menores. 
-        public int CapacidadInfantes; // Cantidad máxima de infantes.
-        public DateTime Fecha;
-        public List<DateTime> FechasOcupadas;
-        public int Cantidad;
-    }
-
-
     public class OfertaHotel
     {
         public string CodigoOferta; // hasta 3 char (depende del hotel)
