@@ -42,13 +42,14 @@ namespace Gungar.CAI.Prototipos._5
             poblarVuelosAgregados();
             estadoLabel.Text = model.Itinerario?.Estado.ToString();
             nombreYApellidoLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} {model.Itinerario?.Cliente?.Apellido}";
-            /*if (itinerario.estado == Estado.Cancelada) // TODO: Gestionar itinerario cancelado
+            if (model.Itinerario.Estado == Estado.Cancelada) // TODO: Gestionar itinerario cancelado (me parece que ya funciona bien)
             {
-                confirmacionBox.Enabled = false;
-                gestionarItinerarioBox.Enabled = false;
+                //confirmacionBox.Enabled = false;
+                //gestionarItinerarioBox.Enabled = false;
+                //cancelarReservaBtn.Enabled = false;
+                //return;
                 cancelarReservaBtn.Enabled = false;
-                return;
-            }*/
+            }
             generarPreReservaBtn.Enabled = model.puedePrereserva();
             generarReservaBtn.Enabled = model.PuedeReserva();
             gestionarItinerarioBox.Enabled = model?.Itinerario?.Estado == Estado.Presupuesto;
@@ -180,7 +181,7 @@ namespace Gungar.CAI.Prototipos._5
             });
         }
 
-        private void anularItinerarioBtn_Click(object sender, EventArgs e)
+        private void anularItinerarioBtn_Click(object sender, EventArgs e) // TODO: si no se usa borrar
         {
             var confirmar = MessageBox.Show("¿Está seguro de que desea anular el itinerario?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)

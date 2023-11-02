@@ -79,7 +79,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         private void BloquearDisponibilidadProductos()
         {
-            // TODO: Mover al módulo de disponibilidad?
             DisponibilidadModulo.bloquearDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
         }
 
