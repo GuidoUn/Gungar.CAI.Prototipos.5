@@ -51,20 +51,16 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
                 return listaDeHoteles;
             }
 
-
             hotelesAgrupados.ForEach(hotel =>
             {
-
                 hotel.Disponibilidad.ForEach(disponibilidadHotel =>
                 {
                     Hotel hotelAAgregar = new Hotel(hotel.NombreHotel, hotel.CodigoOferta, hotel.CodigoCiudad, hotel.Calificacion, disponibilidadHotel, hotel.Direccion);
                     listaDeHoteles.Add(hotelAAgregar);
                 });
-
             });
             return listaDeHoteles;
         }
-
 
         public static List<Hotel> GetHoteles(string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, string calificacion, DateTime? fechaDesde = null, DateTime? fechaHasta = null, decimal? precioMinimo = null, decimal? precioMaximo = null)
         {
@@ -90,7 +86,29 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
             return hotelesFiltrados;
         }
 
-        public static List<DateTime> ObtenerRangoDeFechas(DateTime FechaDesde, DateTime FechaHasta)
+        public static void ModificarDisponibilidad(Hotel hotel, bool isRollback)
+        {
+            if (OfertaHotelesEnAlmacen == null) return;
+            OfertaHotelesEnAlmacen.ForEach(_hotel =>
+            {
+                var disponibilidadAModificar = _hotel.Disponibilidad.Find(h => h.Nombre == hotel.Disponibilidad.Nombre);
+                if (_hotel.CodigoOferta == hotel.CodigoOferta && disponibilidadAModificar != null)
+                {
+                    if (isRollback)
+                    {
+                        disponibilidadAModificar.Cantidad++;
+                    }
+                    else
+                    {
+                        disponibilidadAModificar.Cantidad--;
+                        List<DateTime> fechasOcupadasAAgregar = ObtenerRangoDeFechas(hotel.FechaDesde, hotel.FechaHasta);
+                        disponibilidadAModificar.FechasOcupadas.AddRange(fechasOcupadasAAgregar);
+                    }
+                }
+            });
+        }
+
+        private static List<DateTime> ObtenerRangoDeFechas(DateTime FechaDesde, DateTime FechaHasta)
         {
             List<DateTime> listaDeFechas = new List<DateTime>();
 
@@ -103,6 +121,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
             Console.WriteLine(listaDeFechas.ToString());
             return listaDeFechas;
         }
+
         private static bool EstaEntreFechas(List<DateTime> fechaOcupadasHotel, DateTime? fechaDesde, DateTime? fechaHasta)
         {
             bool resultado = true;
@@ -116,6 +135,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
 
             return resultado;
         }
+
         public static double ObtenerPrecioTotal(List<Hotel> hoteles)
         {
             // TODO: mover a modulo ventas
@@ -160,28 +180,6 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
             }
 
             return precioHotelEnDecimal <= precioMaximo && precioHotelEnDecimal >= precioMinimo;
-        }
-
-        public static void ModificarDisponibilidad(Hotel hotel, bool isRollback)
-        {
-            if (OfertaHotelesEnAlmacen == null) return;
-            OfertaHotelesEnAlmacen.ForEach(_hotel =>
-            {
-                var disponibilidadAModificar = _hotel.Disponibilidad.Find(h => h.Nombre == hotel.Disponibilidad.Nombre);
-                if (_hotel.CodigoOferta == hotel.CodigoOferta && disponibilidadAModificar != null)
-                {
-                    if (isRollback)
-                    {
-                        disponibilidadAModificar.Cantidad++;
-                    }
-                    else
-                    {
-                        disponibilidadAModificar.Cantidad--;
-                        List<DateTime> fechasOcupadasAAgregar = ObtenerRangoDeFechas(hotel.FechaDesde, hotel.FechaHasta);
-                        disponibilidadAModificar.FechasOcupadas.AddRange(fechasOcupadasAAgregar);
-                    }
-                }
-            });
         }
     }
 }
