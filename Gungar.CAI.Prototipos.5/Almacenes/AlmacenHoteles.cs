@@ -118,6 +118,7 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
         }
         public static double ObtenerPrecioTotal(List<Hotel> hoteles)
         {
+            // TODO: mover a modulo ventas
             double precioTotal = 0.0;
             hoteles.ForEach(hotel =>
             {

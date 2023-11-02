@@ -30,15 +30,14 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
 
         public List<Hotel> GetHotelesDisponibles(string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, string calificacion, DateTime? fechaDesde = null, DateTime? fechaHasta = null, decimal? precioMinimo = null, decimal? precioMaximo = null)
         {
+            //TODO: Esto tiene que llamar al modulo ventas
             return AlmacenHoteles.GetHoteles(destino, cantidadAdultos, cantidadMenores, cantidadInfantes, calificacion, fechaDesde, fechaHasta, precioMinimo, precioMaximo);
         }
 
         public void ModificarDisponibilidad(Hotel hotel, bool isRollback)
         {
+            //TODO: Esto tiene que llamar al modulo disponibilidad
             AlmacenHoteles.ModificarDisponibilidad(hotel, isRollback);
         }
-
-
-
     }
 }

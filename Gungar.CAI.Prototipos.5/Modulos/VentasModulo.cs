@@ -1,5 +1,7 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
+using Gungar.CAI.Prototipos._5.Modulos.Ventas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +59,21 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             ReservaProductos.AddRange(itinerario.VuelosAgregados);
 
             return ReservaProductos;
+        }
+
+        public static int ObtenerNuevoIdItinerario()
+        {
+            if (AlmacenItinerarios.Itinerarios.Count == 0)
+                return 0;
+
+            Itinerario ultimoItinerario = AlmacenItinerarios.Itinerarios.OrderBy(itinerario => itinerario.ItinerarioId).Last();
+
+            return ultimoItinerario.ItinerarioId + 1;
+        }
+
+        public static List<OfertaVuelo> GetVuelosDisponibles(string origen, string destino, int cantAdulto, int cantMenor, int cantInfante, char clase, DateTime? fechaDesde, DateTime? fechaHasta, int precioMin, int precioMax)
+        {
+            return AlmacenVuelos.GetVuelos(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde, fechaHasta, precioMin, precioMax);
         }
     }
 }

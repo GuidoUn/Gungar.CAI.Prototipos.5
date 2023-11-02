@@ -17,21 +17,21 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class AgregarDatosForm : Form
     {
-        Itinerario? itinerario;
+        Itinerario? itinerario; // TODO: Mover al model
 
-        Pasajero? pasajeroItinerarioSeleccionado;
+        Pasajero? pasajeroItinerarioSeleccionado;   // TODO: Mover al model
 
-        Pasajero? pasajeroProductoSeleccionado;
+        Pasajero? pasajeroProductoSeleccionado; // TODO: Mover al model
 
-        List<Pasajero> pasajerosItinerario;
+        List<Pasajero> pasajerosItinerario; // TODO: Mover al model
 
-        bool editandoPasajero = false;
+        bool editandoPasajero = false; // TODO: Mover al model
 
 
 
         //ReservaHotel hotelSeleccionado;
 
-        IReservaProducto productoSeleccionado;
+        IReservaProducto productoSeleccionado;// TODO: Mover al model
 
 
         public AgregarDatosForm(Itinerario itinerario, bool esPreReserva)
@@ -40,7 +40,7 @@ namespace Gungar.CAI.Prototipos._5
             this.itinerario = itinerario;
             HashSet<Pasajero> pasajerosUnicos = new HashSet<Pasajero>();
 
-            VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(producto =>
+            VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(producto => // TODO: Usar model
             {
                 producto.Pasajeros.ForEach(pasajero => pasajerosUnicos.Add(pasajero));
             });
@@ -113,7 +113,6 @@ namespace Gungar.CAI.Prototipos._5
                 pasajerosItinerarioListView.Items.Add(item);
 
             });
-
         }
 
         private void poblarListaPasajeros()
@@ -185,10 +184,7 @@ namespace Gungar.CAI.Prototipos._5
                 Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA));
 
                 pasajerosItinerario.Add(nuevoPasajero);
-
             }
-
-
 
             poblarListaPasajeros();
             poblarListaTotalDePasajerosItinerario();
@@ -340,7 +336,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void EliminarPasajeroDeTodosLosProductos(Pasajero pasajero)
         {
-            VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(reservaProducto =>
+            VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(reservaProducto => // TODO: Usar model
             {
                 reservaProducto.Pasajeros.Remove(pasajero);
             });

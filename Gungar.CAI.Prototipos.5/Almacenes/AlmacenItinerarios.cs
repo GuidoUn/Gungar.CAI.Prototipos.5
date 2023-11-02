@@ -46,15 +46,5 @@ namespace Gungar.CAI.Prototipos._5
         {
             Itinerarios.Remove(itinerario);
         }
-
-        public static int ObtenerNuevoId()
-        {
-            if (Itinerarios.Count == 0)
-                return 0;
-
-            Itinerario ultimoItinerario = Itinerarios.OrderBy(itinerario => itinerario.ItinerarioId).Last();
-
-            return ultimoItinerario.ItinerarioId + 1;
-        }
     }
 }

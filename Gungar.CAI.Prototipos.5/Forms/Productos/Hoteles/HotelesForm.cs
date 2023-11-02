@@ -67,6 +67,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void poblarHoteles()
         {
+            // TODO: Esto tiene que pedirle los hoteles al model, y el model tiene que pedirselo al módulo ventas
             listaDeHotelesDisponibles = AlmacenHoteles.GetHoteles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text, desdeFechaSeleccionada, hastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
 
             hotelesListView.Items.Clear();

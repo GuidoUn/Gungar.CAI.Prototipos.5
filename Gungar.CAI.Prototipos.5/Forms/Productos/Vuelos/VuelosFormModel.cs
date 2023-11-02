@@ -1,6 +1,7 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
+using Gungar.CAI.Prototipos._5.Modulos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Vuelos
 
         public List<OfertaVuelo> GetVuelosDisponibles(string origen, string destino, int cantAdulto, int cantMenor, int cantInfante, char clase, DateTime? fechaDesde, DateTime? fechaHasta, int precioMin, int precioMax)
         {
-            return AlmacenVuelos.GetVuelos(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde, fechaHasta, precioMin, precioMax);
+            return VentasModulo.GetVuelosDisponibles(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde, fechaHasta, precioMin, precioMax);
         }
 
         public List<ReservaVuelo> GetVuelosAgregados()

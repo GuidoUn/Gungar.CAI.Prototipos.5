@@ -8,9 +8,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             AlmacenVuelos.GuardarVuelos();
             AlmacenItinerarios.GuardarItinerarios();
-
-            // TODO: Arreglar bug que cuadriplica los hoteles
-            AlmacenHoteles.GuardarHoteles(); 
+            AlmacenHoteles.GuardarHoteles();
         }
 
         /// <summary>
@@ -24,7 +22,7 @@ namespace Gungar.CAI.Prototipos._5
                 // To customize application configuration such as set high DPI settings or default font,
                 // see https://aka.ms/applicationconfiguration.
                 ApplicationConfiguration.Initialize();
-              
+
                 Application.Run(new MenuPrincipalForm());
             }
             finally
