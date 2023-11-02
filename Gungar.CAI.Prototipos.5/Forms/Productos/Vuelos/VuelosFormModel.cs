@@ -17,6 +17,14 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Vuelos
         public bool EsSoloIda { get; set; } = false;
         public bool FormValido { get; set; } = true;
 
+        public DateTime? FechaIdaSeleccionada { get; set; } = null;
+        public DateTime? FechaVueltaSeleccionada { get; set; } = null;
+
+        public int AdultosEnBusqueda { get; set; }
+        public int MenoresEnBusqueda { get; set; }
+        public int InfantesEnBusqueda { get; set; }
+        public char ClaseEnBusqueda { get; set; }
+
         public VuelosFormModel(Itinerario? itinerario)
         {
             if (itinerario == null)

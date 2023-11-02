@@ -16,15 +16,7 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class VuelosForm : Form
     {
-        DateTime? fechaIdaSeleccionada = null;
-        DateTime? fechaVueltaSeleccionada = null;
-
         VuelosFormModel model;
-
-        int adultosEnBusqueda;
-        int menoresEnBusqueda;
-        int infantesEnBusqueda;
-        char claseEnBusqueda;
 
         public VuelosForm(Itinerario? itinerario)
         {
@@ -69,8 +61,8 @@ namespace Gungar.CAI.Prototipos._5
             vueltaDatePicker.Format = DateTimePickerFormat.Custom;
             vueltaDatePicker.CustomFormat = " ";
 
-            fechaIdaSeleccionada = null;
-            fechaVueltaSeleccionada = null;
+            model.FechaIdaSeleccionada = null;
+            model.FechaVueltaSeleccionada = null;
         }
 
         private void refrescar()
@@ -100,7 +92,7 @@ namespace Gungar.CAI.Prototipos._5
             int precioDesde = desdePreciosNumeric.Text == "" ? 0 : Decimal.ToInt32(desdePreciosNumeric.Value);
             int precioHasta = hastaPreciosNumeric.Text == "" ? 0 : Decimal.ToInt32(hastaPreciosNumeric.Value);
 
-            List<OfertaVuelo> vuelosIdaDisponibles = model.GetVuelosDisponibles(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text[0], fechaIdaSeleccionada, fechaIdaSeleccionada, precioDesde, precioHasta);
+            List<OfertaVuelo> vuelosIdaDisponibles = model.GetVuelosDisponibles(origenText.Text, destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text[0], model.FechaIdaSeleccionada, model.FechaIdaSeleccionada, precioDesde, precioHasta);
 
             vuelosIdaDisponibles.ForEach(vuelo =>
             {
@@ -123,7 +115,7 @@ namespace Gungar.CAI.Prototipos._5
 
             if (!model.EsSoloIda && vuelosIdaDisponibles.Count > 0)
             {
-                List<OfertaVuelo> vuelosVueltaDisponibles = model.GetVuelosDisponibles(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text[0], fechaVueltaSeleccionada ?? fechaIdaSeleccionada, fechaVueltaSeleccionada ?? null, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
+                List<OfertaVuelo> vuelosVueltaDisponibles = model.GetVuelosDisponibles(destinoText.Text, origenText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text[0], model.FechaVueltaSeleccionada ?? model.FechaIdaSeleccionada, model.FechaVueltaSeleccionada ?? null, Decimal.ToInt32(desdePreciosNumeric.Value), Decimal.ToInt32(hastaPreciosNumeric.Value));
 
                 vuelosVueltaDisponibles.ForEach(vuelo =>
                 {
@@ -198,18 +190,18 @@ namespace Gungar.CAI.Prototipos._5
 
         private void guardarDatosBusqueda()
         {
-            adultosEnBusqueda = decimal.ToInt32(cantidadAdultosNumeric.Value);
-            adultosEnBusquedaLabel.Text = adultosEnBusqueda.ToString();
+            model.AdultosEnBusqueda = decimal.ToInt32(cantidadAdultosNumeric.Value);
+            adultosEnBusquedaLabel.Text = model.AdultosEnBusqueda.ToString();
 
-            menoresEnBusqueda = decimal.ToInt32(cantidadMenoresNumeric.Value);
-            menoresEnBusquedaLabel.Text = menoresEnBusqueda.ToString();
+            model.MenoresEnBusqueda = decimal.ToInt32(cantidadMenoresNumeric.Value);
+            menoresEnBusquedaLabel.Text = model.MenoresEnBusqueda.ToString();
 
-            infantesEnBusqueda = decimal.ToInt32(cantidadInfantesNumeric.Value);
-            infantesEnBusquedaLabel.Text = infantesEnBusqueda.ToString();
+            model.InfantesEnBusqueda = decimal.ToInt32(cantidadInfantesNumeric.Value);
+            infantesEnBusquedaLabel.Text = model.InfantesEnBusqueda.ToString();
 
             pasajerosEnBusquedaBox.Visible = true;
 
-            claseEnBusqueda = clasesCombo.Text[0];
+            model.ClaseEnBusqueda = clasesCombo.Text[0];
         }
 
         private void cantidadAdultosNumeric_ValueChanged(object sender, EventArgs e)
@@ -220,13 +212,13 @@ namespace Gungar.CAI.Prototipos._5
         private void idaDatePicker_ValueChanged(object sender, EventArgs e)
         {
             idaDatePicker.Format = DateTimePickerFormat.Short;
-            fechaIdaSeleccionada = idaDatePicker.Value;
+            model.FechaIdaSeleccionada = idaDatePicker.Value;
         }
 
         private void vueltaDatePicker_ValueChanged(object sender, EventArgs e)
         {
             vueltaDatePicker.Format = DateTimePickerFormat.Short;
-            fechaVueltaSeleccionada = vueltaDatePicker.Value;
+            model.FechaVueltaSeleccionada = vueltaDatePicker.Value;
         }
 
         private void borrarFechasBtn_Click(object sender, EventArgs e)
@@ -258,11 +250,11 @@ namespace Gungar.CAI.Prototipos._5
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
             OfertaVuelo ofertaIda = (OfertaVuelo)vuelosIdaListView.SelectedItems[0].Tag;
-            model.agregarVuelo(ofertaIda, claseEnBusqueda, adultosEnBusqueda, menoresEnBusqueda, infantesEnBusqueda);
+            model.agregarVuelo(ofertaIda, model.ClaseEnBusqueda, model.AdultosEnBusqueda, model.MenoresEnBusqueda, model.InfantesEnBusqueda);
             if (!soloIdaCheckBox.Checked)
             {
                 OfertaVuelo ofertaVuelta = (OfertaVuelo)vuelosVueltaListView.SelectedItems[0].Tag;
-                model.agregarVuelo(ofertaVuelta, claseEnBusqueda, adultosEnBusqueda, menoresEnBusqueda, infantesEnBusqueda);
+                model.agregarVuelo(ofertaVuelta, model.ClaseEnBusqueda, model.AdultosEnBusqueda, model.MenoresEnBusqueda, model.InfantesEnBusqueda);
             }
             vuelosIdaListView.SelectedItems.Clear();
             vuelosVueltaListView.SelectedItems.Clear();
