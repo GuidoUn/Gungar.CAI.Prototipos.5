@@ -337,14 +337,14 @@ namespace Gungar.CAI.Prototipos._5
             evaluarTextosDeSeleccion();
         }
 
-       
+
         private void EliminarPasajeroDeTodosLosProductos(Pasajero pasajero)
         {
             VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(reservaProducto =>
             {
                 reservaProducto.Pasajeros.Remove(pasajero);
             });
-           
+
         }
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
