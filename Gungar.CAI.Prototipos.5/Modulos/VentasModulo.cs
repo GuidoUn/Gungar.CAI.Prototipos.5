@@ -70,9 +70,13 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             return ultimoItinerario.ItinerarioId + 1;
         }
 
-        public static List<OfertaVuelo> GetVuelosDisponibles(string origen, string destino, int cantAdulto, int cantMenor, int cantInfante, char clase, DateTime? fechaDesde, DateTime? fechaHasta, int precioMin, int precioMax)
+        public static List<OfertaVuelo> GetVuelosDisponibles(string origen, string destino, int cantAdulto, int cantMenor, int cantInfante, char clase, DateTime? fechaDesde, DateTime? fechaHasta, int precioMin, int precioMax, Itinerario? Itinerario = null)
         {
-            return AlmacenVuelos.GetVuelos(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde, fechaHasta, precioMin, precioMax);
+            List<OfertaVuelo> vuelosFiltrados = AlmacenVuelos.GetVuelos(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde, fechaHasta, precioMin, precioMax);
+            if (Itinerario == null) return vuelosFiltrados;
+
+            List<OfertaVuelo> vuelosAMostrar = vuelosFiltrados.Where(vuelo => !Itinerario.VuelosAgregados.Exists(reserva => reserva.Vuelo.CodigoOferta == vuelo.CodigoOferta)).ToList();
+            return vuelosAMostrar;
         }
     }
 }
