@@ -12,6 +12,8 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
     {
         public Itinerario Itinerario { get; set; }
 
+        public AgregarDatosForm? AgregarDatosForm { get; set; }
+
         public MenuItinerarioFormModel(Itinerario itinerario)
         {
             Itinerario = itinerario;
@@ -48,10 +50,5 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
         {
             return Itinerario?.VuelosAgregados ?? new();
         }
-
-        //public bool GetPagado()
-        //{
-        //    return Itinerario.ItinerarioPagado;
-        //}
     }
 }

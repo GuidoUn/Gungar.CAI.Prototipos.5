@@ -19,17 +19,12 @@ namespace Gungar.CAI.Prototipos._5
     {
         MenuItinerarioFormModel model;
 
-        ClienteForm? clienteForm;
-        AgregarDatosForm? agregarDatosForm;
-        VuelosForm? vuelosForm;
-        HotelesForm? hotelesForm;
-
         public MenuItinerarioForm(Itinerario itinerario)
         {
             InitializeComponent();
             model = new MenuItinerarioFormModel(itinerario);
             // model.Itinerario.EvaluarVencimientoPrereserva(); TODO: Descomentar cuando querramos que a las 48hs venzan las prereservas     
-            agregarDatosForm = new AgregarDatosForm(model.Itinerario, true);
+            model.AgregarDatosForm = new AgregarDatosForm(model.Itinerario, true);
             itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
         }
 
@@ -82,7 +77,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void hotelesBtn_Click(object sender, EventArgs e)
         {
-            hotelesForm = new HotelesForm(model.Itinerario);
+            HotelesForm hotelesForm = new(model.Itinerario);
             hotelesForm.ShowDialog();
             refrescar();
         }
@@ -90,7 +85,7 @@ namespace Gungar.CAI.Prototipos._5
         private void generarPreReserva_Click(object sender, EventArgs e)
         {
             model.Itinerario.tipoDeConfirmacion = "pre-reserva";
-            agregarDatosForm.ShowDialog();
+            model?.AgregarDatosForm?.ShowDialog();
             refrescar();
         }
 
@@ -104,8 +99,8 @@ namespace Gungar.CAI.Prototipos._5
             model.Itinerario.tipoDeConfirmacion = "reserva";
             if (model.Itinerario.Estado == Estado.Presupuesto)
             {
-                agregarDatosForm = new AgregarDatosForm(model.Itinerario, false);
-                agregarDatosForm.ShowDialog();
+                model.AgregarDatosForm = new AgregarDatosForm(model.Itinerario, false);
+                model.AgregarDatosForm.ShowDialog();
                 refrescar();
             }
 
@@ -119,7 +114,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void clienteBtn_Click(object sender, EventArgs e)
         {
-            clienteForm = new ClienteForm(model.Itinerario);
+            ClienteForm clienteForm = new(model.Itinerario);
             clienteForm.ShowDialog();
             refrescar();
         }
@@ -136,8 +131,8 @@ namespace Gungar.CAI.Prototipos._5
 
         private void vuelosBtn_Click(object sender, EventArgs e)
         {
-            vuelosForm = new VuelosForm(model.Itinerario);
-            vuelosForm.ShowDialog();
+            VuelosForm VuelosForm = new(model.Itinerario);
+            VuelosForm.ShowDialog();
             refrescar();
         }
 

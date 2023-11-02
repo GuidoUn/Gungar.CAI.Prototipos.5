@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Gungar.CAI.Prototipos._5.Forms.MenuPrincipal
 {
-    public static class MenuPrincipalFormModel
+    public class MenuPrincipalFormModel
     {
-        public static Itinerario GenerarNuevoItinerario()
+        public Itinerario GenerarNuevoItinerario()
         {
             Itinerario nuevoItinerario = new Itinerario();
             VentasModulo.AgregarItinerario(nuevoItinerario);

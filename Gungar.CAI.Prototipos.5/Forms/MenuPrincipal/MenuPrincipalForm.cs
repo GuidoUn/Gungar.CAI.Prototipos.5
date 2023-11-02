@@ -5,37 +5,35 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class MenuPrincipalForm : Form
     {
-        SeleccionItinerarioForm? seleccionItinerarioForm;
-        MenuItinerarioForm? menuItinerarioForm;
-        VuelosForm? vuelosForm;
-        HotelesForm? hotelesForm;
+        MenuPrincipalFormModel model;
 
         public MenuPrincipalForm()
         {
             InitializeComponent();
+            model = new();
         }
 
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
-            menuItinerarioForm = new MenuItinerarioForm(MenuPrincipalFormModel.GenerarNuevoItinerario());
+            MenuItinerarioForm menuItinerarioForm = new(model.GenerarNuevoItinerario());
             menuItinerarioForm.ShowDialog();
         }
 
         private void continuarItinerarioBtn_Click(object sender, EventArgs e)
         {
-            seleccionItinerarioForm = new SeleccionItinerarioForm();
+            SeleccionItinerarioForm seleccionItinerarioForm = new();
             seleccionItinerarioForm.ShowDialog();
         }
 
         private void consultarVuelosBtn_Click(object sender, EventArgs e)
         {
-            vuelosForm = new VuelosForm(null);
+            VuelosForm vuelosForm = new(null);
             vuelosForm.ShowDialog();
         }
 
         private void consultarHotelesBtn_Click(object sender, EventArgs e)
         {
-            hotelesForm = new HotelesForm(null);
+            HotelesForm hotelesForm = new(null);
             hotelesForm.ShowDialog();
         }
 
