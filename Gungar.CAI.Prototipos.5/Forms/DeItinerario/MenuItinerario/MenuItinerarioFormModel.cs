@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
 {
@@ -16,6 +17,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
 
         public MenuItinerarioFormModel(Itinerario itinerario)
         {
+            itinerario.EvaluarVencimientoPrereserva();
             Itinerario = itinerario;
         }
         public void GenerarReserva()

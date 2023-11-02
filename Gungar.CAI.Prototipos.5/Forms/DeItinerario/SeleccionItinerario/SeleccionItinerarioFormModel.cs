@@ -16,6 +16,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.SeleccionItinerario
 
         public SeleccionItinerarioFormModel()
         {
+            VentasModulo.EvaluarEstadoItinerarios();
             ItinerariosEnPantalla = VentasModulo.GetItinerariosFiltrados("");
         }
 

@@ -240,8 +240,6 @@ namespace Gungar.CAI.Prototipos._5
                 itinerario.GenerarPrereserva();
                 this.Close();
             }
-
-
         }
 
         private void productosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -257,13 +255,11 @@ namespace Gungar.CAI.Prototipos._5
             else if (productoSeleccionado is ReservaVuelo reservaVuelo)
             {
                 productoLabel.Text = reservaVuelo.Vuelo.CodigoOferta;
-
             }
             poblarListaPasajeros();
             evaluarVisibilidadBtns();
             evaluarTextosDeSeleccion();
         }
-
 
         private bool PasajeroYaSeAgregoAlProductoSeleccionado(Pasajero pasajero)
         {

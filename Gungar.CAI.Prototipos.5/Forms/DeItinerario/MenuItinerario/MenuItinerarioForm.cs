@@ -23,7 +23,6 @@ namespace Gungar.CAI.Prototipos._5
         {
             InitializeComponent();
             model = new MenuItinerarioFormModel(itinerario);
-            // model.Itinerario.EvaluarVencimientoPrereserva(); TODO: Descomentar cuando querramos que a las 48hs venzan las prereservas     
             model.AgregarDatosForm = new AgregarDatosForm(model.Itinerario, true);
             itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
         }

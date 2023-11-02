@@ -46,6 +46,14 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             AlmacenItinerarios.AgregarItinerario(itinerario);
         }
 
+        public static void EvaluarEstadoItinerarios()
+        {
+            AlmacenItinerarios.Itinerarios.ForEach(itinerario =>
+            {
+                itinerario.EvaluarVencimientoPrereserva();
+            });
+        }
+
         public static List<IReservaProducto> GetProductosAgregados(int itinerarioId)
         {
             Itinerario? itinerario = AlmacenItinerarios.Itinerarios.FirstOrDefault(itinerario => itinerario.ItinerarioId == itinerarioId);
