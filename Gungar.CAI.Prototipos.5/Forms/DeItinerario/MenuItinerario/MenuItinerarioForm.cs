@@ -52,6 +52,8 @@ namespace Gungar.CAI.Prototipos._5
             }
             generarPreReservaBtn.Enabled = model.puedePrereserva();
             generarReservaBtn.Enabled = model.PuedeReserva();
+            faltaClienteLabel.Text = model.TieneCliente() ? "" : "* Debe agregar un cliente";
+            faltaProductoLabel.Text = model.TieneProductos() ? "" : "* Debe agregar al menos un producto";
             gestionarItinerarioBox.Enabled = model?.Itinerario?.Estado == Estado.Presupuesto;
             abonadoLabel.Text = $"Itinerario Abonado: {(model?.Itinerario?.ItinerarioPagado == true ? "Si" : "No")}";
             precioTotalLabel.Text = $"Precio Total: ${model?.Itinerario?.CalcularPrecioTotal().ToString()}";
@@ -62,8 +64,26 @@ namespace Gungar.CAI.Prototipos._5
             // TODO
 
 
-            //pasajerosListView.Items.Clear();
+            pasajerosListView.Items.Clear();
 
+            List<IReservaProducto> ProductosSeleccionados = new List<IReservaProducto>();
+
+            ProductosSeleccionados.AddRange(model.Itinerario.HotelesSeleccionados);
+            ProductosSeleccionados.AddRange(model.Itinerario.VuelosAgregados);
+            ProductosSeleccionados.ForEach(producto =>
+            {
+                producto.Pasajeros.ForEach(pasajero =>
+                {
+                    var item = new ListViewItem();
+
+                    item.Text = producto is ReservaHotel reservaHotel ? reservaHotel.Hotel.CodigoOferta:producto is ReservaVuelo reservaVuelo?reservaVuelo.Vuelo.CodigoOferta:"";
+                    item.SubItems.Add(pasajero.Nombre + " " + pasajero.Apellido);
+                    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                    item.Tag = pasajero;
+                    pasajerosListView.Items.Add(item);
+                });
+
+            });
             //model.Itinerario.Pasajeros.ForEach(pasajero =>
             //{
             //    var item = new ListViewItem();
@@ -142,11 +162,12 @@ namespace Gungar.CAI.Prototipos._5
             model.Itinerario.HotelesSeleccionados.ForEach(reservaHotel =>
             {
                 ListViewItem item = new ListViewItem();
-                item.Text = reservaHotel.Hotel.Disponibilidad?.Nombre;
+                item.Text = reservaHotel.Hotel.CodigoOferta;
+                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad?.Nombre);
                 item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.FechaDesde.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.SubItems.Add(reservaHotel.Hotel.FechaHasta.ToString(Constantes.FORMATO_FECHA_CORTA));
-                item.SubItems.Add("$ " + AlmacenHoteles.ObtenerPrecioTotal(model.Itinerario.Hoteles).ToString()); // TODO: Esto lo tiene que hacer por medio del modulo de ventas
+                item.SubItems.Add("$ " + reservaHotel.PrecioTotal.ToString()); // TODO: Esto lo tiene que hacer por medio del modulo de ventas
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
                 item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
                 item.Tag = reservaHotel;
@@ -164,7 +185,8 @@ namespace Gungar.CAI.Prototipos._5
                 List<TarifaVuelo> tarifas = vuelo.Vuelo.Tarifas.Where(tarifa => tarifa.Clase == vuelo.Clase).ToList();
 
                 ListViewItem item = new ListViewItem();
-                item.Text = vuelo.Vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_LARGA);
+                item.Text = vuelo.Vuelo.CodigoOferta;
+                item.SubItems.Add(vuelo.Vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_LARGA));
                 item.SubItems.Add(Constantes.Aerolineas[vuelo.Vuelo.Aerolinea]);
                 item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Origen]);
                 item.SubItems.Add(Constantes.Ciudades[vuelo.Vuelo.Destino]);

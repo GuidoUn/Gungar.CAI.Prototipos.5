@@ -14,7 +14,7 @@ JG.repeat(100, {
     Longitud: JG.random("-23.30", "40.54", "-35")
   },
   Disponibilidad: JG.repeat(2, {
-    Id: JG.integer(1,100),
+    Id: JG.objectId().slice(0, 15),
     Nombre: JG.random("Doble Especial", "Triple Especial"),
     Tarifa: JG.random(50.5, 65, 80, 100, 150),
     Capacidad: JG.integer(1,5),

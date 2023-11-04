@@ -11,6 +11,8 @@ using Gungar.CAI.Prototipos._5.Almacenes;
 using Gungar.CAI.Prototipos._5.Entidades;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos;
+using Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario;
 using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
@@ -31,11 +33,15 @@ namespace Gungar.CAI.Prototipos._5
 
         IReservaProducto productoSeleccionado;// TODO: Mover al model
 
+        AgregarDatosFormModel model;
+
+
 
         public AgregarDatosForm(Itinerario itinerario, bool esPreReserva)
         {
             InitializeComponent();
             this.itinerario = itinerario;
+            model = new AgregarDatosFormModel(itinerario);
             HashSet<Pasajero> pasajerosUnicos = new HashSet<Pasajero>();
 
             VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(producto => // TODO: Usar model
@@ -166,6 +172,11 @@ namespace Gungar.CAI.Prototipos._5
 
         private void agregarPasajeroBtn_Click(object sender, EventArgs e)
         {
+            if(pasajerosItinerario.Any(pasajero => pasajero.Documento == DNITextBox.Text) && !editandoPasajero)
+            {
+               MessageBox.Show("El pasajero ya ha sido agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if (pasajerosItinerario.Any(pasajero => pasajero.Documento == pasajeroItinerarioSeleccionado?.Documento) && editandoPasajero)
             {
@@ -232,12 +243,18 @@ namespace Gungar.CAI.Prototipos._5
 
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
+            if (!model.TodosLosProductosTienenPasajeros())
+            {
+                 MessageBox.Show("Todos los productos tienen que tener asignados al menos UN pasajero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
             DialogResult confirmar = MessageBox.Show("Desea confirmar la " + itinerario.tipoDeConfirmacion + "?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
                 itinerario.GenerarPrereserva();
                 this.Close();
-            }
+            }  
         }
 
         private void productosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)

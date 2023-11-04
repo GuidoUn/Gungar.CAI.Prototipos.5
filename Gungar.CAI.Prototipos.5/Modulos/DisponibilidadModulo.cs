@@ -63,7 +63,6 @@ namespace Gungar.CAI.Prototipos._5.Modulos
                 });
             });
 
-            // TODO: Liberar disponibilidad hoteles acá
             itinerario.HotelesSeleccionados.ForEach(reservaHotel => AlmacenHoteles.ModificarDisponibilidad(reservaHotel.Hotel, true));
 
         }

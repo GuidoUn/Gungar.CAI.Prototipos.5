@@ -13,13 +13,15 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
         public Hotel Hotel { get; set; }
         public List<Pasajero> Pasajeros { get; set; } // Implementación de la propiedad Pasajeros
         public float PrecioTotal { get; set; }
+        
 
         public ReservaHotel(Hotel hotel)
         {
 
             Hotel = hotel;
             Pasajeros = new List<Pasajero>(); // Puedes inicializar la lista aquí o en el constructor
-            
+            this.PrecioTotal = Hotel.Disponibilidad.Tarifa;
+         
         }
 
         public ReservaHotel() { }

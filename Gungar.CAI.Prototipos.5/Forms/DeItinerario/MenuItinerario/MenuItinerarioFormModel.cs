@@ -38,6 +38,16 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
             return (Itinerario.HotelesSeleccionados.Count > 0 || Itinerario.VuelosAgregados.Count > 0) && Itinerario.Cliente != null;
         }
 
+        public bool TieneProductos()
+        {
+            return (Itinerario.HotelesSeleccionados.Count > 0 || Itinerario.VuelosAgregados.Count > 0);
+        }
+
+        public bool TieneCliente()
+        {
+            return Itinerario.Cliente != null; 
+        }
+
         public bool puedePrereserva()
         {
             return Itinerario.Estado == Estado.Presupuesto && puedeConfirmar();

@@ -9,6 +9,9 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 {
     public class OfertaVuelo
     {
+        Random random = new Random();
+
+        public int Id;
         public string CodigoOferta { get; set; } //hasta 15 char (depende de la aerolinea)
         public string Origen { get; set; }
         public string Destino { get; set; }
@@ -20,6 +23,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 
         public OfertaVuelo(string codigoOferta, string origen, string destino, DateTime fechaSalida, DateTime fechaArribo, string tiempoDeVuelo, string aerolinea, List<TarifaVuelo> tarifas)
         {
+            this.Id = random.Next();
             CodigoOferta = codigoOferta;
             Origen = origen;
             Destino = destino;

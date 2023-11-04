@@ -38,6 +38,7 @@
             estadoLabel = new Label();
             label3 = new Label();
             pasajerosListView = new ListView();
+            idProductoHeader = new ColumnHeader();
             nombreHeader = new ColumnHeader();
             fechaNacimientoHeader = new ColumnHeader();
             label2 = new Label();
@@ -60,6 +61,7 @@
             columnHeader14 = new ColumnHeader();
             abonadoLabel = new Label();
             vuelosAgregadosListView = new ListView();
+            columnHeader0 = new ColumnHeader();
             columnHeader1 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
@@ -71,6 +73,8 @@
             columnHeader27 = new ColumnHeader();
             columnHeader28 = new ColumnHeader();
             columnHeader29 = new ColumnHeader();
+            faltaClienteLabel = new Label();
+            faltaProductoLabel = new Label();
             confirmacionBox.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
@@ -164,7 +168,7 @@
             // 
             // pasajerosListView
             // 
-            pasajerosListView.Columns.AddRange(new ColumnHeader[] { nombreHeader, fechaNacimientoHeader });
+            pasajerosListView.Columns.AddRange(new ColumnHeader[] { idProductoHeader, nombreHeader, fechaNacimientoHeader });
             pasajerosListView.Location = new Point(273, 665);
             pasajerosListView.MultiSelect = false;
             pasajerosListView.Name = "pasajerosListView";
@@ -173,10 +177,15 @@
             pasajerosListView.UseCompatibleStateImageBehavior = false;
             pasajerosListView.View = View.Details;
             // 
+            // idProductoHeader
+            // 
+            idProductoHeader.Text = "ID producto";
+            idProductoHeader.Width = 100;
+            // 
             // nombreHeader
             // 
             nombreHeader.Text = "Nombre y apellido";
-            nombreHeader.Width = 110;
+            nombreHeader.Width = 120;
             // 
             // fechaNacimientoHeader
             // 
@@ -334,7 +343,7 @@
             // 
             // vuelosAgregadosListView
             // 
-            vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader5, columnHeader6, columnHeader7, columnHeader2, columnHeader3, columnHeader4, columnHeader26, columnHeader27, columnHeader28, columnHeader29 });
+            vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader0, columnHeader1, columnHeader5, columnHeader6, columnHeader7, columnHeader2, columnHeader3, columnHeader4, columnHeader26, columnHeader27, columnHeader28, columnHeader29 });
             vuelosAgregadosListView.FullRowSelect = true;
             vuelosAgregadosListView.Location = new Point(273, 121);
             vuelosAgregadosListView.MultiSelect = false;
@@ -343,6 +352,11 @@
             vuelosAgregadosListView.TabIndex = 27;
             vuelosAgregadosListView.UseCompatibleStateImageBehavior = false;
             vuelosAgregadosListView.View = View.Details;
+            // 
+            // columnHeader0
+            // 
+            columnHeader0.Text = "Id";
+            columnHeader0.Width = 120;
             // 
             // columnHeader1
             // 
@@ -399,11 +413,33 @@
             columnHeader29.Text = "Precio Infante";
             columnHeader29.Width = 85;
             // 
+            // faltaClienteLabel
+            // 
+            faltaClienteLabel.AutoSize = true;
+            faltaClienteLabel.ForeColor = Color.IndianRed;
+            faltaClienteLabel.Location = new Point(54, 371);
+            faltaClienteLabel.Name = "faltaClienteLabel";
+            faltaClienteLabel.Size = new Size(142, 15);
+            faltaClienteLabel.TabIndex = 28;
+            faltaClienteLabel.Text = "* Debe ingresar un cliente";
+            // 
+            // faltaProductoLabel
+            // 
+            faltaProductoLabel.AutoSize = true;
+            faltaProductoLabel.ForeColor = Color.IndianRed;
+            faltaProductoLabel.Location = new Point(54, 389);
+            faltaProductoLabel.Name = "faltaProductoLabel";
+            faltaProductoLabel.Size = new Size(156, 15);
+            faltaProductoLabel.TabIndex = 29;
+            faltaProductoLabel.Text = "* Debe ingresar un producto";
+            // 
             // MenuItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1343, 785);
+            ClientSize = new Size(1343, 749);
+            Controls.Add(faltaProductoLabel);
+            Controls.Add(faltaClienteLabel);
             Controls.Add(vuelosAgregadosListView);
             Controls.Add(abonadoLabel);
             Controls.Add(label7);
@@ -451,7 +487,7 @@
         private Label precioTotalLabel;
         private Button generarPreReservaBtn;
         private Button generarReservaBtn;
-        private Label label5;
+        private Label faltaProductoLabel;
         private Label label6;
         private Label nombreYApellidoLabel;
         private Button vuelosBtn;
@@ -480,5 +516,8 @@
         private ColumnHeader columnHeader27;
         private ColumnHeader columnHeader28;
         private ColumnHeader columnHeader29;
+        private ColumnHeader idProductoHeader;
+        private ColumnHeader columnHeader0;
+        private Label faltaClienteLabel;
     }
 }

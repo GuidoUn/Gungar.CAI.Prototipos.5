@@ -29,7 +29,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public Cliente? Cliente { get; set; }
         //public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>(); // No se está usando, habría que usarla?
         public DateTime? FechaPrereserva { get; set; }
-        public List<Hotel> Hoteles { get; set; } = new List<Hotel>();
         public List<ReservaHotel> HotelesSeleccionados { get; set; } = new List<ReservaHotel>();
         public List<ReservaVuelo> VuelosAgregados { get; set; } = new List<ReservaVuelo>();
         public bool ItinerarioPagado { get; set; } = false;
@@ -124,7 +123,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             {
                 precioTotal += reserva.PrecioTotal;
             });
+           
+
             return precioTotal;
         }
+
+        
     }
 }

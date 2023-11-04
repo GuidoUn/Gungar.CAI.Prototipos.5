@@ -8,6 +8,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
 {
     public interface IReservaProducto
     {
+       
         public List<Pasajero> Pasajeros { get; set; }
         public float PrecioTotal { get; set; }
     }
