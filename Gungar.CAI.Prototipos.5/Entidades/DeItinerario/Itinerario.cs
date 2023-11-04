@@ -79,12 +79,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         private void BloquearDisponibilidadProductos()
         {
-            DisponibilidadModulo.bloquearDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
+            DisponibilidadModulo.bloquearDisponibilidad(this);
         }
 
         private void LiberarDisponibilidadProductos()
         {
-            DisponibilidadModulo.liberarDisponibilidad(this); // Todo: Mover esta llamada al model capaz????????
+            DisponibilidadModulo.liberarDisponibilidad(this);
         }
 
         //public void AgregarHotel(Hotel hotel) // TODO: Esto se necesita?
