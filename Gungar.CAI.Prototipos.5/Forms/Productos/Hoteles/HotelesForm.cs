@@ -145,14 +145,15 @@ namespace Gungar.CAI.Prototipos._5
         private void hotelesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (hotelesListView.SelectedItems.Count <= 0)
-            {
                 return;
-            }
+
             hotelSeleccionado = (Hotel)hotelesListView.SelectedItems[0].Tag;
         }
+
         private bool HotelYaFueAgregado(Hotel Hotel)
         {
-            return itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel));
+            return itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel)); //Mejor sería usar Exists, que any
+            // Tipo así:  //return itinerario.HotelesSeleccionados.Exists(reservaHotel => reservaHotel.Hotel.Equals(Hotel)); 
         }
 
         private void agregarProductoBtn_Click(object sender, EventArgs e)
@@ -183,7 +184,9 @@ namespace Gungar.CAI.Prototipos._5
 
         private void quitarHotelBtn_Click(object sender, EventArgs e)
         {
-            if (hotelAgregadoSeleccionado == null) return;
+            if (hotelAgregadoSeleccionado == null)
+                return;
+
             itinerario?.QuitarReservaHotel(hotelAgregadoSeleccionado);
             poblarProductosAgregados();
         }
@@ -191,9 +194,8 @@ namespace Gungar.CAI.Prototipos._5
         private void hotelesAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (hotelesAgregadosListView.SelectedItems.Count <= 0)
-            {
                 return;
-            }
+
             hotelAgregadoSeleccionado = (ReservaHotel)hotelesAgregadosListView.SelectedItems[0].Tag;
         }
     }

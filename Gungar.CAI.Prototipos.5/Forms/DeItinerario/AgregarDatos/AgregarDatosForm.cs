@@ -27,8 +27,6 @@ namespace Gungar.CAI.Prototipos._5
 
         bool editandoPasajero = false; // TODO: Mover al model
 
-
-
         //ReservaHotel hotelSeleccionado;
 
         IReservaProducto productoSeleccionado;// TODO: Mover al model

@@ -23,7 +23,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
     public class Itinerario
     {
         public int ItinerarioId { get; set; }
-        public string tipoDeConfirmacion { get; set; } // Reserva o Pre-reserva
+        public string? tipoDeConfirmacion { get; set; } // Reserva o Pre-reserva // TODO: Podría ser de tipo Estado?
         public DateTime FechaCreacion { get; set; }
         public Estado Estado { get; set; }
         public Cliente? Cliente { get; set; }
