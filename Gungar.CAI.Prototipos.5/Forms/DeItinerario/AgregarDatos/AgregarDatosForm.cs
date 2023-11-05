@@ -58,7 +58,8 @@ namespace Gungar.CAI.Prototipos._5
             foreach (var reservaHotel in itinerario.HotelesSeleccionados)
             {
                 var item = new ListViewItem();
-                item.Text = reservaHotel.Hotel.NombreHotel;
+                item.Text = reservaHotel.Hotel.CodigoOferta;
+                item.SubItems.Add( reservaHotel.Hotel.NombreHotel);
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
                 item.Tag = reservaHotel;
 
@@ -68,7 +69,8 @@ namespace Gungar.CAI.Prototipos._5
             itinerario.VuelosAgregados.ForEach(reservaVuelo =>
             {
                 var item = new ListViewItem();
-                item.Text = reservaVuelo.Vuelo.Aerolinea;
+                item.Text = reservaVuelo.Vuelo.CodigoOferta;
+                item.SubItems.Add(reservaVuelo.Vuelo.Aerolinea);
                 item.SubItems.Add(reservaVuelo.Vuelo.Origen);
                 item.Tag = reservaVuelo;
 
@@ -172,9 +174,9 @@ namespace Gungar.CAI.Prototipos._5
 
         private void agregarPasajeroBtn_Click(object sender, EventArgs e)
         {
-            if(pasajerosItinerario.Any(pasajero => pasajero.Documento == DNITextBox.Text) && !editandoPasajero)
+            if (pasajerosItinerario.Any(pasajero => pasajero.Documento == DNITextBox.Text) && !editandoPasajero)
             {
-               MessageBox.Show("El pasajero ya ha sido agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El pasajero ya ha sido agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -245,7 +247,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (!model.TodosLosProductosTienenPasajeros())
             {
-                 MessageBox.Show("Todos los productos tienen que tener asignados al menos UN pasajero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Todos los productos tienen que tener asignados al menos UN pasajero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return;
             }
@@ -254,7 +256,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 itinerario.GenerarPrereserva();
                 this.Close();
-            }  
+            }
         }
 
         private void productosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)

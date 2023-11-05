@@ -76,7 +76,7 @@ namespace Gungar.CAI.Prototipos._5
                 {
                     var item = new ListViewItem();
 
-                    item.Text = producto is ReservaHotel reservaHotel ? reservaHotel.Hotel.CodigoOferta:producto is ReservaVuelo reservaVuelo?reservaVuelo.Vuelo.CodigoOferta:"";
+                    item.Text = producto is ReservaHotel reservaHotel ? reservaHotel.Hotel.CodigoOferta : producto is ReservaVuelo reservaVuelo ? reservaVuelo.Vuelo.CodigoOferta : "";
                     item.SubItems.Add(pasajero.Nombre + " " + pasajero.Apellido);
                     item.SubItems.Add(pasajero.FechaNacimiento.ToString());
                     item.Tag = pasajero;
@@ -211,5 +211,7 @@ namespace Gungar.CAI.Prototipos._5
                 // TODO: Anular itinerario...
             }
         }
+
+       
     }
 }

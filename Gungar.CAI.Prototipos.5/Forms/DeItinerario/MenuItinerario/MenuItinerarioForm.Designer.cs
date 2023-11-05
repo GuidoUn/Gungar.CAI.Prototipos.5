@@ -55,7 +55,6 @@
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
-            columnHeader11 = new ColumnHeader();
             columnHeader12 = new ColumnHeader();
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
@@ -75,6 +74,8 @@
             columnHeader29 = new ColumnHeader();
             faltaClienteLabel = new Label();
             faltaProductoLabel = new Label();
+            columnHeader15 = new ColumnHeader();
+            columnHeader16 = new ColumnHeader();
             confirmacionBox.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
@@ -179,7 +180,7 @@
             // 
             // idProductoHeader
             // 
-            idProductoHeader.Text = "ID producto";
+            idProductoHeader.Text = "Código";
             idProductoHeader.Width = 100;
             // 
             // nombreHeader
@@ -290,7 +291,7 @@
             // 
             // hotelesAgregadosListView
             // 
-            hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
+            hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader12, columnHeader13, columnHeader14, columnHeader15, columnHeader16 });
             hotelesAgregadosListView.Location = new Point(273, 389);
             hotelesAgregadosListView.MultiSelect = false;
             hotelesAgregadosListView.Name = "hotelesAgregadosListView";
@@ -301,35 +302,31 @@
             // 
             // columnHeader8
             // 
-            columnHeader8.Text = "Producto";
+            columnHeader8.Text = "Código";
             columnHeader8.Width = 70;
             // 
             // columnHeader9
             // 
-            columnHeader9.Text = "Origen/Destino";
+            columnHeader9.Text = "Producto";
             columnHeader9.Width = 100;
             // 
             // columnHeader10
             // 
-            columnHeader10.Text = "Desde";
-            // 
-            // columnHeader11
-            // 
-            columnHeader11.Text = "Hasta";
+            columnHeader10.Text = "Destino";
             // 
             // columnHeader12
             // 
-            columnHeader12.Text = "Precio Total";
+            columnHeader12.Text = "Desde";
             columnHeader12.Width = 80;
             // 
             // columnHeader13
             // 
-            columnHeader13.Text = "Prestador";
+            columnHeader13.Text = "Hasta";
             columnHeader13.Width = 70;
             // 
             // columnHeader14
             // 
-            columnHeader14.Text = "Categoria";
+            columnHeader14.Text = "Precio";
             columnHeader14.Width = 80;
             // 
             // abonadoLabel
@@ -355,7 +352,7 @@
             // 
             // columnHeader0
             // 
-            columnHeader0.Text = "Id";
+            columnHeader0.Text = "Código";
             columnHeader0.Width = 120;
             // 
             // columnHeader1
@@ -432,6 +429,14 @@
             faltaProductoLabel.Size = new Size(156, 15);
             faltaProductoLabel.TabIndex = 29;
             faltaProductoLabel.Text = "* Debe ingresar un producto";
+            // 
+            // columnHeader15
+            // 
+            columnHeader15.Text = "Prestador";
+            // 
+            // columnHeader16
+            // 
+            columnHeader16.Text = "Categoría";
             // 
             // MenuItinerarioForm
             // 
@@ -519,5 +524,7 @@
         private ColumnHeader idProductoHeader;
         private ColumnHeader columnHeader0;
         private Label faltaClienteLabel;
+        private ColumnHeader columnHeader15;
+        private ColumnHeader columnHeader16;
     }
 }
