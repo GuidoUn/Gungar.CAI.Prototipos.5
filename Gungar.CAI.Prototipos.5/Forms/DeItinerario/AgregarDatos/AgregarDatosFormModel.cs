@@ -1,5 +1,6 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Modulos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,11 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
 
             });
             return resultado;
+        }
+
+        public List<IReservaProducto> GetProductosAgregados(int ItinerarioId)
+        {
+            return VentasModulo.GetProductosAgregados(ItinerarioId);
         }
     }
 }

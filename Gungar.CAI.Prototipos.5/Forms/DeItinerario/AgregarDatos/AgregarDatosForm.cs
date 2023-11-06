@@ -31,13 +31,11 @@ namespace Gungar.CAI.Prototipos._5
             model = new AgregarDatosFormModel(itinerario);
             HashSet<Pasajero> pasajerosUnicos = new HashSet<Pasajero>();
 
-            VentasModulo.GetProductosAgregados(itinerario.ItinerarioId).ForEach(producto => // TODO: Usar model
+            model.GetProductosAgregados(itinerario.ItinerarioId).ForEach(producto =>
             {
                 producto.Pasajeros.ForEach(pasajero => pasajerosUnicos.Add(pasajero));
             });
             model.PasajerosItinerario = new List<Pasajero>(pasajerosUnicos);
-
-
         }
         private void poblarProductosAgregados()
         {
@@ -69,7 +67,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             pasajerosProductoListView.Items.Clear();
 
-            List<IReservaProducto> reservaProductos = VentasModulo.GetProductosAgregados(model.Itinerario.ItinerarioId); // TODO: Usar model
+            List<IReservaProducto> reservaProductos = model.GetProductosAgregados(model.Itinerario.ItinerarioId); 
 
             reservaProductos.ForEach(reservaProducto =>
             {
