@@ -74,6 +74,7 @@
             telefonoText.Size = new Size(301, 27);
             telefonoText.TabIndex = 21;
             telefonoText.TextChanged += telefonoText_TextChanged;
+            telefonoText.KeyPress += telefonoText_KeyPress;
             // 
             // label4
             // 

@@ -80,6 +80,14 @@ namespace Gungar.CAI.Prototipos._5
             model.TelefonoNuevoCliente = telefonoText.Text;
         }
 
+        private void telefonoText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '+' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Evita que se escriban letras y otros caracteres
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
