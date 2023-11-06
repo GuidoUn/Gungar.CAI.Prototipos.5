@@ -39,6 +39,8 @@ namespace Gungar.CAI.Prototipos._5
                 return;
             }
 
+            // if (!Validador.ValidarCampoRequerido(documentoText, "Documento")) return;
+
             model.Continuar();
             Close();
         }
