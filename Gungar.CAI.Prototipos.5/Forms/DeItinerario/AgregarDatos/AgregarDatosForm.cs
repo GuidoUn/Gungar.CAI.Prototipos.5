@@ -67,7 +67,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             pasajerosProductoListView.Items.Clear();
 
-            List<IReservaProducto> reservaProductos = model.GetProductosAgregados(model.Itinerario.ItinerarioId); 
+            List<IReservaProducto> reservaProductos = model.GetProductosAgregados(model.Itinerario.ItinerarioId);
 
             reservaProductos.ForEach(reservaProducto =>
             {
@@ -125,6 +125,10 @@ namespace Gungar.CAI.Prototipos._5
 
         private void agregarPasajeroBtn_Click(object sender, EventArgs e)
         {
+            if (!Validador.ValidarCampoRequerido(nombreTextBox, "Nombre")) return;
+            if (!Validador.ValidarCampoRequerido(apellidoTextBox, "Apellido")) return;
+            if (!Validador.ValidarCampoRequerido(DNITextBox, "Documento")) return;
+
             if (model.PasajerosItinerario.Any(pasajero => pasajero.Documento == DNITextBox.Text) && !model.EditandoPasajero)
             {
                 MessageBox.Show("El pasajero ya ha sido agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -255,7 +259,6 @@ namespace Gungar.CAI.Prototipos._5
             pasajeroLabel.Text = model.PasajeroItinerarioSeleccionado.Documento;
             evaluarVisibilidadBtns();
             evaluarTextosDeSeleccion();
-
         }
 
         private void pasajerosProductoListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -268,7 +271,6 @@ namespace Gungar.CAI.Prototipos._5
 
             evaluarVisibilidadBtns();
             evaluarTextosDeSeleccion();
-
         }
 
         private void editarPasajeroBtn_Click(object sender, EventArgs e)
@@ -310,6 +312,21 @@ namespace Gungar.CAI.Prototipos._5
             EliminarPasajeroDeTodosLosProductos(model.PasajeroItinerarioSeleccionado);
             poblarListaPasajeroPorProducto();
             PoblarPasajerosItinerario();
+        }
+        private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Evita que se escriban números
+            }
+        }
+
+        private void apellidoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Evita que se escriban números
+            }
         }
     }
 }
