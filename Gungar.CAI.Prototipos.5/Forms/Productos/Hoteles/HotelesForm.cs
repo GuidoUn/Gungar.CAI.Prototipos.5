@@ -153,7 +153,6 @@ namespace Gungar.CAI.Prototipos._5
         private bool HotelYaFueAgregado(Hotel Hotel)
         {
             return itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel)); //Mejor sería usar Exists, que any
-            // Tipo así:  //return itinerario.HotelesSeleccionados.Exists(reservaHotel => reservaHotel.Hotel.Equals(Hotel)); 
         }
 
         private void agregarProductoBtn_Click(object sender, EventArgs e)
