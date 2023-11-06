@@ -61,9 +61,6 @@ namespace Gungar.CAI.Prototipos._5
 
         private void poblarListaPasajeros()
         {
-            // TODO
-
-
             pasajerosListView.Items.Clear();
 
             List<IReservaProducto> ProductosSeleccionados = new List<IReservaProducto>();
@@ -84,15 +81,6 @@ namespace Gungar.CAI.Prototipos._5
                 });
 
             });
-            //model.Itinerario.Pasajeros.ForEach(pasajero =>
-            //{
-            //    var item = new ListViewItem();
-            //    item.Text = pasajero.Nombre + " " + pasajero.Apellido;
-            //    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
-            //    item.Tag = pasajero;
-
-            //    pasajerosListView.Items.Add(item);
-            //});
         }
 
         private void hotelesBtn_Click(object sender, EventArgs e)
@@ -167,7 +155,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.FechaDesde.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.SubItems.Add(reservaHotel.Hotel.FechaHasta.ToString(Constantes.FORMATO_FECHA_CORTA));
-                item.SubItems.Add("$ " + reservaHotel.PrecioTotal.ToString()); 
+                item.SubItems.Add("$ " + reservaHotel.PrecioTotal.ToString());
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
                 item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
                 item.Tag = reservaHotel;
@@ -202,16 +190,5 @@ namespace Gungar.CAI.Prototipos._5
                 vuelosAgregadosListView.Items.Add(item);
             });
         }
-
-        private void anularItinerarioBtn_Click(object sender, EventArgs e) // TODO: si no se usa borrar
-        {
-            var confirmar = MessageBox.Show("¿Está seguro de que desea anular el itinerario?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (confirmar == DialogResult.OK)
-            {
-                // TODO: Anular itinerario...
-            }
-        }
-
-       
     }
 }

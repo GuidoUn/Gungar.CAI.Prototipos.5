@@ -19,9 +19,9 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
         public DateTime HastaFechaSeleccionada { get; set; }
         public DateTime DesdeFechaSeleccionada { get; set; }
 
-       public Hotel HotelSeleccionado { get; set; }
+        public Hotel HotelSeleccionado { get; set; }
 
-       public ReservaHotel HotelAgregadoSeleccionado { get; set; }
+        public ReservaHotel HotelAgregadoSeleccionado { get; set; }
 
         public HotelesFormModel(Itinerario? itinerario)
         {
@@ -41,7 +41,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
             return AlmacenHoteles.GetHoteles(destino, cantidadAdultos, cantidadMenores, cantidadInfantes, calificacion, fechaDesde, fechaHasta, precioMinimo, precioMaximo);
         }
 
-        public void ModificarDisponibilidad(Hotel hotel, bool isRollback)
+        public void ModificarDisponibilidad(Hotel hotel, bool isRollback) // TODO: si no se usa borrar
         {
             //TODO: Esto tiene que llamar al modulo disponibilidad
             AlmacenHoteles.ModificarDisponibilidad(hotel, isRollback);

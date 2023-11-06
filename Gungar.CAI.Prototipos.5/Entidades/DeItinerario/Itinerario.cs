@@ -86,11 +86,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             DisponibilidadModulo.liberarDisponibilidad(this);
         }
 
-        //public void AgregarHotel(Hotel hotel) // TODO: Esto se necesita?
-        //{
-        //    Hoteles.Add(hotel);
-        //}
-
         public void AgregarReservaHotel(ReservaHotel hotel)
         {
             HotelesSeleccionados.Add(hotel);
@@ -123,11 +118,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             {
                 precioTotal += reserva.PrecioTotal;
             });
-           
+
 
             return precioTotal;
         }
 
-        
+
     }
 }

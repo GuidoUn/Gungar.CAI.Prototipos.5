@@ -104,8 +104,6 @@ namespace Gungar.CAI.Prototipos._5
             });
         }
 
-
-
         private void AgregarDatosForm_Load(object sender, EventArgs e)
         {
             itinerarioLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} ({model.Itinerario?.ItinerarioId})";
@@ -148,10 +146,8 @@ namespace Gungar.CAI.Prototipos._5
             else
             {
                 Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA));
-
                 model.PasajerosItinerario.Add(nuevoPasajero);
             }
-
 
             poblarListaPasajeroPorProducto();
             vaciarCampos();
@@ -183,9 +179,9 @@ namespace Gungar.CAI.Prototipos._5
             if (model.ProductoSeleccionado == null)
             {
                 productoLabel.Text = "Ningun producto seleccionado";
-
             }
         }
+
         private void evaluarVisibilidadBtns()
         {
             quitarAsignacionBtn.Enabled = model.PasajeroProductoSeleccionado != null;
@@ -207,7 +203,7 @@ namespace Gungar.CAI.Prototipos._5
             if (confirmar == DialogResult.OK)
             {
                 model.Itinerario.GenerarPrereserva();
-                this.Close();
+                Close();
             }
         }
 
@@ -219,7 +215,6 @@ namespace Gungar.CAI.Prototipos._5
             if (model.ProductoSeleccionado is ReservaHotel reservaHotel)
             {
                 productoLabel.Text = reservaHotel.Hotel.Disponibilidad.Nombre;
-
             }
             else if (model.ProductoSeleccionado is ReservaVuelo reservaVuelo)
             {
@@ -282,7 +277,6 @@ namespace Gungar.CAI.Prototipos._5
             {
                 editarPasajeroBtn.Text = "Cancelar Edicion";
                 vaciarCampos();
-
             }
             else
             {
@@ -296,15 +290,14 @@ namespace Gungar.CAI.Prototipos._5
             evaluarTextosDeSeleccion();
         }
 
-
         private void EliminarPasajeroDeTodosLosProductos(Pasajero pasajero)
         {
             VentasModulo.GetProductosAgregados(model.Itinerario.ItinerarioId).ForEach(reservaProducto => // TODO: Usar model
             {
                 reservaProducto.Pasajeros.Remove(pasajero);
             });
-
         }
+
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
             if (model.PasajeroItinerarioSeleccionado == null) return;
