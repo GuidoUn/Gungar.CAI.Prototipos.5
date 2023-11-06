@@ -136,17 +136,6 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
             return resultado;
         }
 
-        public static double ObtenerPrecioTotal(List<Hotel> hoteles) // TODO: Borrar si no se usa mover a modulo ventas
-        {
-            double precioTotal = 0.0;
-            hoteles.ForEach(hotel =>
-            {
-                precioTotal += hotel.Disponibilidad.Tarifa;
-            });
-
-            return precioTotal;
-        }
-
         private static bool EsMismaCiudad(string codigoCiudadHotel, string ciudadBusqueda)
         {
             if (Constantes.Ciudades[codigoCiudadHotel].ToLower().Contains(ciudadBusqueda.ToLower()))

@@ -19,11 +19,7 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class AgregarDatosForm : Form
     {
-
-
         AgregarDatosFormModel model;
-
-
 
         public AgregarDatosForm(Itinerario itinerario, bool esPreReserva)
         {
@@ -199,7 +195,7 @@ namespace Gungar.CAI.Prototipos._5
 
                 return;
             }
-            DialogResult confirmar = MessageBox.Show("Desea confirmar la " + model.Itinerario.tipoDeConfirmacion + "?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult confirmar = MessageBox.Show("Desea confirmar la prereserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
                 model.Itinerario.GenerarPrereserva();
@@ -210,7 +206,6 @@ namespace Gungar.CAI.Prototipos._5
         private void productosAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (productosAgregadosListView.SelectedItems.Count == 0) return;
-            //hotelSeleccionado = (ReservaHotel)productosAgregadosListView.SelectedItems[0].Tag;
             model.ProductoSeleccionado = (IReservaProducto)productosAgregadosListView.SelectedItems[0].Tag;
             if (model.ProductoSeleccionado is ReservaHotel reservaHotel)
             {
@@ -231,10 +226,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void asignarBtn_Click(object sender, EventArgs e)
         {
-
-            //if (pasajeroSeleccionado == null || hotelSeleccionado == null) return;
             if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado)) return;
-            //hotelSeleccionado.Pasajeros.Add(pasajeroSeleccionado);
             model.ProductoSeleccionado.Pasajeros.Add(model.PasajeroItinerarioSeleccionado);
             model.PasajeroItinerarioSeleccionado = null;
             poblarListaPasajeroPorProducto();
@@ -290,19 +282,11 @@ namespace Gungar.CAI.Prototipos._5
             evaluarTextosDeSeleccion();
         }
 
-        private void EliminarPasajeroDeTodosLosProductos(Pasajero pasajero)
-        {
-            VentasModulo.GetProductosAgregados(model.Itinerario.ItinerarioId).ForEach(reservaProducto => // TODO: Usar model
-            {
-                reservaProducto.Pasajeros.Remove(pasajero);
-            });
-        }
-
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
             if (model.PasajeroItinerarioSeleccionado == null) return;
             model.PasajerosItinerario.Remove(model.PasajeroItinerarioSeleccionado);
-            EliminarPasajeroDeTodosLosProductos(model.PasajeroItinerarioSeleccionado);
+            model.EliminarPasajeroSeleccionadoDeTodosLosProductos();
             poblarListaPasajeroPorProducto();
             PoblarPasajerosItinerario();
         }

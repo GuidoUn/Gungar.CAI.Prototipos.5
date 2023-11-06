@@ -42,14 +42,9 @@ namespace Gungar.CAI.Prototipos._5
             poblarVuelosAgregados();
             estadoLabel.Text = model.Itinerario?.Estado.ToString();
             nombreYApellidoLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} {model.Itinerario?.Cliente?.Apellido}";
-            if (model.Itinerario.Estado == Estado.Cancelada) // TODO: Gestionar itinerario cancelado (me parece que ya funciona bien)
-            {
-                //confirmacionBox.Enabled = false;
-                //gestionarItinerarioBox.Enabled = false;
-                //cancelarReservaBtn.Enabled = false;
-                //return;
-                cancelarReservaBtn.Enabled = false;
-            }
+
+            cancelarReservaBtn.Enabled = !(model?.Itinerario?.Estado == Estado.Cancelada);
+
             generarPreReservaBtn.Enabled = model.puedePrereserva();
             generarReservaBtn.Enabled = model.PuedeReserva();
             faltaClienteLabel.Text = model.TieneCliente() ? "" : "* Debe agregar un cliente";
@@ -92,7 +87,6 @@ namespace Gungar.CAI.Prototipos._5
 
         private void generarPreReserva_Click(object sender, EventArgs e)
         {
-            model.Itinerario.tipoDeConfirmacion = "pre-reserva";
             model?.AgregarDatosForm?.ShowDialog();
             refrescar();
         }
@@ -104,7 +98,6 @@ namespace Gungar.CAI.Prototipos._5
 
         private void generarReservaBtn_Click(object sender, EventArgs e)
         {
-            model.Itinerario.tipoDeConfirmacion = "reserva";
             if (model.Itinerario.Estado == Estado.Presupuesto)
             {
                 model.AgregarDatosForm = new AgregarDatosForm(model.Itinerario, false);

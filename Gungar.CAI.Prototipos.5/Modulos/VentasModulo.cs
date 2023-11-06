@@ -1,4 +1,5 @@
-﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+﻿using Gungar.CAI.Prototipos._5.Almacenes;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using System;
@@ -85,6 +86,20 @@ namespace Gungar.CAI.Prototipos._5.Modulos
 
             List<OfertaVuelo> vuelosAMostrar = vuelosFiltrados.Where(vuelo => !Itinerario.VuelosAgregados.Exists(reserva => reserva.Vuelo.CodigoOferta == vuelo.CodigoOferta)).ToList();
             return vuelosAMostrar;
+        }
+
+        public static List<Hotel> GetHotelesDisponibles(string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, string calificacion, DateTime? fechaDesde = null, DateTime? fechaHasta = null, decimal? precioMinimo = null, decimal? precioMaximo = null)
+        {
+            return AlmacenHoteles.GetHoteles(destino, cantidadAdultos, cantidadMenores, cantidadInfantes, calificacion, fechaDesde, fechaHasta, precioMinimo, precioMaximo);
+        }
+
+        public static void EliminarPasajeroDeTodosLosProductos(int itinerarioId, Pasajero pasajero)
+        {
+            GetProductosAgregados(itinerarioId).ForEach(reservaProducto =>
+            {
+                reservaProducto.Pasajeros.Remove(pasajero);
+            });
+
         }
     }
 }

@@ -2,6 +2,7 @@
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
+using Gungar.CAI.Prototipos._5.Modulos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,14 +38,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
 
         public List<Hotel> GetHotelesDisponibles(string destino, int cantidadAdultos, int cantidadMenores, int cantidadInfantes, string calificacion, DateTime? fechaDesde = null, DateTime? fechaHasta = null, decimal? precioMinimo = null, decimal? precioMaximo = null)
         {
-            //TODO: Esto tiene que llamar al modulo ventas
-            return AlmacenHoteles.GetHoteles(destino, cantidadAdultos, cantidadMenores, cantidadInfantes, calificacion, fechaDesde, fechaHasta, precioMinimo, precioMaximo);
-        }
-
-        public void ModificarDisponibilidad(Hotel hotel, bool isRollback) // TODO: si no se usa borrar
-        {
-            //TODO: Esto tiene que llamar al modulo disponibilidad
-            AlmacenHoteles.ModificarDisponibilidad(hotel, isRollback);
+            return VentasModulo.GetHotelesDisponibles(destino, cantidadAdultos, cantidadMenores, cantidadInfantes, calificacion, fechaDesde, fechaHasta, precioMinimo, precioMaximo);
         }
     }
 }

@@ -19,17 +19,5 @@ namespace Gungar.CAI.Prototipos._5
             }
             return true;
         }
-
-        // Método para validar un campo numérico
-        public static bool ValidarNumero(TextBox textBox, string nombreCampo)
-        {
-            if (!int.TryParse(textBox.Text, out _))
-            {
-                MessageBox.Show($"{nombreCampo} debe ser un número válido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox.Focus();
-                return false;
-            }
-            return true;
-        }
     }
 }
