@@ -39,7 +39,8 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Vuelos
 
         public List<OfertaVuelo> GetVuelosDisponibles(string origen, string destino, int cantAdulto, int cantMenor, int cantInfante, char clase, DateTime? fechaDesde, DateTime? fechaHasta, int precioMin, int precioMax)
         {
-            return VentasModulo.GetVuelosDisponibles(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde, fechaHasta, precioMin, precioMax, Itinerario);
+
+            return VentasModulo.GetVuelosDisponibles(origen, destino, cantAdulto, cantMenor, cantInfante, clase, fechaDesde == null ? DateTime.Now.Date : fechaDesde, fechaHasta, precioMin, precioMax, Itinerario);
         }
 
         public List<ReservaVuelo> GetVuelosAgregados()
