@@ -82,7 +82,6 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(hotel.Calificacion.ToString());
                     item.SubItems.Add(Constantes.Ciudades[hotel.CodigoCiudad]);
                     item.SubItems.Add("$" + hotel.Disponibilidad.Tarifa.ToString());
-                    item.SubItems.Add(hotel.Disponibilidad.Fecha.ToString(Constantes.FORMATO_FECHA_CORTA));
                     item.SubItems.Add(hotel.Disponibilidad.CapacidadAdultos.ToString());
                     item.SubItems.Add(hotel.Disponibilidad.CapacidadMenores.ToString());
                     item.SubItems.Add(hotel.Disponibilidad.CapacidadInfantes.ToString());

@@ -15,7 +15,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         public int CapacidadAdultos; // Cantidad máxima de adultos. Debe haber al menos un adulto por habitación.
         public int CapacidadMenores; // Cantidad máxima de menores. 
         public int CapacidadInfantes; // Cantidad máxima de infantes.
-        public DateTime Fecha;
         public List<DateTime> FechasOcupadas;
         public int Cantidad;
     }

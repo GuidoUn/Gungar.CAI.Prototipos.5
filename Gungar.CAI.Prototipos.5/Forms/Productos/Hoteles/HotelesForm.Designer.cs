@@ -68,7 +68,6 @@
             estrellasHeader = new ColumnHeader();
             codigoCiudadHeader = new ColumnHeader();
             precioHeader = new ColumnHeader();
-            fechaHeader = new ColumnHeader();
             capacidadAdultosHeader = new ColumnHeader();
             capacidadMenoresHeader = new ColumnHeader();
             capacidadInfantesHeader = new ColumnHeader();
@@ -393,7 +392,7 @@
             // 
             // hotelesListView
             // 
-            hotelesListView.Columns.AddRange(new ColumnHeader[] { hotelesHeader, NombreHeader, disponibilidadHeader, direccionHeader, estrellasHeader, codigoCiudadHeader, precioHeader, fechaHeader, capacidadAdultosHeader, capacidadMenoresHeader, capacidadInfantesHeader });
+            hotelesListView.Columns.AddRange(new ColumnHeader[] { hotelesHeader, NombreHeader, disponibilidadHeader, direccionHeader, estrellasHeader, codigoCiudadHeader, precioHeader, capacidadAdultosHeader, capacidadMenoresHeader, capacidadInfantesHeader });
             hotelesListView.FullRowSelect = true;
             hotelesListView.Location = new Point(6, 16);
             hotelesListView.Name = "hotelesListView";
@@ -438,11 +437,6 @@
             // 
             precioHeader.Text = "Precio";
             precioHeader.Width = 100;
-            // 
-            // fechaHeader
-            // 
-            fechaHeader.Text = "Fecha";
-            fechaHeader.Width = 100;
             // 
             // capacidadAdultosHeader
             // 
@@ -540,7 +534,6 @@
         private ColumnHeader NombreHeader;
         private ColumnHeader codigoCiudadHeader;
         private ColumnHeader precioHeader;
-        private ColumnHeader fechaHeader;
         private ColumnHeader capacidadAdultosHeader;
         private ColumnHeader capacidadMenoresHeader;
         private ColumnHeader capacidadInfantesHeader;
