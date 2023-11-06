@@ -1,4 +1,5 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,18 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
 {
     public class AgregarDatosFormModel
     {
-        // TODO: Hacer model
+       
         public Itinerario Itinerario { get; set; }
+
+        public Pasajero? PasajeroItinerarioSeleccionado { get; set; } 
+
+        public Pasajero? PasajeroProductoSeleccionado { get; set; }
+
+        public List<Pasajero> PasajerosItinerario { get; set; }
+
+        public bool EditandoPasajero = false;
+
+        public IReservaProducto ProductoSeleccionado { get; set; }
         public AgregarDatosFormModel(Itinerario itinerario)
         {
             itinerario.EvaluarVencimientoPrereserva();

@@ -50,6 +50,7 @@
             quitarAsignacionBtn = new Button();
             confirmarBtn = new Button();
             productosAgregadosListView = new ListView();
+            columnHeader4 = new ColumnHeader();
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
@@ -59,9 +60,10 @@
             columnHeader14 = new ColumnHeader();
             asignarBtn = new Button();
             pasajerosProductoListView = new ListView();
+            codigoHeader = new ColumnHeader();
+            dniHeader = new ColumnHeader();
             nombreHeader2 = new ColumnHeader();
             apellidoHeader2 = new ColumnHeader();
-            dniHeader = new ColumnHeader();
             fechaNacHeader2 = new ColumnHeader();
             groupBox1 = new GroupBox();
             editarPasajeroBtn = new Button();
@@ -70,7 +72,6 @@
             pasajeroLabel = new Label();
             label4 = new Label();
             eliminarPasajeroBtn = new Button();
-            columnHeader4 = new ColumnHeader();
             datosPasajerosGroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -282,6 +283,10 @@
             productosAgregadosListView.View = View.Details;
             productosAgregadosListView.SelectedIndexChanged += productosAgregadosListView_SelectedIndexChanged;
             // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Codigo";
+            // 
             // columnHeader8
             // 
             columnHeader8.Text = "Producto";
@@ -329,7 +334,7 @@
             // 
             // pasajerosProductoListView
             // 
-            pasajerosProductoListView.Columns.AddRange(new ColumnHeader[] { nombreHeader2, apellidoHeader2, dniHeader, fechaNacHeader2 });
+            pasajerosProductoListView.Columns.AddRange(new ColumnHeader[] { codigoHeader, dniHeader, nombreHeader2, apellidoHeader2, fechaNacHeader2 });
             pasajerosProductoListView.FullRowSelect = true;
             pasajerosProductoListView.Location = new Point(6, 20);
             pasajerosProductoListView.Margin = new Padding(3, 2, 3, 2);
@@ -340,6 +345,16 @@
             pasajerosProductoListView.View = View.Details;
             pasajerosProductoListView.SelectedIndexChanged += pasajerosProductoListView_SelectedIndexChanged;
             // 
+            // codigoHeader
+            // 
+            codigoHeader.Text = "Código";
+            codigoHeader.Width = 100;
+            // 
+            // dniHeader
+            // 
+            dniHeader.Text = "DNI";
+            dniHeader.Width = 100;
+            // 
             // nombreHeader2
             // 
             nombreHeader2.Text = "Nombre";
@@ -349,11 +364,6 @@
             // 
             apellidoHeader2.Text = "Apellido";
             apellidoHeader2.Width = 110;
-            // 
-            // dniHeader
-            // 
-            dniHeader.Text = "DNI";
-            dniHeader.Width = 100;
             // 
             // fechaNacHeader2
             // 
@@ -432,15 +442,11 @@
             eliminarPasajeroBtn.UseVisualStyleBackColor = true;
             eliminarPasajeroBtn.Click += eliminarPasajeroBtn_Click;
             // 
-            // columnHeader4
-            // 
-            columnHeader4.Text = "Codigo";
-            // 
             // AgregarDatosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 562);
+            ClientSize = new Size(1199, 810);
             Controls.Add(eliminarPasajeroBtn);
             Controls.Add(pasajeroLabel);
             Controls.Add(label4);
@@ -528,5 +534,6 @@
         private ColumnHeader apellidoHeader2;
         private ColumnHeader fechaNacHeader2;
         private ColumnHeader columnHeader4;
+        private ColumnHeader codigoHeader;
     }
 }
