@@ -16,12 +16,12 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
         public bool EsConsulta { get; } = false;
         public bool EsSoloIda { get; set; } = false;
         public bool FormValido { get; set; } = true;
-        public DateTime HastaFechaSeleccionada { get; set; }  // mover a model
+        public DateTime HastaFechaSeleccionada { get; set; }
         public DateTime DesdeFechaSeleccionada { get; set; }
 
-       public Hotel HotelSeleccionado { get; set; } // mover a model
+       public Hotel HotelSeleccionado { get; set; }
 
-       public ReservaHotel HotelAgregadoSeleccionado { get; set; } // mover a model
+       public ReservaHotel HotelAgregadoSeleccionado { get; set; }
 
         public HotelesFormModel(Itinerario? itinerario)
         {
