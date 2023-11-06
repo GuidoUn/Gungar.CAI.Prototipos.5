@@ -1,5 +1,6 @@
 ﻿using Gungar.CAI.Prototipos._5.Almacenes;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
+using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
         public bool EsConsulta { get; } = false;
         public bool EsSoloIda { get; set; } = false;
         public bool FormValido { get; set; } = true;
+        public DateTime HastaFechaSeleccionada { get; set; }  // mover a model
+        public DateTime DesdeFechaSeleccionada { get; set; }
+
+       public Hotel HotelSeleccionado { get; set; } // mover a model
+
+       public ReservaHotel HotelAgregadoSeleccionado { get; set; } // mover a model
 
         public HotelesFormModel(Itinerario? itinerario)
         {

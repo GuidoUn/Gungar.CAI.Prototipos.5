@@ -17,36 +17,19 @@ namespace Gungar.CAI.Prototipos._5
 {
     public partial class HotelesForm : Form
     {
-        Itinerario? itinerario; // mover a model                
-        bool esConsulta = false; // mover a model
-        List<Hotel> listaDeHotelesDisponibles; // mover a model
-        DateTime hastaFechaSeleccionada; // mover a model
-        DateTime desdeFechaSeleccionada; // mover a model
-        HotelesFormModel hotelesFormModel;
-
-        Hotel hotelSeleccionado; // mover a model
-
-        ReservaHotel hotelAgregadoSeleccionado; // mover a model
+        HotelesFormModel model;
 
         public HotelesForm(Itinerario? itinerario)
         {
             InitializeComponent();
-            if (itinerario == null)
-            {
-                esConsulta = true;
-            }
-            else
-            {
-                this.itinerario = itinerario;
-            }
+            model = new HotelesFormModel(itinerario);
+           
         }
-
-        int nroProductoAAgregar = 0; // TODO: Borrarlo si no se usa
 
         private void HotelesForm_Load(object sender, EventArgs e)
         {
-            hotelesFormModel = new HotelesFormModel(itinerario);
-            if (esConsulta)
+          
+            if (model.EsConsulta)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
                 itinerarioLabel.Text = "";
@@ -54,7 +37,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = $"{itinerario?.Cliente?.Nombre} ({itinerario?.ItinerarioId})";
+                itinerarioLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} ({model.Itinerario?.ItinerarioId})";
             }
 
             clasesCombo.SelectedIndex = 0;
@@ -66,8 +49,7 @@ namespace Gungar.CAI.Prototipos._5
         }
         private void poblarHoteles()
         {
-            // TODO: Esto tiene que pedirle los hoteles al model, y el model tiene que pedirselo al módulo ventas
-            listaDeHotelesDisponibles = AlmacenHoteles.GetHoteles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text, desdeFechaSeleccionada, hastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
+            var listaDeHotelesDisponibles = model.GetHotelesDisponibles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text, model.DesdeFechaSeleccionada, model.HastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);
 
             hotelesListView.Items.Clear();
             foreach (var hotel in listaDeHotelesDisponibles)
@@ -98,10 +80,10 @@ namespace Gungar.CAI.Prototipos._5
 
         private void poblarProductosAgregados()
         {
-            if (!esConsulta)
+            if (!model.EsConsulta)
             {
                 hotelesAgregadosListView.Items.Clear();
-                foreach (var reservaHotel in itinerario?.HotelesSeleccionados)
+                foreach (var reservaHotel in model.Itinerario?.HotelesSeleccionados)
                 {
                     var item = new ListViewItem();
                     item.Text = reservaHotel.Hotel.NombreHotel;
@@ -121,13 +103,13 @@ namespace Gungar.CAI.Prototipos._5
         private void desdeFechaDatePicker_ValueChanged(object sender, EventArgs e)
         {
             desdeFechaDatePicker.Format = DateTimePickerFormat.Short;
-            desdeFechaSeleccionada = desdeFechaDatePicker.Value;
+            model.DesdeFechaSeleccionada = desdeFechaDatePicker.Value;
         }
 
         private void hastaFechaDatePicker_ValueChanged(object sender, EventArgs e)
         {
             hastaFechaDatePicker.Format = DateTimePickerFormat.Short;
-            hastaFechaSeleccionada = hastaFechaDatePicker.Value;
+            model.HastaFechaSeleccionada = hastaFechaDatePicker.Value;
         }
 
         private void borrarFechas()
@@ -146,32 +128,32 @@ namespace Gungar.CAI.Prototipos._5
             if (hotelesListView.SelectedItems.Count <= 0)
                 return;
 
-            hotelSeleccionado = (Hotel)hotelesListView.SelectedItems[0].Tag;
+            model.HotelSeleccionado = (Hotel)hotelesListView.SelectedItems[0].Tag;
         }
 
         private bool HotelYaFueAgregado(Hotel Hotel)
         {
-            return itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel)); //Mejor sería usar Exists, que any
+            return model.Itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel)); //Mejor sería usar Exists, que any
         }
 
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
-            if (hotelSeleccionado == null)
+            if (model.HotelSeleccionado == null)
             {
                 MessageBox.Show("Debe seleccionar un hotel", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            hotelSeleccionado.FechaDesde = desdeFechaSeleccionada;
-            hotelSeleccionado.FechaHasta = hastaFechaSeleccionada;
-            if (HotelYaFueAgregado(hotelSeleccionado))
+            model.HotelSeleccionado.FechaDesde = model.DesdeFechaSeleccionada;
+            model.HotelSeleccionado.FechaHasta = model.HastaFechaSeleccionada;
+            if (HotelYaFueAgregado(model.HotelSeleccionado))
             {
 
                 MessageBox.Show("El Hotel seleccionado ya fue agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            ReservaHotel reservaHotel = new ReservaHotel(hotelSeleccionado);
+            ReservaHotel reservaHotel = new ReservaHotel(model.HotelSeleccionado);
 
-            itinerario?.AgregarReservaHotel(reservaHotel);
+            model.Itinerario?.AgregarReservaHotel(reservaHotel);
             poblarProductosAgregados();
         }
 
@@ -182,10 +164,10 @@ namespace Gungar.CAI.Prototipos._5
 
         private void quitarHotelBtn_Click(object sender, EventArgs e)
         {
-            if (hotelAgregadoSeleccionado == null)
+            if (model.HotelAgregadoSeleccionado == null)
                 return;
 
-            itinerario?.QuitarReservaHotel(hotelAgregadoSeleccionado);
+            model.Itinerario?.QuitarReservaHotel(model.HotelAgregadoSeleccionado);
             poblarProductosAgregados();
         }
 
@@ -194,7 +176,7 @@ namespace Gungar.CAI.Prototipos._5
             if (hotelesAgregadosListView.SelectedItems.Count <= 0)
                 return;
 
-            hotelAgregadoSeleccionado = (ReservaHotel)hotelesAgregadosListView.SelectedItems[0].Tag;
+            model.HotelAgregadoSeleccionado = (ReservaHotel)hotelesAgregadosListView.SelectedItems[0].Tag;
         }
     }
 }
