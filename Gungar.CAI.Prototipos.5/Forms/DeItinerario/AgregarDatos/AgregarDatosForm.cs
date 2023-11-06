@@ -306,6 +306,7 @@ namespace Gungar.CAI.Prototipos._5
             poblarListaPasajeroPorProducto();
             PoblarPasajerosItinerario();
         }
+
         private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))
