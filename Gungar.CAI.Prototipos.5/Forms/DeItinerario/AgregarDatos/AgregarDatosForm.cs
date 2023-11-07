@@ -52,8 +52,14 @@ namespace Gungar.CAI.Prototipos._5
             {
                 var item = new ListViewItem();
                 item.Text = reservaHotel.Hotel.CodigoOferta;
+                item.SubItems.Add("Hotel - " + reservaHotel.Hotel.Disponibilidad.Nombre);
+                item.SubItems.Add(reservaHotel.Hotel.CodigoCiudad);
+                item.SubItems.Add(reservaHotel.Hotel.FechaDesde.ToString(Constantes.FORMATO_FECHA_CORTA));
+                item.SubItems.Add(reservaHotel.Hotel.FechaHasta.ToString(Constantes.FORMATO_FECHA_CORTA));
+                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Tarifa.ToString()); // TODO: Calcular precio total en base a la cantidad de noches (TODO: calcular la cant de noches)
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
-                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
+                item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
+
                 item.Tag = reservaHotel;
 
                 productosAgregadosListView.Items.Add(item);
@@ -63,8 +69,14 @@ namespace Gungar.CAI.Prototipos._5
             {
                 var item = new ListViewItem();
                 item.Text = reservaVuelo.Vuelo.CodigoOferta;
+                item.SubItems.Add("Vuelo");
+                item.SubItems.Add(reservaVuelo.Vuelo.Origen + " / " + reservaVuelo.Vuelo.Destino);
+                item.SubItems.Add(reservaVuelo.Vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_CORTA));
+                item.SubItems.Add(reservaVuelo.Vuelo.FechaArribo.ToString(Constantes.FORMATO_FECHA_CORTA));
+                item.SubItems.Add("PRECIO"); // TODO: QUE PRECIO VA A LISTAR SI HAY 3 PRECIOS DIFERENTES? Y SOLO HAY UNA COLUMNA
                 item.SubItems.Add(reservaVuelo.Vuelo.Aerolinea);
-                item.SubItems.Add(reservaVuelo.Vuelo.Origen);
+                item.SubItems.Add(reservaVuelo.Clase.ToString());
+                
                 item.Tag = reservaVuelo;
 
                 productosAgregadosListView.Items.Add(item);
