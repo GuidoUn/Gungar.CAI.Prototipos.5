@@ -156,7 +156,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(reservaHotel.Hotel.FechaHasta.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.SubItems.Add("$ " + reservaHotel.PrecioTotal.ToString());
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
-                item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
+                item.SubItems.Add(Constantes.CalificacionesInvertidas[reservaHotel.Hotel.Calificacion]);
                 item.Tag = reservaHotel;
 
                 hotelesAgregadosListView.Items.Add(item);

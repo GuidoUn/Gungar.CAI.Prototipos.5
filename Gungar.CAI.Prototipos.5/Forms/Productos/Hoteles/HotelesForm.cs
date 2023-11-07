@@ -62,7 +62,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(hotel.Disponibilidad.Nombre);
                     item.SubItems.Add(hotel.Disponibilidad.Capacidad.ToString());
                     item.SubItems.Add(hotel.Direccion.Calle);
-                    item.SubItems.Add(hotel.Calificacion.ToString());
+                    item.SubItems.Add(Constantes.CalificacionesInvertidas[hotel.Calificacion]);
                     item.SubItems.Add(Constantes.Ciudades[hotel.CodigoCiudad]);
                     item.SubItems.Add("$" + hotel.Disponibilidad.Tarifa.ToString());
                     item.SubItems.Add(hotel.Disponibilidad.CapacidadAdultos.ToString());
@@ -91,7 +91,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
                     item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Capacidad.ToString());
                     item.SubItems.Add(reservaHotel.Hotel.Direccion.Calle);
-                    item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
+                    item.SubItems.Add(Constantes.CalificacionesInvertidas[reservaHotel.Hotel.Calificacion]);
                     item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
                     item.SubItems.Add("$" + reservaHotel.Hotel.Disponibilidad.Tarifa.ToString());
                     item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.CapacidadAdultos.ToString());

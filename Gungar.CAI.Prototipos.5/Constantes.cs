@@ -91,5 +91,21 @@ namespace Gungar.CAI.Prototipos._5
                 "5 Estrellas", 5
             }
         };
+
+        public static readonly Dictionary<int, string> CalificacionesInvertidas = new(){
+            {
+                0, "Todas"
+            },  {
+                1, "1 Estrella"
+            },  {
+                2 , "2 Estrellas"
+            },  {
+                3 , "3 Estrellas"
+            },  {
+                4 , "4 Estrellas"
+            },  {
+                5 , "5 Estrellas"
+            }
+        };
     }
 }
