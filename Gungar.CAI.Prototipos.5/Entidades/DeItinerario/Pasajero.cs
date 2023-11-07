@@ -12,9 +12,9 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         public string Apellido { get; set; }
         public string Documento { get; set; }
         
-        public string FechaNacimiento { get; set; }
+        public DateTime FechaNacimiento { get; set; }
 
-        public Pasajero(string nombre, string apellido, string documento, string fechaNacimiento)
+        public Pasajero(string nombre, string apellido, string documento, DateTime fechaNacimiento)
         {
             Nombre = nombre;
             Apellido = apellido;

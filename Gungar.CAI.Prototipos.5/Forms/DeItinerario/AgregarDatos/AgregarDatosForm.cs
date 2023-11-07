@@ -150,13 +150,13 @@ namespace Gungar.CAI.Prototipos._5
                 PasajeroAModificar.Documento = DNITextBox.Text;
                 PasajeroAModificar.Apellido = apellidoTextBox.Text;
                 PasajeroAModificar.Nombre = nombreTextBox.Text;
-                PasajeroAModificar.FechaNacimiento = fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA);
+                PasajeroAModificar.FechaNacimiento = fechaNacDatePicker.Value;
                 model.EditandoPasajero = false;
                 editarPasajeroBtn.Text = "Editar";
             }
             else
             {
-                Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, fechaNacDatePicker.Value.ToString(Constantes.FORMATO_FECHA_CORTA));
+                Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, fechaNacDatePicker.Value);
                 model.PasajerosItinerario.Add(nuevoPasajero);
             }
 
@@ -207,6 +207,13 @@ namespace Gungar.CAI.Prototipos._5
             if (!model.TodosLosProductosTienenPasajeros())
             {
                 MessageBox.Show("Todos los productos tienen que tener asignados al menos UN pasajero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            if (!model.ConcidenPasajerosConProductos(model.Itinerario.ItinerarioId))
+            {
+                MessageBox.Show("La edad de los pasajeros añadidos deben coincidir con los seleccionados", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return;
             }
@@ -293,7 +300,7 @@ namespace Gungar.CAI.Prototipos._5
             apellidoTextBox.Text = model.PasajeroItinerarioSeleccionado.Apellido;
             DNITextBox.Text = model.PasajeroItinerarioSeleccionado.Documento;
 
-            fechaNacDatePicker.Text = model.PasajeroItinerarioSeleccionado.FechaNacimiento;
+            fechaNacDatePicker.Value = model.PasajeroItinerarioSeleccionado.FechaNacimiento;
             evaluarTextosDeSeleccion();
         }
 

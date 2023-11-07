@@ -60,5 +60,88 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
         {
             VentasModulo.EliminarPasajeroDeTodosLosProductos(Itinerario.ItinerarioId, PasajeroItinerarioSeleccionado);
         }
+
+        private bool esInfante(DateTime fechaNacimiento)
+        {
+            DateTime fechaActual = DateTime.Today;
+            int edad = fechaActual.Year - fechaNacimiento.Year;
+            if (fechaNacimiento.Date > fechaActual.AddYears(-edad))
+            {
+                edad--;
+            }
+
+           return edad<2;
+        }
+
+        private bool esMenor(DateTime fechaNacimiento)
+        {
+            DateTime fechaActual = DateTime.Today;
+            int edad = fechaActual.Year - fechaNacimiento.Year;
+            if (fechaNacimiento.Date > fechaActual.AddYears(-edad))
+            {
+                edad--;
+            }
+
+            return edad < 18;
+        }
+
+        public bool ConcidenPasajerosConProductos(int ItinerarioId)
+        {
+            bool resultado = true;
+            this.GetProductosAgregados(ItinerarioId).ForEach(producto =>
+            {
+              if( producto is ReservaHotel reservaHotel)
+                {
+                    if(!ProductoTienePasajerosCorrecto(producto, reservaHotel.CantidadAdultos, reservaHotel.CantidadInfantes, reservaHotel.CantidadMenores)){
+                        resultado = false;
+                        return;
+
+                    }
+                   
+                }
+
+              else if( producto is ReservaVuelo reservaVuelo)
+                {
+                    if (!ProductoTienePasajerosCorrecto(producto, reservaVuelo.CantidadAdultos, reservaVuelo.CantidadInfantes, reservaVuelo.CantidadMenores))
+                    {
+                        resultado = false;
+                        return;
+
+                    }
+                }
+
+               
+
+            });
+
+                return resultado;
+        }
+
+        public bool ProductoTienePasajerosCorrecto(IReservaProducto producto,int PasajeroAdulto,int PasajeroInfante, int PasajeroMenor) {
+            bool resultado = false;
+            int _adulto=PasajeroAdulto;
+            int _menor=PasajeroMenor;
+            int _infante=PasajeroInfante;
+
+            producto.Pasajeros.ForEach(pasajero =>
+            {
+                if (esInfante(pasajero.FechaNacimiento))
+                {
+                    _infante--;
+                }
+                else if (esMenor(pasajero.FechaNacimiento))
+                {
+                    _menor--;
+                }
+                else
+                {
+                    _adulto--;
+                }
+
+            });
+
+            return _adulto == 0 && _menor == 0 && _infante==0 ;
+
+        }
     }
 }
