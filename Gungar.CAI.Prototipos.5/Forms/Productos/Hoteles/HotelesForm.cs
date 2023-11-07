@@ -107,6 +107,22 @@ namespace Gungar.CAI.Prototipos._5
         private void aplicarFiltrosBtn_Click(object sender, EventArgs e)
         {
             poblarHoteles();
+            guardarDatosBusqueda();
+        }
+        private void guardarDatosBusqueda()
+        {
+            model.AdultosEnBusqueda = decimal.ToInt32(cantidadAdultosNumeric.Value);
+            adultosEnBusquedaLabel.Text = model.AdultosEnBusqueda.ToString();
+
+            model.MenoresEnBusqueda = decimal.ToInt32(cantidadMenoresNumeric.Value);
+            menoresEnBusquedaLabel.Text = model.MenoresEnBusqueda.ToString();
+
+            model.InfantesEnBusqueda = decimal.ToInt32(cantidadInfantesNumeric.Value);
+            infantesEnBusquedaLabel.Text = model.InfantesEnBusqueda.ToString();
+
+            pasajerosEnBusquedaBox.Visible = true;
+
+
         }
 
         private void desdeFechaDatePicker_ValueChanged(object sender, EventArgs e)
@@ -161,6 +177,9 @@ namespace Gungar.CAI.Prototipos._5
                 return;
             }
             ReservaHotel reservaHotel = new ReservaHotel(model.HotelSeleccionado);
+            reservaHotel.CantidadAdultos = model.AdultosEnBusqueda;
+            reservaHotel.CantidadMenores = model.MenoresEnBusqueda;
+            reservaHotel.CantidadInfantes = model.InfantesEnBusqueda;
 
             model.Itinerario?.AgregarReservaHotel(reservaHotel);
             poblarProductosAgregados();
@@ -180,7 +199,7 @@ namespace Gungar.CAI.Prototipos._5
             poblarProductosAgregados();
         }
 
-        private void hotelesAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void hotelesAgregadosListView_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (hotelesAgregadosListView.SelectedItems.Count <= 0)
                 return;

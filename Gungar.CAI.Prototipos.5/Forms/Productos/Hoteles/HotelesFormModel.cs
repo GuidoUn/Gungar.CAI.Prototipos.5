@@ -20,6 +20,10 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
         public DateTime HastaFechaSeleccionada { get; set; }
         public DateTime DesdeFechaSeleccionada { get; set; }
 
+        public int AdultosEnBusqueda { get; set; }
+        public int MenoresEnBusqueda { get; set; }
+        public int InfantesEnBusqueda { get; set; }
+        public char ClaseEnBusqueda { get; set; }
         public Hotel HotelSeleccionado { get; set; }
 
         public ReservaHotel HotelAgregadoSeleccionado { get; set; }

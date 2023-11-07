@@ -55,6 +55,17 @@
             itinerarioLabel = new Label();
             titleLabel = new Label();
             modificarItinerarioBox = new GroupBox();
+            hotelesAgregadosListView = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            columnHeader10 = new ColumnHeader();
             agregarProductoBtn = new Button();
             quitarHotelBtn = new Button();
             groupBox4 = new GroupBox();
@@ -70,17 +81,13 @@
             capacidadMenoresHeader = new ColumnHeader();
             capacidadInfantesHeader = new ColumnHeader();
             volverBtn = new Button();
-            hotelesAgregadosListView = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
-            columnHeader7 = new ColumnHeader();
-            columnHeader8 = new ColumnHeader();
-            columnHeader9 = new ColumnHeader();
-            columnHeader10 = new ColumnHeader();
+            pasajerosEnBusquedaBox = new GroupBox();
+            infantesEnBusquedaLabel = new Label();
+            menoresEnBusquedaLabel = new Label();
+            adultosEnBusquedaLabel = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            label12 = new Label();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -91,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)cantidadAdultosNumeric).BeginInit();
             modificarItinerarioBox.SuspendLayout();
             groupBox4.SuspendLayout();
+            pasajerosEnBusquedaBox.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -352,6 +360,69 @@
             modificarItinerarioBox.TabIndex = 27;
             modificarItinerarioBox.TabStop = false;
             // 
+            // hotelesAgregadosListView
+            // 
+            hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
+            hotelesAgregadosListView.FullRowSelect = true;
+            hotelesAgregadosListView.Location = new Point(87, 16);
+            hotelesAgregadosListView.Name = "hotelesAgregadosListView";
+            hotelesAgregadosListView.Size = new Size(432, 411);
+            hotelesAgregadosListView.TabIndex = 25;
+            hotelesAgregadosListView.UseCompatibleStateImageBehavior = false;
+            hotelesAgregadosListView.View = View.Details;
+            hotelesAgregadosListView.SelectedIndexChanged += hotelesAgregadosListView_SelectedIndexChanged_1;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Hotel";
+            columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Tipo de habitación";
+            columnHeader2.TextAlign = HorizontalAlignment.Right;
+            columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Disponibilidad";
+            columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Direccion";
+            columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Estrellas";
+            columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Ciudad";
+            columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Precio";
+            columnHeader7.Width = 100;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Capacidad adultos";
+            columnHeader8.Width = 160;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Capacidad menores";
+            columnHeader9.Width = 160;
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "Capacidad infantes";
+            columnHeader10.Width = 160;
+            // 
             // agregarProductoBtn
             // 
             agregarProductoBtn.Location = new Point(6, 182);
@@ -455,74 +526,87 @@
             volverBtn.UseVisualStyleBackColor = true;
             volverBtn.Click += volverBtn_Click;
             // 
-            // hotelesAgregadosListView
+            // pasajerosEnBusquedaBox
             // 
-            hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
-            hotelesAgregadosListView.FullRowSelect = true;
-            hotelesAgregadosListView.Location = new Point(87, 16);
-            hotelesAgregadosListView.Name = "hotelesAgregadosListView";
-            hotelesAgregadosListView.Size = new Size(432, 411);
-            hotelesAgregadosListView.TabIndex = 25;
-            hotelesAgregadosListView.UseCompatibleStateImageBehavior = false;
-            hotelesAgregadosListView.View = View.Details;
+            pasajerosEnBusquedaBox.Controls.Add(infantesEnBusquedaLabel);
+            pasajerosEnBusquedaBox.Controls.Add(menoresEnBusquedaLabel);
+            pasajerosEnBusquedaBox.Controls.Add(adultosEnBusquedaLabel);
+            pasajerosEnBusquedaBox.Controls.Add(label13);
+            pasajerosEnBusquedaBox.Controls.Add(label14);
+            pasajerosEnBusquedaBox.Controls.Add(label12);
+            pasajerosEnBusquedaBox.Location = new Point(733, 149);
+            pasajerosEnBusquedaBox.Margin = new Padding(2);
+            pasajerosEnBusquedaBox.Name = "pasajerosEnBusquedaBox";
+            pasajerosEnBusquedaBox.Padding = new Padding(2);
+            pasajerosEnBusquedaBox.Size = new Size(166, 78);
+            pasajerosEnBusquedaBox.TabIndex = 32;
+            pasajerosEnBusquedaBox.TabStop = false;
+            pasajerosEnBusquedaBox.Text = "Pasajeros En Busqueda";
+            pasajerosEnBusquedaBox.Visible = false;
             // 
-            // columnHeader1
+            // infantesEnBusquedaLabel
             // 
-            columnHeader1.Text = "Hotel";
-            columnHeader1.Width = 100;
+            infantesEnBusquedaLabel.AutoSize = true;
+            infantesEnBusquedaLabel.Location = new Point(63, 47);
+            infantesEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
+            infantesEnBusquedaLabel.Name = "infantesEnBusquedaLabel";
+            infantesEnBusquedaLabel.Size = new Size(142, 15);
+            infantesEnBusquedaLabel.TabIndex = 37;
+            infantesEnBusquedaLabel.Text = "infantesEnBusquedaLabel";
             // 
-            // columnHeader2
+            // menoresEnBusquedaLabel
             // 
-            columnHeader2.Text = "Tipo de habitación";
-            columnHeader2.TextAlign = HorizontalAlignment.Right;
-            columnHeader2.Width = 120;
+            menoresEnBusquedaLabel.AutoSize = true;
+            menoresEnBusquedaLabel.Location = new Point(63, 32);
+            menoresEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
+            menoresEnBusquedaLabel.Name = "menoresEnBusquedaLabel";
+            menoresEnBusquedaLabel.Size = new Size(146, 15);
+            menoresEnBusquedaLabel.TabIndex = 36;
+            menoresEnBusquedaLabel.Text = "menoresEnBusquedaLabel";
             // 
-            // columnHeader3
+            // adultosEnBusquedaLabel
             // 
-            columnHeader3.Text = "Disponibilidad";
-            columnHeader3.Width = 100;
+            adultosEnBusquedaLabel.AutoSize = true;
+            adultosEnBusquedaLabel.Location = new Point(63, 15);
+            adultosEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
+            adultosEnBusquedaLabel.Name = "adultosEnBusquedaLabel";
+            adultosEnBusquedaLabel.Size = new Size(139, 15);
+            adultosEnBusquedaLabel.TabIndex = 35;
+            adultosEnBusquedaLabel.Text = "adultosEnBusquedaLabel";
             // 
-            // columnHeader4
+            // label13
             // 
-            columnHeader4.Text = "Direccion";
-            columnHeader4.Width = 100;
+            label13.AutoSize = true;
+            label13.Location = new Point(4, 32);
+            label13.Name = "label13";
+            label13.Size = new Size(56, 15);
+            label13.TabIndex = 33;
+            label13.Text = "Menores:";
             // 
-            // columnHeader5
+            // label14
             // 
-            columnHeader5.Text = "Estrellas";
-            columnHeader5.Width = 100;
+            label14.AutoSize = true;
+            label14.Location = new Point(4, 15);
+            label14.Name = "label14";
+            label14.Size = new Size(51, 15);
+            label14.TabIndex = 32;
+            label14.Text = "Adultos:";
             // 
-            // columnHeader6
+            // label12
             // 
-            columnHeader6.Text = "Ciudad";
-            columnHeader6.Width = 100;
-            // 
-            // columnHeader7
-            // 
-            columnHeader7.Text = "Precio";
-            columnHeader7.Width = 100;
-            // 
-            // columnHeader8
-            // 
-            columnHeader8.Text = "Capacidad adultos";
-            columnHeader8.Width = 160;
-            // 
-            // columnHeader9
-            // 
-            columnHeader9.Text = "Capacidad menores";
-            columnHeader9.Width = 160;
-            // 
-            // columnHeader10
-            // 
-            columnHeader10.Text = "Capacidad infantes";
-            columnHeader10.Width = 160;
+            label12.AutoSize = true;
+            label12.Location = new Point(4, 47);
+            label12.Name = "label12";
+            label12.Size = new Size(52, 15);
+            label12.TabIndex = 34;
+            label12.Text = "Infantes:";
             // 
             // HotelesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1070, 710);
             ClientSize = new Size(1696, 774);
+            Controls.Add(pasajerosEnBusquedaBox);
             Controls.Add(volverBtn);
             Controls.Add(groupBox4);
             Controls.Add(modificarItinerarioBox);
@@ -545,6 +629,8 @@
             ((System.ComponentModel.ISupportInitialize)cantidadAdultosNumeric).EndInit();
             modificarItinerarioBox.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
+            pasajerosEnBusquedaBox.ResumeLayout(false);
+            pasajerosEnBusquedaBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -604,5 +690,12 @@
         private ColumnHeader columnHeader8;
         private ColumnHeader columnHeader9;
         private ColumnHeader columnHeader10;
+        private GroupBox pasajerosEnBusquedaBox;
+        private Label infantesEnBusquedaLabel;
+        private Label menoresEnBusquedaLabel;
+        private Label adultosEnBusquedaLabel;
+        private Label label13;
+        private Label label14;
+        private Label label12;
     }
 }
