@@ -12,6 +12,18 @@ namespace Gungar.CAI.Prototipos._5.Modulos
 {
     public static class VentasModulo
     {
+        public static Itinerario? ItinerarioSeleccionado { get; set; }
+
+        public static void ActualizarItinerarioSeleccionado(Itinerario itinerario)
+        {
+            ItinerarioSeleccionado = itinerario;
+        }
+
+        public static void VaciarItinerarioSeleccionado()
+        {
+            ItinerarioSeleccionado = null;
+        }
+
         public static void EliminarItinerario(Itinerario itinerario)
         {
             AlmacenItinerarios.EliminarItinerario(itinerario);

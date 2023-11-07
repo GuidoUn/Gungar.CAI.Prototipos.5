@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.Cliente;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -16,10 +17,15 @@ namespace Gungar.CAI.Prototipos._5
     {
         ClienteFormModel model;
 
-        public ClienteForm(Itinerario itinerario)
+        public ClienteForm()
         {
             InitializeComponent();
-            model = new(itinerario);
+        }
+
+        private void ClienteForm_Load(object sender, EventArgs e)
+        {
+            model = new(VentasModulo.ItinerarioSeleccionado);
+
             nuevoPasajeroText.Text = model.NombreNuevoCliente;
             apellidoText.Text = model.ApellidoNuevoCliente;
             documentoText.Text = model.DocumentoNuevoCliente;

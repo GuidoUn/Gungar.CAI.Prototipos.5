@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.SeleccionItinerario;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -19,7 +20,13 @@ namespace Gungar.CAI.Prototipos._5
         public SeleccionItinerarioForm()
         {
             InitializeComponent();
+        }
+
+        private void SeleccionItinerarioForm_Load(object sender, EventArgs e)
+        {
             model = new();
+            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
+            refrescar();
         }
 
         private void refrescar()
@@ -37,13 +44,6 @@ namespace Gungar.CAI.Prototipos._5
 
                 itinerariosListView.Items.Add(item);
             });
-        }
-
-        private void SeleccionItinerarioForm_Load(object sender, EventArgs e)
-        {
-            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
-
-            refrescar();
         }
 
         private void evaluarEstadoBtns()
@@ -69,7 +69,8 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (model.ItinerarioSeleccionado != null)
             {
-                MenuItinerarioForm menuItinerarioForm = new(model.ItinerarioSeleccionado);
+                VentasModulo.ActualizarItinerarioSeleccionado(model.ItinerarioSeleccionado);
+                MenuItinerarioForm menuItinerarioForm = new();
                 menuItinerarioForm.ShowDialog();
                 refrescar();
             }

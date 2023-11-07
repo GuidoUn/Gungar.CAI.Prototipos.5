@@ -21,18 +21,30 @@ namespace Gungar.CAI.Prototipos._5
     {
         AgregarDatosFormModel model;
 
-        public AgregarDatosForm(Itinerario itinerario, bool esPreReserva)
+        public AgregarDatosForm()
         {
             InitializeComponent();
-            model = new AgregarDatosFormModel(itinerario);
+        }
+
+        private void AgregarDatosForm_Load(object sender, EventArgs e)
+        {
+            model = new AgregarDatosFormModel(VentasModulo.ItinerarioSeleccionado);
+
             HashSet<Pasajero> pasajerosUnicos = new HashSet<Pasajero>();
 
-            model.GetProductosAgregados(itinerario.ItinerarioId).ForEach(producto =>
+            model.GetProductosAgregados(model.Itinerario.ItinerarioId).ForEach(producto =>
             {
                 producto.Pasajeros.ForEach(pasajero => pasajerosUnicos.Add(pasajero));
             });
             model.PasajerosItinerario = new List<Pasajero>(pasajerosUnicos);
+
+            itinerarioLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} ({model.Itinerario?.ItinerarioId})";
+            evaluarTextosDeSeleccion();
+            poblarListaPasajeroPorProducto();
+            PoblarPasajerosItinerario();
+            poblarProductosAgregados();
         }
+
         private void poblarProductosAgregados()
         {
             productosAgregadosListView.Items.Clear();
@@ -98,15 +110,6 @@ namespace Gungar.CAI.Prototipos._5
                 pasajerosItinerarioListView.Items.Add(item);
 
             });
-        }
-
-        private void AgregarDatosForm_Load(object sender, EventArgs e)
-        {
-            itinerarioLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} ({model.Itinerario?.ItinerarioId})";
-            evaluarTextosDeSeleccion();
-            poblarListaPasajeroPorProducto();
-            PoblarPasajerosItinerario();
-            poblarProductosAgregados();
         }
 
         private void vaciarCampos()

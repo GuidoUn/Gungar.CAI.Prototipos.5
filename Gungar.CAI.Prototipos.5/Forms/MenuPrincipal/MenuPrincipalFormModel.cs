@@ -10,11 +10,11 @@ namespace Gungar.CAI.Prototipos._5.Forms.MenuPrincipal
 {
     public class MenuPrincipalFormModel
     {
-        public Itinerario GenerarNuevoItinerario()
+        public void GenerarNuevoItinerario()
         {
             Itinerario nuevoItinerario = new Itinerario();
             VentasModulo.AgregarItinerario(nuevoItinerario);
-            return nuevoItinerario;
+            VentasModulo.ActualizarItinerarioSeleccionado(nuevoItinerario);
         }
     }
 }

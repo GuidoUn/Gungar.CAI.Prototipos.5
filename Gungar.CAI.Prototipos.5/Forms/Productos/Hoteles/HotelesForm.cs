@@ -12,6 +12,7 @@ using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -19,16 +20,15 @@ namespace Gungar.CAI.Prototipos._5
     {
         HotelesFormModel model;
 
-        public HotelesForm(Itinerario? itinerario)
+        public HotelesForm()
         {
             InitializeComponent();
-            model = new HotelesFormModel(itinerario);
-           
         }
 
         private void HotelesForm_Load(object sender, EventArgs e)
         {
-          
+            model = new HotelesFormModel(VentasModulo.ItinerarioSeleccionado);
+
             if (model.EsConsulta)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
@@ -47,6 +47,7 @@ namespace Gungar.CAI.Prototipos._5
             borrarFechas();
             poblarProductosAgregados();
         }
+
         private void poblarHoteles()
         {
             var listaDeHotelesDisponibles = model.GetHotelesDisponibles(destinoText.Text, Decimal.ToInt32(cantidadAdultosNumeric.Value), Decimal.ToInt32(cantidadMenoresNumeric.Value), Decimal.ToInt32(cantidadInfantesNumeric.Value), clasesCombo.Text, model.DesdeFechaSeleccionada, model.HastaFechaSeleccionada, desdePreciosNumeric.Value, hastaPreciosNumeric.Value);

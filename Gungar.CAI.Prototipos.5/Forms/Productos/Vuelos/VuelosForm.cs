@@ -11,6 +11,7 @@ using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Forms.Productos.Vuelos;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -18,14 +19,15 @@ namespace Gungar.CAI.Prototipos._5
     {
         VuelosFormModel model;
 
-        public VuelosForm(Itinerario? itinerario)
+        public VuelosForm()
         {
             InitializeComponent();
-            model = new VuelosFormModel(itinerario);
         }
 
         private void VuelosForm_Load(object sender, EventArgs e)
         {
+            model = new VuelosFormModel(VentasModulo.ItinerarioSeleccionado);
+
             if (model.EsConsulta)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";

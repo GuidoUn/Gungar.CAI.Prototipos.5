@@ -12,6 +12,7 @@ using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -19,16 +20,19 @@ namespace Gungar.CAI.Prototipos._5
     {
         MenuItinerarioFormModel model;
 
-        public MenuItinerarioForm(Itinerario itinerario)
+        public MenuItinerarioForm()
         {
             InitializeComponent();
-            model = new MenuItinerarioFormModel(itinerario);
-            model.AgregarDatosForm = new AgregarDatosForm(model.Itinerario, true);
-            itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
         }
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
+            model = new MenuItinerarioFormModel(VentasModulo.ItinerarioSeleccionado);
+
+            model.AgregarDatosForm = new AgregarDatosForm(); // Hace falta? No sería mejor crear uno nuevo cada vez que apretan el botón? Total los datos los traemos de los módulos
+
+            itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
+
             itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
             nombreYApellidoLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} {model.Itinerario?.Cliente?.Apellido}";
             refrescar();
@@ -80,7 +84,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void hotelesBtn_Click(object sender, EventArgs e)
         {
-            HotelesForm hotelesForm = new(model.Itinerario);
+            HotelesForm hotelesForm = new();
             hotelesForm.ShowDialog();
             refrescar();
         }
@@ -100,7 +104,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (model.Itinerario.Estado == Estado.Presupuesto)
             {
-                model.AgregarDatosForm = new AgregarDatosForm(model.Itinerario, false);
+                model.AgregarDatosForm = new AgregarDatosForm();
                 model.AgregarDatosForm.ShowDialog();
                 refrescar();
             }
@@ -115,7 +119,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void clienteBtn_Click(object sender, EventArgs e)
         {
-            ClienteForm clienteForm = new(model.Itinerario);
+            ClienteForm clienteForm = new();
             clienteForm.ShowDialog();
             refrescar();
         }
@@ -132,7 +136,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void vuelosBtn_Click(object sender, EventArgs e)
         {
-            VuelosForm VuelosForm = new(model.Itinerario);
+            VuelosForm VuelosForm = new();
             VuelosForm.ShowDialog();
             refrescar();
         }

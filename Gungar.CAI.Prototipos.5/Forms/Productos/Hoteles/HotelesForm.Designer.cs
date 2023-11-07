@@ -467,7 +467,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1070, 529);
+            ClientSize = new Size(1070, 710);
             Controls.Add(volverBtn);
             Controls.Add(groupBox4);
             Controls.Add(modificarItinerarioBox);

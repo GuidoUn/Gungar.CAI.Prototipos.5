@@ -1,5 +1,6 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Forms.MenuPrincipal;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -10,12 +11,17 @@ namespace Gungar.CAI.Prototipos._5
         public MenuPrincipalForm()
         {
             InitializeComponent();
+        }
+
+        private void MenuPrincipalForm_Load(object sender, EventArgs e)
+        {
             model = new();
         }
 
         private void nuevoItinerarioBtn_Click(object sender, EventArgs e)
         {
-            MenuItinerarioForm menuItinerarioForm = new(model.GenerarNuevoItinerario());
+            model.GenerarNuevoItinerario();
+            MenuItinerarioForm menuItinerarioForm = new();
             menuItinerarioForm.ShowDialog();
         }
 
@@ -27,13 +33,15 @@ namespace Gungar.CAI.Prototipos._5
 
         private void consultarVuelosBtn_Click(object sender, EventArgs e)
         {
-            VuelosForm vuelosForm = new(null);
+            VentasModulo.VaciarItinerarioSeleccionado();
+            VuelosForm vuelosForm = new();
             vuelosForm.ShowDialog();
         }
 
         private void consultarHotelesBtn_Click(object sender, EventArgs e)
         {
-            HotelesForm hotelesForm = new(null);
+            VentasModulo.VaciarItinerarioSeleccionado();
+            HotelesForm hotelesForm = new();
             hotelesForm.ShowDialog();
         }
 
@@ -41,5 +49,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             Close();
         }
+
+
     }
 }
