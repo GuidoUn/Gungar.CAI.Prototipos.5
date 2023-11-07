@@ -88,10 +88,12 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
         {
             HotelesSeleccionados.Add(hotel);
         }
+
         public void QuitarReservaHotel(ReservaHotel reservaHotel)
         {
             HotelesSeleccionados.Remove(reservaHotel);
         }
+
         public void AgregarReservaVuelo(ReservaVuelo reserva)
         {
             if (!VuelosAgregados.Exists(vuelo => vuelo.Vuelo.CodigoOferta == reserva.Vuelo.CodigoOferta))
@@ -117,10 +119,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
                 precioTotal += reserva.PrecioTotal;
             });
 
-
             return precioTotal;
         }
-
-
     }
 }

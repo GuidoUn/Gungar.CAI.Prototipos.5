@@ -9,8 +9,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
 {
     public class ReservaVuelo : IReservaProducto
     {
-
-        
         public OfertaVuelo Vuelo { get; set; } //A reemplazar por vueloId capaz?
 
         public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>();
@@ -29,7 +27,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
             CantidadAdultos = cantidadAdultos;
             CantidadMenores = cantidadMenores;
             CantidadInfantes = cantidadInfantes;
-            
 
             List<TarifaVuelo> tarifas = vuelo.Tarifas.Where(tarifa => tarifa.Clase == clase).ToList();
 

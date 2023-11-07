@@ -227,6 +227,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             return model.ProductoSeleccionado.Pasajeros.Contains(pasajero);
         }
+
         private void asignarBtn_Click(object sender, EventArgs e)
         {
             if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado)) return;
@@ -236,7 +237,6 @@ namespace Gungar.CAI.Prototipos._5
             evaluarVisibilidadBtns();
             evaluarTextosDeSeleccion();
         }
-
 
         private void pasajerosItinerarioListView_SelectedIndexChanged(object sender, EventArgs e)
         {
