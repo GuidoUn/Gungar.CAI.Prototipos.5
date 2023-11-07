@@ -121,8 +121,6 @@ namespace Gungar.CAI.Prototipos._5
             infantesEnBusquedaLabel.Text = model.InfantesEnBusqueda.ToString();
 
             pasajerosEnBusquedaBox.Visible = true;
-
-
         }
 
         private void desdeFechaDatePicker_ValueChanged(object sender, EventArgs e)
@@ -205,6 +203,11 @@ namespace Gungar.CAI.Prototipos._5
                 return;
 
             model.HotelAgregadoSeleccionado = (ReservaHotel)hotelesAgregadosListView.SelectedItems[0].Tag;
+        }
+
+        private void cantidadAdultosNumeric_ValueChanged(object sender, EventArgs e)
+        {
+            aplicarFiltrosBtn.Enabled = cantidadAdultosNumeric.Value > 0;
         }
     }
 }

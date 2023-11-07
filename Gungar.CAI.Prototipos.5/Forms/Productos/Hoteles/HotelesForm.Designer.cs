@@ -253,6 +253,8 @@
             cantidadAdultosNumeric.Name = "cantidadAdultosNumeric";
             cantidadAdultosNumeric.Size = new Size(93, 23);
             cantidadAdultosNumeric.TabIndex = 24;
+            cantidadAdultosNumeric.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            cantidadAdultosNumeric.ValueChanged += cantidadAdultosNumeric_ValueChanged;
             // 
             // label7
             // 
