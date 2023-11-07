@@ -20,8 +20,6 @@ namespace Gungar.CAI.Prototipos._5
     {
         MenuItinerarioFormModel model;
 
-        // TODO (en el presenter): acomodar las columnas para que se vean bien (en vueloes, en hoteles y en pasajeros del itinerario)
-
         public MenuItinerarioForm()
         {
             InitializeComponent();
