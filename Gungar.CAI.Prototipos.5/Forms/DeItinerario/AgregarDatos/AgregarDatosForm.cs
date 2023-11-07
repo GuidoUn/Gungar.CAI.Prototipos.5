@@ -311,10 +311,12 @@ namespace Gungar.CAI.Prototipos._5
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
             if (model.PasajeroItinerarioSeleccionado == null) return;
+            
             model.PasajerosItinerario.Remove(model.PasajeroItinerarioSeleccionado);
             model.EliminarPasajeroSeleccionadoDeTodosLosProductos();
             poblarListaPasajeroPorProducto();
             PoblarPasajerosItinerario();
+            model.PasajeroItinerarioSeleccionado = null;
         }
 
         private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
