@@ -38,6 +38,8 @@ namespace Gungar.CAI.Prototipos._5
             });
             model.PasajerosItinerario = new List<Pasajero>(pasajerosUnicos);
 
+            fechaNacDatePicker.MaxDate = DateTime.Today;
+
             itinerarioLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} ({model.Itinerario?.ItinerarioId})";
             evaluarTextosDeSeleccion();
             poblarListaPasajeroPorProducto();
