@@ -1,6 +1,6 @@
 [
   {
-    "CodigoOferta": "FSS232",
+    "CodigoOferta": "FOU232",
     "NombreHotel": "Four Seasons",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST245",
+    "CodigoOferta": "MAR245",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -83,7 +83,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS258",
+    "CodigoOferta": "DOU258",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -124,7 +124,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS271",
+    "CodigoOferta": "SHE271",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -165,7 +165,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST284",
+    "CodigoOferta": "MAR284",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -206,7 +206,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST297",
+    "CodigoOferta": "DOU297",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -247,7 +247,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST310",
+    "CodigoOferta": "NH-310",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST323",
+    "CodigoOferta": "SHE323",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -329,7 +329,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS336",
+    "CodigoOferta": "NH-336",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -370,7 +370,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST349",
+    "CodigoOferta": "MAR349",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -411,7 +411,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS362",
+    "CodigoOferta": "SHE362",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -452,7 +452,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS375",
+    "CodigoOferta": "MAR375",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -493,7 +493,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS388",
+    "CodigoOferta": "SHE388",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -534,7 +534,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS401",
+    "CodigoOferta": "SHE401",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -575,7 +575,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS414",
+    "CodigoOferta": "MAR414",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -616,7 +616,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS427",
+    "CodigoOferta": "MAR427",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -657,7 +657,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST440",
+    "CodigoOferta": "SHE440",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -698,7 +698,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS453",
+    "CodigoOferta": "MAR453",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -739,7 +739,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS466",
+    "CodigoOferta": "SHE466",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "USH",
     "Direccion": {
@@ -780,7 +780,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS479",
+    "CodigoOferta": "MAR479",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -821,7 +821,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST492",
+    "CodigoOferta": "MAR492",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -862,7 +862,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST505",
+    "CodigoOferta": "MAR505",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -903,7 +903,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS518",
+    "CodigoOferta": "MAR518",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -944,7 +944,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS531",
+    "CodigoOferta": "DOU531",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -985,7 +985,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS544",
+    "CodigoOferta": "SHE544",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -1026,7 +1026,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS557",
+    "CodigoOferta": "SHE557",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -1067,7 +1067,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS570",
+    "CodigoOferta": "NH-570",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -1108,7 +1108,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS583",
+    "CodigoOferta": "SHE583",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -1149,7 +1149,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS596",
+    "CodigoOferta": "DOU596",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -1190,7 +1190,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS609",
+    "CodigoOferta": "NH-609",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -1231,7 +1231,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST622",
+    "CodigoOferta": "MAR622",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -1272,7 +1272,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS635",
+    "CodigoOferta": "MAR635",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -1313,7 +1313,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS648",
+    "CodigoOferta": "DOU648",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -1354,7 +1354,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS661",
+    "CodigoOferta": "MAR661",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "USH",
     "Direccion": {
@@ -1395,7 +1395,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST674",
+    "CodigoOferta": "SHE674",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -1436,7 +1436,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST687",
+    "CodigoOferta": "MAR687",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -1477,7 +1477,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS700",
+    "CodigoOferta": "NH-700",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -1518,7 +1518,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS713",
+    "CodigoOferta": "MAR713",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -1559,7 +1559,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS726",
+    "CodigoOferta": "MAR726",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -1600,7 +1600,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS739",
+    "CodigoOferta": "DOU739",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -1641,7 +1641,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST752",
+    "CodigoOferta": "MAR752",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -1682,7 +1682,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS765",
+    "CodigoOferta": "SHE765",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "USH",
     "Direccion": {
@@ -1723,7 +1723,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST778",
+    "CodigoOferta": "SHE778",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -1764,7 +1764,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST791",
+    "CodigoOferta": "DOU791",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -1805,7 +1805,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST804",
+    "CodigoOferta": "MAR804",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -1846,7 +1846,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS817",
+    "CodigoOferta": "DOU817",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -1887,7 +1887,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS830",
+    "CodigoOferta": "SHE830",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -1928,7 +1928,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST843",
+    "CodigoOferta": "DOU843",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "USH",
     "Direccion": {
@@ -1969,7 +1969,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS856",
+    "CodigoOferta": "DOU856",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -2010,7 +2010,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS869",
+    "CodigoOferta": "DOU869",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -2051,7 +2051,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST882",
+    "CodigoOferta": "SHE882",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -2092,7 +2092,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS895",
+    "CodigoOferta": "NH-895",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -2133,7 +2133,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS908",
+    "CodigoOferta": "DOU908",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -2174,7 +2174,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS921",
+    "CodigoOferta": "MAR921",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -2215,7 +2215,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS934",
+    "CodigoOferta": "DOU934",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "USH",
     "Direccion": {
@@ -2256,7 +2256,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS947",
+    "CodigoOferta": "NH-947",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -2297,7 +2297,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST960",
+    "CodigoOferta": "SHE960",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -2338,7 +2338,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS973",
+    "CodigoOferta": "DOU973",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -2379,7 +2379,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS986",
+    "CodigoOferta": "DOU986",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -2420,7 +2420,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST999",
+    "CodigoOferta": "NH-999",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -2461,7 +2461,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1012",
+    "CodigoOferta": "MAR1012",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -2502,7 +2502,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1025",
+    "CodigoOferta": "DOU1025",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -2543,7 +2543,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1038",
+    "CodigoOferta": "NH-1038",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -2584,7 +2584,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1051",
+    "CodigoOferta": "SHE1051",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -2625,7 +2625,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1064",
+    "CodigoOferta": "NH-1064",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -2666,7 +2666,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1077",
+    "CodigoOferta": "DOU1077",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -2707,7 +2707,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1090",
+    "CodigoOferta": "MAR1090",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -2748,7 +2748,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1103",
+    "CodigoOferta": "NH-1103",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -2789,7 +2789,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1116",
+    "CodigoOferta": "DOU1116",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -2830,7 +2830,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1129",
+    "CodigoOferta": "DOU1129",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -2871,7 +2871,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1142",
+    "CodigoOferta": "DOU1142",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -2912,7 +2912,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1155",
+    "CodigoOferta": "SHE1155",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -2953,7 +2953,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1168",
+    "CodigoOferta": "SHE1168",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "USH",
     "Direccion": {
@@ -2994,7 +2994,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1181",
+    "CodigoOferta": "SHE1181",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -3035,7 +3035,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1194",
+    "CodigoOferta": "DOU1194",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -3076,7 +3076,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1207",
+    "CodigoOferta": "MAR1207",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3117,7 +3117,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1220",
+    "CodigoOferta": "DOU1220",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -3158,7 +3158,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1233",
+    "CodigoOferta": "NH-1233",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -3199,7 +3199,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1246",
+    "CodigoOferta": "MAR1246",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3240,7 +3240,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1259",
+    "CodigoOferta": "DOU1259",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3281,7 +3281,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1272",
+    "CodigoOferta": "DOU1272",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -3322,7 +3322,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1285",
+    "CodigoOferta": "SHE1285",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3363,7 +3363,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1298",
+    "CodigoOferta": "NH-1298",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3404,7 +3404,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1311",
+    "CodigoOferta": "DOU1311",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -3445,7 +3445,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1324",
+    "CodigoOferta": "SHE1324",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -3486,7 +3486,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1337",
+    "CodigoOferta": "SHE1337",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3527,7 +3527,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1350",
+    "CodigoOferta": "SHE1350",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -3568,7 +3568,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1363",
+    "CodigoOferta": "MAR1363",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "SLA",
     "Direccion": {
@@ -3609,7 +3609,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1376",
+    "CodigoOferta": "DOU1376",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -3650,7 +3650,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1389",
+    "CodigoOferta": "MAR1389",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -3691,7 +3691,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1402",
+    "CodigoOferta": "MAR1402",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3732,7 +3732,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1415",
+    "CodigoOferta": "SHE1415",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3773,7 +3773,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1428",
+    "CodigoOferta": "DOU1428",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "BRC",
     "Direccion": {
@@ -3814,7 +3814,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1441",
+    "CodigoOferta": "DOU1441",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "AEP",
     "Direccion": {
@@ -3855,7 +3855,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1454",
+    "CodigoOferta": "MAR1454",
     "NombreHotel": "Maritim",
     "CodigoCiudad": "ROS",
     "Direccion": {
@@ -3896,7 +3896,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1467",
+    "CodigoOferta": "DOU1467",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDZ",
     "Direccion": {
@@ -3937,7 +3937,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1480",
+    "CodigoOferta": "DOU1480",
     "NombreHotel": "Double Tree",
     "CodigoCiudad": "MDQ",
     "Direccion": {
@@ -3978,7 +3978,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1493",
+    "CodigoOferta": "NH-1493",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "USH",
     "Direccion": {
@@ -4019,7 +4019,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1506",
+    "CodigoOferta": "NH-1506",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "USH",
     "Direccion": {
@@ -4060,7 +4060,7 @@
     ]
   },
   {
-    "CodigoOferta": "FST1519",
+    "CodigoOferta": "SHE1519",
     "NombreHotel": "Sheraton",
     "CodigoCiudad": "COR",
     "Direccion": {
@@ -4101,7 +4101,7 @@
     ]
   },
   {
-    "CodigoOferta": "FSS1532",
+    "CodigoOferta": "NH-1532",
     "NombreHotel": "NH-Hotels",
     "CodigoCiudad": "COR",
     "Direccion": {
