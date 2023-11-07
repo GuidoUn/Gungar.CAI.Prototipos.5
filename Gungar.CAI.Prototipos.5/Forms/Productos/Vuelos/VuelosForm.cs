@@ -259,6 +259,7 @@ namespace Gungar.CAI.Prototipos._5
             vuelosIdaListView.SelectedItems.Clear();
             vuelosVueltaListView.SelectedItems.Clear();
             poblarVuelosAgregados();
+            poblarVuelos();
             refrescar();
         }
 
@@ -266,6 +267,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             model.quitarVuelo((ReservaVuelo)vuelosAgregadosListView.SelectedItems[0].Tag);
             poblarVuelosAgregados();
+            poblarVuelos();
             refrescar();
         }
     }
