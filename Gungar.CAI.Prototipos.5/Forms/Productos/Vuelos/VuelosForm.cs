@@ -84,7 +84,6 @@ namespace Gungar.CAI.Prototipos._5
             if (soloIdaCheckBox.Checked)
                 return true;
             return vuelosVueltaListView.SelectedItems.Count == 1;
-
         }
 
         private void poblarVuelos()
@@ -181,7 +180,6 @@ namespace Gungar.CAI.Prototipos._5
             model.EsSoloIda = soloIdaCheckBox.Checked;
             refrescar();
         }
-
 
         private void aplicarFiltrosBtn_Click(object sender, EventArgs e)
         {

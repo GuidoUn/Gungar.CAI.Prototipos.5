@@ -292,7 +292,7 @@
             // columnHeader8
             // 
             columnHeader8.Text = "Producto";
-            columnHeader8.Width = 70;
+            columnHeader8.Width = 130;
             // 
             // columnHeader9
             // 
@@ -302,10 +302,12 @@
             // columnHeader10
             // 
             columnHeader10.Text = "Desde";
+            columnHeader10.Width = 110;
             // 
             // columnHeader11
             // 
             columnHeader11.Text = "Hasta";
+            columnHeader11.Width = 110;
             // 
             // columnHeader12
             // 
@@ -315,7 +317,7 @@
             // columnHeader13
             // 
             columnHeader13.Text = "Prestador";
-            columnHeader13.Width = 70;
+            columnHeader13.Width = 130;
             // 
             // columnHeader14
             // 
