@@ -107,19 +107,30 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             VuelosAgregados.Remove(reserva);
         }
 
+        private int DiasEntreFechas(DateTime FechaDesde, DateTime FechaHasta)
+        {
+            TimeSpan diferencia = FechaHasta.Date - FechaDesde.Date;
+
+            int dias = diferencia.Days;
+
+            return dias;
+        }
         public float CalcularPrecioTotal()
         {
             float precioTotal = 0;
-            VuelosAgregados.ForEach(reserva =>
+            VuelosAgregados.ForEach(reservaVuelo =>
             {
-                precioTotal += reserva.PrecioTotal;
+                precioTotal += reservaVuelo.PrecioTotal ;
+                
             });
-            HotelesSeleccionados.ForEach(reserva =>
+            HotelesSeleccionados.ForEach(reservaHotel =>
             {
-                precioTotal += reserva.PrecioTotal;
+                precioTotal += reservaHotel.PrecioTotal * DiasEntreFechas(reservaHotel.Hotel.FechaDesde, reservaHotel.Hotel.FechaHasta);
             });
 
             return precioTotal;
         }
+
+       
     }
 }
