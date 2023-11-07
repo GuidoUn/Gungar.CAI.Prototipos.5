@@ -311,7 +311,7 @@ namespace Gungar.CAI.Prototipos._5
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
             if (model.PasajeroItinerarioSeleccionado == null) return;
-            
+
             model.PasajerosItinerario.Remove(model.PasajeroItinerarioSeleccionado);
             model.EliminarPasajeroSeleccionadoDeTodosLosProductos();
             poblarListaPasajeroPorProducto();
@@ -332,6 +332,14 @@ namespace Gungar.CAI.Prototipos._5
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != ' ')
             {
                 e.Handled = true; // Evita que se escriban números y caracteres especiales
+            }
+        }
+
+        private void documentoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true; // Evita que se escriban caracteres especiales
             }
         }
     }
