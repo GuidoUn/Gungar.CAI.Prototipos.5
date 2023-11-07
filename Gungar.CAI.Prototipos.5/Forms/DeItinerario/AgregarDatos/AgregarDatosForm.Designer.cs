@@ -56,6 +56,7 @@
             columnHeader10 = new ColumnHeader();
             columnHeader11 = new ColumnHeader();
             columnHeader12 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
             asignarBtn = new Button();
@@ -264,7 +265,7 @@
             // 
             // confirmarBtn
             // 
-            confirmarBtn.Location = new Point(1039, 709);
+            confirmarBtn.Location = new Point(1135, 712);
             confirmarBtn.Name = "confirmarBtn";
             confirmarBtn.Size = new Size(140, 66);
             confirmarBtn.TabIndex = 27;
@@ -274,12 +275,12 @@
             // 
             // productosAgregadosListView
             // 
-            productosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader13, columnHeader14 });
+            productosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader5, columnHeader13, columnHeader14 });
             productosAgregadosListView.FullRowSelect = true;
             productosAgregadosListView.Location = new Point(527, 121);
             productosAgregadosListView.MultiSelect = false;
             productosAgregadosListView.Name = "productosAgregadosListView";
-            productosAgregadosListView.Size = new Size(652, 484);
+            productosAgregadosListView.Size = new Size(908, 484);
             productosAgregadosListView.TabIndex = 28;
             productosAgregadosListView.UseCompatibleStateImageBehavior = false;
             productosAgregadosListView.View = View.Details;
@@ -313,6 +314,11 @@
             // 
             columnHeader12.Text = "Precio Total";
             columnHeader12.Width = 80;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Cant. Pasajeros";
+            columnHeader5.Width = 95;
             // 
             // columnHeader13
             // 
@@ -450,7 +456,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 835);
+            ClientSize = new Size(1447, 835);
             Controls.Add(eliminarPasajeroBtn);
             Controls.Add(pasajeroLabel);
             Controls.Add(label4);
@@ -539,5 +545,6 @@
         private ColumnHeader fechaNacHeader2;
         private ColumnHeader columnHeader4;
         private ColumnHeader codigoHeader;
+        private ColumnHeader columnHeader5;
     }
 }

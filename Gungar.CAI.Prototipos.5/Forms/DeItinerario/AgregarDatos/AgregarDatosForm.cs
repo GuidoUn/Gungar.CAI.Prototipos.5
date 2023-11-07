@@ -59,8 +59,9 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(reservaHotel.Hotel.FechaDesde.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.SubItems.Add(reservaHotel.Hotel.FechaHasta.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Tarifa.ToString()); // TODO: Calcular precio total en base a la cantidad de noches (TODO: calcular la cant de noches)
+                item.SubItems.Add($"A({reservaHotel.CantidadAdultos}), M({reservaHotel.CantidadMenores}), I({reservaHotel.CantidadInfantes})");
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
-                item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
+                item.SubItems.Add($"{reservaHotel.Hotel.Calificacion} Estrella{(reservaHotel.Hotel.Calificacion != 1 ? "s" : "")}");
 
                 item.Tag = reservaHotel;
 
@@ -68,21 +69,22 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             model.Itinerario.VuelosAgregados.ForEach(reservaVuelo =>
-            {
-                var item = new ListViewItem();
-                item.Text = reservaVuelo.Vuelo.CodigoOferta;
-                item.SubItems.Add("Vuelo");
-                item.SubItems.Add(reservaVuelo.Vuelo.Origen + " - " + reservaVuelo.Vuelo.Destino);
-                item.SubItems.Add(reservaVuelo.Vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_LARGA));
-                item.SubItems.Add(reservaVuelo.Vuelo.FechaArribo.ToString(Constantes.FORMATO_FECHA_LARGA));
-                item.SubItems.Add(reservaVuelo.PrecioTotal.ToString());
-                item.SubItems.Add(Constantes.Aerolineas[reservaVuelo.Vuelo.Aerolinea]);
-                item.SubItems.Add(reservaVuelo.Clase.ToString());
+                {
+                    var item = new ListViewItem();
+                    item.Text = reservaVuelo.Vuelo.CodigoOferta;
+                    item.SubItems.Add("Vuelo");
+                    item.SubItems.Add(reservaVuelo.Vuelo.Origen + " - " + reservaVuelo.Vuelo.Destino);
+                    item.SubItems.Add(reservaVuelo.Vuelo.FechaSalida.ToString(Constantes.FORMATO_FECHA_LARGA));
+                    item.SubItems.Add(reservaVuelo.Vuelo.FechaArribo.ToString(Constantes.FORMATO_FECHA_LARGA));
+                    item.SubItems.Add(reservaVuelo.PrecioTotal.ToString());
+                    item.SubItems.Add($"A({reservaVuelo.CantidadAdultos}), M({reservaVuelo.CantidadMenores}), I({reservaVuelo.CantidadInfantes})");
+                    item.SubItems.Add(Constantes.Aerolineas[reservaVuelo.Vuelo.Aerolinea]);
+                    item.SubItems.Add(Constantes.Clases[reservaVuelo.Clase]);
 
-                item.Tag = reservaVuelo;
+                    item.Tag = reservaVuelo;
 
-                productosAgregadosListView.Items.Add(item);
-            });
+                    productosAgregadosListView.Items.Add(item);
+                });
         }
 
         private void poblarListaPasajeroPorProducto()
