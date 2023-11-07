@@ -23,12 +23,12 @@ namespace Gungar.CAI.Prototipos._5
         {
             InitializeComponent();
             model = new HotelesFormModel(itinerario);
-           
+
         }
 
         private void HotelesForm_Load(object sender, EventArgs e)
         {
-          
+
             if (model.EsConsulta)
             {
                 titleLabel.Text = "Consulta disponibilidad de productos";
@@ -88,6 +88,14 @@ namespace Gungar.CAI.Prototipos._5
                     var item = new ListViewItem();
                     item.Text = reservaHotel.Hotel.NombreHotel;
                     item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Nombre);
+                    item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Capacidad.ToString());
+                    item.SubItems.Add(reservaHotel.Hotel.Direccion.Calle);
+                    item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
+                    item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
+                    item.SubItems.Add("$" + reservaHotel.Hotel.Disponibilidad.Tarifa.ToString());
+                    item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.CapacidadAdultos.ToString());
+                    item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.CapacidadMenores.ToString());
+                    item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.CapacidadInfantes.ToString());
                     item.Tag = reservaHotel;
 
                     hotelesAgregadosListView.Items.Add(item);

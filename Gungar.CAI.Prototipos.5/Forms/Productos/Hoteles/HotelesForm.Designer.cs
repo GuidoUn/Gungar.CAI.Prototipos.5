@@ -57,8 +57,6 @@
             modificarItinerarioBox = new GroupBox();
             agregarProductoBtn = new Button();
             quitarHotelBtn = new Button();
-            hotelesAgregadosListView = new ListView();
-            itinerarioNombreHeader = new ColumnHeader();
             groupBox4 = new GroupBox();
             hotelesListView = new ListView();
             hotelesHeader = new ColumnHeader();
@@ -72,6 +70,17 @@
             capacidadMenoresHeader = new ColumnHeader();
             capacidadInfantesHeader = new ColumnHeader();
             volverBtn = new Button();
+            hotelesAgregadosListView = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            columnHeader10 = new ColumnHeader();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
@@ -334,9 +343,9 @@
             // 
             // modificarItinerarioBox
             // 
+            modificarItinerarioBox.Controls.Add(hotelesAgregadosListView);
             modificarItinerarioBox.Controls.Add(agregarProductoBtn);
             modificarItinerarioBox.Controls.Add(quitarHotelBtn);
-            modificarItinerarioBox.Controls.Add(hotelesAgregadosListView);
             modificarItinerarioBox.Location = new Point(763, 246);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
             modificarItinerarioBox.Size = new Size(525, 475);
@@ -362,23 +371,6 @@
             quitarHotelBtn.Text = "Quitar";
             quitarHotelBtn.UseVisualStyleBackColor = true;
             quitarHotelBtn.Click += quitarHotelBtn_Click;
-            // 
-            // hotelesAgregadosListView
-            // 
-            hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { itinerarioNombreHeader });
-            hotelesAgregadosListView.FullRowSelect = true;
-            hotelesAgregadosListView.Location = new Point(87, 16);
-            hotelesAgregadosListView.Name = "hotelesAgregadosListView";
-            hotelesAgregadosListView.Size = new Size(591, 411);
-            hotelesAgregadosListView.TabIndex = 24;
-            hotelesAgregadosListView.UseCompatibleStateImageBehavior = false;
-            hotelesAgregadosListView.View = View.Details;
-            hotelesAgregadosListView.SelectedIndexChanged += hotelesAgregadosListView_SelectedIndexChanged;
-            // 
-            // itinerarioNombreHeader
-            // 
-            itinerarioNombreHeader.Text = "Nombre";
-            itinerarioNombreHeader.Width = 100;
             // 
             // groupBox4
             // 
@@ -463,11 +455,73 @@
             volverBtn.UseVisualStyleBackColor = true;
             volverBtn.Click += volverBtn_Click;
             // 
+            // hotelesAgregadosListView
+            // 
+            hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
+            hotelesAgregadosListView.FullRowSelect = true;
+            hotelesAgregadosListView.Location = new Point(87, 16);
+            hotelesAgregadosListView.Name = "hotelesAgregadosListView";
+            hotelesAgregadosListView.Size = new Size(432, 411);
+            hotelesAgregadosListView.TabIndex = 25;
+            hotelesAgregadosListView.UseCompatibleStateImageBehavior = false;
+            hotelesAgregadosListView.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Hotel";
+            columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Tipo de habitación";
+            columnHeader2.TextAlign = HorizontalAlignment.Right;
+            columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Disponibilidad";
+            columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Direccion";
+            columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "Estrellas";
+            columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Ciudad";
+            columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Precio";
+            columnHeader7.Width = 100;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Capacidad adultos";
+            columnHeader8.Width = 160;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Capacidad menores";
+            columnHeader9.Width = 160;
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "Capacidad infantes";
+            columnHeader10.Width = 160;
+            // 
             // HotelesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1070, 529);
+            ClientSize = new Size(1696, 774);
             Controls.Add(volverBtn);
             Controls.Add(groupBox4);
             Controls.Add(modificarItinerarioBox);
@@ -524,7 +578,6 @@
         private GroupBox modificarItinerarioBox;
         private Button agregarProductoBtn;
         private Button quitarHotelBtn;
-        private ListView hotelesAgregadosListView;
         private GroupBox groupBox4;
         private ListView hotelesListView;
         private ColumnHeader hotelesHeader;
@@ -538,7 +591,17 @@
         private ColumnHeader capacidadMenoresHeader;
         private ColumnHeader capacidadInfantesHeader;
         private Button borrarFechasBtn;
-        private ColumnHeader itinerarioNombreHeader;
         private Button volverBtn;
+        private ListView hotelesAgregadosListView;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
+        private ColumnHeader columnHeader10;
     }
 }
