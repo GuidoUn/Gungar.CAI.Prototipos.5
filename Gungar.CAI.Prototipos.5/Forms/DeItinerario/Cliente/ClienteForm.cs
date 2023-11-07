@@ -52,9 +52,9 @@ namespace Gungar.CAI.Prototipos._5
 
         private void nuevoPasajeroText_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar))
+            if(!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != ' ')
             {
-                e.Handled = true; // Evita que se escriban números
+                e.Handled = true; // Evita que se escriban números y caracteres especiales
             }
         }
 
@@ -65,9 +65,9 @@ namespace Gungar.CAI.Prototipos._5
 
         private void apellidoText_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != ' ')
             {
-                e.Handled = true; // Evita que se escriban números
+                e.Handled = true; // Evita que se escriban números y caracteres especiales
             }
         }
 

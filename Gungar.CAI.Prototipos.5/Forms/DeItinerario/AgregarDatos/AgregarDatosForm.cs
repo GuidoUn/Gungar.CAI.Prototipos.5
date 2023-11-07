@@ -308,17 +308,17 @@ namespace Gungar.CAI.Prototipos._5
 
         private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != ' ')
             {
-                e.Handled = true; // Evita que se escriban números
+                e.Handled = true; // Evita que se escriban números y caracteres especiales
             }
         }
 
         private void apellidoTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar))
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != ' ')
             {
-                e.Handled = true; // Evita que se escriban números
+                e.Handled = true; // Evita que se escriban números y caracteres especiales
             }
         }
     }
