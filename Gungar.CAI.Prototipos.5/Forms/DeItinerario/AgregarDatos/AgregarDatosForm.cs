@@ -103,7 +103,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(pasajero.Documento);
                     item.SubItems.Add(pasajero.Nombre);
                     item.SubItems.Add(pasajero.Apellido);
-                    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                    item.SubItems.Add(pasajero.FechaNacimiento.ToString(Constantes.FORMATO_FECHA_CORTA));
                     item.Tag = pasajero;
 
                     pasajerosProductoListView.Items.Add(item);
@@ -121,7 +121,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.Text = pasajero.Nombre;
                 item.SubItems.Add(pasajero.Apellido);
                 item.SubItems.Add(pasajero.Documento);
-                item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                item.SubItems.Add(pasajero.FechaNacimiento.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.Tag = pasajero;
                 pasajerosItinerarioListView.Items.Add(item);
 
