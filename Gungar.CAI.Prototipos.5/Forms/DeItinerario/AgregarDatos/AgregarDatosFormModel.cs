@@ -11,10 +11,10 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
 {
     public class AgregarDatosFormModel
     {
-       
+
         public Itinerario Itinerario { get; set; }
 
-        public Pasajero? PasajeroItinerarioSeleccionado { get; set; } 
+        public Pasajero? PasajeroItinerarioSeleccionado { get; set; }
 
         public Pasajero? PasajeroProductoSeleccionado { get; set; }
 
@@ -39,8 +39,10 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
                     return;
                 }
             });
-            Itinerario.VuelosAgregados.ForEach(reservaVuelo => { 
-                if(reservaVuelo.Pasajeros.Count <= 0) {
+            Itinerario.VuelosAgregados.ForEach(reservaVuelo =>
+            {
+                if (reservaVuelo.Pasajeros.Count <= 0)
+                {
                     resultado = false;
                     return;
                 }
@@ -52,6 +54,11 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
         public List<IReservaProducto> GetProductosAgregados(int ItinerarioId)
         {
             return VentasModulo.GetProductosAgregados(ItinerarioId);
+        }
+
+        public void EliminarPasajeroSeleccionadoDeTodosLosProductos()
+        {
+            VentasModulo.EliminarPasajeroDeTodosLosProductos(Itinerario.ItinerarioId, PasajeroItinerarioSeleccionado);
         }
     }
 }

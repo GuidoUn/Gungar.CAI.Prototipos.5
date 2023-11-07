@@ -8,7 +8,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 {
     public class Hotel : OfertaHotel
     {
-        
         public Disponibilidad Disponibilidad;
         public DateTime FechaDesde { get; set; }
         public DateTime FechaHasta { get; set; }
@@ -17,9 +16,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
             : base(nombreHotel, codigoOferta, codigoCiudad, calificacion, direccion)
         {
             Disponibilidad = disponibilidad;
-            
-            
         }
-
     }
 }

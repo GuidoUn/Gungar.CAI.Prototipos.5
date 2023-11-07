@@ -23,7 +23,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
 
         public OfertaVuelo(string codigoOferta, string origen, string destino, DateTime fechaSalida, DateTime fechaArribo, string tiempoDeVuelo, string aerolinea, List<TarifaVuelo> tarifas)
         {
-            this.Id = random.Next();
+            Id = random.Next();
             CodigoOferta = codigoOferta;
             Origen = origen;
             Destino = destino;

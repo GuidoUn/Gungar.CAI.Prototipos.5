@@ -12,6 +12,7 @@ using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
 using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -19,16 +20,19 @@ namespace Gungar.CAI.Prototipos._5
     {
         MenuItinerarioFormModel model;
 
-        public MenuItinerarioForm(Itinerario itinerario)
+        public MenuItinerarioForm()
         {
             InitializeComponent();
-            model = new MenuItinerarioFormModel(itinerario);
-            model.AgregarDatosForm = new AgregarDatosForm(model.Itinerario, true);
-            itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
         }
 
         private void MenuItinerarioForm_Load(object sender, EventArgs e)
         {
+            model = new MenuItinerarioFormModel(VentasModulo.ItinerarioSeleccionado);
+
+            model.AgregarDatosForm = new AgregarDatosForm(); // Hace falta? No sería mejor crear uno nuevo cada vez que apretan el botón? Total los datos los traemos de los módulos
+
+            itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
+
             itinerarioSeleccionadoLabel.Text = $"{model.Itinerario.ItinerarioId}";
             nombreYApellidoLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} {model.Itinerario?.Cliente?.Apellido}";
             refrescar();
@@ -42,14 +46,9 @@ namespace Gungar.CAI.Prototipos._5
             poblarVuelosAgregados();
             estadoLabel.Text = model.Itinerario?.Estado.ToString();
             nombreYApellidoLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} {model.Itinerario?.Cliente?.Apellido}";
-            if (model.Itinerario.Estado == Estado.Cancelada) // TODO: Gestionar itinerario cancelado (me parece que ya funciona bien)
-            {
-                //confirmacionBox.Enabled = false;
-                //gestionarItinerarioBox.Enabled = false;
-                //cancelarReservaBtn.Enabled = false;
-                //return;
-                cancelarReservaBtn.Enabled = false;
-            }
+
+            cancelarReservaBtn.Enabled = !(model?.Itinerario?.Estado == Estado.Cancelada);
+
             generarPreReservaBtn.Enabled = model.puedePrereserva();
             generarReservaBtn.Enabled = model.PuedeReserva();
             faltaClienteLabel.Text = model.TieneCliente() ? "" : "* Debe agregar un cliente";
@@ -61,9 +60,6 @@ namespace Gungar.CAI.Prototipos._5
 
         private void poblarListaPasajeros()
         {
-            // TODO
-
-
             pasajerosListView.Items.Clear();
 
             List<IReservaProducto> ProductosSeleccionados = new List<IReservaProducto>();
@@ -84,27 +80,17 @@ namespace Gungar.CAI.Prototipos._5
                 });
 
             });
-            //model.Itinerario.Pasajeros.ForEach(pasajero =>
-            //{
-            //    var item = new ListViewItem();
-            //    item.Text = pasajero.Nombre + " " + pasajero.Apellido;
-            //    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
-            //    item.Tag = pasajero;
-
-            //    pasajerosListView.Items.Add(item);
-            //});
         }
 
         private void hotelesBtn_Click(object sender, EventArgs e)
         {
-            HotelesForm hotelesForm = new(model.Itinerario);
+            HotelesForm hotelesForm = new();
             hotelesForm.ShowDialog();
             refrescar();
         }
 
         private void generarPreReserva_Click(object sender, EventArgs e)
         {
-            model.Itinerario.tipoDeConfirmacion = "pre-reserva";
             model?.AgregarDatosForm?.ShowDialog();
             refrescar();
         }
@@ -116,10 +102,9 @@ namespace Gungar.CAI.Prototipos._5
 
         private void generarReservaBtn_Click(object sender, EventArgs e)
         {
-            model.Itinerario.tipoDeConfirmacion = "reserva";
             if (model.Itinerario.Estado == Estado.Presupuesto)
             {
-                model.AgregarDatosForm = new AgregarDatosForm(model.Itinerario, false);
+                model.AgregarDatosForm = new AgregarDatosForm();
                 model.AgregarDatosForm.ShowDialog();
                 refrescar();
             }
@@ -134,7 +119,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void clienteBtn_Click(object sender, EventArgs e)
         {
-            ClienteForm clienteForm = new(model.Itinerario);
+            ClienteForm clienteForm = new();
             clienteForm.ShowDialog();
             refrescar();
         }
@@ -151,7 +136,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void vuelosBtn_Click(object sender, EventArgs e)
         {
-            VuelosForm VuelosForm = new(model.Itinerario);
+            VuelosForm VuelosForm = new();
             VuelosForm.ShowDialog();
             refrescar();
         }
@@ -167,7 +152,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.FechaDesde.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.SubItems.Add(reservaHotel.Hotel.FechaHasta.ToString(Constantes.FORMATO_FECHA_CORTA));
-                item.SubItems.Add("$ " + reservaHotel.PrecioTotal.ToString()); 
+                item.SubItems.Add("$ " + reservaHotel.PrecioTotal.ToString());
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
                 item.SubItems.Add(reservaHotel.Hotel.Calificacion.ToString());
                 item.Tag = reservaHotel;
@@ -202,16 +187,5 @@ namespace Gungar.CAI.Prototipos._5
                 vuelosAgregadosListView.Items.Add(item);
             });
         }
-
-        private void anularItinerarioBtn_Click(object sender, EventArgs e) // TODO: si no se usa borrar
-        {
-            var confirmar = MessageBox.Show("¿Está seguro de que desea anular el itinerario?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (confirmar == DialogResult.OK)
-            {
-                // TODO: Anular itinerario...
-            }
-        }
-
-       
     }
 }

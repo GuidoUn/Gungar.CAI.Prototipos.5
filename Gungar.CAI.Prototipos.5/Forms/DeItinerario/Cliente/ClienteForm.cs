@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.Cliente;
+using Gungar.CAI.Prototipos._5.Modulos;
 
 namespace Gungar.CAI.Prototipos._5
 {
@@ -16,10 +17,15 @@ namespace Gungar.CAI.Prototipos._5
     {
         ClienteFormModel model;
 
-        public ClienteForm(Itinerario itinerario)
+        public ClienteForm()
         {
             InitializeComponent();
-            model = new(itinerario);
+        }
+
+        private void ClienteForm_Load(object sender, EventArgs e)
+        {
+            model = new(VentasModulo.ItinerarioSeleccionado);
+
             nuevoPasajeroText.Text = model.NombreNuevoCliente;
             apellidoText.Text = model.ApellidoNuevoCliente;
             documentoText.Text = model.DocumentoNuevoCliente;
@@ -27,19 +33,13 @@ namespace Gungar.CAI.Prototipos._5
             telefonoText.Text = model.TelefonoNuevoCliente;
         }
 
-        private void evaluarEstadoBtns()
-        {
-            continuarBtn.Enabled = !string.IsNullOrEmpty(model.NombreNuevoCliente) && !string.IsNullOrEmpty(model.ApellidoNuevoCliente);
-        }
-
         private void continuarBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(model.NombreNuevoCliente) || string.IsNullOrEmpty(model.ApellidoNuevoCliente))
-            {
-                return;
-            }
-
-            // if (!Validador.ValidarCampoRequerido(documentoText, "Documento")) return;
+            if (!Validador.ValidarCampoRequerido(nuevoPasajeroText, "Nombre")) return;
+            if (!Validador.ValidarCampoRequerido(apellidoText, "Apellido")) return;
+            // if (!Validador.ValidarCampoRequerido(documentoText, "Documento")) return;     - Es obligatorio?
+            // if (!Validador.ValidarCampoRequerido(documentoText, "Email")) return;         - Es obligatorio?
+            // if (!Validador.ValidarCampoRequerido(documentoText, "Telefono")) return;      - Es obligatorio?
 
             model.Continuar();
             Close();
@@ -48,13 +48,27 @@ namespace Gungar.CAI.Prototipos._5
         private void nuevoPasajeroText_TextChanged(object sender, EventArgs e)
         {
             model.NombreNuevoCliente = nuevoPasajeroText.Text;
-            evaluarEstadoBtns();
+        }
+
+        private void nuevoPasajeroText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Evita que se escriban números
+            }
         }
 
         private void apellidoText_TextChanged(object sender, EventArgs e)
         {
             model.ApellidoNuevoCliente = apellidoText.Text;
-            evaluarEstadoBtns();
+        }
+
+        private void apellidoText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Evita que se escriban números
+            }
         }
 
         private void documentoText_TextChanged(object sender, EventArgs e)
@@ -70,6 +84,14 @@ namespace Gungar.CAI.Prototipos._5
         private void telefonoText_TextChanged(object sender, EventArgs e)
         {
             model.TelefonoNuevoCliente = telefonoText.Text;
+        }
+
+        private void telefonoText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '+' && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Evita que se escriban letras y otros caracteres
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

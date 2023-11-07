@@ -71,6 +71,7 @@
             telefonoText.Size = new Size(264, 23);
             telefonoText.TabIndex = 21;
             telefonoText.TextChanged += telefonoText_TextChanged;
+            telefonoText.KeyPress += telefonoText_KeyPress;
             // 
             // label4
             // 
@@ -131,6 +132,7 @@
             apellidoText.Size = new Size(264, 23);
             apellidoText.TabIndex = 15;
             apellidoText.TextChanged += apellidoText_TextChanged;
+            apellidoText.KeyPress += apellidoText_KeyPress;
             // 
             // label3
             // 
@@ -148,6 +150,7 @@
             nuevoPasajeroText.Size = new Size(264, 23);
             nuevoPasajeroText.TabIndex = 9;
             nuevoPasajeroText.TextChanged += nuevoPasajeroText_TextChanged;
+            nuevoPasajeroText.KeyPress += nuevoPasajeroText_KeyPress;
             // 
             // label1
             // 
@@ -170,7 +173,6 @@
             // 
             // continuarBtn
             // 
-            continuarBtn.Enabled = false;
             continuarBtn.Location = new Point(51, 380);
             continuarBtn.Name = "continuarBtn";
             continuarBtn.Size = new Size(140, 66);
@@ -190,6 +192,7 @@
             Controls.Add(continuarBtn);
             Name = "ClienteForm";
             Text = "ClienteForm";
+            Load += ClienteForm_Load;
             nuevoItinerarioBox.ResumeLayout(false);
             nuevoItinerarioBox.PerformLayout();
             ResumeLayout(false);

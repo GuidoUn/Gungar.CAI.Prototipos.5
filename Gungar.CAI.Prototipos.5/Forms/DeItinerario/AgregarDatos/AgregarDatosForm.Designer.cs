@@ -139,6 +139,7 @@
             nombreTextBox.Name = "nombreTextBox";
             nombreTextBox.Size = new Size(132, 23);
             nombreTextBox.TabIndex = 0;
+            nombreTextBox.KeyPress += nombreTextBox_KeyPress;
             // 
             // DNILabel
             // 
@@ -174,6 +175,7 @@
             apellidoTextBox.Name = "apellidoTextBox";
             apellidoTextBox.Size = new Size(132, 23);
             apellidoTextBox.TabIndex = 2;
+            apellidoTextBox.KeyPress += apellidoTextBox_KeyPress;
             // 
             // button2
             // 
@@ -446,7 +448,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 810);
+            ClientSize = new Size(1199, 835);
             Controls.Add(eliminarPasajeroBtn);
             Controls.Add(pasajeroLabel);
             Controls.Add(label4);

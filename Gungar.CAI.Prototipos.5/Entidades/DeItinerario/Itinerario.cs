@@ -23,11 +23,9 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
     public class Itinerario
     {
         public int ItinerarioId { get; set; }
-        public string? tipoDeConfirmacion { get; set; } // Reserva o Pre-reserva // TODO: Podría ser de tipo Estado?
         public DateTime FechaCreacion { get; set; }
         public Estado Estado { get; set; }
         public Cliente? Cliente { get; set; }
-        //public List<Pasajero> Pasajeros { get; set; } = new List<Pasajero>(); // No se está usando, habría que usarla?
         public DateTime? FechaPrereserva { get; set; }
         public List<ReservaHotel> HotelesSeleccionados { get; set; } = new List<ReservaHotel>();
         public List<ReservaVuelo> VuelosAgregados { get; set; } = new List<ReservaVuelo>();
@@ -86,11 +84,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             DisponibilidadModulo.liberarDisponibilidad(this);
         }
 
-        //public void AgregarHotel(Hotel hotel) // TODO: Esto se necesita?
-        //{
-        //    Hoteles.Add(hotel);
-        //}
-
         public void AgregarReservaHotel(ReservaHotel hotel)
         {
             HotelesSeleccionados.Add(hotel);
@@ -123,11 +116,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             {
                 precioTotal += reserva.PrecioTotal;
             });
-           
+
 
             return precioTotal;
         }
 
-        
+
     }
 }

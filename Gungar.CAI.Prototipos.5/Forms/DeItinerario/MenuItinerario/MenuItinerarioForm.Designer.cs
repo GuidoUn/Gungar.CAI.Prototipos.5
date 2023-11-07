@@ -58,6 +58,8 @@
             columnHeader12 = new ColumnHeader();
             columnHeader13 = new ColumnHeader();
             columnHeader14 = new ColumnHeader();
+            columnHeader15 = new ColumnHeader();
+            columnHeader16 = new ColumnHeader();
             abonadoLabel = new Label();
             vuelosAgregadosListView = new ListView();
             columnHeader0 = new ColumnHeader();
@@ -74,8 +76,6 @@
             columnHeader29 = new ColumnHeader();
             faltaClienteLabel = new Label();
             faltaProductoLabel = new Label();
-            columnHeader15 = new ColumnHeader();
-            columnHeader16 = new ColumnHeader();
             confirmacionBox.SuspendLayout();
             gestionarItinerarioBox.SuspendLayout();
             SuspendLayout();
@@ -329,6 +329,14 @@
             columnHeader14.Text = "Precio";
             columnHeader14.Width = 80;
             // 
+            // columnHeader15
+            // 
+            columnHeader15.Text = "Prestador";
+            // 
+            // columnHeader16
+            // 
+            columnHeader16.Text = "Categoría";
+            // 
             // abonadoLabel
             // 
             abonadoLabel.AutoSize = true;
@@ -430,19 +438,11 @@
             faltaProductoLabel.TabIndex = 29;
             faltaProductoLabel.Text = "* Debe ingresar un producto";
             // 
-            // columnHeader15
-            // 
-            columnHeader15.Text = "Prestador";
-            // 
-            // columnHeader16
-            // 
-            columnHeader16.Text = "Categoría";
-            // 
             // MenuItinerarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1343, 749);
+            ClientSize = new Size(1343, 818);
             Controls.Add(faltaProductoLabel);
             Controls.Add(faltaClienteLabel);
             Controls.Add(vuelosAgregadosListView);

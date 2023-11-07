@@ -120,6 +120,7 @@
             Controls.Add(df);
             Name = "MenuPrincipalForm";
             Text = "MenuPrincipal";
+            Load += MenuPrincipalForm_Load;
             consultasBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
