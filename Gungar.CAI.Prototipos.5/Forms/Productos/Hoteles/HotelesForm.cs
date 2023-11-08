@@ -93,7 +93,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(reservaHotel.Hotel.Direccion.Calle);
                     item.SubItems.Add(Constantes.CalificacionesInvertidas[reservaHotel.Hotel.Calificacion]);
                     item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
-                    item.SubItems.Add("$" + reservaHotel.Hotel.Disponibilidad.Tarifa.ToString());
+                    item.SubItems.Add("$" + reservaHotel.PrecioTotal.ToString());
                     item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.CapacidadAdultos.ToString());
                     item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.CapacidadMenores.ToString());
                     item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.CapacidadInfantes.ToString());
