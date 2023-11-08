@@ -125,7 +125,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             });
             HotelesSeleccionados.ForEach(reservaHotel =>
             {
-                precioTotal += reservaHotel.PrecioTotal * DiasEntreFechas(reservaHotel.Hotel.FechaDesde, reservaHotel.Hotel.FechaHasta);
+                precioTotal += reservaHotel.PrecioTotal;
             });
 
             return precioTotal;

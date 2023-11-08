@@ -24,12 +24,27 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas
 
             Hotel = hotel;
             Pasajeros = new List<Pasajero>(); // Puedes inicializar la lista aquí o en el constructor
-            PrecioTotal = Hotel.Disponibilidad.Tarifa;
+            PrecioTotal = Hotel.Disponibilidad.Tarifa * DiasEntreFechas(Hotel.FechaDesde, Hotel.FechaHasta);
          
         }
 
         public ReservaHotel() { }
+
+        private int DiasEntreFechas(DateTime FechaDesde, DateTime FechaHasta)
+        {
+            TimeSpan diferencia = FechaHasta.Date - FechaDesde.Date;
+
+            int dias = diferencia.Days;
+
+            return dias;
+        }
        
+          
+                
+           
+
+        
+
 
 
     }
