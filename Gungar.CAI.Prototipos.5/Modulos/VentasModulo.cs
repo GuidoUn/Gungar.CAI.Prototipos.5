@@ -113,5 +113,13 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             });
 
         }
+        public static void EliminarPasajeroDeProducto(int itinerarioId,IReservaProducto reservaProducto, Pasajero pasajero)
+        {
+            var reserva = GetProductosAgregados(itinerarioId).Find(producto => producto.Equals(reservaProducto));
+           var pasajeroReserva=reserva.Pasajeros.Find(p=>p.Documento==pasajero.Documento);
+            reserva.Pasajeros.Remove(pasajeroReserva);
+        }
     }
+
+    
 }

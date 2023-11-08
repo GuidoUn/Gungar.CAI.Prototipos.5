@@ -11,6 +11,7 @@ using Gungar.CAI.Prototipos._5.Almacenes;
 using Gungar.CAI.Prototipos._5.Entidades;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos;
 using Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario;
 using Gungar.CAI.Prototipos._5.Modulos;
@@ -58,7 +59,7 @@ namespace Gungar.CAI.Prototipos._5
                 item.SubItems.Add(Constantes.Ciudades[reservaHotel.Hotel.CodigoCiudad]);
                 item.SubItems.Add(reservaHotel.Hotel.FechaDesde.ToString(Constantes.FORMATO_FECHA_CORTA));
                 item.SubItems.Add(reservaHotel.Hotel.FechaHasta.ToString(Constantes.FORMATO_FECHA_CORTA));
-                item.SubItems.Add(reservaHotel.Hotel.Disponibilidad.Tarifa.ToString()); // TODO: Calcular precio total en base a la cantidad de noches (TODO: calcular la cant de noches)
+                item.SubItems.Add(reservaHotel.PrecioTotal.ToString());
                 item.SubItems.Add($"A({reservaHotel.CantidadAdultos}), M({reservaHotel.CantidadMenores}), I({reservaHotel.CantidadInfantes})");
                 item.SubItems.Add(reservaHotel.Hotel.NombreHotel);
                 item.SubItems.Add($"{reservaHotel.Hotel.Calificacion} Estrella{(reservaHotel.Hotel.Calificacion != 1 ? "s" : "")}");
@@ -97,6 +98,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 reservaProducto.Pasajeros.ForEach(pasajero =>
                 {
+                    
                     var item = new ListViewItem();
                     item.Text = reservaProducto is ReservaHotel reservaHotel ? reservaHotel.Hotel.CodigoOferta : reservaProducto is ReservaVuelo reservaVuelo ? reservaVuelo.Vuelo.CodigoOferta : "";
 
@@ -104,7 +106,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(pasajero.Nombre);
                     item.SubItems.Add(pasajero.Apellido);
                     item.SubItems.Add(pasajero.FechaNacimiento.ToString(Constantes.FORMATO_FECHA_CORTA));
-                    item.Tag = pasajero;
+                    item.Tag =new PasajeroReservaProducto(reservaProducto,pasajero);
 
                     pasajerosProductoListView.Items.Add(item);
                 });
@@ -177,8 +179,8 @@ namespace Gungar.CAI.Prototipos._5
 
         private void quitarAsignacionBtn_Click(object sender, EventArgs e)
         {
-            model.ProductoSeleccionado.Pasajeros.Remove(model.PasajeroProductoSeleccionado);
-            model.PasajeroProductoSeleccionado = null;
+            model.EliminarPasajeroSeleccionadoDelProducto(model.Itinerario.ItinerarioId, model.PasajeroReservaProductoSeleccionado.ReservaProducto, model.PasajeroReservaProductoSeleccionado.Pasajero);
+            model.PasajeroReservaProductoSeleccionado = null;
             evaluarTextosDeSeleccion();
             poblarListaPasajeroPorProducto();
             evaluarVisibilidadBtns();
@@ -199,7 +201,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void evaluarVisibilidadBtns()
         {
-            quitarAsignacionBtn.Enabled = model.PasajeroProductoSeleccionado != null;
+            quitarAsignacionBtn.Enabled = model.PasajeroReservaProductoSeleccionado != null;
             editarPasajeroBtn.Enabled = model.PasajeroItinerarioSeleccionado != null;
             eliminarPasajeroBtn.Enabled = model.PasajeroItinerarioSeleccionado != null;
 
@@ -280,7 +282,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 return;
             }
-            model.PasajeroProductoSeleccionado = (Pasajero)pasajerosProductoListView.SelectedItems[0].Tag;
+            model.PasajeroReservaProductoSeleccionado = (PasajeroReservaProducto)pasajerosProductoListView.SelectedItems[0].Tag;
 
             evaluarVisibilidadBtns();
             evaluarTextosDeSeleccion();

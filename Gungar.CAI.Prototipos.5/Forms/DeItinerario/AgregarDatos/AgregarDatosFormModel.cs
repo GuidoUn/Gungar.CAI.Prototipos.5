@@ -1,5 +1,6 @@
 ﻿using Gungar.CAI.Prototipos._5.Entidades.DeItinerario;
 using Gungar.CAI.Prototipos._5.Entidades.DeItinerario.Reservas;
+using Gungar.CAI.Prototipos._5.Entidades.Oferta;
 using Gungar.CAI.Prototipos._5.Modulos;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
 
         public Pasajero? PasajeroItinerarioSeleccionado { get; set; }
 
-        public Pasajero? PasajeroProductoSeleccionado { get; set; }
+        public PasajeroReservaProducto? PasajeroReservaProductoSeleccionado { get; set; }
 
         public List<Pasajero> PasajerosItinerario { get; set; }
 
@@ -59,6 +60,11 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
         public void EliminarPasajeroSeleccionadoDeTodosLosProductos()
         {
             VentasModulo.EliminarPasajeroDeTodosLosProductos(Itinerario.ItinerarioId, PasajeroItinerarioSeleccionado);
+        }
+
+        public void EliminarPasajeroSeleccionadoDelProducto(int ItinerarioId,IReservaProducto reservaProducto, Pasajero pasajero)
+        {
+            VentasModulo.EliminarPasajeroDeProducto(ItinerarioId,reservaProducto, pasajero);
         }
 
         private bool esInfante(DateTime fechaNacimiento)
@@ -118,7 +124,6 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
         }
 
         public bool ProductoTienePasajerosCorrecto(IReservaProducto producto,int PasajeroAdulto,int PasajeroInfante, int PasajeroMenor) {
-            bool resultado = false;
             int _adulto=PasajeroAdulto;
             int _menor=PasajeroMenor;
             int _infante=PasajeroInfante;
