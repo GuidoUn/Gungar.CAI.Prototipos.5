@@ -83,6 +83,9 @@ namespace Gungar.CAI.Prototipos._5
 
         private void filtrarBtn_Click(object sender, EventArgs e)
         {
+            model.ItinerarioSeleccionado = null;
+            evaluarEstadoBtns();
+            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
             model.FiltrarItinerarios(parametroTextBox.Text);
             refrescar();
         }
