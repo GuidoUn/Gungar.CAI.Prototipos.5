@@ -98,7 +98,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 reservaProducto.Pasajeros.ForEach(pasajero =>
                 {
-                    
+
                     var item = new ListViewItem();
                     item.Text = reservaProducto is ReservaHotel reservaHotel ? reservaHotel.Hotel.CodigoOferta : reservaProducto is ReservaVuelo reservaVuelo ? reservaVuelo.Vuelo.CodigoOferta : "";
 
@@ -106,7 +106,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.SubItems.Add(pasajero.Nombre);
                     item.SubItems.Add(pasajero.Apellido);
                     item.SubItems.Add(pasajero.FechaNacimiento.ToString(Constantes.FORMATO_FECHA_CORTA));
-                    item.Tag =new PasajeroReservaProducto(reservaProducto,pasajero);
+                    item.Tag = new PasajeroReservaProducto(reservaProducto, pasajero);
 
                     pasajerosProductoListView.Items.Add(item);
                 });

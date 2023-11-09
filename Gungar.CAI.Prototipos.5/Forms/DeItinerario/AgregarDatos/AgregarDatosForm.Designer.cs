@@ -283,6 +283,7 @@
             // columnHeader4
             // 
             columnHeader4.Text = "Codigo";
+            columnHeader4.Width = 80;
             // 
             // columnHeader8
             // 
@@ -292,27 +293,27 @@
             // columnHeader9
             // 
             columnHeader9.Text = "Origen/Destino";
-            columnHeader9.Width = 100;
+            columnHeader9.Width = 115;
             // 
             // columnHeader10
             // 
             columnHeader10.Text = "Desde";
-            columnHeader10.Width = 110;
+            columnHeader10.Width = 137;
             // 
             // columnHeader11
             // 
             columnHeader11.Text = "Hasta";
-            columnHeader11.Width = 110;
+            columnHeader11.Width = 137;
             // 
             // columnHeader12
             // 
             columnHeader12.Text = "Precio Total";
-            columnHeader12.Width = 80;
+            columnHeader12.Width = 95;
             // 
             // columnHeader5
             // 
             columnHeader5.Text = "Cant. Pasajeros";
-            columnHeader5.Width = 95;
+            columnHeader5.Width = 110;
             // 
             // columnHeader13
             // 
