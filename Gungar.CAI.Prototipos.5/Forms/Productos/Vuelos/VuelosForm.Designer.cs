@@ -816,6 +816,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1783, 1088);
             Controls.Add(pasajerosEnBusquedaBox);
             Controls.Add(volverBtn);

@@ -266,7 +266,7 @@
             // nombreYApellidoLabel
             // 
             nombreYApellidoLabel.AutoSize = true;
-            nombreYApellidoLabel.Location = new Point(146, 12);
+            nombreYApellidoLabel.Location = new Point(159, 12);
             nombreYApellidoLabel.Name = "nombreYApellidoLabel";
             nombreYApellidoLabel.Size = new Size(131, 20);
             nombreYApellidoLabel.TabIndex = 16;
@@ -459,6 +459,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1535, 1091);
             Controls.Add(faltaProductoLabel);
             Controls.Add(faltaClienteLabel);

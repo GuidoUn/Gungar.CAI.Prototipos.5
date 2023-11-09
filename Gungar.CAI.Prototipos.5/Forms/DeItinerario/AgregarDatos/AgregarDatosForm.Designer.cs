@@ -445,6 +445,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1654, 1113);
             Controls.Add(eliminarPasajeroBtn);
             Controls.Add(pasajeroLabel);
