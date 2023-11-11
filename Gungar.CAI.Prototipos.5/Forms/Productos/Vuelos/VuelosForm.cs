@@ -30,7 +30,7 @@ namespace Gungar.CAI.Prototipos._5
 
             if (model.EsConsulta)
             {
-                titleLabel.Text = "Consulta disponibilidad de productos";
+                titleLabel.Text = "Consulta disponibilidad de vuelos";
                 itinerarioLabel.Text = "";
                 modificarItinerarioBox.Visible = false;
             }
