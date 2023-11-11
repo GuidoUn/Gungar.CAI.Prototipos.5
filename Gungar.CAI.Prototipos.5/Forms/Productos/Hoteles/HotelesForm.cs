@@ -106,6 +106,11 @@ namespace Gungar.CAI.Prototipos._5
 
         private void aplicarFiltrosBtn_Click(object sender, EventArgs e)
         {
+            if (!Validador.ValidarRangoDeFechas(model.DesdeFechaSeleccionada, model.HastaFechaSeleccionada))
+            {
+                hotelesListView.Items.Clear();
+                return;
+            }
             poblarHoteles();
             guardarDatosBusqueda();
         }
