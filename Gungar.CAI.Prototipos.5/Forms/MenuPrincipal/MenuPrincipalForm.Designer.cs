@@ -42,7 +42,7 @@
             // 
             df.AutoSize = true;
             df.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            df.Location = new Point(201, 67);
+            df.Location = new Point(209, 66);
             df.Name = "df";
             df.Size = new Size(143, 28);
             df.TabIndex = 2;
@@ -51,9 +51,9 @@
             // 
             // nuevoItinerarioBtn
             // 
-            nuevoItinerarioBtn.Location = new Point(192, 120);
+            nuevoItinerarioBtn.Location = new Point(157, 128);
             nuevoItinerarioBtn.Name = "nuevoItinerarioBtn";
-            nuevoItinerarioBtn.Size = new Size(161, 37);
+            nuevoItinerarioBtn.Size = new Size(240, 37);
             nuevoItinerarioBtn.TabIndex = 8;
             nuevoItinerarioBtn.Text = "Crear nuevo itinerario";
             nuevoItinerarioBtn.UseVisualStyleBackColor = true;
@@ -61,11 +61,11 @@
             // 
             // continuarItinerarioBtn
             // 
-            continuarItinerarioBtn.Location = new Point(192, 163);
+            continuarItinerarioBtn.Location = new Point(157, 171);
             continuarItinerarioBtn.Name = "continuarItinerarioBtn";
-            continuarItinerarioBtn.Size = new Size(161, 37);
+            continuarItinerarioBtn.Size = new Size(240, 37);
             continuarItinerarioBtn.TabIndex = 9;
-            continuarItinerarioBtn.Text = "Continuar Itinerario";
+            continuarItinerarioBtn.Text = "Continuar | Consultar itinerario existente";
             continuarItinerarioBtn.UseVisualStyleBackColor = true;
             continuarItinerarioBtn.Click += continuarItinerarioBtn_Click;
             // 
@@ -73,7 +73,7 @@
             // 
             consultarVuelosBtn.Location = new Point(12, 22);
             consultarVuelosBtn.Name = "consultarVuelosBtn";
-            consultarVuelosBtn.Size = new Size(159, 37);
+            consultarVuelosBtn.Size = new Size(238, 37);
             consultarVuelosBtn.TabIndex = 10;
             consultarVuelosBtn.Text = "Vuelos";
             consultarVuelosBtn.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             // 
             consultarHotelesBtn.Location = new Point(12, 65);
             consultarHotelesBtn.Name = "consultarHotelesBtn";
-            consultarHotelesBtn.Size = new Size(159, 37);
+            consultarHotelesBtn.Size = new Size(238, 37);
             consultarHotelesBtn.TabIndex = 11;
             consultarHotelesBtn.Text = "Hoteles";
             consultarHotelesBtn.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@
             // 
             consultasBox.Controls.Add(consultarVuelosBtn);
             consultasBox.Controls.Add(consultarHotelesBtn);
-            consultasBox.Location = new Point(180, 237);
+            consultasBox.Location = new Point(147, 237);
             consultasBox.Name = "consultasBox";
-            consultasBox.Size = new Size(181, 114);
+            consultasBox.Size = new Size(258, 114);
             consultasBox.TabIndex = 12;
             consultasBox.TabStop = false;
             consultasBox.Text = "Buscador";

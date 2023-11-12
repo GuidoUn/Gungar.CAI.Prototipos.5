@@ -187,5 +187,14 @@ namespace Gungar.CAI.Prototipos._5
                 vuelosAgregadosListView.Items.Add(item);
             });
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hotelesAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
