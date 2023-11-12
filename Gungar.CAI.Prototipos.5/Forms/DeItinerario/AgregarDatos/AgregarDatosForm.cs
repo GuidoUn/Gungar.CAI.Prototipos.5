@@ -347,5 +347,10 @@ namespace Gungar.CAI.Prototipos._5
                 e.Handled = true; // Evita que se escriban caracteres especiales
             }
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
