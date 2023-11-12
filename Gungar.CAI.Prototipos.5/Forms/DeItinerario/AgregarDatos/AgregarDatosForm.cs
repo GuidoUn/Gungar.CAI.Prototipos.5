@@ -296,17 +296,20 @@ namespace Gungar.CAI.Prototipos._5
             if (model.EditandoPasajero)
             {
                 editarPasajeroBtn.Text = "Cancelar Edicion";
-                vaciarCampos();
+                nombreTextBox.Text = model.PasajeroItinerarioSeleccionado.Nombre;
+                apellidoTextBox.Text = model.PasajeroItinerarioSeleccionado.Apellido;
+                DNITextBox.Text = model.PasajeroItinerarioSeleccionado.Documento;
+                fechaNacDatePicker.Value = model.PasajeroItinerarioSeleccionado.FechaNacimiento;
             }
             else
             {
                 editarPasajeroBtn.Text = "Editar";
-            }
-            nombreTextBox.Text = model.PasajeroItinerarioSeleccionado.Nombre;
-            apellidoTextBox.Text = model.PasajeroItinerarioSeleccionado.Apellido;
-            DNITextBox.Text = model.PasajeroItinerarioSeleccionado.Documento;
+                vaciarCampos();
 
-            fechaNacDatePicker.Value = model.PasajeroItinerarioSeleccionado.FechaNacimiento;
+
+            }
+
+
             evaluarTextosDeSeleccion();
         }
 

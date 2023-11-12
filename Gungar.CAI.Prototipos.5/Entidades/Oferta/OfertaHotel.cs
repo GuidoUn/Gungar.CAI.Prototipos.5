@@ -14,7 +14,7 @@ namespace Gungar.CAI.Prototipos._5.Entidades.Oferta
         public string CodigoCiudad; // hasta 3 char (depende de la agencia)
         public Direccion Direccion; // (Calle, número, CP, Latitud, Longitud)
         public int Calificacion; // 1, 2, 3, 4 ó 5
-        public List<Disponibilidad> Disponibilidad; // 1, 2, 3, 4 ó 5
+        public List<Disponibilidad> Disponibilidad;
 
         public OfertaHotel()
         {
