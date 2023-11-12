@@ -214,5 +214,10 @@ namespace Gungar.CAI.Prototipos._5
         {
             aplicarFiltrosBtn.Enabled = cantidadAdultosNumeric.Value > 0;
         }
+
+        private void modificarItinerarioBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
