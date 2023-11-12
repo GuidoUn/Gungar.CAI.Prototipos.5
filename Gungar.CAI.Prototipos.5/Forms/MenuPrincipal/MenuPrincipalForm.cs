@@ -50,6 +50,9 @@ namespace Gungar.CAI.Prototipos._5
             Close();
         }
 
+        private void df_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

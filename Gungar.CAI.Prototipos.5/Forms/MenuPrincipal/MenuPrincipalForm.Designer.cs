@@ -41,27 +41,29 @@
             // df
             // 
             df.AutoSize = true;
-            df.Location = new Point(209, 92);
+            df.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            df.Location = new Point(201, 67);
             df.Name = "df";
-            df.Size = new Size(87, 15);
+            df.Size = new Size(143, 28);
             df.TabIndex = 2;
             df.Text = "Menu principal";
+            df.Click += df_Click;
             // 
             // nuevoItinerarioBtn
             // 
-            nuevoItinerarioBtn.Location = new Point(198, 127);
+            nuevoItinerarioBtn.Location = new Point(192, 120);
             nuevoItinerarioBtn.Name = "nuevoItinerarioBtn";
-            nuevoItinerarioBtn.Size = new Size(112, 49);
+            nuevoItinerarioBtn.Size = new Size(161, 37);
             nuevoItinerarioBtn.TabIndex = 8;
-            nuevoItinerarioBtn.Text = "Nuevo Itinerario";
+            nuevoItinerarioBtn.Text = "Crear nuevo itinerario";
             nuevoItinerarioBtn.UseVisualStyleBackColor = true;
             nuevoItinerarioBtn.Click += nuevoItinerarioBtn_Click;
             // 
             // continuarItinerarioBtn
             // 
-            continuarItinerarioBtn.Location = new Point(198, 182);
+            continuarItinerarioBtn.Location = new Point(192, 163);
             continuarItinerarioBtn.Name = "continuarItinerarioBtn";
-            continuarItinerarioBtn.Size = new Size(112, 49);
+            continuarItinerarioBtn.Size = new Size(161, 37);
             continuarItinerarioBtn.TabIndex = 9;
             continuarItinerarioBtn.Text = "Continuar Itinerario";
             continuarItinerarioBtn.UseVisualStyleBackColor = true;
@@ -69,21 +71,21 @@
             // 
             // consultarVuelosBtn
             // 
-            consultarVuelosBtn.Location = new Point(6, 22);
+            consultarVuelosBtn.Location = new Point(12, 22);
             consultarVuelosBtn.Name = "consultarVuelosBtn";
-            consultarVuelosBtn.Size = new Size(112, 49);
+            consultarVuelosBtn.Size = new Size(159, 37);
             consultarVuelosBtn.TabIndex = 10;
-            consultarVuelosBtn.Text = "Consultar Vuelos";
+            consultarVuelosBtn.Text = "Vuelos";
             consultarVuelosBtn.UseVisualStyleBackColor = true;
             consultarVuelosBtn.Click += consultarVuelosBtn_Click;
             // 
             // consultarHotelesBtn
             // 
-            consultarHotelesBtn.Location = new Point(6, 77);
+            consultarHotelesBtn.Location = new Point(12, 65);
             consultarHotelesBtn.Name = "consultarHotelesBtn";
-            consultarHotelesBtn.Size = new Size(112, 49);
+            consultarHotelesBtn.Size = new Size(159, 37);
             consultarHotelesBtn.TabIndex = 11;
-            consultarHotelesBtn.Text = "Consultar Hoteles";
+            consultarHotelesBtn.Text = "Hoteles";
             consultarHotelesBtn.UseVisualStyleBackColor = true;
             consultarHotelesBtn.Click += consultarHotelesBtn_Click;
             // 
@@ -91,18 +93,18 @@
             // 
             consultasBox.Controls.Add(consultarVuelosBtn);
             consultasBox.Controls.Add(consultarHotelesBtn);
-            consultasBox.Location = new Point(192, 255);
+            consultasBox.Location = new Point(180, 237);
             consultasBox.Name = "consultasBox";
-            consultasBox.Size = new Size(127, 136);
+            consultasBox.Size = new Size(181, 114);
             consultasBox.TabIndex = 12;
             consultasBox.TabStop = false;
-            consultasBox.Text = "Consultas";
+            consultasBox.Text = "Buscador";
             // 
             // salirDelSistemaBtn
             // 
-            salirDelSistemaBtn.Location = new Point(448, 37);
+            salirDelSistemaBtn.Location = new Point(478, 396);
             salirDelSistemaBtn.Name = "salirDelSistemaBtn";
-            salirDelSistemaBtn.Size = new Size(116, 47);
+            salirDelSistemaBtn.Size = new Size(110, 31);
             salirDelSistemaBtn.TabIndex = 13;
             salirDelSistemaBtn.Text = "Salir del Sistema";
             salirDelSistemaBtn.UseVisualStyleBackColor = true;
