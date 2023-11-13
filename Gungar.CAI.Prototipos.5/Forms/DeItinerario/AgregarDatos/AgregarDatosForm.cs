@@ -135,7 +135,7 @@ namespace Gungar.CAI.Prototipos._5
             nombreTextBox.Text = "";
             apellidoTextBox.Text = "";
             DNITextBox.Text = "";
-            fechaNacDatePicker.Value = new DateTime(2023, 06, 3);
+            fechaNacDatePicker.Value = DateTime.Now.Date;
         }
 
         private void agregarPasajeroBtn_Click(object sender, EventArgs e)
@@ -271,7 +271,7 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             model.PasajeroItinerarioSeleccionado = (Pasajero)pasajerosItinerarioListView.SelectedItems[0].Tag;
-            pasajeroLabel.Text = model.PasajeroItinerarioSeleccionado.Documento;
+            pasajeroLabel.Text = model.PasajeroItinerarioSeleccionado.Nombre+ " " +model.PasajeroItinerarioSeleccionado.Apellido + "-" + model.PasajeroItinerarioSeleccionado.Documento;
             evaluarVisibilidadBtns();
             evaluarTextosDeSeleccion();
         }
@@ -322,6 +322,8 @@ namespace Gungar.CAI.Prototipos._5
             poblarListaPasajeroPorProducto();
             PoblarPasajerosItinerario();
             model.PasajeroItinerarioSeleccionado = null;
+            evaluarTextosDeSeleccion();
+
         }
 
         private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
