@@ -103,7 +103,7 @@
             consultasBox.Size = new Size(281, 114);
             consultasBox.TabIndex = 12;
             consultasBox.TabStop = false;
-            consultasBox.Text = "Buscador";
+            consultasBox.Text = "Consultar disponibilidad";
             // 
             // salirDelSistemaBtn
             // 
