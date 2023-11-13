@@ -80,7 +80,7 @@
             label4.Name = "label4";
             label4.Size = new Size(52, 15);
             label4.TabIndex = 20;
-            label4.Text = "Telefono";
+            label4.Text = "Teléfono";
             // 
             // emailText
             // 
@@ -156,11 +156,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(51, 27);
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(57, 22);
             label1.Name = "label1";
-            label1.Size = new Size(91, 15);
+            label1.Size = new Size(199, 20);
             label1.TabIndex = 19;
-            label1.Text = "Datos de cliente";
+            label1.Text = "Ingresar los datos del cliente";
             // 
             // button1
             // 

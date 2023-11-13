@@ -40,11 +40,13 @@
             apellidoTextBox = new TextBox();
             button2 = new Button();
             groupBox2 = new GroupBox();
+            eliminarPasajeroBtn = new Button();
             pasajerosItinerarioListView = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
+            editarPasajeroBtn = new Button();
             itinerarioLabel = new Label();
             titleLabel = new Label();
             quitarAsignacionBtn = new Button();
@@ -67,12 +69,10 @@
             apellidoHeader2 = new ColumnHeader();
             fechaNacHeader2 = new ColumnHeader();
             groupBox1 = new GroupBox();
-            editarPasajeroBtn = new Button();
             label2 = new Label();
             productoLabel = new Label();
             pasajeroLabel = new Label();
             label4 = new Label();
-            eliminarPasajeroBtn = new Button();
             datosPasajerosGroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -89,7 +89,7 @@
             datosPasajerosGroupBox.Controls.Add(label1);
             datosPasajerosGroupBox.Controls.Add(nombreLabel);
             datosPasajerosGroupBox.Controls.Add(apellidoTextBox);
-            datosPasajerosGroupBox.Location = new Point(60, 73);
+            datosPasajerosGroupBox.Location = new Point(60, 111);
             datosPasajerosGroupBox.Margin = new Padding(3, 2, 3, 2);
             datosPasajerosGroupBox.Name = "datosPasajerosGroupBox";
             datosPasajerosGroupBox.Padding = new Padding(3, 2, 3, 2);
@@ -149,7 +149,7 @@
             DNILabel.Name = "DNILabel";
             DNILabel.Size = new Size(152, 30);
             DNILabel.TabIndex = 6;
-            DNILabel.Text = "Documento / Pasaporte";
+            DNILabel.Text = "Documento o Pasaporte";
             // 
             // label1
             // 
@@ -180,11 +180,11 @@
             // 
             // button2
             // 
-            button2.Location = new Point(885, 685);
+            button2.Location = new Point(1023, 23);
             button2.Name = "button2";
             button2.Size = new Size(114, 39);
             button2.TabIndex = 22;
-            button2.Text = "Volver al Menu";
+            button2.Text = "Volver";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -193,7 +193,7 @@
             groupBox2.Controls.Add(eliminarPasajeroBtn);
             groupBox2.Controls.Add(pasajerosItinerarioListView);
             groupBox2.Controls.Add(editarPasajeroBtn);
-            groupBox2.Location = new Point(569, 73);
+            groupBox2.Location = new Point(569, 111);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 2, 3, 2);
@@ -202,6 +202,18 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Pasajeros del itinerario";
             groupBox2.Enter += groupBox2_Enter;
+            // 
+            // eliminarPasajeroBtn
+            // 
+            eliminarPasajeroBtn.Enabled = false;
+            eliminarPasajeroBtn.Location = new Point(326, 177);
+            eliminarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
+            eliminarPasajeroBtn.Name = "eliminarPasajeroBtn";
+            eliminarPasajeroBtn.Size = new Size(120, 31);
+            eliminarPasajeroBtn.TabIndex = 35;
+            eliminarPasajeroBtn.Text = "Eliminar pasajero";
+            eliminarPasajeroBtn.UseVisualStyleBackColor = true;
+            eliminarPasajeroBtn.Click += eliminarPasajeroBtn_Click;
             // 
             // pasajerosItinerarioListView
             // 
@@ -236,39 +248,54 @@
             columnHeader6.Text = "Fecha de nacimiento";
             columnHeader6.Width = 150;
             // 
+            // editarPasajeroBtn
+            // 
+            editarPasajeroBtn.Enabled = false;
+            editarPasajeroBtn.Location = new Point(452, 177);
+            editarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
+            editarPasajeroBtn.Name = "editarPasajeroBtn";
+            editarPasajeroBtn.Size = new Size(116, 31);
+            editarPasajeroBtn.TabIndex = 30;
+            editarPasajeroBtn.Text = "Editar pasajero";
+            editarPasajeroBtn.UseVisualStyleBackColor = true;
+            editarPasajeroBtn.Click += editarPasajeroBtn_Click;
+            // 
             // itinerarioLabel
             // 
             itinerarioLabel.AutoSize = true;
-            itinerarioLabel.Location = new Point(243, 19);
+            itinerarioLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            itinerarioLabel.Location = new Point(332, 31);
             itinerarioLabel.Name = "itinerarioLabel";
-            itinerarioLabel.Size = new Size(82, 15);
+            itinerarioLabel.Size = new Size(105, 20);
             itinerarioLabel.TabIndex = 26;
             itinerarioLabel.Text = "itinerarioLabel";
             // 
             // titleLabel
             // 
             titleLabel.AutoSize = true;
-            titleLabel.Location = new Point(54, 19);
+            titleLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            titleLabel.Location = new Point(66, 31);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(183, 15);
+            titleLabel.Size = new Size(266, 20);
             titleLabel.TabIndex = 25;
-            titleLabel.Text = "Agregando Pasajeros al Itinerario:";
+            titleLabel.Text = "Agregar los pasajeros del itinerario N°:";
             // 
             // quitarAsignacionBtn
             // 
             quitarAsignacionBtn.Enabled = false;
-            quitarAsignacionBtn.Location = new Point(369, 479);
+            quitarAsignacionBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            quitarAsignacionBtn.Location = new Point(369, 520);
             quitarAsignacionBtn.Margin = new Padding(3, 2, 3, 2);
             quitarAsignacionBtn.Name = "quitarAsignacionBtn";
             quitarAsignacionBtn.Size = new Size(208, 31);
             quitarAsignacionBtn.TabIndex = 15;
-            quitarAsignacionBtn.Text = "Quitar pasajero del producto ^ ^ ^";
+            quitarAsignacionBtn.Text = "Quitar pasajero del producto  ↑";
             quitarAsignacionBtn.UseVisualStyleBackColor = true;
             quitarAsignacionBtn.Click += quitarAsignacionBtn_Click;
             // 
             // confirmarBtn
             // 
-            confirmarBtn.Location = new Point(1021, 685);
+            confirmarBtn.Location = new Point(1021, 726);
             confirmarBtn.Name = "confirmarBtn";
             confirmarBtn.Size = new Size(116, 39);
             confirmarBtn.TabIndex = 27;
@@ -280,7 +307,7 @@
             // 
             productosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader5, columnHeader13, columnHeader14 });
             productosAgregadosListView.FullRowSelect = true;
-            productosAgregadosListView.Location = new Point(66, 338);
+            productosAgregadosListView.Location = new Point(66, 379);
             productosAgregadosListView.MultiSelect = false;
             productosAgregadosListView.Name = "productosAgregadosListView";
             productosAgregadosListView.Size = new Size(1071, 119);
@@ -337,12 +364,13 @@
             // asignarBtn
             // 
             asignarBtn.Enabled = false;
-            asignarBtn.Location = new Point(609, 479);
+            asignarBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            asignarBtn.Location = new Point(609, 520);
             asignarBtn.Margin = new Padding(3, 2, 3, 2);
             asignarBtn.Name = "asignarBtn";
             asignarBtn.Size = new Size(216, 31);
             asignarBtn.TabIndex = 29;
-            asignarBtn.Text = "Asignar pasasjero al producto v v v";
+            asignarBtn.Text = "Asignar pasasjero al producto  ↓";
             asignarBtn.UseVisualStyleBackColor = true;
             asignarBtn.Click += asignarBtn_Click;
             // 
@@ -387,7 +415,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(pasajerosProductoListView);
-            groupBox1.Location = new Point(60, 534);
+            groupBox1.Location = new Point(60, 575);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
@@ -396,22 +424,10 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Pasajeros del producto";
             // 
-            // editarPasajeroBtn
-            // 
-            editarPasajeroBtn.Enabled = false;
-            editarPasajeroBtn.Location = new Point(452, 177);
-            editarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
-            editarPasajeroBtn.Name = "editarPasajeroBtn";
-            editarPasajeroBtn.Size = new Size(116, 31);
-            editarPasajeroBtn.TabIndex = 30;
-            editarPasajeroBtn.Text = "Editar pasajero";
-            editarPasajeroBtn.UseVisualStyleBackColor = true;
-            editarPasajeroBtn.Click += editarPasajeroBtn_Click;
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(66, 316);
+            label2.Location = new Point(66, 357);
             label2.Name = "label2";
             label2.Size = new Size(131, 15);
             label2.TabIndex = 31;
@@ -420,7 +436,7 @@
             // productoLabel
             // 
             productoLabel.AutoSize = true;
-            productoLabel.Location = new Point(203, 316);
+            productoLabel.Location = new Point(203, 357);
             productoLabel.Name = "productoLabel";
             productoLabel.Size = new Size(84, 15);
             productoLabel.TabIndex = 32;
@@ -429,7 +445,7 @@
             // pasajeroLabel
             // 
             pasajeroLabel.AutoSize = true;
-            pasajeroLabel.Location = new Point(701, 38);
+            pasajeroLabel.Location = new Point(707, 90);
             pasajeroLabel.Name = "pasajeroLabel";
             pasajeroLabel.Size = new Size(79, 15);
             pasajeroLabel.TabIndex = 34;
@@ -438,33 +454,22 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(569, 38);
+            label4.Location = new Point(575, 90);
             label4.Name = "label4";
             label4.Size = new Size(126, 15);
             label4.TabIndex = 33;
             label4.Text = "Pasajero seleccionado:";
-            // 
-            // eliminarPasajeroBtn
-            // 
-            eliminarPasajeroBtn.Enabled = false;
-            eliminarPasajeroBtn.Location = new Point(326, 177);
-            eliminarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
-            eliminarPasajeroBtn.Name = "eliminarPasajeroBtn";
-            eliminarPasajeroBtn.Size = new Size(120, 31);
-            eliminarPasajeroBtn.TabIndex = 35;
-            eliminarPasajeroBtn.Text = "Eliminar pasajero";
-            eliminarPasajeroBtn.UseVisualStyleBackColor = true;
-            eliminarPasajeroBtn.Click += eliminarPasajeroBtn_Click;
             // 
             // AgregarDatosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1167, 750);
+            ClientSize = new Size(1167, 785);
             Controls.Add(pasajeroLabel);
             Controls.Add(label4);
             Controls.Add(productoLabel);
+            Controls.Add(button2);
             Controls.Add(label2);
             Controls.Add(groupBox1);
             Controls.Add(asignarBtn);
@@ -474,7 +479,6 @@
             Controls.Add(itinerarioLabel);
             Controls.Add(titleLabel);
             Controls.Add(groupBox2);
-            Controls.Add(button2);
             Controls.Add(datosPasajerosGroupBox);
             Margin = new Padding(3, 2, 3, 2);
             Name = "AgregarDatosForm";

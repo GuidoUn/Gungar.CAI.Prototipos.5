@@ -115,7 +115,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(desdeDatePickerLabel);
             groupBox1.Controls.Add(desdeFechaDatePicker);
-            groupBox1.Location = new Point(12, 48);
+            groupBox1.Location = new Point(12, 72);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(306, 562);
             groupBox1.TabIndex = 10;
@@ -158,7 +158,8 @@
             aplicarFiltrosBtn.Name = "aplicarFiltrosBtn";
             aplicarFiltrosBtn.Size = new Size(294, 40);
             aplicarFiltrosBtn.TabIndex = 21;
-            aplicarFiltrosBtn.Text = "Buscar";
+            aplicarFiltrosBtn.Text = "Buscar hoteles";
+            aplicarFiltrosBtn.TextAlign = ContentAlignment.TopCenter;
             aplicarFiltrosBtn.UseVisualStyleBackColor = true;
             aplicarFiltrosBtn.Click += aplicarFiltrosBtn_Click;
             // 
@@ -337,27 +338,29 @@
             // itinerarioLabel
             // 
             itinerarioLabel.AutoSize = true;
-            itinerarioLabel.Location = new Point(127, 15);
+            itinerarioLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            itinerarioLabel.Location = new Point(275, 21);
             itinerarioLabel.Name = "itinerarioLabel";
-            itinerarioLabel.Size = new Size(82, 15);
+            itinerarioLabel.Size = new Size(105, 20);
             itinerarioLabel.TabIndex = 9;
             itinerarioLabel.Text = "itinerarioLabel";
             // 
             // titleLabel
             // 
             titleLabel.AutoSize = true;
-            titleLabel.Location = new Point(12, 15);
+            titleLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            titleLabel.Location = new Point(18, 21);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(103, 15);
+            titleLabel.Size = new Size(260, 20);
             titleLabel.TabIndex = 8;
-            titleLabel.Text = "Gestionar Hoteles:";
+            titleLabel.Text = "Gestionar los hoteles del itinerario N°:";
             // 
             // modificarItinerarioBox
             // 
             modificarItinerarioBox.Controls.Add(hotelesAgregadosListView);
             modificarItinerarioBox.Controls.Add(agregarProductoBtn);
             modificarItinerarioBox.Controls.Add(quitarHotelBtn);
-            modificarItinerarioBox.Location = new Point(343, 339);
+            modificarItinerarioBox.Location = new Point(343, 363);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
             modificarItinerarioBox.Size = new Size(1062, 271);
             modificarItinerarioBox.TabIndex = 27;
@@ -429,28 +432,30 @@
             // 
             // agregarProductoBtn
             // 
+            agregarProductoBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             agregarProductoBtn.Location = new Point(559, 19);
             agregarProductoBtn.Name = "agregarProductoBtn";
             agregarProductoBtn.Size = new Size(138, 29);
             agregarProductoBtn.TabIndex = 23;
-            agregarProductoBtn.Text = "Agregar hotel v v v";
+            agregarProductoBtn.Text = "Agregar hotel  ↓";
             agregarProductoBtn.UseVisualStyleBackColor = true;
             agregarProductoBtn.Click += agregarProductoBtn_Click;
             // 
             // quitarHotelBtn
             // 
+            quitarHotelBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             quitarHotelBtn.Location = new Point(396, 19);
             quitarHotelBtn.Name = "quitarHotelBtn";
             quitarHotelBtn.Size = new Size(135, 29);
             quitarHotelBtn.TabIndex = 22;
-            quitarHotelBtn.Text = "Quitar hotel ^^^";
+            quitarHotelBtn.Text = "Quitar hotel  ↑";
             quitarHotelBtn.UseVisualStyleBackColor = true;
             quitarHotelBtn.Click += quitarHotelBtn_Click;
             // 
             // groupBox4
             // 
             groupBox4.Controls.Add(hotelesListView);
-            groupBox4.Location = new Point(343, 147);
+            groupBox4.Location = new Point(343, 171);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(1062, 192);
             groupBox4.TabIndex = 28;
@@ -522,7 +527,7 @@
             // 
             // volverBtn
             // 
-            volverBtn.Location = new Point(1303, 656);
+            volverBtn.Location = new Point(1303, 15);
             volverBtn.Name = "volverBtn";
             volverBtn.Size = new Size(96, 35);
             volverBtn.TabIndex = 31;
@@ -538,7 +543,7 @@
             pasajerosEnBusquedaBox.Controls.Add(label13);
             pasajerosEnBusquedaBox.Controls.Add(label14);
             pasajerosEnBusquedaBox.Controls.Add(label12);
-            pasajerosEnBusquedaBox.Location = new Point(350, 48);
+            pasajerosEnBusquedaBox.Location = new Point(350, 72);
             pasajerosEnBusquedaBox.Margin = new Padding(2);
             pasajerosEnBusquedaBox.Name = "pasajerosEnBusquedaBox";
             pasajerosEnBusquedaBox.Padding = new Padding(2);

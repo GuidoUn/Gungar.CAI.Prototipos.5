@@ -270,5 +270,10 @@ namespace Gungar.CAI.Prototipos._5
             poblarVuelos();
             refrescar();
         }
+
+        private void titleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

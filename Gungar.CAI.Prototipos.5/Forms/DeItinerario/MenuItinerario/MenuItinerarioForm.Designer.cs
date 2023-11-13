@@ -93,24 +93,26 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 26);
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(24, 26);
             label1.Name = "label1";
-            label1.Size = new Size(102, 15);
+            label1.Size = new Size(93, 20);
             label1.TabIndex = 1;
-            label1.Text = "Itinerario número:";
+            label1.Text = "Itinerario N°:";
             // 
             // itinerarioSeleccionadoLabel
             // 
             itinerarioSeleccionadoLabel.AutoSize = true;
-            itinerarioSeleccionadoLabel.Location = new Point(129, 26);
+            itinerarioSeleccionadoLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            itinerarioSeleccionadoLabel.Location = new Point(115, 26);
             itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
-            itinerarioSeleccionadoLabel.Size = new Size(152, 15);
+            itinerarioSeleccionadoLabel.Size = new Size(194, 20);
             itinerarioSeleccionadoLabel.TabIndex = 2;
             itinerarioSeleccionadoLabel.Text = "itinerarioSeleccionadoLabel";
             // 
             // salirBtn
             // 
-            salirBtn.Location = new Point(1073, 684);
+            salirBtn.Location = new Point(1073, 14);
             salirBtn.Name = "salirBtn";
             salirBtn.Size = new Size(116, 39);
             salirBtn.TabIndex = 3;
@@ -123,7 +125,7 @@
             confirmacionBox.Controls.Add(generarReservaBtn);
             confirmacionBox.Controls.Add(generarPreReservaBtn);
             confirmacionBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            confirmacionBox.Location = new Point(21, 422);
+            confirmacionBox.Location = new Point(21, 463);
             confirmacionBox.Name = "confirmacionBox";
             confirmacionBox.Size = new Size(210, 132);
             confirmacionBox.TabIndex = 6;
@@ -156,7 +158,7 @@
             // 
             estadoLabel.AutoSize = true;
             estadoLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            estadoLabel.Location = new Point(164, 62);
+            estadoLabel.Location = new Point(164, 103);
             estadoLabel.Name = "estadoLabel";
             estadoLabel.Size = new Size(82, 17);
             estadoLabel.TabIndex = 8;
@@ -166,7 +168,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(21, 62);
+            label3.Location = new Point(21, 103);
             label3.Name = "label3";
             label3.Size = new Size(137, 17);
             label3.TabIndex = 7;
@@ -175,7 +177,7 @@
             // pasajerosListView
             // 
             pasajerosListView.Columns.AddRange(new ColumnHeader[] { idProductoHeader, nombreHeader, fechaNacimientoHeader });
-            pasajerosListView.Location = new Point(273, 514);
+            pasajerosListView.Location = new Point(273, 555);
             pasajerosListView.MultiSelect = false;
             pasajerosListView.Name = "pasajerosListView";
             pasajerosListView.Size = new Size(916, 145);
@@ -201,20 +203,20 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(273, 494);
+            label2.Location = new Point(273, 535);
             label2.Name = "label2";
-            label2.Size = new Size(56, 15);
+            label2.Size = new Size(125, 15);
             label2.TabIndex = 11;
-            label2.Text = "Pasajeros";
+            label2.Text = "Pasajeros del itinerario";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(273, 103);
+            label4.Location = new Point(273, 144);
             label4.Name = "label4";
-            label4.Size = new Size(102, 15);
+            label4.Size = new Size(162, 15);
             label4.TabIndex = 12;
-            label4.Text = "Vuelos Agregados";
+            label4.Text = "Vuelos agregados al itinerario";
             // 
             // gestionarItinerarioBox
             // 
@@ -222,7 +224,7 @@
             gestionarItinerarioBox.Controls.Add(clienteBtn);
             gestionarItinerarioBox.Controls.Add(hotelesBtn);
             gestionarItinerarioBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            gestionarItinerarioBox.Location = new Point(21, 105);
+            gestionarItinerarioBox.Location = new Point(21, 146);
             gestionarItinerarioBox.Name = "gestionarItinerarioBox";
             gestionarItinerarioBox.Size = new Size(210, 180);
             gestionarItinerarioBox.TabIndex = 13;
@@ -252,16 +254,16 @@
             // precioTotalLabel
             // 
             precioTotalLabel.AutoSize = true;
-            precioTotalLabel.Location = new Point(713, 26);
+            precioTotalLabel.Location = new Point(363, 65);
             precioTotalLabel.Name = "precioTotalLabel";
-            precioTotalLabel.Size = new Size(93, 15);
+            precioTotalLabel.Size = new Size(70, 15);
             precioTotalLabel.TabIndex = 14;
-            precioTotalLabel.Text = "precioTotalLabel";
+            precioTotalLabel.Text = "Precio total:";
             // 
             // nombreYApellidoLabel
             // 
             nombreYApellidoLabel.AutoSize = true;
-            nombreYApellidoLabel.Location = new Point(468, 26);
+            nombreYApellidoLabel.Location = new Point(143, 65);
             nombreYApellidoLabel.Name = "nombreYApellidoLabel";
             nombreYApellidoLabel.Size = new Size(103, 15);
             nombreYApellidoLabel.TabIndex = 16;
@@ -270,7 +272,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(349, 26);
+            label6.Location = new Point(24, 65);
             label6.Name = "label6";
             label6.Size = new Size(110, 15);
             label6.TabIndex = 15;
@@ -281,7 +283,7 @@
             cancelarReservaBtn.BackColor = Color.OrangeRed;
             cancelarReservaBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             cancelarReservaBtn.ForeColor = Color.White;
-            cancelarReservaBtn.Location = new Point(36, 622);
+            cancelarReservaBtn.Location = new Point(36, 663);
             cancelarReservaBtn.Name = "cancelarReservaBtn";
             cancelarReservaBtn.Size = new Size(174, 37);
             cancelarReservaBtn.TabIndex = 9;
@@ -292,17 +294,17 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(273, 301);
+            label7.Location = new Point(273, 342);
             label7.Name = "label7";
-            label7.Size = new Size(107, 15);
+            label7.Size = new Size(167, 15);
             label7.TabIndex = 18;
-            label7.Text = "Hoteles Agregados";
+            label7.Text = "Hoteles agregados al itinerario";
             label7.Click += label7_Click;
             // 
             // hotelesAgregadosListView
             // 
             hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader12, columnHeader13, columnHeader14, columnHeader15, columnHeader16 });
-            hotelesAgregadosListView.Location = new Point(273, 319);
+            hotelesAgregadosListView.Location = new Point(273, 360);
             hotelesAgregadosListView.MultiSelect = false;
             hotelesAgregadosListView.Name = "hotelesAgregadosListView";
             hotelesAgregadosListView.Size = new Size(916, 151);
@@ -354,7 +356,7 @@
             // abonadoLabel
             // 
             abonadoLabel.AutoSize = true;
-            abonadoLabel.Location = new Point(907, 26);
+            abonadoLabel.Location = new Point(557, 65);
             abonadoLabel.Name = "abonadoLabel";
             abonadoLabel.Size = new Size(82, 15);
             abonadoLabel.TabIndex = 19;
@@ -364,7 +366,7 @@
             // 
             vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader0, columnHeader1, columnHeader5, columnHeader6, columnHeader7, columnHeader2, columnHeader3, columnHeader4, columnHeader26, columnHeader27, columnHeader28, columnHeader29 });
             vuelosAgregadosListView.FullRowSelect = true;
-            vuelosAgregadosListView.Location = new Point(273, 121);
+            vuelosAgregadosListView.Location = new Point(273, 162);
             vuelosAgregadosListView.MultiSelect = false;
             vuelosAgregadosListView.Name = "vuelosAgregadosListView";
             vuelosAgregadosListView.Size = new Size(916, 162);
@@ -436,7 +438,7 @@
             // 
             faltaClienteLabel.AutoSize = true;
             faltaClienteLabel.ForeColor = Color.IndianRed;
-            faltaClienteLabel.Location = new Point(36, 371);
+            faltaClienteLabel.Location = new Point(36, 412);
             faltaClienteLabel.Name = "faltaClienteLabel";
             faltaClienteLabel.Size = new Size(142, 15);
             faltaClienteLabel.TabIndex = 28;
@@ -446,7 +448,7 @@
             // 
             faltaProductoLabel.AutoSize = true;
             faltaProductoLabel.ForeColor = Color.IndianRed;
-            faltaProductoLabel.Location = new Point(36, 389);
+            faltaProductoLabel.Location = new Point(36, 430);
             faltaProductoLabel.Name = "faltaProductoLabel";
             faltaProductoLabel.Size = new Size(156, 15);
             faltaProductoLabel.TabIndex = 29;

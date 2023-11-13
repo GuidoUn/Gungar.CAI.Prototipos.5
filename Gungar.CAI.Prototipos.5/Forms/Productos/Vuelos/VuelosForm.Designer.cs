@@ -140,7 +140,7 @@
             groupBox1.Controls.Add(origenLabel);
             groupBox1.Controls.Add(desdeDatePickerLabel);
             groupBox1.Controls.Add(idaDatePicker);
-            groupBox1.Location = new Point(13, 49);
+            groupBox1.Location = new Point(13, 68);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(309, 627);
             groupBox1.TabIndex = 10;
@@ -183,7 +183,7 @@
             aplicarFiltrosBtn.Name = "aplicarFiltrosBtn";
             aplicarFiltrosBtn.Size = new Size(283, 42);
             aplicarFiltrosBtn.TabIndex = 21;
-            aplicarFiltrosBtn.Text = "Buscar";
+            aplicarFiltrosBtn.Text = "Buscar vuelos";
             aplicarFiltrosBtn.TextAlign = ContentAlignment.TopCenter;
             aplicarFiltrosBtn.UseVisualStyleBackColor = true;
             aplicarFiltrosBtn.Click += aplicarFiltrosBtn_Click;
@@ -442,27 +442,30 @@
             // itinerarioLabel
             // 
             itinerarioLabel.AutoSize = true;
-            itinerarioLabel.Location = new Point(122, 16);
+            itinerarioLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            itinerarioLabel.Location = new Point(265, 24);
             itinerarioLabel.Name = "itinerarioLabel";
-            itinerarioLabel.Size = new Size(82, 15);
+            itinerarioLabel.Size = new Size(105, 20);
             itinerarioLabel.TabIndex = 9;
             itinerarioLabel.Text = "itinerarioLabel";
             // 
             // titleLabel
             // 
             titleLabel.AutoSize = true;
-            titleLabel.Location = new Point(13, 16);
+            titleLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            titleLabel.Location = new Point(13, 24);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(98, 15);
+            titleLabel.Size = new Size(254, 20);
             titleLabel.TabIndex = 8;
-            titleLabel.Text = "Gestionar Vuelos:";
+            titleLabel.Text = "Gestionar los vuelos del itinerario N°:";
+            titleLabel.Click += titleLabel_Click;
             // 
             // modificarItinerarioBox
             // 
             modificarItinerarioBox.Controls.Add(vuelosAgregadosListView);
             modificarItinerarioBox.Controls.Add(agregarProductoBtn);
             modificarItinerarioBox.Controls.Add(quitarProductoBtn);
-            modificarItinerarioBox.Location = new Point(339, 453);
+            modificarItinerarioBox.Location = new Point(339, 472);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
             modificarItinerarioBox.Size = new Size(896, 223);
             modificarItinerarioBox.TabIndex = 27;
@@ -473,10 +476,10 @@
             // 
             vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader5, columnHeader6, columnHeader7, columnHeader16, columnHeader17, columnHeader18, columnHeader15, columnHeader19, columnHeader20, columnHeader21 });
             vuelosAgregadosListView.FullRowSelect = true;
-            vuelosAgregadosListView.Location = new Point(11, 50);
+            vuelosAgregadosListView.Location = new Point(11, 54);
             vuelosAgregadosListView.MultiSelect = false;
             vuelosAgregadosListView.Name = "vuelosAgregadosListView";
-            vuelosAgregadosListView.Size = new Size(867, 167);
+            vuelosAgregadosListView.Size = new Size(867, 153);
             vuelosAgregadosListView.TabIndex = 25;
             vuelosAgregadosListView.UseCompatibleStateImageBehavior = false;
             vuelosAgregadosListView.View = View.Details;
@@ -540,29 +543,31 @@
             // agregarProductoBtn
             // 
             agregarProductoBtn.Enabled = false;
-            agregarProductoBtn.Location = new Point(460, 16);
+            agregarProductoBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            agregarProductoBtn.Location = new Point(460, 18);
             agregarProductoBtn.Name = "agregarProductoBtn";
             agregarProductoBtn.Size = new Size(128, 28);
             agregarProductoBtn.TabIndex = 23;
-            agregarProductoBtn.Text = "Agregar vuelo vvv";
+            agregarProductoBtn.Text = "Agregar vuelo  ↓";
             agregarProductoBtn.UseVisualStyleBackColor = true;
             agregarProductoBtn.Click += agregarProductoBtn_Click;
             // 
             // quitarProductoBtn
             // 
             quitarProductoBtn.Enabled = false;
-            quitarProductoBtn.Location = new Point(291, 16);
+            quitarProductoBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            quitarProductoBtn.Location = new Point(291, 18);
             quitarProductoBtn.Name = "quitarProductoBtn";
             quitarProductoBtn.Size = new Size(139, 28);
             quitarProductoBtn.TabIndex = 22;
-            quitarProductoBtn.Text = "Quitar vuelo ^^^";
+            quitarProductoBtn.Text = "Quitar vuelo  ↑";
             quitarProductoBtn.UseVisualStyleBackColor = true;
             quitarProductoBtn.Click += quitarProductoBtn_Click;
             // 
             // vuelosIdaBox
             // 
             vuelosIdaBox.Controls.Add(vuelosIdaListView);
-            vuelosIdaBox.Location = new Point(339, 132);
+            vuelosIdaBox.Location = new Point(339, 151);
             vuelosIdaBox.Name = "vuelosIdaBox";
             vuelosIdaBox.Size = new Size(896, 150);
             vuelosIdaBox.TabIndex = 28;
@@ -630,7 +635,7 @@
             // vueltaBox
             // 
             vueltaBox.Controls.Add(vuelosVueltaListView);
-            vueltaBox.Location = new Point(339, 292);
+            vueltaBox.Location = new Point(339, 311);
             vueltaBox.Name = "vueltaBox";
             vueltaBox.Size = new Size(896, 146);
             vueltaBox.TabIndex = 29;
@@ -697,7 +702,7 @@
             // 
             // volverBtn
             // 
-            volverBtn.Location = new Point(1128, 699);
+            volverBtn.Location = new Point(1128, 16);
             volverBtn.Name = "volverBtn";
             volverBtn.Size = new Size(89, 38);
             volverBtn.TabIndex = 30;
@@ -713,7 +718,7 @@
             pasajerosEnBusquedaBox.Controls.Add(label13);
             pasajerosEnBusquedaBox.Controls.Add(label14);
             pasajerosEnBusquedaBox.Controls.Add(label12);
-            pasajerosEnBusquedaBox.Location = new Point(339, 49);
+            pasajerosEnBusquedaBox.Location = new Point(339, 68);
             pasajerosEnBusquedaBox.Margin = new Padding(2);
             pasajerosEnBusquedaBox.Name = "pasajerosEnBusquedaBox";
             pasajerosEnBusquedaBox.Padding = new Padding(2);
@@ -784,7 +789,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1249, 763);
+            ClientSize = new Size(1249, 728);
             Controls.Add(pasajerosEnBusquedaBox);
             Controls.Add(volverBtn);
             Controls.Add(vueltaBox);

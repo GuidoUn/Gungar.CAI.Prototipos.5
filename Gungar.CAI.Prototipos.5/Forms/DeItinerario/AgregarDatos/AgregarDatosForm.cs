@@ -271,7 +271,7 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             model.PasajeroItinerarioSeleccionado = (Pasajero)pasajerosItinerarioListView.SelectedItems[0].Tag;
-            pasajeroLabel.Text = model.PasajeroItinerarioSeleccionado.Nombre+ " " +model.PasajeroItinerarioSeleccionado.Apellido + "-" + model.PasajeroItinerarioSeleccionado.Documento;
+            pasajeroLabel.Text = model.PasajeroItinerarioSeleccionado.Nombre + " " + model.PasajeroItinerarioSeleccionado.Apellido + "-" + model.PasajeroItinerarioSeleccionado.Documento;
             evaluarVisibilidadBtns();
             evaluarTextosDeSeleccion();
         }
