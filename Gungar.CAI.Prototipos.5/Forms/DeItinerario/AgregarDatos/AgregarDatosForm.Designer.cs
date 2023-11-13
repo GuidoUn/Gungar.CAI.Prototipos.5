@@ -73,6 +73,7 @@
             productoLabel = new Label();
             pasajeroLabel = new Label();
             label4 = new Label();
+            label3 = new Label();
             datosPasajerosGroupBox.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -89,7 +90,7 @@
             datosPasajerosGroupBox.Controls.Add(label1);
             datosPasajerosGroupBox.Controls.Add(nombreLabel);
             datosPasajerosGroupBox.Controls.Add(apellidoTextBox);
-            datosPasajerosGroupBox.Location = new Point(60, 111);
+            datosPasajerosGroupBox.Location = new Point(60, 82);
             datosPasajerosGroupBox.Margin = new Padding(3, 2, 3, 2);
             datosPasajerosGroupBox.Name = "datosPasajerosGroupBox";
             datosPasajerosGroupBox.Padding = new Padding(3, 2, 3, 2);
@@ -193,7 +194,7 @@
             groupBox2.Controls.Add(eliminarPasajeroBtn);
             groupBox2.Controls.Add(pasajerosItinerarioListView);
             groupBox2.Controls.Add(editarPasajeroBtn);
-            groupBox2.Location = new Point(569, 111);
+            groupBox2.Location = new Point(569, 82);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 2, 3, 2);
@@ -284,7 +285,7 @@
             // 
             quitarAsignacionBtn.Enabled = false;
             quitarAsignacionBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            quitarAsignacionBtn.Location = new Point(369, 520);
+            quitarAsignacionBtn.Location = new Point(370, 533);
             quitarAsignacionBtn.Margin = new Padding(3, 2, 3, 2);
             quitarAsignacionBtn.Name = "quitarAsignacionBtn";
             quitarAsignacionBtn.Size = new Size(208, 31);
@@ -295,7 +296,7 @@
             // 
             // confirmarBtn
             // 
-            confirmarBtn.Location = new Point(1021, 726);
+            confirmarBtn.Location = new Point(1021, 717);
             confirmarBtn.Name = "confirmarBtn";
             confirmarBtn.Size = new Size(116, 39);
             confirmarBtn.TabIndex = 27;
@@ -307,7 +308,7 @@
             // 
             productosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader5, columnHeader13, columnHeader14 });
             productosAgregadosListView.FullRowSelect = true;
-            productosAgregadosListView.Location = new Point(66, 379);
+            productosAgregadosListView.Location = new Point(66, 399);
             productosAgregadosListView.MultiSelect = false;
             productosAgregadosListView.Name = "productosAgregadosListView";
             productosAgregadosListView.Size = new Size(1071, 119);
@@ -365,7 +366,7 @@
             // 
             asignarBtn.Enabled = false;
             asignarBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            asignarBtn.Location = new Point(609, 520);
+            asignarBtn.Location = new Point(610, 533);
             asignarBtn.Margin = new Padding(3, 2, 3, 2);
             asignarBtn.Name = "asignarBtn";
             asignarBtn.Size = new Size(216, 31);
@@ -415,7 +416,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(pasajerosProductoListView);
-            groupBox1.Location = new Point(60, 575);
+            groupBox1.Location = new Point(60, 568);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
@@ -427,7 +428,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(66, 357);
+            label2.Location = new Point(66, 369);
             label2.Name = "label2";
             label2.Size = new Size(131, 15);
             label2.TabIndex = 31;
@@ -436,7 +437,7 @@
             // productoLabel
             // 
             productoLabel.AutoSize = true;
-            productoLabel.Location = new Point(203, 357);
+            productoLabel.Location = new Point(203, 369);
             productoLabel.Name = "productoLabel";
             productoLabel.Size = new Size(84, 15);
             productoLabel.TabIndex = 32;
@@ -445,7 +446,7 @@
             // pasajeroLabel
             // 
             pasajeroLabel.AutoSize = true;
-            pasajeroLabel.Location = new Point(707, 90);
+            pasajeroLabel.Location = new Point(198, 345);
             pasajeroLabel.Name = "pasajeroLabel";
             pasajeroLabel.Size = new Size(79, 15);
             pasajeroLabel.TabIndex = 34;
@@ -454,11 +455,22 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(575, 90);
+            label4.Location = new Point(66, 345);
             label4.Name = "label4";
             label4.Size = new Size(126, 15);
             label4.TabIndex = 33;
             label4.Text = "Pasajero seleccionado:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(66, 320);
+            label3.Name = "label3";
+            label3.Size = new Size(231, 17);
+            label3.TabIndex = 35;
+            label3.Text = "Seleccione un pasajero y un producto:";
+            label3.Click += label3_Click;
             // 
             // AgregarDatosForm
             // 
@@ -466,6 +478,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1167, 785);
+            Controls.Add(label3);
             Controls.Add(pasajeroLabel);
             Controls.Add(label4);
             Controls.Add(productoLabel);
@@ -553,5 +566,6 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader codigoHeader;
         private ColumnHeader columnHeader5;
+        private Label label3;
     }
 }
