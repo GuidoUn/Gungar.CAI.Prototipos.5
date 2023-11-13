@@ -280,9 +280,9 @@
             // 
             // cancelarReservaBtn
             // 
-            cancelarReservaBtn.BackColor = Color.OrangeRed;
+            cancelarReservaBtn.BackColor = SystemColors.Control;
             cancelarReservaBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            cancelarReservaBtn.ForeColor = Color.White;
+            cancelarReservaBtn.ForeColor = SystemColors.ControlText;
             cancelarReservaBtn.Location = new Point(36, 663);
             cancelarReservaBtn.Name = "cancelarReservaBtn";
             cancelarReservaBtn.Size = new Size(174, 37);
