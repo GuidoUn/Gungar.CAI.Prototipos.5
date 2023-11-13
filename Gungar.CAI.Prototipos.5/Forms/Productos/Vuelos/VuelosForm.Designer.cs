@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            pasajerosEnBusquedaBox = new GroupBox();
+            infantesEnBusquedaLabel = new Label();
+            menoresEnBusquedaLabel = new Label();
+            adultosEnBusquedaLabel = new Label();
+            label13 = new Label();
+            label14 = new Label();
+            label12 = new Label();
             borrarFechasBtn = new Button();
             claseLabel = new Label();
             clasesCombo = new ComboBox();
@@ -36,7 +43,6 @@
             soloIdaCheckBox = new CheckBox();
             groupBox3 = new GroupBox();
             label3 = new Label();
-            label1 = new Label();
             label8 = new Label();
             hastaPreciosNumeric = new NumericUpDown();
             desdePreciosNumeric = new NumericUpDown();
@@ -100,14 +106,8 @@
             precioMenorVueltaHeader = new ColumnHeader();
             precioInfanteVueltaHeader = new ColumnHeader();
             volverBtn = new Button();
-            pasajerosEnBusquedaBox = new GroupBox();
-            infantesEnBusquedaLabel = new Label();
-            menoresEnBusquedaLabel = new Label();
-            adultosEnBusquedaLabel = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label12 = new Label();
             groupBox1.SuspendLayout();
+            pasajerosEnBusquedaBox.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).BeginInit();
             ((System.ComponentModel.ISupportInitialize)desdePreciosNumeric).BeginInit();
@@ -119,11 +119,11 @@
             modificarItinerarioBox.SuspendLayout();
             vuelosIdaBox.SuspendLayout();
             vueltaBox.SuspendLayout();
-            pasajerosEnBusquedaBox.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(pasajerosEnBusquedaBox);
             groupBox1.Controls.Add(borrarFechasBtn);
             groupBox1.Controls.Add(claseLabel);
             groupBox1.Controls.Add(clasesCombo);
@@ -146,6 +146,80 @@
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
+            // 
+            // pasajerosEnBusquedaBox
+            // 
+            pasajerosEnBusquedaBox.Controls.Add(infantesEnBusquedaLabel);
+            pasajerosEnBusquedaBox.Controls.Add(menoresEnBusquedaLabel);
+            pasajerosEnBusquedaBox.Controls.Add(adultosEnBusquedaLabel);
+            pasajerosEnBusquedaBox.Controls.Add(label13);
+            pasajerosEnBusquedaBox.Controls.Add(label14);
+            pasajerosEnBusquedaBox.Controls.Add(label12);
+            pasajerosEnBusquedaBox.Location = new Point(153, 243);
+            pasajerosEnBusquedaBox.Margin = new Padding(2);
+            pasajerosEnBusquedaBox.Name = "pasajerosEnBusquedaBox";
+            pasajerosEnBusquedaBox.Padding = new Padding(2);
+            pasajerosEnBusquedaBox.Size = new Size(141, 115);
+            pasajerosEnBusquedaBox.TabIndex = 31;
+            pasajerosEnBusquedaBox.TabStop = false;
+            pasajerosEnBusquedaBox.Text = "Pasajeros en Busqueda";
+            // 
+            // infantesEnBusquedaLabel
+            // 
+            infantesEnBusquedaLabel.AutoSize = true;
+            infantesEnBusquedaLabel.Location = new Point(62, 85);
+            infantesEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
+            infantesEnBusquedaLabel.Name = "infantesEnBusquedaLabel";
+            infantesEnBusquedaLabel.Size = new Size(142, 15);
+            infantesEnBusquedaLabel.TabIndex = 37;
+            infantesEnBusquedaLabel.Text = "infantesEnBusquedaLabel";
+            // 
+            // menoresEnBusquedaLabel
+            // 
+            menoresEnBusquedaLabel.AutoSize = true;
+            menoresEnBusquedaLabel.Location = new Point(61, 56);
+            menoresEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
+            menoresEnBusquedaLabel.Name = "menoresEnBusquedaLabel";
+            menoresEnBusquedaLabel.Size = new Size(146, 15);
+            menoresEnBusquedaLabel.TabIndex = 36;
+            menoresEnBusquedaLabel.Text = "menoresEnBusquedaLabel";
+            // 
+            // adultosEnBusquedaLabel
+            // 
+            adultosEnBusquedaLabel.AutoSize = true;
+            adultosEnBusquedaLabel.Location = new Point(61, 27);
+            adultosEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
+            adultosEnBusquedaLabel.Name = "adultosEnBusquedaLabel";
+            adultosEnBusquedaLabel.Size = new Size(139, 15);
+            adultosEnBusquedaLabel.TabIndex = 35;
+            adultosEnBusquedaLabel.Text = "adultosEnBusquedaLabel";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(3, 56);
+            label13.Name = "label13";
+            label13.Size = new Size(56, 15);
+            label13.TabIndex = 33;
+            label13.Text = "Menores:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(5, 27);
+            label14.Name = "label14";
+            label14.Size = new Size(51, 15);
+            label14.TabIndex = 32;
+            label14.Text = "Adultos:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(5, 85);
+            label12.Name = "label12";
+            label12.Size = new Size(52, 15);
+            label12.TabIndex = 34;
+            label12.Text = "Infantes:";
             // 
             // borrarFechasBtn
             // 
@@ -179,7 +253,7 @@
             // 
             aplicarFiltrosBtn.Enabled = false;
             aplicarFiltrosBtn.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            aplicarFiltrosBtn.Location = new Point(11, 565);
+            aplicarFiltrosBtn.Location = new Point(11, 564);
             aplicarFiltrosBtn.Name = "aplicarFiltrosBtn";
             aplicarFiltrosBtn.Size = new Size(283, 42);
             aplicarFiltrosBtn.TabIndex = 21;
@@ -202,7 +276,6 @@
             // groupBox3
             // 
             groupBox3.Controls.Add(label3);
-            groupBox3.Controls.Add(label1);
             groupBox3.Controls.Add(label8);
             groupBox3.Controls.Add(hastaPreciosNumeric);
             groupBox3.Controls.Add(desdePreciosNumeric);
@@ -223,15 +296,6 @@
             label3.Size = new Size(52, 15);
             label3.TabIndex = 29;
             label3.Text = "Infantes:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(64, -54);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 15);
-            label1.TabIndex = 25;
-            label1.Text = "Itinerario actual";
             // 
             // label8
             // 
@@ -286,37 +350,37 @@
             groupBox2.Controls.Add(label6);
             groupBox2.Location = new Point(11, 243);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(181, 115);
+            groupBox2.Size = new Size(137, 115);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cantidad de Pasajeros";
             // 
             // cantidadInfantesNumeric
             // 
-            cantidadInfantesNumeric.Location = new Point(71, 83);
+            cantidadInfantesNumeric.Location = new Point(75, 83);
             cantidadInfantesNumeric.Name = "cantidadInfantesNumeric";
-            cantidadInfantesNumeric.Size = new Size(92, 23);
+            cantidadInfantesNumeric.Size = new Size(57, 23);
             cantidadInfantesNumeric.TabIndex = 26;
             // 
             // cantidadMenoresNumeric
             // 
-            cantidadMenoresNumeric.Location = new Point(71, 54);
+            cantidadMenoresNumeric.Location = new Point(75, 54);
             cantidadMenoresNumeric.Name = "cantidadMenoresNumeric";
-            cantidadMenoresNumeric.Size = new Size(92, 23);
+            cantidadMenoresNumeric.Size = new Size(57, 23);
             cantidadMenoresNumeric.TabIndex = 25;
             // 
             // cantidadAdultosNumeric
             // 
-            cantidadAdultosNumeric.Location = new Point(71, 25);
+            cantidadAdultosNumeric.Location = new Point(75, 25);
             cantidadAdultosNumeric.Name = "cantidadAdultosNumeric";
-            cantidadAdultosNumeric.Size = new Size(92, 23);
+            cantidadAdultosNumeric.Size = new Size(57, 23);
             cantidadAdultosNumeric.TabIndex = 24;
             cantidadAdultosNumeric.ValueChanged += cantidadAdultosNumeric_ValueChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(14, 85);
+            label7.Location = new Point(6, 85);
             label7.Name = "label7";
             label7.Size = new Size(52, 15);
             label7.TabIndex = 18;
@@ -325,7 +389,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(14, 56);
+            label5.Location = new Point(6, 56);
             label5.Name = "label5";
             label5.Size = new Size(56, 15);
             label5.TabIndex = 15;
@@ -334,7 +398,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(14, 26);
+            label6.Location = new Point(7, 27);
             label6.Name = "label6";
             label6.Size = new Size(51, 15);
             label6.TabIndex = 14;
@@ -458,16 +522,15 @@
             titleLabel.Size = new Size(254, 20);
             titleLabel.TabIndex = 8;
             titleLabel.Text = "Gestionar los vuelos del itinerario N°:";
-            titleLabel.Click += titleLabel_Click;
             // 
             // modificarItinerarioBox
             // 
             modificarItinerarioBox.Controls.Add(vuelosAgregadosListView);
             modificarItinerarioBox.Controls.Add(agregarProductoBtn);
             modificarItinerarioBox.Controls.Add(quitarProductoBtn);
-            modificarItinerarioBox.Location = new Point(339, 472);
+            modificarItinerarioBox.Location = new Point(341, 484);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
-            modificarItinerarioBox.Size = new Size(896, 223);
+            modificarItinerarioBox.Size = new Size(896, 211);
             modificarItinerarioBox.TabIndex = 27;
             modificarItinerarioBox.TabStop = false;
             modificarItinerarioBox.Text = "Vuelos agregados al itinerario";
@@ -476,10 +539,10 @@
             // 
             vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader5, columnHeader6, columnHeader7, columnHeader16, columnHeader17, columnHeader18, columnHeader15, columnHeader19, columnHeader20, columnHeader21 });
             vuelosAgregadosListView.FullRowSelect = true;
-            vuelosAgregadosListView.Location = new Point(11, 54);
+            vuelosAgregadosListView.Location = new Point(6, 52);
             vuelosAgregadosListView.MultiSelect = false;
             vuelosAgregadosListView.Name = "vuelosAgregadosListView";
-            vuelosAgregadosListView.Size = new Size(867, 153);
+            vuelosAgregadosListView.Size = new Size(884, 153);
             vuelosAgregadosListView.TabIndex = 25;
             vuelosAgregadosListView.UseCompatibleStateImageBehavior = false;
             vuelosAgregadosListView.View = View.Details;
@@ -567,9 +630,9 @@
             // vuelosIdaBox
             // 
             vuelosIdaBox.Controls.Add(vuelosIdaListView);
-            vuelosIdaBox.Location = new Point(339, 151);
+            vuelosIdaBox.Location = new Point(341, 70);
             vuelosIdaBox.Name = "vuelosIdaBox";
-            vuelosIdaBox.Size = new Size(896, 150);
+            vuelosIdaBox.Size = new Size(896, 196);
             vuelosIdaBox.TabIndex = 28;
             vuelosIdaBox.TabStop = false;
             vuelosIdaBox.Text = "Vuelos de ida";
@@ -578,10 +641,10 @@
             // 
             vuelosIdaListView.Columns.AddRange(new ColumnHeader[] { aerolineaHeader, origenHeader, destinoHeader, fechaSalidaHeader, duracionHeader, claseHeader, precioAdultoHeader, precioMenorHeader, precioInfanteHeader });
             vuelosIdaListView.FullRowSelect = true;
-            vuelosIdaListView.Location = new Point(11, 22);
+            vuelosIdaListView.Location = new Point(6, 22);
             vuelosIdaListView.MultiSelect = false;
             vuelosIdaListView.Name = "vuelosIdaListView";
-            vuelosIdaListView.Size = new Size(867, 117);
+            vuelosIdaListView.Size = new Size(884, 163);
             vuelosIdaListView.TabIndex = 24;
             vuelosIdaListView.UseCompatibleStateImageBehavior = false;
             vuelosIdaListView.View = View.Details;
@@ -635,9 +698,9 @@
             // vueltaBox
             // 
             vueltaBox.Controls.Add(vuelosVueltaListView);
-            vueltaBox.Location = new Point(339, 311);
+            vueltaBox.Location = new Point(341, 272);
             vueltaBox.Name = "vueltaBox";
-            vueltaBox.Size = new Size(896, 146);
+            vueltaBox.Size = new Size(896, 194);
             vueltaBox.TabIndex = 29;
             vueltaBox.TabStop = false;
             vueltaBox.Text = "Vuelos de vuelta";
@@ -646,10 +709,10 @@
             // 
             vuelosVueltaListView.Columns.AddRange(new ColumnHeader[] { aerolineaVueltaHeader, origenVueltaHeader, destinoVueltaHeader, fechaSalidaVueltaHeader, duracionVueltaHeader, claseVueltaHeader, precioAdultoVueltaHeader, precioMenorVueltaHeader, precioInfanteVueltaHeader });
             vuelosVueltaListView.FullRowSelect = true;
-            vuelosVueltaListView.Location = new Point(11, 22);
+            vuelosVueltaListView.Location = new Point(6, 22);
             vuelosVueltaListView.MultiSelect = false;
             vuelosVueltaListView.Name = "vuelosVueltaListView";
-            vuelosVueltaListView.Size = new Size(867, 110);
+            vuelosVueltaListView.Size = new Size(884, 158);
             vuelosVueltaListView.TabIndex = 25;
             vuelosVueltaListView.UseCompatibleStateImageBehavior = false;
             vuelosVueltaListView.View = View.Details;
@@ -710,87 +773,12 @@
             volverBtn.UseVisualStyleBackColor = true;
             volverBtn.Click += volverBtn_Click;
             // 
-            // pasajerosEnBusquedaBox
-            // 
-            pasajerosEnBusquedaBox.Controls.Add(infantesEnBusquedaLabel);
-            pasajerosEnBusquedaBox.Controls.Add(menoresEnBusquedaLabel);
-            pasajerosEnBusquedaBox.Controls.Add(adultosEnBusquedaLabel);
-            pasajerosEnBusquedaBox.Controls.Add(label13);
-            pasajerosEnBusquedaBox.Controls.Add(label14);
-            pasajerosEnBusquedaBox.Controls.Add(label12);
-            pasajerosEnBusquedaBox.Location = new Point(339, 68);
-            pasajerosEnBusquedaBox.Margin = new Padding(2);
-            pasajerosEnBusquedaBox.Name = "pasajerosEnBusquedaBox";
-            pasajerosEnBusquedaBox.Padding = new Padding(2);
-            pasajerosEnBusquedaBox.Size = new Size(231, 78);
-            pasajerosEnBusquedaBox.TabIndex = 31;
-            pasajerosEnBusquedaBox.TabStop = false;
-            pasajerosEnBusquedaBox.Text = "Pasajeros En Busqueda";
-            // 
-            // infantesEnBusquedaLabel
-            // 
-            infantesEnBusquedaLabel.AutoSize = true;
-            infantesEnBusquedaLabel.Location = new Point(64, 48);
-            infantesEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
-            infantesEnBusquedaLabel.Name = "infantesEnBusquedaLabel";
-            infantesEnBusquedaLabel.Size = new Size(142, 15);
-            infantesEnBusquedaLabel.TabIndex = 37;
-            infantesEnBusquedaLabel.Text = "infantesEnBusquedaLabel";
-            // 
-            // menoresEnBusquedaLabel
-            // 
-            menoresEnBusquedaLabel.AutoSize = true;
-            menoresEnBusquedaLabel.Location = new Point(64, 33);
-            menoresEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
-            menoresEnBusquedaLabel.Name = "menoresEnBusquedaLabel";
-            menoresEnBusquedaLabel.Size = new Size(146, 15);
-            menoresEnBusquedaLabel.TabIndex = 36;
-            menoresEnBusquedaLabel.Text = "menoresEnBusquedaLabel";
-            // 
-            // adultosEnBusquedaLabel
-            // 
-            adultosEnBusquedaLabel.AutoSize = true;
-            adultosEnBusquedaLabel.Location = new Point(64, 16);
-            adultosEnBusquedaLabel.Margin = new Padding(2, 0, 2, 0);
-            adultosEnBusquedaLabel.Name = "adultosEnBusquedaLabel";
-            adultosEnBusquedaLabel.Size = new Size(139, 15);
-            adultosEnBusquedaLabel.TabIndex = 35;
-            adultosEnBusquedaLabel.Text = "adultosEnBusquedaLabel";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(5, 33);
-            label13.Name = "label13";
-            label13.Size = new Size(56, 15);
-            label13.TabIndex = 33;
-            label13.Text = "Menores:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(5, 16);
-            label14.Name = "label14";
-            label14.Size = new Size(51, 15);
-            label14.TabIndex = 32;
-            label14.Text = "Adultos:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(5, 48);
-            label12.Name = "label12";
-            label12.Size = new Size(52, 15);
-            label12.TabIndex = 34;
-            label12.Text = "Infantes:";
-            // 
             // VuelosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1249, 728);
-            Controls.Add(pasajerosEnBusquedaBox);
             Controls.Add(volverBtn);
             Controls.Add(vueltaBox);
             Controls.Add(vuelosIdaBox);
@@ -803,6 +791,8 @@
             Load += VuelosForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            pasajerosEnBusquedaBox.ResumeLayout(false);
+            pasajerosEnBusquedaBox.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)hastaPreciosNumeric).EndInit();
@@ -817,8 +807,6 @@
             modificarItinerarioBox.ResumeLayout(false);
             vuelosIdaBox.ResumeLayout(false);
             vueltaBox.ResumeLayout(false);
-            pasajerosEnBusquedaBox.ResumeLayout(false);
-            pasajerosEnBusquedaBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -831,7 +819,6 @@
         private Button aplicarFiltrosBtn;
         private CheckBox soloIdaCheckBox;
         private GroupBox groupBox3;
-        private Label label1;
         private NumericUpDown hastaPreciosNumeric;
         private NumericUpDown desdePreciosNumeric;
         private Label label9;
