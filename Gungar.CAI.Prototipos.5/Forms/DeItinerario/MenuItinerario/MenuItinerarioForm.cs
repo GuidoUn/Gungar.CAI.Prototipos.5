@@ -109,7 +109,7 @@ namespace Gungar.CAI.Prototipos._5
                 refrescar();
             }
 
-            DialogResult confirmar = MessageBox.Show("Esta seguro de que desea confirmar la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult confirmar = MessageBox.Show("¿Estás seguro que deseas confirmar la reserva?", "Confirmar reserva", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
                 model.GenerarReserva();
@@ -126,7 +126,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void cancelarReservaBtn_Click(object sender, EventArgs e)
         {
-            DialogResult confirmar = MessageBox.Show("Esta seguro de que desea CANCELAR la reserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult confirmar = MessageBox.Show("¿Estás seguro que deseas cancelar la reserva?", "Cancelar reserva", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
                 model.CancelarItinerario();
