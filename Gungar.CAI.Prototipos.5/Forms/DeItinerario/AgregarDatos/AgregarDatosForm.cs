@@ -223,7 +223,7 @@ namespace Gungar.CAI.Prototipos._5
 
                 return;
             }
-            DialogResult confirmar = MessageBox.Show("Desea confirmar la prereserva?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult confirmar = MessageBox.Show("¿Desea confirmar la pre-reserva?", "Confirmar pre-reserva", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
                 model.Itinerario.GenerarPrereserva();
@@ -295,7 +295,7 @@ namespace Gungar.CAI.Prototipos._5
             model.EditandoPasajero = !model.EditandoPasajero;
             if (model.EditandoPasajero)
             {
-                editarPasajeroBtn.Text = "Cancelar Edicion";
+                editarPasajeroBtn.Text = "Cancelar edición";
                 nombreTextBox.Text = model.PasajeroItinerarioSeleccionado.Nombre;
                 apellidoTextBox.Text = model.PasajeroItinerarioSeleccionado.Apellido;
                 DNITextBox.Text = model.PasajeroItinerarioSeleccionado.Documento;
