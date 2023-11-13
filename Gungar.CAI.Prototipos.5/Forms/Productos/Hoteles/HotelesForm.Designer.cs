@@ -355,9 +355,11 @@
             // modificarItinerarioBox
             // 
             modificarItinerarioBox.Controls.Add(hotelesAgregadosListView);
-            modificarItinerarioBox.Location = new Point(343, 387);
+            modificarItinerarioBox.Controls.Add(agregarProductoBtn);
+            modificarItinerarioBox.Controls.Add(quitarHotelBtn);
+            modificarItinerarioBox.Location = new Point(343, 339);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
-            modificarItinerarioBox.Size = new Size(1062, 223);
+            modificarItinerarioBox.Size = new Size(1062, 271);
             modificarItinerarioBox.TabIndex = 27;
             modificarItinerarioBox.TabStop = false;
             modificarItinerarioBox.Enter += modificarItinerarioBox_Enter;
@@ -366,9 +368,9 @@
             // 
             hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
             hotelesAgregadosListView.FullRowSelect = true;
-            hotelesAgregadosListView.Location = new Point(7, 18);
+            hotelesAgregadosListView.Location = new Point(11, 66);
             hotelesAgregadosListView.Name = "hotelesAgregadosListView";
-            hotelesAgregadosListView.Size = new Size(1050, 192);
+            hotelesAgregadosListView.Size = new Size(1045, 192);
             hotelesAgregadosListView.TabIndex = 25;
             hotelesAgregadosListView.UseCompatibleStateImageBehavior = false;
             hotelesAgregadosListView.View = View.Details;
@@ -427,9 +429,9 @@
             // 
             // agregarProductoBtn
             // 
-            agregarProductoBtn.Location = new Point(906, 358);
+            agregarProductoBtn.Location = new Point(559, 19);
             agregarProductoBtn.Name = "agregarProductoBtn";
-            agregarProductoBtn.Size = new Size(138, 23);
+            agregarProductoBtn.Size = new Size(138, 29);
             agregarProductoBtn.TabIndex = 23;
             agregarProductoBtn.Text = "Agregar hotel v v v";
             agregarProductoBtn.UseVisualStyleBackColor = true;
@@ -437,9 +439,9 @@
             // 
             // quitarHotelBtn
             // 
-            quitarHotelBtn.Location = new Point(713, 358);
+            quitarHotelBtn.Location = new Point(396, 19);
             quitarHotelBtn.Name = "quitarHotelBtn";
-            quitarHotelBtn.Size = new Size(135, 23);
+            quitarHotelBtn.Size = new Size(135, 29);
             quitarHotelBtn.TabIndex = 22;
             quitarHotelBtn.Text = "Quitar hotel ^^^";
             quitarHotelBtn.UseVisualStyleBackColor = true;
@@ -537,9 +539,9 @@
             pasajerosEnBusquedaBox.Controls.Add(label14);
             pasajerosEnBusquedaBox.Controls.Add(label12);
             pasajerosEnBusquedaBox.Location = new Point(350, 48);
-            pasajerosEnBusquedaBox.Margin = new Padding(2, 2, 2, 2);
+            pasajerosEnBusquedaBox.Margin = new Padding(2);
             pasajerosEnBusquedaBox.Name = "pasajerosEnBusquedaBox";
-            pasajerosEnBusquedaBox.Padding = new Padding(2, 2, 2, 2);
+            pasajerosEnBusquedaBox.Padding = new Padding(2);
             pasajerosEnBusquedaBox.Size = new Size(248, 78);
             pasajerosEnBusquedaBox.TabIndex = 32;
             pasajerosEnBusquedaBox.TabStop = false;
@@ -609,8 +611,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1427, 713);
             Controls.Add(pasajerosEnBusquedaBox);
-            Controls.Add(quitarHotelBtn);
-            Controls.Add(agregarProductoBtn);
             Controls.Add(volverBtn);
             Controls.Add(groupBox4);
             Controls.Add(modificarItinerarioBox);

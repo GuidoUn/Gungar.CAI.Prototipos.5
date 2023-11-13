@@ -460,9 +460,11 @@
             // modificarItinerarioBox
             // 
             modificarItinerarioBox.Controls.Add(vuelosAgregadosListView);
-            modificarItinerarioBox.Location = new Point(339, 483);
+            modificarItinerarioBox.Controls.Add(agregarProductoBtn);
+            modificarItinerarioBox.Controls.Add(quitarProductoBtn);
+            modificarItinerarioBox.Location = new Point(339, 453);
             modificarItinerarioBox.Name = "modificarItinerarioBox";
-            modificarItinerarioBox.Size = new Size(896, 193);
+            modificarItinerarioBox.Size = new Size(896, 223);
             modificarItinerarioBox.TabIndex = 27;
             modificarItinerarioBox.TabStop = false;
             modificarItinerarioBox.Text = "Vuelos agregados al itinerario";
@@ -471,10 +473,10 @@
             // 
             vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader5, columnHeader6, columnHeader7, columnHeader16, columnHeader17, columnHeader18, columnHeader15, columnHeader19, columnHeader20, columnHeader21 });
             vuelosAgregadosListView.FullRowSelect = true;
-            vuelosAgregadosListView.Location = new Point(11, 22);
+            vuelosAgregadosListView.Location = new Point(11, 50);
             vuelosAgregadosListView.MultiSelect = false;
             vuelosAgregadosListView.Name = "vuelosAgregadosListView";
-            vuelosAgregadosListView.Size = new Size(867, 161);
+            vuelosAgregadosListView.Size = new Size(867, 167);
             vuelosAgregadosListView.TabIndex = 25;
             vuelosAgregadosListView.UseCompatibleStateImageBehavior = false;
             vuelosAgregadosListView.View = View.Details;
@@ -538,7 +540,7 @@
             // agregarProductoBtn
             // 
             agregarProductoBtn.Enabled = false;
-            agregarProductoBtn.Location = new Point(810, 447);
+            agregarProductoBtn.Location = new Point(460, 16);
             agregarProductoBtn.Name = "agregarProductoBtn";
             agregarProductoBtn.Size = new Size(128, 28);
             agregarProductoBtn.TabIndex = 23;
@@ -549,7 +551,7 @@
             // quitarProductoBtn
             // 
             quitarProductoBtn.Enabled = false;
-            quitarProductoBtn.Location = new Point(653, 447);
+            quitarProductoBtn.Location = new Point(291, 16);
             quitarProductoBtn.Name = "quitarProductoBtn";
             quitarProductoBtn.Size = new Size(139, 28);
             quitarProductoBtn.TabIndex = 22;
@@ -784,9 +786,7 @@
             AutoScroll = true;
             ClientSize = new Size(1249, 763);
             Controls.Add(pasajerosEnBusquedaBox);
-            Controls.Add(agregarProductoBtn);
             Controls.Add(volverBtn);
-            Controls.Add(quitarProductoBtn);
             Controls.Add(vueltaBox);
             Controls.Add(vuelosIdaBox);
             Controls.Add(modificarItinerarioBox);

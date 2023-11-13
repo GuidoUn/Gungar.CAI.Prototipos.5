@@ -132,8 +132,8 @@
             // 
             // generarReservaBtn
             // 
-            generarReservaBtn.BackColor = Color.Green;
-            generarReservaBtn.ForeColor = Color.White;
+            generarReservaBtn.BackColor = SystemColors.Control;
+            generarReservaBtn.ForeColor = SystemColors.ControlText;
             generarReservaBtn.Location = new Point(15, 81);
             generarReservaBtn.Name = "generarReservaBtn";
             generarReservaBtn.Size = new Size(174, 34);
