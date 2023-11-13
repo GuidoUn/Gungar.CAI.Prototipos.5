@@ -48,16 +48,17 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(74, 113);
+            label2.Location = new Point(85, 151);
             label2.Name = "label2";
-            label2.Size = new Size(0, 15);
+            label2.Size = new Size(0, 20);
             label2.TabIndex = 19;
             // 
             // button1
             // 
-            button1.Location = new Point(800, 12);
+            button1.Location = new Point(914, 16);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(103, 33);
+            button1.Size = new Size(118, 44);
             button1.TabIndex = 20;
             button1.Text = "Volver";
             button1.UseVisualStyleBackColor = true;
@@ -66,9 +67,10 @@
             // continuarBtn
             // 
             continuarBtn.Enabled = false;
-            continuarBtn.Location = new Point(243, 594);
+            continuarBtn.Location = new Point(278, 792);
+            continuarBtn.Margin = new Padding(3, 4, 3, 4);
             continuarBtn.Name = "continuarBtn";
-            continuarBtn.Size = new Size(146, 34);
+            continuarBtn.Size = new Size(167, 45);
             continuarBtn.TabIndex = 21;
             continuarBtn.Text = "Consultar | Modificar";
             continuarBtn.UseVisualStyleBackColor = true;
@@ -77,27 +79,29 @@
             // parametroTextBox
             // 
             parametroTextBox.ForeColor = SystemColors.ActiveCaptionText;
-            parametroTextBox.Location = new Point(85, 88);
+            parametroTextBox.Location = new Point(97, 117);
+            parametroTextBox.Margin = new Padding(3, 4, 3, 4);
             parametroTextBox.Name = "parametroTextBox";
             parametroTextBox.PlaceholderText = "Número de itinerario, nombre, apellido o DNI";
-            parametroTextBox.Size = new Size(438, 23);
+            parametroTextBox.Size = new Size(500, 27);
             parametroTextBox.TabIndex = 24;
             // 
             // origenLabel
             // 
             origenLabel.AutoSize = true;
             origenLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            origenLabel.Location = new Point(85, 43);
+            origenLabel.Location = new Point(97, 57);
             origenLabel.Name = "origenLabel";
-            origenLabel.Size = new Size(220, 20);
+            origenLabel.Size = new Size(282, 25);
             origenLabel.TabIndex = 23;
             origenLabel.Text = "Consultar y modificar itinerarios";
             // 
             // filtrarBtn
             // 
-            filtrarBtn.Location = new Point(534, 87);
+            filtrarBtn.Location = new Point(610, 116);
+            filtrarBtn.Margin = new Padding(3, 4, 3, 4);
             filtrarBtn.Name = "filtrarBtn";
-            filtrarBtn.Size = new Size(103, 26);
+            filtrarBtn.Size = new Size(118, 35);
             filtrarBtn.TabIndex = 27;
             filtrarBtn.Text = "Buscar";
             filtrarBtn.UseVisualStyleBackColor = true;
@@ -107,10 +111,11 @@
             // 
             itinerariosListView.Columns.AddRange(new ColumnHeader[] { nroHeader, pasajeroHeader, documentoHeader, creacionHeader, estadoHeader });
             itinerariosListView.FullRowSelect = true;
-            itinerariosListView.Location = new Point(85, 136);
+            itinerariosListView.Location = new Point(97, 181);
+            itinerariosListView.Margin = new Padding(3, 4, 3, 4);
             itinerariosListView.MultiSelect = false;
             itinerariosListView.Name = "itinerariosListView";
-            itinerariosListView.Size = new Size(818, 399);
+            itinerariosListView.Size = new Size(934, 531);
             itinerariosListView.TabIndex = 10;
             itinerariosListView.UseCompatibleStateImageBehavior = false;
             itinerariosListView.View = View.Details;
@@ -144,27 +149,28 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(85, 561);
+            label4.Location = new Point(97, 748);
             label4.Name = "label4";
-            label4.Size = new Size(146, 15);
+            label4.Size = new Size(163, 20);
             label4.TabIndex = 12;
-            label4.Text = "Itinerario seleccionado N°:";
+            label4.Text = "Itinerario seleccionado:";
             // 
             // itinerarioSeleccionadoLabel
             // 
             itinerarioSeleccionadoLabel.AutoSize = true;
-            itinerarioSeleccionadoLabel.Location = new Point(235, 561);
+            itinerarioSeleccionadoLabel.Location = new Point(266, 748);
             itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
-            itinerarioSeleccionadoLabel.Size = new Size(152, 15);
+            itinerarioSeleccionadoLabel.Size = new Size(194, 20);
             itinerarioSeleccionadoLabel.TabIndex = 13;
             itinerarioSeleccionadoLabel.Text = "itinerarioSeleccionadoLabel";
             // 
             // eliminarItinerarioBtn
             // 
             eliminarItinerarioBtn.Enabled = false;
-            eliminarItinerarioBtn.Location = new Point(85, 594);
+            eliminarItinerarioBtn.Location = new Point(97, 792);
+            eliminarItinerarioBtn.Margin = new Padding(3, 4, 3, 4);
             eliminarItinerarioBtn.Name = "eliminarItinerarioBtn";
-            eliminarItinerarioBtn.Size = new Size(140, 34);
+            eliminarItinerarioBtn.Size = new Size(160, 45);
             eliminarItinerarioBtn.TabIndex = 28;
             eliminarItinerarioBtn.Text = "Eliminar Itinerario";
             eliminarItinerarioBtn.UseVisualStyleBackColor = true;
@@ -172,9 +178,9 @@
             // 
             // SeleccionItinerarioForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1007, 722);
+            ClientSize = new Size(1151, 963);
             Controls.Add(eliminarItinerarioBtn);
             Controls.Add(itinerarioSeleccionadoLabel);
             Controls.Add(filtrarBtn);
@@ -185,6 +191,7 @@
             Controls.Add(continuarBtn);
             Controls.Add(button1);
             Controls.Add(label2);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SeleccionItinerarioForm";
             Text = "SeleccionItinerarioForm";
             Load += SeleccionItinerarioForm_Load;
