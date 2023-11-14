@@ -142,10 +142,11 @@
             groupBox1.Controls.Add(idaDatePicker);
             groupBox1.Location = new Point(13, 68);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(309, 627);
+            groupBox1.Size = new Size(322, 627);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // pasajerosEnBusquedaBox
             // 
@@ -155,11 +156,11 @@
             pasajerosEnBusquedaBox.Controls.Add(label13);
             pasajerosEnBusquedaBox.Controls.Add(label14);
             pasajerosEnBusquedaBox.Controls.Add(label12);
-            pasajerosEnBusquedaBox.Location = new Point(153, 243);
+            pasajerosEnBusquedaBox.Location = new Point(171, 243);
             pasajerosEnBusquedaBox.Margin = new Padding(2);
             pasajerosEnBusquedaBox.Name = "pasajerosEnBusquedaBox";
             pasajerosEnBusquedaBox.Padding = new Padding(2);
-            pasajerosEnBusquedaBox.Size = new Size(141, 115);
+            pasajerosEnBusquedaBox.Size = new Size(151, 115);
             pasajerosEnBusquedaBox.TabIndex = 31;
             pasajerosEnBusquedaBox.TabStop = false;
             pasajerosEnBusquedaBox.Text = "Pasajeros en Busqueda";
@@ -348,9 +349,9 @@
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(11, 243);
+            groupBox2.Location = new Point(6, 243);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(137, 115);
+            groupBox2.Size = new Size(160, 115);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cantidad de Pasajeros";
@@ -359,21 +360,21 @@
             // 
             cantidadInfantesNumeric.Location = new Point(75, 83);
             cantidadInfantesNumeric.Name = "cantidadInfantesNumeric";
-            cantidadInfantesNumeric.Size = new Size(57, 23);
+            cantidadInfantesNumeric.Size = new Size(76, 23);
             cantidadInfantesNumeric.TabIndex = 26;
             // 
             // cantidadMenoresNumeric
             // 
             cantidadMenoresNumeric.Location = new Point(75, 54);
             cantidadMenoresNumeric.Name = "cantidadMenoresNumeric";
-            cantidadMenoresNumeric.Size = new Size(57, 23);
+            cantidadMenoresNumeric.Size = new Size(76, 23);
             cantidadMenoresNumeric.TabIndex = 25;
             // 
             // cantidadAdultosNumeric
             // 
             cantidadAdultosNumeric.Location = new Point(75, 25);
             cantidadAdultosNumeric.Name = "cantidadAdultosNumeric";
-            cantidadAdultosNumeric.Size = new Size(57, 23);
+            cantidadAdultosNumeric.Size = new Size(76, 23);
             cantidadAdultosNumeric.TabIndex = 24;
             cantidadAdultosNumeric.ValueChanged += cantidadAdultosNumeric_ValueChanged;
             // 
