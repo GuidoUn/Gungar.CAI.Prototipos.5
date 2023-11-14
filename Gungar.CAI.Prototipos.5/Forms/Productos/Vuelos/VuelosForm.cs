@@ -211,14 +211,36 @@ namespace Gungar.CAI.Prototipos._5
 
         private void idaDatePicker_ValueChanged(object sender, EventArgs e)
         {
+            if(model?.FechaVueltaSeleccionada!=null && idaDatePicker.Value > model?.FechaVueltaSeleccionada.Value  )
+            {
+
+                vueltaDatePicker.Format = DateTimePickerFormat.Custom;
+                vueltaDatePicker.CustomFormat = " ";
+
+                model.FechaVueltaSeleccionada = null;
+                return;
+            }
+
             idaDatePicker.Format = DateTimePickerFormat.Short;
             model.FechaIdaSeleccionada = idaDatePicker.Value;
         }
 
         private void vueltaDatePicker_ValueChanged(object sender, EventArgs e)
         {
+            if (model.FechaIdaSeleccionada==null || vueltaDatePicker.Value < idaDatePicker.Value )   
+            {
+                MessageBox.Show("Seleccione primero la fecha de IDA, y asegúrese de que sea ANTERIOR a la fecha de vuelta", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                vueltaDatePicker.Format = DateTimePickerFormat.Custom;
+                vueltaDatePicker.CustomFormat = " ";
+
+                model.FechaVueltaSeleccionada = null;
+                return;
+               
+            }
+
             vueltaDatePicker.Format = DateTimePickerFormat.Short;
             model.FechaVueltaSeleccionada = vueltaDatePicker.Value;
+            
         }
 
         private void borrarFechasBtn_Click(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using Gungar.CAI.Prototipos._5.Modulos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,6 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
 
         public List<Pasajero> PasajerosItinerario { get; set; }
 
-        public bool EditandoPasajero = false;
 
         public IReservaProducto ProductoSeleccionado { get; set; }
         public AgregarDatosFormModel(Itinerario itinerario)
@@ -147,6 +147,11 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
 
             return _adulto == 0 && _menor == 0 && _infante==0 ;
 
+        }
+
+        public bool PasajeroExiste(string documento)
+        {
+            return PasajerosItinerario.Any(pasajero => pasajero.Documento == documento);
         }
     }
 }

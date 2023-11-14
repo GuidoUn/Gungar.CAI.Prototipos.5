@@ -44,5 +44,10 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
         {
             return VentasModulo.GetHotelesDisponibles(destino, cantidadAdultos, cantidadMenores, cantidadInfantes, calificacion, fechaDesde, fechaHasta, precioMinimo, precioMaximo);
         }
+
+        public bool EsFechaMayorALaIngresada(DateTime fecha1, DateTime fecha2)
+        {
+            return fecha1 >= fecha2;
+        }
     }
 }

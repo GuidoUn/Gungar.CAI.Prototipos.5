@@ -46,7 +46,6 @@
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
-            editarPasajeroBtn = new Button();
             itinerarioLabel = new Label();
             titleLabel = new Label();
             quitarAsignacionBtn = new Button();
@@ -197,22 +196,19 @@
             // 
             groupBox2.Controls.Add(eliminarPasajeroBtn);
             groupBox2.Controls.Add(pasajerosItinerarioListView);
-            groupBox2.Controls.Add(editarPasajeroBtn);
-            groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(620, 82);
+            groupBox2.Location = new Point(569, 82);
             groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 2, 3, 2);
             groupBox2.Size = new Size(527, 211);
             groupBox2.TabIndex = 24;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Lista de pasajeros";
-            groupBox2.Enter += groupBox2_Enter;
+            groupBox2.Text = "Pasajeros del itinerario";
             // 
             // eliminarPasajeroBtn
             // 
             eliminarPasajeroBtn.Enabled = false;
-            eliminarPasajeroBtn.Location = new Point(275, 168);
+            eliminarPasajeroBtn.Location = new Point(448, 177);
             eliminarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
             eliminarPasajeroBtn.Name = "eliminarPasajeroBtn";
             eliminarPasajeroBtn.Size = new Size(120, 31);
@@ -253,18 +249,6 @@
             // 
             columnHeader6.Text = "Fecha de nacimiento";
             columnHeader6.Width = 150;
-            // 
-            // editarPasajeroBtn
-            // 
-            editarPasajeroBtn.Enabled = false;
-            editarPasajeroBtn.Location = new Point(401, 168);
-            editarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
-            editarPasajeroBtn.Name = "editarPasajeroBtn";
-            editarPasajeroBtn.Size = new Size(116, 31);
-            editarPasajeroBtn.TabIndex = 30;
-            editarPasajeroBtn.Text = "Editar pasajero";
-            editarPasajeroBtn.UseVisualStyleBackColor = true;
-            editarPasajeroBtn.Click += editarPasajeroBtn_Click;
             // 
             // itinerarioLabel
             // 
@@ -476,8 +460,7 @@
             label3.Name = "label3";
             label3.Size = new Size(317, 17);
             label3.TabIndex = 35;
-            label3.Text = "2°: Seleccione un pasajero de la \"Lista de pasajeros\".";
-            label3.Click += label3_Click;
+            label3.Text = "Seleccione un pasajero y un producto:";
             // 
             // label5
             // 
@@ -504,8 +487,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1167, 785);
-            Controls.Add(label5);
+            ClientSize = new Size(1167, 749);
             Controls.Add(label3);
             Controls.Add(agregarPasajeroBtn);
             Controls.Add(pasajeroLabel);
@@ -584,7 +566,6 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader6;
         private GroupBox groupBox1;
-        private Button editarPasajeroBtn;
         private Label label2;
         private Label productoLabel;
         private Label pasajeroLabel;

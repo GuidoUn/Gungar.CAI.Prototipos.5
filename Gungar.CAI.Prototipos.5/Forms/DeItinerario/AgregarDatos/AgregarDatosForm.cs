@@ -144,27 +144,14 @@ namespace Gungar.CAI.Prototipos._5
             if (!Validador.ValidarCampoRequerido(apellidoTextBox, "Apellido")) return;
             if (!Validador.ValidarCampoRequerido(DNITextBox, "Documento")) return;
 
-            if (model.PasajerosItinerario.Any(pasajero => pasajero.Documento == DNITextBox.Text) && !model.EditandoPasajero)
+            if (model.PasajeroExiste(DNITextBox.Text))
             {
                 MessageBox.Show("El pasajero ya ha sido agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            if (model.PasajerosItinerario.Any(pasajero => pasajero.Documento == model.PasajeroItinerarioSeleccionado?.Documento) && model.EditandoPasajero)
-            {
-                var PasajeroAModificar = model.PasajerosItinerario.Find(pasajero => pasajero.Documento == model.PasajeroItinerarioSeleccionado?.Documento);
-                PasajeroAModificar.Documento = DNITextBox.Text;
-                PasajeroAModificar.Apellido = apellidoTextBox.Text;
-                PasajeroAModificar.Nombre = nombreTextBox.Text;
-                PasajeroAModificar.FechaNacimiento = fechaNacDatePicker.Value;
-                model.EditandoPasajero = false;
-                editarPasajeroBtn.Text = "Editar";
-            }
-            else
-            {
-                Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, fechaNacDatePicker.Value);
-                model.PasajerosItinerario.Add(nuevoPasajero);
-            }
+            Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, fechaNacDatePicker.Value);
+            model.PasajerosItinerario.Add(nuevoPasajero);
 
             poblarListaPasajeroPorProducto();
             vaciarCampos();
@@ -202,7 +189,6 @@ namespace Gungar.CAI.Prototipos._5
         private void evaluarVisibilidadBtns()
         {
             quitarAsignacionBtn.Enabled = model.PasajeroReservaProductoSeleccionado != null;
-            editarPasajeroBtn.Enabled = model.PasajeroItinerarioSeleccionado != null;
             eliminarPasajeroBtn.Enabled = model.PasajeroItinerarioSeleccionado != null;
 
             asignarBtn.Enabled = model.PasajeroItinerarioSeleccionado != null && model.ProductoSeleccionado != null;
@@ -237,7 +223,7 @@ namespace Gungar.CAI.Prototipos._5
             model.ProductoSeleccionado = (IReservaProducto)productosAgregadosListView.SelectedItems[0].Tag;
             if (model.ProductoSeleccionado is ReservaHotel reservaHotel)
             {
-                productoLabel.Text = reservaHotel.Hotel.Disponibilidad.Nombre;
+                productoLabel.Text =reservaHotel.Hotel.CodigoOferta;
             }
             else if (model.ProductoSeleccionado is ReservaVuelo reservaVuelo)
             {
@@ -255,7 +241,12 @@ namespace Gungar.CAI.Prototipos._5
 
         private void asignarBtn_Click(object sender, EventArgs e)
         {
-            if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado)) return;
+            if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado)) {
+                MessageBox.Show("El pasajero ya ha sido agregado al producto seleccionado", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                return;
+            } 
             model.ProductoSeleccionado.Pasajeros.Add(model.PasajeroItinerarioSeleccionado);
             model.PasajeroItinerarioSeleccionado = null;
             poblarListaPasajeroPorProducto();
@@ -271,7 +262,7 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             model.PasajeroItinerarioSeleccionado = (Pasajero)pasajerosItinerarioListView.SelectedItems[0].Tag;
-            pasajeroLabel.Text = model.PasajeroItinerarioSeleccionado.Nombre + " " + model.PasajeroItinerarioSeleccionado.Apellido + "-" + model.PasajeroItinerarioSeleccionado.Documento;
+            pasajeroLabel.Text = model.PasajeroItinerarioSeleccionado.Nombre + " " + model.PasajeroItinerarioSeleccionado.Apellido + " - " + model.PasajeroItinerarioSeleccionado.Documento;
             evaluarVisibilidadBtns();
             evaluarTextosDeSeleccion();
         }
@@ -288,30 +279,7 @@ namespace Gungar.CAI.Prototipos._5
             evaluarTextosDeSeleccion();
         }
 
-        private void editarPasajeroBtn_Click(object sender, EventArgs e)
-        {
-            if (model.PasajeroItinerarioSeleccionado == null) return;
 
-            model.EditandoPasajero = !model.EditandoPasajero;
-            if (model.EditandoPasajero)
-            {
-                editarPasajeroBtn.Text = "Cancelar edición";
-                nombreTextBox.Text = model.PasajeroItinerarioSeleccionado.Nombre;
-                apellidoTextBox.Text = model.PasajeroItinerarioSeleccionado.Apellido;
-                DNITextBox.Text = model.PasajeroItinerarioSeleccionado.Documento;
-                fechaNacDatePicker.Value = model.PasajeroItinerarioSeleccionado.FechaNacimiento;
-            }
-            else
-            {
-                editarPasajeroBtn.Text = "Editar";
-                vaciarCampos();
-
-
-            }
-
-
-            evaluarTextosDeSeleccion();
-        }
 
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
@@ -350,14 +318,6 @@ namespace Gungar.CAI.Prototipos._5
             }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

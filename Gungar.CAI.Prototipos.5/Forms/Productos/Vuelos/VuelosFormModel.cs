@@ -58,5 +58,10 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Vuelos
         {
             Itinerario?.QuitarReservaVuelo(vuelo);
         }
+
+        public bool FechasValidas(DateTime fechaAIngresar,DateTime fechaAComparar)
+        {
+            return fechaAIngresar >= fechaAComparar;
+        }
     }
 }

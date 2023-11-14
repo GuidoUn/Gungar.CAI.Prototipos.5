@@ -130,12 +130,25 @@ namespace Gungar.CAI.Prototipos._5
 
         private void desdeFechaDatePicker_ValueChanged(object sender, EventArgs e)
         {
+            if (model.EsFechaMayorALaIngresada( desdeFechaDatePicker.Value,model.HastaFechaSeleccionada))
+            {
+                model.HastaFechaSeleccionada = desdeFechaDatePicker.Value.AddDays(1);
+                hastaFechaDatePicker.Value = desdeFechaDatePicker.Value.AddDays(1);
+            }
             desdeFechaDatePicker.Format = DateTimePickerFormat.Short;
             model.DesdeFechaSeleccionada = desdeFechaDatePicker.Value;
         }
 
         private void hastaFechaDatePicker_ValueChanged(object sender, EventArgs e)
         {
+            if (model.EsFechaMayorALaIngresada(model.DesdeFechaSeleccionada, hastaFechaDatePicker.Value))
+            {
+                MessageBox.Show("Seleccione primero la fecha de IDA, y asegúrese de que sea ANTERIOR a la fecha de vuelta", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                model.HastaFechaSeleccionada = model.DesdeFechaSeleccionada.AddDays(1);
+                hastaFechaDatePicker.Value = model.DesdeFechaSeleccionada.AddDays(1);
+                return;
+
+            }
             hastaFechaDatePicker.Format = DateTimePickerFormat.Short;
             model.HastaFechaSeleccionada = hastaFechaDatePicker.Value;
         }
