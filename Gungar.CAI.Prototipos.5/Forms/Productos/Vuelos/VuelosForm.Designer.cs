@@ -140,9 +140,9 @@
             groupBox1.Controls.Add(origenLabel);
             groupBox1.Controls.Add(desdeDatePickerLabel);
             groupBox1.Controls.Add(idaDatePicker);
-            groupBox1.Location = new Point(13, 68);
+            groupBox1.Location = new Point(5, 68);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(322, 627);
+            groupBox1.Size = new Size(330, 627);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
