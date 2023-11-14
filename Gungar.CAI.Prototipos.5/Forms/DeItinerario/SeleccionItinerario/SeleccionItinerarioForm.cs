@@ -25,7 +25,7 @@ namespace Gungar.CAI.Prototipos._5
         private void SeleccionItinerarioForm_Load(object sender, EventArgs e)
         {
             model = new();
-            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
+            itinerarioSeleccionadoLabel.Text = "Por favor, seleccione un itinerario";
             refrescar();
         }
 
@@ -58,7 +58,7 @@ namespace Gungar.CAI.Prototipos._5
             {
                 model.ItinerarioSeleccionado = null;
                 evaluarEstadoBtns();
-                itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
+                itinerarioSeleccionadoLabel.Text = "Por favor, seleccione un itinerario";
                 return;
             }
 
@@ -85,20 +85,20 @@ namespace Gungar.CAI.Prototipos._5
         {
             model.ItinerarioSeleccionado = null;
             evaluarEstadoBtns();
-            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
+            itinerarioSeleccionadoLabel.Text = "Por favor, seleccione un itinerario";
             model.FiltrarItinerarios(parametroTextBox.Text);
             refrescar();
         }
 
         private void eliminarItinerarioBtn_Click(object sender, EventArgs e)
         {
-            var confirmar = MessageBox.Show("Esta seguro de que desea ELIMINAR el itinerario", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            var confirmar = MessageBox.Show("¿Estás seguro que deseas eliminar el itinerario?", "Eliminar itinerario", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
                 model.EliminarItinerarioSeleccionado();
             }
 
-            itinerarioSeleccionadoLabel.Text = "Por favor seleccione un itinerario";
+            itinerarioSeleccionadoLabel.Text = "Por favor, seleccione un itinerario";
             refrescar();
             evaluarEstadoBtns();
         }
