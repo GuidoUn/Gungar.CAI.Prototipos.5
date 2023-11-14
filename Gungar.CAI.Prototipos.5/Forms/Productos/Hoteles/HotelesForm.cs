@@ -130,7 +130,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void desdeFechaDatePicker_ValueChanged(object sender, EventArgs e)
         {
-            if (model.EsFechaMayorALaIngresada( desdeFechaDatePicker.Value,model.HastaFechaSeleccionada))
+            if (model.EsFechaMayorALaIngresada(desdeFechaDatePicker.Value, model.HastaFechaSeleccionada))
             {
                 model.HastaFechaSeleccionada = desdeFechaDatePicker.Value.AddDays(1);
                 hastaFechaDatePicker.Value = desdeFechaDatePicker.Value.AddDays(1);

@@ -36,7 +36,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             else
             {
-                itinerarioLabel.Text = model?.Itinerario?.Cliente?.GetNombreYApellido();
+                itinerarioLabel.Text = $"{model.Itinerario?.Cliente?.Nombre} ({model.Itinerario?.ItinerarioId})";
             }
 
             clasesCombo.SelectedItem = clasesCombo.Items[0];
@@ -211,7 +211,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void idaDatePicker_ValueChanged(object sender, EventArgs e)
         {
-            if(model?.FechaVueltaSeleccionada!=null && idaDatePicker.Value > model?.FechaVueltaSeleccionada.Value  )
+            if (model?.FechaVueltaSeleccionada != null && idaDatePicker.Value > model?.FechaVueltaSeleccionada.Value)
             {
 
                 vueltaDatePicker.Format = DateTimePickerFormat.Custom;
@@ -227,7 +227,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void vueltaDatePicker_ValueChanged(object sender, EventArgs e)
         {
-            if (model.FechaIdaSeleccionada==null || vueltaDatePicker.Value < idaDatePicker.Value )   
+            if (model.FechaIdaSeleccionada == null || vueltaDatePicker.Value < idaDatePicker.Value)
             {
                 MessageBox.Show("Seleccione primero la fecha de IDA, y asegúrese de que sea ANTERIOR a la fecha de vuelta", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 vueltaDatePicker.Format = DateTimePickerFormat.Custom;
@@ -235,12 +235,12 @@ namespace Gungar.CAI.Prototipos._5
 
                 model.FechaVueltaSeleccionada = null;
                 return;
-               
+
             }
 
             vueltaDatePicker.Format = DateTimePickerFormat.Short;
             model.FechaVueltaSeleccionada = vueltaDatePicker.Value;
-            
+
         }
 
         private void borrarFechasBtn_Click(object sender, EventArgs e)

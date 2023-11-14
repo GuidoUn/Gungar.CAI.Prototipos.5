@@ -42,9 +42,10 @@
             // 
             df.AutoSize = true;
             df.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            df.Location = new Point(209, 60);
+            df.Location = new Point(299, 100);
+            df.Margin = new Padding(4, 0, 4, 0);
             df.Name = "df";
-            df.Size = new Size(166, 28);
+            df.Size = new Size(250, 41);
             df.TabIndex = 2;
             df.Text = "Menu principal ⌂";
             df.Click += df_Click;
@@ -52,9 +53,10 @@
             // nuevoItinerarioBtn
             // 
             nuevoItinerarioBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            nuevoItinerarioBtn.Location = new Point(157, 118);
+            nuevoItinerarioBtn.Location = new Point(203, 197);
+            nuevoItinerarioBtn.Margin = new Padding(4, 5, 4, 5);
             nuevoItinerarioBtn.Name = "nuevoItinerarioBtn";
-            nuevoItinerarioBtn.Size = new Size(255, 37);
+            nuevoItinerarioBtn.Size = new Size(401, 62);
             nuevoItinerarioBtn.TabIndex = 8;
             nuevoItinerarioBtn.Text = "Crear nuevo itinerario";
             nuevoItinerarioBtn.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // continuarItinerarioBtn
             // 
             continuarItinerarioBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            continuarItinerarioBtn.Location = new Point(157, 161);
+            continuarItinerarioBtn.Location = new Point(203, 269);
+            continuarItinerarioBtn.Margin = new Padding(4, 5, 4, 5);
             continuarItinerarioBtn.Name = "continuarItinerarioBtn";
-            continuarItinerarioBtn.Size = new Size(255, 37);
+            continuarItinerarioBtn.Size = new Size(401, 62);
             continuarItinerarioBtn.TabIndex = 9;
             continuarItinerarioBtn.Text = "Continuar | Consultar itinerario existente";
             continuarItinerarioBtn.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // consultarVuelosBtn
             // 
             consultarVuelosBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            consultarVuelosBtn.Location = new Point(15, 24);
+            consultarVuelosBtn.Location = new Point(21, 40);
+            consultarVuelosBtn.Margin = new Padding(4, 5, 4, 5);
             consultarVuelosBtn.Name = "consultarVuelosBtn";
-            consultarVuelosBtn.Size = new Size(255, 37);
+            consultarVuelosBtn.Size = new Size(364, 62);
             consultarVuelosBtn.TabIndex = 10;
             consultarVuelosBtn.Text = "Vuelos";
             consultarVuelosBtn.UseVisualStyleBackColor = true;
@@ -85,9 +89,10 @@
             // consultarHotelesBtn
             // 
             consultarHotelesBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            consultarHotelesBtn.Location = new Point(15, 67);
+            consultarHotelesBtn.Location = new Point(21, 112);
+            consultarHotelesBtn.Margin = new Padding(4, 5, 4, 5);
             consultarHotelesBtn.Name = "consultarHotelesBtn";
-            consultarHotelesBtn.Size = new Size(255, 37);
+            consultarHotelesBtn.Size = new Size(364, 62);
             consultarHotelesBtn.TabIndex = 11;
             consultarHotelesBtn.Text = "Hoteles";
             consultarHotelesBtn.UseVisualStyleBackColor = true;
@@ -98,9 +103,11 @@
             consultasBox.Controls.Add(consultarVuelosBtn);
             consultasBox.Controls.Add(consultarHotelesBtn);
             consultasBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            consultasBox.Location = new Point(142, 227);
+            consultasBox.Location = new Point(203, 378);
+            consultasBox.Margin = new Padding(4, 5, 4, 5);
             consultasBox.Name = "consultasBox";
-            consultasBox.Size = new Size(281, 114);
+            consultasBox.Padding = new Padding(4, 5, 4, 5);
+            consultasBox.Size = new Size(401, 190);
             consultasBox.TabIndex = 12;
             consultasBox.TabStop = false;
             consultasBox.Text = "Consultar disponibilidad";
@@ -108,9 +115,10 @@
             // salirDelSistemaBtn
             // 
             salirDelSistemaBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            salirDelSistemaBtn.Location = new Point(464, 396);
+            salirDelSistemaBtn.Location = new Point(663, 660);
+            salirDelSistemaBtn.Margin = new Padding(4, 5, 4, 5);
             salirDelSistemaBtn.Name = "salirDelSistemaBtn";
-            salirDelSistemaBtn.Size = new Size(124, 31);
+            salirDelSistemaBtn.Size = new Size(177, 52);
             salirDelSistemaBtn.TabIndex = 13;
             salirDelSistemaBtn.Text = "Salir del sistema";
             salirDelSistemaBtn.UseVisualStyleBackColor = true;
@@ -118,14 +126,15 @@
             // 
             // MenuPrincipalForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(611, 448);
+            ClientSize = new Size(873, 747);
             Controls.Add(salirDelSistemaBtn);
             Controls.Add(consultasBox);
             Controls.Add(continuarItinerarioBtn);
             Controls.Add(nuevoItinerarioBtn);
             Controls.Add(df);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "MenuPrincipalForm";
             Text = "MenuPrincipal";
             Load += MenuPrincipalForm_Load;
