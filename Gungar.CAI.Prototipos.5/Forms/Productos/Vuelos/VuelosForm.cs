@@ -229,7 +229,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (model.FechaIdaSeleccionada == null || vueltaDatePicker.Value < idaDatePicker.Value)
             {
-                MessageBox.Show("Seleccione primero la fecha de IDA, y asegúrese de que sea ANTERIOR a la fecha de vuelta", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, primero seleccione la fecha de IDA, y luego asegúrese que sea ANTERIOR a la fecha de VUELTA.", "Seleccionar fecha", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 vueltaDatePicker.Format = DateTimePickerFormat.Custom;
                 vueltaDatePicker.CustomFormat = " ";
 

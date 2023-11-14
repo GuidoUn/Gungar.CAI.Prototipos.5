@@ -143,7 +143,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (model.EsFechaMayorALaIngresada(model.DesdeFechaSeleccionada, hastaFechaDatePicker.Value))
             {
-                MessageBox.Show("Seleccione primero la fecha de IDA, y asegúrese de que sea ANTERIOR a la fecha de vuelta", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, primero ingrese la fecha 'DESDE', y luego asegúrese que sea ANTERIOR a la fecha 'HASTA'.", "Seleccionar fecha", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 model.HastaFechaSeleccionada = model.DesdeFechaSeleccionada.AddDays(1);
                 hastaFechaDatePicker.Value = model.DesdeFechaSeleccionada.AddDays(1);
                 return;
