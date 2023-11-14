@@ -92,91 +92,86 @@
             datosPasajerosGroupBox.Controls.Add(nombreLabel);
             datosPasajerosGroupBox.Controls.Add(apellidoTextBox);
             datosPasajerosGroupBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            datosPasajerosGroupBox.Location = new Point(60, 82);
-            datosPasajerosGroupBox.Margin = new Padding(3, 2, 3, 2);
+            datosPasajerosGroupBox.Location = new Point(69, 109);
             datosPasajerosGroupBox.Name = "datosPasajerosGroupBox";
-            datosPasajerosGroupBox.Padding = new Padding(3, 2, 3, 2);
-            datosPasajerosGroupBox.Size = new Size(377, 211);
+            datosPasajerosGroupBox.Size = new Size(431, 281);
             datosPasajerosGroupBox.TabIndex = 0;
             datosPasajerosGroupBox.TabStop = false;
             datosPasajerosGroupBox.Text = "1°: Crear nuevo pasajero";
             // 
             // DNITextBox
             // 
-            DNITextBox.Location = new Point(15, 114);
-            DNITextBox.Margin = new Padding(3, 2, 3, 2);
+            DNITextBox.Location = new Point(17, 152);
             DNITextBox.Name = "DNITextBox";
-            DNITextBox.Size = new Size(152, 25);
+            DNITextBox.Size = new Size(173, 29);
             DNITextBox.TabIndex = 5;
             DNITextBox.KeyPress += documentoTextBox_KeyPress;
             // 
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new Point(187, 28);
+            apellidoLabel.Location = new Point(214, 37);
             apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new Size(56, 17);
+            apellidoLabel.Size = new Size(72, 23);
             apellidoLabel.TabIndex = 3;
             apellidoLabel.Text = "Apellido";
             // 
             // fechaNacDatePicker
             // 
-            fechaNacDatePicker.Location = new Point(15, 170);
+            fechaNacDatePicker.Location = new Point(17, 227);
+            fechaNacDatePicker.Margin = new Padding(3, 4, 3, 4);
             fechaNacDatePicker.Name = "fechaNacDatePicker";
-            fechaNacDatePicker.Size = new Size(215, 25);
+            fechaNacDatePicker.Size = new Size(245, 29);
             fechaNacDatePicker.TabIndex = 14;
             // 
             // nombreTextBox
             // 
-            nombreTextBox.Location = new Point(15, 52);
-            nombreTextBox.Margin = new Padding(3, 2, 3, 2);
+            nombreTextBox.Location = new Point(17, 69);
             nombreTextBox.Name = "nombreTextBox";
-            nombreTextBox.Size = new Size(132, 25);
+            nombreTextBox.Size = new Size(150, 29);
             nombreTextBox.TabIndex = 0;
             nombreTextBox.KeyPress += nombreTextBox_KeyPress;
             // 
             // DNILabel
             // 
-            DNILabel.Location = new Point(15, 93);
+            DNILabel.Location = new Point(17, 124);
             DNILabel.Name = "DNILabel";
-            DNILabel.Size = new Size(152, 30);
+            DNILabel.Size = new Size(208, 40);
             DNILabel.TabIndex = 6;
             DNILabel.Text = "Documento o Pasaporte";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 149);
+            label1.Location = new Point(17, 199);
             label1.Name = "label1";
-            label1.Size = new Size(127, 17);
+            label1.Size = new Size(168, 23);
             label1.TabIndex = 13;
             label1.Text = "Fecha de nacimiento";
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new Point(15, 28);
+            nombreLabel.Location = new Point(17, 37);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new Size(57, 17);
+            nombreLabel.Size = new Size(73, 23);
             nombreLabel.TabIndex = 1;
             nombreLabel.Text = "Nombre";
             // 
             // apellidoTextBox
             // 
-            apellidoTextBox.Location = new Point(187, 52);
-            apellidoTextBox.Margin = new Padding(3, 2, 3, 2);
+            apellidoTextBox.Location = new Point(214, 69);
             apellidoTextBox.Name = "apellidoTextBox";
-            apellidoTextBox.Size = new Size(132, 25);
+            apellidoTextBox.Size = new Size(150, 29);
             apellidoTextBox.TabIndex = 2;
             apellidoTextBox.KeyPress += apellidoTextBox_KeyPress;
             // 
             // agregarPasajeroBtn
             // 
             agregarPasajeroBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            agregarPasajeroBtn.Location = new Point(450, 170);
-            agregarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
+            agregarPasajeroBtn.Location = new Point(514, 227);
             agregarPasajeroBtn.Name = "agregarPasajeroBtn";
-            agregarPasajeroBtn.Size = new Size(147, 26);
+            agregarPasajeroBtn.Size = new Size(168, 35);
             agregarPasajeroBtn.TabIndex = 11;
             agregarPasajeroBtn.Text = "Guardar pasajero  →";
             agregarPasajeroBtn.UseVisualStyleBackColor = true;
@@ -185,9 +180,10 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(1023, 23);
+            button2.Location = new Point(1169, 31);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(114, 39);
+            button2.Size = new Size(130, 52);
             button2.TabIndex = 22;
             button2.Text = "Volver";
             button2.UseVisualStyleBackColor = true;
@@ -198,11 +194,9 @@
             groupBox2.Controls.Add(eliminarPasajeroBtn);
             groupBox2.Controls.Add(pasajerosItinerarioListView);
             groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(609, 82);
-            groupBox2.Margin = new Padding(3, 2, 3, 2);
+            groupBox2.Location = new Point(696, 109);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(3, 2, 3, 2);
-            groupBox2.Size = new Size(528, 211);
+            groupBox2.Size = new Size(603, 281);
             groupBox2.TabIndex = 24;
             groupBox2.TabStop = false;
             groupBox2.Text = "Lista de pasajeros";
@@ -210,10 +204,9 @@
             // eliminarPasajeroBtn
             // 
             eliminarPasajeroBtn.Enabled = false;
-            eliminarPasajeroBtn.Location = new Point(402, 170);
-            eliminarPasajeroBtn.Margin = new Padding(3, 2, 3, 2);
+            eliminarPasajeroBtn.Location = new Point(459, 227);
             eliminarPasajeroBtn.Name = "eliminarPasajeroBtn";
-            eliminarPasajeroBtn.Size = new Size(120, 31);
+            eliminarPasajeroBtn.Size = new Size(137, 41);
             eliminarPasajeroBtn.TabIndex = 35;
             eliminarPasajeroBtn.Text = "Eliminar pasajero";
             eliminarPasajeroBtn.UseVisualStyleBackColor = true;
@@ -223,10 +216,9 @@
             // 
             pasajerosItinerarioListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader6 });
             pasajerosItinerarioListView.FullRowSelect = true;
-            pasajerosItinerarioListView.Location = new Point(6, 28);
-            pasajerosItinerarioListView.Margin = new Padding(3, 2, 3, 2);
+            pasajerosItinerarioListView.Location = new Point(7, 37);
             pasajerosItinerarioListView.Name = "pasajerosItinerarioListView";
-            pasajerosItinerarioListView.Size = new Size(516, 130);
+            pasajerosItinerarioListView.Size = new Size(589, 172);
             pasajerosItinerarioListView.TabIndex = 24;
             pasajerosItinerarioListView.UseCompatibleStateImageBehavior = false;
             pasajerosItinerarioListView.View = View.Details;
@@ -256,9 +248,9 @@
             // 
             itinerarioLabel.AutoSize = true;
             itinerarioLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            itinerarioLabel.Location = new Point(332, 31);
+            itinerarioLabel.Location = new Point(379, 41);
             itinerarioLabel.Name = "itinerarioLabel";
-            itinerarioLabel.Size = new Size(105, 20);
+            itinerarioLabel.Size = new Size(134, 25);
             itinerarioLabel.TabIndex = 26;
             itinerarioLabel.Text = "itinerarioLabel";
             // 
@@ -266,9 +258,9 @@
             // 
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            titleLabel.Location = new Point(66, 31);
+            titleLabel.Location = new Point(75, 41);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(266, 20);
+            titleLabel.Size = new Size(337, 25);
             titleLabel.TabIndex = 25;
             titleLabel.Text = "Agregar los pasajeros del itinerario N°:";
             // 
@@ -276,10 +268,9 @@
             // 
             quitarAsignacionBtn.Enabled = false;
             quitarAsignacionBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            quitarAsignacionBtn.Location = new Point(370, 533);
-            quitarAsignacionBtn.Margin = new Padding(3, 2, 3, 2);
+            quitarAsignacionBtn.Location = new Point(423, 711);
             quitarAsignacionBtn.Name = "quitarAsignacionBtn";
-            quitarAsignacionBtn.Size = new Size(208, 31);
+            quitarAsignacionBtn.Size = new Size(238, 41);
             quitarAsignacionBtn.TabIndex = 15;
             quitarAsignacionBtn.Text = "Quitar pasajero del producto  ↑";
             quitarAsignacionBtn.UseVisualStyleBackColor = true;
@@ -288,9 +279,10 @@
             // confirmarBtn
             // 
             confirmarBtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            confirmarBtn.Location = new Point(1021, 725);
+            confirmarBtn.Location = new Point(1167, 967);
+            confirmarBtn.Margin = new Padding(3, 4, 3, 4);
             confirmarBtn.Name = "confirmarBtn";
-            confirmarBtn.Size = new Size(116, 39);
+            confirmarBtn.Size = new Size(133, 52);
             confirmarBtn.TabIndex = 27;
             confirmarBtn.Text = "Confirmar";
             confirmarBtn.UseVisualStyleBackColor = true;
@@ -300,10 +292,11 @@
             // 
             productosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12, columnHeader5, columnHeader13, columnHeader14 });
             productosAgregadosListView.FullRowSelect = true;
-            productosAgregadosListView.Location = new Point(66, 399);
+            productosAgregadosListView.Location = new Point(75, 532);
+            productosAgregadosListView.Margin = new Padding(3, 4, 3, 4);
             productosAgregadosListView.MultiSelect = false;
             productosAgregadosListView.Name = "productosAgregadosListView";
-            productosAgregadosListView.Size = new Size(1071, 119);
+            productosAgregadosListView.Size = new Size(1223, 157);
             productosAgregadosListView.TabIndex = 28;
             productosAgregadosListView.UseCompatibleStateImageBehavior = false;
             productosAgregadosListView.View = View.Details;
@@ -358,10 +351,9 @@
             // 
             asignarBtn.Enabled = false;
             asignarBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            asignarBtn.Location = new Point(610, 533);
-            asignarBtn.Margin = new Padding(3, 2, 3, 2);
+            asignarBtn.Location = new Point(697, 711);
             asignarBtn.Name = "asignarBtn";
-            asignarBtn.Size = new Size(216, 31);
+            asignarBtn.Size = new Size(247, 41);
             asignarBtn.TabIndex = 29;
             asignarBtn.Text = "Asignar pasasjero al producto  ↓";
             asignarBtn.UseVisualStyleBackColor = true;
@@ -371,10 +363,9 @@
             // 
             pasajerosProductoListView.Columns.AddRange(new ColumnHeader[] { codigoHeader, dniHeader, nombreHeader2, apellidoHeader2, fechaNacHeader2 });
             pasajerosProductoListView.FullRowSelect = true;
-            pasajerosProductoListView.Location = new Point(6, 20);
-            pasajerosProductoListView.Margin = new Padding(3, 2, 3, 2);
+            pasajerosProductoListView.Location = new Point(7, 27);
             pasajerosProductoListView.Name = "pasajerosProductoListView";
-            pasajerosProductoListView.Size = new Size(1071, 112);
+            pasajerosProductoListView.Size = new Size(1223, 148);
             pasajerosProductoListView.TabIndex = 24;
             pasajerosProductoListView.UseCompatibleStateImageBehavior = false;
             pasajerosProductoListView.View = View.Details;
@@ -409,11 +400,9 @@
             // 
             groupBox1.Controls.Add(pasajerosProductoListView);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(60, 568);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(69, 757);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(1088, 144);
+            groupBox1.Size = new Size(1243, 192);
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
             groupBox1.Text = "Pasajeros añadidos al producto";
@@ -423,9 +412,9 @@
             label2.AutoSize = true;
             label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(410, 343);
+            label2.Location = new Point(482, 457);
             label2.Name = "label2";
-            label2.Size = new Size(151, 17);
+            label2.Size = new Size(194, 23);
             label2.TabIndex = 31;
             label2.Text = "Producto seleccionado:";
             // 
@@ -434,9 +423,9 @@
             productoLabel.AutoSize = true;
             productoLabel.BackColor = SystemColors.Control;
             productoLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            productoLabel.Location = new Point(566, 343);
+            productoLabel.Location = new Point(675, 457);
             productoLabel.Name = "productoLabel";
-            productoLabel.Size = new Size(97, 17);
+            productoLabel.Size = new Size(127, 23);
             productoLabel.TabIndex = 32;
             productoLabel.Text = "productoLabel";
             // 
@@ -445,9 +434,9 @@
             pasajeroLabel.AutoSize = true;
             pasajeroLabel.BackColor = SystemColors.Control;
             pasajeroLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            pasajeroLabel.Location = new Point(567, 315);
+            pasajeroLabel.Location = new Point(675, 420);
             pasajeroLabel.Name = "pasajeroLabel";
-            pasajeroLabel.Size = new Size(93, 17);
+            pasajeroLabel.Size = new Size(120, 23);
             pasajeroLabel.TabIndex = 34;
             pasajeroLabel.Text = "pasajeroLabel";
             // 
@@ -456,9 +445,9 @@
             label4.AutoSize = true;
             label4.BackColor = SystemColors.Control;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(410, 315);
+            label4.Location = new Point(482, 420);
             label4.Name = "label4";
-            label4.Size = new Size(147, 17);
+            label4.Size = new Size(187, 23);
             label4.TabIndex = 33;
             label4.Text = "Pasajero seleccionado:";
             // 
@@ -466,9 +455,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(66, 315);
+            label3.Location = new Point(75, 420);
             label3.Name = "label3";
-            label3.Size = new Size(303, 17);
+            label3.Size = new Size(389, 23);
             label3.TabIndex = 35;
             label3.Text = "2°: Seleccione un pasajero de \"Lista de pasajeros\":";
             // 
@@ -485,9 +474,11 @@
             // groupBox3
             // 
             groupBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox3.Location = new Point(60, 378);
+            groupBox3.Location = new Point(69, 504);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(1087, 146);
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(1242, 195);
             groupBox3.TabIndex = 37;
             groupBox3.TabStop = false;
             groupBox3.Text = "Lista de productos";
@@ -496,18 +487,18 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(66, 343);
+            label6.Location = new Point(75, 457);
             label6.Name = "label6";
-            label6.Size = new Size(309, 17);
+            label6.Size = new Size(401, 23);
             label6.TabIndex = 38;
-            label6.Text = "3°: Seleccione un producto de \"Lista de productos\".";
+            label6.Text = "3°: Seleccione un producto de \"Lista de productos\":";
             // 
             // AgregarDatosForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1193, 814);
+            ClientSize = new Size(1363, 1085);
             Controls.Add(label6);
             Controls.Add(label3);
             Controls.Add(agregarPasajeroBtn);
@@ -526,7 +517,6 @@
             Controls.Add(groupBox2);
             Controls.Add(datosPasajerosGroupBox);
             Controls.Add(groupBox3);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "AgregarDatosForm";
             Text = "  ";
             Load += AgregarDatosForm_Load;

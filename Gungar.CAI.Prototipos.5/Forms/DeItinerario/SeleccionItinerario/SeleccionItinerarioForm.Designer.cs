@@ -180,6 +180,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(1151, 963);
             Controls.Add(eliminarItinerarioBtn);
             Controls.Add(itinerarioSeleccionadoLabel);
