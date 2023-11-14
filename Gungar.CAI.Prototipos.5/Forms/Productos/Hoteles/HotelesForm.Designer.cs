@@ -117,7 +117,7 @@
             groupBox1.Controls.Add(desdeFechaDatePicker);
             groupBox1.Location = new Point(12, 72);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(306, 562);
+            groupBox1.Size = new Size(325, 562);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
@@ -130,7 +130,7 @@
             pasajerosEnBusquedaBox.Controls.Add(label13);
             pasajerosEnBusquedaBox.Controls.Add(label14);
             pasajerosEnBusquedaBox.Controls.Add(label12);
-            pasajerosEnBusquedaBox.Location = new Point(148, 185);
+            pasajerosEnBusquedaBox.Location = new Point(168, 185);
             pasajerosEnBusquedaBox.Margin = new Padding(2);
             pasajerosEnBusquedaBox.Name = "pasajerosEnBusquedaBox";
             pasajerosEnBusquedaBox.Padding = new Padding(2);
@@ -295,7 +295,7 @@
             groupBox2.Controls.Add(label6);
             groupBox2.Location = new Point(6, 185);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(137, 106);
+            groupBox2.Size = new Size(157, 106);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cantidad de Pasajeros";
@@ -304,21 +304,21 @@
             // 
             cantidadInfantesNumeric.Location = new Point(63, 77);
             cantidadInfantesNumeric.Name = "cantidadInfantesNumeric";
-            cantidadInfantesNumeric.Size = new Size(68, 23);
+            cantidadInfantesNumeric.Size = new Size(88, 23);
             cantidadInfantesNumeric.TabIndex = 26;
             // 
             // cantidadMenoresNumeric
             // 
             cantidadMenoresNumeric.Location = new Point(63, 48);
             cantidadMenoresNumeric.Name = "cantidadMenoresNumeric";
-            cantidadMenoresNumeric.Size = new Size(68, 23);
+            cantidadMenoresNumeric.Size = new Size(88, 23);
             cantidadMenoresNumeric.TabIndex = 25;
             // 
             // cantidadAdultosNumeric
             // 
             cantidadAdultosNumeric.Location = new Point(63, 19);
             cantidadAdultosNumeric.Name = "cantidadAdultosNumeric";
-            cantidadAdultosNumeric.Size = new Size(68, 23);
+            cantidadAdultosNumeric.Size = new Size(88, 23);
             cantidadAdultosNumeric.TabIndex = 24;
             cantidadAdultosNumeric.Value = new decimal(new int[] { 1, 0, 0, 0 });
             cantidadAdultosNumeric.ValueChanged += cantidadAdultosNumeric_ValueChanged;
