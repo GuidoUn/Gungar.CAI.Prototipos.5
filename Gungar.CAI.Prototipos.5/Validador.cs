@@ -13,7 +13,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (string.IsNullOrWhiteSpace(textBox.Text))
             {
-                MessageBox.Show($"{nombreCampo} es un campo requerido.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{nombreCampo} es un dato obligatorio. Por favor, verifique los datos ingresados.", "Formulario inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox.Focus();
                 return false;
             }
@@ -28,7 +28,7 @@ namespace Gungar.CAI.Prototipos._5
 
             if (dias <= 0)
             {
-                MessageBox.Show("La fecha del campo desde debe ser anterior a la fecha del campo hasta", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La fecha del campo 'Desde' debe ser anterior a la fecha del campo 'Hasta'", "Formulario inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
