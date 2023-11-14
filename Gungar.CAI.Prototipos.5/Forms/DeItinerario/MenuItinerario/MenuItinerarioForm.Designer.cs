@@ -82,9 +82,9 @@
             // 
             // hotelesBtn
             // 
-            hotelesBtn.Location = new Point(15, 126);
+            hotelesBtn.Location = new Point(6, 126);
             hotelesBtn.Name = "hotelesBtn";
-            hotelesBtn.Size = new Size(174, 34);
+            hotelesBtn.Size = new Size(248, 34);
             hotelesBtn.TabIndex = 0;
             hotelesBtn.Text = "Agregar | Quitar Hoteles";
             hotelesBtn.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             // 
             // salirBtn
             // 
-            salirBtn.Location = new Point(1073, 14);
+            salirBtn.Location = new Point(1073, 26);
             salirBtn.Name = "salirBtn";
             salirBtn.Size = new Size(116, 39);
             salirBtn.TabIndex = 3;
@@ -125,9 +125,9 @@
             confirmacionBox.Controls.Add(generarReservaBtn);
             confirmacionBox.Controls.Add(generarPreReservaBtn);
             confirmacionBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            confirmacionBox.Location = new Point(21, 463);
+            confirmacionBox.Location = new Point(7, 463);
             confirmacionBox.Name = "confirmacionBox";
-            confirmacionBox.Size = new Size(210, 132);
+            confirmacionBox.Size = new Size(260, 132);
             confirmacionBox.TabIndex = 6;
             confirmacionBox.TabStop = false;
             confirmacionBox.Text = "Confirmación";
@@ -136,9 +136,9 @@
             // 
             generarReservaBtn.BackColor = SystemColors.Control;
             generarReservaBtn.ForeColor = SystemColors.ControlText;
-            generarReservaBtn.Location = new Point(15, 81);
+            generarReservaBtn.Location = new Point(6, 81);
             generarReservaBtn.Name = "generarReservaBtn";
-            generarReservaBtn.Size = new Size(174, 34);
+            generarReservaBtn.Size = new Size(248, 34);
             generarReservaBtn.TabIndex = 8;
             generarReservaBtn.Text = "Confirmar Reserva";
             generarReservaBtn.UseVisualStyleBackColor = false;
@@ -146,9 +146,9 @@
             // 
             // generarPreReservaBtn
             // 
-            generarPreReservaBtn.Location = new Point(15, 29);
+            generarPreReservaBtn.Location = new Point(6, 29);
             generarPreReservaBtn.Name = "generarPreReservaBtn";
-            generarPreReservaBtn.Size = new Size(174, 36);
+            generarPreReservaBtn.Size = new Size(248, 36);
             generarPreReservaBtn.TabIndex = 7;
             generarPreReservaBtn.Text = "Generar Pre-reserva (48hs)";
             generarPreReservaBtn.UseVisualStyleBackColor = true;
@@ -224,18 +224,18 @@
             gestionarItinerarioBox.Controls.Add(clienteBtn);
             gestionarItinerarioBox.Controls.Add(hotelesBtn);
             gestionarItinerarioBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            gestionarItinerarioBox.Location = new Point(21, 146);
+            gestionarItinerarioBox.Location = new Point(7, 146);
             gestionarItinerarioBox.Name = "gestionarItinerarioBox";
-            gestionarItinerarioBox.Size = new Size(210, 180);
+            gestionarItinerarioBox.Size = new Size(260, 180);
             gestionarItinerarioBox.TabIndex = 13;
             gestionarItinerarioBox.TabStop = false;
             gestionarItinerarioBox.Text = "Gestionar Itinerario";
             // 
             // vuelosBtn
             // 
-            vuelosBtn.Location = new Point(15, 76);
+            vuelosBtn.Location = new Point(5, 76);
             vuelosBtn.Name = "vuelosBtn";
-            vuelosBtn.Size = new Size(174, 34);
+            vuelosBtn.Size = new Size(249, 34);
             vuelosBtn.TabIndex = 7;
             vuelosBtn.Text = "Agregar | Quitar Vuelos";
             vuelosBtn.UseVisualStyleBackColor = true;
@@ -243,9 +243,9 @@
             // 
             // clienteBtn
             // 
-            clienteBtn.Location = new Point(15, 28);
+            clienteBtn.Location = new Point(5, 28);
             clienteBtn.Name = "clienteBtn";
-            clienteBtn.Size = new Size(174, 34);
+            clienteBtn.Size = new Size(249, 34);
             clienteBtn.TabIndex = 6;
             clienteBtn.Text = "Agregar | Modificar Cliente";
             clienteBtn.UseVisualStyleBackColor = true;
@@ -283,9 +283,9 @@
             cancelarReservaBtn.BackColor = SystemColors.Control;
             cancelarReservaBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             cancelarReservaBtn.ForeColor = SystemColors.ControlText;
-            cancelarReservaBtn.Location = new Point(36, 663);
+            cancelarReservaBtn.Location = new Point(13, 663);
             cancelarReservaBtn.Name = "cancelarReservaBtn";
-            cancelarReservaBtn.Size = new Size(174, 37);
+            cancelarReservaBtn.Size = new Size(248, 37);
             cancelarReservaBtn.TabIndex = 9;
             cancelarReservaBtn.Text = "Cancelar Reserva";
             cancelarReservaBtn.UseVisualStyleBackColor = false;
