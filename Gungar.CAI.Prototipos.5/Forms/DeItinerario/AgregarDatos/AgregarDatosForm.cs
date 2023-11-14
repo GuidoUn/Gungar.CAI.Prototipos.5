@@ -146,7 +146,7 @@ namespace Gungar.CAI.Prototipos._5
 
             if (model.PasajeroExiste(DNITextBox.Text))
             {
-                MessageBox.Show("El pasajero ya ha sido agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El pasajero ingresado ya existe. Por favor, verifique los datos ingresados", "Crear nuevo pasajero", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -177,12 +177,12 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (model.PasajeroItinerarioSeleccionado == null)
             {
-                pasajeroLabel.Text = "Ningun pasajero seleccionado";
+                pasajeroLabel.Text = "Ningún pasajero seleccionado";
 
             }
             if (model.ProductoSeleccionado == null)
             {
-                productoLabel.Text = "Ningun producto seleccionado";
+                productoLabel.Text = "Ningún producto seleccionado";
             }
         }
 
@@ -198,14 +198,14 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (!model.TodosLosProductosTienenPasajeros())
             {
-                MessageBox.Show("Todos los productos tienen que tener asignados al menos UN pasajero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Todos los productos del itinerario deben tener asignados al menos un pasajero. Por favor, verifique los datos ingresados.", "Itinerario incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return;
             }
 
             if (!model.ConcidenPasajerosConProductos(model.Itinerario.ItinerarioId))
             {
-                MessageBox.Show("La edad de los pasajeros añadidos deben coincidir con los seleccionados", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Las edades de los pasajeros deben coincidir con los productos seleccionados. Por favor, verifique los datos ingresados.", "Información incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 return;
             }
@@ -243,7 +243,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado))
             {
-                MessageBox.Show("El pasajero ya ha sido agregado al producto seleccionado", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El pasajero ya está asignado al producto seleccionado. Por favor, verifique los pasajeros y/o productos seleccionados.", "Asignación incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
                 return;
