@@ -82,9 +82,10 @@
             // 
             // hotelesBtn
             // 
-            hotelesBtn.Location = new Point(6, 126);
+            hotelesBtn.Location = new Point(7, 168);
+            hotelesBtn.Margin = new Padding(3, 4, 3, 4);
             hotelesBtn.Name = "hotelesBtn";
-            hotelesBtn.Size = new Size(248, 34);
+            hotelesBtn.Size = new Size(283, 45);
             hotelesBtn.TabIndex = 0;
             hotelesBtn.Text = "Agregar | Quitar Hoteles";
             hotelesBtn.UseVisualStyleBackColor = true;
@@ -94,9 +95,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(24, 26);
+            label1.Location = new Point(27, 35);
             label1.Name = "label1";
-            label1.Size = new Size(93, 20);
+            label1.Size = new Size(119, 25);
             label1.TabIndex = 1;
             label1.Text = "Itinerario N°:";
             // 
@@ -104,17 +105,18 @@
             // 
             itinerarioSeleccionadoLabel.AutoSize = true;
             itinerarioSeleccionadoLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            itinerarioSeleccionadoLabel.Location = new Point(115, 26);
+            itinerarioSeleccionadoLabel.Location = new Point(131, 35);
             itinerarioSeleccionadoLabel.Name = "itinerarioSeleccionadoLabel";
-            itinerarioSeleccionadoLabel.Size = new Size(194, 20);
+            itinerarioSeleccionadoLabel.Size = new Size(246, 25);
             itinerarioSeleccionadoLabel.TabIndex = 2;
             itinerarioSeleccionadoLabel.Text = "itinerarioSeleccionadoLabel";
             // 
             // salirBtn
             // 
-            salirBtn.Location = new Point(1073, 26);
+            salirBtn.Location = new Point(1226, 35);
+            salirBtn.Margin = new Padding(3, 4, 3, 4);
             salirBtn.Name = "salirBtn";
-            salirBtn.Size = new Size(116, 39);
+            salirBtn.Size = new Size(133, 52);
             salirBtn.TabIndex = 3;
             salirBtn.Text = "Volver";
             salirBtn.UseVisualStyleBackColor = true;
@@ -125,9 +127,11 @@
             confirmacionBox.Controls.Add(generarReservaBtn);
             confirmacionBox.Controls.Add(generarPreReservaBtn);
             confirmacionBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            confirmacionBox.Location = new Point(7, 463);
+            confirmacionBox.Location = new Point(8, 617);
+            confirmacionBox.Margin = new Padding(3, 4, 3, 4);
             confirmacionBox.Name = "confirmacionBox";
-            confirmacionBox.Size = new Size(260, 132);
+            confirmacionBox.Padding = new Padding(3, 4, 3, 4);
+            confirmacionBox.Size = new Size(297, 176);
             confirmacionBox.TabIndex = 6;
             confirmacionBox.TabStop = false;
             confirmacionBox.Text = "Confirmación";
@@ -136,9 +140,10 @@
             // 
             generarReservaBtn.BackColor = SystemColors.Control;
             generarReservaBtn.ForeColor = SystemColors.ControlText;
-            generarReservaBtn.Location = new Point(6, 81);
+            generarReservaBtn.Location = new Point(7, 108);
+            generarReservaBtn.Margin = new Padding(3, 4, 3, 4);
             generarReservaBtn.Name = "generarReservaBtn";
-            generarReservaBtn.Size = new Size(248, 34);
+            generarReservaBtn.Size = new Size(283, 45);
             generarReservaBtn.TabIndex = 8;
             generarReservaBtn.Text = "Confirmar Reserva";
             generarReservaBtn.UseVisualStyleBackColor = false;
@@ -146,9 +151,10 @@
             // 
             // generarPreReservaBtn
             // 
-            generarPreReservaBtn.Location = new Point(6, 29);
+            generarPreReservaBtn.Location = new Point(7, 39);
+            generarPreReservaBtn.Margin = new Padding(3, 4, 3, 4);
             generarPreReservaBtn.Name = "generarPreReservaBtn";
-            generarPreReservaBtn.Size = new Size(248, 36);
+            generarPreReservaBtn.Size = new Size(283, 48);
             generarPreReservaBtn.TabIndex = 7;
             generarPreReservaBtn.Text = "Generar Pre-reserva (48hs)";
             generarPreReservaBtn.UseVisualStyleBackColor = true;
@@ -158,9 +164,9 @@
             // 
             estadoLabel.AutoSize = true;
             estadoLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            estadoLabel.Location = new Point(164, 103);
+            estadoLabel.Location = new Point(199, 137);
             estadoLabel.Name = "estadoLabel";
-            estadoLabel.Size = new Size(82, 17);
+            estadoLabel.Size = new Size(106, 23);
             estadoLabel.TabIndex = 8;
             estadoLabel.Text = "estadoLabel";
             // 
@@ -168,19 +174,20 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(21, 103);
+            label3.Location = new Point(24, 137);
             label3.Name = "label3";
-            label3.Size = new Size(137, 17);
+            label3.Size = new Size(177, 23);
             label3.TabIndex = 7;
             label3.Text = "Estado del itinerario:";
             // 
             // pasajerosListView
             // 
             pasajerosListView.Columns.AddRange(new ColumnHeader[] { idProductoHeader, nombreHeader, fechaNacimientoHeader });
-            pasajerosListView.Location = new Point(273, 555);
+            pasajerosListView.Location = new Point(312, 740);
+            pasajerosListView.Margin = new Padding(3, 4, 3, 4);
             pasajerosListView.MultiSelect = false;
             pasajerosListView.Name = "pasajerosListView";
-            pasajerosListView.Size = new Size(916, 145);
+            pasajerosListView.Size = new Size(1046, 192);
             pasajerosListView.TabIndex = 10;
             pasajerosListView.UseCompatibleStateImageBehavior = false;
             pasajerosListView.View = View.Details;
@@ -203,18 +210,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(273, 535);
+            label2.Location = new Point(312, 713);
             label2.Name = "label2";
-            label2.Size = new Size(125, 15);
+            label2.Size = new Size(159, 20);
             label2.TabIndex = 11;
             label2.Text = "Pasajeros del itinerario";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(273, 144);
+            label4.Location = new Point(312, 192);
             label4.Name = "label4";
-            label4.Size = new Size(162, 15);
+            label4.Size = new Size(208, 20);
             label4.TabIndex = 12;
             label4.Text = "Vuelos agregados al itinerario";
             // 
@@ -224,18 +231,21 @@
             gestionarItinerarioBox.Controls.Add(clienteBtn);
             gestionarItinerarioBox.Controls.Add(hotelesBtn);
             gestionarItinerarioBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            gestionarItinerarioBox.Location = new Point(7, 146);
+            gestionarItinerarioBox.Location = new Point(8, 195);
+            gestionarItinerarioBox.Margin = new Padding(3, 4, 3, 4);
             gestionarItinerarioBox.Name = "gestionarItinerarioBox";
-            gestionarItinerarioBox.Size = new Size(260, 180);
+            gestionarItinerarioBox.Padding = new Padding(3, 4, 3, 4);
+            gestionarItinerarioBox.Size = new Size(297, 240);
             gestionarItinerarioBox.TabIndex = 13;
             gestionarItinerarioBox.TabStop = false;
             gestionarItinerarioBox.Text = "Gestionar Itinerario";
             // 
             // vuelosBtn
             // 
-            vuelosBtn.Location = new Point(5, 76);
+            vuelosBtn.Location = new Point(6, 101);
+            vuelosBtn.Margin = new Padding(3, 4, 3, 4);
             vuelosBtn.Name = "vuelosBtn";
-            vuelosBtn.Size = new Size(249, 34);
+            vuelosBtn.Size = new Size(285, 45);
             vuelosBtn.TabIndex = 7;
             vuelosBtn.Text = "Agregar | Quitar Vuelos";
             vuelosBtn.UseVisualStyleBackColor = true;
@@ -243,9 +253,10 @@
             // 
             // clienteBtn
             // 
-            clienteBtn.Location = new Point(5, 28);
+            clienteBtn.Location = new Point(6, 37);
+            clienteBtn.Margin = new Padding(3, 4, 3, 4);
             clienteBtn.Name = "clienteBtn";
-            clienteBtn.Size = new Size(249, 34);
+            clienteBtn.Size = new Size(285, 45);
             clienteBtn.TabIndex = 6;
             clienteBtn.Text = "Agregar | Modificar Cliente";
             clienteBtn.UseVisualStyleBackColor = true;
@@ -254,27 +265,27 @@
             // precioTotalLabel
             // 
             precioTotalLabel.AutoSize = true;
-            precioTotalLabel.Location = new Point(363, 65);
+            precioTotalLabel.Location = new Point(415, 87);
             precioTotalLabel.Name = "precioTotalLabel";
-            precioTotalLabel.Size = new Size(70, 15);
+            precioTotalLabel.Size = new Size(88, 20);
             precioTotalLabel.TabIndex = 14;
             precioTotalLabel.Text = "Precio total:";
             // 
             // nombreYApellidoLabel
             // 
             nombreYApellidoLabel.AutoSize = true;
-            nombreYApellidoLabel.Location = new Point(143, 65);
+            nombreYApellidoLabel.Location = new Point(163, 87);
             nombreYApellidoLabel.Name = "nombreYApellidoLabel";
-            nombreYApellidoLabel.Size = new Size(103, 15);
+            nombreYApellidoLabel.Size = new Size(131, 20);
             nombreYApellidoLabel.TabIndex = 16;
             nombreYApellidoLabel.Text = "nombre y apellido";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(24, 65);
+            label6.Location = new Point(27, 87);
             label6.Name = "label6";
-            label6.Size = new Size(110, 15);
+            label6.Size = new Size(139, 20);
             label6.TabIndex = 15;
             label6.Text = "Nombre y Apellido:";
             // 
@@ -283,9 +294,10 @@
             cancelarReservaBtn.BackColor = SystemColors.Control;
             cancelarReservaBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             cancelarReservaBtn.ForeColor = SystemColors.ControlText;
-            cancelarReservaBtn.Location = new Point(13, 663);
+            cancelarReservaBtn.Location = new Point(15, 884);
+            cancelarReservaBtn.Margin = new Padding(3, 4, 3, 4);
             cancelarReservaBtn.Name = "cancelarReservaBtn";
-            cancelarReservaBtn.Size = new Size(248, 37);
+            cancelarReservaBtn.Size = new Size(283, 49);
             cancelarReservaBtn.TabIndex = 9;
             cancelarReservaBtn.Text = "Cancelar itinerario";
             cancelarReservaBtn.UseVisualStyleBackColor = false;
@@ -294,9 +306,9 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(273, 342);
+            label7.Location = new Point(312, 456);
             label7.Name = "label7";
-            label7.Size = new Size(167, 15);
+            label7.Size = new Size(215, 20);
             label7.TabIndex = 18;
             label7.Text = "Hoteles agregados al itinerario";
             label7.Click += label7_Click;
@@ -304,10 +316,11 @@
             // hotelesAgregadosListView
             // 
             hotelesAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader8, columnHeader9, columnHeader10, columnHeader12, columnHeader13, columnHeader14, columnHeader15, columnHeader16 });
-            hotelesAgregadosListView.Location = new Point(273, 360);
+            hotelesAgregadosListView.Location = new Point(312, 480);
+            hotelesAgregadosListView.Margin = new Padding(3, 4, 3, 4);
             hotelesAgregadosListView.MultiSelect = false;
             hotelesAgregadosListView.Name = "hotelesAgregadosListView";
-            hotelesAgregadosListView.Size = new Size(916, 151);
+            hotelesAgregadosListView.Size = new Size(1046, 200);
             hotelesAgregadosListView.TabIndex = 17;
             hotelesAgregadosListView.UseCompatibleStateImageBehavior = false;
             hotelesAgregadosListView.View = View.Details;
@@ -356,9 +369,9 @@
             // abonadoLabel
             // 
             abonadoLabel.AutoSize = true;
-            abonadoLabel.Location = new Point(557, 65);
+            abonadoLabel.Location = new Point(637, 87);
             abonadoLabel.Name = "abonadoLabel";
-            abonadoLabel.Size = new Size(82, 15);
+            abonadoLabel.Size = new Size(105, 20);
             abonadoLabel.TabIndex = 19;
             abonadoLabel.Text = "abonadoLabel";
             // 
@@ -366,10 +379,11 @@
             // 
             vuelosAgregadosListView.Columns.AddRange(new ColumnHeader[] { columnHeader0, columnHeader1, columnHeader5, columnHeader6, columnHeader7, columnHeader2, columnHeader3, columnHeader4, columnHeader26, columnHeader27, columnHeader28, columnHeader29 });
             vuelosAgregadosListView.FullRowSelect = true;
-            vuelosAgregadosListView.Location = new Point(273, 162);
+            vuelosAgregadosListView.Location = new Point(312, 216);
+            vuelosAgregadosListView.Margin = new Padding(3, 4, 3, 4);
             vuelosAgregadosListView.MultiSelect = false;
             vuelosAgregadosListView.Name = "vuelosAgregadosListView";
-            vuelosAgregadosListView.Size = new Size(916, 162);
+            vuelosAgregadosListView.Size = new Size(1046, 215);
             vuelosAgregadosListView.TabIndex = 27;
             vuelosAgregadosListView.UseCompatibleStateImageBehavior = false;
             vuelosAgregadosListView.View = View.Details;
@@ -438,9 +452,9 @@
             // 
             faltaClienteLabel.AutoSize = true;
             faltaClienteLabel.ForeColor = Color.IndianRed;
-            faltaClienteLabel.Location = new Point(36, 412);
+            faltaClienteLabel.Location = new Point(41, 549);
             faltaClienteLabel.Name = "faltaClienteLabel";
-            faltaClienteLabel.Size = new Size(142, 15);
+            faltaClienteLabel.Size = new Size(180, 20);
             faltaClienteLabel.TabIndex = 28;
             faltaClienteLabel.Text = "* Debe ingresar un cliente";
             // 
@@ -448,18 +462,18 @@
             // 
             faltaProductoLabel.AutoSize = true;
             faltaProductoLabel.ForeColor = Color.IndianRed;
-            faltaProductoLabel.Location = new Point(36, 430);
+            faltaProductoLabel.Location = new Point(41, 573);
             faltaProductoLabel.Name = "faltaProductoLabel";
-            faltaProductoLabel.Size = new Size(156, 15);
+            faltaProductoLabel.Size = new Size(197, 20);
             faltaProductoLabel.TabIndex = 29;
             faltaProductoLabel.Text = "* Debe ingresar un producto";
             // 
             // MenuItinerarioForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1225, 737);
+            ClientSize = new Size(1400, 983);
             Controls.Add(faltaProductoLabel);
             Controls.Add(faltaClienteLabel);
             Controls.Add(vuelosAgregadosListView);
@@ -480,6 +494,7 @@
             Controls.Add(salirBtn);
             Controls.Add(itinerarioSeleccionadoLabel);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MenuItinerarioForm";
             Text = "MenuItinerarioForm";
             Load += MenuItinerarioForm_Load;
