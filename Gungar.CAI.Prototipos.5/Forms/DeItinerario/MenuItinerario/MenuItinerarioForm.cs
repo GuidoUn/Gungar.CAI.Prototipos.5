@@ -126,7 +126,7 @@ namespace Gungar.CAI.Prototipos._5
 
         private void cancelarReservaBtn_Click(object sender, EventArgs e)
         {
-            DialogResult confirmar = MessageBox.Show("¿Estás seguro que deseas cancelar la reserva?", "Cancelar reserva", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult confirmar = MessageBox.Show("¿Estás seguro que deseas cancelar el itinerario?", "Cancelar itinerario", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (confirmar == DialogResult.OK)
             {
                 model.CancelarItinerario();

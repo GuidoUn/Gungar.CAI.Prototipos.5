@@ -287,7 +287,7 @@
             cancelarReservaBtn.Name = "cancelarReservaBtn";
             cancelarReservaBtn.Size = new Size(248, 37);
             cancelarReservaBtn.TabIndex = 9;
-            cancelarReservaBtn.Text = "Cancelar Reserva";
+            cancelarReservaBtn.Text = "Cancelar itinerario";
             cancelarReservaBtn.UseVisualStyleBackColor = false;
             cancelarReservaBtn.Click += cancelarReservaBtn_Click;
             // 
