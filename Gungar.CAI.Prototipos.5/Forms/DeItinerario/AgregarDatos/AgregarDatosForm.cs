@@ -223,7 +223,7 @@ namespace Gungar.CAI.Prototipos._5
             model.ProductoSeleccionado = (IReservaProducto)productosAgregadosListView.SelectedItems[0].Tag;
             if (model.ProductoSeleccionado is ReservaHotel reservaHotel)
             {
-                productoLabel.Text =reservaHotel.Hotel.CodigoOferta;
+                productoLabel.Text = reservaHotel.Hotel.CodigoOferta;
             }
             else if (model.ProductoSeleccionado is ReservaVuelo reservaVuelo)
             {
@@ -241,12 +241,13 @@ namespace Gungar.CAI.Prototipos._5
 
         private void asignarBtn_Click(object sender, EventArgs e)
         {
-            if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado)) {
+            if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado))
+            {
                 MessageBox.Show("El pasajero ya ha sido agregado al producto seleccionado", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
                 return;
-            } 
+            }
             model.ProductoSeleccionado.Pasajeros.Add(model.PasajeroItinerarioSeleccionado);
             model.PasajeroItinerarioSeleccionado = null;
             poblarListaPasajeroPorProducto();
