@@ -56,7 +56,14 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
         {
             return VentasModulo.GetProductosAgregados(ItinerarioId);
         }
-
+        public List<ReservaVuelo> GetVuelosAgregados()
+        {
+            return Itinerario.VuelosAgregados;
+        }
+        public List<ReservaHotel> GetHotelesAgregados()
+        {
+            return Itinerario.HotelesSeleccionados;
+        }
         public void EliminarPasajeroSeleccionadoDeTodosLosProductos()
         {
             VentasModulo.EliminarPasajeroDeTodosLosProductos(Itinerario.ItinerarioId, PasajeroItinerarioSeleccionado);
@@ -152,6 +159,25 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
         public bool PasajeroExiste(string documento)
         {
             return PasajerosItinerario.Any(pasajero => pasajero.Documento == documento);
+        }
+
+        public void EliminarPasajeroDePasajerosItinerario(Pasajero pasajero)
+        {
+            PasajerosItinerario.Remove(pasajero);
+        }
+
+        public void AgregarPasajeroAlProductoSeleccionado(Pasajero pasajero)
+        {
+            ProductoSeleccionado.Pasajeros.Add(pasajero);
+        }
+
+        public void AgregarPasajerosAPasajerosDelItinerario(Pasajero pasajero)
+        {
+            PasajerosItinerario.Add(pasajero);
+        }
+        public bool PasajeroYaSeAgregoAlProductoSeleccionado(Pasajero pasajero)
+        {
+            return ProductoSeleccionado.Pasajeros.Contains(pasajero);
         }
     }
 }

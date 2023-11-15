@@ -51,7 +51,7 @@ namespace Gungar.CAI.Prototipos._5
         private void poblarProductosAgregados()
         {
             productosAgregadosListView.Items.Clear();
-            foreach (var reservaHotel in model.Itinerario.HotelesSeleccionados)
+            foreach (var reservaHotel in model.GetHotelesAgregados())
             {
                 var item = new ListViewItem();
                 item.Text = reservaHotel.Hotel.CodigoOferta;
@@ -69,7 +69,7 @@ namespace Gungar.CAI.Prototipos._5
                 productosAgregadosListView.Items.Add(item);
             }
 
-            model.Itinerario.VuelosAgregados.ForEach(reservaVuelo =>
+            model.GetVuelosAgregados().ForEach(reservaVuelo =>
                 {
                     var item = new ListViewItem();
                     item.Text = reservaVuelo.Vuelo.CodigoOferta;
@@ -151,7 +151,7 @@ namespace Gungar.CAI.Prototipos._5
             }
 
             Pasajero nuevoPasajero = new Pasajero(nombreTextBox.Text, apellidoTextBox.Text, DNITextBox.Text, fechaNacDatePicker.Value);
-            model.PasajerosItinerario.Add(nuevoPasajero);
+            model.AgregarPasajerosAPasajerosDelItinerario(nuevoPasajero);
 
             poblarListaPasajeroPorProducto();
             vaciarCampos();
@@ -234,21 +234,18 @@ namespace Gungar.CAI.Prototipos._5
             evaluarTextosDeSeleccion();
         }
 
-        private bool PasajeroYaSeAgregoAlProductoSeleccionado(Pasajero pasajero)
-        {
-            return model.ProductoSeleccionado.Pasajeros.Contains(pasajero);
-        }
+        
 
         private void asignarBtn_Click(object sender, EventArgs e)
         {
-            if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado))
+            if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || model.PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado))
             {
                 MessageBox.Show("El pasajero ya está asignado al producto seleccionado. Por favor, verifique los pasajeros y/o productos seleccionados.", "Asignación incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
                 return;
             }
-            model.ProductoSeleccionado.Pasajeros.Add(model.PasajeroItinerarioSeleccionado);
+            model.AgregarPasajeroAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado);
             model.PasajeroItinerarioSeleccionado = null;
             poblarListaPasajeroPorProducto();
             evaluarVisibilidadBtns();
@@ -286,7 +283,7 @@ namespace Gungar.CAI.Prototipos._5
         {
             if (model.PasajeroItinerarioSeleccionado == null) return;
 
-            model.PasajerosItinerario.Remove(model.PasajeroItinerarioSeleccionado);
+            model.EliminarPasajeroDePasajerosItinerario(model.PasajeroItinerarioSeleccionado);
             model.EliminarPasajeroSeleccionadoDeTodosLosProductos();
             poblarListaPasajeroPorProducto();
             PoblarPasajerosItinerario();

@@ -84,7 +84,7 @@ namespace Gungar.CAI.Prototipos._5
             if (!model.EsConsulta)
             {
                 hotelesAgregadosListView.Items.Clear();
-                foreach (var reservaHotel in model.Itinerario?.HotelesSeleccionados)
+                foreach (var reservaHotel in model.GetHotelesAgregados())
                 {
                     var item = new ListViewItem();
                     item.Text = reservaHotel.Hotel.NombreHotel;
@@ -172,10 +172,7 @@ namespace Gungar.CAI.Prototipos._5
             model.HotelSeleccionado = (Hotel)hotelesListView.SelectedItems[0].Tag;
         }
 
-        private bool HotelYaFueAgregado(Hotel Hotel)
-        {
-            return model.Itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel)); //Mejor sería usar Exists, que any
-        }
+       
 
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
@@ -186,7 +183,7 @@ namespace Gungar.CAI.Prototipos._5
             }
             model.HotelSeleccionado.FechaDesde = model.DesdeFechaSeleccionada;
             model.HotelSeleccionado.FechaHasta = model.HastaFechaSeleccionada;
-            if (HotelYaFueAgregado(model.HotelSeleccionado))
+            if (model.HotelYaFueAgregado(model.HotelSeleccionado))
             {
 
                 MessageBox.Show("El Hotel seleccionado ya fue agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -197,7 +194,7 @@ namespace Gungar.CAI.Prototipos._5
             reservaHotel.CantidadMenores = model.MenoresEnBusqueda;
             reservaHotel.CantidadInfantes = model.InfantesEnBusqueda;
 
-            model.Itinerario?.AgregarReservaHotel(reservaHotel);
+            model.AgregarReservaHotelAlItinerario(reservaHotel);
             poblarProductosAgregados();
         }
 
@@ -211,7 +208,7 @@ namespace Gungar.CAI.Prototipos._5
             if (model.HotelAgregadoSeleccionado == null)
                 return;
 
-            model.Itinerario?.QuitarReservaHotel(model.HotelAgregadoSeleccionado);
+            model.EliminiarReservaHotelDelItinerario(model.HotelAgregadoSeleccionado);
             poblarProductosAgregados();
         }
 

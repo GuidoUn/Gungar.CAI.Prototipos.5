@@ -6,6 +6,7 @@ using Gungar.CAI.Prototipos._5.Modulos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,9 +46,29 @@ namespace Gungar.CAI.Prototipos._5.Forms.Productos.Hoteles
             return VentasModulo.GetHotelesDisponibles(destino, cantidadAdultos, cantidadMenores, cantidadInfantes, calificacion, fechaDesde, fechaHasta, precioMinimo, precioMaximo);
         }
 
+        public List<ReservaHotel> GetHotelesAgregados()
+        {
+            return Itinerario.HotelesSeleccionados;
+        }
+
         public bool EsFechaMayorALaIngresada(DateTime fecha1, DateTime fecha2)
         {
             return fecha1 >= fecha2;
+        }
+
+        public bool HotelYaFueAgregado(Hotel Hotel)
+        {
+            return Itinerario.HotelesSeleccionados.Any(reservaHotel => reservaHotel.Hotel.Equals(Hotel)); //Mejor sería usar Exists, que any
+        }
+
+        public void AgregarReservaHotelAlItinerario(ReservaHotel reservaHotel)
+        {
+            Itinerario?.AgregarReservaHotel(reservaHotel);
+        }
+
+        public void EliminiarReservaHotelDelItinerario(ReservaHotel reservaHotel)
+        {
+            Itinerario?.QuitarReservaHotel(reservaHotel);
         }
     }
 }
