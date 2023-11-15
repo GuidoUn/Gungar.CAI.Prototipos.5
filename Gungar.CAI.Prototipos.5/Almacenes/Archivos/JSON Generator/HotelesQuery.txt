@@ -8,7 +8,7 @@ JG.repeat(100, {
   Calificacion: JG.integer(3,5),
   Direccion: {
     Calle: JG.street(),
-    Numero: JG.random("7176", "2248", "8427", "8073", "4012", "3956", "4916"),
+    Numero: JG.random("1164", "1498", "2541", "4597", "1642", "2300", "4720", "5176", "2248", "3427", "1073", "4012", "3956", "4916"),
     CP: JG.random("1276", "2488", "3364"),
     Latitud: JG.random("30", "60.23", "-55"),
     Longitud: JG.random("-23.30", "40.54", "-35")

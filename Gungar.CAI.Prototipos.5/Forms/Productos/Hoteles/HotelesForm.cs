@@ -61,7 +61,7 @@ namespace Gungar.CAI.Prototipos._5
                     item.Text = hotel.NombreHotel;
                     item.SubItems.Add(hotel.Disponibilidad.Nombre);
                     item.SubItems.Add(hotel.Disponibilidad.Capacidad.ToString());
-                    item.SubItems.Add(hotel.Direccion.Calle);
+                    item.SubItems.Add(hotel.Direccion.Calle + " " + hotel.Direccion.Numero);
                     item.SubItems.Add(Constantes.CalificacionesInvertidas[hotel.Calificacion]);
                     item.SubItems.Add(Constantes.Ciudades[hotel.CodigoCiudad]);
                     item.SubItems.Add("$" + hotel.Disponibilidad.Tarifa.ToString());
