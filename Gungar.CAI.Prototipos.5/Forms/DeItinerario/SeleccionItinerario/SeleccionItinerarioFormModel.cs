@@ -25,6 +25,10 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.SeleccionItinerario
             if (ItinerarioSeleccionado != null)
             {
                 VentasModulo.EliminarItinerario(ItinerarioSeleccionado);
+                if (ItinerarioSeleccionado.Estado == Estado.Prereserva || ItinerarioSeleccionado.Estado == Estado.Reserva || ItinerarioSeleccionado.Estado == Estado.Confirmada)
+                {
+                    DisponibilidadModulo.liberarDisponibilidad(ItinerarioSeleccionado);
+                }
             }
             ItinerarioSeleccionado = null;
         }
