@@ -148,7 +148,6 @@
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // pasajerosEnBusquedaBox
             // 

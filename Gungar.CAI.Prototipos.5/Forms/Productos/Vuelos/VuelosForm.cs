@@ -295,10 +295,5 @@ namespace Gungar.CAI.Prototipos._5
             }
             refrescar();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
