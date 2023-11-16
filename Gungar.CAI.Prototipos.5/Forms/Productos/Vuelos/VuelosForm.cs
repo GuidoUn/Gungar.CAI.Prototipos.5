@@ -289,7 +289,10 @@ namespace Gungar.CAI.Prototipos._5
         {
             model.quitarVuelo((ReservaVuelo)vuelosAgregadosListView.SelectedItems[0].Tag);
             poblarVuelosAgregados();
-            poblarVuelos();
+            if (model.AdultosEnBusqueda > 0) // Ya hizo la búsqueda
+            {
+                poblarVuelos();
+            }
             refrescar();
         }
 
