@@ -64,8 +64,6 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             });
 
             itinerario.HotelesSeleccionados.ForEach(reservaHotel => AlmacenHoteles.ModificarDisponibilidad(reservaHotel.Hotel, true));
-
         }
-
     }
 }

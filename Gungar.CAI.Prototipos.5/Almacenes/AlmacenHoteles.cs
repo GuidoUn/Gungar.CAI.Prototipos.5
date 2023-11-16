@@ -106,6 +106,8 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
                     }
                 }
             });
+
+            // TODO
         }
 
         private static List<DateTime> ObtenerRangoDeFechas(DateTime FechaDesde, DateTime FechaHasta)
