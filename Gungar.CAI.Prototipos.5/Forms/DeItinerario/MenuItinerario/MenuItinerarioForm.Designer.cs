@@ -311,7 +311,6 @@
             label7.Size = new Size(215, 20);
             label7.TabIndex = 18;
             label7.Text = "Hoteles agregados al itinerario";
-            label7.Click += label7_Click;
             // 
             // hotelesAgregadosListView
             // 
@@ -324,7 +323,6 @@
             hotelesAgregadosListView.TabIndex = 17;
             hotelesAgregadosListView.UseCompatibleStateImageBehavior = false;
             hotelesAgregadosListView.View = View.Details;
-            hotelesAgregadosListView.SelectedIndexChanged += hotelesAgregadosListView_SelectedIndexChanged;
             // 
             // columnHeader8
             // 

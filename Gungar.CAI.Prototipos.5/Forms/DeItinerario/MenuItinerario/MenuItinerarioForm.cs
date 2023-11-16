@@ -74,7 +74,7 @@ namespace Gungar.CAI.Prototipos._5
 
                     item.Text = producto is ReservaHotel reservaHotel ? reservaHotel.Hotel.CodigoOferta : producto is ReservaVuelo reservaVuelo ? reservaVuelo.Vuelo.CodigoOferta : "";
                     item.SubItems.Add(pasajero.Nombre + " " + pasajero.Apellido);
-                    item.SubItems.Add(pasajero.FechaNacimiento.ToString());
+                    item.SubItems.Add(pasajero.FechaNacimiento.ToString(Constantes.FORMATO_FECHA_CORTA));
                     item.Tag = pasajero;
                     pasajerosListView.Items.Add(item);
                 });
@@ -186,15 +186,6 @@ namespace Gungar.CAI.Prototipos._5
 
                 vuelosAgregadosListView.Items.Add(item);
             });
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hotelesAgregadosListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }
