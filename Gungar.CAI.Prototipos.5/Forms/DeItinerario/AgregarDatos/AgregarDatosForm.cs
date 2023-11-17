@@ -274,8 +274,6 @@ namespace Gungar.CAI.Prototipos._5
             evaluarTextosDeSeleccion();
         }
 
-
-
         private void eliminarPasajeroBtn_Click(object sender, EventArgs e)
         {
             if (model.PasajeroItinerarioSeleccionado == null) return;
@@ -286,7 +284,6 @@ namespace Gungar.CAI.Prototipos._5
             PoblarPasajerosItinerario();
             model.PasajeroItinerarioSeleccionado = null;
             evaluarTextosDeSeleccion();
-
         }
 
         private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -312,7 +309,5 @@ namespace Gungar.CAI.Prototipos._5
                 e.Handled = true; // Evita que se escriban caracteres especiales
             }
         }
-
-
     }
 }
