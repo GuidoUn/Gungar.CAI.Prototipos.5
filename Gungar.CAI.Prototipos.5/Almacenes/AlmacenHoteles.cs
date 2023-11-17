@@ -68,6 +68,8 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
 
             List<Hotel> hotelesFiltrados = OfertaHotelesDesagrupados.Where(hotel =>
             {
+                if (hotel.Disponibilidad.Cantidad <= 0)            
+                    return false;
                 if (destino != "" && !EsMismaCiudad(hotel.CodigoCiudad, destino))
                     return false;
                 if (!EstaEntreFechas(hotel.Disponibilidad.FechasOcupadas, fechaDesde, fechaHasta))
@@ -115,13 +117,12 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
                         disponibilidadAModificar.FechasOcupadas.AddRange(fechasOcupadasAAgregar);
                     }
                 }
-               
-               
+
             });
 
-            // TODO
+                OfertaHotelesDesagrupados = DesagruparHotelesPorDisponibilidad(OfertaHotelesEnAlmacen);
         }
-       
+
         private static List<DateTime> ObtenerRangoDeFechas(DateTime FechaDesde, DateTime FechaHasta)
         {
             List<DateTime> listaDeFechas = new List<DateTime>();
