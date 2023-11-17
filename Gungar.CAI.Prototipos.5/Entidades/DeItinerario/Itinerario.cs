@@ -70,8 +70,11 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
 
         public void CancelarItinerario()
         {
+            if (Estado != Estado.Presupuesto)
+            {
+                LiberarDisponibilidadProductos();
+            }
             Estado = Estado.Cancelada;
-            LiberarDisponibilidadProductos();
         }
 
         private void BloquearDisponibilidadProductos()
@@ -112,8 +115,8 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             float precioTotal = 0;
             VuelosAgregados.ForEach(reservaVuelo =>
             {
-                precioTotal += reservaVuelo.PrecioTotal ;
-                
+                precioTotal += reservaVuelo.PrecioTotal;
+
             });
             HotelesSeleccionados.ForEach(reservaHotel =>
             {
@@ -123,6 +126,6 @@ namespace Gungar.CAI.Prototipos._5.Entidades.DeItinerario
             return precioTotal;
         }
 
-       
+
     }
 }

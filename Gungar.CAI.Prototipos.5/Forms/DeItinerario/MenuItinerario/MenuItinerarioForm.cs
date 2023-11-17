@@ -78,7 +78,6 @@ namespace Gungar.CAI.Prototipos._5
                     item.Tag = pasajero;
                     pasajerosListView.Items.Add(item);
                 });
-
             });
         }
 
