@@ -22,8 +22,8 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
 
         public List<Pasajero> PasajerosItinerario { get; set; }
 
-
         public IReservaProducto ProductoSeleccionado { get; set; }
+
         public AgregarDatosFormModel(Itinerario itinerario)
         {
             itinerario.EvaluarVencimientoPrereserva();
@@ -69,9 +69,9 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
             VentasModulo.EliminarPasajeroDeTodosLosProductos(Itinerario.ItinerarioId, PasajeroItinerarioSeleccionado);
         }
 
-        public void EliminarPasajeroSeleccionadoDelProducto(int ItinerarioId,IReservaProducto reservaProducto, Pasajero pasajero)
+        public void EliminarPasajeroSeleccionadoDelProducto(int ItinerarioId, IReservaProducto reservaProducto, Pasajero pasajero)
         {
-            VentasModulo.EliminarPasajeroDeProducto(ItinerarioId,reservaProducto, pasajero);
+            VentasModulo.EliminarPasajeroDeProducto(ItinerarioId, reservaProducto, pasajero);
         }
 
         private bool esInfante(DateTime fechaNacimiento)
@@ -83,7 +83,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
                 edad--;
             }
 
-           return edad<2;
+            return edad < 2;
         }
 
         private bool esMenor(DateTime fechaNacimiento)
@@ -103,17 +103,18 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
             bool resultado = true;
             this.GetProductosAgregados(ItinerarioId).ForEach(producto =>
             {
-              if( producto is ReservaHotel reservaHotel)
+                if (producto is ReservaHotel reservaHotel)
                 {
-                    if(!ProductoTienePasajerosCorrecto(producto, reservaHotel.CantidadAdultos, reservaHotel.CantidadInfantes, reservaHotel.CantidadMenores)){
+                    if (!ProductoTienePasajerosCorrecto(producto, reservaHotel.CantidadAdultos, reservaHotel.CantidadInfantes, reservaHotel.CantidadMenores))
+                    {
                         resultado = false;
                         return;
 
                     }
-                   
+
                 }
 
-              else if( producto is ReservaVuelo reservaVuelo)
+                else if (producto is ReservaVuelo reservaVuelo)
                 {
                     if (!ProductoTienePasajerosCorrecto(producto, reservaVuelo.CantidadAdultos, reservaVuelo.CantidadInfantes, reservaVuelo.CantidadMenores))
                     {
@@ -123,17 +124,18 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
                     }
                 }
 
-               
+
 
             });
 
-                return resultado;
+            return resultado;
         }
 
-        public bool ProductoTienePasajerosCorrecto(IReservaProducto producto,int PasajeroAdulto,int PasajeroInfante, int PasajeroMenor) {
-            int _adulto=PasajeroAdulto;
-            int _menor=PasajeroMenor;
-            int _infante=PasajeroInfante;
+        public bool ProductoTienePasajerosCorrecto(IReservaProducto producto, int PasajeroAdulto, int PasajeroInfante, int PasajeroMenor)
+        {
+            int _adulto = PasajeroAdulto;
+            int _menor = PasajeroMenor;
+            int _infante = PasajeroInfante;
 
             producto.Pasajeros.ForEach(pasajero =>
             {
@@ -152,7 +154,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.AgregarDatos
 
             });
 
-            return _adulto == 0 && _menor == 0 && _infante==0 ;
+            return _adulto == 0 && _menor == 0 && _infante == 0;
 
         }
 

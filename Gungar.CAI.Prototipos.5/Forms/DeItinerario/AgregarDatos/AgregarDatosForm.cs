@@ -234,14 +234,11 @@ namespace Gungar.CAI.Prototipos._5
             evaluarTextosDeSeleccion();
         }
 
-
-
         private void asignarBtn_Click(object sender, EventArgs e)
         {
             if (model.PasajeroItinerarioSeleccionado == null || model.ProductoSeleccionado == null || model.PasajeroYaSeAgregoAlProductoSeleccionado(model.PasajeroItinerarioSeleccionado))
             {
                 MessageBox.Show("El pasajero ya está asignado al producto seleccionado. Por favor, verifique los pasajeros y/o productos seleccionados.", "Asignación incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
 
                 return;
             }
