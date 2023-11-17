@@ -172,7 +172,7 @@ namespace Gungar.CAI.Prototipos._5
             model.HotelSeleccionado = (Hotel)hotelesListView.SelectedItems[0].Tag;
         }
 
-       
+
 
         private void agregarProductoBtn_Click(object sender, EventArgs e)
         {
