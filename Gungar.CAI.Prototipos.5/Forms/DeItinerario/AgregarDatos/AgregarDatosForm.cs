@@ -234,7 +234,7 @@ namespace Gungar.CAI.Prototipos._5
             evaluarTextosDeSeleccion();
         }
 
-        
+
 
         private void asignarBtn_Click(object sender, EventArgs e)
         {
