@@ -45,7 +45,7 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
 
         public bool TieneCliente()
         {
-            return Itinerario.Cliente != null; 
+            return Itinerario.Cliente != null;
         }
 
         public bool puedePrereserva()
@@ -62,8 +62,5 @@ namespace Gungar.CAI.Prototipos._5.Forms.DeItinerario.MenuItinerario
         {
             return Itinerario?.VuelosAgregados ?? new();
         }
-
-       
     }
-
 }
