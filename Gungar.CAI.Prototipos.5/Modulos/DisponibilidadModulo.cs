@@ -47,7 +47,7 @@ namespace Gungar.CAI.Prototipos._5.Modulos
             {
                 var vueloEnAlmacen = AlmacenVuelos.OfertaVuelos.Find(oferta => oferta.CodigoOferta == vuelo.Vuelo.CodigoOferta);
                 if (vueloEnAlmacen == null)
-                    throw new Exception();
+                    return;
 
                 vueloEnAlmacen.Tarifas.ForEach(tarifa =>
                 {
