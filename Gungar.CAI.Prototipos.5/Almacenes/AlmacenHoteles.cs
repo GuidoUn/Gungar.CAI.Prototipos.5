@@ -86,17 +86,27 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
             return hotelesFiltrados;
         }
 
-        public static void ModificarDisponibilidad(Hotel hotel, bool isRollback)
+        public static void ModificarDisponibilidad(Hotel hotel, bool esRollback)
         {
             if (OfertaHotelesEnAlmacen == null) return;
+            Disponibilidad disponibilidadAModificar=null;
+
             OfertaHotelesEnAlmacen.ForEach(_hotel =>
             {
-                var disponibilidadAModificar = _hotel.Disponibilidad.Find(h => h.Nombre == hotel.Disponibilidad.Nombre);
-                if (_hotel.CodigoOferta == hotel.CodigoOferta && disponibilidadAModificar != null)
+                if (hotel.CodigoOferta == _hotel.CodigoOferta)
                 {
-                    if (isRollback)
+                    disponibilidadAModificar = _hotel.Disponibilidad.Find(h =>h.Id == hotel.Disponibilidad.Id);
+
+                    if (disponibilidadAModificar == null)
+                    {
+                        return;
+                    }
+
+                    if (esRollback)
                     {
                         disponibilidadAModificar.Cantidad++;
+                        List<DateTime> fechasOcupadasALiberar = ObtenerRangoDeFechas(hotel.FechaDesde, hotel.FechaHasta);
+                        disponibilidadAModificar.FechasOcupadas.RemoveAll(fechasOcupadasALiberar.Contains);
                     }
                     else
                     {
@@ -105,11 +115,13 @@ namespace Gungar.CAI.Prototipos._5.Almacenes
                         disponibilidadAModificar.FechasOcupadas.AddRange(fechasOcupadasAAgregar);
                     }
                 }
+               
+               
             });
 
             // TODO
         }
-
+       
         private static List<DateTime> ObtenerRangoDeFechas(DateTime FechaDesde, DateTime FechaHasta)
         {
             List<DateTime> listaDeFechas = new List<DateTime>();
